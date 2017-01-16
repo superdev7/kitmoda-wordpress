@@ -1,0 +1,20 @@
+<div class="gallery_container slick_attachment_galleryz">
+    <div class="gallery">
+        
+       
+        
+        <div class="navz">
+            <div class="nav_controls">
+                <button type="button" data-role="none" class="slick-prev" aria-label="previous"></button>
+                <button type="button" data-role="none" class="slick-next" aria-label="next"></button>
+            </div>
+            <div class="slider">
+                
+                <div ng-click="$parent.active=true" ng-repeat="thumb_img in gallery.thumbs" data-item="{{thumb_img.id}}">
+<div class="in"><img ng-src="{{thumb_img.src}}" /></div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,32 @@
+<div ng-form="editCommentForm" novalidate>
+
+    <div class="modal-header">
+        <div class="modal-title title">Edit Comment</div>
+        <a class="close" ng-click="vm.cancel()"></a>
+    </div>
+
+    <div class="modal-body">
+            <div class="sectionBackgroundDark">
+                <div class="section section_post_options">
+                    <div class="sectionOverlay">
+                        <div class="section_header">
+                            <h2>Edit your comment</h2>
+                            <div class="line2"></div>
+                        </div>
+                        <div class="fields">
+                            <div class="field_group field_group_title">
+                                <textarea class="cbarele" required placeholder="Add your thoughts here..." style="resize: none; overflow: hidden; word-wrap: break-word; height: 72px;" name="content" ng-model="vm.kc.content"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <div class="error hbng" ng-show="vm.hasError('content', 'required')">Comment is required</div>
+        <button type="button" ng-click="vm.save(editCommentForm)" class="btn_add_comment btn btn_blue">Save</button>
+        <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+    </div>
+</div>

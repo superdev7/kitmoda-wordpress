@@ -1,0 +1,184 @@
+.image_item {
+    
+    
+    border-bottom: dotted 1px #ccc;
+}
+
+.clr {
+    clear: both;
+}
+
+
+
+
+.ksm_post_images_inside .field {
+    margin : 0;
+    margin-bottom: 2px !important;
+}
+
+
+.ksm_post_images_inside .field label {
+    padding : 3px;
+    color : #d0d0d0;
+    font-size : 11px;
+    padding-left: 8px !important;
+    padding-top: 5px;
+}
+
+.ksm_post_images_inside .field input {
+    margin-right: 4px;
+}
+
+.ksm_post_images_inside select {
+    height : 33px;
+}
+
+.ksm_post_images_inside .images_empty {
+  display: none;
+  text-align: center;
+  color: #FFF;
+  font-size: 16px;
+}
+
+.ksm_post_images_inside .preview {
+  position: relative;
+  cursor: pointer;
+  float: left;
+}
+.ksm_post_images_inside .preview .thumbnail {
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+}
+.ksm_post_images_inside .preview .thumbnail img {
+  width: 100%;
+  height: 100%;
+  box-sizing: initial;
+}
+.ksm_post_images_inside .list_images {
+  list-style: none;
+  margin: 0;
+}
+.ksm_post_images_inside .list_images .sortable-placeholder {
+  height: 128px;
+  margin-bottom: 16px;
+  background: #1b1b1b;
+  border: dotted 2px;
+  border-radius: 9px;
+}
+.ksm_post_images_inside .list_images li {
+  list-style: none;
+  position: relative;
+  padding: 0px;
+  margin: 20px 0;
+}
+.ksm_post_images_inside .list_images li .line2 {
+  margin: 16px 0px;
+}
+
+.ksm_post_images_inside .list_images li .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+}
+.ksm_post_images_inside .list_images li .fields {
+  width: 400px;
+  float: left;
+  margin-left: 12px;
+  padding: 0;
+}
+.ksm_post_images_inside .list_images li .fields .field_topic {
+  float: left;
+}
+.ksm_post_images_inside .list_images li .fields label {
+    padding: 0;
+    display: block;
+    margin-bottom: 3px;
+}
+.ksm_post_images_inside .list_images li .fields .field_image_name {
+    margin-bottom: 8px !important;
+}
+
+.ksm_post_images_inside .list_images li .fields .field_image_name input {
+    width : 100%;
+}
+
+.ksm_post_images_inside .list_images li .fields select {
+    width: 100%;
+}
+.ksm_post_images_inside .list_images li .fields .field_progress {
+    float: right;
+}
+
+.ksm_post_images_inside .list_images li .fields .field_topic, .ksm_post_images_inside .list_images li .fields .field_progress {
+    width: 44%;
+}
+
+.ksm_post_images_inside .list_images li .actions {
+    float: right;
+    
+}
+.ksm_post_images_inside .list_images li .actions .action_remove {
+    float: right;
+    color: #4782dc;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.ksm_post_images_inside .list_images li .actions .action_remove:hover {
+    text-decoration: underline;
+}
+.ksm_post_images_inside .list_images li .actions .add_to_gallery {
+    margin-top : 68px;
+}
+
+
+
+.ksm_post_stats_metabox  .field  {
+    padding: 4px 0px;
+}
+
+.ksm_post_stats_metabox  .field label {
+    width : 100px;
+    float : left;
+}
+
+
+
+
+#artist_view_page {
+    margin-right: 300px;
+}
+
+#artist_view_page .left_main {
+    float : left;
+}
+
+#artist_view_page .side_container {
+    float: right;
+    margin-right: -300px;
+    width: 280px;
+    
+    min-width: 255px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    background: #fff;
+}
+
+
+#artist_view_page .side_container h2 {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 0;
+    line-height: 1.4;
+    border-bottom: 1px solid #eee;
+}
+
+#artist_view_page .side_container .inside {
+        margin: 6px 0 0;
+        padding: 0 12px 12px;
+    line-height: 1.4em;
+    font-size: 13px;
+}

@@ -1,0 +1,25 @@
+<div class="add_comment_form_highlight">
+    <div class="add_comment_form_radius">
+    <div class="add_comment_form">
+        
+        <div ng-form="addCommentForm" novalidate>
+            
+           
+                <textarea required name="c_content" ng-model="newCommentData.content" style="resize: none; width: 100%;" placeholder="Add your comment here..."></textarea>
+            
+            
+		<div class="error hbng" ng-show="hasError('c_content', 'required')">Comment is required</div>
+                <div class="add_comment_backdrop_comment">
+                    <div class="add_comment_container">
+                        <a href="" class="btn btn_add_comment btn_clear" ng-click="saveComment(addCommentForm)">
+                            <div class="add_comment"></div>
+                            <div class="add_comment_hover"></div>                            
+                        </a>
+                    </div>  
+                    <span class="add_comment_text">COMMENT</span>
+                </div>
+            
+        </div><div class="clr"></div>
+    </div>
+</div>
+    </div>

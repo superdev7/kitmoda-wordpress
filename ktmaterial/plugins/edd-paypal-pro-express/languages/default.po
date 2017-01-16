@@ -1,0 +1,188 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EDD PayPal pro and Express\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-12 13:28-0600\n"
+"PO-Revision-Date: 2013-02-12 13:28-0600\n"
+"Last-Translator: Pippin Williamson <pippin@pippinsplugins.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../edd-paypal-pro-express.php:54
+msgid "PayPal Pro"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:54
+msgid "Credit Card"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:55
+msgid "PayPal Express"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:55
+msgid "PayPal"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:79
+#: ../edd-paypal-pro-express.php:174
+#: ../edd-paypal-pro-express.php:269
+msgid "You must enter your API keys in settings"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:156
+msgid "PayPal Pro Error"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:156
+#, php-format
+msgid "PayPal Pro returned an error while processing a payment. Details: %s"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:305
+msgid "Please confirm your payment"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:307
+msgid "Billing Information"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:309
+msgid "PayPal Status:"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:311
+msgid "Phone:"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:313
+msgid "Email:"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:318
+msgid "Item Name"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:319
+msgid "Item Price"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:325
+msgid "Tax:"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:329
+msgid "Total:"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:347
+msgid "Confirm"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:387
+msgid "The user cancelled payment after going to PayPal"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:401
+msgid "PayPal Website Payment Pro and PayPal Express API Keys"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:402
+msgid "Configure your PayPal Pro and PayPal Express settings"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:407
+msgid "PayPal Pro / Express License Key"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:408
+msgid "Enter the license key you received with your purchase in order to get automatic updates"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:414
+msgid "Live API Username"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:415
+msgid "Enter your live API username"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:421
+msgid "Live API Password"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:422
+msgid "Enter your live API password"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:428
+msgid "Live API Signature"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:429
+msgid "Enter your live API signature"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:435
+msgid "Test API Username"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:436
+msgid "Enter your test API username"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:442
+msgid "Test API Password"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:443
+msgid "Enter your test API password"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:449
+msgid "Test API Signature"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:450
+msgid "Enter your test API signature"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:506
+msgid "Billing Address"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:509
+msgid "Billing City"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:512
+msgid "Billing Zip"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:515
+msgid "Credit Card Number"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:518
+msgid "CVC Code"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:521
+msgid "Credit Card Expiration Month"
+msgstr ""
+
+#: ../edd-paypal-pro-express.php:524
+msgid "Credit Card Expiration Year"
+msgstr ""
+
+#: ../paypal/PayPalPro.php:55
+#: ../paypal/PayPalExpress.php:58
+msgid "Discount"
+msgstr ""
+

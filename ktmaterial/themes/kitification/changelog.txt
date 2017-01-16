@@ -1,0 +1,121 @@
+== Changelog ==
+
+= 1.2.2.1: August 20, 2014 =
+
+* Fix: Fix pagination positioning on certain pages
+* Fix: Updated Earnings icon in FES dashboard
+* Fix: Don't escape vendor description/bio which caused the output of HTML tags
+* Fix: Make sure the proper classes are still assigned to download grid items
+* Fix: Allow the Shop page template to inert its own content
+
+= 1.2.2: July 24, 2014 =
+
+* New: Masonry/stackable grids
+* Fix: Respect search for products when on product pages.
+* Fix: Better gallery/product image stability with recent FES fixes.
+* Fix: Responsive fixes for homepage taxonomy widget.
+
+= 1.2.1.2: July 5, 2014 =
+
+* Fix: Always show the product slider/grid if there are any attached images that aren't also featured.
+* Fix: Sorting on shop page template
+* Fix: Don't show vendor contact form if viewing your own profile.
+
+= 1.2.1.1: June 25, 2014 =
+
+* Fix: If there is only a featured image and it's not attached to the parent, still show it.
+* Fix: Make sure JS settings are always passed to the Testimonials widget
+
+= 1.2.1: June 12, 2014 =
+
+* New: Add support for [edd_register] shortcode.
+* Fix: Don't cut off elements when setting equal heights.
+* Fix: Load the full size cover image for vendor stores.
+* Fix: Improve nested comment styling on mobile.
+* Fix: Improve the stability of gallery and featured image output on downloads.
+* Fix: Various CSS tweaks and improvements.
+
+= 1.2.0: May 21, 2014 =
+
+* Note: This is a fairly major update. There should be no backwards compatibility issues but it is always important to test on in a development environment before updating your production website.
+
+* New: Projects by WooThemes support.
+* New: Product page layout using inline previews moves buy now/action buttons to "Product Details" widget.
+* New: Recent Blog Posts widget can be styled like other grid items.
+* New: Manually set Audio Previews using FES and a meta key of `preview_files`
+* New: Output ratings breakdown in widget if available.
+* New: Homepage taxonomy widget to display tags or categories in a "styled" way.
+* New: Add a "Description" field to some homepage widgets.
+* New: Images for the "Audio" post format are output under the audio player.
+* New: Author profiles can now have a header background image when using FES add an upload fields to the vendor profile with the meta key of `cover_image`.
+* Fix: Soliloquy 2.0.0+ compatibility. Requires Soliloquy 2.0.0+ to continue using widget.
+* Fix: FES 2.2.0+ compatibility. Requires FES 2.2.0+ to continue using.
+* Fix: Make sure ratings schema is properly output
+* Fix: Only output the first audio file for audio previews in the grid to improve load times.
+* Fix: Truncate titles longer than one line (optional in "Appearance > Customize")
+* Fix: Hide comments title when comments are disabled.
+* Fix: Make the Frontend Submissions menu responsive.
+* Fix: Sorting on search results is now accurate.
+
+= 1.1.1: February 20, 2014 =
+
+* New: EDD Wish List support.
+* Fix: Love It Pro heart styling.
+* Fix: Make sure the demo link is properly centered when using custom prices.
+* Fix: Make sure minimal page template has readable text in certain areas.
+* Fix: Allow hover to be touched on touch devices.
+* Fix: Make sure Shop and Popular page templates can be used on static homepages and just work better in general.
+
+= 1.1.0: February 4, 2014 =
+
+* New: Alternate single product view.
+* New: Sorting widget for Download Archive widget area
+* New: Second Homepage design that includes a large search bar.
+* New: Download info can be forced to show on all grid items.
+* New: "Curated Downloads" widget to show specific downloads.
+* New: "Recent Posts" widget to show posts from the blog on the homepage.
+* New: Send an email directly to a vendor from their profile page.
+* New: Allow audio downloads to have a featured background header image.
+* New: Default image placeholder when no grid image is set.
+* New: Allow product info on grid items to be be toggled on/off/auto.
+* Fix: Don't force the Features widget image size.
+* Fix: Use Download Archive widget area on Popular Items page template.
+* Fix: Make sure the author archives use the proper EDD_SLUG.
+* Fix: "Shop" page template so downloads appear properly.
+
+= 1.0.3: January 23, 2014 =
+
+* New: "Shop" Page Template so the standard archives can be set as the homepage.
+* New: Add styling support for Custom Prices extension.
+* Fix: Make sure searching results in the proper results depending on location.
+* Fix: Hide star ratings when replying to a review (as they are not needed).
+* Fix: Make sure the pause button on the audio preview displays on mobile.
+* Fix: Avoid duplicate hook names to avoid duplicate output of content.
+* Fix: Maintain compatability with Features by WooThemes
+* Fix: Various responsive tweaks.
+
+= 1.0.2: January 17, 2014 =
+
+* New: "Real" pagination instead of arrows.
+* Fix: Maintain compatibility with Features by WooThemes
+* Fix: iPad/tablet responsive breakpoints.
+* Fix: IE11 display bugs.
+* Fix: Make the [downloads] shortcode respond and act like the /downloads/ archive.
+
+= 1.0.1: January 13, 2014 =
+
+* New: Preview audio files directly from the download grid.
+* New: Styling support for Mailbag subscription plugin.
+* Fix: [downloads] shortcode title formatting.
+* Fix: Don't use the old script font for the default logo.
+* Fix: Make sure the header search displays correctly in Firefox.
+* Fix: Make sure searching in the header searches for downloads on the homepage.
+* Fix: When using the "Light" footer style make sure the default link color is dark.
+* Fix: Make sure the "Love It" heart is displayed in the correct spot when you have not loved.
+* Fix: Make sure action buttons are not blurred in Chrome on Windows.
+* Fix: Avoid "jumping" when loading download archive sliders.
+* Fix: bbPress forum home search box alignment.
+
+= 1.0: January 8, 2014 =
+
+First release!

@@ -1,0 +1,12 @@
+<div ng-switch on="vm.view">
+    <div ng-switch-when="login">
+        <div ng-include="kpartial('login.html')"></div>
+    </div>
+    <div ng-switch-when="join">
+        <div ng-include="kpartial('join.html')"></div>
+    </div>
+    <div ng-switch-when="forgot_password">
+        <div ng-include="kpartial('forgot_password.html')"></div>
+    </div>
+</div>
+

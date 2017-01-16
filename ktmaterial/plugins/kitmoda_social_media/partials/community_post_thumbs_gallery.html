@@ -1,0 +1,28 @@
+<div class="gallery_container slick_attachment_gallery">
+    <div id="{{gallery.name}}" class="gallery">
+        
+        <div class="full">
+            <div class="slider">
+                <div ng-repeat="full_img in gallery.images" data-item="full_img.id">
+                    <img ng-src="{{full_img.src}}" />
+                </div>
+            </div>
+        </div>
+        
+        <span class="gallery_back_btn" ng-click="active=false">Back</span>
+        
+        <div class="nav">
+            <div class="nav_controls">
+                <button type="button" data-role="none" class="slick-prev" aria-label="previous"></button>
+                <button type="button" data-role="none" class="slick-next" aria-label="next"></button>
+            </div>
+            <div class="slider">
+                <div ng-repeat="thumb_img in gallery.thumbs" data-item="{{thumb_img.id}}">
+                    <div class="in"><img ng-src="{{thumb_img.src}}" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

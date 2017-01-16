@@ -1,0 +1,6 @@
+{
+    "name": "me/shopping-cart-app",
+    "require": {
+        "paypal/merchant-sdk-php":"v2.*"
+    }
+}

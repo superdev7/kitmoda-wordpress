@@ -1,0 +1,140 @@
+<div class="modal-header">
+    <div class="modal-title title"></div>
+    <a class="close" ng-click="$dismiss()"></a>
+</div>
+
+<div class="modal-body">
+    
+    
+    
+    <div class="heading">Join Kitmoda!</div>
+    <div class="heading_info">Help us shape an innovative new art community.</div>
+    
+    
+    <span class="error"></span>
+    
+    
+    <div ng-form="joinForm" novalidate ng-hide="vm.success">
+        <div class="fields">
+
+
+            <div class="field">
+                <label for="input_fname">First Name</label>
+                <div class="inputi"><input type="text" required data-k-validate-alpha-num-space name="fname" id="input_fname" ng-model="vm.jd.fname" /></div>
+                <div class="clr"></div>
+
+                <div class="errors">
+                    <div ng-messages="joinForm.fname.$error" role="alert" ng-if="joinForm.$submitted">
+                        <div class="error hbng" ng-message="required">First name is required.</div>
+                        <div class="error hbng" ng-message="alphaNumSpace">Please only use letters, numbers and spaces.</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="field">
+                <label for="input_lname">Last Name</label>
+                <div class="inputi"><input required data-k-validate-alpha-num-space type="text" name="lname" id="input_lname" ng-model="vm.jd.lname"></div>
+                <div class="clr"></div>
+
+                <div class="errors">
+                    <div ng-messages="joinForm.lname.$error" role="alert" ng-if="joinForm.$submitted">
+                        <div class="error hbng" ng-message="required">Last name is required.</div>
+                        <div class="error hbng" ng-message="alphaNumSpace">Please only use letters, numbers and spaces.</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="field">
+                <label for="input_display_name">Display Name</label>
+                <div class="inputi"><input required data-k-validate-between-length="{&quot;min&quot;:&quot;5&quot;,&quot;max&quot;:&quot;20&quot;}" data-k-validate-alpha-num-space type="text" name="display_name" id="input_display_name" ng-model="vm.jd.display_name" /></div>
+                <div class="clr"></div>
+                
+                
+                <div class="info">
+                    Spaces and numbers are accepted but no special characters.
+                </div>
+
+
+                <div class="errors">
+                    <div ng-messages="joinForm.display_name.$error" role="alert" ng-if="joinForm.$submitted">
+                        <div class="error hbng" ng-message="required">Display name is required.</div>
+                        <div class="error hbng" ng-message="alphaNumSpace">Please only use letters, numbers and spaces.</div>
+                        <div class="error hbng" ng-message="betweenLength">Display name must be between 5-20 characters long.</div>
+
+                        <div ng-if="errors.display_name">
+                            <div class="error hbng" ng-show="errors.display_name.displayNameAvailable">Display name is not available, Please pick another one.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="field">
+                <label for="input_email">Email</label>
+                <div class="inputi"><input required data-k-validate-email type="text" name="email" id="input_email" ng-model="vm.jd.email"></div>
+                <div class="clr"></div>
+
+
+                <div class="errors">
+                    <div ng-messages="joinForm.email.$error" role="alert" ng-if="joinForm.$submitted">
+                        <div class="error hbng" ng-message="required">Email is required.</div>
+                        <div class="error hbng" ng-message="email">Email is not valid.</div>
+                    </div>
+                    <div ng-if="errors.email">
+                        <div class="error hbng" ng-show="errors.email.emailAvailable">Email is already registered.</div>
+                        <div class="error hbng" ng-show="errors.email.emailDomainBlacklist">Please use a dedicated personal email address.</div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="field" ng-init="meter = {strength : '',  text:'', show : false}">
+                <label for="input_password">Password</label>
+                <div class="inputi"><input required data-k-password-strength="meter" minlength="5" type="password" name="password" id="input_password" ng-model="vm.jd.password"></div>
+                <div class="clr"></div>
+                
+                <div ng-show="meter.show" id="password-strength" ng-class="meter.strength">{{meter.text}}</div>
+
+                <div class="errors">
+                    <div ng-messages="joinForm.password.$error" role="alert" ng-if="joinForm.$submitted">
+                        <div class="error hbng" ng-message="required">Password is required.</div>
+                        <div class="error hbng" ng-message="minlength">Password must be at least 5 characters long.</div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="field field_recaptcha">
+                <label>&nbsp;</label>
+                <div class="g-recaptcha" data-sitekey="{{vm.recaptcha_site_key}}" data-theme="dark"></div>
+                <div class="clr"></div>
+                
+                
+                <div class="errors">
+                    <div ng-if="errors.recaptcha_response">
+                        <div class="error hbng" ng-show="errors.recaptcha_response.googleRecaptcha">{{errors.recaptcha_response.googleRecaptcha}}</div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <script src='https://www.google.com/recaptcha/api.js'></script>
+
+        </div>
+    
+    </div>
+    
+</div>
+
+
+<div class="modal-footer">
+    
+    <a ng-click="vm.processJoin(joinForm)" k-processing="vm.processing" class="btn btn_blue" k-form-btn btn-label="Join"></a>
+    
+    
+</div>

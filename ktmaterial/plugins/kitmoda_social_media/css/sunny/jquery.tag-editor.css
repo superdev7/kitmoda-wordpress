@@ -1,0 +1,16 @@
+/* surrounding tag container */
+.tag-editor {
+    list-style-type: none; padding: 0 5px 0 0; margin: 0; overflow: hidden; border: 1px solid #eee; cursor: text;
+    font: normal 14px sans-serif; color: #555; 
+	background: #25262b none repeat scroll 0 0 !important;
+	 	-webkit-box-shadow: inset -1px 4px 7px 3px rgba(14,15,20,0.38) !important;
+	-moz-box-shadow: inset -1px 4px 7px 3px rgba(14,15,20,0.38) !important;
+	box-shadow: inset -1px 4px 7px 3px rgba(14,15,20,0.38) !important;
+		  -webkit-border-radius: 8px !important;
+-moz-border-radius: 8px !important;
+border-radius: 8px !important;
+border-top: 1px solid #252525 !important;
+border-right: 1px solid #272727 !important;
+border-left: 1px solid #272727 !important;
+border-bottom: 1px solid #424242 !important;
+}

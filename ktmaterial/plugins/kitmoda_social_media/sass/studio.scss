@@ -1,0 +1,51 @@
+@import "compass/css3";
+
+.field label {
+    padding-left : 0 !important;
+}
+
+.window {
+    margin : 0 auto;
+    
+    .content {
+        overflow-y: hidden;
+    }
+}
+
+
+
+
+.ksm_profile_container {
+    
+    
+    background-color: #26242b;
+    @include filter-gradient(#26242b, #26242b, horizontal);
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(left,  #26242b 0%,#423e49 6%,#656170 29%,#666775 52%,#656170 74%,#423e49 93%,#26242b 100%));
+
+}
+
+
+
+.ksm_profile_user_sidebar {
+    .userinfo {
+        .empty_rating .counter {
+            display : none;
+        }
+    }
+}
+
+
+.window.top_selling {
+    width : 728px;
+}
+
+
+.post_stats {
+    .report .button {
+        background: url(../images/icons/report.png) no-repeat  left center;
+        width: 30px !important;
+        height: 26px;
+        cursor: pointer;
+    }
+}

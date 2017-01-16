@@ -1,0 +1,3905 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: FES 2.2\n"
+"POT-Creation-Date: 2015-02-12 12:34-0600\n"
+"PO-Revision-Date: 2015-02-12 12:34-0600\n"
+"Last-Translator: Chris Christoff <chriscct7@gmail.com>\n"
+"Language-Team: Chris Christoff <hello@chriscct7.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;__e;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../edd-fes.php:126 ../classes/admin/downloads/class-edit-download.php:100
+msgid "Frontend Submissions"
+msgstr ""
+
+#: ../edd-fes.php:241
+msgid ""
+"<strong>Notice:</strong> Easy Digital Downloads Frontend Submissions "
+"requires Easy Digital Downloads 2.1 or higher in order to function properly."
+msgstr ""
+
+#: ../edd-fes.php:251
+msgid ""
+"<strong>Notice:</strong> Easy Digital Downloads Frontend Submissions "
+"requires WordPress 3.8 or higher in order to function properly."
+msgstr ""
+
+#: ../classes/class-emails.php:241
+msgid "Submission Declined"
+msgstr ""
+
+#: ../classes/class-emails.php:254
+msgid "Submission Revoked"
+msgstr ""
+
+#: ../classes/class-setup.php:72 ../classes/class-setup.php:152
+msgid "Please fix the errors to proceed"
+msgstr ""
+
+#: ../classes/class-setup.php:74 ../classes/class-setup.php:154
+msgid "Choose an avatar"
+msgstr ""
+
+#: ../classes/class-setup.php:75 ../classes/class-setup.php:155
+msgid "Select as avatar"
+msgstr ""
+
+#: ../classes/class-setup.php:76 ../classes/class-setup.php:156
+msgid "Choose a file"
+msgstr ""
+
+#: ../classes/class-setup.php:77 ../classes/class-setup.php:157
+#: ../classes/frontend/class-forms.php:2486
+#: ../classes/frontend/class-forms.php:2565
+msgid "Insert file URL"
+msgstr ""
+
+#: ../classes/class-setup.php:78 ../classes/class-setup.php:158
+msgid "Choose a featured image"
+msgstr ""
+
+#: ../classes/class-setup.php:79 ../classes/class-setup.php:159
+msgid "Select as featured image"
+msgstr ""
+
+#: ../classes/class-setup.php:80 ../classes/class-setup.php:160
+msgid "You must have at least one option"
+msgstr ""
+
+#: ../classes/class-setup.php:81 ../classes/class-setup.php:161
+msgid "You may not add more than "
+msgstr ""
+
+#: ../classes/class-setup.php:82 ../classes/class-setup.php:162
+msgid " files!"
+msgstr ""
+
+#: ../classes/class-setup.php:199
+msgid ""
+"Notice: FES is installed. Consider including FES's debug information from "
+"FES -> System Info if this is an FES bug ticket."
+msgstr ""
+
+#: ../classes/class-setup.php:299 ../classes/class-setup.php:323
+msgid "EDD FES Forms"
+msgstr ""
+
+#: ../classes/class-setup.php:324
+msgid "FES Form"
+msgstr ""
+
+#: ../classes/class-setup.php:325
+msgid "FES Forms"
+msgstr ""
+
+#: ../classes/class-setup.php:326
+msgid "Add FES Form"
+msgstr ""
+
+#: ../classes/class-setup.php:327
+msgid "Add New Form"
+msgstr ""
+
+#: ../classes/class-setup.php:328 ../classes/admin/class-list-table.php:192
+#: ../classes/admin/class-list-table.php:592
+#: ../classes/admin/downloads/class-download-table.php:183
+#: ../classes/frontend/class-dashboard.php:288
+msgid "Edit"
+msgstr ""
+
+#: ../classes/class-setup.php:330
+msgid "New FES Form"
+msgstr ""
+
+#: ../classes/class-setup.php:331 ../classes/class-setup.php:332
+msgid "View FES Form"
+msgstr ""
+
+#: ../classes/class-setup.php:333
+msgid "Search FES Forms"
+msgstr ""
+
+#: ../classes/class-setup.php:334
+msgid "No FES Forms Found"
+msgstr ""
+
+#: ../classes/class-setup.php:335
+msgid "No FES Forms Found in Trash"
+msgstr ""
+
+#: ../classes/class-setup.php:336
+msgid "Parent FES Form"
+msgstr ""
+
+#: ../classes/class-vendors.php:42
+#, php-format
+msgid " Your store url is: %s"
+msgstr ""
+
+#: ../classes/class-vendors.php:225
+#: ../classes/admin/vendors/class-edit-vendor.php:41
+msgid "Products"
+msgstr ""
+
+#: ../classes/class-vendors.php:231
+msgid "products"
+msgstr ""
+
+#: ../classes/class-vendors.php:237
+msgid "Product"
+msgstr ""
+
+#: ../classes/class-vendors.php:243
+msgid "product"
+msgstr ""
+
+#: ../classes/class-vendors.php:253
+msgid "Vendors"
+msgstr ""
+
+#: ../classes/class-vendors.php:259
+msgid "vendors"
+msgstr ""
+
+#: ../classes/class-vendors.php:265 ../classes/admin/class-install.php:395
+#: ../classes/admin/downloads/class-edit-download.php:96
+msgid "Vendor"
+msgstr ""
+
+#: ../classes/class-vendors.php:271
+msgid "vendor"
+msgstr ""
+
+#: ../classes/admin/class-install.php:97
+#: ../classes/admin/class-install.php:224
+#: ../classes/admin/formbuilder/class-formbuilder.php:126
+#: ../classes/admin/formbuilder/class-formbuilder.php:392
+#: ../classes/redux/ReduxCore/inc/fields/password/field_password.php:63
+msgid "Username"
+msgstr ""
+
+#: ../classes/admin/class-install.php:110
+#: ../classes/admin/class-install.php:238
+#: ../classes/admin/class-list-table.php:844
+#: ../classes/admin/formbuilder/class-formbuilder.php:127
+#: ../classes/admin/formbuilder/class-formbuilder.php:424
+#: ../classes/redux/ReduxCore/inc/fields/password/field_password.php:62
+msgid "Password"
+msgstr ""
+
+#: ../classes/admin/class-install.php:125
+msgid "Login as a"
+msgstr ""
+
+#: ../classes/admin/class-install.php:130 ../templates/frontend-orders.php:10
+msgid "Customer"
+msgstr ""
+
+#: ../classes/admin/class-install.php:149
+msgid "Name of Store"
+msgstr ""
+
+#: ../classes/admin/class-install.php:152
+msgid "What would you like your store to be called?"
+msgstr ""
+
+#: ../classes/admin/class-install.php:162
+msgid "Email to use for Contact Form"
+msgstr ""
+
+#: ../classes/admin/class-install.php:165
+msgid ""
+"This email, if filled in, will be used for the vendor contact forms. If it "
+"is not filled in, the one from your user profile will be used."
+msgstr ""
+
+#: ../classes/admin/class-install.php:182
+#: ../classes/admin/class-install.php:273
+#: ../classes/admin/formbuilder/class-formbuilder.php:124
+#: ../classes/admin/formbuilder/class-formbuilder.php:396
+msgid "First Name"
+msgstr ""
+
+#: ../classes/admin/class-install.php:196
+#: ../classes/admin/class-install.php:287
+#: ../classes/admin/formbuilder/class-formbuilder.php:125
+#: ../classes/admin/formbuilder/class-formbuilder.php:400
+msgid "Last Name"
+msgstr ""
+
+#: ../classes/admin/class-install.php:210
+#: ../classes/admin/class-install.php:301
+#: ../classes/admin/formbuilder/class-formbuilder.php:106
+#: ../classes/admin/formbuilder/class-formbuilder.php:143
+#: ../classes/admin/formbuilder/class-formbuilder.php:189
+msgid "Email"
+msgstr ""
+
+#: ../classes/admin/class-install.php:254
+#: ../classes/admin/formbuilder/class-formbuilder.php:130
+#: ../classes/admin/formbuilder/class-formbuilder.php:408
+msgid "Display Name"
+msgstr ""
+
+#: ../classes/admin/class-install.php:315
+msgid "Subject"
+msgstr ""
+
+#: ../classes/admin/class-install.php:329
+msgid "Message"
+msgstr ""
+
+#: ../classes/admin/class-install.php:394
+msgid "Vendor Dashboard"
+msgstr ""
+
+#: ../classes/admin/class-install.php:396
+#: ../classes/admin/class-install.php:525 ../classes/admin/class-menu.php:664
+#: ../classes/admin/class-menu.php:834 ../classes/admin/class-settings.php:440
+msgid "Submission Form"
+msgstr ""
+
+#: ../classes/admin/class-install.php:397
+#: ../classes/admin/class-install.php:536 ../classes/admin/class-menu.php:701
+#: ../classes/admin/class-menu.php:861 ../classes/admin/class-settings.php:447
+#: ../classes/admin/vendors/class-edit-vendor.php:40
+msgid "Profile Form"
+msgstr ""
+
+#: ../classes/admin/class-install.php:398
+#: ../classes/admin/class-install.php:410 ../classes/admin/class-menu.php:627
+#: ../classes/admin/class-menu.php:807 ../classes/admin/class-settings.php:461
+msgid "Registration Form"
+msgstr ""
+
+#: ../classes/admin/class-install.php:399
+#: ../classes/admin/class-install.php:411 ../classes/admin/class-menu.php:590
+#: ../classes/admin/class-menu.php:780 ../classes/admin/class-settings.php:454
+msgid "Login Form"
+msgstr ""
+
+#: ../classes/admin/class-install.php:400
+#: ../classes/admin/class-install.php:412
+#: ../classes/admin/class-settings.php:468
+msgid "Vendor Contact Form"
+msgstr ""
+
+#: ../classes/admin/class-install.php:676
+#: ../classes/admin/vendors/class-edit-vendor.php:59
+msgid "Pending Vendor"
+msgstr ""
+
+#: ../classes/admin/class-install.php:682
+#: ../classes/admin/vendors/class-edit-vendor.php:61
+msgid "Suspended Vendor"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:190
+#: ../classes/admin/class-list-table.php:597
+msgid "Restore"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:195
+#: ../classes/admin/class-list-table.php:601
+msgid "Delete Permanently"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:197
+msgid "Move to Trash"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:213
+msgid "View all categories"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:223
+msgid "Filter"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:227
+msgid "Empty Trash"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:265
+#: ../classes/admin/class-list-table.php:829
+#: ../templates/frontend-dashboard.php:12
+msgid "Author"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:290
+#: ../classes/admin/class-list-table.php:805
+#: ../classes/admin/downloads/class-download-table.php:155
+#: ../classes/admin/formbuilder/class-formbuilder.php:100
+#: ../classes/admin/formbuilder/class-formbuilder.php:138
+#: ../classes/admin/formbuilder/class-formbuilder.php:185
+#: ../templates/frontend-orders.php:13 ../templates/frontend-products.php:14
+msgid "Date"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:522
+#, php-format
+msgid "Select %s"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:565
+#, php-format
+msgid "Edit &#8220;%s&#8221;"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:579
+#, php-format
+msgid "%s is currently editing"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:592
+msgid "Edit this item"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:593
+msgid "Edit this item inline"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:593
+msgid "Quick&nbsp;Edit"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:597
+msgid "Restore this item from the Trash"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:599
+msgid "Move this item to the Trash"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:599
+#: ../classes/admin/downloads/class-download-table.php:248
+#: ../classes/frontend/class-dashboard.php:405
+#: ../classes/frontend/class-dashboard.php:472
+#: ../classes/frontend/class-dashboard.php:488
+msgid "Trash"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:601
+msgid "Delete this item permanently"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:606
+#, php-format
+msgid "Preview &#8220;%s&#8221;"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:606
+msgid "Preview"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:608
+#, php-format
+msgid "View &#8220;%s&#8221;"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:608
+#: ../classes/admin/downloads/class-download-table.php:178
+#: ../classes/admin/downloads/class-edit-download.php:120
+#: ../classes/admin/vendors/class-vendor-table.php:45
+#: ../classes/admin/vendors/class-vendor-table.php:62
+#: ../classes/admin/vendors/class-vendor-table.php:79
+#: ../classes/frontend/class-dashboard.php:284
+#: ../classes/frontend/class-dashboard.php:513
+msgid "View"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:621
+#: ../classes/frontend/class-dashboard.php:300
+msgid "Unpublished"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:624
+#: ../classes/frontend/class-dashboard.php:303
+#: ../classes/frontend/class-dashboard.php:528
+msgid "Y/m/d g:i:s A"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:631
+#: ../classes/frontend/class-dashboard.php:310
+#: ../classes/frontend/class-dashboard.php:535
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:633
+#: ../classes/frontend/class-dashboard.php:312
+#: ../classes/frontend/class-dashboard.php:537
+msgid "Y/m/d"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:643
+#: ../classes/admin/class-list-table.php:1008
+#: ../classes/frontend/class-dashboard.php:318
+msgid "Published"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:646
+msgid "Missed schedule"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:648
+#: ../classes/admin/class-list-table.php:1009
+#: ../classes/admin/downloads/class-download-table.php:246
+#: ../classes/frontend/class-dashboard.php:320
+#: ../classes/frontend/class-dashboard.php:402
+msgid "Scheduled"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:650
+#: ../classes/frontend/class-dashboard.php:322
+msgid "Last Modified"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: ../classes/admin/class-list-table.php:710
+msgid ", "
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:780
+msgid "Bulk Edit"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:780
+msgid "Quick Edit"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:792
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:674
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:734
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:767
+#: ../classes/admin/formbuilder/class-formbuilder.php:90
+#: ../classes/admin/formbuilder/class-formbuilder.php:288
+#: ../classes/admin/vendors/class-edit-vendor.php:119
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:145
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:200
+msgid "Title"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:797
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1094
+msgid "Slug"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:825
+#: ../classes/admin/class-list-table.php:905
+#: ../classes/admin/class-list-table.php:930
+#: ../classes/admin/class-list-table.php:964
+#: ../classes/admin/class-list-table.php:973
+#: ../classes/admin/class-list-table.php:1005
+#: ../classes/admin/class-list-table.php:1026
+#: ../classes/admin/class-list-table.php:1054
+msgid "&mdash; No Change &mdash;"
+msgstr ""
+
+#. translators: Between password field and private checkbox on post quick edit interface
+#: ../classes/admin/class-list-table.php:851
+msgid "&ndash;OR&ndash;"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:856
+#: ../classes/admin/class-list-table.php:1011
+msgid "Private"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:893
+msgid "Parent"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:899
+msgid "Main Page (no parent)"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:917
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1101
+#: ../templates/frontend-orders.php:7
+msgid "Order"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:927
+msgid "Template"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:932
+msgid "Default Template"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:962
+msgid "Comments"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:965
+#: ../classes/admin/class-list-table.php:974
+msgid "Allow"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:966
+#: ../classes/admin/class-list-table.php:975
+msgid "Do not allow"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:971
+msgid "Pings"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:987
+msgid "Allow Comments"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:992
+msgid "Allow Pings"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:1002
+#: ../classes/admin/downloads/class-download-table.php:146
+#: ../classes/admin/vendors/class-edit-vendor.php:120
+#: ../classes/admin/vendors/class-vendor-table.php:168
+#: ../templates/frontend-orders.php:8 ../templates/frontend-products.php:10
+msgid "Status"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:1014
+#: ../classes/admin/downloads/class-download-table.php:244
+#: ../classes/frontend/class-dashboard.php:399
+#: ../classes/frontend/class-dashboard.php:466
+msgid "Pending Review"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:1015
+#: ../classes/admin/downloads/class-download-table.php:242
+#: ../classes/frontend/class-dashboard.php:396
+#: ../classes/frontend/class-dashboard.php:463
+#: ../classes/frontend/class-dashboard.php:482
+msgid "Draft"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:1024
+#: ../classes/admin/class-list-table.php:1027
+msgid "Sticky"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:1028
+msgid "Not Sticky"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:1036
+msgid "Make this post sticky"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:1083
+msgid "Cancel"
+msgstr ""
+
+#: ../classes/admin/class-list-table.php:1087
+#: ../classes/admin/class-list-table.php:1090
+#: ../classes/frontend/class-forms.php:3310
+msgid "Update"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:28
+msgid "Vendor profile"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:39 ../classes/admin/class-menu.php:40
+msgid "EDD FES"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:45
+msgid "About"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:117 ../classes/admin/class-update.php:37
+#, php-format
+msgid ""
+"Vendor Permissions need to be updated, click <a href=\"%s\">here</a> to "
+"start the upgrade."
+msgstr ""
+
+#: ../classes/admin/class-menu.php:124
+#, php-format
+msgid "Welcome to EDD FES %s!"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:125
+#, php-format
+msgid ""
+"Thank you for updating to the latest version! <br />Easy Digital Downloads "
+"Frontend Submissions %s  <br /> is ready to make your online store faster, "
+"safer and better!"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:128
+msgid "Release Summary:"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:130
+msgid ""
+"EDD FES version 2.2 is the culmination of a 3 month rewrite of approximately "
+"80,000 lines of code. From a new settings panel to new forms and email "
+"classes\n"
+"\t\t\t\tFES is now more developer, user and admin friendly than ever before. "
+"Gone is the 2 step registration/application system, and in its place, a new "
+"single form 1 step\n"
+"\t\t\t\tprocess. With new integrations with Simple Shipping and Audio "
+"Player, FES is more powerful than ever. Finally, with a smarter way to "
+"manage vendors, by\n"
+"\t\t\t\tusing the new vendors table, a new import/export system, and a "
+"better formbuilder, FES is easier for store owners to administrate than ever "
+"before."
+msgstr ""
+
+#: ../classes/admin/class-menu.php:134
+msgid "From the control deck at EDD Headquarters,"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:135
+msgid "-Chris"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:137
+msgid "What's New:"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:143
+msgid "New FES Forms Class"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:146
+msgid "Introduces the much requested vendor contact form"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:147
+msgid "Converted to using the WordPress Media Uploader for all uploaders"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:148
+msgid "Introduced a new featured image/avatar uploader"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:149
+msgid "Over 300 new filters and actions to make it more developer friendly"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:150
+msgid "Redesigned form editor makes creating forms even easier than before"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:151
+msgid "Added validation for the multiple price field"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:152
+msgid "Allows vendors to change the name of their store"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:153
+msgid ""
+"Allows vendors to change the email the vendor contact form sends emails for "
+"them to"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:154
+msgid ""
+"Added a simple UI to let store owners set prices and the names of price "
+"options on the multiple pricing field"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:155
+msgid ""
+"Added more ways to customize the multiple pricing field to meet your exact "
+"store needs"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:160
+msgid "New FES Emails Class"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:163
+msgid "Allows for a consistent email experience with FES"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:164
+msgid ""
+"Added the ability to use fields from the profile, registration and "
+"submission forms in emails"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:165
+msgid "Added the ability for people to create their own email tags"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:171
+msgid "New Admin Features"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:174
+msgid "New settings panel with the ablity to import/export settings"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:175
+msgid ""
+"New vendor management list table to let store owners easily manage vendors"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:176
+msgid ""
+"Added the ability for store owners to instantly see the data entered into "
+"the profile and registration forms of vendors"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:177
+msgid "Added the ability to import and export FES Forms"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:178
+msgid "Added the ability to revoke (trash) previously approved submissions"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:179
+msgid "Added the ability to suspend/unsuspend vendors"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:180
+msgid ""
+"Added a new System Info allowing quick access to essential inform for suport "
+"purposes"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:185
+msgid "New Frontend Features"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:188
+msgid ""
+"Merged the vendor application and registration forms into a single 1 step "
+"form submission process, making it easier for vendors to sign up"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:189
+msgid ""
+"Added the ability to show a CAPTCHA field on the vendor contact and login "
+"forms"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:190
+msgid ""
+"Added the ability to let customers sign into the vendor dashboard's login "
+"form and be brought to the My Account page "
+msgstr ""
+
+#: ../classes/admin/class-menu.php:191
+msgid ""
+"Added new shortcodes to let you show information from the submission form on "
+"the frontend of products"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:192
+msgid "Changed the vendor store URLs to use pretty permalinks"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:193
+msgid ""
+"Created the ability for vendors to be able to see orders involving their "
+"products"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:194
+msgid ""
+"Integrated with Simple Shipping to allow vendors to mark orders as "
+"\"completed\""
+msgstr ""
+
+#: ../classes/admin/class-menu.php:195
+msgid "Added a \"forgot password\" link to the login form"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:196
+msgid ""
+"Integrated with EDD Audio Player to let vendors offer previews of their music"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:228
+#, php-format
+msgid "FES %s"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:262
+msgid "EDD Frontend Submissions Debugging Information"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:264
+msgid ""
+"To copy the system info, click below then press Ctrl + C (PC) or Cmd + C "
+"(Mac)."
+msgstr ""
+
+#: ../classes/admin/class-menu.php:336
+msgid "Import/Export/Reset FES Forms"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:339
+msgid "Successfully imported the "
+msgstr ""
+
+#: ../classes/admin/class-menu.php:339 ../classes/admin/class-menu.php:342
+msgid " form!"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:342
+msgid "Successfully reset the "
+msgstr ""
+
+#: ../classes/admin/class-menu.php:347
+msgid "Successfully removed "
+msgstr ""
+
+#: ../classes/admin/class-menu.php:347
+msgid " extra form(s)!"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:350 ../classes/admin/class-menu.php:354
+msgid "No extra forms to remove!"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:360
+msgid "Submission Form Settings"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:362
+msgid "Import the submission form settings from a .json file."
+msgstr ""
+
+#: ../classes/admin/class-menu.php:370 ../classes/admin/class-menu.php:405
+#: ../classes/admin/class-menu.php:440 ../classes/admin/class-menu.php:475
+#: ../classes/admin/class-menu.php:510
+#: ../classes/redux/ReduxCore/inc/import_export.php:94
+msgid "Import"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:373
+msgid "Export the submission form settings for this site as a .json file"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:378 ../classes/admin/class-menu.php:413
+#: ../classes/admin/class-menu.php:448 ../classes/admin/class-menu.php:483
+#: ../classes/admin/class-menu.php:518
+msgid "Export"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:381
+msgid ""
+"Reset the submission form settings. This action restores the form settings "
+"back to their new install defaults"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:386 ../classes/admin/class-menu.php:421
+#: ../classes/admin/class-menu.php:456 ../classes/admin/class-menu.php:491
+#: ../classes/admin/class-menu.php:526
+msgid "Reset"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:395
+msgid "Profile Form Settings"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:397
+msgid "Import the profile form settings from a .json file."
+msgstr ""
+
+#: ../classes/admin/class-menu.php:408
+msgid "Export the profile form settings for this site as a .json file"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:416
+msgid ""
+"Reset the profile form settings. This action restores the form settings back "
+"to their new install defaults"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:430
+msgid "Contact Form Settings"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:432
+msgid "Import the contact form settings from a .json file."
+msgstr ""
+
+#: ../classes/admin/class-menu.php:443
+msgid "Export the contact form settings for this site as a .json file"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:451
+msgid ""
+"Reset the contact form settings. This action restores the form settings back "
+"to their new install defaults"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:465
+msgid "Registration Form Settings"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:467
+msgid "Import the registration form settings from a .json file."
+msgstr ""
+
+#: ../classes/admin/class-menu.php:478
+msgid "Export the registration form settings for this site as a .json file"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:486
+msgid ""
+"Reset the registration form settings. This action restores the form settings "
+"back to their new install defaults"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:500
+msgid "Login Form Settings"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:502
+msgid "Import the login form settings from a .json file."
+msgstr ""
+
+#: ../classes/admin/class-menu.php:513
+msgid "Export the login form settings for this site as a .json file"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:521
+msgid ""
+"Reset the login form settings. This action restores the form settings back "
+"to their new install defaults"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:535
+msgid "FES Tools"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:537
+msgid ""
+"Delete extraneous forms: This action deletes all FES Forms which are not "
+"assigned to a form in the FES Settings Panel"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:542
+msgid "Delete Unassigned Forms"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:572 ../classes/admin/class-menu.php:609
+#: ../classes/admin/class-menu.php:646 ../classes/admin/class-menu.php:683
+#: ../classes/admin/class-menu.php:720
+msgid "Please upload a valid .json file"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:578 ../classes/admin/class-menu.php:615
+#: ../classes/admin/class-menu.php:652 ../classes/admin/class-menu.php:689
+#: ../classes/admin/class-menu.php:726
+msgid "Please upload a file to import"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:738 ../classes/admin/class-menu.php:888
+#: ../classes/frontend/class-forms.php:127
+msgid "Contact Form"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:1108
+msgid "Application Approved"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:1143
+msgid "Application Revoked"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:1164
+msgid "Application Declined"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:1199
+#: ../classes/admin/vendors/class-vendor-table.php:115
+#: ../classes/admin/vendors/class-vendor-table.php:183
+msgid "Suspended"
+msgstr ""
+
+#: ../classes/admin/class-menu.php:1236
+msgid "Unsuspended"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:41
+msgid "Main Settings"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:42
+msgid ""
+"Easy Digital Downloads Frontend Submissions is a constantly improving piece "
+"of complex software. For the latest information, update information, and "
+"submitting feature requests, visit: <a href=\"https://easydigitaldownloads."
+"com/support/forum/add-on-plugins/frontend-submissions//\">https://"
+"easydigitaldownloads.com/support/forum/add-on-plugins/frontend-submissions//"
+"</a>"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:48
+msgid "Use FES's CSS"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:61
+msgid "Vendor Announcement"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:62
+msgid ""
+"Use this to announce things to your vendors. Appears on the Vendor Dashboard "
+"Page once logged in."
+msgstr ""
+
+#: ../classes/admin/class-settings.php:64
+msgid ""
+"This is the vendor dashboard. Add welcome text or any other information that "
+"is applicable to your vendors."
+msgstr ""
+
+#: ../classes/admin/class-settings.php:69
+msgid "Rename FES Constants"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:70
+msgid ""
+"We ask for all posible combinations of singular/plural and upper/lower case "
+"forms since in some languages, different words are used depending on these "
+"combinations."
+msgstr ""
+
+#: ../classes/admin/class-settings.php:71
+msgid "Note this is CASE SENSITIVE"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:80
+msgid "Pages"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:81
+msgid "<p class=\"description\">Settings for Pages</p>"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:87
+msgid "Vendor Dashboard Page"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:93
+msgid "Vendor Page"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:100
+msgid "Permissions"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:101
+msgid "<p class=\"description\">Settings for FES Permissions</p>"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:106
+msgid "Registration"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:107
+msgid "Allow guests to apply to become a vendor"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:113
+msgid "Applications"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:114
+msgid "Allow existing WordPress users to apply to become a vendor"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:120
+msgid "Allow WP Backend Access to Vendors?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:121
+msgid ""
+"Does not remove the admin bar. Simply prevents vendors from accessing the "
+"backend."
+msgstr ""
+
+#: ../classes/admin/class-settings.php:127
+msgid "Allow Vendors to See the Admin Bar?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:128
+msgid ""
+"This only removes the bar for users with the frontend_vendor cap but not the "
+"fes_is_admin cap"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:134
+msgid "Automatically Approve Vendors?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:135
+msgid ""
+"If off, vendors will not be able to submit products until you manually "
+"approve them"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:141
+msgid "Automatically Approve Submissions?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:142
+msgid ""
+"If off, vendor products will be saved as a pending download until you "
+"manually approve them"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:148
+msgid "Automatically Approve Vendor Edits?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:149
+msgid ""
+"If off, vendor products will be changed to pending status (removed from "
+"store) until manually approved"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:162
+msgid "Allow Vendors to Edit Products?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:163
+msgid "If on, vendors will be able to edit their products"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:169
+msgid "Allow Vendors to Delete Products?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:170
+msgid "If on, vendors will be able to delete their products"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:176
+msgid "Allow Vendors to Create Products?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:177
+msgid "If on, vendors will be able to create products"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:190
+msgid "Allow Vendors to View Orders?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:191
+msgid "If on, vendors will be able to view orders"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:198
+msgid "Emails"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:199
+msgid "<p class=\"description\">Settings for FES Emails</p>"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:203
+msgid "Admin Email Settings"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:210
+msgid "Send Admin Email on New Application"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:217
+msgid "Admin New Vendor Application Email"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:218
+#: ../classes/admin/class-settings.php:233
+#: ../classes/admin/class-settings.php:248
+#: ../classes/admin/class-settings.php:270
+#: ../classes/admin/class-settings.php:286
+#: ../classes/admin/class-settings.php:302
+#: ../classes/admin/class-settings.php:318
+#: ../classes/admin/class-settings.php:333
+#: ../classes/admin/class-settings.php:348
+#: ../classes/admin/class-settings.php:363
+#: ../classes/admin/class-settings.php:378
+#: ../classes/admin/class-settings.php:393
+#: ../classes/admin/class-settings.php:408
+#: ../classes/admin/class-settings.php:423
+msgid "For a list of shortcodes you can use, see "
+msgstr ""
+
+#: ../classes/admin/class-settings.php:218
+#: ../classes/admin/class-settings.php:233
+#: ../classes/admin/class-settings.php:248
+#: ../classes/admin/class-settings.php:270
+#: ../classes/admin/class-settings.php:286
+#: ../classes/admin/class-settings.php:302
+#: ../classes/admin/class-settings.php:318
+#: ../classes/admin/class-settings.php:333
+#: ../classes/admin/class-settings.php:348
+#: ../classes/admin/class-settings.php:363
+#: ../classes/admin/class-settings.php:378
+#: ../classes/admin/class-settings.php:393
+#: ../classes/admin/class-settings.php:408
+#: ../classes/admin/class-settings.php:423
+msgid "the KB"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:226
+msgid "Send Admin Email on New Submission?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:232
+msgid "Admin New Submission Email"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:241
+msgid "Send Admin Email on New Edit?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:247
+msgid "Admin Submission Edit Email"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:255
+msgid "Vendor Email Settings"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:262
+msgid "Send Vendors Confirmation Email On Applying"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:269
+msgid "Vendor Application Confirmation Email"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:278
+msgid "Send Vendor Email on Approved Application"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:285
+msgid "Vendor Application Approved Email"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:294
+msgid "Send Vendor Email on Declined Application"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:301
+msgid "Vendor Application Declined Email"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:310
+msgid "Send Vendor Email Upon Being Auto-Approved?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:317
+msgid "Email to Auto-Approved Vendor"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:326
+msgid "Send Vendor Email on Revoked Application"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:332
+msgid "Vendor Application Revoked Email"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:341
+msgid "Send Vendor Email on Suspension"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:347
+msgid "Vendor Suspended Email"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:356
+msgid "Send Vendor Email on Unsuspension"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:362
+msgid "Vendor Unsuspended Email"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:371
+msgid "Vendor Email Upon Creating Submission?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:377
+msgid "Vendor Email Upon Creating Submission Email"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:386
+msgid "Vendor Email Upon Submission Being Approved?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:392
+msgid "Vendor Submission Approved Email"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:401
+msgid "Vendor Email Upon Submission Being Declined?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:407
+msgid "Vendor Submission Declined Email"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:416
+msgid "Vendor Email Upon Submission Being Revoked?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:422
+msgid "Vendor Submission Revoked Email"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:432
+msgid "Forms"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:433
+msgid "<p class=\"description\">Settings for FES Forms</p>"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:473
+msgid "Allow Customers To Login On the Vendor Dashboard?"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:474
+msgid ""
+"If on, creates a radio toggle on the login form on the vendor dashboard. If "
+"a customer logs in, he is redirected to the page set as the Purchase History "
+"Page on the EDD settings panel"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:480
+msgid "CAPTCHA on the login form"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:481
+msgid ""
+"If on, creates a captcha field on the login form on the vendor dashboard"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:487
+msgid "CAPTCHA on the vendor contact form"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:488
+msgid "If on, creates a captcha field on the vendor contact form"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:494
+msgid "Enable Multiple Purchase Mode for all vendor products"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:495
+msgid ""
+"If on, allows customers to purchase multiple variations of a vendor product "
+"at a time"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:503
+msgid "Integrations"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:504
+msgid "<p class=\"description\">Settings for FES Integrations</p>"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:509
+msgid "reCAPTCHA Public Key"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:514
+msgid "reCAPTCHA Private Key"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:533
+msgid "Easy Digital Downloads"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:537
+msgid "Settings"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:538
+msgid "FES Settings"
+msgstr ""
+
+#: ../classes/admin/class-settings.php:557
+#: ../classes/admin/class-settings.php:602
+msgid "Thanks for using EDD FES"
+msgstr ""
+
+#: ../classes/admin/class-update.php:3
+msgid "FES Upgrades"
+msgstr ""
+
+#: ../classes/admin/class-update.php:14
+msgid "Frontend Submissions - Upgrades"
+msgstr ""
+
+#: ../classes/admin/class-update.php:16
+msgid ""
+"The upgrade process is running, please be patient. This could take several "
+"minutes to complete."
+msgstr ""
+
+#: ../classes/admin/class-update.php:17
+#, php-format
+msgid "Step %d of approximately %d running"
+msgstr ""
+
+#: ../classes/admin/downloads/class-download-table.php:52
+#: ../classes/admin/downloads/class-download-table.php:55
+msgid "Approve Downloads"
+msgstr ""
+
+#: ../classes/admin/downloads/class-download-table.php:86
+#: ../classes/admin/downloads/class-download-table.php:115
+msgid "Submission Accepted"
+msgstr ""
+
+#: ../classes/admin/downloads/class-download-table.php:136
+#: ../classes/admin/downloads/class-download-table.php:138
+#, php-format
+msgid "%s approved"
+msgstr ""
+
+#: ../classes/admin/downloads/class-download-table.php:148
+#: ../classes/admin/vendors/class-vendor-table.php:167
+#: ../classes/frontend/class-forms.php:2943
+#: ../templates/frontend-products.php:13
+msgid "Actions"
+msgstr ""
+
+#: ../classes/admin/downloads/class-download-table.php:152
+#: ../templates/frontend-products.php:11
+msgid "Price"
+msgstr ""
+
+#: ../classes/admin/downloads/class-download-table.php:153
+#: ../classes/admin/vendors/class-edit-vendor.php:121
+#: ../classes/admin/vendors/class-vendor-table.php:170
+msgid "Sales"
+msgstr ""
+
+#: ../classes/admin/downloads/class-download-table.php:154
+#: ../classes/frontend/class-dashboard.php:204
+msgid "Earnings"
+msgstr ""
+
+#: ../classes/admin/downloads/class-download-table.php:189
+#: ../classes/frontend/class-dashboard.php:292
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:167
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:220
+#: ../templates/frontend-delete-product.php:12
+msgid "Delete"
+msgstr ""
+
+#: ../classes/admin/downloads/class-download-table.php:196
+#: ../classes/admin/vendors/class-edit-vendor.php:83
+#: ../classes/admin/vendors/class-edit-vendor.php:92
+#: ../classes/admin/vendors/class-vendor-table.php:50
+#: ../classes/admin/vendors/class-vendor-table.php:84
+msgid "Revoke"
+msgstr ""
+
+#: ../classes/admin/downloads/class-download-table.php:204
+#: ../classes/admin/vendors/class-edit-vendor.php:87
+#: ../classes/admin/vendors/class-vendor-table.php:67
+msgid "Approve"
+msgstr ""
+
+#: ../classes/admin/downloads/class-download-table.php:240
+#: ../classes/frontend/class-dashboard.php:393
+#: ../classes/frontend/class-dashboard.php:460
+msgid "Live"
+msgstr ""
+
+#: ../classes/admin/downloads/class-edit-download.php:108
+msgid "Submission form not set in FES settings"
+msgstr ""
+
+#: ../classes/admin/downloads/class-edit-download.php:120
+msgid "edit page"
+msgstr ""
+
+#: ../classes/admin/downloads/class-edit-download.php:124
+msgid "No custom fields found."
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:20
+msgid "Click and Drag to rearrange"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:24
+#: ../classes/redux/ReduxCore/inc/fields/background/field_background.php:321
+#: ../classes/redux/ReduxCore/inc/fields/media/field_media.php:205
+#: ../classes/redux/ReduxCore/inc/fields/multi_text/field_multi_text.php:69
+#: ../classes/redux/ReduxCore/inc/fields/multi_text/field_multi_text.php:73
+#: ../classes/redux/ReduxCore/inc/fields/multi_text/field_multi_text.php:76
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:133
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:190
+msgid "Remove"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:26
+msgid "Toggle"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:73
+msgid "Required"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:75
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:491
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:501
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:511
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:521
+msgid "Yes"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:77
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:492
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:502
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:512
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:522
+msgid "No"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:83
+msgid "Field Label"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:84
+msgid "Enter a title of this field"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:89
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:703
+msgid "Meta Key"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:90
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:704
+msgid "Name of the meta key this field will save to"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:101
+msgid "Help text"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:102
+msgid "Give the user some information about this field"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:106
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:744
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:882
+msgid "CSS Class Name"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:107
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:745
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:883
+msgid "Add a CSS class name for this field"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:133
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:182
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:613
+msgid "Placeholder text"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:139
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:187
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:618
+msgid "Default value"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:144
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:623
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:427
+msgid "Size"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:172
+msgid "Rows"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:177
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:628
+msgid "Columns"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:192
+#: ../classes/admin/formbuilder/class-formbuilder.php:98
+#: ../classes/admin/formbuilder/class-formbuilder.php:135
+#: ../classes/admin/formbuilder/class-formbuilder.php:182
+msgid "Textarea"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:195
+msgid "Normal"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:196
+msgid "Rich textarea"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:197
+msgid "Teeny Rich textarea"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:348
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:370
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:400
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:430
+#: ../classes/redux/ReduxCore/framework.php:227
+#: ../classes/redux/ReduxCore/framework.php:231
+msgid "Options"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:384
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:414
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:447
+msgid ""
+"First element of the select dropdown. Leave this empty if you don't want to "
+"show this field"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:395
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:425
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:458
+msgid "Select Text"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:445
+msgid "Vendor Country"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:463
+msgid "Countries"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:487
+msgid "Single Price/Upload"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:497
+#, php-format
+msgid "Allow %s to Set Names of Options"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:507
+#, php-format
+msgid "Allow %s to Set Prices of Options"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:517
+#, php-format
+msgid "Allow %s to Upload Files"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:531
+msgid "Number of files which can be uploaded"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:542
+msgid "Max. files"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:605
+msgid "Multiple Column"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:679
+msgid "HTML Codes"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:710
+msgid "Meta Value"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:739
+#: ../classes/admin/formbuilder/class-formbuilder.php:91
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:149
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:204
+msgid "Description"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:773
+msgid ""
+"Insert your public key and private key in plugin settings. <a href='https://"
+"www.google.com/recaptcha/' target='_blank'>Register</a> first if you don't "
+"have any keys."
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:794
+msgid "Hook Name"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:797
+msgid "Name of the hook"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:800
+msgid ""
+"This is for developers to add dynamic elements as they want. It provides the "
+"chance to add whatever input type you want to add in this form."
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:801
+msgid ""
+"You can bind your own functions to render the form to this action hook. "
+"You'll be given 3 parameters to play with: $form_id, $post_id, "
+"$form_settings."
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:823
+msgid "The date format"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:834
+msgid "Date Format"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:839
+msgid "Time"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:845
+msgid "Enable time input"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:872
+msgid "Label"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:877
+msgid "Terms & Conditions"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:878
+msgid "Insert terms and condtions here."
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:934
+msgid "Enable Image Insertion"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:940
+msgid "Enable image upload in post area"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:985
+msgid "Set Options"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:992
+msgid "Predefined Names/Prices"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1014
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1023
+#: ../classes/admin/vendors/class-edit-vendor.php:52
+msgid "Name: "
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1015
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1024
+msgid "Price: "
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1080
+msgid "Type"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1082
+#: ../classes/admin/formbuilder/class-formbuilder.php:99
+#: ../classes/admin/formbuilder/class-formbuilder.php:136
+#: ../classes/admin/formbuilder/class-formbuilder.php:183
+msgid "Dropdown"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1083
+#: ../classes/admin/formbuilder/class-formbuilder.php:101
+#: ../classes/admin/formbuilder/class-formbuilder.php:137
+#: ../classes/admin/formbuilder/class-formbuilder.php:184
+msgid "Multi Select"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1084
+#: ../classes/admin/formbuilder/class-formbuilder.php:103
+#: ../classes/admin/formbuilder/class-formbuilder.php:140
+#: ../classes/admin/formbuilder/class-formbuilder.php:187
+msgid "Checkbox"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1085
+msgid "Text Input"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1090
+msgid "Order By"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1092
+#: ../classes/admin/vendors/class-vendor-table.php:166
+#: ../templates/frontend-products.php:9
+msgid "Name"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1093
+msgid "Term ID"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1095
+msgid "Count"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1096
+msgid "Term Group"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1103
+msgid "ASC"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1104
+msgid "DESC"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1109
+msgid "Selection Type"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1111
+msgid "Exclude"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1112
+msgid "Include"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1113
+msgid "Child of"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1118
+msgid "Selection terms"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1119
+msgid ""
+"Enter the term IDs as comma separated (without space) to exclude/include in "
+"the form."
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1355
+msgid "Confirm Password"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1368
+msgid "Minimum password length"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1374
+msgid "Password Re-type"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1380
+msgid "Require Password repeat"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder-templates.php:1386
+msgid "Re-type password label"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:14
+#: ../classes/admin/formbuilder/class-formbuilder.php:17
+msgid "Form updated."
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:15
+msgid "Custom field updated."
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:16
+msgid "Custom field deleted."
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:18
+#, php-format
+msgid "Form restored to revision from %s"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:19
+msgid "Form published."
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:20
+msgid "Form saved."
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:21
+msgid "Form submitted."
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:23
+msgid "Form draft updated."
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:32
+msgid "Submission Form Editor"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:33
+#: ../classes/admin/formbuilder/class-formbuilder.php:38
+#: ../classes/admin/formbuilder/class-formbuilder.php:43
+msgid "Save"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:34
+#: ../classes/admin/formbuilder/class-formbuilder.php:39
+#: ../classes/admin/formbuilder/class-formbuilder.php:44
+msgid "Add a Field"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:37
+msgid "Profile Form Editor"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:42
+msgid "Registration Form Editor"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:69
+msgid "FES Submission Form Editor"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:71
+msgid "FES Profile Form Editor"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:73
+msgid "FES Registration Form Editor"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:87
+#: ../classes/admin/formbuilder/class-formbuilder.php:121
+#: ../classes/admin/formbuilder/class-formbuilder.php:173
+msgid "Click to add to the editor"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:92
+#: ../classes/admin/formbuilder/class-formbuilder.php:300
+msgid "Featured Image"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:93
+msgid "Categories"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:94
+msgid "Tags"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:95
+#: ../classes/admin/formbuilder/class-formbuilder.php:312
+msgid "Prices and Files"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:96
+#: ../classes/admin/formbuilder/class-formbuilder.php:296
+msgid "Excerpt"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:97
+#: ../classes/admin/formbuilder/class-formbuilder.php:134
+#: ../classes/admin/formbuilder/class-formbuilder.php:181
+msgid "Text"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:102
+#: ../classes/admin/formbuilder/class-formbuilder.php:139
+#: ../classes/admin/formbuilder/class-formbuilder.php:186
+msgid "Radio"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:104
+#: ../classes/admin/formbuilder/class-formbuilder.php:142
+msgid "File Upload"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:105
+#: ../classes/admin/formbuilder/class-formbuilder.php:133
+#: ../classes/admin/formbuilder/class-formbuilder.php:180
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:153
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:207
+msgid "URL"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:107
+#: ../classes/admin/formbuilder/class-formbuilder.php:141
+#: ../classes/admin/formbuilder/class-formbuilder.php:188
+msgid "Repeat Field"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:108
+#: ../classes/admin/formbuilder/class-formbuilder.php:144
+#: ../classes/admin/formbuilder/class-formbuilder.php:190
+#: ../classes/admin/formbuilder/class-formbuilder.php:380
+msgid "Hidden Field"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:109
+#: ../classes/admin/formbuilder/class-formbuilder.php:145
+#: ../classes/admin/formbuilder/class-formbuilder.php:191
+msgid "Captcha"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:110
+#: ../classes/admin/formbuilder/class-formbuilder.php:147
+#: ../classes/admin/formbuilder/class-formbuilder.php:193
+#: ../classes/admin/formbuilder/class-formbuilder.php:360
+msgid "Section Break"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:111
+#: ../classes/admin/formbuilder/class-formbuilder.php:148
+#: ../classes/admin/formbuilder/class-formbuilder.php:194
+#: ../classes/admin/formbuilder/class-formbuilder.php:356
+msgid "HTML"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:112
+#: ../classes/admin/formbuilder/class-formbuilder.php:149
+#: ../classes/admin/formbuilder/class-formbuilder.php:195
+msgid "Do Action"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:113
+#: ../classes/admin/formbuilder/class-formbuilder.php:146
+#: ../classes/admin/formbuilder/class-formbuilder.php:192
+#: ../classes/admin/formbuilder/class-formbuilder.php:200
+#: ../classes/admin/formbuilder/class-formbuilder.php:203
+msgid "Accept Terms"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:128
+msgid "User E-mail"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:129
+#: ../classes/admin/formbuilder/class-formbuilder.php:177
+#: ../classes/admin/formbuilder/class-formbuilder.php:404
+msgid "Nickname"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:131
+#: ../classes/admin/formbuilder/class-formbuilder.php:178
+msgid "Biography"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:132
+#: ../classes/admin/formbuilder/class-formbuilder.php:179
+#: ../classes/admin/formbuilder/class-formbuilder.php:416
+msgid "Website"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:150
+#: ../classes/admin/formbuilder/class-formbuilder.php:368
+msgid "Avatar"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:151
+#: ../classes/admin/formbuilder/class-formbuilder.php:196
+#: ../classes/admin/formbuilder/class-formbuilder.php:384
+msgid "Country"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:154
+#: ../classes/admin/formbuilder/class-formbuilder.php:199
+#: ../classes/admin/formbuilder/class-formbuilder.php:428
+msgid "PayPal Email"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:230
+msgid "Your submission form has no fields"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:232
+msgid "Your profile form has no fields"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:234
+msgid "Your registration form has no fields"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:242
+msgid "Toggle All Fields Open/Close"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:292
+msgid "Body"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:304
+msgid "download_category"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:308
+msgid "download_tag"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:316
+msgid "Custom field: Text"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:320
+msgid "Custom field: Textarea"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:324
+msgid "Custom field: Select"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:328
+msgid "Custom field: Multiselect"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:332
+msgid "Custom field: Radio"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:336
+msgid "Custom field: Checkbox"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:340
+msgid "Custom field: File Upload"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:344
+msgid "Custom field: URL"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:348
+msgid "Custom field: E-Mail"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:352
+msgid "Custom field: Repeat Field"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:364
+msgid "Action Hook"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:372
+msgid "reCaptcha"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:376
+msgid "Custom Field: Date"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:412
+msgid "E-mail"
+msgstr ""
+
+#: ../classes/admin/formbuilder/class-formbuilder.php:420
+msgid "Biographical Info"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:14
+msgid "Invalid ID"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:18
+#: ../classes/frontend/class-forms.php:377
+#: ../classes/frontend/class-forms.php:383
+#: ../classes/frontend/class-forms.php:391
+#: ../classes/frontend/class-forms.php:397
+#: ../classes/frontend/class-forms.php:405
+#: ../classes/frontend/class-forms.php:489
+#: ../classes/frontend/class-forms.php:1229
+#: ../classes/frontend/class-forms.php:1244
+#: ../classes/frontend/class-forms.php:1650
+#: ../templates/frontend-edit-order.php:3
+#: ../templates/frontend-edit-order.php:16
+msgid "Access Denied"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:22
+msgid "Vendor: "
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:22
+#: ../classes/admin/vendors/class-edit-vendor.php:118
+msgid "ID"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:26
+#, php-format
+msgid "%s approved!"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:34
+#, php-format
+msgid "%s updated!"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:38
+#, php-format
+msgid "%s Overview"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:39
+msgid "Application Form"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:43
+msgid "Commissions"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:55
+msgid "Status: "
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:57
+msgid "Frontend Vendor"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:63
+msgid "Error!"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:67
+#, php-format
+msgid "Total %s: "
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:70
+#, php-format
+msgid "Live %s: "
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:73
+#, php-format
+msgid "Pending %s: "
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:76
+#, php-format
+msgid "Trashed %s: "
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:81
+msgid "Actions: "
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:84
+#: ../classes/admin/vendors/class-vendor-table.php:55
+msgid "Suspend"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:88
+#: ../classes/admin/vendors/class-vendor-table.php:72
+msgid "Decline"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:91
+#: ../classes/admin/vendors/class-vendor-table.php:89
+msgid "Unsuspend"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:144
+msgid "Total Sales"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:152
+#, php-format
+msgid "%s has no %s"
+msgstr ""
+
+#: ../classes/admin/vendors/class-edit-vendor.php:162
+#, php-format
+msgid "This %s has no sales yet!"
+msgstr ""
+
+#: ../classes/admin/vendors/class-vendor-table.php:106
+#: ../classes/admin/vendors/class-vendor-table.php:180
+#: ../classes/frontend/class-dashboard.php:336
+#: ../classes/redux/ReduxCore/inc/fields/border/field_border.php:125
+#: ../classes/redux/ReduxCore/inc/fields/spacing/field_spacing.php:191
+msgid "All"
+msgstr ""
+
+#: ../classes/admin/vendors/class-vendor-table.php:109
+#: ../classes/admin/vendors/class-vendor-table.php:181
+#: ../classes/frontend/class-dashboard.php:485
+msgid "Pending"
+msgstr ""
+
+#: ../classes/admin/vendors/class-vendor-table.php:112
+#: ../classes/admin/vendors/class-vendor-table.php:182
+msgid "Approved"
+msgstr ""
+
+#: ../classes/admin/vendors/class-vendor-table.php:169
+#, php-format
+msgid "Number of %s"
+msgstr ""
+
+#: ../classes/admin/vendors/class-vendor-table.php:171
+#, php-format
+msgid "%s Since"
+msgstr ""
+
+#: ../classes/admin/vendors/class-vendor-table.php:191
+#, php-format
+msgid "Approve %s"
+msgstr ""
+
+#: ../classes/admin/vendors/class-vendor-table.php:192
+#, php-format
+msgid "Decline %s"
+msgstr ""
+
+#: ../classes/admin/vendors/class-vendor-table.php:193
+#, php-format
+msgid "Revoke %s"
+msgstr ""
+
+#: ../classes/admin/vendors/class-vendor-table.php:194
+#, php-format
+msgid "Suspend %s"
+msgstr ""
+
+#: ../classes/admin/vendors/class-vendor-table.php:195
+#, php-format
+msgid "Unsuspend %s"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:186
+msgid "Dashboard"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:197
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:223
+#, php-format
+msgid "Add %s"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:211
+#: ../templates/frontend-orders.php:2
+msgid "Orders"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:217
+#: ../classes/frontend/class-forms.php:469
+msgid "Profile"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:222
+msgid "Logout"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:469
+msgid "Scheduled for Release"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:479
+msgid "Complete"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:543
+#: ../templates/frontend-edit-order.php:11
+msgid "Order: #"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:626
+msgid "No Comments Found"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:640
+msgid "&laquo;"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:640
+msgid "&raquo;"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:660
+msgid "Has Purchased"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:662
+msgid "Has Not Purchased"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:672
+msgid "View Comment"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:679
+msgid "Respond:"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:688
+msgid "Post Response"
+msgstr ""
+
+#: ../classes/frontend/class-dashboard.php:693
+msgid "Mark as Read"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:102
+#, php-format
+msgid "No %s ID set!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:113
+msgid "Vendor Contact Form not set in the FES settings"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:159
+msgid "Login Form not set in the FES settings"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:166
+msgid "Login form has no fields!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:175
+#: ../classes/frontend/class-forms.php:3343
+msgid "Login"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:216
+#: ../classes/frontend/class-forms.php:320
+#: ../classes/frontend/class-forms.php:329
+msgid "Your application is pending"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:223
+msgid "Vendor applications are currently closed"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:230
+msgid ""
+"Vendor registration is currently closed. If you have an existing account, "
+"you may login and apply to become a vendor."
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:237
+msgid "Vendor registration is currently closed."
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:248
+msgid "Registration Form not set in the FES settings"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:253
+msgid "Registration form has no fields!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:265
+msgid "Register"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:314
+msgid "Registration and applications are currently closed"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:324
+msgid "An error occured. FES error: CFCF 1"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:331
+msgid "You are already a vendor, go to the Vendor Dashboard"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:355
+msgid "Submission Form not set in the FES settings"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:361
+msgid "Submission form has no fields!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:400
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:400
+msgid ": #"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:408
+#, php-format
+msgid "Create New %s"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:464
+msgid "Profile Form not set in the FES settings"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:472
+msgid "Profile form has no fields!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:478
+msgid "Updated Successfully"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:555
+#: ../classes/frontend/class-forms.php:709
+msgid "Form ID mismatch"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:573
+#: ../classes/frontend/class-forms.php:581
+#: ../classes/frontend/class-forms.php:590
+#: ../classes/frontend/class-forms.php:598
+#: ../classes/frontend/class-forms.php:607
+#: ../classes/frontend/class-forms.php:618
+#: ../classes/frontend/class-forms.php:631
+#: ../classes/frontend/class-forms.php:639
+#: ../classes/frontend/class-forms.php:648
+#: ../classes/frontend/class-forms.php:656
+msgid "Please fill out the contact form!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:610
+#: ../classes/frontend/class-forms.php:621
+#: ../classes/frontend/class-forms.php:822
+#: ../classes/frontend/class-forms.php:939
+#: ../classes/frontend/class-forms.php:1012
+#: ../classes/frontend/class-forms.php:1682
+msgid "Please enter a valid email!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:664
+#: ../classes/frontend/class-forms.php:672
+msgid "Invalid vendor id!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:678
+#, php-format
+msgid "Message from user: %s"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:691
+msgid "Email sent!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:733
+msgid "Please fill out the login form!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:752
+msgid "Logged in!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:760
+msgid "Password is wrong!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:764
+msgid "Username is wrong!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:787
+#: ../classes/frontend/class-forms.php:1209
+#: ../classes/frontend/class-forms.php:1663
+msgid "Access Denied: "
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:803
+#: ../classes/frontend/class-forms.php:1555
+msgid "Access denied!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:856
+#: ../classes/frontend/class-forms.php:1622
+msgid "Successfully Updated"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:880
+#: ../classes/frontend/class-forms.php:888
+#: ../classes/frontend/class-forms.php:897
+#: ../classes/frontend/class-forms.php:920
+#: ../classes/frontend/class-forms.php:928
+#: ../classes/frontend/class-forms.php:936
+#: ../classes/frontend/class-forms.php:948
+#: ../classes/frontend/class-forms.php:993
+#: ../classes/frontend/class-forms.php:1001
+#: ../classes/frontend/class-forms.php:1009
+#: ../classes/frontend/class-forms.php:1020
+#: ../classes/frontend/class-forms.php:1028
+msgid "Please fill out the registration form!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:980
+#: ../classes/frontend/class-forms.php:987
+msgid "Sorry! Registration is currently disabled at this time!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1056
+#: ../classes/frontend/class-forms.php:1593
+#: ../classes/frontend/class-forms.php:1713
+#, php-format
+msgid "Password must be %s character long"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1060
+#: ../classes/frontend/class-forms.php:1597
+#: ../classes/frontend/class-forms.php:1717
+msgid "Password didn't match"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1079
+msgid "Username already in use and password incorrect!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1121
+msgid "Application Accepted"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1137
+msgid "Your Application has been Approved!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1161
+msgid "New Vendor Application Received"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1172
+msgid "Application Received"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1185
+msgid "Application Submitted"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1471
+msgid "New Submission Received"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1483
+msgid "Submission Received"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1501
+msgid "New Submission Edit Received"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1517
+msgid "Success!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1525
+msgid ""
+"Something went wrong! Error 1049: Post ID not set. Possibly Database lock in "
+"place."
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1747
+msgid "Profile Successfully Updated"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:1945
+msgid "Form has no fields!"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:2421
+msgid "Name of Price Option"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:2424
+#, php-format
+msgid "Amount (%s)"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:2427
+#: ../classes/frontend/class-forms.php:2542
+msgid "File URL"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:2482
+#: ../classes/frontend/class-forms.php:2562
+msgid "http://"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:2486
+#: ../classes/frontend/class-forms.php:2565
+#: ../classes/frontend/class-forms.php:2566
+msgid "Choose file"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:2487
+#: ../classes/redux/ReduxCore/inc/fields/background/field_background.php:314
+#: ../classes/redux/ReduxCore/inc/fields/media/field_media.php:198
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:126
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:188
+msgid "Upload"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:2494
+#: ../classes/frontend/class-forms.php:2576
+msgid "x"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:2505
+#: ../classes/frontend/class-forms.php:2589
+msgid "Add File"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:2545
+#: ../classes/frontend/class-forms.php:2570
+msgid "Download File"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:2648
+msgid "Upload Featured Image"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:2666
+msgid "Upload Gallery"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:2686
+msgid "Upload Avatar"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:3022
+msgid "add another choice"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:3023
+msgid "remove this choice"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:3071
+#: ../classes/frontend/class-forms.php:3095
+msgid "-- Select --"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:3268
+msgid "Invalid FES Form ID"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:3286
+msgid "Send Message"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:3313
+msgid "Submit"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:3330
+msgid "Update Profile"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:3344
+msgid "Lost Password?"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:3349
+#, php-format
+msgid "Become A %s"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:3351
+msgid "Submit Changes"
+msgstr ""
+
+#: ../classes/frontend/class-forms.php:3386
+msgid "reCAPTCHA validation failed"
+msgstr ""
+
+#: ../classes/frontend/class-vendor-shop.php:148
+#, php-format
+msgid "The Shop of %s"
+msgstr ""
+
+#: ../classes/redux/class.redux-plugin.php:306
+msgid "Redux Framework has an embedded demo."
+msgstr ""
+
+#: ../classes/redux/class.redux-plugin.php:306
+msgid "Click here to activate the sample config file."
+msgstr ""
+
+#: ../classes/redux/class.redux-plugin.php:407
+msgid "Repo"
+msgstr ""
+
+#: ../classes/redux/class.redux-plugin.php:408
+msgid "Generator"
+msgstr ""
+
+#: ../classes/redux/class.redux-plugin.php:409
+msgid "Issues"
+msgstr ""
+
+#: ../classes/redux/class.redux-plugin.php:410
+msgid "Documentation"
+msgstr ""
+
+#: ../classes/redux/class.redux-plugin.php:415
+msgid "Deactivate Demo Mode"
+msgstr ""
+
+#: ../classes/redux/class.redux-plugin.php:417
+msgid "Activate Demo Mode"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:223
+#, php-format
+msgid "Options panel created using %1$s"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:223
+msgid "Redux Framework"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:1384
+#: ../classes/redux/ReduxCore/framework.php:1385
+#: ../classes/redux/ReduxCore/framework.php:3256
+#: ../classes/redux/ReduxCore/framework.php:3335
+msgid "System Info"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:1688
+msgid "Enable"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:1693
+msgid "Disable"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:1699
+msgid "moving the mouse over"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:1701
+msgid "clicking"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:1705
+#, php-format
+msgid ""
+"Hints are tooltips that popup when %d the hint icon, offering addition "
+"information about the field in which they appear.  They can be %d d by using "
+"the link below."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:1710
+msgid "Hints"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:1835
+msgid "Default"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3000
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3051
+msgid "Developer Mode Enabled"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3080
+msgid "Expand"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3082
+#: ../classes/redux/ReduxCore/framework.php:3392
+msgid "Save Changes"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3086
+#: ../classes/redux/ReduxCore/framework.php:3396
+msgid "Reset Section"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3088
+#: ../classes/redux/ReduxCore/framework.php:3398
+msgid "Reset All"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3093
+#: ../classes/redux/ReduxCore/framework.php:3403
+msgid "Working..."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3113
+msgid "Settings Imported!"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3128
+msgid "All Defaults Restored!"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3142
+msgid "Section Defaults Restored!"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3156
+msgid "Settings Saved!"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3176
+msgid "Settings have changed, you should save them!"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3184
+msgid "error(s) were found!"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/framework.php:3192
+msgid "warning(s) were found!"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/core/enqueue.php:346
+#: ../classes/redux/ReduxCore/extensions/customizer/extension_customizer.php:528
+msgid "You have changes that are not saved. Would you like to save them now?"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/core/enqueue.php:354
+#: ../classes/redux/ReduxCore/extensions/customizer/extension_customizer.php:529
+msgid "Are you sure? Resetting will lose all custom values."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/core/enqueue.php:362
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/core/enqueue.php:370
+#: ../classes/redux/ReduxCore/extensions/customizer/extension_customizer.php:530
+msgid ""
+"Your current options will be replaced with the values of this preset. Would "
+"you like to proceed?"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/core/enqueue.php:377
+msgid "Please Wait"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/extensions/customizer/extension_customizer.php:563
+msgid "You have changes that are not saved.  Would you like to save them now?"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/extensions/customizer/extension_customizer.php:564
+msgid "Are you sure?  Resetting will lose all custom values."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/extensions/customizer/extension_customizer.php:565
+msgid ""
+"Your current options will be replaced with the values of this preset.  Would "
+"you like to proceed?"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/class.redux_filesystem.php:23
+msgid "Unable to modify required files. Please ensure that"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/class.redux_filesystem.php:25
+msgid ""
+"has the proper read/write permissions or enter your FTP information below."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/class.redux_functions.php:231
+msgid "Dismiss"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/class.redux_themecheck.php:61
+#, php-format
+msgid ""
+"The theme you are testing has %s embedded. We invite you to read the %sTheme-"
+"Check Documentation%s to understand some warnings you will see because of "
+"Redux."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/class.redux_themecheck.php:109
+msgid ""
+"The following directories & files are still located in your <strong>Redux</"
+"strong>  directory. They may cause errors in Theme-Check."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/debug.php:41
+#: ../classes/redux/ReduxCore/inc/debug.php:69
+#: ../classes/redux/ReduxCore/inc/debug.php:76
+#: ../classes/redux/ReduxCore/inc/debug.php:77
+msgid "Options Object"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/debug.php:54
+msgid "Show Object in Javascript Console Object"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/import_export.php:78
+msgid "Import / Export Options"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/import_export.php:81
+msgid "Import Options"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/import_export.php:82
+msgid "Import from file"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/import_export.php:82
+msgid "Import from URL"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/import_export.php:85
+msgid ""
+"Input your backup file below and hit Import to restore your sites options "
+"from a backup."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/import_export.php:90
+msgid ""
+"Input the URL to another sites options set and hit Import to load the "
+"options from that site."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/import_export.php:94
+msgid ""
+"WARNING! This will overwrite all existing option values, please proceed with "
+"caution!"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/import_export.php:97
+msgid "Export Options"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/import_export.php:100
+msgid ""
+"Here you can copy/download your current option settings. Keep this safe as "
+"you can use it as a backup should anything go wrong, or you can use it to "
+"restore your settings on this site (or any other site)."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/import_export.php:104
+msgid "Copy"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/import_export.php:104
+msgid "Download"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/import_export.php:104
+msgid "Copy Link"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/import_export.php:140
+#: ../classes/redux/ReduxCore/inc/import_export.php:149
+#: ../classes/redux/ReduxCore/inc/import_export.php:150
+msgid "Import / Export"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:129
+msgid "Help improve Our Panel"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:130
+msgid ""
+"Please helps us improve our panel by allowing us to gather anonymous usage "
+"stats so we know which configurations, plugins and themes to test to ensure "
+"compatibility."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:135
+msgid "Allow tracking"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:140
+msgid "Do not allow tracking"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:151
+msgid "Welcome to the Redux Demo Panel"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:152
+#: ../classes/redux/ReduxCore/inc/welcome.php:139
+msgid "Getting Started"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:152
+#, php-format
+msgid ""
+"This panel demonstrates the many features of Redux.  Before digging in, we "
+"suggest you get up to speed by reviewing %1$s."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:152
+msgid "our documentation"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:153
+msgid "Redux Generator"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:153
+#, php-format
+msgid ""
+"Want to get a head start? Use the %1$s. It will create a customized "
+"boilerplate theme or a standalone admin folder complete with all things "
+"Redux (with the help of Underscores and TGM). Save yourself a headache and "
+"try it today."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:154
+msgid "Redux Extensions"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:154
+#, php-format
+msgid ""
+"Did you know we have extensions, which greatly enhance the features of "
+"Redux?  Visit our %1$s to learn more!"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:154
+msgid "extensions directory"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:155
+msgid "Like Redux?"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:155
+#, php-format
+msgid ""
+"If so, please %1$s and consider making a %2$s to keep development of Redux "
+"moving forward."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:155
+msgid "leave us a favorable review on WordPress.org"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:155
+msgid "donation"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:156
+msgid "Newsletter"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:156
+msgid ""
+"If you'd like to keep up to with all things Redux, please subscribe to our "
+"newsletter"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:157
+msgid "Email address"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:157
+msgid "Subscribe"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/tracking.php:166
+msgid "Close"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:40
+msgid "Welcome to Redux Framework"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:48
+#: ../classes/redux/ReduxCore/inc/welcome.php:295
+msgid "Redux Framework Changelog"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:56
+msgid "Getting started with Redux Framework"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:64
+msgid "The people that develop Redux Framework"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:135
+msgid "What's New"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:143
+msgid "Changelog"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:147
+msgid "Credits"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:164
+#: ../classes/redux/ReduxCore/inc/welcome.php:333
+#: ../classes/redux/ReduxCore/inc/welcome.php:471
+#, php-format
+msgid "Welcome to Redux Framework %s"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:167
+#, php-format
+msgid ""
+"Thank you for updating to the latest version! Redux Framework %s is ready to "
+"<add description>"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:169
+#: ../classes/redux/ReduxCore/inc/welcome.php:300
+#: ../classes/redux/ReduxCore/inc/welcome.php:338
+#: ../classes/redux/ReduxCore/inc/welcome.php:476
+#, php-format
+msgid "Version %s"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:174
+msgid "Some Feature"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:178
+#: ../classes/redux/ReduxCore/inc/welcome.php:182
+#: ../classes/redux/ReduxCore/inc/welcome.php:195
+#: ../classes/redux/ReduxCore/inc/welcome.php:199
+#: ../classes/redux/ReduxCore/inc/welcome.php:203
+#: ../classes/redux/ReduxCore/inc/welcome.php:208
+#: ../classes/redux/ReduxCore/inc/welcome.php:221
+#: ../classes/redux/ReduxCore/inc/welcome.php:225
+#: ../classes/redux/ReduxCore/inc/welcome.php:230
+msgid "Feature"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:190
+msgid "Some feature"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:217
+msgid "More Features"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:223
+#: ../classes/redux/ReduxCore/inc/welcome.php:227
+#: ../classes/redux/ReduxCore/inc/welcome.php:232
+msgid "description"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:238
+msgid "Additional Updates"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:242
+#: ../classes/redux/ReduxCore/inc/welcome.php:246
+#: ../classes/redux/ReduxCore/inc/welcome.php:252
+#: ../classes/redux/ReduxCore/inc/welcome.php:256
+#: ../classes/redux/ReduxCore/inc/welcome.php:262
+#: ../classes/redux/ReduxCore/inc/welcome.php:266
+msgid "Cool thing"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:244
+#: ../classes/redux/ReduxCore/inc/welcome.php:248
+#: ../classes/redux/ReduxCore/inc/welcome.php:254
+#: ../classes/redux/ReduxCore/inc/welcome.php:258
+#: ../classes/redux/ReduxCore/inc/welcome.php:264
+#: ../classes/redux/ReduxCore/inc/welcome.php:268
+msgid "cool thing description."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:277
+#: ../classes/redux/ReduxCore/inc/welcome.php:316
+msgid "Go to Redux Framework"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:278
+msgid "View the Full Changelog"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:298
+#: ../classes/redux/ReduxCore/inc/welcome.php:336
+#: ../classes/redux/ReduxCore/inc/welcome.php:474
+#, php-format
+msgid ""
+"Thank you for updating to the latest version! Redux Framework %s is ready to "
+"make your <description>"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:305
+msgid "Full Changelog"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:342
+msgid ""
+"Use the tips below to get started using Redux Framework. You'll be up and "
+"running in no time!"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:345
+msgid "Creating Your First Panel"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:350
+#, php-format
+msgid "<a href=\"%s\">%s &rarr; Add New</a>"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:352
+#, php-format
+msgid ""
+"The %s menu is your access point for all aspects of your Easy Digital "
+"Downloads product creation and setup. To create your first product, simply "
+"click Add New and then fill out the product details."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:354
+msgid "Product Price"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:356
+msgid ""
+"Products can have simple prices or variable prices if you wish to have more "
+"than one price point for a product. For a single price, simply enter the "
+"price. For multiple price points, click <em>Enable variable pricing</em> and "
+"enter the options."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:358
+msgid "Download Files"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:360
+msgid ""
+"Uploading the downloadable files is simple. Click <em>Upload File</em> in "
+"the Download Files section and choose your download file. To add more than "
+"one file, simply click the <em>Add New</em> button."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:366
+msgid "Display a Product Grid"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:373
+msgid "Flexible Product Grids"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:375
+msgid ""
+"The [downloads] shortcode will display a product grid that works with any "
+"theme, no matter the size. It is even responsive!"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:377
+msgid "Change the Number of Columns"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:379
+msgid ""
+"You can easily change the number of columns by adding the columns=\"x\" "
+"parameter:"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:385
+msgid "Additional Display Options"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:387
+#, php-format
+msgid ""
+"The product grids can be customized in any way you wish and there is <a href="
+"\"%s\">extensive documentation</a> to assist you."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:392
+msgid "Purchase Buttons Anywhere"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:397
+msgid "The <em>[purchase_link]</em> Shortcode"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:399
+msgid ""
+"With easily accessible shortcodes to display purchase buttons, you can add a "
+"Buy Now or Add to Cart button for any product anywhere on your site in "
+"seconds."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:401
+msgid "Buy Now Buttons"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:403
+msgid ""
+"Purchase buttons can behave as either Add to Cart or Buy Now buttons. With "
+"Buy Now buttons customers are taken straight to PayPal, giving them the most "
+"frictionless purchasing experience possible."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:409
+msgid "Need Help?"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:413
+msgid "Phenomenal Support"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:415
+msgid ""
+"We do our best to provide the best support we can. If you encounter a "
+"problem or have a question, post a question in the <a href=\"https://"
+"easydigitaldownloads.com/support\">support forums</a>."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:417
+msgid "Need Even Faster Support?"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:419
+msgid ""
+"Our <a href=\"https://easydigitaldownloads.com/support/pricing/\">Priority "
+"Support forums</a> are there for customers that need faster and/or more in-"
+"depth assistance."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:425
+msgid "Stay Up to Date"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:429
+msgid "Get Notified of Extension Releases"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:431
+msgid ""
+"New extensions that make Easy Digital Downloads even more powerful are "
+"released nearly every single week. Subscribe to the newsletter to stay up to "
+"date with our latest releases. <a href=\"http://eepurl.com/kaerz\" target="
+"\"_blank\">Signup now</a> to ensure you do not miss a release!"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:433
+msgid "Get Alerted About New Tutorials"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:435
+msgid ""
+"<a href=\"http://eepurl.com/kaerz\" target=\"_blank\">Signup now</a> to hear "
+"about the latest tutorial releases that explain how to take Easy Digital "
+"Downloads further."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:441
+msgid "Extensions for Everything"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:445
+msgid "Over 250 Extensions"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:447
+msgid ""
+"Add-on plugins are available that greatly extend the default functionality "
+"of Easy Digital Downloads. There are extensions for payment processors, such "
+"as Stripe and PayPal, extensions for newsletter integrations, and many, many "
+"more."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:449
+msgid "Visit the Extension Store"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:451
+msgid ""
+"<a href=\"https://asydigitaldownloads.com/extensions\" target=\"_blank\">The "
+"Extensions store</a> has a list of all available extensions, including "
+"convenient category filters so you can find exactly what you are looking for."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:480
+msgid ""
+"Redux Framework is created by a worldwide team of developers who <something "
+"witty here>"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:500
+msgid "No valid changlog was found."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/welcome.php:539
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/background/field_background.php:124
+#: ../classes/redux/ReduxCore/inc/fields/color/field_color.php:73
+#: ../classes/redux/ReduxCore/inc/fields/color_gradient/field_color_gradient.php:79
+#: ../classes/redux/ReduxCore/inc/fields/color_gradient/field_color_gradient.php:91
+msgid "Transparent"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/background/field_background.php:141
+msgid "Background Repeat"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/background/field_background.php:157
+msgid "Background Clip"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/background/field_background.php:173
+msgid "Background Origin"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/background/field_background.php:188
+msgid "Background Size"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/background/field_background.php:203
+msgid "Background Attachment"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/background/field_background.php:223
+msgid "Background Position"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/background/field_background.php:277
+#: ../classes/redux/ReduxCore/inc/fields/media/field_media.php:149
+msgid "No media selected"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/border/field_border.php:138
+#: ../classes/redux/ReduxCore/inc/fields/spacing/field_spacing.php:215
+msgid "Top"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/border/field_border.php:145
+#: ../classes/redux/ReduxCore/inc/fields/spacing/field_spacing.php:222
+msgid "Right"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/border/field_border.php:152
+#: ../classes/redux/ReduxCore/inc/fields/spacing/field_spacing.php:229
+msgid "Bottom"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/border/field_border.php:159
+#: ../classes/redux/ReduxCore/inc/fields/spacing/field_spacing.php:236
+msgid "Left"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/border/field_border.php:173
+msgid "Border style"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/color_gradient/field_color_gradient.php:68
+msgid "From "
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/color_gradient/field_color_gradient.php:82
+msgid "To "
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/dimensions/field_dimensions.php:161
+msgid "Width"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/dimensions/field_dimensions.php:177
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:436
+msgid "Height"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/dimensions/field_dimensions.php:188
+#: ../classes/redux/ReduxCore/inc/fields/dimensions/field_dimensions.php:189
+#: ../classes/redux/ReduxCore/inc/fields/spacing/field_spacing.php:245
+#: ../classes/redux/ReduxCore/inc/fields/spacing/field_spacing.php:246
+msgid "Units"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/gallery/field_gallery.php:73
+msgid "Add/Edit Gallery"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/gallery/field_gallery.php:74
+msgid "Clear Gallery"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/link_color/field_link_color.php:87
+msgid "Regular"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/link_color/field_link_color.php:91
+msgid "Hover"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/link_color/field_link_color.php:95
+msgid "Visited"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/link_color/field_link_color.php:99
+msgid "Active"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/multi_text/field_multi_text.php:61
+msgid "Add More"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/select/field_select.php:83
+#: ../classes/redux/ReduxCore/inc/fields/select_image/field_select_image.php:63
+msgid "Select an item"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/select/field_select.php:134
+#: ../classes/redux/ReduxCore/inc/fields/select_image/field_select_image.php:144
+msgid "No items of this type were found."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:68
+msgid "Slide"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:73
+#: ../classes/redux/ReduxCore/inc/fields/slides/field_slides.php:174
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/switch/field_switch.php:41
+msgid "On"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/switch/field_switch.php:44
+msgid "Off"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:227
+msgid "Font Family"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:228
+msgid "Font family"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:254
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:255
+msgid "Backup Font Family"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:269
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:276
+msgid "Font style"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:270
+msgid "Font Weight &amp; Style"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:276
+msgid "Style"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:316
+msgid "Font subsets"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:318
+msgid "Font Subsets"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:319
+msgid "Subsets"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:319
+msgid "Font script"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:336
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:337
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:338
+msgid "Text Align"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:359
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:360
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:361
+msgid "Text Transform"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:382
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:383
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:384
+msgid "Font Variant"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:402
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:403
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:404
+msgid "Text Decoration"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:426
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:427
+msgid "Font Size"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:435
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:436
+msgid "Line Height"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:444
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:445
+msgid "Word Spacing"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:453
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:454
+msgid "Letter Spacing"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:472
+msgid "Font Color"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:474
+msgid "Font color"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:871
+msgid "Standard Fonts"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/fields/typography/field_typography.php:972
+msgid "Google Webfonts"
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/validation/color/validation_color.php:15
+#: ../classes/redux/ReduxCore/inc/validation/color_rgba/validation_color_rgba.php:14
+#: ../classes/redux/ReduxCore/inc/validation/colorrgba/validation_colorrgba.php:16
+msgid "This field must be a valid color value."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/validation/comma_numeric/validation_comma_numeric.php:16
+msgid ""
+"You must provide a comma separated list of numerical values for this option."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/validation/date/validation_date.php:16
+msgid "This field must be a valid date."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/validation/email/validation_email.php:16
+#: ../classes/redux/ReduxCore/inc/validation/email_not_empty/validation_email_not_empty.php:16
+msgid "You must provide a valid email for this option."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/validation/no_html/validation_no_html.php:15
+msgid ""
+"You must not enter any HTML in this field, all HTML tags have been removed."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/validation/no_special_chars/validation_no_special_chars.php:16
+msgid ""
+"You must not enter any special characters in this field, all special "
+"characters have been removed."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/validation/not_empty/validation_not_empty.php:16
+msgid "This field cannot be empty. Please provide a value."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/validation/numeric/validation_numeric.php:16
+#: ../classes/redux/ReduxCore/inc/validation/numeric_not_empty/validation_numeric_not_empty.php:16
+msgid "You must provide a numerical value for this option."
+msgstr ""
+
+#: ../classes/redux/ReduxCore/inc/validation/url/validation_url.php:16
+msgid "You must provide a valid URL for this option."
+msgstr ""
+
+#: ../templates/frontend-dashboard.php:13
+msgid "Comment"
+msgstr ""
+
+#: ../templates/frontend-delete-product.php:5
+msgid "Access Denied: You may only delete your own products"
+msgstr ""
+
+#: ../templates/frontend-delete-product.php:7
+#, php-format
+msgid "Delete %s"
+msgstr ""
+
+#: ../templates/frontend-delete-product.php:7
+msgid "#: "
+msgstr ""
+
+#: ../templates/frontend-delete-product.php:8
+#, php-format
+msgid "Are you sure you want to delete this %s? This action is irreversible."
+msgstr ""
+
+#: ../templates/frontend-earnings.php:3
+msgid "Commissions Overview"
+msgstr ""
+
+#: ../templates/frontend-earnings.php:9
+msgid "You haven't made any sales yet!"
+msgstr ""
+
+#: ../templates/frontend-orders.php:9
+msgid "Total"
+msgstr ""
+
+#: ../templates/frontend-orders.php:11
+msgid "View Order"
+msgstr ""
+
+#: ../templates/frontend-orders.php:32
+msgid "No orders found"
+msgstr ""
+
+#: ../templates/frontend-pending.php:2
+msgid "Your application has been submitted and will be reviewed."
+msgstr ""
+
+#: ../templates/frontend-products.php:8
+msgid "Image"
+msgstr ""
+
+#: ../templates/frontend-products.php:12
+msgid "Purchases"
+msgstr ""
+
+#: ../templates/frontend-products.php:35
+#, php-format
+msgid "No %s found"
+msgstr ""

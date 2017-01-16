@@ -1,0 +1,13 @@
+<div ng-hide="pages.length < 2">
+    <a ng-hide="noPrevious()" ng-class="{disabled: noPrevious()||ngDisabled}" class="pagination-prev page-numbers prev" href ng-click="selectPage(page - 1, $event)">
+        <div class="prev_arrow_glow"></div>
+    </a>
+
+    <a ng-repeat="page in pages track by $index" ng-class="{page_numbers_styled_current: page.active,disabled: ngDisabled&&!page.active}" href ng-click="selectPage(page.number, $event)" class="page_numbers_styled">{{page.text}}</a>
+
+    <a ng-hide="noNext()" ng-class="{disabled: noNext()||ngDisabled}" class="page-numbers next" href ng-click="selectPage(page + 1, $event)">
+        
+        <div class="next_arrow_glow"></div>
+    </a>
+
+</div>

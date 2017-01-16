@@ -1,0 +1,37 @@
+<div ng-form="reportPostForm" novalidate>
+
+    <div class="modal-header">
+        <div class="modal-title title">Report Post</div>
+        <a class="close" ng-click="$dismiss()"></a>
+    </div>
+
+    <div class="modal-body">
+        <div class="sectionBackgroundDark">
+            <div class="section section_post_options">
+                <div class="sectionOverlay">
+                    <div class="heading">Please select all that apply</div>
+                    <div class="fields">
+                        <div class="field" ng-repeat="reason in reasons">
+                            <label>
+                                <input type="checkbox" icheck-class="icheckbox_futurico" icheck-collection="vm.data.reasons" ng-model="reason.state" value="{{ reason.id }}">{{ reason.name }}
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="info">
+                        <div>You might experience a slight delay before removal.</div>
+                        <div>Kitmoda's algorithm evaluates reports based on user consensus.</div>
+                        <div>Not all reported content will be removed, but we appreciate your concern and take is very seriously.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <div ng-if="error" class="error hbng">{{error}}</div>
+        <button class="btn btn-warning" type="button" ng-click="$dismiss()">Cancel</button>
+        <a ng-click="vm.report(reportPostForm)" k-processing="vm.processing" class="btn btn_blue" k-form-btn btn-label="Report"></a>
+    </div>
+</div>
+

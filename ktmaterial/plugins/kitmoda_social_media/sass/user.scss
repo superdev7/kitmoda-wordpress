@@ -1,0 +1,483 @@
+@import "compass/css3";
+@import "mixins.scss";
+
+
+.sbHolder .mCSB_scrollTools .mCSB_dragger{
+
+	cursor:pointer;
+
+	width:100%;
+
+	height:30px;
+
+}
+
+.window.edit_profile {
+    
+    width : 710px;
+    
+    
+    .field_secondary_language, .field_primary_language {
+        ul.sbOptions {
+            height: 500px !important;
+            top: -500px !important;
+        }
+    }
+    
+    .field_location {
+        ul.sbOptions {
+            height: 374px !important;
+        }
+    }
+    
+    #skills, #softwares {
+        min-height : 67px;
+        height: auto;
+    }
+    
+    label {
+        width : 140px;
+        font-family : "Helvetica Neue";
+        font-size : 13px;
+        color : #2b2b2b;
+    }
+    .input, .tagsinput {
+        width : 200px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .browse_btn {
+        width : 135px;
+        text-align: center;
+        
+    }
+    
+    
+    .field_info {
+        font-size: 12px;
+        color: #666;
+        text-align: right;
+        margin-right: 50px;
+    }
+    
+    .avatar_container {
+        float : left;
+        
+        
+        position : relative;
+        
+        
+        .items {
+            margin : 0;
+            .item {
+                position : relative;
+                
+                .thumbnail {
+                    width : 135px;
+                    height : 141px;
+                    
+                    
+                    img {
+                        width : 135px;
+                        height : 135px;
+                        @include border-radius(5px);
+                        @include box-shadow(1px 2px 5px rgba(0,0,0,.5));
+                        border: solid 1px #3a3a3a;
+                    }
+                    
+                }
+                
+                
+                
+                
+                
+                
+                .percent {
+                    position: absolute;
+                    width: 100%;
+                    bottom: 6px;
+                    z-index: 111;
+                    padding: 0;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 22px;
+                    font-weight: 400;
+                    text-shadow: 0 1px 2px rgba(0,0,0,.2);
+                }
+                
+                .progress {
+                    @include bottomRadius(5px);
+                    height: 22px;
+                    border: 0;
+                    width: 100%;
+                    position: absolute;
+                    z-index: 100;
+                    bottom: 6px;
+                    float: right;
+                    line-height: 2em;
+                    padding: 0;
+                    overflow: hidden;
+                    background: #ddd;
+                    @include box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
+
+                    
+
+                    .bar {
+
+                        position: absolute;
+                        top: 0;
+                        z-index: 9;
+                        width: 0;
+                        height: 100%;
+                        background-color: #7197ee;
+                        @include box-shadow(inset 0 0 2px rgba(0,0,0,.3))
+
+                    }
+                }
+            }
+            
+        }
+        
+        
+        
+        
+        
+        
+    
+    }
+    
+    .avatar_types {
+        color : #6c6c6c;
+        font-size: 14px;
+        font-family: "DejaVu Sans Condensed";
+        font-weight: bold;
+        margin-top: 5px;
+    }
+    
+    .tagline {
+        float: left;
+        margin-left : 28px;
+        margin-top : 36px;
+        .input {
+            width : 470px;
+            height : 40px;
+            line-height: 40px;
+            font-family: "DejaVu Sans Condensed";
+            font-size : 18px;
+            color : #191919;
+        }
+    }
+    
+    
+    
+    .footer {
+        
+        .btn {
+            float : right;
+        }
+        
+        .error {
+            float : left;
+            height: 24px;
+            line-height: 22px;
+            font-size: 14px;
+            margin-top : 8px;
+        }
+    }
+    
+}
+
+
+.window.account_settings {
+    width : 728px;
+    .content {
+        padding : 24px 12px 34px 7px;
+    }
+    
+    h1 {
+        color : #2b2b2b;
+        font-size : 24px;
+        font-family: "DejaVu Sans Condensed";
+        text-align: center;
+    }
+    
+    .section {
+        margin-top : 60px;
+        h2 {
+            color: #2b2b2b;
+            font-size: 18px;
+            font-family: "UniversLT";
+            border : #6e7799 solid 1px;
+            background: #afc9fa;
+            padding: 0 26px 0 44px;
+        }
+        
+        .field_title {
+            color : #546acb;
+            font-family: "Helvetica Neue Bold";
+            font-size : 16px;
+            margin-top : 28px;
+            margin-top : 12px;
+        }
+        
+        .field_group {
+            padding-left: 44px;
+            
+            .field {
+                margin : 4px 0;
+                label {
+                    font-size : 13px;
+                    font-family: "Helvetica Neue";
+                    color: #2b2b2b;
+                    padding: 2px 8px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+.window.login {
+    
+    .error {
+        position: absolute;
+        left: 278px;
+        top: 140px;
+    }
+}
+
+.window.login, .window.join, .window.forgot_password,  .window.reset_password {
+    width : $window-width;
+    
+    
+    .term_step {
+        
+        .win_header {
+            .title {
+                padding-left : 20px;
+            }
+        }
+        .footer {
+            height : 40px;
+            position : relative;
+            .btn {
+                top : 0;
+                margin-top: 6px !important;
+            }
+        }
+    }
+    
+    .heading {
+        background: url(../images/icons/kitmoda-normal.png) no-repeat 192px 14px;
+        color: #ffffff;
+        font-size: 24px;
+        font-family: "DejaVu Sans Condensed";
+        padding-top: 32px;
+        padding-bottom: 29px;
+        text-align: center;
+    }
+    
+    
+    
+    .success {
+        display: none;
+        background: #50a247;
+        position: absolute;
+        left: 278px;
+        top: 140px;
+        color: #FFF;
+        padding: 0 16px;
+    }
+    
+    .win_header {
+        padding : 1px;
+        border : 0;
+        .win_header_inner {
+            @include topRadius(5px);
+            height : 100%;
+            @include box-shadow(-3px 2px 3px rgba(0,0,0,.66));
+            border: solid 1px #282828;
+            @include background-image(linear-gradient(bottom, rgba(42,43,45,.98) 18%, rgba(50,51,55,.98)));
+            padding : 0 30px 0 22px;
+        }
+    }
+    
+    .footer, .win_header {
+        background-color: #f08e8e;
+	@include background-image(linear-gradient(bottom, #000 2%, #252525 19%, #262626 77%, #a8a8a8 92%, #8b8ea2 96%));
+    }
+    
+    .footer {
+        
+        
+        height : 73px;
+        padding : 1px;
+        
+        border : 0;
+        
+        .footer_inner {
+            @include background-image(linear-gradient(bottom, rgba(42,43,45,.98) 18%, rgba(50,51,55,.98)));
+            position : relative;
+            height : 100%;
+            @include bottomRadius(5px);
+        }
+        
+	
+	
+        
+        
+        
+        .join_link {
+            margin-left: 192px;
+        }
+        .terms_link {
+            margin-left: 40px;
+        }
+        .join_link a, .terms_link a {
+            font-size : 16px;
+            color : #5d9dfd;
+            font-family : "Helvetica Neue";
+            text-decoration: underline;
+        }
+        
+        .info {
+            color : #FFF;
+            font-size : 12px;
+            font-family : "Helvetica Neue";
+            padding-left : 53px;
+            padding-top : 12px;
+        }
+        
+        .btn {
+            position: absolute;
+            right: 16px;
+            top: 15px;
+        }
+    }
+    
+    
+    .content {
+        background: #30353b;
+        padding-bottom: 38px;
+        border : 0;
+        .forgot_pass_link {
+            a {
+                color : #5d9dfd;
+                text-decoration : underline;
+                font-size : 12px;
+                font-family : "Helvetica Neue";
+                margin-left: 264px;
+            }
+        }
+        
+        .field {
+            margin-top : 21px;
+            margin-bottom : 0px;
+            label {
+                float: left;
+                color : #fefefe;
+                font-size : 24px;
+                width: 264px;
+                text-align: right;
+                font-weight: normal;
+                font-family: "DejaVu Sans Condensed";
+                padding  : 0 30px 0 0;
+            }
+            
+            .inputi {
+                background-color: #000000;
+                @include filter-gradient(#000000, #64748f, vertical);
+                $experimental-support-for-svg: true;
+                @include background-image(linear-gradient(top,  #000000 0%,#64748f 100%));
+                height : 37px;
+                padding : 1px;
+                width : 392px;
+                float : left;
+                input {
+                    background : #28282d;
+                    color : #e4e4e4;
+                    font-size : 18px;
+                    font-family : "DejaVu Sans Condensed";
+                    border : 0;
+                    height : 100%;
+                    padding : 0 15px;
+                    line-height : 35px;
+                }
+            }
+            
+        }
+        
+        
+    }
+    
+}
+
+
+.window.join {
+    
+    .error {
+        position: absolute;
+        top: 166px;
+        left: 230px;
+    }
+    .content {
+        
+        .heading {
+            padding-bottom: 12px;
+            background-position-x: 202px;
+        }
+        .heading_info {
+            font-size : 18px;
+            color : #FFF;
+            text-align : center;
+            font-family : "DejaVu Sans Condensed";
+            padding-bottom: 18px;
+            padding-left : 20px;
+        }
+        
+        .field {
+            label {
+                width : 216px;
+            }
+        }
+    }
+    
+    .footer {
+        .btn {
+            width: 118px;
+        }
+        
+        .terms_link {
+            margin-left: 215px;
+        }
+    }
+    
+}
+
+
+.window.forgot_password, .window.reset_password {
+    .error {
+            position: absolute;
+            left: 278px;
+            top: 140px;
+    }
+    .links {
+        float : left;
+        margin-top: 20px;
+    }
+    
+    .btn_form_smt {
+        top: 10px;
+    }
+    .login_link {
+        margin-left: 30px;
+        a {
+            font-size: 16px;
+            color: #5d9dfd;
+            font-family: "Helvetica Neue";
+            text-decoration: underline;
+        }
+    }
+}
+

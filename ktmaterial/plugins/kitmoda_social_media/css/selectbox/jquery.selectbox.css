@@ -1,0 +1,118 @@
+@CHARSET "UTF-8";
+.sbHolder{
+background-color: #2d2d2d;
+    border: solid 0 #515151;
+    font-size: 12px;
+    font-weight: normal;
+    height: 38px;
+    position: relative;
+    width: 100%;
+    background: url(../images/select-button.png) no-repeat right 1px;
+    color: #fff;    font-family: Montserrat;    border-radius: 9px; -moz-border-radius: 9px;-o-border-radius: 9px;
+	-webkit-border-radius: 9px;    border: solid 1px #000;    border-bottom: 0;
+	
+}
+.sbHolder:focus .sbSelector{
+	
+}
+.sbSelector{
+    display: block;
+    height: 35px;
+    left: 0;
+    line-height: 33px;
+    outline: none;
+    overflow: hidden;
+    position: absolute;
+    text-indent: 10px;
+    top: 2px;
+    width: 188px;
+    text-transform: uppercase;
+}
+.sbSelector:link, .sbSelector:visited, .sbSelector:hover{
+	color: #e0e0e0;
+	outline: none;
+	text-decoration: none;
+}
+.sbToggle{
+	display: block;
+	height: 36px;
+	outline: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 44px; 
+}
+
+.sbToggle.sbToggleOpen{
+	display: block;
+	height: 32px;
+	outline: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 45px;  background: url(../images/srch-arrow-hover.png) no-repeat right 1px;    z-index: 9999;    border-top-right-radius: 8px; -moz-border-top-right-radius: 8px;-webkit-border-top-right-radius: 8px;
+}
+
+.sbHolderDisabled{
+	background-color: #3C3C3C;
+	border: solid 1px #515151;
+}
+.sbHolderDisabled .sbHolder{
+	
+}
+.sbHolderDisabled .sbToggle{
+	
+}
+.sbOptions{
+    background-color: #131313;
+   
+	list-style: none;
+	left: -1px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+        width: 235px;
+	z-index: 1;
+	overflow-y: auto;
+        top: 31px !important;
+}
+.sbOptions li{ border-left: solid 1px #000; border-right: solid 1px #000;}
+.sbOptions li a{ padding-left:7px; padding-right:7px;    border: solid 1px #1f1f1f;     border-bottom: 1px solid #000;
+}
+.sbOptions a{
+	border-bottom: solid 1px #000;
+	display: block;
+	outline: none;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions a:link, .sbOptions a:visited{
+	color: #ddd;
+	text-decoration: none;
+}
+.sbOptions a:hover,
+.sbOptions a:focus,
+.sbOptions a.sbFocus{
+background-color: #000; color: #61afff !important;
+    text-shadow: 0px 0px 11px,0px 0px 11px,0px 0px 11px #61afff;
+    -moz-text-shadow: 0px 0px 11px,0px 0px 11px,0px 0px 11px #61afff;
+    -webkit-text-shadow: 0px 0px 11px,0px 0px 11px,0px 0px 11px #61afff;
+}
+.sbOptions li.last a{
+	border-bottom: none;
+}
+.sbOptions .sbDisabled{
+	border-bottom: solid 1px #000000;
+	color: #999;
+	display: block;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions .sbGroup{
+	border-bottom: solid 1px #000000;
+	color: #EBB52D;
+	display: block;
+	font-weight: bold;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions .sbSub{
+	padding-left: 17px;
+}

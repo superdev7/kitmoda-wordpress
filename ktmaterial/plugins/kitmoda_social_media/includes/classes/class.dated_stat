@@ -1,0 +1,57 @@
+<?php
+
+class KSM_datedStat extends KSM_Object {
+    
+    public 
+            $id,
+            $type,
+            $date,
+            $object,
+            $object_id,
+            $stat_name,
+            $stat_value;
+    
+    
+    
+    function __construct() {
+        
+    }
+    
+    
+    public function Add() {
+        
+        
+        if($this->Exist()) {
+            $this->_update();
+        } else {
+            $this->_Add();
+        }
+        
+    }
+    
+    
+    
+    private function _Add() {
+        
+    }
+    
+    private function _update() {
+        
+    }
+    
+    public function Exist() {
+        global $wpdb;
+        
+        $tbl = $wpdb->prefix . 'ksm_dated_stats';
+                
+        
+        $q = $wpdb->prepare("SELECT * FROM {$tbl} WHERE type = %s AND `date` = %s AND `object` = %s AND `object_id` = %s AND stat_name = %s", $this->type, $this->date, $this->object, $this->object_id, $this->stat_name);
+        
+        $row = $wpdb->get_row($q);
+        
+        
+        return $row;
+    }
+    
+    
+}

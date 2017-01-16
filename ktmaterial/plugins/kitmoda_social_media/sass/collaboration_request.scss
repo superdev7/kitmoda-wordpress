@@ -1,0 +1,379 @@
+@import "compass/css3";
+@import "mixins.scss";
+
+
+
+.window.join {
+    width : 727px;
+    
+    
+    .field_title {
+        font-weight: bold;
+        font-family: "Helvetica Neue";
+    }
+    
+    .field_notes {
+        @include box-shadow(-3px 4px 8px 1px rgba(0,0,0,.18));
+	border: solid 1px #cbc9de;
+        background: #d0dcf3;
+        @include border-radius(8px);
+        padding : 17px 18px 36px 17px;
+        
+        textarea {
+            height : 200px;
+            border : 0;
+            width : 100%;
+            resize: none;
+        }
+    }
+    
+    .section_model_price_share, .section_texture_price_share {
+        h2 {
+            margin-bottom : 26px;
+        }
+        .field_group {
+            margin-bottom: 10px;
+            width : 455px;
+        }
+        
+        label {
+            float : left;
+        }
+        .input {
+            text-align: right;
+            width: 180px !important;
+            height: 28px !important;
+            line-height: 28px !important;
+            float: right;
+            
+            &.err {
+                border-color : red;
+            }
+        }
+        
+        span.amount, span.amount_total {
+            display: block;
+            float : right;
+            color : #2b2b2b;
+            font-size : 14px;
+            font-family: "Helvetica Neue";
+            font-weight : bold;
+        }
+        
+        span.amount_total {
+            font-size : 18px;
+        }
+        
+        
+        
+        .line2 {
+            margin-top: 10px;
+            
+        }
+        
+    }
+    
+    .note {
+            color : #2b2b2b;
+            font-size : 14px;
+            font-family : "Helvetica Neue";
+            line-height: normal;
+            margin-top : 26px;
+        }
+    
+    .section_request_type {
+        .note {
+            color : #6c6c6c;
+            font-size : 14px;
+            font-family : "Helvetica Neue";
+            margin-right: 60px;
+            line-height: normal;
+            margin-top : 26px;
+        }
+    }
+    
+    
+    .footer {
+        padding-left : 57px;
+        .error, .ksm_loading, .btn {
+            float:left;
+        }
+
+        .ksm_loading {
+            margin : 7px;
+            display: none;
+        }
+
+        .btn {
+            margin : 10px !important;
+        }
+        .error {
+            font-size: 14px;
+            margin : 10px;
+        }
+        
+        
+        
+        position: relative;
+        height : 75px !important;
+        a.terms_link {
+            color : #2e4dd3;
+            font-size : 14px;
+            font-family: "Helvetica Neue";
+            text-decoration : none;
+            
+            &:hover {
+                text-decoration : underline;
+            }
+        }
+        
+        .loading_error {
+            position: absolute;
+            top: 6px;
+            right: 26px;
+            .error, .ksm_loading {
+                margin : 0;
+            }
+        }
+        
+        label {
+            color: #2b2b2b;
+            font-size: 14px;
+            font-family: "Helvetica Neue";
+            letter-spacing: normal;
+            text-transform: none;
+            float : left;
+            cursor : pointer;
+        }
+        input {
+            float : left;
+            margin-right: 4px;
+            margin-top: 1px;
+        }
+        
+        .btn {
+            margin-top: 2px !important;
+            margin-bottom: 0 !important;
+            
+        }
+        
+        
+    }
+    
+}
+
+
+.posts {
+    .empty_msg {
+        padding: 20px;
+        text-align: center;
+        font-size: 20px;
+        color: #abacb1;
+        @include border-radius(5px);
+        background: #fff;
+    }
+}
+
+.collab_page.requests, .collab_page.projects {
+    
+    background: #FFF;
+    @include border-radius(8px);
+    border : #a6a6a6 solid 1px;
+    
+    min-height : 270px;
+    
+    .posts {
+        
+        .post {
+            
+            @include box-shadow(0 2px 2px rgba(0,0,0,.27));
+            border: solid 1px #505459;
+            @include background-image(linear-gradient(bottom, #3b3d40, #515459));
+            @include border-radius(8px);
+            
+            margin : 18px 20px 34px 24px;
+            
+            .rheader {
+                padding : 19px 28px 15px 22px;
+                border-bottom : #2e3540 solid 1px;
+                
+                
+                .avatar {
+                    float : left;
+                    img {
+                        border : #717171 solid 1px;
+                        @include border-radius(5px);
+                        height: 61px;
+                    }
+                }
+
+                .userinfo {
+                    float : left;
+                    font-size : 14px;
+                    padding-left: 8px;
+                    .username {
+                        font-family : "DejaVu Sans Condensed";
+                        color : #61afff;
+                        text-transform: uppercase;
+                        text-decoration : none;
+                        
+                    }
+                    .date {
+                        font-family : "Helvetica Neue";
+                        font-size : 11px;
+                        color : #FFF;
+                    }
+                }
+                
+                .user_rating {
+                    float : left;
+                    margin-left : 60px;
+                    font-family : "Helvetica Neue";
+                    font-size : 11px;
+                    color : #FFF;
+                    text-transform: uppercase;
+                    
+                    .rating2 {
+                        float : right;
+                        margin-left : 10px;
+                    }
+                    
+                    .communication {
+                        padding-left : 27px;
+                        margin-bottom: 12px;
+                        background: url(../images/icons/communication.png) no-repeat;
+                    }
+                    
+                    .artwork {
+                        padding-left : 27px;
+                        background: url(../images/icons/artwork.png) no-repeat 7px center;
+                    }
+                }
+                
+                .thumb {
+                    float : right;
+                    
+                    background-color: #4d4d4d;
+                    @include filter-gradient(#4d4d4d, #ffffff, vertical);
+                    $experimental-support-for-svg: true;
+                    @include background-image(linear-gradient(top,  #4d4d4d 1%,#b3b3b3 5%,#d3d3d3 43%,#dbdbdb 94%,#ffffff 98%,#ffffff 100%));
+                    
+                    @include box-shadow(inset 0 3px 6px rgba(0,0,0,.36));
+                    
+                    padding : 1px;
+                    @include border-radius(5px);
+                    height : 64px;
+                    img {
+                        
+                        @include border-radius(5px);
+                    }
+                }
+        
+                
+            }
+            
+            .rcontent {
+                
+                font-family : "Helvetica Neue";
+                font-size : 14px;
+                
+                .title {
+                    float : left;
+                    color : #FFF;
+                    text-transform: uppercase;
+                    padding : 10px 40px 4px 24px;
+                    span {
+                        color : #ff8484;
+                    }
+                }
+                
+                .project_name {
+                    float : left;
+                    color : #61afff;
+                    padding : 10px 0 4px 0;
+                }
+                
+                .p_content {
+                    min-height: 164px;
+                    background: #FFF;
+                    margin : 6px 23px 10px 24px;
+                    padding : 10px 12px;
+                    color : #2b2b2b;
+                }
+                
+                .price_shares {
+                    font-family : "Helvetica Neue";
+                    color : #FFF;
+                    margin-left: 24px;
+                    width: 355px;
+                    padding-bottom : 6px;
+                    label {
+                        font-family: "Helvetica Neue";
+                        font-size: 11px;
+                        text-transform: uppercase;
+                        float: left;
+                        letter-spacing: normal;
+                        font-weight: normal;
+                        margin-bottom : 0;
+                        height: 21px;
+                        line-height: 21px;
+                    }
+                    
+                    .price {
+                        float : right;
+                        font-size : 14px;
+                    }
+                    
+                    .request_price {
+                        .price {
+                            color : #ff8484;
+                        }
+                    }
+                    
+                    hr {
+                        background: #7a8599;
+                        margin-top: 6px;
+                        margin-bottom: 12px;
+                    }
+                    
+                }
+                
+                
+            }
+            
+            .rfooter {
+                border-top: #2e3540 solid 1px;
+                padding-top : 20px;
+                padding-bottom : 18px;
+                padding-right: 20px;
+                
+                .rejected {
+                    background: #4f5051;
+                    padding: 2px 20px;
+                    border-radius: 5px;
+                    color: #ababab;
+                    font-size : 13px;
+                }
+                
+                .accepted {
+                    background: #e63d4f;
+                    padding: 2px 20px;
+                    border-radius: 5px;
+                    color: #FFF;
+                    font-size : 13px;
+                }
+                
+                
+                .buttons {
+                    float : right;
+                    
+                    .btn_accept {
+                        margin-left : 27px;
+                    }
+                }
+            }
+            
+        }
+    }
+    
+}

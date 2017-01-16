@@ -1,0 +1,20 @@
+<div class="add_post add_the_post" ng-init="post_content_limit = 20;">
+    <div class="add_post_form radius">			
+        <div class="add_post_form_highlight_community_overlay">
+            <div ng-form="postForm" novalidate>
+                <textarea atrqt="community_add_post" placeholder="Add your thoughts here..." name="post_content" ng-model="post_content" k-character-limit="post_content_limit" style="resize: none;"></textarea>
+                <div class="buttons">
+                    <span class="characters_left">{{post_content_limit - post_content.length}} characters left</span>
+                    <div class="post_img_btn" data-atrqt="community_add_post"></div>
+                    <a data-atrqt="community_add_post" ng-click="vm.processJoin(joinForm)" k-processing="vm.processing" class="btn btn_add_post" k-form-btn btn-label=""></a>
+                </div>
+                <div class="clr"></div>
+                <div class="error"></div>
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>
+<div class="after_add_post_line">
+    <div class="after_add_post_line_overlay"></div>
+</div>

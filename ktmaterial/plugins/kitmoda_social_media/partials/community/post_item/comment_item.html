@@ -1,0 +1,66 @@
+<div class="comment">
+    <div class="avatar_comment_small">
+        <img class="radius" ng-src="{{kcomnt.avatar}}" />
+    </div>
+    
+    
+    <div class="comment_content_container">
+        <div class="comment_header">
+            <a class="username" href="{{kcomnt.author_link}}">{{kcomnt.author_name}}</a>
+            <div class="date" ng-class="{'edited' : kcomnt.edited}"><span ng-show="kcomnt.edited">Edited</span> {{kcomnt.date}}</div>
+            
+            
+            
+            <ul class="comment_actions" ng-if="kcomnt.has_access">
+                
+                
+                <div class="edit_outer_container" style="margin-left: -72px;" ng-click="editComment()">
+                        <div class="edit_container">
+                            
+
+                                    <div class="edit_post">
+                                    </div>
+                                    <div class="edit_post_hover">
+                                    </div>
+                            
+                        </div>
+                        <span>EDIT</span>
+                        </div>
+                
+                <div class="delete_outer_container" style="margin-left: -72px;" ng-click="deleteComment()">
+                        <div class="delete_container">
+                            
+
+                                    <div class="delete_post">
+                                    </div>
+                                    <div class="delete_post_hover">
+                                    </div>
+                            
+                        </div>
+                        <span>DELETE</span>
+                        </div>
+                
+                               
+                
+                <li class="clr"></li>
+            </ul>
+            
+            <div class="clr"></div>
+        </div> 
+
+        <div class="comment_content_community">
+            {{kcomnt.content}}
+        </div>
+        <div class="footer">
+            <ul class="comment_stats">
+                <li class="likes" like="kcomnt.like" k-like="comment"></li>
+                <li class="likes_hover" like="kcomnt.like" k-like="comment"></li>
+                <li class="clr"></li>
+            </ul>
+        </div>
+
+        
+
+    </div><div class="clr"></div>
+
+</div>

@@ -1,0 +1,81 @@
+$container-width : 1228px;
+
+$window-width : 726px;
+
+
+@mixin importFont($name, $id, $weight, $style) {
+    @include font-face($name, font-files("#{$id}/#{$id}.woff2", "#{$id}/#{$id}.woff", "#{$id}/#{$id}.ttf", "#{$id}/#{$id}.svg"), "#{$id}/#{$id}.eot", $weight, $style);
+}
+
+@mixin topRadius($size) {
+    @include border-top-left-radius($size);
+    @include border-top-right-radius($size);
+}
+
+@mixin bottomRadius($size) {
+    @include border-bottom-left-radius($size);
+    @include border-bottom-right-radius($size);
+}
+
+@mixin leftRadius($size) {
+    @include border-top-left-radius($size);
+    @include border-bottom-left-radius($size);
+}
+
+
+
+
+
+
+@mixin redButton($height, $font-size) {
+    height: $height;
+    line-height: $height;
+    font-size: $font-size;
+    font-family: "Helvetica Neue";
+    color: #fefeff !important;
+    @include border-radius(6px);
+    @include box-shadow(-4px 3px 5px rgba(0,0,0,.75));
+    @include background-image(linear-gradient(bottom, #c9413e, #ef5653));
+}
+
+
+@mixin background-with-ms($image) {
+    @include background($image);
+    background: -ms-#{$image};
+}
+
+
+
+
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+
+
+
+@mixin border-top-color($color) {
+    -moz-border-top-color: #{$color};
+    border-top-color: #{$color};
+}
+
+
+@mixin border-right-color($color) {
+    -moz-border-right-color: #{$color};
+    border-right-color: #{$color};
+}
+
+@mixin border-bottom-color($color) {
+    -moz-border-bottom-color: #{$color};
+    border-bottom-color: #{$color};
+}
+
+@mixin border-left-color($color) {
+    -moz-border-left-color: #{$color};
+    border-left-color: #{$color};
+}

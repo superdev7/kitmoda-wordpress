@@ -1,0 +1,194 @@
+<div class="window_inner">
+    <iframe name="post_options_frame" class="formframe"></iframe>
+    
+    
+    <form method="post" action="<?=admin_url( 'admin-ajax.php' )?>" target="post_options_frame">
+    <input type="hidden" name="action" value="<?=$submit_action?>" />
+    <input type="hidden" name="_id" value="<?=$post->ID?>" />
+    
+    
+    <div class="modal-header">
+        <div class="modal-title title">Post Options</div>
+        <a class="close" ng-click="$dismiss()"></a>
+    </div>
+    
+    
+    <div class="content">
+        
+        <h1>Control how your post is seen...</h1>
+        
+        
+        
+        <div class="sectionBackgroundDark">
+            <div class="section section_post_options">
+                <div class="sectionOverlay">
+                    <div class="section_header">
+                        <h2>LET'S HELP PEOPLE FIND YOUR POST</h2>
+                        <div class="line2"></div>
+                    </div>
+                    <div class="fields">
+                        <div class="field_group field_group_title">
+                            <input type="text" name="post_title" class="input" ng-model="vm.pd.title" placeholder="Post title..." />
+                        </div>
+                        
+                        
+                        <div class="field_group field_group_title" ng-if="vm.is_edit">
+                            <textarea class="cbarele" placeholder="Add your thoughts here..." style="resize: none; overflow: hidden; word-wrap: break-word; height: 72px;" name="post_content"><?=$post->post_content?></textarea>
+                        </div>
+                        
+                        
+                        <div class="clr"></div>
+                        
+                        <div class="field_group field_group_topic">
+                            <div class="field_title">TOPIC</div>
+                            <?=KSM_Form::terms_radio('topic', array('value' => $post_topic, 'section' => 'topic', 'label' => 'post_option_label')); ?>
+                        </div>
+                        <div class="field_group field_group_show_within">
+                            <div class="field_title">SHOW WITHIN</div>
+                            <?=KSM_Form::radio($post_at_options, $post_at_settings);?>
+                        </div>
+                        <div class="field_group field_group_progress">
+                            <div class="field_title">PROGRESS <span>(optional)</span></div>
+                            
+                            <?=KSM_Form::terms_radio('topic', array('value' => $post_progress, 'name' => 'progress', 'prepend' => array('' => 'Unspecified') , 'section' => 'progress',  'label' => 'post_option_label')); ?>
+                        </div>
+                        <div class="clr"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        <div class="sectionBackgroundDark">
+            <div class="section section_images">
+                <div class="sectionOverlay">
+                    <div class="section_header">
+                        
+                        <div style="float : left;">
+                            <h2>EDIT YOUR IMAGE CONTENT</h2>
+                            <div class="section_note">(Describing images helps users find them)</div>
+                        </div>
+                        
+                        <?php if($is_edit) :  ?>
+                            <div class="browse_btn"></div>
+                        <?php endif; ?>
+                        
+                        <div class="clr"></div>
+                        
+                        <div class="line2"></div>
+                    </div>
+        
+        
+        
+        <div class="gallery_section">
+            
+        
+        <ul class="list_images items">
+            <?php foreach ((Array) $attachments as $att) :
+                
+                $img_topic = $is_edit ? ksm_get_ds_post_term_names($att->ID, 'topic', 'topic', true) : 'general';
+                $img_topic = $img_topic ? $img_topic : 'general';
+        
+                $img_progress = $is_edit ? ksm_get_ds_post_term_names($att->ID, 'topic', 'progress', true) : '';
+                
+                $img_add_in_gallery = $is_edit ? $att->add_in_gallery : 'yes';
+                
+            ?>
+            <li rel="<?=$att->ID?>" id="img_att_<?=$att->ID?>" class="image_item item">
+                <input type="hidden" class="uid" name="kimg[id][]" value="<?=$att->ID?>" />
+                
+                <div class="preview">
+                    <div class="img thumbnail">
+                        <img src="<?=get_image_src($att->ID, 'post_option') ?>" />
+                    </div>
+                </div>
+                
+                
+                <div class="fields">
+                    <div class="field field_image_name">
+                        <label>NAME IMAGE</label>
+                        <input type="text" name="kimg[name][]" value="<?=$att->post_title?>" class="input" />
+                    </div>
+                    
+                    <div>
+                        <div class="field field_topic">
+                            <label>TOPIC</label>
+                            <?=KSM_Form::terms_dropdown('topic', array(
+                                'section' => 'topic', 
+                                'label' => 'post_option_label', 
+                                'name' => 'kimg[topic][]',
+                                'id' => '',
+                                'value' => $img_topic
+                                )); ?>
+                        </div>
+                        <div class="field field_progress">
+                            <label>PROGRESS</label>
+                            <?=KSM_Form::terms_dropdown('topic', array(
+                                'section' => 'progress', 
+                                'label' => 'short_label', 
+                                'none_text' => 'Unspecified', 
+                                'name' => 'kimg[progress][]',
+                                'id' => '',
+                                'value' => $img_progress
+                                )); ?>
+                        </div>
+                        <div class="clr"></div>
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="actions">
+                    <a href="" class="action_remove remove">REMOVE</a>
+                    <div class="clr"></div>
+                    <div class="action_add_to_gallery">
+                        <label>ADD TO GALLERIES</label>
+                        <div class="field" align="center">
+                            <div class="toggle toggle-iphone"></div>
+                            <input type="hidden" name="kimg[add_in_gallery][]" value="<?=$img_add_in_gallery?>" />
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="clr"></div>
+                <div class="line2"></div>
+            </li>
+            <?php endforeach; ?>
+            
+            <li class="clr items_clr"></li>
+        </ul>
+            
+        <div class="images_empty">Upload Images</div>
+        </div>
+        
+                
+        </div></div></div>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="modal-footer">
+        <div style="float: right;">
+            <div class="error"></div>
+            <a ng-click="vm.post(reportPostForm)" k-processing="vm.processing" class="btn btn_blue" k-form-btn btn-label="GO"></a>
+            <div class="clr"></div>
+        </div><div class="clr"></div>
+    </div>
+    
+    
+    
+    </form>
+    
+    
+</div>

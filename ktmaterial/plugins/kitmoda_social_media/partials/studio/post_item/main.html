@@ -1,0 +1,179 @@
+
+    <div class="post_content_container_highlight">
+        <div class="post_content_container_top"></div>
+        <div class="post_content_container">
+            <div class="post_content">
+                
+                
+                   
+                    
+                        
+                            
+
+                    <div class="post_text_header">
+                        <div class="avatar">
+                            <a href="{{kpost.author_link}}">
+                                <img alt="Avatar" ng-src="{{kpost.avatar}}" />
+                            </a>
+                        </div>
+                        <div class="post_content_headerinfo">
+                            <li class="post_content_title">{{kpost.title}}</li>
+                        </div>
+
+                        <ul style="margin: -2px 0px 0px; float: right;">
+
+                            <li class="post_content_username">
+                                <a class="username" href="{{kpost.author_link}}">{{kpost.author_name}}</a>
+                            </li>
+                            <li class="post_content_age">{{kpost.time_ago}}</li>
+                            <li class="clr"></li>
+                        </ul>
+                        <div class="clr"></div>
+                    </div>
+                    <div class="footer">
+                    
+                    <ul class="post_stats">
+                        <li class="views">
+                            <span class="button"></span>
+                            <span class="count">{{kpost.views_count}}</span>
+                        </li>
+                        <li class="comments">
+                            <span class="button"></span>
+                            <span class="count">{{kpost.comments_count}}</span>
+                        </li>
+
+                        <li class="likes">
+                            <div class="likes_container">
+                                <div class="likes_backdrop_no_hover"></div>
+                                <div type="plike" class="button {{kpost.like_action.class}}" rel="{{kpost.like_action.action}}"></div>
+                            </div>
+                            <span class="count">{{kpost.likes_count}}</span>
+                        </li>
+                        <li class="share">
+                            <div class="share_container">
+                                <div class="share_backdrop_no_hover"></div>
+                                <div class="button" data-item="{{kpost.post_id}}"></div>
+                            </div>
+                        </li>
+                        
+                        <li class="report">
+                            <div class="button" ng-click="report()"></div>
+                        </li>
+                        
+                        
+
+                        <li class="clr"></li>
+                    </ul>
+                    
+                    
+                    
+                    
+                    <ul class="post_actions">
+                        <div style="margin-left: -72px;">
+                        <div class="edit_container">
+                            <a class="colorbox" href="{{kpost.edit_post_link}}">
+
+                                    <div class="edit_post">
+                                    </div>
+                                    <div class="edit_post_hover">
+                                    </div>
+                            </a>
+                        </div>
+                        <span class="edit_post_text">EDIT</span>
+                        </div>
+                        
+                        <div style="margin-top: -28px;">
+                        <div class="delete_container">
+                            <a class="colorbox" href="{{kpost.delete_post_link}}">
+                                <div class="delete_post">
+                                </div>
+                                <div class="delete_post_hover">
+                                </div>                            
+                            </a>
+                        </div>
+                        <span class="delete_post_text">DELETE</span>
+                         </div>
+                        <li class="clr"></li>
+                    </ul>
+                    
+                    <div class="clr"></div>
+                
+            </div>
+                
+                    <div class="post_content_divide_gradient_line_dark"></div>
+                    <div class="post_content_divide_gradient_line"></div>
+                    <div class="text_holder_box">
+                        <div class="pst-ih">{{kpost.content}}</div>
+                    </div>
+                   
+                
+                   
+                    
+                
+                
+                
+                
+                <div ng-if="kpost.images" class="post_content_image_background">
+                    <ul class="wp_images" style="text-align: center;">
+                        <li k-s-post-image style="display: inline-block;" ng-repeat="kpimg in kpost.images"></li>
+                        <li class="clr"></li>
+                    </ul>
+                </div>
+                
+                
+                
+                 
+                               
+                
+                
+
+            </div>
+            
+            <div k-s-post-add-comment></div>
+            
+            
+            
+            
+            
+            
+    <div class="post_comments">
+        <div class="comments_header" ng-class="{no_comments: kpost.comments_count == 0}">
+                <ul class="comments_stats">
+                    <li class="stat_comments">
+                        <span class="button"></span>
+                        <span class="count">{{kpost.comments_count}}</span>
+                    </li>
+                </ul>
+                
+                
+                <div class="comments_toggle" ng-click="show_comments = !show_comments">
+                    
+                    <span class="collapsed" ng-if="!show_comments">SHOW COMMENTS</span>
+                    <span class="expanded" ng-if="show_comments">HIDE COMMENTS</span>
+                </div>
+                
+                
+                <div class="clr"></div>
+            </div>
+        
+            <div class="comments" uib-collapse="!show_comments">
+                <div k-s-post-comment class="comment" id="wpc_{{kcomnt.comment_id}}" ng-repeat="kcomnt in kpost.comments | orderBy : '-comment_id'"></div>
+            </div>
+    </div>
+    
+    
+            
+            
+        
+		
+        </div>
+        <div class="post_content_container_bottom"></div>
+        
+        
+        
+        
+        
+        
+        
+        
+    </div><div class="clr"></div>

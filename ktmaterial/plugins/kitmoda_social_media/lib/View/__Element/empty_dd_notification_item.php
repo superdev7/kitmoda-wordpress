@@ -1,0 +1,1 @@
+<li class="empty">You have 0 notifications.</li>
