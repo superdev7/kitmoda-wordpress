@@ -9,4 +9,5 @@ pipelines:
   default:
     - step:
         script:
-          - echo "Everything is awesome!"
+          - apt-get update
+          - apt-get install git-ftp
