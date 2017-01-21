@@ -112,6 +112,7 @@
         </div>
     </div>
     
+    <div class="join_content_container_bottom"></div>
     
     </form>
     
