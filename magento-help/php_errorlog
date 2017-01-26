@@ -1,0 +1,543 @@
+[09-Sep-2016 18:30:16 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[09-Sep-2016 18:30:26 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[09-Sep-2016 18:30:28 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[09-Sep-2016 18:30:30 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[23-Sep-2016 23:06:27 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[23-Sep-2016 23:06:49 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[23-Sep-2016 23:06:51 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[23-Sep-2016 23:07:18 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[23-Sep-2016 23:07:48 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[23-Sep-2016 23:08:51 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[23-Sep-2016 23:10:11 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[23-Sep-2016 23:10:46 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[23-Sep-2016 23:21:00 UTC] PHP Warning:  in_array() expects parameter 2 to be array, boolean given in /home/kitmoda3/staging/1/magento-help/includes/plugin.php on line 533
+[23-Sep-2016 23:21:00 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kitmoda3/staging/1/magento-help/includes/plugin.php:533) in /home/kitmoda3/staging/1/kt-encased/pluggable.php on line 1228
+[23-Sep-2016 23:21:00 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kitmoda3/staging/1/magento-help/includes/plugin.php:533) in /home/kitmoda3/staging/1/kt-encased/pluggable.php on line 1228
+[26-Sep-2016 22:49:35 UTC] PHP Fatal error:  require(): Failed opening required '/home/kitmoda3/staging/1/ktmaterial/themes/kitification/inc/custom-header.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/themes/kitification/functions.php on line 773
+[17-Oct-2016 15:43:44 UTC] PHP Warning:  require_once(/home/kitmoda3/staging/1/wp-admin/includes/nav-menu.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/menu-image/menu-image.php on line 518
+[17-Oct-2016 15:43:44 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/kitmoda3/staging/1/wp-admin/includes/nav-menu.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/menu-image/menu-image.php on line 518
+[17-Oct-2016 15:43:46 UTC] PHP Warning:  require_once(/home/kitmoda3/staging/1/wp-admin/includes/nav-menu.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/menu-image/menu-image.php on line 518
+[17-Oct-2016 15:43:46 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/kitmoda3/staging/1/wp-admin/includes/nav-menu.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/menu-image/menu-image.php on line 518
+[17-Oct-2016 15:43:46 UTC] PHP Warning:  require_once(/home/kitmoda3/staging/1/wp-admin/includes/nav-menu.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/menu-image/menu-image.php on line 518
+[17-Oct-2016 15:43:46 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/kitmoda3/staging/1/wp-admin/includes/nav-menu.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/menu-image/menu-image.php on line 518
+[17-Oct-2016 15:44:02 UTC] PHP Warning:  require_once(/home/kitmoda3/staging/1/wp-admin/includes/nav-menu.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/menu-image/menu-image.php on line 518
+[17-Oct-2016 15:44:02 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/kitmoda3/staging/1/wp-admin/includes/nav-menu.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/menu-image/menu-image.php on line 518
+[17-Oct-2016 15:44:04 UTC] PHP Warning:  require_once(/home/kitmoda3/staging/1/wp-admin/includes/nav-menu.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/menu-image/menu-image.php on line 518
+[17-Oct-2016 15:44:04 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/kitmoda3/staging/1/wp-admin/includes/nav-menu.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/menu-image/menu-image.php on line 518
+[17-Oct-2016 15:44:04 UTC] PHP Warning:  require_once(/home/kitmoda3/staging/1/wp-admin/includes/nav-menu.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/menu-image/menu-image.php on line 518
+[17-Oct-2016 15:44:04 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/kitmoda3/staging/1/wp-admin/includes/nav-menu.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/menu-image/menu-image.php on line 518
+[11-Nov-2016 08:07:07 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/loader.php on line 142
+[14-Nov-2016 16:57:33 UTC] PHP Warning:  htmlentities() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 556
+[14-Nov-2016 16:57:47 UTC] PHP Warning:  htmlentities() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 556
+[14-Nov-2016 16:57:51 UTC] PHP Warning:  htmlentities() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 556
+[14-Nov-2016 16:57:52 UTC] PHP Warning:  htmlentities() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 556
+[14-Nov-2016 16:57:52 UTC] PHP Warning:  htmlentities() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 556
+[14-Nov-2016 16:57:53 UTC] PHP Warning:  htmlentities() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 556
+[14-Nov-2016 16:58:06 UTC] PHP Warning:  htmlentities() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 556
+[14-Nov-2016 16:58:07 UTC] PHP Warning:  htmlentities() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 556
+[24-Nov-2016 08:27:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/hooks.php on line 15
+[24-Nov-2016 08:27:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/hooks.php on line 19
+[24-Nov-2016 08:27:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/loader.php on line 142
+[24-Nov-2016 08:29:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/hooks.php on line 15
+[24-Nov-2016 08:29:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/hooks.php on line 19
+[24-Nov-2016 08:29:02 UTC] PHP Fatal error:  Class 'KSM_MvcLoader' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 123
+[24-Nov-2016 08:31:03 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/hooks.php on line 15
+[24-Nov-2016 08:31:03 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/hooks.php on line 19
+[24-Nov-2016 08:31:03 UTC] PHP Fatal error:  Class 'KSM_MvcLoader' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 123
+[24-Nov-2016 08:33:04 UTC] PHP Warning:  require_once(includes/s3_config.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 56
+[24-Nov-2016 08:33:04 UTC] PHP Fatal error:  require_once(): Failed opening required 'includes/s3_config.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 56
+[24-Nov-2016 08:35:05 UTC] PHP Warning:  require_once(includes/s3_config.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 56
+[24-Nov-2016 08:35:05 UTC] PHP Fatal error:  require_once(): Failed opening required 'includes/s3_config.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 56
+[24-Nov-2016 08:37:06 UTC] PHP Warning:  require_once(includes/s3_config.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 56
+[24-Nov-2016 08:37:06 UTC] PHP Fatal error:  require_once(): Failed opening required 'includes/s3_config.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 56
+[24-Nov-2016 09:13:24 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:13:24 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:15:25 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:15:25 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:17:26 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:17:26 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:19:27 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:19:27 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:21:29 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:21:29 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:23:29 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:23:29 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:25:31 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:25:31 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:27:32 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:27:32 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:29:31 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:29:31 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:31:32 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:31:32 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:33:33 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:33:33 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:35:34 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:35:34 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:37:35 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:37:35 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:39:37 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:39:37 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:41:37 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:41:37 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:43:38 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:43:38 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:45:39 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:45:39 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:47:39 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:47:39 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:49:40 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:49:40 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:51:42 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:51:42 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:53:42 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:53:42 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:55:43 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:55:43 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:57:44 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 09:57:44 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 10:33:26 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 10:33:26 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 10:35:27 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 10:35:27 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 10:37:28 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 10:37:28 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 10:39:29 UTC] PHP Warning:  require_once(admin/cron.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[24-Nov-2016 10:39:29 UTC] PHP Fatal error:  require_once(): Failed opening required 'admin/cron.php' (include_path='.:/usr/local/php55/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/kitmoda_social_media.php on line 638
+[06-Dec-2016 09:50:17 UTC] PHP Warning:  in_array() expects parameter 2 to be array, boolean given in /home/kitmoda3/staging/1/ktmaterial/plugins/easy-digital-downloads/includes/install.php on line 223
+[06-Dec-2016 12:23:42 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  xndsfoeno_posts.ID FROM xndsfoeno_posts  INNER JOIN xndsfoeno_postmeta ON ( xndsfoeno_posts.ID = xndsfoeno_postmeta.post_id )  INNER JOIN xndsfoeno_postmeta AS mt1 ON ( xndsfoeno_posts.ID = mt1.post_id ) LEFT JOIN xndsfoeno_posts AS p2 ON (xndsfoeno_posts.post_parent = p2.ID)  WHERE 1=1  AND ( 
+  0 = 1
+) AND ( 
+  xndsfoeno_postmeta.meta_key = 'trending' 
+  AND 
+  ( 
+    ( mt1.meta_key = 'trending' AND CAST(mt1.meta_value AS CHAR) > '0' )
+  )
+) AND xndsfoeno_posts.post_type = 'attachment' AND (((xndsfoeno_posts.post_status <> 'trash' AND xndsfoeno_posts.post_status <> 'auto-draft') OR (xndsfoeno_posts.post_status = 'inherit' AND (p2.post_status <> 'trash' AND p2.post_status <> 'auto-draft')))) GROUP BY xndsfoeno_posts.ID ORDER BY xndsfoeno_postmeta.meta_value+0 DESC LIMIT 0, 42 made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Trending_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 12:23:42 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  xndsfoeno_posts.ID FROM xndsfoeno_posts  INNER JOIN xndsfoeno_postmeta ON ( xndsfoeno_posts.ID = xndsfoeno_postmeta.post_id )  INNER JOIN xndsfoeno_postmeta AS mt1 ON ( xndsfoeno_posts.ID = mt1.post_id ) LEFT JOIN xndsfoeno_posts AS p2 ON (xndsfoeno_posts.post_parent = p2.ID)  WHERE 1=1  AND ( 
+  0 = 1
+) AND ( 
+  xndsfoeno_postmeta.meta_key = 'rating_coefficient' 
+  AND 
+  ( 
+    ( mt1.meta_key = 'rating_coefficient' AND CAST(mt1.meta_value AS CHAR) > '0' )
+  )
+) AND xndsfoeno_posts.post_type = 'attachment' AND (((xndsfoeno_posts.post_status <> 'trash' AND xndsfoeno_posts.post_status <> 'auto-draft') OR (xndsfoeno_posts.post_status = 'inherit' AND (p2.post_status <> 'trash' AND p2.post_status <> 'auto-draft')))) GROUP BY xndsfoeno_posts.ID ORDER BY xndsfoeno_postmeta.meta_value+0 DESC LIMIT 0, 42 made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Top_Rated_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 12:24:14 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  xndsfoeno_posts.ID FROM xndsfoeno_posts  INNER JOIN xndsfoeno_postmeta ON ( xndsfoeno_posts.ID = xndsfoeno_postmeta.post_id ) WHERE 1=1  AND xndsfoeno_posts.post_author IN (1)  AND ( 
+  ( xndsfoeno_postmeta.meta_key = '_thumbnail_id' AND CAST(xndsfoeno_postmeta.meta_value AS SIGNED) > '0' )
+) AND xndsfoeno_posts.post_type = 'download' AND ((xndsfoeno_posts.post_status = 'publish')) GROUP BY xndsfoeno_posts.ID ORDER BY xndsfoeno_posts.post_date DESC LIMIT 0, 20 made by do_action('wp_ajax_Studio_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Studio_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_StudioController->ksm_ajax_kmvg, KSM_mvgHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Product_Studio->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 12:24:14 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  xndsfoeno_posts.ID FROM xndsfoeno_posts  INNER JOIN xndsfoeno_postmeta ON ( xndsfoeno_posts.ID = xndsfoeno_postmeta.post_id ) WHERE 1=1  AND ( 
+  0 = 1
+) AND xndsfoeno_posts.post_author IN (1)  AND ( 
+  ( xndsfoeno_postmeta.meta_key = 'blocked' AND CAST(xndsfoeno_postmeta.meta_value AS CHAR) = 'no' )
+) AND xndsfoeno_posts.post_type = 'ksm_post' AND ((xndsfoeno_posts.post_status = 'publish')) GROUP BY xndsfoeno_posts.ID ORDER BY xndsfoeno_posts.post_date DESC LIMIT 0, 5 made by do_action('wp_ajax_Studio_filter_posts'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Studio_filter_posts, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_StudioController->ksm_ajax_filter_posts, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 12:24:33 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  xndsfoeno_posts.ID FROM xndsfoeno_posts  INNER JOIN xndsfoeno_postmeta ON ( xndsfoeno_posts.ID = xndsfoeno_postmeta.post_id )  INNER JOIN xndsfoeno_postmeta AS mt1 ON ( xndsfoeno_posts.ID = mt1.post_id ) LEFT JOIN xndsfoeno_posts AS p2 ON (xndsfoeno_posts.post_parent = p2.ID)  WHERE 1=1  AND ( 
+  0 = 1
+) AND ( 
+  xndsfoeno_postmeta.meta_key = 'trending' 
+  AND 
+  ( 
+    ( mt1.meta_key = 'trending' AND CAST(mt1.meta_value AS CHAR) > '0' )
+  )
+) AND xndsfoeno_posts.post_type = 'attachment' AND (((xndsfoeno_posts.post_status <> 'trash' AND xndsfoeno_posts.post_status <> 'auto-draft') OR (xndsfoeno_posts.post_status = 'inherit' AND (p2.post_status <> 'trash' AND p2.post_status <> 'auto-draft')))) GROUP BY xndsfoeno_posts.ID ORDER BY xndsfoeno_postmeta.meta_value+0 DESC LIMIT 0, 42 made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Trending_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 12:24:33 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  xndsfoeno_posts.ID FROM xndsfoeno_posts  INNER JOIN xndsfoeno_postmeta ON ( xndsfoeno_posts.ID = xndsfoeno_postmeta.post_id )  INNER JOIN xndsfoeno_postmeta AS mt1 ON ( xndsfoeno_posts.ID = mt1.post_id ) LEFT JOIN xndsfoeno_posts AS p2 ON (xndsfoeno_posts.post_parent = p2.ID)  WHERE 1=1  AND ( 
+  0 = 1
+) AND ( 
+  xndsfoeno_postmeta.meta_key = 'rating_coefficient' 
+  AND 
+  ( 
+    ( mt1.meta_key = 'rating_coefficient' AND CAST(mt1.meta_value AS CHAR) > '0' )
+  )
+) AND xndsfoeno_posts.post_type = 'attachment' AND (((xndsfoeno_posts.post_status <> 'trash' AND xndsfoeno_posts.post_status <> 'auto-draft') OR (xndsfoeno_posts.post_status = 'inherit' AND (p2.post_status <> 'trash' AND p2.post_status <> 'auto-draft')))) GROUP BY xndsfoeno_posts.ID ORDER BY xndsfoeno_postmeta.meta_value+0 DESC LIMIT 0, 42 made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Top_Rated_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 12:37:22 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_users' doesn't exist for query SELECT * FROM xndsfoeno_users WHERE user_login = 'magnesium_titan' made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include('/themes/kitification/functions.php'), current_user_can, wp_get_current_user, get_currentuserinfo, apply_filters('determine_current_user'), call_user_func_array, wp_validate_auth_cookie, get_user_by, WP_User::get_data_by
+[06-Dec-2016 12:37:22 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_users' doesn't exist for query SELECT * FROM xndsfoeno_users WHERE user_login = 'magnesium_titan' made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include('/themes/kitification/functions.php'), current_user_can, wp_get_current_user, get_currentuserinfo, apply_filters('determine_current_user'), call_user_func_array, wp_validate_logged_in_cookie, wp_validate_auth_cookie, get_user_by, WP_User::get_data_by
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 9 LIMIT 1 made by require_once('magento-help/admin.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('init'), call_user_func_array, FES_Vendor_Shop->add_rewrite_rules, get_page, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query 
+		SELECT ID
+		FROM xndsfoeno_posts
+		WHERE post_type = 'attachment'
+		AND post_mime_type LIKE 'audio%'
+		LIMIT 1
+	 made by include('magento-help/admin-header.php'), do_action('admin_enqueue_scripts'), call_user_func_array, edd_load_admin_scripts, wp_enqueue_media
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query 
+		SELECT ID
+		FROM xndsfoeno_posts
+		WHERE post_type = 'attachment'
+		AND post_mime_type LIKE 'video%'
+		LIMIT 1
+	 made by include('magento-help/admin-header.php'), do_action('admin_enqueue_scripts'), call_user_func_array, edd_load_admin_scripts, wp_enqueue_media
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query 
+		SELECT DISTINCT YEAR( post_date ) AS year, MONTH( post_date ) AS month
+		FROM xndsfoeno_posts
+		WHERE post_type = 'attachment'
+		ORDER BY post_date DESC
+	 made by include('magento-help/admin-header.php'), do_action('admin_enqueue_scripts'), call_user_func_array, edd_load_admin_scripts, wp_enqueue_media
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 4 LIMIT 1 made by include('magento-help/admin-header.php'), do_action('admin_notices'), call_user_func_array, EDD_Notices->show_notices, get_post_status, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 15 LIMIT 1 made by do_action('welcome_panel'), call_user_func_array, wp_welcome_panel, get_edit_post_link, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT post_status, COUNT( * ) AS num_posts FROM xndsfoeno_posts WHERE post_type = 'post' GROUP BY post_status made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_right_now, wp_count_posts
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT post_status, COUNT( * ) AS num_posts FROM xndsfoeno_posts WHERE post_type = 'page' GROUP BY post_status made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_right_now, wp_count_posts
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT post_status, COUNT( * ) AS num_posts FROM xndsfoeno_posts WHERE post_type = 'download' GROUP BY post_status made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_right_now, apply_filters('dashboard_glance_items'), call_user_func_array, edd_dashboard_at_a_glance_widget, wp_count_posts
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT   xndsfoeno_posts.ID FROM xndsfoeno_posts  WHERE 1=1  AND xndsfoeno_posts.post_type = 'post' AND ((xndsfoeno_posts.post_status = 'future'))  ORDER BY xndsfoeno_posts.post_date ASC LIMIT 0, 5 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_posts, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT   xndsfoeno_posts.ID FROM xndsfoeno_posts  WHERE 1=1  AND xndsfoeno_posts.post_type = 'post' AND ((xndsfoeno_posts.post_status = 'publish'))  ORDER BY xndsfoeno_posts.post_date DESC LIMIT 0, 5 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_posts, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 994 LIMIT 1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_comments, current_user_can, call_user_func_array, WP_User->has_cap, call_user_func_array, map_meta_cap, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 995 LIMIT 1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_comments, current_user_can, call_user_func_array, WP_User->has_cap, call_user_func_array, map_meta_cap, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 995 LIMIT 1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_comments, current_user_can, call_user_func_array, WP_User->has_cap, call_user_func_array, map_meta_cap, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 995 LIMIT 1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_comments, current_user_can, call_user_func_array, WP_User->has_cap, call_user_func_array, map_meta_cap, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 994 LIMIT 1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_comments, current_user_can, call_user_func_array, WP_User->has_cap, call_user_func_array, map_meta_cap, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 891 LIMIT 1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_comments, current_user_can, call_user_func_array, WP_User->has_cap, call_user_func_array, map_meta_cap, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 887 LIMIT 1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_comments, current_user_can, call_user_func_array, WP_User->has_cap, call_user_func_array, map_meta_cap, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 444 LIMIT 1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_comments, current_user_can, call_user_func_array, WP_User->has_cap, call_user_func_array, map_meta_cap, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 843 LIMIT 1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_comments, current_user_can, call_user_func_array, WP_User->has_cap, call_user_func_array, map_meta_cap, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 404 LIMIT 1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_comments, current_user_can, call_user_func_array, WP_User->has_cap, call_user_func_array, map_meta_cap, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 404 LIMIT 1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_comments, current_user_can, call_user_func_array, WP_User->has_cap, call_user_func_array, map_meta_cap, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 3 LIMIT 1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_quick_press, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SHOW FULL COLUMNS FROM `xndsfoeno_posts` made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_quick_press, get_default_post_to_edit, wp_insert_post
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SHOW FULL COLUMNS FROM `xndsfoeno_posts` made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_quick_press, get_default_post_to_edit, wp_insert_post
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SHOW FULL COLUMNS FROM `xndsfoeno_posts` made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_quick_press, get_default_post_to_edit, wp_insert_post
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SHOW FULL COLUMNS FROM `xndsfoeno_posts` made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_quick_press, get_default_post_to_edit, wp_insert_post
+[06-Dec-2016 16:51:50 UTC] PHP Warning:  Creating default object from empty value in /home/kitmoda3/staging/1/magento-help/includes/post.php on line 632
+[06-Dec-2016 16:51:50 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT   xndsfoeno_posts.ID FROM xndsfoeno_posts  WHERE 1=1  AND xndsfoeno_posts.post_author IN (1)  AND xndsfoeno_posts.post_type = 'post' AND ((xndsfoeno_posts.post_status = 'draft'))  ORDER BY xndsfoeno_posts.post_modified DESC LIMIT 0, 4 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_quick_press, wp_dashboard_recent_drafts, get_posts, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 16:51:53 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 9 LIMIT 1 made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('init'), call_user_func_array, FES_Vendor_Shop->add_rewrite_rules, get_page, get_post, WP_Post::get_instance
+[06-Dec-2016 16:51:53 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT p.post_status,count( * ) AS num_posts
+		FROM xndsfoeno_posts p
+		
+		WHERE p.post_type = 'edd_payment' AND p.post_date >= '2016-12-01 00:00:00' AND p.post_date <= '2016-12-31 23:59:59'
+		GROUP BY p.post_status
+	 made by do_action('wp_ajax_edd_load_dashboard_widget'), call_user_func_array, edd_load_dashboard_sales_widget, EDD_Payment_Stats->get_sales, edd_count_payments
+[06-Dec-2016 16:51:53 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT   xndsfoeno_posts.ID FROM xndsfoeno_posts  WHERE 1=1  AND xndsfoeno_posts.post_type = 'edd_payment' AND ((xndsfoeno_posts.post_status = 'publish' OR xndsfoeno_posts.post_status = 'revoked')) AND xndsfoeno_posts.post_date >= '2016-11-01 00:00:00' AND xndsfoeno_posts.post_date <= '2016-11-30 23:59:59'  ORDER BY xndsfoeno_posts.post_date DESC  made by do_action('wp_ajax_edd_load_dashboard_widget'), call_user_func_array, edd_load_dashboard_sales_widget, EDD_Payment_Stats->get_earnings, get_posts, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 16:51:53 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT p.post_status,count( * ) AS num_posts
+		FROM xndsfoeno_posts p
+		
+		WHERE p.post_type = 'edd_payment' AND p.post_date >= '2016-11-01 00:00:00' AND p.post_date <= '2016-11-30 23:59:59'
+		GROUP BY p.post_status
+	 made by do_action('wp_ajax_edd_load_dashboard_widget'), call_user_func_array, edd_load_dashboard_sales_widget, EDD_Payment_Stats->get_sales, edd_count_payments
+[06-Dec-2016 16:51:53 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT p.post_status,count( * ) AS num_posts
+		FROM xndsfoeno_posts p
+		
+		WHERE p.post_type = 'edd_payment' AND p.post_date >= '2016-12-06 00:00:00' AND p.post_date <= '2016-12-06 23:59:59'
+		GROUP BY p.post_status
+	 made by do_action('wp_ajax_edd_load_dashboard_widget'), call_user_func_array, edd_load_dashboard_sales_widget, EDD_Payment_Stats->get_sales, edd_count_payments
+[06-Dec-2016 16:51:53 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT p.post_status,count( * ) AS num_posts
+		FROM xndsfoeno_posts p
+		
+		WHERE p.post_type = 'edd_payment'
+		GROUP BY p.post_status
+	 made by do_action('wp_ajax_edd_load_dashboard_widget'), call_user_func_array, edd_load_dashboard_sales_widget, edd_get_total_sales, edd_count_payments
+[06-Dec-2016 16:51:53 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  xndsfoeno_posts.ID FROM xndsfoeno_posts  WHERE 1=1  AND xndsfoeno_posts.post_parent = 0  AND xndsfoeno_posts.post_type = 'edd_payment' AND ((xndsfoeno_posts.post_status = 'publish'))  ORDER BY xndsfoeno_posts.ID DESC LIMIT 0, 5 made by do_action('wp_ajax_edd_load_dashboard_widget'), call_user_func_array, edd_load_dashboard_sales_widget, EDD_Payments_Query->get_payments, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 16:52:02 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 9 LIMIT 1 made by require_once('magento-help/admin.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('init'), call_user_func_array, FES_Vendor_Shop->add_rewrite_rules, get_page, get_post, WP_Post::get_instance
+[06-Dec-2016 16:52:02 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query 
+			SELECT COUNT( 1 )
+			FROM xndsfoeno_posts
+			WHERE post_type = 'ksm_post'
+			AND post_status NOT IN ( 'trash','auto-draft','inherit' )
+			AND post_author = 1
+		 made by _get_list_table, WP_Posts_List_Table->__construct
+[06-Dec-2016 16:52:02 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT post_status, COUNT( * ) AS num_posts FROM xndsfoeno_posts WHERE post_type = 'ksm_post' GROUP BY post_status made by WP_Posts_List_Table->prepare_items, wp_edit_posts_query, get_available_post_statuses, wp_count_posts
+[06-Dec-2016 16:52:02 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query 
+		SELECT ID, post_name, post_parent, post_type
+		FROM xndsfoeno_posts
+		WHERE post_name IN ('magento-help','edit-php')
+		AND post_type IN ('page','attachment')
+	 made by WP_Posts_List_Table->prepare_items, wp_edit_posts_query, wp, WP->main, WP->parse_request, get_page_by_path
+[06-Dec-2016 16:52:02 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT   xndsfoeno_posts.* FROM xndsfoeno_posts  WHERE 1=1  AND xndsfoeno_posts.post_type = 'ksm_post' AND (xndsfoeno_posts.post_status = 'publish' OR xndsfoeno_posts.post_status = 'refunded' OR xndsfoeno_posts.post_status = 'failed' OR xndsfoeno_posts.post_status = 'revoked' OR xndsfoeno_posts.post_status = 'abandoned' OR xndsfoeno_posts.post_status = 'active' OR xndsfoeno_posts.post_status = 'inactive' OR xndsfoeno_posts.post_status = 'future' OR xndsfoeno_posts.post_status = 'draft' OR xndsfoeno_posts.post_status = 'pending' OR xndsfoeno_posts.post_status = 'private')  ORDER BY xndsfoeno_posts.menu_order ASC, xndsfoeno_posts.post_title ASC  made by WP_Posts_List_Table->prepare_items, wp_edit_posts_query, wp, WP->main, WP->query_posts, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 16:52:02 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query SELECT * FROM xndsfoeno_posts WHERE ID = 4 LIMIT 1 made by require_once('magento-help/admin-header.php'), do_action('admin_notices'), call_user_func_array, EDD_Notices->show_notices, get_post_status, get_post, WP_Post::get_instance
+[06-Dec-2016 16:52:02 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_posts' doesn't exist for query 
+			SELECT DISTINCT YEAR( post_date ) AS year, MONTH( post_date ) AS month
+			FROM xndsfoeno_posts
+			WHERE post_type = 'ksm_post'
+			AND post_status != 'auto-draft' AND post_status != 'trash'
+			ORDER BY post_date DESC
+		 made by WP_List_Table->display, WP_List_Table->display_tablenav, WP_Posts_List_Table->extra_tablenav, WP_List_Table->months_dropdown
+[06-Dec-2016 16:53:48 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  xndsfoeno_posts.ID FROM xndsfoeno_posts  INNER JOIN xndsfoeno_term_relationships ON (xndsfoeno_posts.ID = xndsfoeno_term_relationships.object_id) INNER JOIN xndsfoeno_postmeta ON ( xndsfoeno_posts.ID = xndsfoeno_postmeta.post_id )  INNER JOIN xndsfoeno_postmeta AS mt1 ON ( xndsfoeno_posts.ID = mt1.post_id ) LEFT JOIN xndsfoeno_posts AS p2 ON (xndsfoeno_posts.post_parent = p2.ID)  WHERE 1=1  AND ( 
+  xndsfoeno_term_relationships.term_taxonomy_id IN (12)
+) AND ( 
+  xndsfoeno_postmeta.meta_key = 'trending' 
+  AND 
+  ( 
+    ( mt1.meta_key = 'trending' AND CAST(mt1.meta_value AS CHAR) > '0' )
+  )
+) AND xndsfoeno_posts.post_type = 'attachment' AND (((xndsfoeno_posts.post_status <> 'trash' AND xndsfoeno_posts.post_status <> 'auto-draft') OR (xndsfoeno_posts.post_status = 'inherit' AND (p2.post_status <> 'trash' AND p2.post_status <> 'auto-draft')))) GROUP BY xndsfoeno_posts.ID ORDER BY xndsfoeno_postmeta.meta_value+0 DESC LIMIT 0, 42 made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Trending_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 16:53:48 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT post_id, meta_key, meta_value FROM xndsfoeno_postmeta WHERE post_id IN (35,85,166) ORDER BY meta_id ASC made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_New_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts, _prime_post_caches, update_post_caches, update_postmeta_cache, update_meta_cache
+[06-Dec-2016 16:53:48 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT meta_id FROM xndsfoeno_postmeta WHERE meta_key = 'views_count' AND post_id = 166 made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_postView::add, update_post_meta, update_metadata
+[06-Dec-2016 16:53:48 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SHOW FULL COLUMNS FROM `xndsfoeno_postmeta` made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_postView::add, update_post_meta, update_metadata, add_metadata
+[06-Dec-2016 16:53:48 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT meta_id FROM xndsfoeno_postmeta WHERE meta_key = 'views_count' AND post_id = 35 made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_postView::add, update_post_meta, update_metadata
+[06-Dec-2016 16:53:48 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SHOW FULL COLUMNS FROM `xndsfoeno_postmeta` made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_postView::add, update_post_meta, update_metadata, add_metadata
+[06-Dec-2016 16:53:48 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  xndsfoeno_posts.ID FROM xndsfoeno_posts  INNER JOIN xndsfoeno_term_relationships ON (xndsfoeno_posts.ID = xndsfoeno_term_relationships.object_id) INNER JOIN xndsfoeno_postmeta ON ( xndsfoeno_posts.ID = xndsfoeno_postmeta.post_id )  INNER JOIN xndsfoeno_postmeta AS mt1 ON ( xndsfoeno_posts.ID = mt1.post_id ) LEFT JOIN xndsfoeno_posts AS p2 ON (xndsfoeno_posts.post_parent = p2.ID)  WHERE 1=1  AND ( 
+  xndsfoeno_term_relationships.term_taxonomy_id IN (12)
+) AND ( 
+  xndsfoeno_postmeta.meta_key = 'rating_coefficient' 
+  AND 
+  ( 
+    ( mt1.meta_key = 'rating_coefficient' AND CAST(mt1.meta_value AS CHAR) > '0' )
+  )
+) AND xndsfoeno_posts.post_type = 'attachment' AND (((xndsfoeno_posts.post_status <> 'trash' AND xndsfoeno_posts.post_status <> 'auto-draft') OR (xndsfoeno_posts.post_status = 'inherit' AND (p2.post_status <> 'trash' AND p2.post_status <> 'auto-draft')))) GROUP BY xndsfoeno_posts.ID ORDER BY xndsfoeno_postmeta.meta_value+0 DESC LIMIT 0, 42 made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Top_Rated_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 16:54:17 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  xndsfoeno_posts.ID FROM xndsfoeno_posts  INNER JOIN xndsfoeno_term_relationships ON (xndsfoeno_posts.ID = xndsfoeno_term_relationships.object_id) INNER JOIN xndsfoeno_postmeta ON ( xndsfoeno_posts.ID = xndsfoeno_postmeta.post_id )  INNER JOIN xndsfoeno_postmeta AS mt1 ON ( xndsfoeno_posts.ID = mt1.post_id ) LEFT JOIN xndsfoeno_posts AS p2 ON (xndsfoeno_posts.post_parent = p2.ID)  WHERE 1=1  AND ( 
+  xndsfoeno_term_relationships.term_taxonomy_id IN (12)
+) AND ( 
+  xndsfoeno_postmeta.meta_key = 'trending' 
+  AND 
+  ( 
+    ( mt1.meta_key = 'trending' AND CAST(mt1.meta_value AS CHAR) > '0' )
+  )
+) AND xndsfoeno_posts.post_type = 'attachment' AND (((xndsfoeno_posts.post_status <> 'trash' AND xndsfoeno_posts.post_status <> 'auto-draft') OR (xndsfoeno_posts.post_status = 'inherit' AND (p2.post_status <> 'trash' AND p2.post_status <> 'auto-draft')))) GROUP BY xndsfoeno_posts.ID ORDER BY xndsfoeno_postmeta.meta_value+0 DESC LIMIT 0, 42 made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Trending_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[06-Dec-2016 16:54:17 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT post_id, meta_key, meta_value FROM xndsfoeno_postmeta WHERE post_id IN (35,85,166) ORDER BY meta_id ASC made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_New_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts, _prime_post_caches, update_post_caches, update_postmeta_cache, update_meta_cache
+[06-Dec-2016 16:54:17 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_postmeta' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  xndsfoeno_posts.ID FROM xndsfoeno_posts  INNER JOIN xndsfoeno_term_relationships ON (xndsfoeno_posts.ID = xndsfoeno_term_relationships.object_id) INNER JOIN xndsfoeno_postmeta ON ( xndsfoeno_posts.ID = xndsfoeno_postmeta.post_id )  INNER JOIN xndsfoeno_postmeta AS mt1 ON ( xndsfoeno_posts.ID = mt1.post_id ) LEFT JOIN xndsfoeno_posts AS p2 ON (xndsfoeno_posts.post_parent = p2.ID)  WHERE 1=1  AND ( 
+  xndsfoeno_term_relationships.term_taxonomy_id IN (12)
+) AND ( 
+  xndsfoeno_postmeta.meta_key = 'rating_coefficient' 
+  AND 
+  ( 
+    ( mt1.meta_key = 'rating_coefficient' AND CAST(mt1.meta_value AS CHAR) > '0' )
+  )
+) AND xndsfoeno_posts.post_type = 'attachment' AND (((xndsfoeno_posts.post_status <> 'trash' AND xndsfoeno_posts.post_status <> 'auto-draft') OR (xndsfoeno_posts.post_status = 'inherit' AND (p2.post_status <> 'trash' AND p2.post_status <> 'auto-draft')))) GROUP BY xndsfoeno_posts.ID ORDER BY xndsfoeno_postmeta.meta_value+0 DESC LIMIT 0, 42 made by do_action('wp_ajax_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Top_Rated_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[08-Dec-2016 09:10:28 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_term_taxonomy' doesn't exist for query 
+					SELECT xndsfoeno_term_taxonomy.term_taxonomy_id
+					FROM xndsfoeno_term_taxonomy
+					INNER JOIN xndsfoeno_terms USING (term_id)
+					WHERE taxonomy = 'ksm_tax_post_at'
+					AND xndsfoeno_terms.name IN ('community')
+				 made by do_action('wp_ajax_nopriv_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Trending_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts, WP_Tax_Query->get_sql, WP_Tax_Query->get_sql_clauses, WP_Tax_Query->get_sql_for_query, WP_Tax_Query->get_sql_for_clause, WP_Tax_Query->clean_query, WP_Tax_Query->transform_query
+[08-Dec-2016 09:10:28 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_term_taxonomy' doesn't exist for query 
+					SELECT xndsfoeno_term_taxonomy.term_taxonomy_id
+					FROM xndsfoeno_term_taxonomy
+					INNER JOIN xndsfoeno_terms USING (term_id)
+					WHERE taxonomy = 'ksm_tax_post_at'
+					AND xndsfoeno_terms.name IN ('community')
+				 made by do_action('wp_ajax_nopriv_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_New_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts, WP_Tax_Query->get_sql, WP_Tax_Query->get_sql_clauses, WP_Tax_Query->get_sql_for_query, WP_Tax_Query->get_sql_for_clause, WP_Tax_Query->clean_query, WP_Tax_Query->transform_query
+[08-Dec-2016 09:10:28 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_term_taxonomy' doesn't exist for query 
+					SELECT xndsfoeno_term_taxonomy.term_taxonomy_id
+					FROM xndsfoeno_term_taxonomy
+					INNER JOIN xndsfoeno_terms USING (term_id)
+					WHERE taxonomy = 'ksm_tax_post_at'
+					AND xndsfoeno_terms.name IN ('community')
+				 made by do_action('wp_ajax_nopriv_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Top_Rated_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts, WP_Tax_Query->get_sql, WP_Tax_Query->get_sql_clauses, WP_Tax_Query->get_sql_for_query, WP_Tax_Query->get_sql_for_clause, WP_Tax_Query->clean_query, WP_Tax_Query->transform_query
+[08-Dec-2016 09:10:28 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_term_taxonomy' doesn't exist for query 
+					SELECT xndsfoeno_term_taxonomy.term_taxonomy_id
+					FROM xndsfoeno_term_taxonomy
+					INNER JOIN xndsfoeno_terms USING (term_id)
+					WHERE taxonomy = 'ksm_tax_topic'
+					AND xndsfoeno_terms.name IN ('challenge')
+				 made by do_action('wp_ajax_nopriv_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Challenge_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts, WP_Tax_Query->get_sql, WP_Tax_Query->get_sql_clauses, WP_Tax_Query->get_sql_for_query, WP_Tax_Query->get_sql_for_clause, WP_Tax_Query->clean_query, WP_Tax_Query->transform_query
+[08-Dec-2016 09:10:28 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_term_taxonomy' doesn't exist for query 
+					SELECT xndsfoeno_term_taxonomy.term_taxonomy_id
+					FROM xndsfoeno_term_taxonomy
+					INNER JOIN xndsfoeno_terms USING (term_id)
+					WHERE taxonomy = 'ksm_tax_post_at'
+					AND xndsfoeno_terms.name IN ('community')
+				 made by do_action('wp_ajax_nopriv_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Challenge_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts, WP_Tax_Query->get_sql, WP_Tax_Query->get_sql_clauses, WP_Tax_Query->get_sql_for_query, WP_Tax_Query->get_sql_for_clause, WP_Tax_Query->clean_query, WP_Tax_Query->transform_query
+[08-Dec-2016 09:10:40 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_term_taxonomy' doesn't exist for query 
+					SELECT xndsfoeno_term_taxonomy.term_taxonomy_id
+					FROM xndsfoeno_term_taxonomy
+					INNER JOIN xndsfoeno_terms USING (term_id)
+					WHERE taxonomy = 'ksm_tax_post_at'
+					AND xndsfoeno_terms.name IN ('community')
+				 made by do_action('wp_ajax_nopriv_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Trending_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts, WP_Tax_Query->get_sql, WP_Tax_Query->get_sql_clauses, WP_Tax_Query->get_sql_for_query, WP_Tax_Query->get_sql_for_clause, WP_Tax_Query->clean_query, WP_Tax_Query->transform_query
+[08-Dec-2016 09:10:40 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_term_taxonomy' doesn't exist for query 
+					SELECT xndsfoeno_term_taxonomy.term_taxonomy_id
+					FROM xndsfoeno_term_taxonomy
+					INNER JOIN xndsfoeno_terms USING (term_id)
+					WHERE taxonomy = 'ksm_tax_post_at'
+					AND xndsfoeno_terms.name IN ('community')
+				 made by do_action('wp_ajax_nopriv_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_New_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts, WP_Tax_Query->get_sql, WP_Tax_Query->get_sql_clauses, WP_Tax_Query->get_sql_for_query, WP_Tax_Query->get_sql_for_clause, WP_Tax_Query->clean_query, WP_Tax_Query->transform_query
+[08-Dec-2016 09:10:40 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_term_taxonomy' doesn't exist for query 
+					SELECT xndsfoeno_term_taxonomy.term_taxonomy_id
+					FROM xndsfoeno_term_taxonomy
+					INNER JOIN xndsfoeno_terms USING (term_id)
+					WHERE taxonomy = 'ksm_tax_post_at'
+					AND xndsfoeno_terms.name IN ('community')
+				 made by do_action('wp_ajax_nopriv_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Top_Rated_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts, WP_Tax_Query->get_sql, WP_Tax_Query->get_sql_clauses, WP_Tax_Query->get_sql_for_query, WP_Tax_Query->get_sql_for_clause, WP_Tax_Query->clean_query, WP_Tax_Query->transform_query
+[08-Dec-2016 09:10:40 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_term_taxonomy' doesn't exist for query 
+					SELECT xndsfoeno_term_taxonomy.term_taxonomy_id
+					FROM xndsfoeno_term_taxonomy
+					INNER JOIN xndsfoeno_terms USING (term_id)
+					WHERE taxonomy = 'ksm_tax_topic'
+					AND xndsfoeno_terms.name IN ('challenge')
+				 made by do_action('wp_ajax_nopriv_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Challenge_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts, WP_Tax_Query->get_sql, WP_Tax_Query->get_sql_clauses, WP_Tax_Query->get_sql_for_query, WP_Tax_Query->get_sql_for_clause, WP_Tax_Query->clean_query, WP_Tax_Query->transform_query
+[08-Dec-2016 09:10:40 UTC] WordPress database error Table 'kitmoda3_cleandb.xndsfoeno_term_taxonomy' doesn't exist for query 
+					SELECT xndsfoeno_term_taxonomy.term_taxonomy_id
+					FROM xndsfoeno_term_taxonomy
+					INNER JOIN xndsfoeno_terms USING (term_id)
+					WHERE taxonomy = 'ksm_tax_post_at'
+					AND xndsfoeno_terms.name IN ('community')
+				 made by do_action('wp_ajax_nopriv_Community_kmvg'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Community_kmvg, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CommunityController->ksm_ajax_kmvg, KSM_mvg_kit_mosaicHelper->ajaxLoad, KSM_MultiViewGallery->ajaxLoad, KSM_MultiViewGallery_Challenge_Community->Results, WP_Query->__construct, WP_Query->query, WP_Query->get_posts, WP_Tax_Query->get_sql, WP_Tax_Query->get_sql_clauses, WP_Tax_Query->get_sql_for_query, WP_Tax_Query->get_sql_for_clause, WP_Tax_Query->clean_query, WP_Tax_Query->transform_query
+[08-Dec-2016 21:44:32 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[08-Dec-2016 21:44:46 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[08-Dec-2016 21:44:57 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[08-Dec-2016 21:56:05 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:56:05 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:56:07 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:56:07 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:56:07 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:56:07 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:57:29 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[08-Dec-2016 21:57:31 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[08-Dec-2016 21:57:31 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[08-Dec-2016 21:57:48 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:57:48 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:57:50 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:57:50 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:57:50 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:57:50 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:59:17 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:59:17 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:59:19 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:59:19 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:59:19 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:59:19 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:59:35 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[08-Dec-2016 21:59:37 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[08-Dec-2016 21:59:37 UTC] PHP Fatal error:  Call to undefined function EDD_FES() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/functions.php on line 1620
+[08-Dec-2016 21:59:42 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:59:42 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:59:44 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:59:44 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:59:44 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 21:59:44 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 22:02:33 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 22:02:33 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 22:02:36 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 22:02:36 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 22:02:37 UTC] PHP Warning:  require_once(fes_plugin_dirclasses/admin/class-install.php): failed to open stream: No such file or directory in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[08-Dec-2016 22:02:37 UTC] PHP Fatal error:  require_once(): Failed opening required 'fes_plugin_dirclasses/admin/class-install.php' (include_path='.:/usr/local/php54/pear') in /home/kitmoda3/staging/1/ktmaterial/plugins/edd-fes/edd-fes.php on line 288
+[12-Dec-2016 15:31:43 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[12-Dec-2016 16:24:46 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[12-Dec-2016 20:12:00 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[12-Dec-2016 20:18:32 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[12-Dec-2016 22:52:18 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[12-Dec-2016 22:52:44 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[12-Dec-2016 22:54:03 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[13-Dec-2016 16:15:52 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[14-Dec-2016 08:47:50 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[14-Dec-2016 09:39:08 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[14-Dec-2016 09:43:06 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[14-Dec-2016 14:00:35 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 07:52:47 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 07:58:21 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 07:59:35 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 08:02:48 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 08:13:08 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 08:25:54 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 08:26:10 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 08:29:28 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 08:29:43 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 08:30:04 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 08:31:58 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 08:37:04 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 09:06:26 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 09:06:45 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 09:18:41 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 09:44:23 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 11:12:05 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 11:13:41 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 11:19:59 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 11:20:48 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 11:23:12 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 11:23:53 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 11:25:46 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 11:25:57 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 12:38:59 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 12:39:20 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 12:41:19 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 12:41:34 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 12:42:36 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 14:45:25 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 14:45:42 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 14:48:07 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 14:48:28 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 15:00:17 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[15-Dec-2016 15:00:47 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[16-Dec-2016 07:47:50 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[16-Dec-2016 07:48:07 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[16-Dec-2016 07:48:27 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[16-Dec-2016 07:48:48 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[16-Dec-2016 07:49:47 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[16-Dec-2016 07:50:10 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[17-Dec-2016 00:14:32 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[18-Dec-2016 09:32:47 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[18-Dec-2016 09:33:37 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[18-Dec-2016 09:33:58 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[19-Dec-2016 07:36:36 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[19-Dec-2016 07:36:45 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[19-Dec-2016 13:01:29 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[19-Dec-2016 15:31:38 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[20-Dec-2016 08:28:55 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[02-Jan-2017 10:07:28 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[04-Jan-2017 11:37:36 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[04-Jan-2017 11:40:21 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[04-Jan-2017 11:41:45 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[04-Jan-2017 16:57:50 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[04-Jan-2017 16:58:13 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[04-Jan-2017 17:20:31 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[04-Jan-2017 17:21:17 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[04-Jan-2017 17:27:27 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[04-Jan-2017 18:52:09 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[04-Jan-2017 19:43:50 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[04-Jan-2017 19:44:19 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[04-Jan-2017 19:44:37 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 01:11:48 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 01:38:48 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 13:42:14 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 13:42:32 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 18:05:13 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 18:06:37 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 19:25:42 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 20:02:42 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 20:03:29 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 20:03:51 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 20:09:00 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 20:14:17 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 20:16:27 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 20:16:41 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 20:16:51 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 20:41:53 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[05-Jan-2017 20:49:47 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[09-Jan-2017 17:18:16 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[09-Jan-2017 17:34:54 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[13-Jan-2017 15:38:54 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[13-Jan-2017 15:42:14 UTC] PHP Fatal error:  Class 'KSM_mvg_kit_mosaicHelper' not found in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/community.php on line 290
+[20-Jan-2017 14:43:45 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 39996 bytes) in /home/kitmoda3/staging/1/kt-encased/media.php on line 2715
+[22-Jan-2017 16:38:45 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mt0 ON (p.ID = mt0.post_id)
+                    INNER JOIN mqucz_postmeta AS mt1' at line 3 for query 
+            SELECT COUNT(res.ID) FROM (
+                SELECT p.ID FROM mqucz_posts p 
+                    INNER JOIN mqucz_postmeta AD mt0 ON (p.ID = mt0.post_id)
+                    INNER JOIN mqucz_postmeta AS mt1 ON (p.ID = mt1.post_id) 
+                WHERE p.post_type = 'collab_join_request' AND 
+                    p.post_status = 'publish' AND 
+                        ( (mt0.meta_key = 'request_status' AND 
+                           mt0.meta_value  = 'active') AND 
+                          (mt1.meta_key = 'collaboration_author' AND 
+                           mt1.meta_value = '1') ) 
+                GROUP BY p.ID) as res made by do_action('wp_ajax_CollaborationRequest_submit'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_CollaborationRequest_submit, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_CollaborationRequestController->ksm_ajax_submit, KSM_CollaborationRequestModel->send_join_request, KSM_Collaboration->add_request, KSM_Count::update_user_collaboration_active_requests, KSM_Count::__callStatic, call_user_func_array, KSM_Count::user_collaboration_active_requests
+[22-Jan-2017 16:41:51 UTC] PHP Warning:  Missing argument 1 for KSM_Collaboration_Wip::__construct(), called in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.publisher.php on line 1493 and defined in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.collaboration_wip.php on line 15
+[22-Jan-2017 16:41:51 UTC] PHP Warning:  strpos() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/kt-encased/formatting.php on line 1741
+[22-Jan-2017 16:41:51 UTC] PHP Warning:  strtr() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/kt-encased/formatting.php on line 1742
+[22-Jan-2017 16:41:51 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.post.php on line 60
+[22-Jan-2017 16:45:00 UTC] WordPress database error Table 'kitmoda3_illumination_st1.wp_posts' doesn't exist for query SELECT count(wp_posts.ID) FROM wp_posts 
+            INNER JOIN wp_postmeta ON (wp_posts.ID = wp_postmeta.post_id)
+            INNER JOIN wp_postmeta AS mt1 ON (wp_posts.ID = mt1.post_id) WHERE 1=1  AND 
+            wp_posts.post_type = 'ksm_message' AND ((wp_posts.post_status = 'publish')) AND 
+            ( (wp_postmeta.meta_key = 'sent_to' AND CAST(wp_postmeta.meta_value AS CHAR) = '1') 
+            AND (mt1.meta_key = 'viewed' AND CAST(mt1.meta_value AS CHAR) != '1') ) GROUP BY wp_posts.ID made by do_action('wp_ajax_Message_dd'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Message_dd, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_MessageController->ksm_ajax_dd, KSM_MessageModel->messages, KSM_MessageModel->dd_list_messages, KSM_MessageModel->count_news
+[22-Jan-2017 16:45:37 UTC] WordPress database error Table 'kitmoda3_illumination_st1.wp_posts' doesn't exist for query SELECT count(wp_posts.ID) FROM wp_posts 
+            INNER JOIN wp_postmeta ON (wp_posts.ID = wp_postmeta.post_id)
+            INNER JOIN wp_postmeta AS mt1 ON (wp_posts.ID = mt1.post_id) WHERE 1=1  AND 
+            wp_posts.post_type = 'ksm_message' AND ((wp_posts.post_status = 'publish')) AND 
+            ( (wp_postmeta.meta_key = 'sent_to' AND CAST(wp_postmeta.meta_value AS CHAR) = '1') 
+            AND (mt1.meta_key = 'viewed' AND CAST(mt1.meta_value AS CHAR) != '1') ) GROUP BY wp_posts.ID made by do_action('wp_ajax_Message_dd'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Message_dd, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_MessageController->ksm_ajax_dd, KSM_MessageModel->messages, KSM_MessageModel->dd_list_messages, KSM_MessageModel->count_news
+[22-Jan-2017 16:59:07 UTC] PHP Warning:  Missing argument 1 for KSM_Collaboration_Wip::__construct(), called in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.publisher.php on line 1493 and defined in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.collaboration_wip.php on line 15
+[22-Jan-2017 16:59:07 UTC] PHP Warning:  strpos() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/kt-encased/formatting.php on line 1741
+[22-Jan-2017 16:59:07 UTC] PHP Warning:  strtr() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/kt-encased/formatting.php on line 1742
+[22-Jan-2017 16:59:07 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.post.php on line 60
+[22-Jan-2017 17:02:35 UTC] WordPress database error Table 'kitmoda3_illumination_st1.wp_posts' doesn't exist for query SELECT count(wp_posts.ID) FROM wp_posts 
+            INNER JOIN wp_postmeta ON (wp_posts.ID = wp_postmeta.post_id)
+            INNER JOIN wp_postmeta AS mt1 ON (wp_posts.ID = mt1.post_id) WHERE 1=1  AND 
+            wp_posts.post_type = 'ksm_message' AND ((wp_posts.post_status = 'publish')) AND 
+            ( (wp_postmeta.meta_key = 'sent_to' AND CAST(wp_postmeta.meta_value AS CHAR) = '1') 
+            AND (mt1.meta_key = 'viewed' AND CAST(mt1.meta_value AS CHAR) != '1') ) GROUP BY wp_posts.ID made by do_action('wp_ajax_Message_dd'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Message_dd, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_MessageController->ksm_ajax_dd, KSM_MessageModel->messages, KSM_MessageModel->dd_list_messages, KSM_MessageModel->count_news
+[22-Jan-2017 17:15:44 UTC] WordPress database error Table 'kitmoda3_illumination_st1.wp_posts' doesn't exist for query SELECT count(wp_posts.ID) FROM wp_posts 
+            INNER JOIN wp_postmeta ON (wp_posts.ID = wp_postmeta.post_id)
+            INNER JOIN wp_postmeta AS mt1 ON (wp_posts.ID = mt1.post_id) WHERE 1=1  AND 
+            wp_posts.post_type = 'ksm_message' AND ((wp_posts.post_status = 'publish')) AND 
+            ( (wp_postmeta.meta_key = 'sent_to' AND CAST(wp_postmeta.meta_value AS CHAR) = '2') 
+            AND (mt1.meta_key = 'viewed' AND CAST(mt1.meta_value AS CHAR) != '1') ) GROUP BY wp_posts.ID made by do_action('wp_ajax_Message_dd'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Message_dd, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_MessageController->ksm_ajax_dd, KSM_MessageModel->messages, KSM_MessageModel->dd_list_messages, KSM_MessageModel->count_news
