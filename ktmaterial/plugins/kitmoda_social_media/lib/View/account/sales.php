@@ -461,10 +461,11 @@ $day_stats = $ksm_user->day_sales();
 </div>
 
 
+<?php
 
+//added this comment simply to test deploy
 
-
-
+?>
 
 
 <script type="text/javascript">
