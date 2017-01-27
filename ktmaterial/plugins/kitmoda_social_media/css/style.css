@@ -10430,28 +10430,9 @@ a.join_header_link:hover {
     left: 750px !important;
 
     background: rgba(0, 0, 0, 0) url(kane/images/icons/post_button_b.png) no-repeat scroll right center;
-    padding-right: 0px;
     padding-top: 3px;
     height: 28px;
     display: inline-block;
     cursor: pointer;
 }
 .add_post_text_container:hover .add_post_text { background-image: url(kane/images/icons/post_button_b_hover.png); }
-/*
-.add_post_text:after {
-	background: rgba(0, 0, 0, 0) url(kane/images/icons/post_button_b.png) no-repeat scroll 0 0px;
-    width: 42px;
-    height: 36px;
-    cursor: pointer;
-    content: "";
-    display: inline-block;
-    position: relative;
-    top: 11px;
-}
-.add_post_text:hover {
-	cursor: pointer;
-}
-.add_post_text:hover:after {
-	background-image: url(kane/images/icons/post_button_b_hover.png);
-}
-*/
