@@ -10431,7 +10431,8 @@ a.join_header_link:hover {
 
     background: rgba(0, 0, 0, 0) url(kane/images/icons/post_button_b.png) no-repeat scroll right center;
     padding-right: 0px;
-    height: 58px;
+    padding-top: 3px;
+    height: 28px;
     display: inline-block;
     cursor: pointer;
 }
