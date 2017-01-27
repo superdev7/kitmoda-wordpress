@@ -60,7 +60,7 @@ class KSM_CommunityModel extends KSM_BaseModel {
         
         
         
-        $max_length = POST_CONTENT_MAX_LENGTH;
+        $max_length = POST_COMMUNITY_MAX_LENGTH;
         
         if(strlen($post_content) > $max_length) 
             return $this->Error("{$max_length} characters allowed");

@@ -3,7 +3,7 @@ $auth_required = get_current_user_id() ? false : true;
 
 
 ?>
-<div class="add_post add_the_post" ng-init="post_content_limit = <?=POST_CONTENT_MAX_LENGTH?>; post_content_focused = false">
+<div class="add_post add_the_post" ng-init="post_content_limit = <?=POST_COMMUNITY_MAX_LENGTH?>; post_content_focused = false">
     
         <div class="add_post_form radius">
             <div class="add_post_form_highlight_community_overlay">
