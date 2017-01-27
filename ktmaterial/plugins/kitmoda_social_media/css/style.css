@@ -10410,3 +10410,12 @@ a.join_header_link:hover {
 .navigation_container nav.main-navigation ul.noauth_nav li {
 	width: 150px;
 }
+
+
+
+/* User navigation overrides */
+.site-header-kitmoda .user_menu { margin-right: 0; }
+.site-header-kitmoda .user_menu .notification_menu { height: auto; }
+.site-header-kitmoda .navigation_container { width: 540px !important; left: 176px !important; }
+.site-header-kitmoda .user_menu .notification_menu li.messages_dd_btn { margin-right: inherit; margin-left: 24px; }
+.site-header-kitmoda .main-navigation li { margin-left: 24px; }
