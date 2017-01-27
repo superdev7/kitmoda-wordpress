@@ -10419,3 +10419,6 @@ a.join_header_link:hover {
 .site-header-kitmoda .navigation_container { width: 540px !important; left: 176px !important; }
 .site-header-kitmoda .user_menu .notification_menu li.messages_dd_btn { margin-right: inherit; margin-left: 24px; }
 .site-header-kitmoda .main-navigation li { margin-left: 24px; }
+
+/* POST button override */
+.add_post_text { top: 0 !important; }
