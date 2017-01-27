@@ -24,8 +24,9 @@
                         </div>
                 
 
+                        <? /*
                         <div class="add_post_container">
-                <a href="" class="btn_add_post btn btn_form_smt"></a>
+                        <a href="" class="btn_add_post btn btn_form_smt"></a>
                                         <div class="add_post">
                                         </div>
                                         <div class="add_post_hover">
@@ -33,6 +34,12 @@
                                     
                         </div>
                         <span class="add_post_text">POST</span>
+                        */ ?>
+                        
+                        <div class="add_post_text_container btn_form_smt">
+                            <span class="add_post_text">POST</span>
+                        </div>
+
                 
 
 
