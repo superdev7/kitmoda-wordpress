@@ -232,10 +232,12 @@ $(function() {
 })
 
 
-
+//add_new_post method - add new post (takes two parameters)
 function add_new_post(_item, galleries) {
     
-    
+	//Message to display when new post is created
+    var msg = "New post created.";
+	
     angular.element(".ksm_community .content .posts").scope().kposts.push($.parseJSON(_item));
     angular.element(".ksm_community .content .posts").scope().$apply();
     
@@ -245,7 +247,7 @@ function add_new_post(_item, galleries) {
     $(".ksm_community .add_post_form .miu_container li.item").remove();
     $(".add_post_form [name=_id]").val("");
     
-    showfmsg("Post updated.");
+    showfmsg(msg); //Display message
     autosize($('textarea'));
     
     if(galleries) {
@@ -256,10 +258,10 @@ function add_new_post(_item, galleries) {
     
 }
 
-
+//edit_post method - edit an existing post (takes 3 parameters including id of the exisiting post)
 function edit_post(post_id, _item, galleries) {
     
-    
+    //Message to display when new post is updated
     var msg = "Post updated.";
     
     angular.element(".ksm_community .content .posts #wp_"+post_id).scope().kpost = $.parseJSON(_item);
@@ -274,7 +276,7 @@ function edit_post(post_id, _item, galleries) {
     //if(gal_id) {
     //    new slick_simple_gallery({ele : '#'+gal_id});
     //}
-    showfmsg(msg);
+    showfmsg(msg);//Display message
     
     if(galleries) {
         kmv.reset(galleries);
@@ -282,7 +284,7 @@ function edit_post(post_id, _item, galleries) {
     $.colorbox.close();
 }
 
-
+//new_comment_added method - increasing the comment count when a new comment is added to a post
 function new_comment_added(pid) {
     
     
