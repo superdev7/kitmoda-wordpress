@@ -10421,4 +10421,16 @@ a.join_header_link:hover {
 .site-header-kitmoda .main-navigation li { margin-left: 24px; }
 
 /* POST button override */
+.add_post_container { display: none; }
 .add_post_text { top: 0 !important; }
+.add_post_text:after {
+	background: rgba(0, 0, 0, 0) url(kane/images/icons/post_button_b.png) no-repeat scroll 0 0px;
+    width: 42px;
+    height: 36px;
+    cursor: pointer;
+    content: "";
+    display: block;
+}
+.add_post_text:hover:after {
+	background-image: url(kane/images/icons/post_button_b_hover.png);
+}
