@@ -38,7 +38,9 @@ $auth_required = get_current_user_id() ? false : true;
                                         </div>                            
                                     
                         </div>
-                        <span class="add_post_text">POST</span>
+                        <div class="add_post_text_container">
+                            <span class="add_post_text">POST</span>
+                        </div>
                 
 
 
