@@ -10434,7 +10434,9 @@ a.join_header_link:hover {
     height: 36px;
     cursor: pointer;
     content: "";
-    display: block;
+    display: inline-block;
+    position: relative;
+    top: 11px;
 }
 .add_post_text:hover {
 	cursor: pointer;
