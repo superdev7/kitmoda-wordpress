@@ -287,23 +287,23 @@
 	right: 16px;
 	top: 15px;
 }
-.window.login .content, .window.join, .window.forgot_password .content, .window.reset_password .content {
+.window.login .content, .window.join .content, .window.forgot_password .content, .window.reset_password .content {
 	background: #30353b;
 	padding-bottom: 38px;
 	border: 0;
 }
-.window.login .content .forgot_pass_link a, .window.join .forgot_pass_link a, .window.forgot_password .content .forgot_pass_link a, .window.reset_password .content .forgot_pass_link a {
+.window.login .content .forgot_pass_link a, .window.join .content .forgot_pass_link a, .window.forgot_password .content .forgot_pass_link a, .window.reset_password .content .forgot_pass_link a {
 	color: #5d9dfd;
 	text-decoration: underline;
 	font-size: 12px;
 	font-family: "Helvetica Neue";
 	margin-left: 264px;
 }
-.window.login .content .field, .window.join .field, .window.forgot_password .content .field, .window.reset_password .content .field {
+.window.login .content .field, .window.join .content .field, .window.forgot_password .content .field, .window.reset_password .content .field {
 	margin-top: 21px;
 	margin-bottom: 0px;
 }
-.window.login .content .field label, .window.join .field label, .window.forgot_password .content .field label, .window.reset_password .content .field label {
+.window.login .content .field label, .window.join .content .field label, .window.forgot_password .content .field label, .window.reset_password .content .field label {
 	float: left;
 	color: #fefefe;
 	font-size: 24px;
@@ -313,7 +313,7 @@
 	font-family: "DejaVu Sans Condensed";
 	padding: 0 30px 0 0;
 }
-.window.login .content .field .inputi, .window.join .field .inputi, .window.forgot_password .content .field .inputi, .window.reset_password .content .field .inputi {
+.window.login .content .field .inputi, .window.join .content .field .inputi, .window.forgot_password .content .field .inputi, .window.reset_password .content .field .inputi {
 	background-color: #000000;
 	*zoom: 1;
 	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF000000', endColorstr='#FF64748F');
@@ -329,7 +329,7 @@
 	width: 392px;
 	float: left;
 }
-.window.login .content .field .inputi input, .window.join .field .inputi input, .window.forgot_password .content .field .inputi input, .window.reset_password .content .field .inputi input {
+.window.login .content .field .inputi input, .window.join .content .field .inputi input, .window.forgot_password .content .field .inputi input, .window.reset_password .content .field .inputi input {
 	background: #28282d;
 	color: #e4e4e4;
 	font-size: 18px;
@@ -344,11 +344,11 @@
 	top: 166px;
 	left: 230px;
 }
-.window.join .heading {
+.window.join .content .heading {
 	padding-bottom: 12px;
 	background-position-x: 202px;
 }
-.window.join .heading_info {
+.window.join .content .heading_info {
 	font-size: 18px;
 	color: #FFF;
 	text-align: center;
@@ -356,7 +356,7 @@
 	padding-bottom: 18px;
 	padding-left: 20px;
 }
-.window.join .field label {
+.window.join .content .field label {
 	width: 216px;
 }
 .window.join .footer .btn {
