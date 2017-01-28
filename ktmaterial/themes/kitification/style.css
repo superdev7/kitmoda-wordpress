@@ -4799,48 +4799,58 @@ border: #1e8cbe solid 3px;
 .window.join {}
 .window.join .content {}
 .window.join .content .heading {}
-.window.join .content .heading span.join_link {
+.window.join .content .heading span.join_link,
+.window.join .modal-content .heading span.join_link {
     font-family: "Montserrat";    color: #b4b7c4 !important;
     font-size: 12px;
     text-transform: initial; margin-top:-4px;
 }
-.window.join .content .heading span.join_link a {
+.window.join .content .heading span.join_link a,
+.window.join .modal-content .heading span.join_link a {
     color: #44b9fc !important;
     margin-left: 5px;    -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s;
 }
-.window.join .content .heading span.join_link a:hover {
+.window.join .content .heading span.join_link a:hover,
+.window.join .modal-content .heading span.join_link a:hover {
 	color: #d1faff !important;
     text-shadow: 2px 2px 5px rgb(44,88,137);
 }
-.window.join .content .heading .under-heading-sec {
+.window.join .content .heading .under-heading-sec,
+.window.join .modal-content .heading .under-heading-sec {
     margin-top: -14px;
 }
 .window.join .content .field {}
-.window.join .content .field .inputi {
+.window.join .content .field .inputi,
+.window.join .modal-content .field .inputi {
     width: 480px;
 }
-.window.join .content .field label {
+.window.join .content .field label,
+.window.join .modal-content .field label {
 	width: 142px;
 	font-family: "Roboto";
     text-align: left;
     padding: 5px 0px 0 40px;
 }
 .window.join .footer {}
-.window.join .footer .btn {
+.window.join .footer .btn,
+.window.join .modal-footer .btn {
     width: 93px;
     text-align: center;
     margin-top: 8px;
 }
-.window.join .footer .terms_link {
+.window.join .footer .terms_link,
+.window.join .modal-footer .terms_link {
     margin-left: 0px; 
 }
-.window.join .footer .footer_inner {
+.window.join .footer .footer_inner,
+.window.join .modal-footer .footer_inner {
     background: none;
     border: 0px;
     text-align: center;
 }
-.window.join .footer .btn {
+.window.join .footer .btn,
+.window.join .modal-footer .btn {
     width: 100px;
 }

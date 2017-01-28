@@ -10406,6 +10406,7 @@ a.join_header_link {
 }
 a.join_header_link:hover {
 	background: rgba(0, 0, 0, 0) url("../images/join_hover.png") no-repeat scroll 64px center !important;
+	cursor: pointer;
 }
 .navigation_container nav.main-navigation ul.noauth_nav li {
 	width: 150px;
