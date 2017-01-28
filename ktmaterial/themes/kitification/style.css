@@ -4798,40 +4798,73 @@ border: #1e8cbe solid 3px;
 
 .window.join {}
 .window.join .content {}
-.window.join .content .heading {}
-.window.join .content .heading span.join_link,
-.window.join .modal-content .heading span.join_link {
+.window.join .content .dragon-animation {
+	position: relative;
+	left: -50px;
+}
+.window.join .content .heading {
+	font-family: "Roboto";
+	padding-bottom: 29px;
+	color: #fff;
+}
+.window.join .content .heading span.join_link {
     font-family: "Montserrat";    color: #b4b7c4 !important;
     font-size: 12px;
     text-transform: initial; margin-top:-4px;
 }
-.window.join .content .heading span.join_link a,
-.window.join .modal-content .heading span.join_link a {
+.window.join .content .heading span.join_link a {
     color: #44b9fc !important;
     margin-left: 5px;    -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s;
 }
-.window.join .content .heading span.join_link a:hover,
-.window.join .modal-content .heading span.join_link a:hover {
+.window.join .content .heading span.join_link a:hover {
 	color: #d1faff !important;
     text-shadow: 2px 2px 5px rgb(44,88,137);
 }
-.window.join .content .heading .under-heading-sec,
-.window.join .modal-content .heading .under-heading-sec {
+.window.join .content .heading_info {
+	font-family: "Roboto";
+	color: #fff;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 18px;
+    padding-left: 20px;
+}
+.window.join .content .heading .under-heading-sec {
     margin-top: -14px;
 }
-.window.join .content .field {}
-.window.join .content .field .inputi,
-.window.join .modal-content .field .inputi {
-    width: 480px;
+.window.join .content .fields {
+	margin-top: 28px;
 }
-.window.join .content .field label,
-.window.join .modal-content .field label {
-	width: 142px;
-	font-family: "Roboto";
-    text-align: left;
-    padding: 5px 0px 0 40px;
+.window.join .content .field {}
+.window.join .content .field .inputi {
+    width: 480px;
+    float: left;
+}
+.window.join .content .field label {
+	/*width: 142px;*/
+	/*font-family: "Roboto";*/
+    /*text-align: left;*/
+    text-align: right;
+    /*padding: 5px 0px 0 40px;*/
+    font-family: Montserrat;
+    color: #fefefe;
+    /*width: 172px;*/
+    width: 202px;
+    float: left;
+    font-size: 24px;
+    padding: 0 30px 0 0;
+    cursor: pointer;
+}
+.window.join .content .field .g-recaptcha {
+	float: left;
+}
+.window.join .content .info {
+    font-size: 12px;
+    padding-left: 202px;
+    font-family: "Roboto";
+    color: #b4b7c4 !important;
+    padding-top: 0px;
 }
 .window.join .footer {}
 .window.join .footer .btn,
