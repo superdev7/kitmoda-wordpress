@@ -10406,7 +10406,34 @@ a.join_header_link {
 }
 a.join_header_link:hover {
 	background: rgba(0, 0, 0, 0) url("../images/join_hover.png") no-repeat scroll 64px center !important;
+	cursor: pointer;
 }
 .navigation_container nav.main-navigation ul.noauth_nav li {
 	width: 150px;
 }
+
+
+
+/* User navigation overrides */
+.site-header-kitmoda .user_menu { margin-right: 0; }
+.site-header-kitmoda .user_menu .notification_menu { height: auto; }
+.site-header-kitmoda .navigation_container { width: 540px !important; left: 176px !important; }
+.site-header-kitmoda .user_menu .notification_menu li.messages_dd_btn { margin-right: inherit; margin-left: 24px; }
+.site-header-kitmoda .main-navigation li { margin-left: 24px; }
+
+/* POST button override */
+.add_post_container { display: none; }
+.add_post_text_container { cursor: pointer; }
+.add_post_text {
+	top: 0 !important;
+    padding-right: 42px;
+    width: auto !important;
+    left: 750px !important;
+
+    background: rgba(0, 0, 0, 0) url(kane/images/icons/post_button_b.png) no-repeat scroll right center;
+    padding-top: 3px;
+    height: 28px;
+    display: inline-block;
+    cursor: pointer;
+}
+.add_post_text_container:hover .add_post_text { background-image: url(kane/images/icons/post_button_b_hover.png); }

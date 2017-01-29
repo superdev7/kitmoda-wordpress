@@ -1065,7 +1065,7 @@ $(function() {
     })
     
     
-    $('body').delegate('a.btn_form_smt', 'click' ,function(e) {
+    $('body').delegate('.btn_form_smt', 'click' ,function(e) {
         e.preventDefault();
 
         if($(this).hasClass('uploadip')) {

@@ -3,7 +3,7 @@ $auth_required = get_current_user_id() ? false : true;
 
 
 ?>
-<div class="add_post add_the_post"  ng-init="post_content_limit = <?=POST_CONTENT_MAX_LENGTH?>; post_content_focused = false">
+<div class="add_post add_the_post"  ng-init="post_content_limit = <?=POST_COMMUNITY_MAX_LENGTH?>; post_content_focused = false">
     <div class="add_post_form_back_shadow">
          <div class="add_post_form_highlight_top">	
                 <div class="add_post_form_radius_top">
@@ -30,6 +30,7 @@ $auth_required = get_current_user_id() ? false : true;
                         </div>
                 
 
+                        <? /*
                         <div class="add_post_container">
                         <a href="" <?=($auth_required ? 'atrqt="community_add_post" ' : '')?>class="btn_add_post btn <?=($auth_required ? '' : 'btn_form_smt')?>"></a>
                                         <div class="add_post">
@@ -38,7 +39,10 @@ $auth_required = get_current_user_id() ? false : true;
                                         </div>                            
                                     
                         </div>
-                        <span class="add_post_text">POST</span>
+                        */ ?>
+                        <div class="add_post_text_container <?=($auth_required ? '' : 'btn_form_smt')?>">
+                            <span class="add_post_text">POST</span>
+                        </div>
                 
 
 

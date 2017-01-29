@@ -148,7 +148,7 @@ class KSM_MultiViewGallery {
               
         <?php
             //include $this->path.'empty_message.php';
-            include $this->path.'../kmos/mini_grid_kitmosaic.php';
+            include $this->path.'../kmos/mini_grid_kit_mosaic.php';
             
             //include $this->path.'grid_kit_mosaic.php';
             //include $this->path.'../kmos/full.php';
