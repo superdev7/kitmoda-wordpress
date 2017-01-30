@@ -234,7 +234,7 @@ Kitmoda pays the modeler 80% of this &ldquo;Price Share&rdquo; value per sale of
         <a class="terms_link" href="">Model submission terms</a>
     </div>
     
-    <div class="agreement_container">
+    <div style="float: left;width: 500px; margin-top: 5px;">
         <label for="terms_agreed">I have fully read and understand these terms.</label>
         <input type="checkbox" name="terms_agreed" id="terms_agreed" value="yes" />
         <div class="clr"></div>

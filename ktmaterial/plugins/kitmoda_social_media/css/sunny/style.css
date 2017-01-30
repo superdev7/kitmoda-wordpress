@@ -1695,7 +1695,7 @@ background-color: #4b8ece;border: 1px solid #000;
 .window.publisher  .content label {
     color: #b9bdd1;}
 .window.publisher .icheckbox_futurico {
-    background-position: 0 0; float:right;position:absolute  
+    background-position: 0 0; float:right
 }
 .window.publisher .icheckbox_futurico.checked {
     background-position: -18px 0; 
