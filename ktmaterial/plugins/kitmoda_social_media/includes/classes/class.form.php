@@ -471,8 +471,108 @@ class KSM_Form extends KSM_Object {
         return $options;
     }
     
-    
-    static function images_upload_placeholder($args, $data = array()) {
+	/**********************************************************************************/
+	//Staging 2 version of images_upload_placeholder
+	/**********************************************************************************/
+	 static function images_upload_placeholder($args, $data = array()) {
+        
+        
+        $name = $args['name'];
+        $n = "{$name}[]";
+        
+        $sections = $args['sections'];
+        
+        $classes = array();
+        $classes[] = 'items';
+        if($sections['featured']) {
+            $classes[] =  'with_featured';
+        }
+        
+        
+        
+        $classes = implode(' ', $classes);
+        
+        ob_start();
+        echo '<div class="section_headers">';
+        foreach($sections as $k => $sec) :?>
+            <div class="section_header <?=$k?>">
+                <div class="ui_placeholder_wrapper">
+                <div class="field_name"><?=$sec['title']?><span class="note"><?=$sec['note']?></span></div>
+                </div>
+            </div>
+            
+        <?php 
+        
+        endforeach;
+        echo '</div>';
+        
+        $ph = ob_get_clean();
+        
+        
+        
+        
+        $ph .= "<ul class=\"{$classes}\">";
+        
+        
+        
+        $total_c = 1;
+        
+        foreach($sections as $sec_name => $sec) {
+            
+            
+            $sec_items = $sec['items'];
+            for ($i=1; $i <=$sec_items; $i++) {
+                
+                
+            
+                if($data[$total_c]) {
+                    
+                    $ph .=
+                    '<li class="item'.(($data[$total_c]->poslock) ? ' poslock' : '').'">
+                            <div class="b2">
+                                <div class="b3">
+                                    <img src="'.get_image_src($data[$total_c]->ID, 'pub_feature').'" width="100%" height="100%" />
+									
+                                </div>
+								
+                            </div>
+		
+                            <input type="hidden" class="uid" name="'.$n.'" value="'.$data[$total_c]->ID.'">
+                        	
+                    </li>';
+                    
+                } else {
+                    $ph .='<li class="item empty"><div class="b2"><div class="b3"></div></div>
+					
+                    <input type="hidden" class="uid" name="'.$n.'" value="" />
+                       <div class="progress"><div class="bar"></div></div> 
+                    </li>';
+                }
+                
+                $total_c++;
+            }
+            //if($sec['secsep']) {
+                $secsep_class = "poslock secsep secsep_{$sec_name}";
+                $ph .= "<li class=\"{$secsep_class}\"></li>";
+            //}
+        }
+        
+        
+        
+        
+        
+        $ph .= '<li class="clr"></li></ul>';
+        
+        return $ph;
+        
+    }
+	//End of images_upload_placeholder method - Staging 2 version (working but needs to be updated)
+	/**********************************************************************************/
+	
+	/**********************************************************************************/
+    //The following method needs to be re-written, replacing with staging 2 code - Above
+	/**********************************************************************************/
+    /*static function images_upload_placeholder($args, $data = array()) {
         
         
         $name = $args['name'] . '[]';
@@ -544,8 +644,9 @@ class KSM_Form extends KSM_Object {
         return $ph;
         
         
-    }
-    
+    }*/
+	// End of images_upload_placeholder method - Staging 1 version (buggy)
+    /**********************************************************************************/
     
     static function getCetegorySelect() {
         $id = $_POST['id'];
