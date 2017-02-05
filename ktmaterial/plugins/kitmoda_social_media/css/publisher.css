@@ -170,6 +170,26 @@ textarea {
 	height: 100%;
 	background: url('../images/add.png') no-repeat center;
 }
+/**** Remove Button Design - opacity set to zero to hide button*****/
+a.remove{
+    opacity:0;
+	width:26px;
+	height:26px;
+    position:absolute;
+    top:3px;
+    right:3px;
+    overflow:hidden;
+    text-indent:-9999px;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABMBJREFUeNq8VltMXGUQnnNgl2WXFaGAtorAQrQPbaBCkFJJacIaKLTBEKVJL6GRQCRIAkQe9EEb4wMxmEYsVYtaa0zTpPFBC6QJECCFRAJSHvShZHe5lctyXXYXzp69HGf+nrPdXW72pZN82dn553Lm/+ef+TlJkuB5UPheixySrKNBRMpQbDwIAbGJcCHc0i5fzdzQWihoDaFGxJaVlWX19vZ+PTk5ObKxsbHiQRJFUVhZWZm3WCyj3d3dV0tLS7NRNw4RQbY7+IOdgvAIXWZm5uGhoaF2QRA2pX2IdAYGBm5mZWUdQVs9ImzPQHIQfVNTkxG/eMbvaXhY8n35heR796zkO579BMSjjNYUWl5enq2vry9EH9GBwYICydulq6urO2W321eZpcUieasrJU9Wxp4gHdIlwu1dq66uNsqZcUqgpwzHqXG7DJ2dnR0JCQkG6e9R8NTXATid/6+stDoIv/oNcG9mwsLCwmRJScnZ0dHRR+jfRcXAAsnVFTM4ONicm5tbKU1NgnjpAoDD8Ww1HBUF6l9+BS45Bfr7+2/l5+d/jNJlhI9Xyry8vDwVM7qA+wjilc/AZ7eDD/nwb9tA/WcnSEnJ7H8gSKb+4x7TYTK0Ea98TucBOTk57xcXF7+BvlXK4RNpqqqqzkdERGi8w3+Be2wMvKhM4BJfA+7QIYj44QZzrMiJJxn3yqtMR5G7H6It+iBftbW152hTAwNFGgyGt4kR79/3GxGcH9UAlhNwcfEQeaMdpORkBuJJRmukE2hDPojS0tJOKIGUM0rCahnT6/UxtjOnwTc9HbT1YSkpENX+M/BxcSCtrQKVDx8TCz4M4qi8DF6LJUifT0yE6HtdgD7Xo6OjM1FkVjJSabXaF4hxz80FfR37QrMZbB9UgG9tDTgMwIIgTzJaC9V3z88zpzqdTq+0LH+v83q9njAkn0oFkihu71cSu3QBEioIYI63626XKRl5HA6HjXHxCdu+kMr1xR9x62KfZOJbXWVZkYzWQvXhpZeZK6fTaaccAgMJ6+vrsyxFvHCBRjw6OvDTTQiLjwfv0hJYL54HK94x4klGa3xIsPDst5jTxcXFabmz+wNtYid+wC54YWHQXYm7/r0/yOLlS+AymxiIV4KRTqAN+SCamJgYwp+toIza2tpuu1wuQZNzHFQZx54e7PQUeOYew1zFRRBMJr+ceJK5Z2aYjiJXpWcA+XAJgqu1tfWOPK+CWtABbPVf5eXlVYjoZObce+ymPwvxej0k3rkLaoMBenp6fisoKKAWZKVz4uUOTmVib2hoaMHxMKtOTYWD177DfdRuazu7gXTJhoIsLS3NNzY2tqDPdXQdVAysKYyMjEy1tLR8SBWozc6GpLu/gwZ/9wuikXXJBkeMrbm5uWZ8fNysFMJOgy+MhhZmdpqGmDLQHIMPpMeffiI9OnVS+ufw69K/R49IE+8YmYzWFLJarXM1NTVnaBLsOvhCgumxkx/t6+u7tYW03yjf2twU6EzS09OPhU7XXQMFTFt6aCQUFRWd6OrqumYymcZsNtsqdRAC8Vi+Dzs6Oq4bjcaTqHtQfiXxOz1OuL3edViMvDxPIuUurJEzBvnGi3L50l0RlYPf9bn1POg/AQYAnFkKNFv5DRMAAAAASUVORK5CYII=') no-repeat;
+}
+/*****************************************************************************************/
+
+
+/**** Show Remove Button on mouse over on list item - opacity set to 1 to show button*****/
+ul li:hover a.remove{
+   opacity:1;
+}
+/*****************************************************************************************/
 .section_headers {
 	position: absolute;
 	left: 8px;
