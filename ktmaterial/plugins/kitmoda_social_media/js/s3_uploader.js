@@ -643,14 +643,36 @@ var kpiu = kimgupl.extend({
             var item_ele = this.container+' .item#'+f.id;
             $(item_ele+' .progress').hide();
             $(item_ele+' .percent').hide();
-            $(item_ele+' .img').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%" />');
-            $(item_ele+' .uid').val(o.id);
+			//Commented code to display images after successful upload with new one that have remove button
+            //$(item_ele+' .img').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%" />');
+            
+			//New code with remove button
+			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
+			
+			$(item_ele+' .uid').val(o.id);
             $(item_ele+' .cancel').removeClass('cancel').addClass('remove');
+			
+			//when remove button is clicked
+			$(item_ele+' .remove').click(function(){_this.removeImage(f.id);});
         }
         
     },
-    
-    
+    /******  Method to remove uploaded images from untextured model upload   ******************/
+    removeImage: function(fid)
+	{
+		
+		//Create an object of the current container
+		var ele = this.container+' .item#'+fid;
+		
+		$(ele).find('.pub_feature').attr('src',''); //remove images
+		$(ele).find('.pub_thumb').attr('src',''); //remove images
+		$(ele).find('.uid').attr('value',''); //set uid value to nothing
+		$(ele).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')//make container empty to accept new image
+		$(ele+' .b3').html('');//empty images
+		$(ele).attr('id', 'poslock-1');	//Lock position for new upload on current element so new image is loaded here
+
+	},
+	/*****************************************************************************************/
     removeFile : function(fid) {
         var item_ele = this.container+' .item#'+fid;
         $(item_ele+' .img').html('');
