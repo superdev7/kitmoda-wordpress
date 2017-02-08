@@ -1,5 +1,5 @@
 <div class="win_header" hec="1">
-    <div class="title">Concept art submission terms</div>
+    <div class="title">Textured Model submission terms</div>
     <a class="close"></a>
 </div>
 
