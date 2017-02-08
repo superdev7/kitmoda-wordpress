@@ -10,6 +10,8 @@ textarea {
 }
 .window .content {
 	overflow-y: hidden !important;
+	color:#FFF;
+	text-align:justify;
 }
 .window .step_nav {
 	position: absolute;
