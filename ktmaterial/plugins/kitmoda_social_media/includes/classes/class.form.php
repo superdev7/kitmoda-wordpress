@@ -352,10 +352,7 @@ class KSM_Form extends KSM_Object {
         $options = KSM_DataStore::Options($name, $label);
         return self::checkbox($options, $settings);
     }
-    
-    
-    
-    
+      
     static function terms_radio($name, $settings = array()) {
         
         $label = $settings['label'] ? $settings['label'] : 'form_label';
