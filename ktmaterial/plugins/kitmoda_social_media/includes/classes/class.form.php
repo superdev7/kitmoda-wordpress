@@ -471,7 +471,7 @@ class KSM_Form extends KSM_Object {
 	/**********************************************************************************/
 	//Staging 2 version of images_upload_placeholder
 	/**********************************************************************************/
-	 /*static function images_upload_placeholder($args, $data = array()) {
+	 static function images_upload_placeholder($args, $data = array()) {
         
         
         $name = $args['name'];
@@ -562,14 +562,14 @@ class KSM_Form extends KSM_Object {
         
         return $ph;
         
-    }*/
+    }
 	//End of images_upload_placeholder method - Staging 2 version (working but needs to be updated)
 	/**********************************************************************************/
 	
 	/**********************************************************************************/
     //The following method needs to be re-written, replacing with staging 2 code - Above
 	/**********************************************************************************/
-    static function images_upload_placeholder($args, $data = array()) {
+    /*static function images_upload_placeholder($args, $data = array()) {
         
         
         $name = $args['name'] . '[]';
@@ -641,8 +641,7 @@ class KSM_Form extends KSM_Object {
         return $ph;
         
         
-    }
-	
+    }*/
 	// End of images_upload_placeholder method - Staging 1 version (buggy)
     /**********************************************************************************/
     
