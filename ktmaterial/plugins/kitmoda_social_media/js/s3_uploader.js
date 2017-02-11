@@ -291,7 +291,8 @@ var kuldr = Base.extend({
             _this.queue_file(file);
         });
         
-        //up.refresh();
+		//Comment this out later
+        up.refresh();
         
         if(_this.PLU.state != plupload.UPLOADING) {
             _this.PLU.start();
@@ -719,8 +720,77 @@ var kpiu = kimgupl.extend({
     
     
     setSort : function() {
+                this.is_dragging_first = true;
         
         var _this = this;
+        
+        $(this.container+' .items').sortable({
+            cancel:"li.secsep, li.poslock",
+            cursor: "move",
+            opacity: 0.5,
+            scroll : false,
+            placeholder  : 'sortable-placeholder',
+            change:function(event,ui) {
+                
+                
+                
+                
+                $(_this.container+' .items .poslock').each(function() {
+                    var secsep_num = parseInt($(this).attr('id').split('-')[1]);
+                    
+                    var thisindex = $(ui.helper).index();
+                     var fixed = $("#poslock-"+secsep_num);           
+                     var index = fixed.index();
+                     var targetindex = secsep_num+1;
+                     
+                     if(index !== targetindex) {         
+                         if(index > targetindex ) {
+                             fixed.prev().insertAfter(fixed).trigger('domup'); //move it up by one position
+                         } else if(index==(targetindex-1) && thisindex>targetindex) {
+                             //don't move it at all
+                         } else {
+                             fixed.next().insertBefore(fixed).trigger('domdown'); //move it down by one position
+                         }
+                     } else if(index==targetindex && thisindex>targetindex) {
+                         fixed.prev().insertAfter(fixed).trigger('domup'); //move it up by one position
+                     }
+                    
+                });
+                
+                
+                
+                if(_this.is_dragging_first) {
+                    if($(ui.placeholder).index() > 1) {
+                        $(ui.placeholder).removeClass('first');
+                        $($('.items .item').not('.ui-sortable-helper').get(0)).addClass('first');
+                    }
+ 
+                }
+                
+                
+             },
+ 
+             start : function(event, ui) {
+                 if($(ui.helper).index() == 0) {
+                     _this.is_dragging_first =  true;
+                      $(ui.placeholder).addClass('first');
+                 } else {
+                     _this.is_dragging_first =  false;
+ 
+ 
+                 }
+             },
+             
+             stop : function(event, ui) {
+                 _this.setPreviewSize();
+                 _this.is_dragging_first =  false;
+                 $('.items .item').removeClass('first');
+             },
+             
+             
+             
+         });
+       /* var _this = this;
         
         $(_this.container+' ul li .inner').draggable({
             scroll: false,
@@ -778,7 +848,7 @@ var kpiu = kimgupl.extend({
               var drop_container = $(event.target);
               $(drop_container).removeClass('dragenter');
             }
-        });
+        });*/
     } , 
     
     
