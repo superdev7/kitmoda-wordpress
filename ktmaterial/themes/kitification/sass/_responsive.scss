@@ -1,0 +1,66 @@
+/* Bootstrap breakpoints */
+@include breakpoint($xs) {
+	.header-outer .ksm-menu-container .ksm-menu ul li a {
+		font-size: 9px;
+		padding: 0;
+
+		&:before {
+			display: none;
+		}
+	}
+}
+
+@include breakpoint($sm) {
+	.header-outer .ksm-menu-container .ksm-menu ul li a {
+		font-size: 11px;
+	}
+}
+
+@include breakpoint($md) {
+	
+}
+
+@include breakpoint($lg) {
+	.header-outer .ksm-menu-container .ksm-menu ul li a {
+		padding: 0 50px;
+		font-size: 12px;
+
+		&:before {
+			background-size: 100%;
+			margin-top: -13px;
+		}
+	}
+}
+
+@include breakpoint($xl) {
+	.header-outer .ksm-menu-container .ksm-menu ul li a {
+		font-size: 15px;
+	}
+}
+
+@include breakpoint($sm-only) {
+	.header-outer .ksm-menu-container .ksm-menu ul li a {
+		padding: 0;
+
+		&:before {
+			display: none;
+		}
+	}
+}
+
+@include breakpoint($md-only) {
+	.header-outer .ksm-menu-container .ksm-menu ul li a {
+		font-size: 10px;
+		padding: 0 30%;
+
+		&:before {
+			background-size: 60%;
+			margin-top: -8px;
+		}
+	}
+
+	.header-outer .ksm-menu-container .ksm-menu ul li.collaboration a:before {
+		background-size: 55%;
+		margin-top: -10px;
+	}
+}

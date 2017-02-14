@@ -1,0 +1,95 @@
+/* Form Elements */
+
+label {
+	font: 700 16px/normal $montserrat;
+	text-transform: uppercase;
+	letter-spacing: 0.10em;
+	margin-bottom: 10px;
+	display: block;
+}
+
+.dropdown_select_test {
+	background: url(../../../plugins/kitmoda_social_media/images/icons/dropdown_button.png) no-repeat 0 0;
+	width: 220px;
+	height: 34px;
+	z-index: 2000;
+	border: none;
+	font-family: $roboto;
+	margin-top: 11px;
+	padding: 2px 0 3px 22px;
+	@include appearance(none);
+}
+
+.sbHolder {
+	background-color: #2d2d2d;
+	font-family: $montserrat;
+	font-size: 12px;
+	font-weight: normal;
+	color: #fff;
+	height: 33px;
+	width: 100%;
+	display: inline-block;
+	position: relative;
+	background: url(../../../plugins/kitmoda_social_media/css/images/select-button.png) no-repeat right 1px;
+	border: solid 1px #15151a;
+	border-bottom-color: #3f3f4d;
+	border-top-color: #25252e;
+	@include background-image(linear-gradient(to bottom, #454554 1%,#1a1a21 13%,#18181e 88%,#08080a 100%));
+	@include border-radius(6px);
+
+	.sbToggle {
+		background: rgba(0, 0, 0, 0) url(../../../plugins/kitmoda_social_media/css/kane/images/icons/arrow_down.png) no-repeat scroll right center;
+		display: block;
+		outline: none;
+		position: absolute;
+		border: 0 none;
+		height: 11px;
+		right: 11px;
+		top: 12px;
+		width: 17px;
+	}
+
+	.sbSelector {
+		display: block;
+		height: 35px;
+		left: 0;
+		line-height: 30px;
+		font-size: 11px;
+		outline: none;
+		overflow: hidden;
+		position: absolute;
+		text-indent: 10px;
+		top: 2px;
+		width: 188px;
+		text-transform: uppercase;
+	}
+
+	.sbOptions {
+		background-color: #131313;
+		list-style: none;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		width: 100% !important;
+		z-index: 1;
+		overflow-y: auto;
+		top: 30px;
+
+		.sbOptions li {
+			border-left: solid 1px #000;
+			border-right: solid 1px #000;
+
+			.sbOptions li a {
+				padding-left: 7px;
+				padding-right: 7px;
+				border: solid 1px #1f1f1f;
+				border-bottom: 1px solid #000;
+			}
+
+			&.sbOptions li:first-child {
+				display: none;
+			}
+		}
+	}
+}

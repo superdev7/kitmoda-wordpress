@@ -1,0 +1,559 @@
+/* Header Styles */
+.header-outer {
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+
+	.site-header-kitmoda {
+		@include background-image(linear-gradient(to right, #040405 0%,#18181c 15%,#30303d 31%,#272730 51%,#18181e 65%,#020202 99%));
+		@include box-shadow(0px 15px 30px 0px rgba(1,1,3,1));
+		padding: 0;
+		z-index: 900;
+		position: relative;
+		height: 82px;
+
+		.site_header_overlay_vert {
+			@include background-image(linear-gradient(to bottom, rgba(0,0,0,1) 7%,rgba(0,0,2,1) 9%,rgba(1,1,5,0.76) 13%,rgba(1,1,5,0.34) 20%,rgba(1,1,5,0) 39%,rgba(1,1,5,0) 45%,rgba(1,1,4,0) 50%,rgba(0,0,0,0.08) 91%,rgba(0,0,0,0.08) 92%,rgba(0,0,0,0.23) 95%,rgba(0,0,0,0.85) 99%,rgba(0,0,0,1) 100%));
+			height: 82px;
+			overflow: hidden;
+
+			.kitmoda_header_container {
+				height: 87px;
+				display: inline-block;
+
+				.header_logo {
+					background: rgba(0,0,0,0) url(../../../plugins/kitmoda_social_media/css/kane/images/kitmodalogoSmallheader.png) no-repeat scroll 0 0;
+					height: 77px;
+					width: 91px;
+					float: left;
+					display: block;
+					margin-top: 2px;
+					text-indent: -9999em;
+				}
+
+				.kitmoda_header_radial_overlay {
+					position: relative;
+					@include background-image(radial-gradient(ellipse at center, rgba(206,212,237,0.19) 0%,rgba(200,205,233,0.19) 7%,rgba(181,184,221,0.06) 29%,rgba(155,155,205,0.01) 60%,rgba(153,153,204,0.01) 62%,rgba(153,153,204,0) 82%));
+					left: -250px;
+					right: 200px;
+					width: 600px;
+					height: 220px;
+					top: -66px;
+					z-index: -1;
+				}
+			}
+
+			.main-navigation {
+				ul {
+					margin-top: 16px;
+					margin-right: 8px;
+
+					li {
+						float: left;
+						position: relative;
+
+						a {
+							height: 44px;
+							color: #44b9fc;
+							font-family: $montserrat;
+							font-size: 14px;
+							padding: 10px 44px 10px 0;
+							background-repeat: no-repeat;
+							background-position: right center;
+							text-transform: uppercase;
+
+							&.login_header_link {
+								background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/login.png");
+
+								&:hover {
+									background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/login_hover.png");
+								}
+							}
+							&.join_header_link {
+								background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/join.png");
+
+								&:hover {
+									background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/join_hover.png");
+								}
+							}
+
+							&:hover {
+								text-decoration: none;
+							}
+						}
+
+						.icon {
+							margin-top: 18px;
+							background-repeat: no-repeat;
+							background-position: 0 0;
+							cursor: pointer;
+							margin: 8px 0;
+						}
+
+						&:first-child {
+							margin-right: 80px;
+						}
+
+						&.messages_dd_btn .ddlist,
+						&.notification_dd_btn .ddlist {
+							top: 32px;
+							left: -336px;
+							display: none;
+							width: 380px;
+							right: 20px;
+						}
+
+						&.messages_dd_btn {
+							margin-right: inherit;
+							margin-left: 24px;
+							position: relative;
+							top: -1px;
+
+							.icon {
+								background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/message2.png);
+								height: 24px;
+								width: 35px;
+								background-position: 0 -24px;
+								margin-top: 18px;
+
+								&:hover {
+									background-position: 0 0;
+								}
+							}
+
+							.ddlist {
+								top: 32px;
+								left: -336px;
+								display: none;
+								width: 380px;
+								right: 20px;
+							}
+						}
+
+						&.notification_dd_btn {
+							position: relative;
+							top: 11px;
+							margin-right: 12px;
+							margin-left: 24px;
+
+							.icon {
+								cursor: pointer;
+								height: 24px;
+								width: 35px;
+								background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/notification.png);
+
+								&:hover {
+									background-position: 0 -24px;
+								}
+							}
+
+							.ddlist {
+								left: -344px;
+								top: 33px;
+							}
+						}
+
+						&.current_cart {
+							position: relative;
+							margin-left: 0;
+							left: -12px;
+
+							a {
+								padding: 10px 20px;
+								display: block;
+
+								.kitmoda_cart_icon {
+									background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/cart_kitmoda.png) no-repeat scroll 0 -29px;
+									cursor: pointer;
+									height: 29px;
+									width: 27px;
+									margin: 4px 0;
+									float: left;
+								}
+
+								.header_count_backdrop_box {
+									background-color: rgba(40, 56, 81, 0.7);
+									float: right;
+									height: 18px;
+									border-top: 1px solid #c8e9ff;
+									padding: 0 10px;
+									margin: -1px 0 0 -4px;
+									@include border-radius(6px);
+									@include box-shadow(-1px 5px 3px 0 rgba(0,0,0,.55));
+								}
+
+								.edd-cart-number-of-items {
+									display: none;
+								}
+
+								.edd-cart {
+									right: auto;
+									top: auto;
+									left: auto;
+									border-top: 0;
+									display: block;
+									@include opacity(1);
+
+									.cart_item {
+										&.empty {
+											margin: 0;
+											padding: 10px 20px;
+											display: block;
+										}
+									}
+								}
+							}
+
+							&:hover .kitmoda_cart_icon {
+								background-position: 0 2px;
+							}
+						}
+
+						&.settings_nav {
+							margin-left: 0;
+							left: 10px;
+
+							.avatar {
+								margin-top: 8px;
+								float: left;
+
+								a {
+									padding: 0;
+
+									img {
+										height: 42px;
+										width: 42px;
+										border-top: 1px solid #c8e9ff;
+										@include box-shadow(-1px 7px 4px 0 rgba(0,0,0,.55));
+										@include border-radius(9px);
+									}
+								}
+							}
+
+							.user_nav {
+								margin: 26px 34px 0 6px;
+								top: -10px;
+								float: left;
+								position: relative;
+
+								.menu_btn {
+									height: 19px;
+									width: 32px;
+									background: transparent url(../../../plugins/kitmoda_social_media/css/kane/images/icons/kitmoda_down_arrow.png) no-repeat scroll 0 -18px;
+									cursor: pointer;
+									margin: 8px 0;
+
+									&:hover {
+										background-position: 0 -1px;
+									}
+								}
+
+								.menu_btn_hover_bridge {
+									position: absolute;
+									top: 22px;
+									left: -10px;
+									right: 0;
+									height: 70px;
+									width: 46px;
+								}
+
+								.menu_kitmoda {
+									position: absolute;
+									display: block;
+									top: -40px;
+									right: -33px;
+									left: -150px;
+									@include transition(all .2s ease-in-out .06s);
+									@include opacity(0);
+
+									.edge {
+										border-color: transparent transparent #60aff8;
+										border-style: solid;
+										border-width: 0 19px 26px;
+										height: 0;
+										width: 0;
+										line-height: 0;
+										position: absolute;
+										right: 26px;
+										top: -24px;
+										left: 147px;
+
+										.inner {
+											border-color: transparent transparent #33313b;
+											border-style: solid;
+											border-width: 0 17px 23px;
+											height: 0;
+											width: 0;
+											line-height: 0;
+											position: absolute;
+											left: -17px;
+											top: 3px;
+										}
+									}
+
+									ul {
+										@include box-shadow(4px 11px 20px 13px rgba(2,2,5,.82));
+									}
+								}
+
+								ul {
+									border: 2px solid #60aef8;
+									width: 200px;
+									padding: 12px;
+									@include border-radius(10px);
+
+									li {
+										float: none;
+										margin: 4px 0;
+										position: relative;
+
+										a {
+											padding: 8px 0 8px 40px;
+											color: #3b9dff;
+											font-weight: normal;
+											font-size: 12px;
+											background: #000;
+											font-family: $montserrat;
+											@include border-radius(6px);
+										}
+
+										&.profile a {
+											background: #000 url(../../../plugins/kitmoda_social_media/images/icons/profile_white.png) no-repeat 10px center;
+										}
+
+										&.setting a {
+											background: #000 url(../../../plugins/kitmoda_social_media/images/icons/gear_white.png) no-repeat 10px center;
+										}
+
+										&.signout a {
+											background: #000 url(../../../plugins/kitmoda_social_media/images/icons/signout_white.png) no-repeat 10px center;
+										}
+									}
+								}
+							}
+						}
+					}
+
+					ul {
+						position: absolute;
+						top: 2.75em;
+						left: 50%;
+						z-index: 9999;
+						width: 200px;
+						backface-visibility: hidden;
+						float: left;
+						@include transform(translate(-50%, -60%) scale(0));
+						@include transition(all .2s ease-in-out);
+						@include border-radius(4px);
+						@include opacity(0);
+						@include box-shadow(0 1px 2px 1px rgba(0,0,0,.8));
+					}
+
+					.upload_launch_container {
+						float: left;
+
+						a.colorbox {
+							padding: 22px 20px;
+						}
+
+						.upload_launch {
+							background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/upload.png) no-repeat scroll 0 0;
+							width: 38px;
+							height: 38px;
+							margin-top: -16px;
+							pointer-events: none;
+							cursor: default;
+						}
+
+						.upload_launch_hover {
+							margin-top: -38px;
+							background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/upload_hover.png) no-repeat scroll 0 0;
+							width: 38px;
+							height: 38px;
+							pointer-events: none;
+							cursor: default;
+							@include transition(all .28s ease-out);
+							@include opacity(0);
+						}
+
+						&:hover .upload_launch_hover {
+							@include opacity(1);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.ksm-menu-container {
+		height: 58px;
+		line-height: 58px;
+		background: #30313A;
+		@include box-shadow(inset -1px 36px 54px 1px rgba(0,0,0,0.77));
+
+		.ksm-menu {
+			padding-top: 25px;
+
+			ul {
+				li {
+					float: left;
+					margin-right: 1%;
+					width: 19%;
+					padding: 1px;
+					height: 33px;
+					background-color: #87879e;
+					@include background-image(linear-gradient(to bottom, #87879e 0%,#41414c 31%));
+					@include border-radius(5px 5px 0 0);
+
+					a {
+						position: relative;
+						display: block;
+						color: #61afff;
+						text-decoration: none;
+						font-family: $montserrat;
+						font-size: 15px;
+						line-height: 33px;
+						height: 33px;
+						text-transform: uppercase;
+						text-align: center;
+						background: #666772;
+						padding: 0 50px;
+						@include background-image(linear-gradient(to bottom, #666772 1%,#0f1014 9%,#252528 49%,#101011 52%,#0d0d0f 91%,#000000 98%));
+						@include border-radius(5px 5px 0 0);
+
+						&:hover {
+							color: #b7dbff;
+							@include text-shadow(0 0 4px rgba(130,213,255,0.56), 0 0 6px rgba(91,222,255,0.47), 0 0 12px rgba(130,205,255,0.41), 0 0 22px rgba(0,187,255,0.33), 0 0 35px rgba(0,101,255,0.34), 0 0 42px rgba(0,85,255,0.33), 0 0 100px rgba(0,67,255,0.25));
+						}
+
+						&:before {
+							content: "";
+							display: block;
+							position: absolute;
+							height: 21px;
+							width: 29px;
+							top: 50%;
+							margin-top: -10px;
+							background-position: 0 0;
+							background-repeat: no-repeat;
+						}
+					}
+
+					&.community a:before {
+						left: 10%;
+						background-image: url(../../../plugins/kitmoda_social_media/images/icons/community.png);
+					}
+					&.studio a:before {
+						left: 16%;
+						background-image: url(../../../plugins/kitmoda_social_media/images/icons/home.png);
+					}
+					&.collaboration a:before {
+						left: 8%;
+						background-image: url(../../../plugins/kitmoda_social_media/images/icons/collaboration.png);
+						height: 26px;
+						margin-top: -13px;
+					}
+					&.store a:before {
+						left: 14%;
+						background-image: url(../../../plugins/kitmoda_social_media/images/icons/store.png);
+					}
+					&.account a:before {
+						left: 12%;
+						background-image: url(../../../plugins/kitmoda_social_media/images/icons/stats.png);
+					}
+
+					&.active {
+						background: rgb(145,145,170);
+						@include background-image(linear-gradient(to bottom, rgba(145,145,170,1) 0%,rgba(97,97,122,1) 21%));
+
+						a {
+							color: #fff;
+							background: #3f3f4f;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.ksm-menu-sub-menu_container {
+		height: 30px;
+		background: black;
+		overflow: hidden;
+
+		.shrink-wrap-backdrop {
+			width: 100%;
+			height: 30px;
+			margin: 0 auto;
+			position: relative;
+			background: rgb(99,103,127);
+			@include background-image(linear-gradient(to bottom, rgba(99,103,127,1) 0%,rgba(102,106,124,1) 2%,rgba(46,46,56,1) 7%,rgba(46,46,56,1) 100%));
+
+			.shrink-wrap-vignette-left {
+				position: relative;
+				width: 320px;
+				bottom: 0px;
+				height: 30px;
+				top: 0px;
+				float: left;
+				@include background-image(linear-gradient(to right, rgba(23,24,30,0.92) 0%,rgba(23,24,30,0.92) 1%,rgba(19,20,25,0.81) 17%,rgba(13,14,17,0.51) 43%,rgba(0,0,0,0) 100%));
+			}
+
+			.ksm-menu-sub-menu_container .shrink-wrap-vignette-right {
+				height: 42px;
+				position: relative;
+				top: 0px;
+				width: 320px;
+				bottom: 0px;
+				height: 30px;
+				float: right;
+				@include background-image(linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(13,14,17,0.51) 57%,rgba(19,20,25,0.81) 83%,rgba(23,24,30,0.92) 99%,rgba(23,24,30,0.92) 100%));
+			}
+
+			.shrink-wrap-findcenter {
+				margin: auto;
+				position: static;
+				top: 50%;
+				left: 50%;
+				width: 1px;
+
+				.shrink-wrap-inner-highlight {
+					width: 1px;
+					height: 30px;
+					left: 0px;
+					top: 0px;
+					position: relative;
+
+					.shrink-wrap-inner-highlight-left {
+						width: 175px;
+						height: 30px;
+						height: 28px;
+						position: relative;
+						@include background-image(linear-gradient(to right, rgba(125,185,232,0) 0%,rgba(63,63,79,1) 100%));
+					}
+
+					.shrink-wrap-inner-highlight-mid {
+						background: #3f3f4f;
+						width: 223px;
+						height: 30px;
+						position: relative;
+						top: -30px;
+						left: 175px;
+					}
+
+					.shrink-wrap-inner-highlight-right {
+						height: 28px;
+						width: 175px;
+						position: relative;
+						top: -58px;
+						left: 398px;
+						@include background-image(linear-gradient(to right, rgba(63,63,79,1) 0%,rgba(125,185,232,0) 100%));
+					}
+				}
+			}
+		}
+	}
+}
+
+&.auth .noauth_nav { display: none !important; }
+&.noauth .user_menu { display: none !important; }

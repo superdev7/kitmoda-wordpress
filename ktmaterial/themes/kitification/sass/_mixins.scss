@@ -1,0 +1,69 @@
+//*------------------------------------*\
+//     $Breakpoint Mixin
+//*------------------------------------*/
+// Mixin for handling responsive breakpoints for Bootstrap.
+// @usage @include breakpoint(map);
+// @eg: @include breakpoint($xs) { ... }
+//---------------------------------
+$xs: ( max:  767px );
+$sm: ( min:  768px );
+$md: ( min:  992px );
+$lg: ( min: 1200px );
+$xl: ( min: 1400px );
+$sm-only: ( min: map-get($sm, min), max: map-get($md, min) - 1 );
+$md-only: ( min: map-get($md, min), max: map-get($lg, min) - 1 );
+
+@mixin breakpoint($map) {
+  $query: "";
+  @if map-has-key($map, min) { $query: append($query, "(min-width: #{map-get($map, min)})") }
+  @if map-has-key($map, min) and map-has-key($map, max) { $query: append($query, "and") }
+  @if map-has-key($map, max) { $query: append($query, "(max-width: #{map-get($map, max)})") }
+  @media screen and #{$query} { @content; }
+}
+
+//*------------------------------------*\
+//     $Animation-Delay Mixin
+//*------------------------------------*/
+// Mixin for maintaining consistend animation delays.
+// @usage @include animationDelay(steps,start(opt),step-length(opt));
+// @eg: @include animationDelay(3) 
+//---------------------------------
+$animation__startDelay: 0s !default;
+$animation__delayOffset: 0.2s !default;
+
+@mixin animationDelay( $steps:1, $startDelay: $animation__startDelay, $offset: $animation__delayOffset) {
+    -webkit-animation-delay: $startDelay + ($offset * $steps);
+                  animation-delay: $startDelay + ($offset * $steps);
+}
+
+
+//*------------------------------------*\
+//     $Placeholder Mixin
+//*------------------------------------*/
+// Mixin for styling input placeholder text.
+// @usage @include placeholder { content }
+// @eg: @include placeholder { color: red; }
+//---------------------------------
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}

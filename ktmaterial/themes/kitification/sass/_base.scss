@@ -1,0 +1,39 @@
+/* Base Styles */
+
+body {
+  line-height: 1.5;
+  overflow-x: hidden;
+  font-family: $roboto;
+
+  &.v2 {
+    margin-top: 0 !important;
+  }
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.site-header, .site-footer, .page-header, body.minimal, body.custom-background.minimal, .header-outer, .minimal .entry-content .edd-slg-social-container span legend {
+    background-color: #515a63;
+}
+
+.row.row-inset {
+    padding: 0 65px 0 45px;
+}
+
+.clr {
+  clear: both;
+}
+
+.ng-hide {
+  display: none;
+}
+
+.no-left-pad {
+  padding-left: 0;
+}
+
+.no-right-pad {
+  padding-right: 0;
+}
