@@ -253,6 +253,11 @@
 
 									&:hover {
 										background-position: 0 -1px;
+
+										~ .menu_kitmoda {
+											top: 50px;
+											@include opacity(1);
+										}
 									}
 								}
 
@@ -263,6 +268,11 @@
 									right: 0;
 									height: 70px;
 									width: 46px;
+
+									&:hover + .menu_kitmoda {
+										top: 50px;
+										@include opacity(1);
+									}
 								}
 
 								.menu_kitmoda {
@@ -308,7 +318,9 @@
 									border: 2px solid #60aef8;
 									width: 200px;
 									padding: 12px;
+									position: initial;
 									@include border-radius(10px);
+									@include transform(none);
 
 									li {
 										float: none;
@@ -322,6 +334,8 @@
 											font-size: 12px;
 											background: #000;
 											font-family: $montserrat;
+											width: auto;
+											display: block;
 											@include border-radius(6px);
 										}
 
