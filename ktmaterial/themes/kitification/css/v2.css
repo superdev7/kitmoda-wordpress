@@ -3239,6 +3239,7 @@ body {
 }
 .v2 .page_footer, .v2 .page_push {
   height: 80px;
+  margin-top: 80px;
 }
 .v2 .page_footer .kit_footer_container_top, .v2 .page_push .kit_footer_container_top {
   height: 1px;
