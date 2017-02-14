@@ -1115,14 +1115,14 @@ function ksm_enqueue_style($handle, $src = false, $deps = array(), $ver = false,
 
     if(KSM_DEBUG_MODE) {
 
-        if (!is_front_page()) {
+        // if (!is_front_page()) {
             $designers = array(
                 'kunal',
                 'sunny',
                 'jaswinder',
                 'kane'
             );
-        }
+        // }
 
 
         if(strpos($src, trailingslashit(KSM_BASE_URL)) !== false) {
