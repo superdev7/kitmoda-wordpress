@@ -254,6 +254,9 @@
 												.add_post_container {
 													position: absolute;
 													right: 0;
+													left: 0;
+													margin-left: 0;
+													width: auto;
 
 													.btn_add_post {
 														color: #ffffff;
