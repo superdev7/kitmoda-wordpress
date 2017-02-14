@@ -90,11 +90,11 @@
         </div>
 
         <div class="magazine_container">
-            <div class="magazine_article_box_1"></div>
-            <div class="magazine_article_box_2"></div>
-            <div class="magazine_article_box_3"></div>
-            <div class="magazine_article_box_4"></div>
-            <div class="magazine_article_box_5"></div>
+            <div class="magazine_article_box"></div>
+            <div class="magazine_article_box"></div>
+            <div class="magazine_article_box"></div>
+            <div class="magazine_article_box"></div>
+            <div class="magazine_article_box"></div>
         </div>
 
         <div class="magazine_container_icon feed_icon"></div>
