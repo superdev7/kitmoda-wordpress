@@ -1,4 +1,4 @@
-<div class="ksm_loading">
+<div class="ksm_loading" style="display: none">
     <div class="rect1"></div>
     <div class="rect2"></div>
     <div class="rect3"></div>
