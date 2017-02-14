@@ -905,6 +905,11 @@ body {
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li.settings_nav .user_nav .menu_btn:hover {
   background-position: 0 -1px;
 }
+.v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li.settings_nav .user_nav .menu_btn:hover ~ .menu_kitmoda {
+  top: 50px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li.settings_nav .user_nav .menu_btn_hover_bridge {
   position: absolute;
   top: 22px;
@@ -912,6 +917,11 @@ body {
   right: 0;
   height: 70px;
   width: 46px;
+}
+.v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li.settings_nav .user_nav .menu_btn_hover_bridge:hover + .menu_kitmoda {
+  top: 50px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li.settings_nav .user_nav .menu_kitmoda {
   position: absolute;
@@ -959,9 +969,14 @@ body {
   border: 2px solid #60aef8;
   width: 200px;
   padding: 12px;
+  position: initial;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
+  -moz-transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li.settings_nav .user_nav ul li {
   float: none;
@@ -975,6 +990,8 @@ body {
   font-size: 12px;
   background: #000;
   font-family: "Montserrat", sans-serif;
+  width: auto;
+  display: block;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
