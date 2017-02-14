@@ -265,7 +265,7 @@
   }
 }
 
-.ksm_profile_user_sidebar {
+.ksm_profile_user_sidebar_v2 {
   @include border-radius(5px);
 
   .userinfo {
@@ -624,7 +624,7 @@
   }
 }
 
-.ksm_profile_user_wall_container {
+.ksm_profile_user_wall_container_v2 {
   .ksm_profile_user_wall {
     position: relative;
     padding-bottom: 25px;

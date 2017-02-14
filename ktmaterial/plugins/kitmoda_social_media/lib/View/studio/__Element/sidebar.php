@@ -3,7 +3,7 @@ $skills = str_replace(',', ', ', $this->KUser->Access->skills);
 $softwares = str_replace(',', ', ', $this->KUser->Access->softwares);
 ?>
 
-<div class="col-xs-12 col-md-4 col-lg-3 ksm_profile_user_sidebar">
+<div class="col-xs-12 col-md-4 col-lg-3 ksm_profile_user_sidebar_v2">
     <div class="userinfo">
         <div class="header radius_top">
             <div class="header_region_overlay">

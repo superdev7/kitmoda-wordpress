@@ -2678,17 +2678,17 @@ body {
   -webkit-box-shadow: 0 8px 10px #08070a;
   box-shadow: 0 8px 10px #08070a;
 }
-.v2 .ksm_profile_user_sidebar {
+.v2 .ksm_profile_user_sidebar_v2 {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-.v2 .ksm_profile_user_sidebar .userinfo {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo {
   -moz-border-radius: 10px 10px 11px 11px;
   -webkit-border-radius: 10px;
   border-radius: 10px 10px 11px 11px;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .header {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .header {
   padding: 0px;
   border: 1px solid #4f4f5e;
   border-bottom-color: #0e0e14;
@@ -2706,7 +2706,7 @@ body {
   background-image: -webkit-linear-gradient(top, #9494b2 0%, #535366 2%, #32333f 5%, #2f313f 100%);
   background-image: linear-gradient(to bottom, #9494b2 0%, #535366 2%, #32333f 5%, #2f313f 100%);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .header .header_region_overlay {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .header .header_region_overlay {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQxNDE0YyIgc3RvcC1vcGFjaXR5PSIwLjMxIi8+PHN0b3Agb2Zmc2V0PSIyJSIgc3RvcC1jb2xvcj0iIzEzMTMxNiIgc3RvcC1vcGFjaXR5PSIwLjQ3Ii8+PHN0b3Agb2Zmc2V0PSIzMiUiIHN0b3AtY29sb3I9IiMxMDEwMTIiIHN0b3Atb3BhY2l0eT0iMC4yMSIvPjxzdG9wIG9mZnNldD0iOTglIiBzdG9wLWNvbG9yPSIjMDgwODBhIiBzdG9wLW9wYWNpdHk9IjAuNjIiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0OTQ5NWIiIHN0b3Atb3BhY2l0eT0iMC4zMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
   background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(65, 65, 76, 0.31)), color-stop(2%, rgba(19, 19, 22, 0.47)), color-stop(32%, rgba(16, 16, 18, 0.21)), color-stop(98%, rgba(8, 8, 10, 0.62)), color-stop(100%, rgba(73, 73, 91, 0.33)));
@@ -2717,7 +2717,7 @@ body {
   -webkit-box-shadow: inset 12px -61px 89px -32px rgba(5, 5, 8, 0.44);
   box-shadow: inset 12px -61px 89px -32px rgba(5, 5, 8, 0.44);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .header .header_region_overlay .avatar {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .header .header_region_overlay .avatar {
   float: left;
   margin: 9px 9px 13px;
   z-index: 5;
@@ -2737,7 +2737,7 @@ body {
   background-image: -webkit-linear-gradient(top, #e5efff 0%, #ccddf9 4%, #919eb6 9%, #70757e 18%, #45484e 26%, #17181b 89%, #020202 99%);
   background-image: linear-gradient(to bottom, #e5efff 0%, #ccddf9 4%, #919eb6 9%, #70757e 18%, #45484e 26%, #17181b 89%, #020202 99%);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .header .header_region_overlay .avatar img {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .header .header_region_overlay .avatar img {
   width: 61px;
   height: 61px;
   -moz-border-radius: 5px;
@@ -2747,17 +2747,17 @@ body {
   -webkit-box-shadow: -1px 5px 5px 0 rgba(5, 6, 13, 0.6);
   box-shadow: -1px 5px 5px 0 rgba(5, 6, 13, 0.6);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .header .header_region_overlay .info {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .header .header_region_overlay .info {
   float: left;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .header .header_region_overlay .info .username {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .header .header_region_overlay .info .username {
   color: #cdd2fa;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
   line-height: 16px;
   margin: 9px 0 0 4px;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .header .header_region_overlay .info .website {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .header .header_region_overlay .info .website {
   color: #74b2ff;
   font-size: 14px;
   line-height: 16px;
@@ -2765,7 +2765,7 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 3px 0 4px 3px;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .header .header_region_overlay .info .website a {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .header .header_region_overlay .info .website a {
   color: #74b2ff;
   font-family: "Montserrat", sans-serif;
   font-size: 11px;
@@ -2773,7 +2773,7 @@ body {
   margin: 3px 0 4px 3px;
   text-decoration: none;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats {
   border-right: solid 1px #4e4e5e;
   border-left: solid 1px #4a4a59;
   padding-bottom: 0px;
@@ -2784,7 +2784,7 @@ body {
   -webkit-box-shadow: -1px 8px 11px 3px rgba(0, 0, 2, 0.52);
   box-shadow: -1px 8px 11px 3px rgba(0, 0, 2, 0.52);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .stats_inset_shadow {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .stats_inset_shadow {
   overflow: hidden;
   padding-bottom: 40px;
   -moz-border-radius: 0 0 5px 5px;
@@ -2800,31 +2800,31 @@ body {
   background-image: -webkit-linear-gradient(left, #36363f 0%, #282830 1%, #282830 99%, #3b3b44 100%);
   background-image: linear-gradient(to right, #36363f 0%, #282830 1%, #282830 99%, #3b3b44 100%);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section {
   padding: 15px 17px 0 22px;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section .heading {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section .heading {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   color: #d6d5e8;
   text-transform: uppercase;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section .section_heading {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section .section_heading {
   margin-bottom: 4px;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   color: #fff;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section .sub_section {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section .sub_section {
   margin-bottom: 15px;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section .sub_section .heading {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section .sub_section .heading {
   color: #c8c7d9;
   font-size: 12px;
   margin-top: 6px;
   margin-bottom: -2px;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li {
   color: #fff;
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
@@ -2835,46 +2835,46 @@ body {
   background-repeat: no-repeat;
   background-position: left center;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li.finishedart_views {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li.finishedart_views {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/eyetest.png);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li.finishedart_likes {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li.finishedart_likes {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/likes-grey_sidebar.png);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li.products_solo {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li.products_solo {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/solo_products.png);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li.products_team {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li.products_team {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/team_products.png);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li.concept_artist {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li.concept_artist {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/concept_artist.png);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li.modeler {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li.modeler {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/modeler.png);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li.texture_artist {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li.texture_artist {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/texture_artist_sidebar.png);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li.contribution {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li.contribution {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/contribution.png);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li.maintained {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li.maintained {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/maintained.png);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li.communication {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li.communication {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/communication.png);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li.peer_review {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li.peer_review {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/peer_review.png);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li.primary {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li.primary {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/primary_lang.png);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li.secondary {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li.secondary {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/secondary_lang.png);
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li .stat_heading {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li .stat_heading {
   color: #d3d6ed;
   display: block;
   float: left;
@@ -2884,19 +2884,19 @@ body {
   font-weight: 500;
   width: 58%;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li .stat_heading .counter_likes_views_text {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li .stat_heading .counter_likes_views_text {
   color: #a3a3c1;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .stats .section ul li .rating {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .stats .section ul li .rating {
   float: right;
   margin-top: 2px;
 }
-.v2 .ksm_profile_user_sidebar .userinfo .empty_rating .counter {
+.v2 .ksm_profile_user_sidebar_v2 .userinfo .empty_rating .counter {
   display: none;
 }
-.v2 .ksm_profile_user_sidebar .sidebar_box {
+.v2 .ksm_profile_user_sidebar_v2 .sidebar_box {
   width: 100%;
   position: relative;
   margin-top: 26px;
@@ -2904,7 +2904,7 @@ body {
   -webkit-border-radius: 0;
   border-radius: 0 0 10px 10px;
 }
-.v2 .ksm_profile_user_sidebar .sidebar_box .renderbox {
+.v2 .ksm_profile_user_sidebar_v2 .sidebar_box .renderbox {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -2912,7 +2912,7 @@ body {
   -webkit-box-shadow: -1px 8px 11px 3px rgba(0, 0, 2, 0.52);
   box-shadow: -1px 8px 11px 3px rgba(0, 0, 2, 0.52);
 }
-.v2 .ksm_profile_user_sidebar .sidebar_box .renderbox .inset_shadow {
+.v2 .ksm_profile_user_sidebar_v2 .sidebar_box .renderbox .inset_shadow {
   overflow: hidden;
   padding-bottom: 32px;
   border: 1px solid #4a4a59;
@@ -2930,7 +2930,7 @@ body {
   background-image: -webkit-linear-gradient(left, #3e3e47 0%, #282830 1%, #282830 99%, #3e3e47 100%);
   background-image: linear-gradient(to right, #3e3e47 0%, #282830 1%, #282830 99%, #3e3e47 100%);
 }
-.v2 .ksm_profile_user_sidebar .sidebar_box .header {
+.v2 .ksm_profile_user_sidebar_v2 .sidebar_box .header {
   line-height: 30px;
   padding-left: 12px;
   margin-top: 11px;
@@ -2942,13 +2942,13 @@ body {
   -webkit-border-radius: 5px;
   border-radius: 5px 5px 0 0;
 }
-.v2 .ksm_profile_user_sidebar .sidebar_box .header .icon {
+.v2 .ksm_profile_user_sidebar_v2 .sidebar_box .header .icon {
   height: 28px;
   width: 40px;
   margin-left: 7px;
   float: left;
 }
-.v2 .ksm_profile_user_sidebar .sidebar_box .header .title {
+.v2 .ksm_profile_user_sidebar_v2 .sidebar_box .header .title {
   font-family: "Montserrat", sans-serif;
   line-height: 28px;
   font-size: 14px;
@@ -2958,7 +2958,7 @@ body {
   text-transform: uppercase;
   float: left;
 }
-.v2 .ksm_profile_user_sidebar .sidebar_box .header .count {
+.v2 .ksm_profile_user_sidebar_v2 .sidebar_box .header .count {
   float: right;
   width: 100px;
   text-align: center;
@@ -2969,7 +2969,7 @@ body {
   display: block;
   text-decoration: none;
 }
-.v2 .ksm_profile_user_sidebar .sidebar_box .content {
+.v2 .ksm_profile_user_sidebar_v2 .sidebar_box .content {
   border: 1px solid #2c2c35;
   border-top-color: #111115;
   border-bottom-color: #3a3a46;
@@ -2983,22 +2983,22 @@ body {
   -webkit-box-shadow: inset 0px 7px 7px -4px rgba(0, 0, 0, 0.19);
   box-shadow: inset 0px 7px 7px -4px rgba(0, 0, 0, 0.19);
 }
-.v2 .ksm_profile_user_sidebar .sidebar_box.following .header .icon {
+.v2 .ksm_profile_user_sidebar_v2 .sidebar_box.following .header .icon {
   background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/following2.png) no-repeat left center;
 }
-.v2 .ksm_profile_user_sidebar .sidebar_box.favorites .header .icon {
+.v2 .ksm_profile_user_sidebar_v2 .sidebar_box.favorites .header .icon {
   background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/heart-grey.png) no-repeat left center;
 }
-.v2 .ksm_profile_user_sidebar .sidebar_box.favorites .content .favorites_slider {
+.v2 .ksm_profile_user_sidebar_v2 .sidebar_box.favorites .content .favorites_slider {
   min-height: 100px;
 }
-.v2 .ksm_profile_user_sidebar .sidebar_box.topselling .header .icon {
+.v2 .ksm_profile_user_sidebar_v2 .sidebar_box.topselling .header .icon {
   background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/selling.png) no-repeat left center;
 }
-.v2 .ksm_profile_user_sidebar .sidebar_box.topselling .content .top_selling_slider {
+.v2 .ksm_profile_user_sidebar_v2 .sidebar_box.topselling .content .top_selling_slider {
   min-height: 60px;
 }
-.v2 .ksm_profile_user_sidebar .studio_sidebar_linebreak {
+.v2 .ksm_profile_user_sidebar_v2 .studio_sidebar_linebreak {
   width: 100%;
   Height: 1px;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FmYWZjYyIgc3RvcC1vcGFjaXR5PSIwLjA4Ii8+PHN0b3Agb2Zmc2V0PSIxOCUiIHN0b3AtY29sb3I9IiNiMGIwZDUiIHN0b3Atb3BhY2l0eT0iMC4yNiIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjYjNiM2U1IiBzdG9wLW9wYWNpdHk9IjAuMzciLz48c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2IzYjNlNSIgc3RvcC1vcGFjaXR5PSIwLjM3Ii8+PHN0b3Agb2Zmc2V0PSI4NiUiIHN0b3AtY29sb3I9IiNiMGIwZDMiIHN0b3Atb3BhY2l0eT0iMC4yNiIvPjxzdG9wIG9mZnNldD0iOTklIiBzdG9wLWNvbG9yPSIjYWZhZmNkIiBzdG9wLW9wYWNpdHk9IjAuMTUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhZmFmY2MiIHN0b3Atb3BhY2l0eT0iMC4xNSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
@@ -3008,7 +3008,7 @@ body {
   background-image: -webkit-linear-gradient(left, rgba(175, 175, 204, 0.08) 0%, rgba(176, 176, 213, 0.26) 18%, rgba(179, 179, 229, 0.37) 50%, rgba(179, 179, 229, 0.37) 51%, rgba(176, 176, 211, 0.26) 86%, rgba(175, 175, 205, 0.15) 99%, rgba(175, 175, 204, 0.15) 100%);
   background-image: linear-gradient(to right, rgba(175, 175, 204, 0.08) 0%, rgba(176, 176, 213, 0.26) 18%, rgba(179, 179, 229, 0.37) 50%, rgba(179, 179, 229, 0.37) 51%, rgba(176, 176, 211, 0.26) 86%, rgba(175, 175, 205, 0.15) 99%, rgba(175, 175, 204, 0.15) 100%);
 }
-.v2 .ksm_profile_user_sidebar .studio_sidebar_linebreak_mid {
+.v2 .ksm_profile_user_sidebar_v2 .studio_sidebar_linebreak_mid {
   width: 100%;
   Height: 1px;
   margin-top: 4px;
@@ -3054,11 +3054,11 @@ body {
   -moz-appearance: none;
   -webkit-appearance: none;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall {
   position: relative;
   padding-bottom: 25px;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
@@ -3066,7 +3066,7 @@ body {
   -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.4);
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight_top {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight_top {
   padding: 1px 1px 0;
   -moz-border-radius: 6px 6px 0 0;
   -webkit-border-radius: 6px;
@@ -3078,7 +3078,7 @@ body {
   background-image: -webkit-linear-gradient(top, #555566 0%, #474756 14%, #2d2d38 35%);
   background-image: linear-gradient(to bottom, #555566 0%, #474756 14%, #2d2d38 35%);
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight_top .add_post_form_radius_top {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight_top .add_post_form_radius_top {
   height: 24px;
   -moz-border-radius: 5px 5px 0 0;
   -webkit-border-radius: 5px;
@@ -3087,7 +3087,7 @@ body {
   -webkit-box-shadow: linear-gradient(to bottom, #555566 0%, #474756 7%, #2f2f3a 25%);
   box-shadow: linear-gradient(to bottom, #555566 0%, #474756 7%, #2f2f3a 25%);
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight_top .add_post_form_radius_top .add_post_form_highlight_studio_overlay_top {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight_top .add_post_form_radius_top .add_post_form_highlight_studio_overlay_top {
   padding: 22px 22px 4px;
   height: 100%;
   -moz-border-radius: 7px 7px 0 0;
@@ -3100,13 +3100,13 @@ body {
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 2, 0.45) 0%, rgba(0, 0, 2, 0.28) 18%, rgba(0, 0, 2, 0.28) 74%, rgba(0, 0, 2, 0.45) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 2, 0.45) 0%, rgba(0, 0, 2, 0.28) 18%, rgba(0, 0, 2, 0.28) 74%, rgba(0, 0, 2, 0.45) 100%);
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight {
   padding: 0 1px;
   background: #2d2d38;
   border-left: 1px solid #2d2d38;
   border-right: 1px solid #2d2d38;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight_bottom {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight_bottom {
   padding: 0 1px 1px;
   margin-bottom: 26px;
   -moz-border-radius: 0 0 5px 5px;
@@ -3119,7 +3119,7 @@ body {
   background-image: -webkit-linear-gradient(top, #2d2d38 68%, #040405 95%);
   background-image: linear-gradient(to bottom, #2d2d38 68%, #040405 95%);
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight_bottom .add_post_form_radius_bottom {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight_bottom .add_post_form_radius_bottom {
   height: 24px;
   -moz-border-radius: 0 0 5px 5px;
   -webkit-border-radius: 0;
@@ -3131,7 +3131,7 @@ body {
   background-image: -webkit-linear-gradient(top, #2f2f3a 20%, #2f2f3a 64%, #24242b 87%, #0a0a0c 100%);
   background-image: linear-gradient(to bottom, #2f2f3a 20%, #2f2f3a 64%, #24242b 87%, #0a0a0c 100%);
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight_bottom .add_post_form_radius_bottom .add_post_form_highlight_studio_overlay_bottom {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form_highlight_bottom .add_post_form_radius_bottom .add_post_form_highlight_studio_overlay_bottom {
   padding: 0 22px;
   height: 100%;
   -moz-border-radius: 0 0 7px 7px;
@@ -3144,14 +3144,14 @@ body {
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 2, 0.45) 0%, rgba(0, 0, 2, 0.28) 18%, rgba(0, 0, 2, 0.28) 74%, rgba(0, 0, 2, 0.45) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 2, 0.45) 0%, rgba(0, 0, 2, 0.28) 18%, rgba(0, 0, 2, 0.28) 74%, rgba(0, 0, 2, 0.45) 100%);
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form {
   background: #2f2f3a;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form {
   position: relative;
   font-family: "Roboto", sans-serif;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form textarea {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form textarea {
   width: 100%;
   border: 1px solid #2c2c35;
   border-top-color: #111115;
@@ -3163,23 +3163,23 @@ body {
   -webkit-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.4);
   box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.4);
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form textarea:-moz-placeholder {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form textarea:-moz-placeholder {
   color: #44b9fc;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form textarea::-moz-placeholder {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form textarea::-moz-placeholder {
   color: #44b9fc;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form textarea:-ms-input-placeholder {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form textarea:-ms-input-placeholder {
   color: #44b9fc;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form textarea::-webkit-input-placeholder {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form textarea::-webkit-input-placeholder {
   color: #44b9fc;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons {
   margin-top: 7px;
   height: 36px;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons .post_img_btn {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons .post_img_btn {
   background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/add_image.png) no-repeat 0 0;
   cursor: pointer;
   float: left;
@@ -3187,7 +3187,7 @@ body {
   margin-top: 2px;
   width: 61px;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons .post_img_btn .post_img_btn_hover {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons .post_img_btn .post_img_btn_hover {
   background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/add_image_hover.png) no-repeat 0 0;
   height: 34px;
   width: 61px;
@@ -3198,16 +3198,16 @@ body {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons .post_img_btn:hover .post_img_btn_hover {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons .post_img_btn:hover .post_img_btn_hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons .btn_form_smt {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons .btn_form_smt {
   cursor: pointer;
   position: relative;
   overflow: hidden;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons .btn_form_smt .add_post_text {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons .btn_form_smt .add_post_text {
   color: #44b9fc;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -3224,10 +3224,10 @@ body {
   -webkit-transition: all 0.28s ease-out;
   transition: all 0.28s ease-out;
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons .btn_form_smt:hover .add_post_text {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form form .buttons .btn_form_smt:hover .add_post_text {
   background-image: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/post_button_b_hover.png);
 }
-.v2 .ksm_profile_user_wall_container .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form .add_post_form_highlight_studio_overlay {
+.v2 .ksm_profile_user_wall_container_v2 .ksm_profile_user_wall .add_post_form_back_shadow .add_post_form .add_post_form_highlight_studio_overlay {
   height: 100%;
   padding: 0 22px;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMiIgc3RvcC1vcGFjaXR5PSIwLjQ1Ii8+PHN0b3Agb2Zmc2V0PSIxOCUiIHN0b3AtY29sb3I9IiMwMDAwMDIiIHN0b3Atb3BhY2l0eT0iMC4yOCIvPjxzdG9wIG9mZnNldD0iNzQlIiBzdG9wLWNvbG9yPSIjMDAwMDAyIiBzdG9wLW9wYWNpdHk9IjAuMjgiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDIiIHN0b3Atb3BhY2l0eT0iMC40NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');

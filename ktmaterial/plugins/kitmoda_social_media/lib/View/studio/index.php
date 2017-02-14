@@ -1,6 +1,6 @@
 <?php
 
-$this->render_element('top_banner_box');
+// $this->render_element('top_banner_box');
 $this->render_element('main_tabs');
 ?>
 
@@ -60,7 +60,7 @@ $this->render_element('main_tabs');
     <div class="col-xs-12 col-md-10 col-md-offset-1 no-left-pad ksm_profile_container_overlay_studio">
         <div class="ksm_profile">
             <?php $this->render_element('sidebar');?>
-            <div class="col-xs-12 col-md-8 col-lg-9 ksm_profile_user_wall_container">
+            <div class="col-xs-12 col-md-8 col-lg-9 ksm_profile_user_wall_container_v2">
                 <div ng-controller="kSPostsController" class="ksm_profile_user_wall ksm_profile_user_wall_sty">
                     <div class="content main_content">
                         <?php
