@@ -9,17 +9,17 @@ function ksm_route_params() {
             $params = $loader->dispatcher->controller->params;
         }
     }
-    
+
     return $params;
 }
 
 
 function ksm_developer_functions() {
-    
+
     $ksm_delevopers = array(
         'nitesh'
     );
-    
+
     foreach($ksm_delevopers as $__ksm_d) {
         $f = __DIR__ . DIRECTORY_SEPARATOR .$__ksm_d . DIRECTORY_SEPARATOR . 'functions.php';
         if(file_exists($f)) {
@@ -33,14 +33,14 @@ ksm_developer_functions();
 
 
 function KSM_template_redirect() {
-    
+
     //echo "asdasd";
     //echo is_front_page();
     //exit;
     //if(is_front_page()) {
     //    $url = ksm_get_permalink('community');
         //wp_redirect($url);
-                
+
     //}
 }
 
@@ -82,10 +82,10 @@ function ksm_can_user_attach_attachment($att, $type , $user_ID=0) {
     if(!$user_ID) {
         global $user_ID;
     }
-    if($att->post_type == 'attachment' && 
+    if($att->post_type == 'attachment' &&
             $user_ID &&
-            $att->post_author == $user_ID && 
-            !$att->post_parent && 
+            $att->post_author == $user_ID &&
+            !$att->post_parent &&
             $att->user_upload_type == $type &&
             $att->not_attached == 'yes') {
         return true;
@@ -124,30 +124,30 @@ function ksm_edit_profile_page_url() {
 
 
 function ksm_get_permalink($pagename, $username='', $page='') {
-    
+
     $url = "";
-    
-    
-    
+
+
+
     $url .= $pagename;
-    
+
     if($username) {
         $url .= "/{$username}";
     }
-    
+
     if($page) {
         $url .= "/page/{$page}";
     }
-    
+
     return home_url("{$url}");
-    
+
 }
 
 function ksm_ajax_loader() {
-    
+
     $url = esc_url(trim($_POST['u'], '/'));
     $uri = array();
-    
+
     foreach ( (array)$GLOBALS['ksm_ajax_rewrite_rules'] as $match => $query) {
         if ( preg_match("#^$match#", $url, $matches) ) {
             $query = addslashes(WP_MatchesMapRegex::apply($query, $matches));
@@ -155,27 +155,27 @@ function ksm_ajax_loader() {
             break;
         }
     }
-    
-    
+
+
     switch ($uri['tab']) {
-        
+
         case "collaboration" :
-            
+
             break;
-        
-        
+
+
     }
-    
+
     //pr($uri);
-    
-    
-    
-    
+
+
+
+
     die();
 }
 
 function ksm_account_settings_page_url() {
-    
+
     return get_permalink(ksm_get_page_id('page-settings'));
     //return home_url() . '?page_id='.  ksm_get_page_id('page-settings');
 }
@@ -188,31 +188,31 @@ function ksm_profile_following_page_url() {
 
 
  function ksm_copy_image_attachment($id) {
-     
+
      if(!wp_attachment_is_image($id)) {
          return '0';
      }
-     
+
      $att = get_post($id);
      $uploads = wp_upload_dir();
-     
+
      $file_path = get_attached_file($att->ID);
      $pathinfo = pathinfo($file_path);
-     
+
      do {
          $new_filename = "{$pathinfo['filename']}_".rand(111111,999999).'_'.time().".{$pathinfo['extension']}";
          $new_file_path = "{$uploads['path']}/{$new_filename}";
      } while (file_exists($new_file_path));
-     
+
      $new_url = "{$uploads['url']}/{$new_filename}";
-     
+
      if(!copy($file_path, $new_file_path)) {
          return '0';
      }
-     
+
      $wp_filetype = wp_check_filetype($new_filename, null );
-     
-     
+
+
      $attachment = array(
          'guid' => $new_url,
          'post_mime_type' => $wp_filetype['type'],
@@ -221,16 +221,16 @@ function ksm_profile_following_page_url() {
          'post_status' => 'inherit',
          'post_author' => $att->post_author
      );
-     
+
      $attachment_id = wp_insert_attachment( $attachment, $new_file_path );
-     
+
      if($attachment_id) {
          require_once(ABSPATH . 'magento-help/includes/image.php');
          $attach_data = wp_generate_attachment_metadata( $attachment_id, $new_file_path );
          wp_update_attachment_metadata( $attachment_id, $attach_data );
          return $attachment_id;
      }
-        
+
 }
 
 
@@ -255,9 +255,9 @@ function KSM_load_vendor($vendor) {
 }
 
 function ksm_query_vars($vars) {
-    
+
     //echo ksm_query_vars . "<br>";
-    
+
         $vars[] = "username";
         $vars[] = "tab";
         $vars[] = "ksm_controller";
@@ -275,27 +275,27 @@ function validateDate($date, $format = 'm/d/Y') {
 }
 
 function ksm_update_user_sales($download_id, $d) {
-    
+
     $download = get_post($download_id);
-    
+
     if($download && $download->post_type == 'download') {
         $download_authors = array();
-        
-        
+
+
         if($download->collaboration_id) {
             $download_authors = $download->collaboration_partners;
         } else {
             $download_authors[] = array('id' => $download->post_author, 'price' => $d['price']);
         }
-        
-        
+
+
         foreach ((Array) $download_authors as $k => $v) {
             $sales_month = get_number(get_user_meta($v['id'], 'sales_month', true));
             update_user_meta($v['id'], 'sales_lifetime', KSM_User::count_sales($v['id']));
             update_user_meta($v['id'], 'sales_month', $sales_month + $v['price']);
         }
-        
-        
+
+
     }
 }
 
@@ -311,18 +311,18 @@ function get_current_controller() {
 }
 
 function ksm_is_current_tab($tab) {
-    
+
     $controller = get_query_var('mvc_controller');
-    
-    
+
+
     if($tab == 'collaboration' && ($controller == 'CollaborationRequest' || $controller == 'CollaborationActive' || $controller == 'Collaboration') ) {
         return true;
     }
-    
+
     if($controller && $controller == $tab) {
         return true;
     }
-    
+
     return false;
 }
 
@@ -341,11 +341,11 @@ function get_image_ar($attachment_id, $size) {
 
 
 function time_ago($date, $append = " ago") {
-    
+
     $date = is_numeric($date) ? $date : strtotime($date);
 
-    
-    
+
+
     //if(date('d', $date) == date('d')) {
         $date = ucwords(human_time_diff( $date) . $append);
     //} else {
@@ -373,11 +373,11 @@ function get_default_avatar($size='avatar_small') {
         case "avatar_tiny_2" :
             $dimensions = '24x24';
             break;
-        
-        
+
+
     }
-        
-        
+
+
     return KSM_BASE_URL.'images/avatar-'.$dimensions.'.jpg';
 }
 
@@ -389,23 +389,23 @@ function get_number($num) {
 
 function ksm_posts_where($where) {
     global $wpdb, $wp_query;
-    
+
 //    echo $where;
 //    pr($wp_query);
 //    exit;
-    
-    
+
+
     return $where;
 }
 
 
 
 function ksm_format_to_number($number = 0) {
-    
-    
+
+
     return str_replace(array('k', 'm'), array('000', '000000'), $number);
-    
-    
+
+
 }
 
 
@@ -432,12 +432,12 @@ function ksm_loading() {
 
 function sl_to_link($key) {
     global $wpdb;
-    
+
     if(!$key) {
         return;
     }
-    
-    
+
+
     $posts = get_posts(array(
         'post_type' => 'any',
         'post_status' => 'publish',
@@ -445,20 +445,20 @@ function sl_to_link($key) {
             array('key' => 'short_link', 'value' => $key)
         )
     ));
-    
-    
+
+
     if($posts[0]) {
         $post = $posts[0];
-        
+
         switch ($post->post_type) {
-            
+
             case "ksm_wall_post" :
                 $link = ksm_get_wall_post_to_link($post);
                 if($link) {
                     wp_redirect($link);
                 }
                 break;
-                
+
             case "download":
                 $link = ksm_get_download_to_link($post);
                 if($link) {
@@ -471,31 +471,31 @@ function sl_to_link($key) {
                     wp_redirect($link);
                 }
                 break;
-            
+
         }
-        
+
     }
-    
-    
-    
+
+
+
 }
 
 
 function ksm_get_wip_to_link($post) {
     global $wpdb;
     $user = get_user_by('id', $post->post_author);
-    
+
     if(!$user instanceof WP_User) {
         return '';
     }
-    
+
     $q = "SELECT count(*) total FROM {$wpdb->posts} WHERE post_author = '{$post->post_author}' AND post_type = 'ksm_wip' AND ID >= '{$post->ID}'";
-    
+
     $offset = $wpdb->get_var($q);
     if($offset) {
         $page = ceil($offset / 20);
     }
-    
+
     $link = ksm_get_permalink('studio', $user->user_login);
     $link .= "#wip_{$page}_{$post->ID}";
 
@@ -506,18 +506,18 @@ function ksm_get_wip_to_link($post) {
 function ksm_get_download_to_link($post) {
     global $wpdb;
     $user = get_user_by('id', $post->post_author);
-    
+
     if(!$user instanceof WP_User) {
         return '';
     }
-    
+
     $q = "SELECT count(*) total FROM {$wpdb->posts} WHERE post_author = '{$post->post_author}' AND post_type = 'download' AND ID >= '{$post->ID}'";
-    
+
     $offset = $wpdb->get_var($q);
     if($offset) {
         $page = ceil($offset / 20);
     }
-    
+
     $link = ksm_get_permalink('studio', $user->user_login);
     $link .= "#dl_{$page}_{$post->ID}";
 
@@ -529,18 +529,18 @@ function ksm_get_download_to_link($post) {
 function ksm_get_wall_post_to_link($post) {
     global $wpdb;
     $user = get_user_by('id', $post->post_author);
-    
+
     if(!$user instanceof WP_User) {
         return '';
     }
-    
+
     $q = "SELECT count(*) total FROM {$wpdb->posts} WHERE post_author = '{$post->post_author}' AND post_type = 'ksm_wall_post' AND ID >= '{$post->ID}'";
-    
+
     $offset = $wpdb->get_var($q);
     if($offset) {
         $page = ceil($offset / 5);
     }
-    
+
     $link = ksm_get_permalink('studio', $user->user_login, $page);
     $link .= "#wp_$post->ID";
 
@@ -563,10 +563,10 @@ if(!function_exists('pr')) {
 //add_action( 'template_redirect', 'ppv_template_redirect' );
 //function ppv_template_redirect() {
     global $wp_query, $post, $user_ID, $post_type, $user_login, $wpdb;
-        
+
     //pr($wp_query);
     //exit;
-        
+
 //}
 
 
@@ -574,73 +574,73 @@ function ksm_insert_post($post_id, $post, $update) {
     if($update) {
         return;
     }
-    
-    
+
+
     update_post_meta($post_id, 'likes', array());
-    
+
     update_post_meta($post_id, 'trending', '0');
     update_post_meta($post_id, 'rating_coefficient', '0');
     update_post_meta($post_id, 'views_count', '0');
     update_post_meta($post_id, 'likes_count', '0');
-    
+
     if($post->post_type == 'ksm_post') {
         update_post_meta($post_id, 'reports_count', '0');
         update_post_meta($post_id, 'blocked', 'no');
     }
-    
+
 }
 
 
 
 function ksm_pre_get_posts($query) {
-    
-    
-    
-    
-    
+
+
+
+
+
     /*
-    
+
     if(!$query->is_main_query() || is_admin()) {
         return;
     }
-    
+
     ksm_init_controller();
-    
+
     if($GLOBALS['k_controller']) {
-    
+
         $name = $GLOBALS['k_controller']->name;
         $GLOBALS['k_controller']->{$name}->pre_get_posts($query);
-    
+
     }
-    
+
     */
-    
-    
+
+
     /*
     if(!$query->is_main_query() || is_admin() || !is_archive() || $query->query_vars['post_type'] != 'ksm_wall_post') {
         return $query;
     }
-    
-    
+
+
     $profile = KSM_profile::getInstance();
-    
-    
-    
+
+
+
     $fes_settings = get_option( 'fes_settings' );
     $login_page = $fes_settings['fes-vendor-dashboard-page'];
-            
-    
-    
-            
+
+
+
+
     if($profile->is_private_pofile && $profile->error == '1') {
         wp_redirect(add_query_arg( 'view', 'login', get_permalink($login_page)));
         exit;
     }
-    
+
     if(!$profile->profile_user->ID) {
         exit;
     }
-    
+
     $query->set('posts_per_page' , KSM_WALL_POST_RESULTS_PER_PAGE );
     $query->set('post_status' , 'publish' );
     $query->set('meta_key' , 'wall_id');
@@ -648,108 +648,108 @@ function ksm_pre_get_posts($query) {
     $query->set('orderby' , 'date' );
     $query->set('order' , 'DESC' );
     */
-    
-    
-    
-    
-    
+
+
+
+
+
     //pr($query);
-    
-    
-    
+
+
+
 }
 
 
 
 function get_hour_key($num = 0) {
-    
+
     $_time = time();
-    
-    
+
+
     $_this_hour = date('H', $_time);
     $_date_str =  date('d M Y', $_time);
-    
-    
+
+
     $_time_str = "{$_date_str} {$_this_hour} " . (($_this_hour == '1') ? 'hour' : 'hours');
-    
-    
+
+
     $this_hour = strtotime($_time_str);
-    
+
     return ($this_hour - (3600 * $num));
 }
 
 
 function KSM_MVC_getControllerClassName($name) {
-    
+
     $name = implode('_', array_map('ucfirst', explode('_', $name)));
-    
+
     return "KSM_{$name}Controller";
 }
 
 function KSM_MVC_getName($class) {
-    
+
     $name = "";
-    
+
     if(strtolower(substr($class, 0,4)) == 'ksm_') {
-        
+
         preg_match_all('/[A-Z][^A-Z]*/' ,  substr($class, 4), $split);
         $split = $split[0];
-        
-        
-        
+
+
+
         $last = end($split);
         if(strtolower($last) == 'controller' || strtolower($last) == 'model' || strtolower($last) == 'helper') {
             unset($split[key($split)]);
         }
-        
-        
-        
-        
+
+
+
+
         $name = implode('', array_map('ucfirst', $split));
-        
+
     }
-    
+
     return $name;
 }
 
 
 function KSM_MVC_getFileName($class) {
     $name = KSM_MVC_getName($class);
-    
+
     preg_match_all('/[A-Z][^A-Z]*/' ,  $name, $split);
     $split = $split[0];
-    
+
     $name = implode('_', array_map('strtolower', $split));
     return $name;
 }
 
 
 function get_countryName($short_name) {
-    
+
     if($short_name) {
         $countries = KSM_DataStore::Options('country');
         return $countries[$short_name];
     }
     return '';
-    
+
 }
 
 
 function get_Language($short_name) {
-    
+
     if($short_name) {
         $languages = KSM_DataStore::Options('languages');
         return $languages[$short_name];
     }
     return '';
-    
+
 }
 
 
 
 function login_message($type = '') {
-    
-    $msg = 
+
+    $msg =
     '<div class="empty_msg">
         You don\'t have access to this page.
         Click here to <a atrqt="'.$type.'" href="">Login</a>
@@ -763,8 +763,8 @@ function post_attacments($post_id, $args = array() , $including_thumb = true) {
     if(!$post_id) {
         return array();
     }
-    
-    
+
+
     $thumb_attachment = array();
     if($including_thumb) {
         $thumb_id = get_post_meta( $post_id, '_thumbnail_id', true );
@@ -772,9 +772,9 @@ function post_attacments($post_id, $args = array() , $including_thumb = true) {
             $thumb_attachment[0] = get_post($thumb_id);
         }
     }
-    
-    
-    
+
+
+
     $defaults = array(
         'post_type' => 'attachment',
         'posts_per_page' => -1,
@@ -782,45 +782,45 @@ function post_attacments($post_id, $args = array() , $including_thumb = true) {
         'post_mime_type' => 'image',
         'post_status' => array('inherit', 'publish')
     );
-    
-            
+
+
     $args = wp_parse_args( $args, $defaults );
-    
-    
+
+
     $attachments = get_posts($args);
     $attachments = $attachments ? $attachments : array();
-    
-    
+
+
     return array_merge($thumb_attachment, $attachments);
 }
 
 
 function post_attacment_ids($post_id, $args = array() , $including_thumb = true) {
     $attas = post_attacments($post_id, $args , $including_thumb);
-    
-    
+
+
     $list = array();
     foreach ($attas as $v) {
         $list[] = $v->ID;
     }
-    
+
     return $list;
-    
+
 }
 
 
 
 function ksm_slick_gallery($attachments, $settings = array()) {
-    
-    
+
+
     $thumb_size = $settings['thumb_size'];
     $full_size  = $settings['full_size'];
-    
+
     $name = $settings['name'];
     $count_view = $settings['count_view'] ? $settings['count_view'] : false;
-    
-    
-    
+
+
+
     if(!empty($attachments)) : ?>
 
     <div class="gallery_container slick_attachment_gallery">
@@ -830,7 +830,7 @@ function ksm_slick_gallery($attachments, $settings = array()) {
             <div class="full">
                 <div class="slider">
 
-                    <?php foreach($attachments as $att) : 
+                    <?php foreach($attachments as $att) :
                         $src = get_image_src($att->ID, $full_size);
                         if(!$src) continue;
 
@@ -858,7 +858,7 @@ function ksm_slick_gallery($attachments, $settings = array()) {
                     </div>
                 <div class="slider">
 
-                    <?php foreach($attachments as $att) : 
+                    <?php foreach($attachments as $att) :
                         $src = get_image_src($att->ID, $thumb_size);
                         if(!$src) continue;
                         ?>
@@ -872,8 +872,8 @@ function ksm_slick_gallery($attachments, $settings = array()) {
     </div>
 
     <?php
-    
-    
+
+
     endif;
 }
 
@@ -889,10 +889,10 @@ function slick_attachment_gallery($post_id, $settings) {
 
 
 function KSM_TopBarUserMenu() {
-    
+
     $user_id = get_current_user_id();
     ob_start();
-    
+
     if($user_id) :
         include KSM_VIEWS_PATH . '__Element' . DIRECTORY_SEPARATOR . 'top_bar_user_menu.php';
     else : ?>
@@ -911,11 +911,11 @@ function KSM_TopBarUserMenu() {
             </ul>
         </div>
     <?php
-    
+
     endif;
-    
+
     return ob_get_clean();
-    
+
 }
 
 
@@ -923,23 +923,23 @@ function KSM_TopBarUserMenu() {
 
 function fes_dashboard() {
     $fes_settings = get_option( 'fes_settings' );
-    
+
     return get_permalink($fes_settings['fes-vendor-dashboard-page']);
 }
 
 
 function star_rating_static($rating = 0, $calulate = false ,$max = 5) {
-    
+
     if($calulate) {
         $m = 100 / $max;
         $rating = ($rating * $m) . '%';
     }
-    
+
     return '<div class="rating"><div class="active" style="width:'.$rating.'"></div></div>';
 }
 
 function star_rating_static2($rating = 0, $calulate = false ,$max = 5) {
-    
+
     if($calulate) {
         $m = 100 / $max;
         $rating = ($rating * $m) . '%';
@@ -948,11 +948,11 @@ function star_rating_static2($rating = 0, $calulate = false ,$max = 5) {
 }
 
 function ksm_avatar($user_id = 0, $size='avatar_small') {
-        
+
         if($user_id) {
             $user = get_user_by('id', $user_id);
         }
-        
+
         if($user instanceof WP_User) {
             if($user->$size) {
                 $avatar = $user->$size;
@@ -960,53 +960,53 @@ function ksm_avatar($user_id = 0, $size='avatar_small') {
                 $avatar = get_image_src($user->avatar, $size);
             }
         }
-        
+
         if($avatar) return $avatar;
-        
+
         return get_default_avatar($size);
-        
+
     }
 
 
 
 
 function search_ajax_users($term) {
-    
+
     $user_query = new WP_User_Query(
             array(
                 'search' => $term,
                 'search_columns' => array( 'user_login' )
                 )
             );
-                
-        
+
+
         $data = array();
         foreach ( $user_query->results as $user ) {
             if(user_can($user, 'adminisrator')) {
                 continue;
             }
-            
+
             $d = array();
             $d['id'] = $user->ID;
             $d['label'] = $user->user_login;
             $d['value'] = $user->user_login;
             $data[] = $user->user_login;
 	}
-        
+
         return $data;
-    
+
 }
 
 function ksm_users_suggest() {
-    
+
     $term = trim($_GET['q']);
     if(strlen($term) > 2) {
         $term = "*{$term}*";
         echo json_encode(search_ajax_users($term));
     }
-    
+
     die();
-    
+
 }
 
 
@@ -1017,7 +1017,7 @@ function ksm_softwares_suggest() {
         $matches = preg_grep("/{$term}/i", $all_softwares);
         echo json_encode($matches);
     }
-    
+
     die();
 }
 
@@ -1028,54 +1028,54 @@ function ksm_skills_suggest() {
         $matches = preg_grep("/{$term}/i", $all_skills);
         echo json_encode($matches);
     }
-    
+
     die();
 }
 
 
 function term_parents($term_id) {
-    
+
     $_term_id = $term_id;
     $result = array();
-            
+
     $final = false;
-    
+
     do {
         $term = get_term_by('id', $_term_id, 'category');
         $result[] = $term;
         $_term_id = $term->parent;
-                
+
         if($_term_id == 0) {
             $final = true;
         }
     } while (!$final);
-    
+
     $result = array_reverse($result);
-    
+
     return $result;
 }
 
 function store_search_breadcrumb($cat) {
-    
-    
+
+
     if(!$cat) {
         return '<ul><li>Home</li><li class="clr"></li></ul>';
     }
-    
-    
+
+
     $terms = term_parents($cat);
-    
+
     $breadcrumb = array();
-    
+
     $breadcrumb[] = '<li>Home</li>';
     foreach($terms as $t) {
         $breadcrumb[] = "<li>{$t->name}</li>";
     }
-    
-    
+
+
     $childs = (Array) get_terms('category', array('parent'=> $cat, 'hide_empty'=> false));
     //pr($childs);
-    
+
     if($childs) {
         $more_item = '<select class="light">';
         $more_item .= "<option value=\"\">MORE</option>";
@@ -1086,10 +1086,10 @@ function store_search_breadcrumb($cat) {
         //$breadcrumb[] = "<li class=\"more_nav\">More{$more_item}</li>";
         $breadcrumb[] = "<li class=\"more_nav\">{$more_item}</li>";
     }
-    
+
     $breadcrumb = implode('<li class="sep">&gt;</li>', $breadcrumb);
     $breadcrumb = "<ul>{$breadcrumb}<li class=\"clr\"></li></ul>";
-    
+
     return $breadcrumb;
 }
 
@@ -1097,57 +1097,59 @@ function store_search_breadcrumb($cat) {
 
 
 function last_array_element($ar = array()) {
-    
-    
+
+
     return is_array($ar) ? end($ar) : '';
-            
+
 }
 
 
 function wp_kses_no_tag($content) {
-    
+
     return wp_kses($content, array());
 }
 
 
 function ksm_enqueue_style($handle, $src = false, $deps = array(), $ver = false, $media = 'all') {
     wp_enqueue_style($handle, $src, $deps, $ver, $media);
-    
+
     if(KSM_DEBUG_MODE) {
-         
-        $designers = array(
-            'kunal',
-            'sunny',
-            'jaswinder',
-            'kane'
-        );
-        
-        
+
+        if (!is_front_page()) {
+            $designers = array(
+                'kunal',
+                'sunny',
+                'jaswinder',
+                'kane'
+            );
+        }
+
+
         if(strpos($src, trailingslashit(KSM_BASE_URL)) !== false) {
             $t = str_replace(trailingslashit(KSM_BASE_URL), "", $src);
-            
+
             $i = pathinfo($t);
-            
-            
+
+
             foreach($designers as $d) {
-                
+
                 $usrc = trailingslashit(KSM_BASE_URL) . $i['dirname'] ."/" . $d . "/{$i['filename']}.css";
                 $upath = KSM_BASE_PATH . untrailingslashit($i['dirname']) . DIRECTORY_SEPARATOR . $d . DIRECTORY_SEPARATOR . "{$i['filename']}.css";
 
                 if(file_exists($upath)) {
                     wp_enqueue_style("{$d}-{$handle}", $usrc);
                 }
-                
+
             }
-            
-            
+
+
         }
-        
-        
-        
+
+
+
     }
-    
-    
+
+
 }
 
 
@@ -1161,7 +1163,7 @@ function KSM_Update_User_Cart_Meta() {
     }
 }
 
-        
+
 function KSM_edd_post_add_to_cart($download_id, $options) {
     KSM_Update_User_Cart_Meta();
 }
@@ -1185,21 +1187,21 @@ function KSM_wp_logout() {
 
 
 function KSM_wp_login($user_login) {
-    
+
     $user = get_user_by('login', $user_login);
-    
-    
+
+
     $cart_items = $user->cart_items;
-    
+
     if($cart_items) {
-    
+
         foreach ((Array) $cart_items as $citem) {
             $pid = @$citem['id'];
             if($pid) {
                 edd_add_to_cart($pid);
             }
         }
-    
+
     }
 }
 
@@ -1228,7 +1230,7 @@ function ksm_wp_head() {
             html {
                 margin : 0 !important;
             }
-            #page { 
+            #page {
                 padding-top: 32px;
             }
         </style>
@@ -1240,12 +1242,12 @@ function ksm_wp_head() {
 
 
 function ksm_edd_insert_payment($payment_id, $payment_data) {
-    
-    
+
+
     if($payment_data['cart_details'] && !empty($payment_data['cart_details'])) {
-        
+
         foreach($payment_data['cart_details'] as $d) {
-            
+
             $download = new KSM_Download($d['id']);
             $p_download_id = wp_insert_post(array(
                     'post_title'    => $d['name'],
@@ -1256,27 +1258,27 @@ function ksm_edd_insert_payment($payment_id, $payment_data) {
                     'post_date'     => isset( $payment_data['post_date'] ) ? $payment_data['post_date'] : null,
                     'post_date_gmt' => isset( $payment_data['post_date'] ) ? $payment_data['post_date'] : null
                 ));
-            
+
             if($p_download_id) {
-                
+
                 $file_meta = get_post_meta($d['id'], 'edd_download_files', true);
                 $model_type = get_post_meta($d['id'], 'model_type', true);
-                
-                
+
+
                 copy_post_terms($d['id'], $p_download_id, 'ksm_tax_keyword');
-                
-                
+
+
                 $download_authors = (Array)$download->authors();
                 $author_data = array();
                 foreach ($download_authors as $a) {
                     $author_data["pd_download_author_{$a}_share"] = $download->author_price_share($a);
                     $author_data["pd_download_author_{$a}_income"] = $download->author_income_per_sale($a);
                 }
-                
+
                 foreach ($author_data as $k => $v) {
                     update_post_meta($p_download_id, $k, $v);
                 }
-                
+
                 update_post_meta($p_download_id, 'attachment_id', $file_meta[0]['attachment_id']);
                 update_post_meta($p_download_id, 'model_type', $model_type);
                 update_post_meta($p_download_id, 'download_id', $d['id']);
@@ -1288,73 +1290,73 @@ function ksm_edd_insert_payment($payment_id, $payment_data) {
                 update_post_meta($p_download_id, 'tax', $d['tax']);
                 update_post_meta($p_download_id, 'fee', $d['fee']);
                 update_post_meta($p_download_id, 'price', $d['price']);
-                
+
             }
-            
+
         }
     }
-    
-    
-    
+
+
+
     return $payment_id;
-    
+
 }
 
 
 function ksm_edd_update_payment_status($payment_id, $new_status, $old_status) {
-    
-    
+
+
     $args = array(
         'posts_per_page'   => -1,
 	'post_type'        => 'ksm_p_download',
 	'post_parent'      => $payment_id,
         'post_status'      => 'any',
         );
-    
+
     $posts = get_posts($args);
-    
-    
+
+
     foreach($posts as $p) {
 	if ( $p->post_status === $new_status ) {
             return;
 	}
-        
-        
-	wp_update_post( array( 
-            'ID' => $p->ID, 
-            'post_status' => $new_status, 
+
+
+	wp_update_post( array(
+            'ID' => $p->ID,
+            'post_status' => $new_status,
             'edit_date' => current_time( 'mysql' )
             ));
     }
-    
-    
-    
+
+
+
     if($old_status != $new_status) {
-        
-        
+
+
         $downloads = edd_get_payment_meta_downloads($payment_id);
-        
+
         foreach($downloads as $d) {
-            
-            
+
+
             KSM_Count::update_product_sale_stats($d['id'], $payment_id);
             KSM_Count::update_product_revenue($d['id']);
         }
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         //'pd_download_author_{user_id}_share'
-        
-        
-        
+
+
+
         update_user_purchases_stats($payment_id);
         //update_user_sales_stats($payment_id);
     }
-    
+
 }
 
 
@@ -1363,15 +1365,15 @@ function ksm_edd_update_payment_status($payment_id, $new_status, $old_status) {
 //exit;
 
 function payment_to_authors($payment_id) {
-    
-    
+
+
     $downloads = edd_get_payment_meta_downloads($payment_id);
-    
+
     $authors = array();
-    
+
     foreach($downloads as $d) {
         $download = new KSM_Download($d['id']);
-        
+
         if($download->ID) {
             $dauthors = $download->authors();
             foreach($dauthors as $a) {
@@ -1380,9 +1382,9 @@ function payment_to_authors($payment_id) {
                 }
             }
         }
-            
+
     }
-    
+
     return $authors;
 }
 
@@ -1390,26 +1392,26 @@ function payment_to_authors($payment_id) {
 
 
 function update_download_authors($download_id) {
-    
+
 }
 
 
 function update_user_sales_stats($payment_id) {
-    
+
     $payment_post = get_post($payment_id);
-    
+
     if($payment_post && $payment_post->post_type == 'edd_payment') {
-        
-        
+
+
         $authors = payment_to_authors($payment_id);
-        
+
         $downloads = edd_get_payment_meta_downloads($payment_id);
-        
+
         foreach($downloads as $d) {
-            
+
         }
-        
-        
+
+
         if($authors) {
             foreach($authors as $author) {
                 KSM_Count::update_user_models_sale($author);
@@ -1439,30 +1441,30 @@ function ksm_date_key($y='0000', $m='00', $d='00') {
     }
 
 function update_user_purchases_stats($payment_id) {
-    
+
     $payment_post = get_post($payment_id);
-    
+
     if($payment_post && $payment_post->post_type == 'edd_payment') {
-        
+
         $user_id = $payment_post->post_author;
-        
+
         $payment_year = date('Y', strtotime($payment_post->post_date));
         $payment_month = date('m', strtotime($payment_post->post_date));
-        
-        
+
+
         //$_month = $payment_year.'_'.$payment_year;
-        
-        
+
+
         KSM_Count::update_user_total_purchases($user_id);
         KSM_Count::update_user_textured_purchases($user_id);
         KSM_Count::update_user_untextured_purchases($user_id);
         KSM_Count::update_user_total_purchased_amount($user_id);
-        
+
         KSM_Count::update_user_year_purchased_amount($user_id, $payment_year);
         KSM_Count::update_user_month_purchased_amount($user_id, $payment_year, $payment_month);
-        
-        
-        
+
+
+
         /*
         product_stats {
             total_models
@@ -1474,19 +1476,19 @@ function update_user_purchases_stats($payment_id) {
             solo_untextured_model
             collaboration_textured_model
             collaboration_untextured_model
-            
+
         }
         */
     }
-    
-    
+
+
 }
 
 
 
 
 function ksm_update_author_model_stats($author) {
-    
+
     KSM_Count::update_user_models($author);
     KSM_Count::update_user_textured_models($author);
     KSM_Count::update_user_untextured_models($author);
@@ -1494,16 +1496,16 @@ function ksm_update_author_model_stats($author) {
     KSM_Count::update_user_solo_models($author);
     KSM_Count::update_user_solo_textured_models($author);
     KSM_Count::update_user_solo_untextured_models($author);
-    
+
     KSM_Count::update_user_collaboration_models($author);
     KSM_Count::update_user_collaboration_textured_models($author);
     KSM_Count::update_user_collaboration_untextured_models($author);
-    
+
 }
 
 
 function ksm_update_author_model_ratings($author) {
-    
+
     KSM_Count::update_user_models_rating($author);
     KSM_Count::update_user_textured_models_rating($author);
     KSM_Count::update_user_untextured_models_rating($author);
@@ -1511,7 +1513,7 @@ function ksm_update_author_model_ratings($author) {
     KSM_Count::update_user_solo_models_rating($author);
     KSM_Count::update_user_solo_textured_models_rating($author);
     KSM_Count::update_user_solo_untextured_models_rating($author);
-    
+
     KSM_Count::update_user_collaboration_models_rating($author);
     KSM_Count::update_user_collaboration_textured_models_rating($author);
     KSM_Count::update_user_collaboration_untextured_models_rating($author);
@@ -1519,11 +1521,11 @@ function ksm_update_author_model_ratings($author) {
 
 
 function copy_post_terms($from, $to, $tax) {
-    
-    
+
+
     $post_terms = wp_get_object_terms($from, $tax, array('fields' => 'slugs'));
-    
-    
+
+
     if(!($post_terms instanceof WP_Error)) {
          wp_set_object_terms($to, $post_terms, $tax, true);
     }
@@ -1533,50 +1535,50 @@ function copy_post_terms($from, $to, $tax) {
 
 
 function ksm_get_ds_post_term_names($post_id, $tax, $section = '', $single = false) {
-            
+
     $all_terms = array_keys(KSM_DataStore::Terms($tax, '', $section));
     $post_terms = wp_get_post_terms($post_id, "ksm_tax_{$tax}", array('fields' => 'names'));
-    
+
     $terms = array();
-            
+
     foreach((array) $post_terms as $t) {
         if(in_array($t, $all_terms)) {
             $terms[] = $t;
         }
     }
-    
-    
+
+
     if($single) {
         return ($terms[0] ? $terms[0] : '');
     }
-    
+
     return $terms;
 }
 
 
 
 function array_average($ar) {
-    
+
     $dv = count($ar);
     $average = 0;
-    
+
     if($dv > 0) {
-        $average = array_sum($ar) / count($ar); 
+        $average = array_sum($ar) / count($ar);
     }
     return $average;
 }
-            
+
 //function ksm_ajax_routes($routes = array()) {
-//    $routes[] = array('controller' => 'Message', 'action' => 'submit_reset_password', 'no_private'=> true);    
+//    $routes[] = array('controller' => 'Message', 'action' => 'submit_reset_password', 'no_private'=> true);
 //    return $routes;
 //}
 
 
 function ksm_download_post_updated($post_ID, $post_after, $post_before) {
     if($post_before->post_type == 'download' && $post_after->post_status != $post_before->post_status) {
-        
+
         $download = new KSM_Download($post_ID);
-        
+
         foreach((Array) $download->authors() as $author) {
             ksm_update_author_model_stats($author);
         }
@@ -1584,15 +1586,15 @@ function ksm_download_post_updated($post_ID, $post_after, $post_before) {
 }
 
 function ksm_prepare_list_input_data($input_data, $vars = array(), $index='') {
-    
-    
+
+
     $input_data = (Array) ($input_data ? $input_data : array());
-    
+
     $data = array();
-    
-    
-    
-        
+
+
+
+
     foreach($input_data as $field_name => $field_data) {
         if(in_array($field_name, $vars)) {
             foreach($field_data as $l => $m) {
@@ -1603,7 +1605,7 @@ function ksm_prepare_list_input_data($input_data, $vars = array(), $index='') {
             }
         }
     }
-    
+
     return $data;
 }
 
@@ -1621,8 +1623,8 @@ remove_filter( 'parse_query', array( EDD_FES()->setup, 'restrict_media' ) );
 
 
 function ksm_nav_cart_menu_item( $items, $args ) {
-    
-    
+
+
 	if ( 'primary' != $args->theme_location )
 		return $items;
 
@@ -1655,11 +1657,11 @@ add_filter( 'wp_nav_menu_items', 'ksm_nav_cart_menu_item', 100, 2);
 
 
 function ksm_camelcase($str) {
-    return preg_replace('/_(.?)/e',"strtoupper('$1')",$str); 
+    return preg_replace('/_(.?)/e',"strtoupper('$1')",$str);
 }
 
 function ksm_camelcase_to_underscored($str) {
-    return strtolower(preg_replace('/([^A-Z])([A-Z])/', "$1_$2", $str)); 
+    return strtolower(preg_replace('/([^A-Z])([A-Z])/', "$1_$2", $str));
 }
 
 
@@ -1670,8 +1672,8 @@ function ksm_camelcase_to_underscored($str) {
 
 add_action( 'edd_complete_purchase', 'KSM_edd_complete_purchase' , 999, 1 );
 function KSM_edd_complete_purchase($payment_id) {
-    
-    
+
+
 }
 
 
@@ -1682,7 +1684,7 @@ function ksm_edd_get_download_price($price, $download_id) {
     if($download) {
         return $download->discounted_price();
     }
-    
+
     return $price;
 }
 

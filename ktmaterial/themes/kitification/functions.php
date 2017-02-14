@@ -511,7 +511,10 @@ function kitification_scripts() {
 	wp_enqueue_style( 'kitification-plugins', get_template_directory_uri() . '/css/plugins.min.css' );
 
 	/* Custom CSS */
-	wp_enqueue_style( 'kitification-base', get_stylesheet_uri() );
+	if (!is_front_page())
+		wp_enqueue_style( 'kitification-base', get_stylesheet_uri() );
+	else
+		wp_enqueue_style( 'v2', get_template_directory_uri() . '/css/v2.css' );
 
 	/*
 	 * Scripts
@@ -524,17 +527,17 @@ function kitification_scripts() {
 
 	wp_enqueue_script( 'kitification-plugins', get_template_directory_uri() . '/js/plugins.min.js', array( 'jquery' ), '20140515', true );
 	wp_enqueue_script( 'kitification', get_template_directory_uri() . '/js/main.min.js', array( 'jquery', 'kitification-plugins' ), '20140515', true );
-        
-        
+
+
         // Start Tahir
         wp_enqueue_script('lightSlider-js', get_template_directory_uri()."/js/jquery.lightSlider.min.js", array('jquery'));
         wp_enqueue_script('light-gallery-js', get_template_directory_uri()."/js/lightGallery.min.js", array('jquery'));
-        
-        
+
+
         wp_enqueue_style('lightSlider_css', get_template_directory_uri().'/css/lightSlider.css');
         wp_enqueue_style('lightGallery_css', get_template_directory_uri().'/css/lightGallery.css');
-        
-        
+
+
         // End Tahir
 
 	$kitification_js_settings = apply_filters( 'kitification_jsparams', array(
@@ -627,6 +630,9 @@ function kitification_body_classes( $classes ) {
 
 	return $classes;
 }
+add_filter( 'body_class', function( $classes ) {
+    return array_merge( $classes, array( 'v2' ) );
+} );
 add_filter( 'body_class', 'kitification_body_classes' );
 
 /**
