@@ -741,22 +741,22 @@ body {
   font-size: 14px;
   padding: 10px 44px 10px 0;
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: right center !important;
   text-transform: uppercase;
   width: auto;
   margin: 0;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li a.login_header_link {
-  background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/login.png");
+  background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/login.png") !important;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li a.login_header_link:hover {
-  background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/login_hover.png");
+  background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/login_hover.png") !important;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li a.join_header_link {
-  background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/join.png");
+  background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/join.png") !important;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li a.join_header_link:hover {
-  background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/join_hover.png");
+  background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/join_hover.png") !important;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li a:hover {
   text-decoration: none;

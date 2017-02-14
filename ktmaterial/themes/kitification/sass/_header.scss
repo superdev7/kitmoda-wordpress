@@ -68,23 +68,23 @@
 							font-size: 14px;
 							padding: 10px 44px 10px 0;
 							background-repeat: no-repeat;
-							background-position: right center;
+							background-position: right center !important;
 							text-transform: uppercase;
 							width: auto;
 							margin: 0;
 
 							&.login_header_link {
-								background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/login.png");
+								background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/login.png") !important;
 
 								&:hover {
-									background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/login_hover.png");
+									background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/login_hover.png") !important;
 								}
 							}
 							&.join_header_link {
-								background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/join.png");
+								background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/join.png") !important;
 
 								&:hover {
-									background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/join_hover.png");
+									background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/join_hover.png") !important;
 								}
 							}
 
