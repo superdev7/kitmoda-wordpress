@@ -1,0 +1,57 @@
+/* Slick Gallery */
+.slick_attachment_galleryz {
+    margin: 20px auto;
+    width: 95%;
+
+    .navz .nav_controls {
+    	position: relative;
+    	height: 0px;
+
+    	button {
+    		position: absolute;
+    		display: inline-block;
+    		border: none;
+    		top: 47px;
+    		height: 30px;
+    		width: 22px;
+
+    		&.slick-prev {
+	    		background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/prev_sprite.png) 0 -25px no-repeat;
+	    		left: -25px;
+
+	    		&:hover {
+	    			background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/prev_sprite.png) 0 2px no-repeat;
+	    		}
+	    	}
+
+	    	&.slick-next {
+	    		background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/next_sprite.png) 0 -25px no-repeat;
+	    		right: -25px;
+
+	    		&:hover {
+	    			background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/next_sprite.png) 0 2px no-repeat;
+	    		}
+	    	}
+    	}
+    }
+}
+
+.slick-slider {
+    position: static;
+
+    &.slick-initialized {
+    	border-radius: 6px;
+    	overflow: hidden;
+    	@include border-radius(6px);
+    	@include box-shadow(0px 4px 5px 1px rgba(0,0,0,0.47));
+    }
+
+    .slick-active .in {
+    	width: 215px;
+    	height: 125px;
+    }
+}
+
+.gallery {
+    margin-left: 0;
+}

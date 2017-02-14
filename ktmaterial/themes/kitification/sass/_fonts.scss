@@ -1,0 +1,40 @@
+// Google Fonts
+@mixin gwf($fonts...) {
+  $url: "http://fonts.googleapis.com/css?family=";
+  $nb: 0;
+
+  @each $font-name in $fonts {
+    $nb: $nb + 1;
+    $nb-word: 0;
+
+    @each $word in $font-name {
+      $nb-word: $nb-word + 1;
+      $url: $url + $word;
+
+      @if $nb-word < length($font-name) {
+        $url: $url + "+";
+      }
+    }
+
+    @if $nb < length($fonts) {
+       $url: $url + "|";
+    }
+  }
+
+  @import url(#{$url});
+}
+
+$font-m: Montserrat;
+$font-r: Roboto;
+$font-o: Open Sans;
+$font-oc: Open Sans Condensed;
+$font-c: Cutive Mono;
+
+@include gwf($font-m, $font-r, $font-o, $font-oc, $font-c);
+
+// Font Variables
+$montserrat: 'Montserrat', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+$open-sans-condensed: 'Open Sans Condensed', sans-serif;
+$cutive-mono: 'Cutive Mono', Courier, monospace;

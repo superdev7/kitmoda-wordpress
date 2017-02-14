@@ -1,0 +1,110 @@
+/* Page footer */
+.page_footer, .page_push {
+	height: 80px;
+
+	.kit_footer_container_top {
+		height: 1px;
+		width: 100%;
+		@include background-image(linear-gradient(to right, #2f2f38 0%,#3e3e4c 3%,#5f5f72 31%,#5f5f72 72%,#3e3e4c 96%,#2f2f38 100%));
+	}
+
+	.kit_footer_container {
+		background-color: #30303b;
+		padding-bottom: 0px;
+		height: 184px;
+		text-align: center;
+		@include box-shadow(inset 10px -86px 97px 22px rgba(0,0,0,0.43));
+
+		.footer_links {
+			width: auto;
+			height: 120px;
+			margin: 0 auto;
+			padding-top: 23px;
+			display: inline-block;
+
+			.kit_logo_footer_container {
+				float: left;
+
+				#kit_logo_footer {
+					background: rgba(0, 0, 0, 0) url(../../../plugins/kitmoda_social_media/css/kane/images/kitmoda_white.png) no-repeat scroll 0 0px;
+					height: 94px;
+					width: 103px;
+					display: block;
+					margin: 7px 46px 0 0;
+				}
+			}
+
+			.kit_footer_section {
+				float: left;
+				height: 100px;
+				margin-top: 0px;
+				margin-left: 72px;
+
+				h1 {
+					height: 26px;
+					text-align: left;
+					color: white;
+					padding-top: 5px;
+					margin-bottom: 5px;
+					font-size: 16px;
+
+					&.kit_footer_linklist_header_company {
+						background: rgba(0, 0, 0, 0) url(../../../plugins/kitmoda_social_media/css/kane/images/kitmoda_white_tiny.png) no-repeat right;
+						width: 104px;
+					}
+
+					&.kit_footer_linklist_header_submissions {
+						background: rgba(0, 0, 0, 0) url(../../../plugins/kitmoda_social_media/css/kane/images/kitmoda_tiny_upload.png) no-repeat right;
+						width: 125px;
+					}
+
+					&.kit_footer_linklist_header_help {
+						background: rgba(0, 0, 0, 0) url(../../../plugins/kitmoda_social_media/css/kane/images/kitmoda_tiny_help.png) no-repeat scroll 30px center;
+						width: 100px;
+					}
+
+					&.kit_footer_linklist_header_legal {
+						background: rgba(0, 0, 0, 0) url(../../../plugins/kitmoda_social_media/css/kane/images/kitmoda_tiny_legal.png) no-repeat scroll 47px center;
+						width: 100px;
+					}
+				}
+
+				.kit_footer_linklist {
+					text-align: left;
+					color: #d3d6e5;
+					padding-top: 0px;
+					margin-bottom: 5px;
+					font-size: 13px;
+
+					a {
+						color: #515a63;
+						text-decoration: none;
+					}
+				}
+			}
+
+			.kit_footer_map {
+				background: rgba(0, 0, 0, 0) url(../../../plugins/kitmoda_social_media/css/kane/images/footer_map_image.png) no-repeat scroll 0 0px;
+				height: 126px;
+				width: 204px;
+				display: block;
+				float: left;
+				margin: -14px 0 0 100px;
+			}
+		}
+
+		.footer_legal_container {
+			text-align: center;
+			width: 100%;
+			background-color: transparent;
+
+			.footer_legal_type {
+				text-align: center;
+				font-size: 11px;
+				font-family: $roboto;
+				color: #c2cada;
+				margin-top: 32px;
+			}
+		}
+	}
+}
