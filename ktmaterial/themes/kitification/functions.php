@@ -512,7 +512,7 @@ function kitification_scripts() {
 	wp_enqueue_style( 'kitification-plugins', get_template_directory_uri() . '/css/plugins.min.css' );
 
 	/* Custom CSS */
-	if (!is_front_page())
+	//if (!is_front_page())
 		wp_enqueue_style( 'kitification-base', get_stylesheet_uri() );
 	//else
 		wp_enqueue_style( 'v2', get_template_directory_uri() . '/css/v2.css' );
