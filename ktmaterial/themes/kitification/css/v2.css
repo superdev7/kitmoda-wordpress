@@ -1962,7 +1962,10 @@ body {
   background: transparent url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_post.png) no-repeat scroll 0 0;
   height: 32px;
   width: 32px;
+  margin: 0;
   margin-left: 100px;
+  border: none;
+  box-shadow: none;
 }
 .v2 .ksm_profile_container_studio .ksm_profile_container_overlay_studio .ksm_profile .ksm_community .content .posts_container .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius .add_comment_backdrop_comment .add_comment_container .add_comment_hover {
   background: transparent url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_post_hover.png) no-repeat scroll 0 0px;
