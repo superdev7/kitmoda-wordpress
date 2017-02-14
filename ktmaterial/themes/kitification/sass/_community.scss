@@ -767,6 +767,10 @@
 			}
 
 			.community_sidebar {
+				background: none;
+				border: none;
+				@include box-shadow(none);
+
 				.community_sidebar_outline_shadow {
 					background: #000;
 					border: 1px solid #4a4a59;

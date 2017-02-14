@@ -2121,6 +2121,13 @@ body {
   background: #3c3c4d;
   color: #08090d;
 }
+.v2 .ksm_profile_container_studio .ksm_profile_container_overlay_studio .ksm_profile .community_sidebar {
+  background: none;
+  border: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 .v2 .ksm_profile_container_studio .ksm_profile_container_overlay_studio .ksm_profile .community_sidebar .community_sidebar_outline_shadow {
   background: #000;
   border: 1px solid #4a4a59;
