@@ -53,12 +53,13 @@
 				@include transform(none);
 
 				ul {
-					margin-top: 16px;
+					margin-top: 16px !important;
 					margin-right: 8px;
 
 					li {
 						float: left;
 						position: relative;
+						margin: 0;
 
 						a {
 							height: 44px;
@@ -69,6 +70,8 @@
 							background-repeat: no-repeat;
 							background-position: right center;
 							text-transform: uppercase;
+							width: auto;
+							margin: 0;
 
 							&.login_header_link {
 								background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/login.png");
