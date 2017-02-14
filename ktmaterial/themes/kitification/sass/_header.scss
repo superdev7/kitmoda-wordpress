@@ -29,6 +29,10 @@
 					display: block;
 					margin-top: 2px;
 					text-indent: -9999em;
+
+					a {
+						background: none;
+					}
 				}
 
 				.kitmoda_header_radial_overlay {
@@ -44,6 +48,10 @@
 			}
 
 			.main-navigation {
+				position: relative;
+				top: 0;
+				@include transform(none);
+
 				ul {
 					margin-top: 16px;
 					margin-right: 8px;
@@ -353,7 +361,11 @@
 						float: left;
 
 						a.colorbox {
-							padding: 22px 20px;
+							padding: 10px 20px;
+
+							&:hover {
+								border: none;
+							}
 						}
 
 						.upload_launch {

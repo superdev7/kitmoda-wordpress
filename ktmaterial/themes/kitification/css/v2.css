@@ -59,9 +59,6 @@ body {
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
 }
-body.v2 {
-  margin-top: 0 !important;
-}
 
 .menu-toggle {
   display: none;
@@ -702,6 +699,9 @@ body.v2 {
   margin-top: 2px;
   text-indent: -9999em;
 }
+.v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .kitmoda_header_container .header_logo a {
+  background: none;
+}
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .kitmoda_header_container .kitmoda_header_radial_overlay {
   position: relative;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IiIgcj0iODIlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjY2VkNGVkIiBzdG9wLW9wYWNpdHk9IjAuMTkiLz48c3RvcCBvZmZzZXQ9IjclIiBzdG9wLWNvbG9yPSIjYzhjZGU5IiBzdG9wLW9wYWNpdHk9IjAuMTkiLz48c3RvcCBvZmZzZXQ9IjI5JSIgc3RvcC1jb2xvcj0iI2I1YjhkZCIgc3RvcC1vcGFjaXR5PSIwLjA2Ii8+PHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiM5YjliY2QiIHN0b3Atb3BhY2l0eT0iMC4wMSIvPjxzdG9wIG9mZnNldD0iNjIlIiBzdG9wLWNvbG9yPSIjOTk5OWNjIiBzdG9wLW9wYWNpdHk9IjAuMDEiLz48c3RvcCBvZmZzZXQ9IjgyJSIgc3RvcC1jb2xvcj0iIzk5OTljYyIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
@@ -715,6 +715,14 @@ body.v2 {
   height: 220px;
   top: -66px;
   z-index: -1;
+}
+.v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation {
+  position: relative;
+  top: 0;
+  -moz-transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul {
   margin-top: 16px;
@@ -1009,7 +1017,10 @@ body.v2 {
   float: left;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul .upload_launch_container a.colorbox {
-  padding: 22px 20px;
+  padding: 10px 20px;
+}
+.v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul .upload_launch_container a.colorbox:hover {
+  border: none;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul .upload_launch_container .upload_launch {
   background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/upload.png) no-repeat scroll 0 0;
