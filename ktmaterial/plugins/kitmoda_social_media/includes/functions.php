@@ -897,7 +897,7 @@ function KSM_TopBarUserMenu() {
         include KSM_VIEWS_PATH . '__Element' . DIRECTORY_SEPARATOR . 'top_bar_user_menu.php';
     else : ?>
 
-        <div class="user_menu">
+        <!-- <div class="user_menu"> -->
             <div class="upload_launch_container">
                 <a ng-click="auth('login')" href="">
                     <div class="upload_launch"></div>
@@ -909,7 +909,7 @@ function KSM_TopBarUserMenu() {
                 <li><a class="login_header_link" ng-click="auth('login')">Login</a></li>
                 <li><a class="join_header_link" ng-click="auth('join')">Join</a></li>
             </ul>
-        </div>
+        <!-- </div> -->
     <?php
 
     endif;
