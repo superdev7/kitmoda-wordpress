@@ -26,16 +26,16 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container">
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-                            
+
 				<h1 class="menu-toggle"><i class="icon-list2"></i></h1>
-                                
-                                    
-                                    <?php 
+
+
+                                    <?php
                                     if(function_exists('KSM_TopBarUserMenu')) echo KSM_TopBarUserMenu();
                                     ?>
-                                    
-                                    
-                                
+
+
+
 				<?php if ( ! ( is_front_page() && is_page_template( 'page-templates/home-search.php' ) ) ) : ?>
 				<div class="header-search-icon"><i class="icon-search"></i></div>
 				<?php endif; ?>
