@@ -6,7 +6,7 @@ $softwares = str_replace(',', ', ', $this->KUser->Access->softwares);
 <div class="col-xs-12 col-md-4 col-lg-3 ksm_profile_user_sidebar_v2">
     <div class="userinfo">
         <div class="header radius_top">
-            <div class="header_region_overlay">
+            <div class="header_region_overlay clearfix">
                 <div class="avatar">
                     <?=$this->KUser->Access->avatar_link()?>
                 </div>

@@ -6,7 +6,7 @@
 
 .window {
     margin : 0 auto;
-    
+
     .content {
         overflow-y: hidden;
     }
@@ -16,8 +16,8 @@
 
 
 .ksm_profile_container {
-    
-    
+
+
     background-color: #26242b;
     @include filter-gradient(#26242b, #26242b, horizontal);
     $experimental-support-for-svg: true;
