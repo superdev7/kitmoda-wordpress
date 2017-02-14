@@ -254,9 +254,9 @@
 												.add_post_container {
 													position: absolute;
 													right: 0;
-													left: 0;
-													margin-left: 0;
-													width: auto;
+													margin-left: 0 !important;
+													width: auto !important;
+													display: block;
 
 													.btn_add_post {
 														color: #ffffff;
@@ -298,8 +298,12 @@
 													pointer-events: none;
 													position: absolute;
 													right: 50px;
-													margin-top: 11px;
+													margin-top: 7px;
 													text-transform: uppercase;
+													left: auto !important;
+													padding: 0;
+													background: none;
+													height: auto;
 													@include transition(all .28s ease-out);
 												}
 
