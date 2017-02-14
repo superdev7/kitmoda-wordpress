@@ -632,7 +632,7 @@ body {
 }
 .v2 .slick_attachment_galleryz .navz .nav_controls button.slick-next {
   background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/next_sprite.png) 0 -25px no-repeat !important;
-  right: -25px;
+  right: -25px !important;
 }
 .v2 .slick_attachment_galleryz .navz .nav_controls button.slick-next:hover {
   background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/next_sprite.png) 0 2px no-repeat !important;
