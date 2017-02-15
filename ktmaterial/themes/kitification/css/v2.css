@@ -2399,14 +2399,14 @@ body {
   -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.75) inset;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.75) inset;
 }
-.v2 #top_banner_box_container #top_banner_box {
+.v2 #top_banner_box_container #top_banner_box_v2 {
   margin-top: 17px;
   height: 160px;
 }
-.v2 #top_banner_box_container #top_banner_box .banner {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner {
   position: relative;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .header_container {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .header_container {
   padding: 1px 1px 0;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -2418,7 +2418,7 @@ body {
   background-image: -webkit-linear-gradient(top, #a9bad1 2%, #9aa8bf 4%, #71777f 12%, #60636b 17%, #36393f 94%, #17181b 98%);
   background-image: linear-gradient(to bottom, #a9bad1 2%, #9aa8bf 4%, #71777f 12%, #60636b 17%, #36393f 94%, #17181b 98%);
 }
-.v2 #top_banner_box_container #top_banner_box .banner .header_container .header {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .header_container .header {
   height: 38px;
   border-width: 1px;
   padding: 0 35px 0 194px;
@@ -2435,10 +2435,10 @@ body {
   background-image: -webkit-linear-gradient(top, #5f5f70 1%, #252530 15%, #22222b 29%, #151519 94%, #020202 100%);
   background-image: linear-gradient(to bottom, #5f5f70 1%, #252530 15%, #22222b 29%, #151519 94%, #020202 100%);
 }
-.v2 #top_banner_box_container #top_banner_box .banner .header_container .header .left {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .header_container .header .left {
   float: left;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .header_container .header .left .username {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .header_container .header .left .username {
   color: #7bbaff;
   display: block;
   float: left;
@@ -2451,13 +2451,13 @@ body {
   z-index: 5;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.34);
 }
-.v2 #top_banner_box_container #top_banner_box .banner .header_container .header .left .awards {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .header_container .header .left .awards {
   display: block;
   float: left;
   margin-left: 45px;
   height: 40px;
 }
-.v2 #top_banner_box_container #top_banner_box .banner #top_banner_dark_glass {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner #top_banner_dark_glass {
   height: 132px;
   position: absolute;
   width: 100%;
@@ -2476,7 +2476,7 @@ body {
   background-image: -webkit-radial-gradient(center, ellipse, rgba(4, 4, 5, 0.88) 23%, rgba(4, 4, 5, 0.88) 43%, rgba(4, 4, 5, 0.92) 59%, #020203 86%, #010102 100%);
   background-image: radial-gradient(ellipse at center, rgba(4, 4, 5, 0.88) 23%, rgba(4, 4, 5, 0.88) 43%, rgba(4, 4, 5, 0.92) 59%, #020203 86%, #010102 100%);
 }
-.v2 #top_banner_box_container #top_banner_box .banner .top_banner_header_shadowgradient {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .top_banner_header_shadowgradient {
   width: 100%;
   height: 11px;
   position: relative;
@@ -2487,18 +2487,18 @@ body {
   background-image: -webkit-linear-gradient(top, #0a0a11 9%, rgba(10, 10, 17, 0.99) 10%, rgba(10, 10, 17, 0.87) 19%, rgba(0, 0, 0, 0) 100%);
   background-image: linear-gradient(to bottom, #0a0a11 9%, rgba(10, 10, 17, 0.99) 10%, rgba(10, 10, 17, 0.87) 19%, rgba(0, 0, 0, 0) 100%);
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content {
   font-family: "Roboto", sans-serif;
   position: absolute;
   top: 53px;
   margin-left: 194px;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .tagline {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .tagline {
   color: #d7ddf7;
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .location {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .location {
   background: transparent url(../../../plugins/kitmoda_social_media/css/kane/images/icons/location.png) no-repeat scroll left 5px;
   color: #9196ab;
   font-family: "Montserrat", sans-serif;
@@ -2506,24 +2506,24 @@ body {
   padding: 2px 0 2px 13px;
   text-transform: capitalize;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .website {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .website {
   color: #5ba1e8;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   line-height: 16px;
   margin-bottom: 9px;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .website a {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .website a {
   color: #62a9ff;
   font-size: 13px;
   text-decoration: none;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .private {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .private {
   position: absolute;
   top: 70px;
   width: 260px;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .private .profile_completeness {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .private .profile_completeness {
   float: left;
   margin-top: 9px;
   margin-right: 13px;
@@ -2532,7 +2532,7 @@ body {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .private .profile_completeness .progress {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .private .profile_completeness .progress {
   background: #1a1a1e;
   border: 1px solid #363636;
   border-left: none;
@@ -2547,7 +2547,7 @@ body {
   -webkit-box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.27);
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.27);
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .private .profile_completeness .progress .bar {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .private .profile_completeness .progress .bar {
   height: 8px;
   width: 40px;
   -moz-box-shadow: inset 2px 2px 4px 1px rgba(4, 23, 51, 0.42);
@@ -2560,16 +2560,16 @@ body {
   background-image: -webkit-linear-gradient(top, #3377b8 0%, #4099eb 17%, #44c0ff 38%, #4bc1fc 55%, #44c0ff 71%, #3ca2d8 86%);
   background-image: linear-gradient(to bottom, #3377b8 0%, #4099eb 17%, #44c0ff 38%, #4bc1fc 55%, #44c0ff 71%, #3ca2d8 86%);
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .private .edit_profile_container {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .private .edit_profile_container {
   width: 36px;
   float: left;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .private .edit_profile_container .edit_profile {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .private .edit_profile_container .edit_profile {
   background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/profile.png) no-repeat 0 0;
   width: 33px;
   height: 37px;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .private .edit_profile_container .edit_profile_hover {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .private .edit_profile_container .edit_profile_hover {
   background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/profile_hover.png) no-repeat 0 0;
   width: 33px;
   height: 37px;
@@ -2581,22 +2581,22 @@ body {
   -webkit-transition: all 0.28s ease-out;
   transition: all 0.28s ease-out;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .private .edit_profile_container:hover .edit_profile_hover {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .private .edit_profile_container:hover .edit_profile_hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .edit_settings_container {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .edit_settings_container {
   width: 43px;
   float: left;
   margin-top: -3px;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .edit_settings_container .edit_settings {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .edit_settings_container .edit_settings {
   background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/gear.png) no-repeat 0 0;
   width: 42px;
   height: 42px;
   margin-bottom: 0px;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .edit_settings_container .edit_settings_hover {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .edit_settings_container .edit_settings_hover {
   background: transparent url(../../../plugins/kitmoda_social_media/css/kane/images/icons/gear_hover.png) no-repeat scroll 0 0px;
   width: 43px;
   height: 42px;
@@ -2608,53 +2608,53 @@ body {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .content .edit_settings_container:hover .edit_settings_hover {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .content .edit_settings_container:hover .edit_settings_hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .stats {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .stats {
   font-family: "Montserrat", sans-serif;
   margin-right: 44px;
   position: absolute;
   right: 0;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .stats .col {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .stats .col {
   width: 112px;
   float: left;
   margin-left: 54px;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .stats .col div {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .stats .col div {
   border-bottom: 1px solid #2d2d39;
   color: #fff;
   font-size: 14px;
   padding: 5px;
   text-align: right;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .stats .col div.lifetime_earning {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .stats .col div.lifetime_earning {
   background: url(../../../plugins/kitmoda_social_media/images/icons/lifetime_earning.png) no-repeat left center;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .stats .col div.monthly_earning {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .stats .col div.monthly_earning {
   background: url(../../../plugins/kitmoda_social_media/images/icons/monthly_earning.png) no-repeat left center;
   border-bottom: none;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .stats .col div.projects {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .stats .col div.projects {
   background: url(../../../plugins/kitmoda_social_media/images/icons/projects.png) no-repeat left center;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .stats .col div.rank {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .stats .col div.rank {
   background: url(../../../plugins/kitmoda_social_media/images/icons/rank.png) no-repeat left center;
   border-bottom: medium none;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .stats .col div.views {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .stats .col div.views {
   background: url(../../../plugins/kitmoda_social_media/images/icons/views-grey.png) no-repeat left center;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .stats .col div.likes {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .stats .col div.likes {
   background: url(../../../plugins/kitmoda_social_media/images/icons/likes-grey.png) no-repeat left center;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .stats .col div.followers {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .stats .col div.followers {
   background: url(../../../plugins/kitmoda_social_media/images/icons/followers_grey.png) no-repeat left center;
   border-bottom: none;
 }
-.v2 #top_banner_box_container #top_banner_box .banner .avatar {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .avatar {
   position: absolute;
   top: 12px;
   left: 20px;
@@ -2671,7 +2671,7 @@ body {
   background-image: -webkit-linear-gradient(top, #e5efff 0%, #ccddf9 4%, #919eb6 9%, #70757e 18%, #45484e 26%, #17181b 89%, #020202 99%);
   background-image: linear-gradient(to bottom, #e5efff 0%, #ccddf9 4%, #919eb6 9%, #70757e 18%, #45484e 26%, #17181b 89%, #020202 99%);
 }
-.v2 #top_banner_box_container #top_banner_box .banner .avatar img {
+.v2 #top_banner_box_container #top_banner_box_v2 .banner .avatar img {
   height: 144px;
   width: 144px;
   -moz-border-radius: 9px;
