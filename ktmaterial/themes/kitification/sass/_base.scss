@@ -1,8 +1,11 @@
 /* Base Styles */
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   line-height: 1.5;
-  //overflow-x: hidden;
   font-family: $roboto;
 }
 
