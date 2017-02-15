@@ -14,7 +14,7 @@ $progress_width = get_number($KUser->Access->completeness).'%';
 
 ?>
 
-<div id="top_banner_box_container">
+<div id="top_banner_box_container" class="row row-inset">
     <div class="mosaic_banner_horizontal_dark_overlay">
     </div>
     <div class="mosaic_banner_vertical_dark_overlay">
