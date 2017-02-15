@@ -9,6 +9,7 @@
   #top_banner_box_v2 {
     margin-top: 17px;
     height: 160px;
+    z-index: 2;
 
     .banner {
       position: relative;
@@ -58,6 +59,7 @@
         position: absolute;
         width: 100%;
         border: 1px solid rgba(86,93,107,.5);
+        z-index: 0;
         @include opacity(.77);
         @include border-radius(0 0 5px 5px);
         @include box-shadow(1px 13px 9px rgba(0,0,0,.76));

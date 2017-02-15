@@ -2402,6 +2402,7 @@ body {
 .v2 #top_banner_box_container #top_banner_box_v2 {
   margin-top: 17px;
   height: 160px;
+  z-index: 2;
 }
 .v2 #top_banner_box_container #top_banner_box_v2 .banner {
   position: relative;
@@ -2462,6 +2463,7 @@ body {
   position: absolute;
   width: 100%;
   border: 1px solid rgba(86, 93, 107, 0.5);
+  z-index: 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=77);
   opacity: 0.77;
   -moz-border-radius: 0 0 5px 5px;
