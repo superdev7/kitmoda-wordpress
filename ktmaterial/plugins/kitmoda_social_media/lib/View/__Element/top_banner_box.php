@@ -2538,7 +2538,7 @@ $progress_width = get_number($KUser->Access->completeness).'%';
    </div> -->
 
 
-   <div id="top_banner_box" class="top-banner-box">
+   <div id="top_banner_box" class="col-xs-12 col-md-10 col-md-offset-1 top-banner-box">
     <div class="banner">
         <div class="header_container">
             <div class="header">
