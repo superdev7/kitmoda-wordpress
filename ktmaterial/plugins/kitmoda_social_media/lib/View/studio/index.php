@@ -1,6 +1,6 @@
 <?php
 
-// $this->render_element('top_banner_box');
+$this->render_element('top_banner_box');
 $this->render_element('main_tabs');
 ?>
 
