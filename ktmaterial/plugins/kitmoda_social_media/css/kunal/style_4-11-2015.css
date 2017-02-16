@@ -1,0 +1,47 @@
+.ksm_gallery_multi_views .full_view_container .gallery_back_btn{
+    text-align: right;
+}
+
+.ksm_gallery_multi_views .full_view_container .gallery_back_btn a{
+    font-size: 38px;
+}
+
+
+.ksm_gallery_multi_views .full_view_container .nav_container .nav .nav_controls .slick-next {
+    right: -110px;
+}
+.ksm_gallery_multi_views .full_view_container .nav_container .nav .nav_controls .slick-prev {
+    left: -110px;
+}
+.ksm_gallery_multi_views .full_view_container{
+    top : 378px !important;
+}
+.new_state{
+    padding: 0% 0% 2% 76%;
+
+}
+.full_item_title{
+ text-align: center;
+    position: absolute;
+    padding-left: 12%;
+}
+.new_state li,.full_item_title{
+    color: white !important;
+}
+.new_state li span{
+    border: none !important;
+    width: 50%;
+}
+.new_state li.views .button {
+    background: url(../../images/icons/views.png) no-repeat left center;
+    cursor: default;
+}
+.new_state li.favorites .button {
+    background: url(../../images/icons/heart-blue.png) no-repeat 5px 6px;
+}
+.new_state li.likes .button {
+    background: url(../../images/icons/thumbs_up-blue.png) no-repeat 4px 3px;
+}
+.new_state li.share .button {
+    background: url(../../images/icons/share-blue.png) no-repeat 4px 3px;
+}

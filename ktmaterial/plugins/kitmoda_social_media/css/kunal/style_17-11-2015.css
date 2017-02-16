@@ -1,0 +1,135 @@
+.ksm_gallery_multi_views .full_view_container .gallery_back_btn{
+    text-align: right;
+}
+
+.ksm_gallery_multi_views .full_view_container .gallery_back_btn a{
+    font-size: 38px;
+}
+
+
+.ksm_gallery_multi_views .full_view_container .nav_container .nav .nav_controls .slick-next {
+    right: -110px;
+}
+.ksm_gallery_multi_views .full_view_container .nav_container .nav .nav_controls .slick-prev {
+    left: -110px;
+}
+.ksm_gallery_multi_views .full_view_container{
+    top : 378px !important;
+}
+.new_state{
+    padding: 0% 0% 2% 67%;
+
+}
+.full_item_title{
+    /*text-align: center;*/
+    /*position: absolute;*/
+    /*padding-left: 10%;*/
+    width: 0px;
+    /*padding-left: -11% !important;*/
+    margin-left: 11.3%;
+    position: absolute;
+}
+.new_state li,.full_item_title{
+    color: white !important;
+}
+.new_state li span{
+    border: none !important;
+    width: 50%;
+}
+.new_state li.views .button {
+    background: url(../../images/icons/views.png) no-repeat left center;
+    cursor: default;
+}
+.new_state li.favorites .button {
+    background: url(../../images/icons/heart-blue.png) no-repeat 5px 6px;
+}
+.new_state li.likes .button {
+    background: url(../../images/icons/thumbs_up-blue.png) no-repeat 4px 3px;
+}
+.new_state li.share .button {
+    background: url(../../images/icons/share-blue.png) no-repeat 4px 3px;
+}
+
+
+.slick-active .outer_border {
+    position: relative;
+    float: left;
+    cursor: pointer;
+}
+
+.slick-active .outer_border:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0, 0.5);
+    -moz-transition: background .3s linear;
+    -webkit-transition: background .3s linear;
+    -o-transition: background .3s linear;
+    transition: background .3s linear;
+}
+
+.current .outer_border:before{
+    background: none !important;
+}
+
+.slick-slide img{
+    width: 794px;
+    /*height: 768px;*/
+}
+
+
+.bt1_new{
+    position: absolute;
+    z-index: 9999;
+    margin-top: -1% !important;
+    margin-left: 86% !important;
+    /*position: fixed;
+    z-index: 9999;
+    margin-top: -33% !important;
+    margin-left: -9% !important;
+    */
+    width: 0% !important;
+
+}
+/*.bt1_new a{*/
+
+    /*position: fixed;*/
+    /*left: 84%;*/
+
+/*}*/
+@media only screen and (min-width: 1900px){
+    .bt1_new{
+    margin-left:74.3% !important;
+    }
+    .full_item_title{
+
+        width: 0px;
+        margin-left: 11.3%;
+        position: absolute;
+    }
+}
+.popup_avtar{
+    height: 30px;
+    width: 30px;
+}
+
+.ksm_gallery_multi_views .full_view_container .nav_container .nav .nav_controls .slick-next, .ksm_gallery_multi_views .full_view_container .nav_container .nav .nav_controls .slick-prev{
+    top : 7% !important;
+}
+
+@media only screen and (min-width: 1200px)
+{
+    .bt1_new{
+        margin-left:87.3% !important;
+    }
+    .full_item_title{
+
+        width: 0px;
+        margin-left: 11.3%;
+        position: absolute;
+    }
+}
