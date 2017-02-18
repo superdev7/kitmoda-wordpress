@@ -1565,6 +1565,8 @@ body {
   top: 3px;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li.settings_nav .user_nav .menu_kitmoda ul {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
   -moz-box-shadow: 4px 11px 20px 13px rgba(2, 2, 5, 0.82);
   -webkit-box-shadow: 4px 11px 20px 13px rgba(2, 2, 5, 0.82);
   box-shadow: 4px 11px 20px 13px rgba(2, 2, 5, 0.82);

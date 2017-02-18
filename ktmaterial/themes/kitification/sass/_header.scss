@@ -313,6 +313,7 @@
 									}
 
 									ul {
+										@include opacity(1);
 										@include box-shadow(4px 11px 20px 13px rgba(2,2,5,.82));
 									}
 								}
