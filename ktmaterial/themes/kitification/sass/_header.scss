@@ -15,7 +15,7 @@
 		.site_header_overlay_vert {
 			@include background-image(linear-gradient(to bottom, rgba(0,0,0,1) 7%,rgba(0,0,2,1) 9%,rgba(1,1,5,0.76) 13%,rgba(1,1,5,0.34) 20%,rgba(1,1,5,0) 39%,rgba(1,1,5,0) 45%,rgba(1,1,4,0) 50%,rgba(0,0,0,0.08) 91%,rgba(0,0,0,0.08) 92%,rgba(0,0,0,0.23) 95%,rgba(0,0,0,0.85) 99%,rgba(0,0,0,1) 100%));
 			height: 82px;
-			overflow: hidden;
+			overflow: visible;
 
 			.kitmoda_header_container {
 				height: 87px;
