@@ -1598,6 +1598,7 @@ body {
   font-family: "Montserrat", sans-serif;
   width: auto;
   display: block;
+  background-position: 10px center !important;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
