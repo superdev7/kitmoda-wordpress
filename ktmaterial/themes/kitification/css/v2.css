@@ -1285,7 +1285,7 @@ body {
   overflow: visible;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .kitmoda_header_container {
-  height: 87px;
+  height: 82px;
   display: inline-block;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .kitmoda_header_container .header_logo {
@@ -1323,7 +1323,7 @@ body {
   transform: none;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul {
-  margin-top: 16px !important;
+  margin-top: 0px !important;
   margin-right: 8px;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li {
@@ -1342,6 +1342,7 @@ body {
   text-transform: uppercase;
   width: auto;
   margin: 0;
+  cursor: pointer;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li a.login_header_link {
   background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/login.png") !important;
@@ -1357,6 +1358,7 @@ body {
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li a:hover {
   text-decoration: none;
+  border: none;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li .icon {
   margin-top: 18px;
@@ -1749,11 +1751,13 @@ body {
   left: 8%;
   background-image: url(../../../plugins/kitmoda_social_media/images/icons/collaboration.png);
   height: 26px;
-  margin-top: -13px;
+  margin-top: -11px;
+  background-size: 70%;
 }
 .v2 .header-outer .ksm-menu-container .ksm-menu ul li.store a:before {
   left: 14%;
   background-image: url(../../../plugins/kitmoda_social_media/images/icons/store.png);
+  margin-top: -11px;
 }
 .v2 .header-outer .ksm-menu-container .ksm-menu ul li.account a:before {
   left: 12%;

@@ -18,7 +18,7 @@
 			overflow: visible;
 
 			.kitmoda_header_container {
-				height: 87px;
+				height: 82px;
 				display: inline-block;
 
 				.header_logo {
@@ -53,7 +53,7 @@
 				@include transform(none);
 
 				ul {
-					margin-top: 16px !important;
+					margin-top: 0px !important;
 					margin-right: 8px;
 
 					li {
@@ -72,6 +72,7 @@
 							text-transform: uppercase;
 							width: auto;
 							margin: 0;
+							cursor: pointer;
 
 							&.login_header_link {
 								background-image: url("../../../plugins/kitmoda_social_media/css/kane/images/login.png") !important;
@@ -90,6 +91,7 @@
 
 							&:hover {
 								text-decoration: none;
+								border: none;
 							}
 						}
 
@@ -484,11 +486,13 @@
 						left: 8%;
 						background-image: url(../../../plugins/kitmoda_social_media/images/icons/collaboration.png);
 						height: 26px;
-						margin-top: -13px;
+						margin-top: -11px;
+						background-size: 70%;
 					}
 					&.store a:before {
 						left: 14%;
 						background-image: url(../../../plugins/kitmoda_social_media/images/icons/store.png);
+						margin-top: -11px;
 					}
 					&.account a:before {
 						left: 12%;
