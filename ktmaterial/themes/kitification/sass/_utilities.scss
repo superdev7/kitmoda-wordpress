@@ -602,346 +602,346 @@ iframe.formframe {
       }
     }
   }
+}
 
-  .posts {
-    .post {
-      padding-bottom: 14px;
-      position: relative;
-      line-height: 18px;
+.posts {
+  .post {
+    padding-bottom: 14px;
+    position: relative;
+    line-height: 18px;
 
-      .post_content_container_highlight {
-        padding: 1px 0;
-        @include border-radius(5px);
-        @include box-shadow(0px 4px 8px 2px rgba(0,0,0,0.52));
+    .post_content_container_highlight {
+      padding: 1px 0;
+      @include border-radius(5px);
+      @include box-shadow(0px 4px 8px 2px rgba(0,0,0,0.52));
 
-        .post_content_container_top {
+      .post_content_container_top {
+        position: relative;
+        height: 20px;
+        margin: 0 1px;
+        border: 1px solid #444452;
+        border-top-color: #555566;
+        border-bottom: none;
+        @include border-radius(5px 5px 0 0);
+        @include background-image(linear-gradient(to bottom, rgba(61,61,68,1) 1%,rgba(40,40,48,1) 20%,rgba(40,40,48,1) 41%,rgba(40,40,48,1) 100%));
+      }
+
+      .post_content_container {
+        position: relative;
+        line-height: 18px;
+        background-color: #282830;
+        border: 1px solid #444452;
+        border-width: 0 1px;
+        margin: 0 1px;
+
+        .post_content {
+          color: #d0d0d0;
           position: relative;
-          height: 20px;
-          margin: 0 1px;
-          border: 1px solid #444452;
-          border-top-color: #555566;
-          border-bottom: none;
-          @include border-radius(5px 5px 0 0);
-          @include background-image(linear-gradient(to bottom, rgba(61,61,68,1) 1%,rgba(40,40,48,1) 20%,rgba(40,40,48,1) 41%,rgba(40,40,48,1) 100%));
-        }
+          top: 8px;
+          z-index: 99;
+          margin: 0 25px;
+          font-family: $roboto;
+          font-size: 13px;
+          line-height: 17px;
+          @include border-radius(8px);
 
-        .post_content_container {
-          position: relative;
-          line-height: 18px;
-          background-color: #282830;
-          border: 1px solid #444452;
-          border-width: 0 1px;
-          margin: 0 1px;
+          .post_text_header {
+            .avatar {
+              float: left;
+              height: 43px;
+              width: 43px;
+              padding: 1px;
+              @include border-radius(8px);
+              @include box-shadow(0 6px 7px -1px rgba(7, 7, 10, 1));
+              @include background-image(linear-gradient(to bottom, #f7f8fc 1%, #c0c9d8 7%, #9a9da5 17%, #585a66 86%, #42444c 96%, #161619 100%));
 
-          .post_content {
-            color: #d0d0d0;
-            position: relative;
-            top: 8px;
-            z-index: 99;
-            margin: 0 25px;
-            font-family: $roboto;
-            font-size: 13px;
-            line-height: 17px;
-            @include border-radius(8px);
-
-            .post_text_header {
-              .avatar {
-                float: left;
-                height: 43px;
-                width: 43px;
-                padding: 1px;
+              a img {
                 @include border-radius(8px);
-                @include box-shadow(0 6px 7px -1px rgba(7, 7, 10, 1));
-                @include background-image(linear-gradient(to bottom, #f7f8fc 1%, #c0c9d8 7%, #9a9da5 17%, #585a66 86%, #42444c 96%, #161619 100%));
-
-                a img {
-                  @include border-radius(8px);
-                }
-              }
-
-              .post_content_headerinfo {
-                height: 48px;
-                float: left;
-                margin-left: 22px;
-
-                .post_content_title {
-                  text-align: center;
-                  font-family: $montserrat;
-                  font-size: 22px;
-                  color: #e2e1f5;
-                  width: 100%;
-                }
-
-                .post_content_username {
-                  text-align: right;
-                  font-family: $roboto;
-                  font-size: 13px;
-                  margin-top: 9px;
-                  font-weight: bold;
-                  color: #128ee5;
-                  float: left;
-
-                  a {
-                    font-family: $open-sans;
-                    font-size: 14px;
-                    font-weight: 600;
-                    color: #62affe;
-                    float: left;
-                    margin-right: 5px;
-                    text-align: right;
-                    text-decoration: none;
-                    @include transition(all .3s ease-out);
-                  }
-                }
-
-                .post_content_age {
-                  font-family: $open-sans;
-                  font-size: 12px;
-                  font-weight: 600;
-                  color: #9090ad;
-                  float: right;
-                  margin: 9px 0 0 12px;
-                }
               }
             }
 
-            .footer {
-              height: 31px;
-              line-height: 26px;
-              margin-top: 14px;
-              width: auto;
-              margin-left: 0;
-              @include border-radius(0 0 10px 10px);
+            .post_content_headerinfo {
+              height: 48px;
+              float: left;
+              margin-left: 22px;
 
-              ul.post_stats {
-                list-style: none;
-                margin: 0;
-                padding: 0 15px 0 0;
+              .post_content_title {
+                text-align: center;
+                font-family: $montserrat;
+                font-size: 22px;
+                color: #e2e1f5;
+                width: 100%;
+              }
+
+              .post_content_username {
+                text-align: right;
+                font-family: $roboto;
+                font-size: 13px;
+                margin-top: 9px;
+                font-weight: bold;
+                color: #128ee5;
                 float: left;
 
-                li {
-                  color: #ffffff;
-                  float: left;
-                  font-family: $montserrat;
+                a {
+                  font-family: $open-sans;
                   font-size: 14px;
+                  font-weight: 600;
+                  color: #62affe;
+                  float: left;
+                  margin-right: 5px;
+                  text-align: right;
+                  text-decoration: none;
+                  @include transition(all .3s ease-out);
+                }
+              }
+
+              .post_content_age {
+                font-family: $open-sans;
+                font-size: 12px;
+                font-weight: 600;
+                color: #9090ad;
+                float: right;
+                margin: 9px 0 0 12px;
+              }
+            }
+          }
+
+          .footer {
+            height: 31px;
+            line-height: 26px;
+            margin-top: 14px;
+            width: auto;
+            margin-left: 0;
+            @include border-radius(0 0 10px 10px);
+
+            ul.post_stats {
+              list-style: none;
+              margin: 0;
+              padding: 0 15px 0 0;
+              float: left;
+
+              li {
+                color: #ffffff;
+                float: left;
+                font-family: $montserrat;
+                font-size: 14px;
+                height: 24px;
+                margin-right: 40px;
+
+                .button {
+                  display: inline-block;
+                  height: 32px;
+                  width: 34px;
+                  vertical-align: top;
+                  background-position: left center;
+                  background-repeat: no-repeat;
+                }
+
+                .count {
+                  display: inline-block;
                   height: 24px;
-                  margin-right: 40px;
+                  margin-left: 5px;
+                  vertical-align: top;
+                }
+
+                &.views .button {
+                  background-image: url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/eyetest.png);
+                }
+
+                &.comments .button {
+                  background-image: url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/comments_shad.png);
+                }
+
+                &.likes .likes_container {
+                  height: 33px;
+                  width: 28px;
+                  float: left;
+
+                  .likes_backdrop_no_hover {
+                    background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/thumbs_up-blue.png) no-repeat scroll 0 0;
+                    height: 26px;
+                    margin-top: -4px;
+                    width: 26px;
+                  }
+                }
+
+                &.share .share_container {
+                  .share_backdrop_no_hover {
+                    background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/share-blue.png) no-repeat scroll 0 0;
+                    height: 29px;
+                    margin-top: -1px;
+                    width: 29px;
+                  }
 
                   .button {
-                    display: inline-block;
-                    height: 32px;
-                    width: 34px;
-                    vertical-align: top;
-                    background-position: left center;
-                    background-repeat: no-repeat;
-                  }
-
-                  .count {
-                    display: inline-block;
-                    height: 24px;
-                    margin-left: 5px;
-                    vertical-align: top;
-                  }
-
-                  &.views .button {
-                    background-image: url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/eyetest.png);
-                  }
-
-                  &.comments .button {
-                    background-image: url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/comments_shad.png);
-                  }
-
-                  &.likes .likes_container {
-                    height: 33px;
-                    width: 28px;
-                    float: left;
-
-                    .likes_backdrop_no_hover {
-                      background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/thumbs_up-blue.png) no-repeat scroll 0 0;
-                      height: 26px;
-                      margin-top: -4px;
-                      width: 26px;
-                    }
-                  }
-
-                  &.share .share_container {
-                    .share_backdrop_no_hover {
-                      background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/share-blue.png) no-repeat scroll 0 0;
-                      height: 29px;
-                      margin-top: -1px;
-                      width: 29px;
-                    }
-
-                    .button {
-                      background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/share-blue_hover.png) no-repeat scroll 0 0;
-                      height: 29px;
-                      margin-top: -29px;
-                      width: 29px;
-                      @include opacity(0);
-                      @include transition(all 0.28s ease-out 0s);
-
-                      &:hover {
-                        cursor: pointer;
-                        @include opacity(1);
-                      }
-                    }
-                  }
-                }
-              }
-            }
-
-            .post_inner {
-              position: relative;
-              padding-top: 8px;
-
-              .mainp {
-                font-size: 14px;
-                font-family: $roboto;
-                color: #aab4bd;
-                line-height: 23px;
-                position: relative;
-                font-weight: 800;
-
-                &.minimized {
-                  white-space: pre-line;
-                  color: #cacdde;
-                  font-family: $open-sans;
-                  font-size: 13px;
-                  font-weight: 600;
-                  letter-spacing: 0.015em;
-                  line-height: 1.7;
-                }
-              }
-            }
-
-            .post_content_divide_gradient_line_dark {
-              height: 1px;
-              width: 100%;
-              @include background-image(linear-gradient(to right, rgba(0,0,0,0.54) 0%,rgba(0,0,1,0.96) 13%,rgba(1,1,2,1) 50%,rgba(0,0,1,0.97) 87%,rgba(0,0,0,0.52) 100%));
-            }
-
-            .post_content_divide_gradient_line {
-              height: 1px;
-              width: 100%;
-              margin-bottom: 10px;
-              @include background-image(linear-gradient(to right, rgba(69,74,86,0.25) 0%,rgba(93,99,112,0.48) 14%,rgba(107,113,127,0.52) 22%,rgba(149,158,178,0.67) 50%,rgba(109,115,130,0.48) 81%,rgba(101,106,121,0.45) 85%,rgba(69,74,86,0.34) 100%));
-            }
-          }
-
-          .add_comment_form_highlight {
-            margin: 0px 23px 0px;
-            color: #d0d0d0;
-            @include border-radius(1px);
-
-            .add_comment_form_radius {
-              color: #d0d0d0;
-              padding: 0 0 5px;
-              margin: 30px 23px 0;
-              @include border-radius(10px);
-
-              textarea {
-                border-width: 1px;
-                border-style: solid;
-                border-bottom-color: #3a3a46;
-                border-right-color: #2c2c35;
-                border-left-color: #2c2c35;
-                border-top-color: #111115;
-                color: #a4adbe;
-                padding: 10px 12px;
-                text-transform: none;
-                word-break: break-all;
-                background-color: #1C1C24;
-                font-family: $montserrat;
-                @include border-radius(5px);
-                @include box-shadow(0px 2px 5px 0px rgba(0,0,0,0.4) inset);
-              }
-
-              .add_comment_backdrop_comment {
-                float: right;
-                margin-right: -12px;
-
-                .add_comment_container {
-                  .add_comment {
-                    background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_post.png) no-repeat scroll 0 0;
-                    height: 32px;
-                    width: 32px;
-                    margin: 0;
-                    margin-left: 100px;
-                    border: none;
-                    box-shadow: none;
-                  }
-
-                  .add_comment_hover {
-                    background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_post_hover.png) no-repeat scroll 0 0px;
-                    width: 32px;
-                    height: 32px;
-                    margin-top: -32px;
-                    margin-left: 100px;
+                    background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/share-blue_hover.png) no-repeat scroll 0 0;
+                    height: 29px;
+                    margin-top: -29px;
+                    width: 29px;
                     @include opacity(0);
-                    @include transition(all .28s ease-out);
-                  }
+                    @include transition(all 0.28s ease-out 0s);
 
-                  &:hover {
-                    .add_comment_hover {
+                    &:hover {
+                      cursor: pointer;
                       @include opacity(1);
                     }
-
-                    + .add_comment_text {
-                      color: #d1faff;
-                      @include text-shadow(2px 2px 5px rgb(44,88,137));
-                    }
                   }
                 }
+              }
+            }
+          }
 
-                .add_comment_text {
-                  color: #44b9fc;
-                  font-family: $montserrat;
-                  font-size: 14px;
-                  text-decoration: none;
-                  pointer-events: none;
-                  margin: -32px 0 0 32px;
-                  display: block;
+          .post_inner {
+            position: relative;
+            padding-top: 8px;
+
+            .mainp {
+              font-size: 14px;
+              font-family: $roboto;
+              color: #aab4bd;
+              line-height: 23px;
+              position: relative;
+              font-weight: 800;
+
+              &.minimized {
+                white-space: pre-line;
+                color: #cacdde;
+                font-family: $open-sans;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 0.015em;
+                line-height: 1.7;
+              }
+            }
+          }
+
+          .post_content_divide_gradient_line_dark {
+            height: 1px;
+            width: 100%;
+            @include background-image(linear-gradient(to right, rgba(0,0,0,0.54) 0%,rgba(0,0,1,0.96) 13%,rgba(1,1,2,1) 50%,rgba(0,0,1,0.97) 87%,rgba(0,0,0,0.52) 100%));
+          }
+
+          .post_content_divide_gradient_line {
+            height: 1px;
+            width: 100%;
+            margin-bottom: 10px;
+            @include background-image(linear-gradient(to right, rgba(69,74,86,0.25) 0%,rgba(93,99,112,0.48) 14%,rgba(107,113,127,0.52) 22%,rgba(149,158,178,0.67) 50%,rgba(109,115,130,0.48) 81%,rgba(101,106,121,0.45) 85%,rgba(69,74,86,0.34) 100%));
+          }
+        }
+
+        .add_comment_form_highlight {
+          margin: 0px 23px 0px;
+          color: #d0d0d0;
+          @include border-radius(1px);
+
+          .add_comment_form_radius {
+            color: #d0d0d0;
+            padding: 0 0 5px;
+            margin: 30px 23px 0;
+            @include border-radius(10px);
+
+            textarea {
+              border-width: 1px;
+              border-style: solid;
+              border-bottom-color: #3a3a46;
+              border-right-color: #2c2c35;
+              border-left-color: #2c2c35;
+              border-top-color: #111115;
+              color: #a4adbe;
+              padding: 10px 12px;
+              text-transform: none;
+              word-break: break-all;
+              background-color: #1C1C24;
+              font-family: $montserrat;
+              @include border-radius(5px);
+              @include box-shadow(0px 2px 5px 0px rgba(0,0,0,0.4) inset);
+            }
+
+            .add_comment_backdrop_comment {
+              float: right;
+              margin-right: -12px;
+
+              .add_comment_container {
+                .add_comment {
+                  background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_post.png) no-repeat scroll 0 0;
+                  height: 32px;
+                  width: 32px;
+                  margin: 0;
+                  margin-left: 100px;
+                  border: none;
+                  box-shadow: none;
+                }
+
+                .add_comment_hover {
+                  background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_post_hover.png) no-repeat scroll 0 0px;
+                  width: 32px;
+                  height: 32px;
+                  margin-top: -32px;
+                  margin-left: 100px;
+                  @include opacity(0);
                   @include transition(all .28s ease-out);
                 }
-              }
-            }
-          }
 
-          .post_comments {
-            margin: 0px 40px 0 26px;
+                &:hover {
+                  .add_comment_hover {
+                    @include opacity(1);
+                  }
 
-            .comments_header_wrap {
-              width: 100%;
-              text-align: center;
-              padding-bottom: 12px;
-
-              .comments_header {
-                margin: 0 auto;
-                display: inline-block;
-                position: relative;
-                left: 384px;
-                top: -20px;
-                left: 0px;
-                right: 0px;
-                height: 0px;
-
-                &.no_comments {
-                  display: none;
+                  + .add_comment_text {
+                    color: #d1faff;
+                    @include text-shadow(2px 2px 5px rgb(44,88,137));
+                  }
                 }
               }
+
+              .add_comment_text {
+                color: #44b9fc;
+                font-family: $montserrat;
+                font-size: 14px;
+                text-decoration: none;
+                pointer-events: none;
+                margin: -32px 0 0 32px;
+                display: block;
+                @include transition(all .28s ease-out);
+              }
             }
           }
         }
 
-        .post_content_container_bottom {
-          position: relative;
-          height: 12px;
-          border: 1px solid #444452;
-          border-width: 0 1px;
-          margin: 0 1px;
-          @include border-radius(0 0 5px 5px);
-          @include background-image(linear-gradient(to bottom, rgba(40,40,48,1) 0%,rgba(40,40,48,1) 84%,rgba(33,33,40,1) 95%,rgba(31,31,35,1) 100%));
+        .post_comments {
+          margin: 0px 40px 0 26px;
+
+          .comments_header_wrap {
+            width: 100%;
+            text-align: center;
+            padding-bottom: 12px;
+
+            .comments_header {
+              margin: 0 auto;
+              display: inline-block;
+              position: relative;
+              left: 384px;
+              top: -20px;
+              left: 0px;
+              right: 0px;
+              height: 0px;
+
+              &.no_comments {
+                display: none;
+              }
+            }
+          }
         }
+      }
+
+      .post_content_container_bottom {
+        position: relative;
+        height: 12px;
+        border: 1px solid #444452;
+        border-width: 0 1px;
+        margin: 0 1px;
+        @include border-radius(0 0 5px 5px);
+        @include background-image(linear-gradient(to bottom, rgba(40,40,48,1) 0%,rgba(40,40,48,1) 84%,rgba(33,33,40,1) 95%,rgba(31,31,35,1) 100%));
       }
     }
   }

@@ -843,12 +843,12 @@ body {
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 2, 0.45) 0%, rgba(0, 0, 2, 0.28) 18%, rgba(0, 0, 2, 0.28) 74%, rgba(0, 0, 2, 0.45) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 2, 0.45) 0%, rgba(0, 0, 2, 0.28) 18%, rgba(0, 0, 2, 0.28) 74%, rgba(0, 0, 2, 0.45) 100%);
 }
-.v2 .posts_container .posts .post {
+.v2 .posts .post {
   padding-bottom: 14px;
   position: relative;
   line-height: 18px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight {
+.v2 .posts .post .post_content_container_highlight {
   padding: 1px 0;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -857,7 +857,7 @@ body {
   -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.52);
   box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.52);
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container_top {
+.v2 .posts .post .post_content_container_highlight .post_content_container_top {
   position: relative;
   height: 20px;
   margin: 0 1px;
@@ -874,7 +874,7 @@ body {
   background-image: -webkit-linear-gradient(top, #3d3d44 1%, #282830 20%, #282830 41%, #282830 100%);
   background-image: linear-gradient(to bottom, #3d3d44 1%, #282830 20%, #282830 41%, #282830 100%);
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container {
+.v2 .posts .post .post_content_container_highlight .post_content_container {
   position: relative;
   line-height: 18px;
   background-color: #282830;
@@ -882,7 +882,7 @@ body {
   border-width: 0 1px;
   margin: 0 1px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content {
   color: #d0d0d0;
   position: relative;
   top: 8px;
@@ -895,7 +895,7 @@ body {
   -webkit-border-radius: 8px;
   border-radius: 8px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .avatar {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .avatar {
   float: left;
   height: 43px;
   width: 43px;
@@ -913,24 +913,24 @@ body {
   background-image: -webkit-linear-gradient(top, #f7f8fc 1%, #c0c9d8 7%, #9a9da5 17%, #585a66 86%, #42444c 96%, #161619 100%);
   background-image: linear-gradient(to bottom, #f7f8fc 1%, #c0c9d8 7%, #9a9da5 17%, #585a66 86%, #42444c 96%, #161619 100%);
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .avatar a img {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .avatar a img {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .post_content_headerinfo {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .post_content_headerinfo {
   height: 48px;
   float: left;
   margin-left: 22px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .post_content_headerinfo .post_content_title {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .post_content_headerinfo .post_content_title {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 22px;
   color: #e2e1f5;
   width: 100%;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .post_content_headerinfo .post_content_username {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .post_content_headerinfo .post_content_username {
   text-align: right;
   font-family: "Roboto", sans-serif;
   font-size: 13px;
@@ -939,7 +939,7 @@ body {
   color: #128ee5;
   float: left;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .post_content_headerinfo .post_content_username a {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .post_content_headerinfo .post_content_username a {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -953,7 +953,7 @@ body {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .post_content_headerinfo .post_content_age {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .post_content_headerinfo .post_content_age {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   font-weight: 600;
@@ -961,7 +961,7 @@ body {
   float: right;
   margin: 9px 0 0 12px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .footer {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer {
   height: 31px;
   line-height: 26px;
   margin-top: 14px;
@@ -971,13 +971,13 @@ body {
   -webkit-border-radius: 0;
   border-radius: 0 0 10px 10px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats {
   list-style: none;
   margin: 0;
   padding: 0 15px 0 0;
   float: left;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li {
   color: #ffffff;
   float: left;
   font-family: "Montserrat", sans-serif;
@@ -985,7 +985,7 @@ body {
   height: 24px;
   margin-right: 40px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li .button {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li .button {
   display: inline-block;
   height: 32px;
   width: 34px;
@@ -993,36 +993,36 @@ body {
   background-position: left center;
   background-repeat: no-repeat;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li .count {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li .count {
   display: inline-block;
   height: 24px;
   margin-left: 5px;
   vertical-align: top;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.views .button {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.views .button {
   background-image: url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/eyetest.png);
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.comments .button {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.comments .button {
   background-image: url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/comments_shad.png);
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.likes .likes_container {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.likes .likes_container {
   height: 33px;
   width: 28px;
   float: left;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.likes .likes_container .likes_backdrop_no_hover {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.likes .likes_container .likes_backdrop_no_hover {
   background: transparent url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/thumbs_up-blue.png) no-repeat scroll 0 0;
   height: 26px;
   margin-top: -4px;
   width: 26px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.share .share_container .share_backdrop_no_hover {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.share .share_container .share_backdrop_no_hover {
   background: transparent url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/share-blue.png) no-repeat scroll 0 0;
   height: 29px;
   margin-top: -1px;
   width: 29px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.share .share_container .button {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.share .share_container .button {
   background: transparent url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/share-blue_hover.png) no-repeat scroll 0 0;
   height: 29px;
   margin-top: -29px;
@@ -1035,16 +1035,16 @@ body {
   -webkit-transition-delay: 0s;
   transition: all 0.28s ease-out 0s;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.share .share_container .button:hover {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li.share .share_container .button:hover {
   cursor: pointer;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .post_inner {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .post_inner {
   position: relative;
   padding-top: 8px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .post_inner .mainp {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .post_inner .mainp {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   color: #aab4bd;
@@ -1052,7 +1052,7 @@ body {
   position: relative;
   font-weight: 800;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .post_inner .mainp.minimized {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .post_inner .mainp.minimized {
   white-space: pre-line;
   color: #cacdde;
   font-family: "Open Sans", sans-serif;
@@ -1061,7 +1061,7 @@ body {
   letter-spacing: 0.015em;
   line-height: 1.7;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .post_content_divide_gradient_line_dark {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .post_content_divide_gradient_line_dark {
   height: 1px;
   width: 100%;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjU0Ii8+PHN0b3Agb2Zmc2V0PSIxMyUiIHN0b3AtY29sb3I9IiMwMDAwMDEiIHN0b3Atb3BhY2l0eT0iMC45NiIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjMDEwMTAyIi8+PHN0b3Agb2Zmc2V0PSI4NyUiIHN0b3AtY29sb3I9IiMwMDAwMDEiIHN0b3Atb3BhY2l0eT0iMC45NyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjUyIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
@@ -1071,7 +1071,7 @@ body {
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 1, 0.96) 13%, #010102 50%, rgba(0, 0, 1, 0.97) 87%, rgba(0, 0, 0, 0.52) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 1, 0.96) 13%, #010102 50%, rgba(0, 0, 1, 0.97) 87%, rgba(0, 0, 0, 0.52) 100%);
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_content .post_content_divide_gradient_line {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .post_content_divide_gradient_line {
   height: 1px;
   width: 100%;
   margin-bottom: 10px;
@@ -1082,14 +1082,14 @@ body {
   background-image: -webkit-linear-gradient(left, rgba(69, 74, 86, 0.25) 0%, rgba(93, 99, 112, 0.48) 14%, rgba(107, 113, 127, 0.52) 22%, rgba(149, 158, 178, 0.67) 50%, rgba(109, 115, 130, 0.48) 81%, rgba(101, 106, 121, 0.45) 85%, rgba(69, 74, 86, 0.34) 100%);
   background-image: linear-gradient(to right, rgba(69, 74, 86, 0.25) 0%, rgba(93, 99, 112, 0.48) 14%, rgba(107, 113, 127, 0.52) 22%, rgba(149, 158, 178, 0.67) 50%, rgba(109, 115, 130, 0.48) 81%, rgba(101, 106, 121, 0.45) 85%, rgba(69, 74, 86, 0.34) 100%);
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight {
+.v2 .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight {
   margin: 0px 23px 0px;
   color: #d0d0d0;
   -moz-border-radius: 1px;
   -webkit-border-radius: 1px;
   border-radius: 1px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius {
+.v2 .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius {
   color: #d0d0d0;
   padding: 0 0 5px;
   margin: 30px 23px 0;
@@ -1097,7 +1097,7 @@ body {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius textarea {
+.v2 .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius textarea {
   border-width: 1px;
   border-style: solid;
   border-bottom-color: #3a3a46;
@@ -1117,11 +1117,11 @@ body {
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4) inset;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4) inset;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius .add_comment_backdrop_comment {
+.v2 .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius .add_comment_backdrop_comment {
   float: right;
   margin-right: -12px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius .add_comment_backdrop_comment .add_comment_container .add_comment {
+.v2 .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius .add_comment_backdrop_comment .add_comment_container .add_comment {
   background: transparent url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_post.png) no-repeat scroll 0 0;
   height: 32px;
   width: 32px;
@@ -1130,7 +1130,7 @@ body {
   border: none;
   box-shadow: none;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius .add_comment_backdrop_comment .add_comment_container .add_comment_hover {
+.v2 .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius .add_comment_backdrop_comment .add_comment_container .add_comment_hover {
   background: transparent url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_post_hover.png) no-repeat scroll 0 0px;
   width: 32px;
   height: 32px;
@@ -1143,15 +1143,15 @@ body {
   -webkit-transition: all 0.28s ease-out;
   transition: all 0.28s ease-out;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius .add_comment_backdrop_comment .add_comment_container:hover .add_comment_hover {
+.v2 .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius .add_comment_backdrop_comment .add_comment_container:hover .add_comment_hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius .add_comment_backdrop_comment .add_comment_container:hover + .add_comment_text {
+.v2 .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius .add_comment_backdrop_comment .add_comment_container:hover + .add_comment_text {
   color: #d1faff;
   text-shadow: 2px 2px 5px #2c5889;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius .add_comment_backdrop_comment .add_comment_text {
+.v2 .posts .post .post_content_container_highlight .post_content_container .add_comment_form_highlight .add_comment_form_radius .add_comment_backdrop_comment .add_comment_text {
   color: #44b9fc;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
@@ -1164,15 +1164,15 @@ body {
   -webkit-transition: all 0.28s ease-out;
   transition: all 0.28s ease-out;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_comments {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_comments {
   margin: 0px 40px 0 26px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_comments .comments_header_wrap {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_comments .comments_header_wrap {
   width: 100%;
   text-align: center;
   padding-bottom: 12px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_comments .comments_header_wrap .comments_header {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_comments .comments_header_wrap .comments_header {
   margin: 0 auto;
   display: inline-block;
   position: relative;
@@ -1182,10 +1182,10 @@ body {
   right: 0px;
   height: 0px;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container .post_comments .comments_header_wrap .comments_header.no_comments {
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_comments .comments_header_wrap .comments_header.no_comments {
   display: none;
 }
-.v2 .posts_container .posts .post .post_content_container_highlight .post_content_container_bottom {
+.v2 .posts .post .post_content_container_highlight .post_content_container_bottom {
   position: relative;
   height: 12px;
   border: 1px solid #444452;
