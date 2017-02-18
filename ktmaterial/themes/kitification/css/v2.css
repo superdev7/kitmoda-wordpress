@@ -881,6 +881,7 @@ body {
   border: 1px solid #444452;
   border-width: 0 1px;
   margin: 0 1px;
+  overflow: hidden;
 }
 .v2 .posts .post .post_content_container_highlight .post_content_container .post_content {
   color: #d0d0d0;
