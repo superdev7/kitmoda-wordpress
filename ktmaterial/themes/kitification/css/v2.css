@@ -984,6 +984,11 @@ body {
   font-size: 14px;
   height: 24px;
   margin-right: 40px;
+  width: auto;
+}
+.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li:after {
+  content: '';
+  display: none;
 }
 .v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li .button {
   display: inline-block;

@@ -727,6 +727,12 @@ iframe.formframe {
                 font-size: 14px;
                 height: 24px;
                 margin-right: 40px;
+                width: auto;
+
+                &:after {
+                  content: '';
+                  display: none;
+                }
 
                 .button {
                   display: inline-block;
