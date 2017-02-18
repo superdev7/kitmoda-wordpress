@@ -679,11 +679,11 @@ body {
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 2, 0.45) 0%, rgba(0, 0, 2, 0.28) 18%, rgba(0, 0, 2, 0.28) 74%, rgba(0, 0, 2, 0.45) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 2, 0.45) 0%, rgba(0, 0, 2, 0.28) 18%, rgba(0, 0, 2, 0.28) 74%, rgba(0, 0, 2, 0.45) 100%);
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form {
   position: relative;
   font-family: "Roboto", sans-serif;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form textarea {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form textarea {
   width: 100%;
   height: 72px;
   background-color: #16161c;
@@ -704,24 +704,24 @@ body {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form textarea::-webkit-input-placeholder {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form textarea::-webkit-input-placeholder {
   color: #44b9fc;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form textarea:-moz-placeholder {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form textarea:-moz-placeholder {
   color: #44b9fc;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form textarea::-moz-placeholder {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form textarea::-moz-placeholder {
   color: #44b9fc;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form textarea:-ms-input-placeholder {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form textarea:-ms-input-placeholder {
   color: #44b9fc;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form .buttons {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form .buttons {
   margin-top: 7px;
   height: 36px;
   position: relative;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form .buttons .post_img_btn {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form .buttons .post_img_btn {
   background: transparent url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/add_image.png) no-repeat scroll 0 0;
   cursor: pointer;
   float: left;
@@ -729,7 +729,7 @@ body {
   margin-top: 2px;
   width: 61px;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form .buttons .post_img_btn .post_img_btn_hover {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form .buttons .post_img_btn .post_img_btn_hover {
   background: transparent url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/add_image_hover.png) no-repeat scroll 0 0;
   height: 34px;
   width: 61px;
@@ -740,18 +740,18 @@ body {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form .buttons .post_img_btn:hover .post_img_btn_hover {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form .buttons .post_img_btn:hover .post_img_btn_hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form .buttons .add_post_container {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form .buttons .add_post_container {
   position: absolute;
   right: 0;
   margin-left: 0 !important;
   width: auto !important;
   display: block;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form .buttons .add_post_container .btn_add_post {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form .buttons .add_post_container .btn_add_post {
   color: #ffffff;
   display: block;
   float: right;
@@ -762,7 +762,7 @@ body {
   text-decoration: none;
   width: 140px;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form .buttons .add_post_container .add_post {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form .buttons .add_post_container .add_post {
   background: transparent url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_button_b.png) no-repeat scroll 0 0px;
   width: 42px;
   height: 36px;
@@ -773,17 +773,17 @@ body {
   -webkit-transition: all 0.28s ease-out;
   transition: all 0.28s ease-out;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form .buttons .add_post_container .add_post.add_post_hover {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form .buttons .add_post_container .add_post.add_post_hover {
   background: transparent url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_button_b_hover.png) no-repeat scroll 0 0px;
   margin-top: -36px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form .buttons .add_post_container:hover .add_post_hover {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form .buttons .add_post_container:hover .add_post_hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form .buttons .add_post_text {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form .buttons .add_post_text {
   color: #44b9fc;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -802,10 +802,10 @@ body {
   -webkit-transition: all 0.28s ease-out;
   transition: all 0.28s ease-out;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form .add_post_form_highlight_studio_overlay_community form .buttons .miu_container {
+.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight .add_post_form form .buttons .miu_container {
   text-align: center;
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight_bottom {
+.v2 .posts_container .add_post_form_highlight_bottom {
   padding: 0 1px 1px 1px;
   margin-bottom: 26px;
   -moz-border-radius: 0 0 5px 5px;
@@ -818,7 +818,7 @@ body {
   background-image: -webkit-linear-gradient(top, #2d2d38 68%, #040405 95%);
   background-image: linear-gradient(to bottom, #2d2d38 68%, #040405 95%);
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight_bottom .add_post_form_radius_bottom {
+.v2 .posts_container .add_post_form_highlight_bottom .add_post_form_radius_bottom {
   height: 24px;
   -moz-border-radius: 0 0 5px 5px;
   -webkit-border-radius: 0;
@@ -830,7 +830,7 @@ body {
   background-image: -webkit-linear-gradient(top, #2f2f3a 20%, #2f2f3a 64%, #24242b 87%, #0a0a0c 100%);
   background-image: linear-gradient(to bottom, #2f2f3a 20%, #2f2f3a 64%, #24242b 87%, #0a0a0c 100%);
 }
-.v2 .posts_container .add_post_form_back_shadow .add_post_form_highlight_bottom .add_post_form_radius_bottom .add_post_form_highlight_studio_overlay_bottom_community {
+.v2 .posts_container .add_post_form_highlight_bottom .add_post_form_radius_bottom .add_post_form_highlight_studio_overlay_bottom_community {
   padding: 0 22px;
   height: 100%;
   -moz-border-radius: 0 0 7px 7px;

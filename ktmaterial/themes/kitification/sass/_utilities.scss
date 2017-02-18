@@ -467,138 +467,138 @@ iframe.formframe {
           padding: 0 22px;
           height: 100%;
           @include background-image(linear-gradient(to right, rgba(0,0,2,0.45) 0%,rgba(0,0,2,0.28) 18%,rgba(0,0,2,0.28) 74%,rgba(0,0,2,0.45) 100%));
+        }
 
-          form {
+        form {
+          position: relative;
+          font-family: $roboto;
+
+          textarea {
+            width: 100%;
+            height: 72px;
+            background-color: #16161c;
+            padding: 10px 12px;
+            border: 1px solid #000;
+            border-bottom-color: #3a3a46;
+            border-right-color: #2c2c35;
+            border-left-color: #2c2c35;
+            border-top-color: #111115;
+            color: #e2e1f5;
+            word-break: break-word;
+            resize: none;
+            overflow: hidden;
+            @include box-shadow(0px 2px 5px 0px rgba(0,0,0,0.4) inset);
+            @include border-radius(5px);
+            @include placeholder { color: #44b9fc; }
+          }
+
+          .buttons {
+            margin-top: 7px;
+            height: 36px;
             position: relative;
-            font-family: $roboto;
 
-            textarea {
-              width: 100%;
-              height: 72px;
-              background-color: #16161c;
-              padding: 10px 12px;
-              border: 1px solid #000;
-              border-bottom-color: #3a3a46;
-              border-right-color: #2c2c35;
-              border-left-color: #2c2c35;
-              border-top-color: #111115;
-              color: #e2e1f5;
-              word-break: break-word;
-              resize: none;
-              overflow: hidden;
-              @include box-shadow(0px 2px 5px 0px rgba(0,0,0,0.4) inset);
-              @include border-radius(5px);
-              @include placeholder { color: #44b9fc; }
+            .post_img_btn {
+              background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/add_image.png) no-repeat scroll 0 0;
+              cursor: pointer;
+              float: left;
+              height: 34px;
+              margin-top: 2px;
+              width: 61px;
+
+              .post_img_btn_hover {
+                background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/add_image_hover.png) no-repeat scroll 0 0;
+                height: 34px;
+                width: 61px;
+                @include opacity(0);
+                @include transition(all .3s ease-out);
+              }
+
+              &:hover .post_img_btn_hover {
+                @include opacity(1);
+              }
             }
 
-            .buttons {
-              margin-top: 7px;
-              height: 36px;
-              position: relative;
+            .add_post_container {
+              position: absolute;
+              right: 0;
+              margin-left: 0 !important;
+              width: auto !important;
+              display: block;
 
-              .post_img_btn {
-                background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/add_image.png) no-repeat scroll 0 0;
-                cursor: pointer;
-                float: left;
-                height: 34px;
-                margin-top: 2px;
-                width: 61px;
-
-                .post_img_btn_hover {
-                  background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/add_image_hover.png) no-repeat scroll 0 0;
-                  height: 34px;
-                  width: 61px;
-                  @include opacity(0);
-                  @include transition(all .3s ease-out);
-                }
-
-                &:hover .post_img_btn_hover {
-                  @include opacity(1);
-                }
-              }
-
-              .add_post_container {
-                position: absolute;
-                right: 0;
-                margin-left: 0 !important;
-                width: auto !important;
+              .btn_add_post {
+                color: #ffffff;
                 display: block;
-
-                .btn_add_post {
-                  color: #ffffff;
-                  display: block;
-                  float: right;
-                  font-family: $montserrat;
-                  font-size: 16px;
-                  height: 36px;
-                  line-height: 20px;
-                  text-decoration: none;
-                  width: 140px;
-                }
-
-                .add_post {
-                  background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_button_b.png) no-repeat scroll 0 0px;
-                  width: 42px;
-                  height: 36px;
-                  cursor: pointer;
-                  margin-left: 95px;
-                  @include transition(all .28s ease-out);
-
-                  &.add_post_hover {
-                    background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_button_b_hover.png) no-repeat scroll 0 0px;
-                    margin-top: -36px;
-                    @include opacity(0);
-                  }
-                }
-
-                &:hover .add_post_hover {
-                  @include opacity(1);
-                }
-              }
-
-              .add_post_text {
-                color: #44b9fc;
+                float: right;
                 font-family: $montserrat;
                 font-size: 16px;
+                height: 36px;
+                line-height: 20px;
                 text-decoration: none;
-                pointer-events: none;
-                position: absolute;
-                right: 50px;
-                margin-top: 7px;
-                text-transform: uppercase;
-                left: auto !important;
-                padding: 0;
-                background: none;
-                height: auto;
-                @include transition(all .28s ease-out);
+                width: 140px;
               }
 
-              .miu_container {
-                text-align: center;
+              .add_post {
+                background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_button_b.png) no-repeat scroll 0 0px;
+                width: 42px;
+                height: 36px;
+                cursor: pointer;
+                margin-left: 95px;
+                @include transition(all .28s ease-out);
+
+                &.add_post_hover {
+                  background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_button_b_hover.png) no-repeat scroll 0 0px;
+                  margin-top: -36px;
+                  @include opacity(0);
+                }
               }
+
+              &:hover .add_post_hover {
+                @include opacity(1);
+              }
+            }
+
+            .add_post_text {
+              color: #44b9fc;
+              font-family: $montserrat;
+              font-size: 16px;
+              text-decoration: none;
+              pointer-events: none;
+              position: absolute;
+              right: 50px;
+              margin-top: 7px;
+              text-transform: uppercase;
+              left: auto !important;
+              padding: 0;
+              background: none;
+              height: auto;
+              @include transition(all .28s ease-out);
+            }
+
+            .miu_container {
+              text-align: center;
             }
           }
         }
       }
     }
+  }
 
-    .add_post_form_highlight_bottom {
-      padding: 0 1px 1px 1px;
-      margin-bottom: 26px;
+  .add_post_form_highlight_bottom {
+    padding: 0 1px 1px 1px;
+    margin-bottom: 26px;
+    @include border-radius(0 0 5px 5px);
+    @include background-image(linear-gradient(to bottom, rgba(45,45,56,1) 68%,rgba(4,4,5,1) 95%));
+
+    .add_post_form_radius_bottom {
+      height: 24px;
       @include border-radius(0 0 5px 5px);
-      @include background-image(linear-gradient(to bottom, rgba(45,45,56,1) 68%,rgba(4,4,5,1) 95%));
+      @include background-image(linear-gradient(to bottom, rgba(47,47,58,1) 20%,rgba(47,47,58,1) 64%,rgba(36,36,43,1) 87%,rgba(10,10,12,1) 100%));
 
-      .add_post_form_radius_bottom {
-        height: 24px;
-        @include border-radius(0 0 5px 5px);
-        @include background-image(linear-gradient(to bottom, rgba(47,47,58,1) 20%,rgba(47,47,58,1) 64%,rgba(36,36,43,1) 87%,rgba(10,10,12,1) 100%));
-
-        .add_post_form_highlight_studio_overlay_bottom_community {
-          padding: 0 22px;
-          height: 100%;
-          @include border-radius(0 0 7px 7px);
-          @include background-image(linear-gradient(to right, rgba(0,0,2,0.45) 0%,rgba(0,0,2,0.28) 18%,rgba(0,0,2,0.28) 74%,rgba(0,0,2,0.45) 100%));
-        }
+      .add_post_form_highlight_studio_overlay_bottom_community {
+        padding: 0 22px;
+        height: 100%;
+        @include border-radius(0 0 7px 7px);
+        @include background-image(linear-gradient(to right, rgba(0,0,2,0.45) 0%,rgba(0,0,2,0.28) 18%,rgba(0,0,2,0.28) 74%,rgba(0,0,2,0.45) 100%));
       }
     }
   }
