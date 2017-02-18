@@ -1,3 +1,4 @@
+<div class="clearfix"></div>
 <div class="row row-inset ksm-menu-container">
     <nav class="col-xs-12 col-md-10 col-md-offset-1 ksm-menu">
         <ul>
