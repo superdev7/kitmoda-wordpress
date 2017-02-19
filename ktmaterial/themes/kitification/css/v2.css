@@ -1880,6 +1880,9 @@ body {
   background-image: -webkit-linear-gradient(left, #3f3f4f 0%, rgba(125, 185, 232, 0) 100%);
   background-image: linear-gradient(to right, #3f3f4f 0%, rgba(125, 185, 232, 0) 100%);
 }
+.v2 .triangle_banner_svg {
+  background: #fff url("../../../plugins/kitmoda_social_media/images/bluTrianglebanner2.svg") repeat-x left top;
+}
 .v2.auth .noauth_nav {
   display: none !important;
 }
