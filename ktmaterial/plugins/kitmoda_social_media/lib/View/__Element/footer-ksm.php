@@ -7,7 +7,7 @@
  * @package kitification
  */
 ?>
-<?php 
+<?php
 /** JKane
 Turning off social via variable JK
  */
@@ -15,20 +15,20 @@ Turning off social via variable JK
  ?>
 <div class="kit_footer_container_top"></div>
 <div class="kit_footer_container">
-		    
+
 			<div class="footer_links">
 				<div class="kit_logo_footer_container">
-				
-					<a id="kit_logo_footer" href="/fair-share/"> 
-						
+
+					<a id="kit_logo_footer" href="/fair-share/">
+
 					</a>
 				</div>
 				<div class="kit_footer_section">
-                                    
+
 					<h1  class="kit_footer_linklist_header_company">
 					Company
 					</h1>
-					
+
 					<div>
 						<p class="kit_footer_linklist">
 						<a title="About Kitmoda" href="<?=ksm_get_permalink('about')?>">About Kitmoda</a>
@@ -43,7 +43,7 @@ Turning off social via variable JK
 					<h1 class="kit_footer_linklist_header_submissions">
 					Submissions
 					</h1>
-					
+
 						<div>
 						<p class="kit_footer_linklist">
 						<a title="Join" href="<?=ksm_get_permalink('join')?>">Join</a>
@@ -53,13 +53,13 @@ Turning off social via variable JK
                                                 <a title="Payments" href="<?=ksm_get_permalink('payments')?>">Payments</a>
 						</p>
 					</div>
-					
+
 				</div>
 				<div  class="kit_footer_section">
 					<h1 class="kit_footer_linklist_header_help">
 					Help
 					</h1>
-					
+
 					<div>
 						<p class="kit_footer_linklist">
 						<a title="Contact Support" href="<?=ksm_get_permalink('support')?>">Contact Support</a>
@@ -67,9 +67,9 @@ Turning off social via variable JK
 						<a title="FAQs" href="<?=ksm_get_permalink('faqs')?>">FAQs</a>
 						</p>
 					</div>
-					
+
 				</div>
-				
+
 				<div class="kit_footer_section">
 					<h1 class="kit_footer_linklist_header_legal">
 					Legal
@@ -84,13 +84,13 @@ Turning off social via variable JK
 						</p>
 					</div>
 				</div>
-                            
-                                <div class="kit_footer_map">
+
+                                <div class="kit_footer_map visible-lg-block">
                                 </div>
-                                    
-                            
-				
-			
+
+
+
+
 			</div>
                         <div class="footer_legal_container">
 					<p class="footer_legal_type">Copyright © 2014-2017 Kitmoda, Inc. All rights reserved. - Built by Artists for Artists. Collaboration System Patent Pending.</p>
