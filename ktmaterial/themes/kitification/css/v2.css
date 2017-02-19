@@ -1880,6 +1880,15 @@ body {
   background-image: -webkit-linear-gradient(left, #3f3f4f 0%, rgba(125, 185, 232, 0) 100%);
   background-image: linear-gradient(to right, #3f3f4f 0%, rgba(125, 185, 232, 0) 100%);
 }
+.v2 .mosaic_banner_horizontal_dark_overlay {
+  z-index: 2;
+  top: 0;
+}
+.v2 .mosaic_banner_vertical_dark_overlay {
+  z-index: 2;
+  top: auto;
+  bottom: 0;
+}
 .v2 .triangle_banner_svg {
   background: url(../../../plugins/kitmoda_social_media/images/bluTrianglebanner4.svg);
   height: 100%;
