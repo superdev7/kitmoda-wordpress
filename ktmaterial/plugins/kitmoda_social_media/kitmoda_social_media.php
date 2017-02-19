@@ -548,7 +548,7 @@ class kitmoda_Social_Media {
 
         wp_enqueue_script('slick-js', trailingslashit(KSM_BASE_URL).'js/slick/slick.js', array('jquery'));
 
-        wp_enqueue_script('kmvg-js', trailingslashit(KSM_BASE_URL).'js/jquery.kmvg.js', array('jquery'));
+        // wp_enqueue_script('kmvg-js', trailingslashit(KSM_BASE_URL).'js/jquery.kmvg.js', array('jquery'));
         ksm_enqueue_style('slick-style', trailingslashit(KSM_BASE_URL).'js/slick/slick.css');
 
         wp_enqueue_script('tooltipster-js', trailingslashit(KSM_BASE_URL).'js/jquery.tooltipster.js', array('jquery'));
