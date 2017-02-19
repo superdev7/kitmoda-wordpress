@@ -1314,6 +1314,7 @@ body {
   height: 220px;
   top: -66px;
   pointer-events: none;
+  z-index: -1;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation {
   position: relative;
