@@ -1885,6 +1885,7 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
+  z-index: 1;
 }
 .v2.auth .noauth_nav {
   display: none !important;
@@ -2314,8 +2315,8 @@ body {
 }
 .v2 #top_banner_box_container_community {
   background: #000;
-  padding-top: 21px;
-  padding-bottom: 35px;
+  padding-top: 0;
+  padding-bottom: 0;
   height: 303px;
   position: relative;
   overflow: hidden;
@@ -2329,6 +2330,7 @@ body {
   height: 303px;
   width: 100%;
   display: block;
+  z-index: 2;
   -moz-box-shadow: inset 0px 61px 100px 25px rgba(0, 0, 1, 0.85);
   -webkit-box-shadow: inset 0px 61px 100px 25px rgba(0, 0, 1, 0.85);
   box-shadow: inset 0px 61px 100px 25px rgba(0, 0, 1, 0.85);
@@ -2341,10 +2343,12 @@ body {
   background-image: -moz-linear-gradient(top, rgba(0, 2, 8, 0) 0%, rgba(0, 2, 8, 0) 31%, rgba(0, 2, 8, 0.11) 56%, rgba(0, 2, 8, 0.31) 75%, rgba(0, 2, 8, 0.8) 89%, rgba(0, 2, 8, 0.87) 100%);
   background-image: -webkit-linear-gradient(top, rgba(0, 2, 8, 0) 0%, rgba(0, 2, 8, 0) 31%, rgba(0, 2, 8, 0.11) 56%, rgba(0, 2, 8, 0.31) 75%, rgba(0, 2, 8, 0.8) 89%, rgba(0, 2, 8, 0.87) 100%);
   background-image: linear-gradient(to bottom, rgba(0, 2, 8, 0) 0%, rgba(0, 2, 8, 0) 31%, rgba(0, 2, 8, 0.11) 56%, rgba(0, 2, 8, 0.31) 75%, rgba(0, 2, 8, 0.8) 89%, rgba(0, 2, 8, 0.87) 100%);
-  top: 361px;
+  top: auto;
+  bottom: 0;
   height: 24px;
   width: 100%;
   display: block;
+  z-index: 2;
 }
 .v2 #top_banner_box_container_community .community_updates_center_finder {
   position: relative;
