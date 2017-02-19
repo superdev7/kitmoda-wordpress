@@ -3,7 +3,6 @@
 <div id="top_banner_box_container_community">
     <div class="mosaic_banner_community_horizontal_dark_overlay"></div>
     <div class="mosaic_banner_community_vertical_dark_overlay"></div>
-
     <div class="triangle_banner_svg"></div>
 
     <!-- <div class="traingle_banner_container">
@@ -3081,7 +3080,7 @@
 
 
 
-    </div>
+    <!-- </div> -->
 
     <div class="community_updates_center_finder">
         <div class="community_updates_slider_shadow">
