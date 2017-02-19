@@ -16,17 +16,17 @@
 
             </div>
 
-            
+
 
             <div class="shrink-wrap-vignette-right">
 
             </div>
 
-            
+
 
              <div class="shrink-wrap-findcenter">
 
-                <div class="shrink-wrap-inner-highlight" style="left: -80px;">
+                <div class="shrink-wrap-inner-highlight store">
 
                         <div class="shrink-wrap-inner-highlight-left"></div>
 
@@ -40,7 +40,7 @@
 
 	<div class="shrink-wrap-inner-shadow"></div>
 
-        <div class="shrink-wrap-bottom-shadow"></div>  
+        <div class="shrink-wrap-bottom-shadow"></div>
 
     </div>
 
@@ -58,9 +58,9 @@
 
 
 
-<div class="ksm_profile_container">    
+<div class="ksm_profile_container">
 
-        
+
 
  <div class="ksm_profile_container_overlay">
 
@@ -82,16 +82,16 @@
 
                 </div>
 
-                
+
 
                 <div class="content">
 
-                    
+
 
 <div class="sectionBackgroundDark">
 
   <div class="section">
-<div class="add_post_form_highlight_top">	
+<div class="add_post_form_highlight_top">
                 <div class="add_post_form_radius_top">
                     <div class="add_post_form_highlight_studio_overlay_top">
                     </div>
@@ -103,9 +103,9 @@
 
                     <div class="search_box">
 
-                        
 
-                        
+
+
 
                         <div class="select_boxes ">
 
@@ -119,7 +119,7 @@
 
 
 
-                       
+
 
 
 
@@ -127,15 +127,15 @@
 
                     </div>
 
-                    
 
-                    
 
-                    
 
-                    
 
-                    
+
+
+
+
+
 
                     <div class="sort_field">
 
@@ -160,15 +160,15 @@
 
 
                        </div>
-                       
-                       
+
+
              <div class="add_post_form_highlight_bottom">
                 <div class="add_post_form_radius_bottom">
                     <div class="add_post_form_highlight_studio_overlay_bottom">
                     </div>
                 </div>
-        </div>          
-                       
+        </div>
+
 
                     </div>
 
@@ -178,7 +178,7 @@
 
                         <?php $this->render_element('sidebar'); ?>
 
-                        
+
 
                         <div class="posts_container">
 
@@ -187,9 +187,9 @@
 
 
                            <div class="sectionBackgroundDark-right">
- 
+
  <div class="pr-col_container_top"></div>
- 
+
                            <div class="section-right">
 
                            <div class="sectionOverlay-right">
@@ -218,13 +218,13 @@
 
                             </div>
 
-                            
 
-                            
+
+
 
                 <div class="community_sidebar_footer"></div>
 
-      
+
 
 
 
@@ -238,11 +238,11 @@
 
                     </div>
 
-                
+
 
                 </div>
 
-                
+
 
 
 
@@ -296,7 +296,7 @@ echo paginate_links(
 
 
 
-        
+
 
         <div class="clr"></div>
 
@@ -312,12 +312,12 @@ echo paginate_links(
 
 
 
-  
+
 <script>
-		  jQuery.noConflict()(function($){	
+		  jQuery.noConflict()(function($){
 			$(function() {
-				
-				$("select").each(function() {					
+
+				$("select").each(function() {
 					var sb = new SelectBox({
 						selectbox: $(this),
 					});
@@ -326,4 +326,4 @@ echo paginate_links(
 			});
 		</script>
 
-                                
+

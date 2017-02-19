@@ -9,7 +9,7 @@
 		<div class="shrink-wrap-vignette-right"></div>
 
 		<div class="shrink-wrap-findcenter">
-			<div class="shrink-wrap-inner-highlight" style="left: -315px;">
+			<div class="shrink-wrap-inner-highlight collaboration">
 				<div class="shrink-wrap-inner-highlight-left"></div>
 				<div class="shrink-wrap-inner-highlight-mid"></div>
 				<div class="shrink-wrap-inner-highlight-right"></div>

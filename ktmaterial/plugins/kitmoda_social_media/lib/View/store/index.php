@@ -2,13 +2,13 @@
 
 <link rel="stylesheet" href="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/jquery.jscrollpane.css?ver=4.4" />
 		<link rel="stylesheet" href="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/customSelectBox.css?ver=4.4" />
-	
+
 
 
 
 <div class="ksm-menu-sub-menu_container">
 
-    	
+
 
         <div class="shrink-wrap-backdrop">
 
@@ -16,17 +16,17 @@
 
             </div>
 
-            
+
 
             <div class="shrink-wrap-vignette-right">
 
             </div>
 
-            
+
 
              <div class="shrink-wrap-findcenter">
 
-                <div class="shrink-wrap-inner-highlight" style="left: -80px;">
+                <div class="shrink-wrap-inner-highlight store">
 
                         <div class="shrink-wrap-inner-highlight-left"></div>
 
@@ -40,21 +40,21 @@
 
 	<div class="shrink-wrap-inner-shadow"></div>
 
-        <div class="shrink-wrap-bottom-shadow"></div>  
+        <div class="shrink-wrap-bottom-shadow"></div>
 
     </div>
 
 
 
-       
 
-	
 
-	
 
-        
 
-   
+
+
+
+
+
 
 
 
@@ -76,11 +76,11 @@
 
 
 
-<div class="ksm_profile_container">    
+<div class="ksm_profile_container">
 
 <div class="ksm_profile_container_overlay">
 
-        
+
 
     <div class="ksm_profile ksm_page_collaboration">
 
@@ -94,13 +94,13 @@
 
             </div>
 
-            
+
 
 <div class="sectionBackgroundDark">
 
   <div class="section">
 
-<div class="add_post_form_highlight_top">	
+<div class="add_post_form_highlight_top">
                 <div class="add_post_form_radius_top">
                     <div class="add_post_form_highlight_studio_overlay_top">
                     </div>
@@ -114,35 +114,35 @@
                     <?php $this->render_element('search_form') ?>
 
                 </div>
-                
-                
-                
+
+
+
 <div class="add_post_form_highlight_bottom">
                 <div class="add_post_form_radius_bottom">
                     <div class="add_post_form_highlight_studio_overlay_bottom">
                     </div>
                 </div>
         </div>
-        
-        
-        
+
+
+
 
 
 </div>
 
                 <div class="content">
 
-                    
 
-                    
 
-                    
+
+
+
 
                     <div class="sections">
 
-                        
 
-                        
+
+
 
                         <div class="section newest">
 <div class="post_content_container_top"></div>
@@ -178,25 +178,25 @@
 
                             </div>
 
-                            
 
-                            
 
-                            
+
+
+
 
                     <div class="post_content_container_bottom"></div>
 
                         </div>
 
-                        
 
-                        
 
-                        
 
-                        
 
-                        
+
+
+
+
+
 
                         <div class="section trending">
 <div class="post_content_container_top"></div>
@@ -210,7 +210,7 @@
 
                             <div class="sec_header"><span>Trending Models</span></div>
 
-                            
+
 
                             <div class="ksm_gallery_multi_views">
 
@@ -234,7 +234,7 @@
 
                         </div>
 
-                        
+
 
                         <div class="section top_selling">
 <div class="post_content_container_top"></div>
@@ -274,7 +274,7 @@
 
                         </div>
 
-                        
+
 
                         <div class="section top_rated">
 <div class="post_content_container_top"></div>
@@ -314,19 +314,19 @@
 
                         </div>
 
-                        
+
 
                     </div>
 
 
 
-                    
+
 
                 <div class="clr"></div>
 
                 </div>
 
-                
+
 
 
 
@@ -382,17 +382,6 @@ echo paginate_links(
 
 
 
-        
-
-    
-
-    
-
-    
-
-   
-
-				
 
 
 
@@ -400,17 +389,28 @@ echo paginate_links(
 
 
 
-                             
+
+
+
+
+
+
+
+
+
+
+
+
 
         <div class="clr"></div>
 
-                                
+
 
     </div>
 
 
 
-    
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -418,10 +418,10 @@ echo paginate_links(
 <script src="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/jScrollPane.js?ver=4.4"></script>
 		<script src="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/SelectBox.js?ver=4.4"></script>
         <script>
-		  jQuery.noConflict()(function($){	
+		  jQuery.noConflict()(function($){
 			$(function() {
-				
-				$("select").each(function() {					
+
+				$("select").each(function() {
 					var sb = new SelectBox({
 						selectbox: $(this),
 						height: 150,
@@ -431,25 +431,25 @@ echo paginate_links(
 				});
 			});
 		</script>
-        
+
         <script>
 
                                     $(document).ready(function(){
 
-                                     
+
 
                                             $(".select_boxes .sbOptions").mCustomScrollbar();
 
 											$(".sort_field select").mCustomScrollbar();
 
-										
 
-											
 
-                                       
+
+
+
 
                                     })(jQuery);
 
-										
+
 
                                 </script>

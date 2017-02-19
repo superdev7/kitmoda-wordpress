@@ -4,11 +4,11 @@
 $(document).ready(function(){
 $(":checkbox").on('click', function(){
     $(this).parent().toggleClass("checked");
-	
+
 });
-$(".opt_remove_all").click(function () {       
-		     
-          
+$(".opt_remove_all").click(function () {
+
+
 			$(".sidebar_checkbox ").removeClass("checked");
         });
 
@@ -19,17 +19,17 @@ $(".opt_remove_all").click(function () {
 
 
 
-        
-    
+
+
 </script>
-    
+
 
 <link rel="stylesheet" type="text/css" href="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/sunny/account.css" />
 <?php $this->render_element('main_tabs'); ?>
 
 <div class="ksm-menu-sub-menu_container">
 
-    	
+
 
         <div class="shrink-wrap-backdrop">
 
@@ -37,17 +37,17 @@ $(".opt_remove_all").click(function () {
 
             </div>
 
-            
+
 
             <div class="shrink-wrap-vignette-right">
 
             </div>
 
-            
+
 
              <div class="shrink-wrap-findcenter">
 
-                <div class="shrink-wrap-inner-highlight" style="left: 150px;">
+                <div class="shrink-wrap-inner-highlight account">
 
                         <div class="shrink-wrap-inner-highlight-left"></div>
 
@@ -61,21 +61,21 @@ $(".opt_remove_all").click(function () {
 
 	<div class="shrink-wrap-inner-shadow"></div>
 
-        <div class="shrink-wrap-bottom-shadow"></div>  
+        <div class="shrink-wrap-bottom-shadow"></div>
 
     </div>
 
 
 
-       
 
-	
 
-	
 
-        
 
-   
+
+
+
+
+
 
 
 
@@ -97,7 +97,7 @@ $(".opt_remove_all").click(function () {
 
 
 
-<div class="ksm_profile_container">    
+<div class="ksm_profile_container">
 
 
 
@@ -121,25 +121,25 @@ $(".opt_remove_all").click(function () {
 
         <div class="main_content purchase_library_main">
 
-            
+
 
             <?php $this->render_element('account_sub_tabs'); ?>
 
-           
+
 
             <div class="pr-col">
 
-                
 
-                
+
+
 
                 <?php $this->render_element('purchase_library_sidebar'); ?>
 
-                
+
 
                 <div class="coll_page_right">
 
-                    
+
 
                     <div class="sectionBackgroundDark">
 
@@ -150,7 +150,7 @@ $(".opt_remove_all").click(function () {
                                 <div class="products posts"></div>
 
                             </div>
-                            
+
                             <div class="pr-col_container_bottom"></div>
 
                         </div>
@@ -159,37 +159,37 @@ $(".opt_remove_all").click(function () {
 
 
 
-                    
 
 
 
-                    
 
 
 
-                    
+
+
+
 
 
 
                 </div><div class="clr"></div>
 
             </div>
-            
-            
-            
+
+
+
             <div class="clr">
-            
+
             </div>
 
         </div>
 
 
 
-     
 
 
 
-        
+
+
 
 
 

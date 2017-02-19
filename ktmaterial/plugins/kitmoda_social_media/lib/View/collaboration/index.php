@@ -3,14 +3,14 @@
 <div class="ksm-menu-sub-menu_container">
 
 	<div class="shrink-wrap-backdrop">
-		
+
 		<div class="shrink-wrap-vignette-left"></div>
 
 		<div class="shrink-wrap-vignette-right"></div>
 
 		<div class="shrink-wrap-findcenter">
 
-			<div class="shrink-wrap-inner-highlight" style="left: -315px;">
+			<div class="shrink-wrap-inner-highlight collaboration">
 				<div class="shrink-wrap-inner-highlight-left"></div>
 				<div class="shrink-wrap-inner-highlight-mid"></div>
 				<div class="shrink-wrap-inner-highlight-right"></div>
@@ -103,5 +103,5 @@
 		$(".sbHolder").click(function() {
 			$(this).toggleClass("sbh");
 		});
-	}); 
+	});
 </script>

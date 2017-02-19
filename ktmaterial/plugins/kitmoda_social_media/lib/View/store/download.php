@@ -7,10 +7,10 @@
 <script src="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/jScrollPane.js?ver=4.4"></script>
 		<script src="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/SelectBox.js?ver=4.4"></script>
         <script>
-		  jQuery.noConflict()(function($){	
+		  jQuery.noConflict()(function($){
 			$(function() {
-				
-				$("select").each(function() {					
+
+				$("select").each(function() {
 					var sb = new SelectBox({
 						selectbox: $(this),
 						height: 150,
@@ -20,35 +20,35 @@
 				});
 			});
 		</script>
-        
+
         <script>
 
                                     $(document).ready(function(){
 
-                                     
+
 
                                             $(".select_boxes .sbOptions").mCustomScrollbar();
 
 											$(".sort_field select").mCustomScrollbar();
 
-										
 
-											
 
-                                       
+
+
+
 
                                     })(jQuery);
 
-										
+
 
                                 </script>
-<?php 
+<?php
 
 
 
 
 
-$this->render_element('main_tabs'); 
+$this->render_element('main_tabs');
 
 
 
@@ -66,9 +66,9 @@ global $post;
 
 if($post && $post->post_status == 'publish' || $post && current_user_can('manage_options')) {
 
-    
 
-    
+
+
 
     $ksm_download = new KSM_Download($post->ID);
 
@@ -120,17 +120,17 @@ KSM_postView::add($post);
 
             </div>
 
-            
+
 
             <div class="shrink-wrap-vignette-right">
 
             </div>
 
-            
+
 
              <div class="shrink-wrap-findcenter">
 
-                <div class="shrink-wrap-inner-highlight" style="left: -80px;">
+                <div class="shrink-wrap-inner-highlight store">
 
                         <div class="shrink-wrap-inner-highlight-left"></div>
 
@@ -144,7 +144,7 @@ KSM_postView::add($post);
 
 	<div class="shrink-wrap-inner-shadow"></div>
 
-        <div class="shrink-wrap-bottom-shadow"></div>  
+        <div class="shrink-wrap-bottom-shadow"></div>
 
 
     </div>
@@ -165,9 +165,9 @@ KSM_postView::add($post);
 
 
 
-<div class="ksm_profile_container">    
+<div class="ksm_profile_container">
 
-        
+
 
 <div class="ksm_profile_container_overlay">
 
@@ -177,19 +177,19 @@ KSM_postView::add($post);
 
     <div class="ksm_profile ksm_page_collaboration ksm_page_store_product">
 
-        
+
 
 
 
         <div class="ksm_store_archive">
 
-        
+
 
 <div class="sectionBackgroundDark">
 
   <div class="section">
-  
-  <div class="add_post_form_highlight_top">	
+
+  <div class="add_post_form_highlight_top">
                 <div class="add_post_form_radius_top">
                     <div class="add_post_form_highlight_studio_overlay_top">
                     </div>
@@ -200,9 +200,9 @@ KSM_postView::add($post);
 
         <?php $this->render_element('search_form') ?>
 
-        
 
-        
+
+
 
 </div>
 
@@ -217,45 +217,45 @@ KSM_postView::add($post);
 
 </div>
 
-        
+
 
 
 
         <div class="content">
 
-            
 
-            
+
+
 
             <?php if($error) : ?>
 
-            
+
 
             <div class="empty_error"><?=$error?></div>
 
-                
+
 
             <?php else : ?>
 
-                
 
-            
 
-            
+
+
+
 
             <div class="breadcrumb"><?=$ksm_download->breadcrumb();?></div>
 
             <div class="clr"></div>
 
-            
 
-                
 
-                    
 
-                    
 
-                    <?php 
+
+
+
+
+                    <?php
 
         slick_attachment_gallery($post->ID, array(
 
@@ -270,11 +270,11 @@ KSM_postView::add($post);
             ));
 
         ?>
-   <div class="full-view-right-sec">         
+   <div class="full-view-right-sec">
 <div class="pr-col_container_top"> </div>
             <div class="details">
 
-            
+
 
                 <h1 class="page-title"><?php the_title()?></h1><div class="clr"></div>
 
@@ -315,7 +315,7 @@ KSM_postView::add($post);
                             <span class="button" data-item="<?=$post->ID?>"></span>
                             <span class="share-button-hover"></span>
 
-                            
+
 
                         </li>
 
@@ -336,21 +336,21 @@ KSM_postView::add($post);
                 <div class="studio_sidebar_linebreak"></div>
 
                     <div class="clr"></div>
-                    
 
-                    
+
+
 
                 </div>
 
-                
 
-                
 
-                
+
+
+
 
                 <div class="ratings">
 
-                    
+
 
                     <div class="overall">
 
@@ -362,7 +362,7 @@ KSM_postView::add($post);
 
                     </div>
 
-                    
+
 
                     <span class="rating_excoll collapsed">
 
@@ -372,7 +372,7 @@ KSM_postView::add($post);
 
                     </span>
 
-                        
+
 
                     <div class="studio_sidebar_linebreak_mid"></div>
 
@@ -382,7 +382,7 @@ KSM_postView::add($post);
 
                     <div class="group_ratings">
 
-                        
+
 
                         <ul>
 
@@ -458,15 +458,15 @@ KSM_postView::add($post);
 
                         </ul>
 
-                        
+
 
                     </div>
 
-                    
+
 
                 </div>
 
-                
+
 
 
 
@@ -683,40 +683,40 @@ KSM_postView::add($post);
 
 
             </div>
-            
+
             <div class="clr"></div>
-            
-            <div class="pr-col_container_bottom"></div> 
+
+            <div class="pr-col_container_bottom"></div>
 
             </div>
 
-            
+
 
             <?php endif; ?>
 
-            
 
-            
 
-            
+
+
+
 
         </div>
 
-        
 
-        
 
-        
 
-        
 
-        
 
-        
+
+
+
+
+
+
 
         <div class="clr"></div>
 
-        
+
 
         <div class="wall_footer">
 

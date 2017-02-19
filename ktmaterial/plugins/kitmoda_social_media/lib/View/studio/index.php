@@ -10,7 +10,7 @@ $this->render_element('main_tabs');
         <div class="shrink-wrap-vignette-left"></div>
         <div class="shrink-wrap-vignette-right"></div>
         <div class="shrink-wrap-findcenter">
-            <div class="shrink-wrap-inner-highlight" style="left: -521px;">
+            <div class="shrink-wrap-inner-highlight studio">
                 <div class="shrink-wrap-inner-highlight-left"></div>
                 <div class="shrink-wrap-inner-highlight-mid"></div>
                 <div class="shrink-wrap-inner-highlight-right"></div>

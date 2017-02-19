@@ -8,7 +8,7 @@
         <div class="shrink-wrap-vignette-left"></div>
         <div class="shrink-wrap-vignette-right"></div>
         <div class="shrink-wrap-findcenter">
-            <div class="shrink-wrap-inner-highlight" style="left: -751px;">
+            <div class="shrink-wrap-inner-highlight community">
                 <div class="shrink-wrap-inner-highlight-left"></div>
                 <div class="shrink-wrap-inner-highlight-mid"></div>
                 <div class="shrink-wrap-inner-highlight-right"></div>

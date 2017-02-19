@@ -4,11 +4,11 @@
 $(document).ready(function(){
 $(":checkbox").on('click', function(){
     $(this).parent().toggleClass("checked");
-	
+
 });
-$(".opt_remove_all").click(function () {       
-		     
-          
+$(".opt_remove_all").click(function () {
+
+
 			$(".sidebar_checkbox ").removeClass("checked");
         });
 
@@ -19,8 +19,8 @@ $(".opt_remove_all").click(function () {
 
 
 
-        
-    
+
+
 </script>
 
 <link rel="stylesheet" type="text/css" href="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/sunny/account.css" />
@@ -28,7 +28,7 @@ $(".opt_remove_all").click(function () {
 
 <div class="ksm-menu-sub-menu_container">
 
-    	
+
 
         <div class="shrink-wrap-backdrop">
 
@@ -36,17 +36,17 @@ $(".opt_remove_all").click(function () {
 
             </div>
 
-            
+
 
             <div class="shrink-wrap-vignette-right">
 
             </div>
 
-            
+
 
              <div class="shrink-wrap-findcenter">
 
-                <div class="shrink-wrap-inner-highlight" style="left: 150px;">
+                <div class="shrink-wrap-inner-highlight account">
 
                         <div class="shrink-wrap-inner-highlight-left"></div>
 
@@ -60,21 +60,21 @@ $(".opt_remove_all").click(function () {
 
 	<div class="shrink-wrap-inner-shadow"></div>
 
-        <div class="shrink-wrap-bottom-shadow"></div>  
+        <div class="shrink-wrap-bottom-shadow"></div>
 
     </div>
 
 
 
-       
 
-	
 
-	
 
-        
 
-   
+
+
+
+
+
 
 
 
@@ -108,7 +108,7 @@ $day_stats = $ksm_user->day_sales();
 
 
 
-<div class="ksm_profile_container">    
+<div class="ksm_profile_container">
 
 
 
@@ -132,43 +132,43 @@ $day_stats = $ksm_user->day_sales();
 
         <div class="main_content account_sales_main">
 
-            
+
 
             <?php $this->render_element('account_sub_tabs'); ?>
 
-            
 
-            
 
-            
 
-            
 
-            
 
-            
 
-            
 
-            
+
+
+
+
+
+
+
+
 
             <div class="pr-col">
 
-                
 
-                
 
-                
 
-                
 
-                
 
-             <div class="sale_stats-contaner">   
+
+
+
+
+
+             <div class="sale_stats-contaner">
 <div class="pr-col_container_top"></div>
         <div class="sale_stats">
 
-            
+
 
             <div class="section_heading">
 
@@ -221,18 +221,18 @@ $day_stats = $ksm_user->day_sales();
 
             </div>
 
-            
+
 
             <div class="collaboration_sidebar_linebreak_mid"></div>
                     <div class="collaboration_sidebar_linebreak"></div>
 
-            
+
 
             <div class="dated_sale_stats section">
 
-                
 
-                
+
+
 
                 <ul class="year_stats">
 
@@ -270,7 +270,7 @@ $day_stats = $ksm_user->day_sales();
 
                 </ul>
 
-                
+
 
                 <ul class="month_stats">
 
@@ -308,7 +308,7 @@ $day_stats = $ksm_user->day_sales();
 
                 </ul>
 
-                
+
 
                 <ul class="day_stats">
 
@@ -346,33 +346,33 @@ $day_stats = $ksm_user->day_sales();
 
                 </ul>
 
-                
 
-                
+
+
 
             </div>
 
-            
+
 
 	</div>
 
-           <div class="pr-col_container_bottom"></div>     
+           <div class="pr-col_container_bottom"></div>
 
                 </div>
 
-                
 
-                
 
-                
+
+
+
 
                 <?php $this->render_element('sales_sidebar'); ?>
 
-                
+
 
                 <div class="coll_page_right">
 
-                    
+
 
                     <div class="sectionBackgroundDark">
 
@@ -382,15 +382,15 @@ $day_stats = $ksm_user->day_sales();
 
                                 <div class="products posts">
 
-                                    <?php 
+                                    <?php
 
                                     //foreach($posts as $post) :
 
-                                        
 
-                                        
 
-                                    //    $this->render_element('purchase_library_product_item', array('pd' => $post)); 
+
+
+                                    //    $this->render_element('purchase_library_product_item', array('pd' => $post));
 
                                     //endforeach;
 
@@ -398,12 +398,12 @@ $day_stats = $ksm_user->day_sales();
 
                                 </div>
 
-                                
 
-                                
+
+
 
                             </div>
-                            
+
                                 <div class="pr-col_container_bottom"></div>
 
                         </div>
@@ -412,37 +412,37 @@ $day_stats = $ksm_user->day_sales();
 
 
 
-                    
 
 
 
-                    
 
 
 
-                    
+
+
+
 
 
 
                 </div><div class="clr"></div>
 
             </div>
-            
-           
-            
+
+
+
             <div class="clr">
-            
+
             </div>
 
         </div>
 
 
 
-       
 
 
 
-        
+
+
 
 
 

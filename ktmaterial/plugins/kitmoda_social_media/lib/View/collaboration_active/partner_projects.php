@@ -19,9 +19,9 @@ $sort = in_array($sort, $ar_sorts) ? $sort : 'oldest';
             <div class="shrink-wrap-vignette-right">
     </div>
 
-            
+
              <div class="shrink-wrap-findcenter">
-                <div class="shrink-wrap-inner-highlight" style="left: -315px;">
+                <div class="shrink-wrap-inner-highlight collaboration">
 
                         <div class="shrink-wrap-inner-highlight-left"></div>
 
@@ -43,24 +43,24 @@ $sort = in_array($sort, $ar_sorts) ? $sort : 'oldest';
 
 
 </div>
-<div class="ksm_profile_container">    
+<div class="ksm_profile_container">
 
 
 
 <div class="ksm_profile_container_collaboration_topline">
     <div class="ksm_profile_container_collaboration_topline_ving_left"></div>
-    <div class="ksm_profile_container_collaboration_topline_ving_right"></div> 
+    <div class="ksm_profile_container_collaboration_topline_ving_right"></div>
 </div>
 <div class="ksm_profile_container_overlay">
     <div class="ksm_profile ksm_page_collaboration">
 
-        
 
-        
 
-        
 
-        
+
+
+
+
 
 
 
@@ -83,15 +83,15 @@ $sort = in_array($sort, $ar_sorts) ? $sort : 'oldest';
 
 
         <div class="main_content">
-        
+
         <div class="top_tabs">
 
         <?php $this->render_element('collaboration_navigation'); ?>
-        
+
 </div>
   <div class="clr"></div>
-  
- 
+
+
 <div class="pr-col">
             <?php $this->render_element('partner_projects_sidebar'); ?>
 
@@ -104,26 +104,26 @@ $sort = in_array($sort, $ar_sorts) ? $sort : 'oldest';
 
                <div class="sectionOverlay">
 
-               
+
 
                 <div class="collab_page projects">
 
-                    
-                    <?php 
+
+                    <?php
                     if($auth_error) :
                         echo '<div class="posts">'.login_message('collaboration_partner_projects').'</div>';
                     elseif($no_post_found) : ?>
                         <div class="posts"><div class="empty_msg">You have no partner projects.</div></div>
                     <?php else :
-                        
+
                         $full_status_text = $current_project->fullStatusText();
                         $p_views = $current_project->ProjectViews(array('sort'=>$sort));
 
                         ?>
-                        
-                        
+
+
                         <div class="posts">
-                            
+
                             <div class="main_header">
                         <div class="project_info">
                             <div class="thumb">
@@ -138,7 +138,7 @@ $sort = in_array($sort, $ar_sorts) ? $sort : 'oldest';
                                 <div class="culture"><span>Culture :</span> <span class="rt_txt"> <?=$current_project->Collaboration->get_tax_label('culture')?></span><div class="clr"></div></div>
                             </div><div class="clr"></div>
                         </div>
-                        
+
                         <div class="partner_info">
                             <div class="proj_name"><?=$current_project_author->display_name_link()?></div>
                             <div class="role-out">
@@ -160,14 +160,14 @@ $sort = in_array($sort, $ar_sorts) ? $sort : 'oldest';
                         </div>
                         <div class="clr"></div>
                     </div>
-                    
+
                     <?php if($full_status_text) : ?>
                     <div class="project_full_status">
                         <div class="prj_heading">PROJECT STATUS</div>
                         <div class="status"><?=$full_status_text?></div>
                     </div>
                     <?php endif; ?>
-                    
+
                     <div class="posts_header">
                         <div  class="prj_heading">
                         <div class="col_title">PROJECT STAGES</div>
@@ -182,9 +182,9 @@ $sort = in_array($sort, $ar_sorts) ? $sort : 'oldest';
                         </div><div class="clr"></div>
                         </div>
                     </div>
-                        
+
                         <?php
-                        
+
                         $p_views = $current_project->ProjectViews(array('sort'=>$sort));
                         foreach((Array) $p_views['wip'] as $v => $v_args) {
                             $this->render_element('partner_project_wip', $v_args);
@@ -202,11 +202,11 @@ $sort = in_array($sort, $ar_sorts) ? $sort : 'oldest';
                         </div>
                         <?php endif; ?>
 
-                        
 
-                    
 
-                    
+
+
+
 
                 </div>
 
@@ -216,7 +216,7 @@ $sort = in_array($sort, $ar_sorts) ? $sort : 'oldest';
 
                </div>
 
- <div class="pr-col_container_bottom"></div> 
+ <div class="pr-col_container_bottom"></div>
         <div class="clr"></div>
 
                 <div class="community_sidebar_footer"></div>
@@ -227,14 +227,14 @@ $sort = in_array($sort, $ar_sorts) ? $sort : 'oldest';
 
         <div class="clr"></div>
         </div>
-        
+
 
   <div class="clr"></div>
         </div>
 
         <div class="main_footer"></div>
 
-        
+
 
     </div>
 

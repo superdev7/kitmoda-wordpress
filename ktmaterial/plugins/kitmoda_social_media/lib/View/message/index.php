@@ -4,7 +4,7 @@
 
 <div class="ksm-menu-sub-menu_container">
 
-    	
+
 
         <div class="shrink-wrap-backdrop">
 
@@ -12,17 +12,17 @@
 
             </div>
 
-            
+
 
             <div class="shrink-wrap-vignette-right">
 
             </div>
 
-            
+
 
              <div class="shrink-wrap-findcenter">
 
-                <div class="shrink-wrap-inner-highlight" style="left: 150px;">
+                <div class="shrink-wrap-inner-highlight account">
 
                         <div class="shrink-wrap-inner-highlight-left"></div>
 
@@ -36,21 +36,21 @@
 
 	<div class="shrink-wrap-inner-shadow"></div>
 
-        <div class="shrink-wrap-bottom-shadow"></div>  
+        <div class="shrink-wrap-bottom-shadow"></div>
 
     </div>
 
 
 
-       
 
-	
 
-	
 
-        
 
-   
+
+
+
+
+
 
 
 
@@ -74,7 +74,7 @@
 
 
 
-<div class="ksm_profile_container">    
+<div class="ksm_profile_container">
 
 
 
@@ -99,22 +99,22 @@
 
         <div class="main_content">
 
-            
+
 
             <?php $this->render_element('account_sub_tabs'); ?>
 
-            
-           
-            
+
+
+
             <div class="pr-col">
 
                 <div class="coll_page_right">
  <div class="pr-col_container_top"></div>
-                    
 
 
 
-                    
+
+
 
                     <div class="no-msj">
 
@@ -126,22 +126,22 @@
 
 
 
-                    
+
     <div class="pr-col_container_bottom"></div>
 
 
                 </div>
-                
-            
-                 
+
+
+
                 <div class="clr"></div>
 
             </div>
-            
-            
-            
+
+
+
             <div class="clr">
-            
+
             </div>
 
         </div>
@@ -152,7 +152,7 @@
 
 
 
-        
+
 
 
 
@@ -166,7 +166,7 @@
 
 
 
-    
+
 
 </div>
 

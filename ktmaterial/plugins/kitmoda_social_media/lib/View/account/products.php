@@ -4,11 +4,11 @@
 $(document).ready(function(){
 $(":checkbox").on('click', function(){
     $(this).parent().toggleClass("checked");
-	
+
 });
-$(".opt_remove_all").click(function () {       
-		     
-          
+$(".opt_remove_all").click(function () {
+
+
 			$(".sidebar_checkbox ").removeClass("checked");
         });
 
@@ -19,8 +19,8 @@ $(".opt_remove_all").click(function () {
 
 
 
-        
-    
+
+
 </script>
 
 <link rel="stylesheet" type="text/css" href="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/sunny/account.css" />
@@ -28,7 +28,7 @@ $(".opt_remove_all").click(function () {
 
 <div class="ksm-menu-sub-menu_container">
 
-    	
+
 
         <div class="shrink-wrap-backdrop">
 
@@ -36,17 +36,17 @@ $(".opt_remove_all").click(function () {
 
             </div>
 
-            
+
 
             <div class="shrink-wrap-vignette-right">
 
             </div>
 
-            
+
 
              <div class="shrink-wrap-findcenter">
 
-                <div class="shrink-wrap-inner-highlight" style="left: 150px;">
+                <div class="shrink-wrap-inner-highlight account">
 
                         <div class="shrink-wrap-inner-highlight-left"></div>
 
@@ -60,21 +60,21 @@ $(".opt_remove_all").click(function () {
 
 	<div class="shrink-wrap-inner-shadow"></div>
 
-        <div class="shrink-wrap-bottom-shadow"></div>  
+        <div class="shrink-wrap-bottom-shadow"></div>
 
     </div>
 
 
 
-       
 
-	
 
-	
 
-        
 
-   
+
+
+
+
+
 
 
 
@@ -96,7 +96,7 @@ $(".opt_remove_all").click(function () {
 
 
 
-<div class="ksm_profile_container">    
+<div class="ksm_profile_container">
 
 
 
@@ -120,43 +120,43 @@ $(".opt_remove_all").click(function () {
 
         <div class="main_content account_products_main">
 
-            
+
 
             <?php $this->render_element('account_sub_tabs'); ?>
 
-            
 
-            
 
-            
 
-            
 
-            
 
-            
 
-            
 
-     
+
+
+
+
+
+
+
+
 
             <div class="pr-col">
 
-                
 
 
 
 
 
-                
 
-                
-<div class="sale_stats-contaner">   
-                
+
+
+
+<div class="sale_stats-contaner">
+
 <div class="pr-col_container_top"></div>
         <div class="sale_stats">
 
-            
+
 
             <div class="section_heading">
 
@@ -226,17 +226,17 @@ $(".opt_remove_all").click(function () {
 
             </div>
 
-            
+
 
             <div class="community_sidebar_linebreak"></div>
 
-            
+
 
             <div class="model_type_stats section">
 
-                
 
-                
+
+
 
                 <ul class="texture_model_stats">
 
@@ -292,7 +292,7 @@ $(".opt_remove_all").click(function () {
 
                 </ul>
 
-                
+
 
                 <ul class="untexture_model_stats">
 
@@ -348,37 +348,37 @@ $(".opt_remove_all").click(function () {
 
                 </ul>
 
-                
 
-                
 
-                
 
-                
+
+
+
+
 
             </div>
 
-            
+
 
 	</div>
 
-                <div class="pr-col_container_bottom"></div>  
+                <div class="pr-col_container_bottom"></div>
 
                 </div>
 
-                
 
-                
 
-                
+
+
+
 
                 <?php $this->render_element('sales_sidebar'); ?>
 
-                
+
 
                 <div class="coll_page_right">
 
-                    
+
 
                     <div class="sectionBackgroundDark">
 
@@ -389,7 +389,7 @@ $(".opt_remove_all").click(function () {
                                 <div class="products posts"></div>
 
                             </div>
-                            
+
                               <div class="pr-col_container_bottom"></div>
 
                         </div>
@@ -398,37 +398,37 @@ $(".opt_remove_all").click(function () {
 
 
 
-                    
 
 
 
-                    
 
 
 
-                    
+
+
+
 
 
 
                 </div><div class="clr"></div>
 
             </div>
-            
-         
-            
+
+
+
             <div class="clr">
-            
+
             </div>
 
         </div>
 
 
 
-       
 
 
 
-        
+
+
 
 
 

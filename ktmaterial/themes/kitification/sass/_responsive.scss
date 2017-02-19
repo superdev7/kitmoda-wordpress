@@ -36,6 +36,14 @@
 			margin-top: -13px;
 		}
 	}
+
+	.header-outer .ksm-menu-sub-menu_container .shrink-wrap-backdrop .shrink-wrap-findcenter .shrink-wrap-inner-highlight {
+		&.community { left: 0; }
+		&.studio { left: 15%; }
+		&.collaboration { left: 30%; }
+		&.store { left: 45%; }
+		&.account { left: 60%; }
+	}
 }
 
 @include breakpoint($xl) {
