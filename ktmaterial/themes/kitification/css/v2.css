@@ -1650,15 +1650,18 @@ body {
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul .upload_launch_container a.colorbox {
   padding: 10px 20px;
+  width: 38px;
+  height: 38px;
+  margin-top: 10px;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul .upload_launch_container a.colorbox:hover {
-  border: none;
+  border-color: transparent;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul .upload_launch_container .upload_launch {
   background: url(../../../plugins/kitmoda_social_media/css/kane/images/icons/upload.png) no-repeat scroll 0 0;
   width: 38px;
   height: 38px;
-  margin-top: -16px;
+  margin-top: -38px;
   pointer-events: none;
   cursor: default;
 }
