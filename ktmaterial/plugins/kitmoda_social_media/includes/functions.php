@@ -906,7 +906,8 @@ function KSM_TopBarUserMenu() {
             </div>
 
             <ul class="noauth_nav">
-                <li><a class="login_header_link" ng-click="auth('login')">Login</a></li>
+                <!-- <li><a class="login_header_link" ng-click="auth('login')">Login</a></li> -->
+                <li><a class="login_header_link" href="<?=ksm_get_permalink('login')?>"></a></li>
                 <li><a class="join_header_link" ng-click="auth('join')">Join</a></li>
             </ul>
         <!-- </div> -->
