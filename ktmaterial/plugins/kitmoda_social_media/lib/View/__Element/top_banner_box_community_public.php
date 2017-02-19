@@ -1,12 +1,12 @@
 
 
 <div id="top_banner_box_container_community">
-    <div class="mosaic_banner_community_horizontal_dark_overlay">
-    </div>
-    <div class="mosaic_banner_community_vertical_dark_overlay">
-    </div>
+    <div class="mosaic_banner_community_horizontal_dark_overlay"></div>
+    <div class="mosaic_banner_community_vertical_dark_overlay"></div>
 
-    <div class="traingle_banner_container">
+    <div class="triangle_banner_svg"></div>
+
+    <!-- <div class="traingle_banner_container">
         <div class="test_triangle_up" style="border-bottom: 28px solid hsl(222, 26%, 15%); left: -1289.8604651163px; top: 0px; border-left: 16.279069767442px solid transparent; border-right: 16.279069767442px solid transparent;"></div>
 
         <div class="test_triangle_up" style="border-bottom: 28px solid hsl(223, 25%, 18%); left: -1289.8604651163px; top: 0px; border-left: 16.279069767442px solid transparent; border-right: 16.279069767442px solid transparent;"></div>
@@ -3076,7 +3076,7 @@
         <div class="test_triangle_down" style="border-top: 28px solid hsl(220, 25%, 17%); left: 1564.3186046512px; top: 280px; border-left: 16.279069767442px solid transparent; border-right: 16.279069767442px solid transparent;"></div>
 
         <div class="test_triangle_up" style="border-bottom: 28px solid hsl(221, 25%, 17%); left: 1580.5395348837px; top: 280px; border-left: 16.279069767442px solid transparent; border-right: 16.279069767442px solid transparent;"></div>
-        <div class="test_triangle_down" style="border-top: 28px solid hsl(226, 25%, 18%); left: 1595.5186046512px; top: 280px; border-left: 16.279069767442px solid transparent; border-right: 16.279069767442px solid transparent;"></div>
+        <div class="test_triangle_down" style="border-top: 28px solid hsl(226, 25%, 18%); left: 1595.5186046512px; top: 280px; border-left: 16.279069767442px solid transparent; border-right: 16.279069767442px solid transparent;"></div> -->
 
 
 

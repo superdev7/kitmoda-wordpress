@@ -15,10 +15,10 @@ $progress_width = get_number($KUser->Access->completeness).'%';
 ?>
 
 <div id="top_banner_box_container" class="row row-inset">
-    <div class="mosaic_banner_horizontal_dark_overlay">
-    </div>
-    <div class="mosaic_banner_vertical_dark_overlay">
-    </div>
+    <div class="mosaic_banner_horizontal_dark_overlay"></div>
+    <div class="mosaic_banner_vertical_dark_overlay"></div>
+
+    <div class="triangle_banner_svg"></div>
 
     <!-- <div class="traingle_banner_container">
        <div class="test_triangle_up" style="border-bottom: 28px solid hsl(217, 35%, 10%); left: -1289.8604651163px; top: 0px; border-left: 16.279069767442px solid transparent; border-right: 16.279069767442px solid transparent;"></div>
