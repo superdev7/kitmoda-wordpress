@@ -926,6 +926,7 @@ body {
   font-size: 22px;
   color: #e2e1f5;
   width: 100%;
+  list-style: none;
 }
 .v2 .posts .post .post_content_container_highlight .post_content_container .post_content .post_text_header .post_content_headerinfo .post_content_username {
   text-align: right;
@@ -1312,7 +1313,7 @@ body {
   width: 600px;
   height: 220px;
   top: -66px;
-  z-index: -1;
+  pointer-events: none;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation {
   position: relative;
