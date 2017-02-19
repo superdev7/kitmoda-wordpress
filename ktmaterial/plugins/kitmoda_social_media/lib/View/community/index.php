@@ -1,5 +1,5 @@
 <?php
-$this->render_element('top_banner_box_community_public');
+// $this->render_element('top_banner_box_community_public');
 ?>
 <?php $this->render_element('main_tabs'); ?>
 
