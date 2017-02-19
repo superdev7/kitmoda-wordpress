@@ -8,6 +8,14 @@
 			display: none;
 		}
 	}
+
+	.header-outer .ksm-menu-sub-menu_container .shrink-wrap-backdrop .shrink-wrap-findcenter .shrink-wrap-inner-highlight {
+		&.community { left: -25%; }
+		&.studio { left: -10%; }
+		&.collaboration { left: 5%; }
+		&.store { left: 20%; }
+		&.account { left: 45%; }
+	}
 }
 
 @include breakpoint($sm) {
@@ -37,7 +45,7 @@
 		&.community { left: -15%; }
 		&.studio { left: 0; }
 		&.collaboration { left: 15%; }
-		&.store { left: 30%; }
+		&.store { left: 35%; }
 		&.account { left: 55%; }
 	}
 }
