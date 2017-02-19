@@ -418,7 +418,7 @@
 		.community_updates_slider_shadow {
 			@include box-shadow(-1px 13px 13px 4px rgba(10,9,15,0.82));
 			position: absolute;
-			top: 14px;
+			top: 35px;
 			@include border-radius(6px);
 
 			.slider.updates_slider {
