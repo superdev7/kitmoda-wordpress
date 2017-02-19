@@ -17,10 +17,16 @@ define('S3_SECRET', 'eI31CYv7rGBKj6kNufrwBXYL5A3oZY0UVFfHucJm');
 define('S3_ACL', 'private');
 define('S3_URL', 'https://'.S3_BUCKET.'.s3.amazonaws.com/');
 define('S3_DOWNLOAD_EXPIRE_TIME', '+2 hours');*/
-
+/*
 define('S3_BUCKET', 'ksmupload');
 define('S3_ACCESS_KEY_ID', 'AKIAJVY345YTLOPZSROA');
 define('S3_SECRET', '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');
+define('S3_ACL', 'private');
+define('S3_URL', 'https://'.S3_BUCKET.'.s3.amazonaws.com/');
+define('S3_DOWNLOAD_EXPIRE_TIME', '+2 hours');*/
+define('S3_BUCKET', 'ksmupload');
+define('S3_ACCESS_KEY_ID', 'AKIAIDRWQLXAOHYSGK2Q');
+define('S3_SECRET', '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');
 define('S3_ACL', 'private');
 define('S3_URL', 'https://'.S3_BUCKET.'.s3.amazonaws.com/');
 define('S3_DOWNLOAD_EXPIRE_TIME', '+2 hours');
