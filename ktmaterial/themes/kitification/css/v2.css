@@ -2384,6 +2384,7 @@ body {
   background-image: linear-gradient(to right, rgba(0, 0, 1, 0.59) 0%, rgba(0, 0, 1, 0.52) 59%, rgba(0, 0, 1, 0.25) 85%, rgba(0, 0, 1, 0) 100%);
   width: 40%;
   padding: 0 80px 10px 0;
+  margin-left: 0;
 }
 .v2 #top_banner_box_container_community .community_updates_center_finder .community_updates_slider_shadow .slider.updates_slider .item .uinfo .community_updates_slider_header {
   width: 100%;
