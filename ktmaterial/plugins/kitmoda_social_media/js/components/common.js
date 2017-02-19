@@ -3,7 +3,7 @@ var kapp = angular.module('kapp', [
                             'ngAnimate',
                             'ngMessages',
                             'ui.bootstrap',
-                            //'k.components.confirm', 
+                            //'k.components.confirm',
                             'k.components.kui',
                             'infinite-scroll',
                             'k.components.comment',
@@ -20,14 +20,15 @@ var kapp = angular.module('kapp', [
     $httpProvider.defaults.headers.common['X-WP-NONCE'] = ksm_settings.rest.nonce;
 
 }])
-    
-    
+
+
 .run(function($rootScope, AuthUiService, JoinUiService, ForgotPasswordUiService, LoginUiService) {
-    
+
     $rootScope.auth = function(view) {
+        console.log('Auth clicked');
         AuthUiService.open(view);
     }
-    
+
     $rootScope.kpartial = function(name) {
         return ksm_settings.ksm_url+"partials/"+name;
     }
@@ -44,39 +45,39 @@ var kapp = angular.module('kapp', [
             save: {method: "POST", params : {id : '@id', action : '@action'}},
         });
     }
-    
+
     angular.module('k.post', []).
             factory('Post', Post),
             Post.$inject = ["$resource"];
-    
+
 }(angular));
 
 
 
 (function (angular) {
-    
+
     function userService($resource) {
-        
+
         return $resource(ksm_settings.rest.api_base+"user/:action", {}, {
             register : {method: "POST", params : {action: 'register'}},
             login : {method: "POST", params : {action: 'login'}},
             recover : {method: "POST", params : {action: 'recover'}},
             displayNameAvailable : {method: "POST"}
         });
-        
+
     }
-    
+
     angular.module('k.user', []).
             factory('userService', userService),
             userService.$inject = ["$resource"];
-    
+
 }(angular));
 
 
 
 (function(angular){
-    
-    
+
+
     function ReportUI($modal) {
         return {
             open: function(item) {
@@ -95,20 +96,20 @@ var kapp = angular.module('kapp', [
             }
         };
     }
-    
-    
-    
+
+
+
     function PostReportCtrl($scope, $uibModalInstance, item, Post, InfoBoxUi) {
-        
+
         var vm = this;
-        
+
         vm.data = {
             id : item,
             reasons : [],
             action : 'report'
         };
-        
-        
+
+
         vm.report = function (form) {
             if(vm.processing) {
                 return;
@@ -123,7 +124,7 @@ var kapp = angular.module('kapp', [
                             $scope.error = v;
                         });
                     } else if(r.success) {
-                        
+
                         $uibModalInstance.dismiss();
                         InfoBoxUi.open('', {'message' : 'Thanks for reporting'}, false);
                     }
@@ -131,12 +132,12 @@ var kapp = angular.module('kapp', [
                 });
             }
         };
-        
+
         /*
         vm.report = function (form) {
             form.$setSubmitted();
             if(form.$valid) {
-                
+
                 Post.report(vm.data, function(r) {
                     if(r.success) {
                         return $uibModalInstance.submit(r);
@@ -147,22 +148,22 @@ var kapp = angular.module('kapp', [
             }
         };
         */
-        
+
 
 
         vm.hasError = function(field, validation){
             return (($scope.reportPostForm.$submitted || $scope.reportPostForm[field].$dirty) && $scope.reportPostForm[field].$invalid);
         };
-        
-        
-        
+
+
+
         /////////////////////////////
-        
-        
+
+
         //var vm = this;
-        
-        
-        
+
+
+
         $scope.reasons = [
             {id : '1', state : false , name : 'Threatening or hateful'},
             {id : '2', state : false , name : 'Sexually explicit'},
@@ -171,26 +172,26 @@ var kapp = angular.module('kapp', [
             {id : '5', state : false , name : 'Impersonation or stolen identity'},
             {id : '6', state : false , name : 'Excessively derogatory'},
             {id : '7', state : false , name : 'Profanity'}
-            
+
         ];
-        
-        
-        
-        
+
+
+
+
     }
-    
-    
-    
+
+
+
     angular.module('k.report', ["k.post"]).run()
            .factory('ReportUI', ReportUI)
            .controller('PostReportCtrl', PostReportCtrl),
-    
+
     ReportUI.$inject = ["$uibModal"],
     PostReportCtrl.$inject = ["$scope", "$uibModalInstance", "item", "Post", "InfoBoxUi"];
-            
-    
-    
-    
+
+
+
+
 }(angular));
 
 
@@ -210,7 +211,7 @@ var kapp = angular.module('kapp', [
         });
     }
 
-    
+
     function CommentCtrl($scope, CommentEditUiService, ConfirmBoxUiService, Comment) {
 
         $scope.editComment = function() {
@@ -247,15 +248,15 @@ var kapp = angular.module('kapp', [
                 });
             });
         };
-        
+
     }
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     function CommentEditUiService($modal) {
         return {
             open: function(item) {
@@ -274,9 +275,9 @@ var kapp = angular.module('kapp', [
             }
         };
     }
-    
-    
-    
+
+
+
     function CommentEditCtrl($scope, $uibModalInstance, item, Comment) {
         var vm = this;
 
@@ -306,22 +307,22 @@ var kapp = angular.module('kapp', [
             return (($scope.editCommentForm.$submitted || $scope.editCommentForm[field].$dirty) && $scope.editCommentForm[field].$invalid);
         };
     }
-    
 
 
-   
+
+
    angular.module("k.components.comment", [])
           .factory("Comment", Comment)
           .controller("CommentCtrl", CommentCtrl)
           .factory("CommentEditUiService", CommentEditUiService)
           .controller("CommentEditCtrl", CommentEditCtrl),
-       
+
 
     Comment.$inject = ["$resource"],
     CommentCtrl.$inject = ["$scope", "CommentEditUiService" , "ConfirmBoxUiService", "Comment"],
     CommentEditUiService.$inject = ["$uibModal"],
     CommentEditCtrl.$inject = ["$scope", "$uibModalInstance", "item", "Comment"];
-   
+
 }(angular));
 
 
@@ -329,7 +330,7 @@ var kapp = angular.module('kapp', [
 
 (function() {
     "use strict";
-    
+
     function kLike($http) {
 
         var config = {
@@ -337,7 +338,7 @@ var kapp = angular.module('kapp', [
                 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
             }
         };
-        
+
         return {
             restrict : 'A',
             template : '<span class="kng button"></span><span class="count">{{like.count}}</span>',
@@ -363,7 +364,7 @@ var kapp = angular.module('kapp', [
     }
 
 
-    
+
 
 
     angular.module('k.like', [])
@@ -381,18 +382,18 @@ var kapp = angular.module('kapp', [
 
 
 (function() {
-    
-    
+
+
     function list_model() {
-        
+
         return {
             scope: {
                 list: '=kListModel',
                 value: '@'
             },
-            
+
             link: function(scope, elem, attrs) {
-                
+
                 var handler = function(setup) {
                     var checked = elem.prop('checked');
                     var index = scope.list.indexOf(scope.value);
@@ -416,11 +417,11 @@ var kapp = angular.module('kapp', [
             }
         }
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     function iCheck($timeout) {
 
         return {
@@ -468,12 +469,12 @@ var kapp = angular.module('kapp', [
             }
         };
   }
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
   function iCheckCollection($timeout) {
 
         return {
@@ -510,8 +511,8 @@ var kapp = angular.module('kapp', [
 
                 function onChanged(event) {
                     if(attrs.type == 'checkbox') {
-                        
-                        
+
+
                         var checked = element.prop('checked');
                         var index = scope.collection.indexOf(event.target.value);
 
@@ -520,8 +521,8 @@ var kapp = angular.module('kapp', [
                         } else if (!checked && index != -1) {
                             scope.collection.splice(index, 1);
                         }
-                        
-                        
+
+
                         //scope.collection.push(event.target.value);
                         console.log(scope.collection);
                         ngModel.$setViewValue(event.target.checked);
@@ -531,19 +532,19 @@ var kapp = angular.module('kapp', [
                         ngModel.$setViewValue(event.target.value);
                     }
                 }
-                
-                
+
+
 
             }
         };
   }
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
   function facetInputModel() {
       return {
           restrict: 'A',
@@ -552,8 +553,8 @@ var kapp = angular.module('kapp', [
                 model: '=facetInputModel',
                 ngModel :  '='
           },
-          
-  
+
+
           link : function(scope, ele, attrs, ngModel) {
               $(ele).on('keypress', function(e) {
                   var keycode = (e.keyCode ? e.keyCode : e.which);
@@ -563,9 +564,9 @@ var kapp = angular.module('kapp', [
                       });
                   }
               });
-                
-                
-                
+
+
+
                 /*var facet_q_timer;
                 ele.data('last_value', '');
                 scope.$watch(function (){
@@ -575,7 +576,7 @@ var kapp = angular.module('kapp', [
                     if (v == '' && v != last_val) {
                         ele.data('last_value', v);
                         clearTimeout(facet_q_timer);
-                        facet_q_timer = setTimeout(function(){ 
+                        facet_q_timer = setTimeout(function(){
                             scope.$apply(function (){
                                 scope.model = v;
                             });
@@ -585,14 +586,14 @@ var kapp = angular.module('kapp', [
                     }
                 }); */
           }
-          
+
       }
   }
-    
-    
-    
+
+
+
     function slick_gallery($timeout) {
-        
+
         return {
             restrict: 'A',
             templateUrl :  ksm_settings.rest.partials+"slick-gallery.html",
@@ -602,63 +603,63 @@ var kapp = angular.module('kapp', [
                 ngShow: "="
             },
             link : function(scope, element, attrs) {
-                
-                
+
+
                 var gallery;
                 var destroySlick, initializeSlick, isInitialized;
-                
-                
-                
-                
+
+
+
+
                 //var ;
-                
-                
-                
-              /*  
+
+
+
+              /*
                 scope.$on(
                         "$destroy",
                         function( event ) {
                             console.log(event);
                         }
                     );
-            
+
                 destroy = function() {
                     return $timeout(function() {
                         console.log(gallery);
                         //gallery.params.full_slick.unslick();
                         //gallery.params.nav_slick.unslick();
-                        
-                        
+
+
                         //slider = $(element);
                         //slider.slick('unslick');
                         //slider.find('.slick-list').remove();
-                        
+
                         var full_slider = $(gallery.params.full_element + ' .slider');
                         var nav_slider = $(gallery.params.nav_element + ' .slider');
-                        
-                        
+
+
                         //$($0).slick('unslick')
-                        
+
                         full_slider.slick('unslick');
                         full_slider.find('.slick-list').remove();
-                        
+
                         nav_slider.slick('unslick');
                         nav_slider.find('.slick-list').remove();
-                        
+
 
                         //$(gallery.params.full_element).slick('unslick');
                         //$(gallery.params.nav_element).slick('unslick');
-                        
-                        
+
+
                         //$(gallery.params.nav_element).find('.slick-list').remove();
                         //$(gallery.params.full_element).find('.slick-list').remove();
-                        
+
                         //return gallery;
                     });
                 };
-                
+
                 */
-        
+
                 initializeSlick = function () {
                     return $timeout(function () {
                         isInitialized = true;
@@ -669,7 +670,7 @@ var kapp = angular.module('kapp', [
                                 centerPadding : '0px',
                             }
                         });
-                        
+
                         $(gallery).on('nav_change', function() {
                             scope.gallery.full_active = true;
                             scope.$apply();
@@ -688,7 +689,7 @@ var kapp = angular.module('kapp', [
                         gallery.params.nav_slick.slickSetOption('slidesToShow', 4, true);
                     }
                 })
-                
+
                 if (attrs.hasOwnProperty("ngShow")) {
                     scope.$watch("ngShow", function (value) {
                         if(value && gallery) {
@@ -699,8 +700,8 @@ var kapp = angular.module('kapp', [
                         }
                     });
                 }
-                
-                
+
+
                 scope.$watch('gallery', function(newVal, oldVal) {
                     //console.log('watch')
                     if(isInitialized) {
@@ -714,16 +715,16 @@ var kapp = angular.module('kapp', [
                     } else {
                         initializeSlick();
                     }
-                    
+
                 }, true);
-                
+
             }
         };
     }
-    
-    
+
+
      function slick_galleryz($timeout) {
-        
+
         return {
             restrict: 'A',
             templateUrl :  ksm_settings.rest.partials+"slick-galleryz.html",
@@ -733,52 +734,52 @@ var kapp = angular.module('kapp', [
                 ngShow: "="
             },
             link : function(scope, element, attrs) {
-                
+
                 var gallery, destroySlick, initializeSlick, isInitialized;
-                
+
                 scope.$on(
                         "$destroy",
                         function( event ) {
                             console.log(event);
                         }
                     );
-                
+
                 destroy = function() {
                     return $timeout(function() {
                         console.log(gallery);
                         //gallery.params.full_slick.unslick();
                         //gallery.params.nav_slick.unslick();
-                        
-                        
+
+
                         //slider = $(element);
                         //slider.slick('unslick');
                         //slider.find('.slick-list').remove();
-                        
+
                         var full_slider = $(gallery.params.full_element + ' .slider');
                         var nav_slider = $(gallery.params.nav_element + ' .slider');
-                        
-                        
+
+
                         //$($0).slick('unslick')
-                        
+
                         full_slider.slick('unslick');
                         full_slider.find('.slick-list').remove();
-                        
+
                         nav_slider.slick('unslick');
                         nav_slider.find('.slick-list').remove();
-                        
+
 
                         //$(gallery.params.full_element).slick('unslick');
                         //$(gallery.params.nav_element).slick('unslick');
-                        
-                        
+
+
                         //$(gallery.params.nav_element).find('.slick-list').remove();
                         //$(gallery.params.full_element).find('.slick-list').remove();
-                        
+
                         //return gallery;
                     });
                 };
-                
-                
+
+
                 initializeSlick = function () {
                     return $timeout(function () {
                         isInitialized = true;
@@ -787,7 +788,7 @@ var kapp = angular.module('kapp', [
                         });
                     });
                 };
-                
+
                 if (attrs.hasOwnProperty("ngShow")) {
                     scope.$watch("ngShow", function (value) {
                         if(value) {
@@ -801,8 +802,8 @@ var kapp = angular.module('kapp', [
                         }
                     });
                 }
-                
-                
+
+
                 scope.$watch('gallery', function(newVal, oldVal) {
                     console.log('watch')
                     if(isInitialized) {
@@ -811,18 +812,18 @@ var kapp = angular.module('kapp', [
                             return destroy();
                             //initializeSlick();
                         });
-                        
+
                     } else {
                         initializeSlick();
                     }
-                    
+
                 }, true);
                 //initializeSlick();
             }
         }
     }
-	
-	
+
+
     function kFormBtn() {
         return {
             restrict: 'A',
@@ -833,21 +834,21 @@ var kapp = angular.module('kapp', [
             }
         };
     }
-    
-    
+
+
     function kButtonLoading() {
         return {
             restrict: 'A',
             template :  '<span class="edd-loading"><i class="edd-icon-spinner edd-icon-spin"></i></span>'
         };
     }
-    
-    
-   
-  
-          
-    
-    
+
+
+
+
+
+
+
     function kCharacterLimit() {
         return {
             restrict : 'A',
@@ -857,45 +858,45 @@ var kapp = angular.module('kapp', [
             require:'ngModel',
             link : function(scope, ele, attrs, ctrl) {
                 var limit = scope.limit;
-                
-                
-                
+
+
+
                 ctrl.$parsers.push(function (value) {
                     if (value.length > limit) {
                         value = value.substr(0, limit);
                         ctrl.$setViewValue(value);
                         ctrl.$render();
                     }
-                    
+
                     return value;
                 });
-                
-                
+
+
                 /*
                 attrs.$observe('value', function (value) {
                     console.log(value);
                     if (value) {
-                        
+
                         //scope.variable = value;
-                        
+
                         var left = limit - value.length;
                         scope.characters_left = left;
                     }
                 });
                 */
-                
+
             }
         }
     }
-    
-    
-    
+
+
+
     function AutoExpand($timeout, $window) {
         return function(scope, element, attr) {
-            
+
             element.css({overflow : "hidden", wordWrap: 'break-word'});
-            
-            
+
+
             var update = function(){
                 element.css("height", "auto");
                 element.css("height", element[0].scrollHeight + "px");
@@ -906,9 +907,9 @@ var kapp = angular.module('kapp', [
             attr.$set("ngTrim", "false");
         };
     }
-    
-    
-    
+
+
+
     function PasswordStrength() {
         return {
             restrict : 'A',
@@ -918,13 +919,13 @@ var kapp = angular.module('kapp', [
                 meter : '=kPasswordStrength'
             },
             link : function(scope, ele, attrs, ngModel) {
-                
-                
+
+
                 var strength,meter ;
-                
-                
-                
-                
+
+
+
+
                 scope.$watch(function () {
                     return ngModel.$$rawModelValue;
                 } , function(value) {
@@ -933,24 +934,24 @@ var kapp = angular.module('kapp', [
                         value = "";
                         meter.show = false;
                     }
-                    
+
                     strength = wp.passwordStrength.meter( value, Array());
-                    
+
                     if(strength == 2) meter = {strength : 'bad', text : pwsL10n.bad, show : true};
                     else if(strength == 3) meter = {strength : 'good', text : pwsL10n.good, show : true};
                     else if(strength == 4) meter = {strength : 'strong', text : pwsL10n.strong, show : true};
                     else if(strength == 5) meter = {strength : 'short', text : pwsL10n.mismatch, show : true};
-                    
+
                     scope.meter = meter;
                 });
-                
-                
-                
-                
+
+
+
+
             }
         }
     }
-    
+
     angular.module('k.util', [])
            .directive('kListModel', list_model)
            .directive('icheck', iCheck)
@@ -963,25 +964,25 @@ var kapp = angular.module('kapp', [
            .directive('kCharacterLimit', kCharacterLimit)
            .directive('kAutoExpand', AutoExpand)
            .directive('kPasswordStrength', PasswordStrength),
-   
-   
-   
-    
+
+
+
+
     slick_gallery.$inject = ['$timeout'],
 	slick_galleryz.$inject = ['$timeout'],
     AutoExpand.$inject = ["$timeout", "$window"],
     iCheck.$inject = ['$timeout'];
-    
+
 }(angular));
 
 
 
 (function() {
-    
-    
-    
+
+
+
     function infiniteScroll($rootScope, $window, $interval, THROTTLE_MILLISECONDS) {
-        
+
         return {
             scope: {
               infiniteScroll: '&',
@@ -1160,23 +1161,23 @@ var kapp = angular.module('kapp', [
             }
           };
     }
-    
-    
+
+
 
     angular.module('infinite-scroll' ,  [])
            .directive('infiniteScroll' ,  infiniteScroll)
            .value('THROTTLE_MILLISECONDS', null),
 
            infiniteScroll.$inject = ["$rootScope", "$window", "$interval", "THROTTLE_MILLISECONDS"];
-            
-    
+
+
 }(angular));
 
 
 
 (function(angular) {
-    
-    
+
+
     "use strict";
 
 
@@ -1192,7 +1193,7 @@ var kapp = angular.module('kapp', [
         });
     }
 
-    
+
     function CommentCtrl($scope, CommentEditUiService, ConfirmBoxUiService, Comment) {
 
         $scope.editComment = function() {
@@ -1211,17 +1212,17 @@ var kapp = angular.module('kapp', [
         }
 
 
-        
-        
+
+
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
     function ForgotPasswordUiService($modal) {
         return {
             open: function() {
@@ -1235,16 +1236,16 @@ var kapp = angular.module('kapp', [
             }
         };
     }
-    
-    
-    
+
+
+
     function ForgotPasswordCtrl($scope, $uibModalInstance, userService, InfoBoxUi) {
         var vm = this;
-        
+
         vm.jd = {};
         vm.processing = false;
         $scope.errors = {};
-        
+
         vm.processForgotPassword = function (form) {
             if(vm.processing) {
                 return;
@@ -1268,10 +1269,10 @@ var kapp = angular.module('kapp', [
             }
         };
     }
-    
-    
-    
-    
+
+
+
+
     function LoginUiService($modal) {
         return {
             open: function() {
@@ -1285,16 +1286,16 @@ var kapp = angular.module('kapp', [
             }
         };
     }
-    
-    
-    
+
+
+
     function LoginCtrl($scope, $uibModalInstance, userService, InfoBoxUi) {
         var vm = this;
-        
+
         vm.jd = {};
         vm.processing = false;
         $scope.errors = {};
-        
+
         vm.processLogin = function (form) {
             if(vm.processing) {
                 return;
@@ -1317,10 +1318,10 @@ var kapp = angular.module('kapp', [
                 });
             }
         };
-        
+
     }
-    
-    
+
+
     function AuthUiService($modal) {
         return {
             open: function(view) {
@@ -1339,13 +1340,13 @@ var kapp = angular.module('kapp', [
             }
         };
     }
-    
-    
+
+
     function AuthCtrl($scope, $uibModalInstance, userService, InfoBoxUi, view) {
         var vm = this;
-        
+
         vm.recaptcha_site_key = ksm_settings.recaptcha_site_key;
-        
+
         vm.setView = function(view) {
             vm.view = view;
             $scope.errors = {};
@@ -1357,16 +1358,16 @@ var kapp = angular.module('kapp', [
             $scope.success = false;
             $scope.success_msg = '';
         }
-        
+
         if(view) {
             vm.setView(view);
         }
-        
-        
+
+
         $scope.form_action = ksm_settings.ajax_url;
-        
-        
-        
+
+
+
         vm.processRecover = function (form) {
             if(vm.processing) {
                 return;
@@ -1386,11 +1387,11 @@ var kapp = angular.module('kapp', [
                         $scope.success = true;
                         $scope.success_msg = r.msg;
                     }
-                    
+
                 });
             }
         };
-        
+
         vm.processLogin = function (form) {
             if(vm.processing) {
                 return;
@@ -1401,7 +1402,7 @@ var kapp = angular.module('kapp', [
                 $scope.errors = {};
                 userService.login(vm.ld, function(r) {
                     vm.processing = false;
-                    
+
                     if(r.error) {
                         angular.forEach(r.errors, function(v, k) {
                             $scope.error = v;
@@ -1411,12 +1412,12 @@ var kapp = angular.module('kapp', [
                         $uibModalInstance.dismiss();
                         window.location = r.redirect;
                     }
-                    
+
                 });
             }
         };
-        
-        
+
+
         vm.processJoin = function (form) {
             if(vm.processing) {
                 //return;
@@ -1432,7 +1433,7 @@ var kapp = angular.module('kapp', [
                             $scope.errors[v.field] = {};
                             $scope.errors[v.field][v.rule] = v.msg;
                         });
-                        
+
                         if($scope.errors.recaptcha_response) {
                             grecaptcha.reset();
                         }
@@ -1444,12 +1445,12 @@ var kapp = angular.module('kapp', [
                 });
             }
         };
-        
-        
-        
+
+
+
     }
-    
-    
+
+
     function JoinUiService($modal) {
         return {
             open: function() {
@@ -1463,19 +1464,19 @@ var kapp = angular.module('kapp', [
             }
         };
     }
-    
-    
-    
+
+
+
     function JoinCtrl($scope, $uibModalInstance, userService, InfoBoxUi) {
         var vm = this;
-        
+
         vm.jd = {};
         vm.processing = false;
         $scope.errors = {};
-        
-        
-        
-        
+
+
+
+
         vm.processJoin = function (form) {
             if(vm.processing) {
                 return;
@@ -1498,47 +1499,47 @@ var kapp = angular.module('kapp', [
                 });
             }
         };
-        
+
     }
-    
 
 
-   
+
+
    angular.module("k.components.join", [])
           //.factory("Comment", Comment)
           .controller("JoinCtrl", JoinCtrl)
           .factory("JoinUiService", JoinUiService)
-  
+
           .controller("LoginCtrl", LoginCtrl)
           .factory("LoginUiService", LoginUiService)
-  
+
           .controller("AuthCtrl", AuthCtrl)
           .factory("AuthUiService", AuthUiService)
-  
+
           .controller("ForgotPasswordCtrl", ForgotPasswordCtrl)
           .factory("ForgotPasswordUiService", ForgotPasswordUiService),
-  
-  
+
+
           //.controller("CommentEditCtrl", CommentEditCtrl),
-       
+
 
     //Comment.$inject = ["$resource"],
     JoinUiService.$inject = ["$uibModal"],
     JoinCtrl.$inject = ["$scope", "$uibModalInstance", "userService", "InfoBoxUi"],
-    
+
     LoginUiService.$inject = ["$uibModal"],
     LoginCtrl.$inject = ["$scope", "$uibModalInstance", "userService", "InfoBoxUi"],
-    
+
     AuthUiService.$inject = ["$uibModal"],
     AuthCtrl.$inject = ["$scope", "$uibModalInstance", "userService", "InfoBoxUi", "view"],
-    
+
     ForgotPasswordUiService.$inject = ["$uibModal"],
     ForgotPasswordCtrl.$inject = ["$scope", "$uibModalInstance", "userService", "InfoBoxUi"];
-    
-    
-    
-    
-    
+
+
+
+
+
 }(angular));
 
 
@@ -1546,28 +1547,28 @@ var kapp = angular.module('kapp', [
 
 
 (function(angular) {
-    
+
     function kValidateBetweenLength() {
         return {
             restrict: "A",
-            
+
             require: 'ngModel',
             scope: {
                 kValidateBetweenLength: '=betweenLength'
             },
-            
+
             link : function(scope, ele, attrs, ctrl) {
                 ctrl.$validators.betweenLength = function (modelValue, viewValue) {
-                    
+
                     if(typeof viewValue == "undefined") {
                         return false;
                     }
-                    
+
                     var length_param = angular.fromJson(attrs.kValidateBetweenLength);
                     var min = parseInt(length_param.min);
                     var max = parseInt(length_param.max);
                     var length = parseInt(viewValue.length);
-                    
+
                     if (length >= min && length <= max) {
                         return true;
                     }
@@ -1576,19 +1577,19 @@ var kapp = angular.module('kapp', [
             }
         }
     }
-    
-    
-    
+
+
+
     function kValidateAlphaNumSpace() {
         return {
             restrict: "A",
-            
+
             require: 'ngModel',
-            
-            
+
+
             link : function(scope, ele, attrs, ctrl) {
                 ctrl.$validators.alphaNumSpace = function (modelValue, viewValue) {
-                    
+
                     if(typeof viewValue == "undefined") {
                         return false;
                     }
@@ -1601,24 +1602,24 @@ var kapp = angular.module('kapp', [
             }
         }
     }
-    
-    
+
+
     function kValidateEmail() {
         return {
             restrict: "A",
-            
+
             require: 'ngModel',
-            
-            
+
+
             link : function(scope, ele, attrs, ctrl) {
                 ctrl.$validators.email = function (modelValue, viewValue) {
-                    
+
                     if(typeof viewValue == "undefined") {
                         return false;
                     }
-                    
+
                     var REGEX = /^[\w-]+(\.[\w-]+)*@([a-z0-9-]+(\.[a-z0-9-]+)*?\.[a-z]{2,6}|(\d{1,3}\.){3}\d{1,3})(:\d{4})?$/i;
-                    
+
                     if (REGEX.test(viewValue)) {
                         return true;
                     }
@@ -1627,13 +1628,13 @@ var kapp = angular.module('kapp', [
             }
         }
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     function kValidateDisplayNameAvailable($q, userService) {
-        
+
         return {
             require: 'ngModel',
             link: function (scope, element, attrs, ctrl) {
@@ -1649,24 +1650,24 @@ var kapp = angular.module('kapp', [
             }
         };
     }
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     angular.module('k.validation', [])
            .directive('kValidateBetweenLength', kValidateBetweenLength)
            .directive('kValidateAlphaNumSpace', kValidateAlphaNumSpace)
            .directive('kValidateEmail', kValidateEmail)
            .directive('kValidateDisplayNameAvailable', kValidateDisplayNameAvailable),
-   
+
    kValidateDisplayNameAvailable.$inject = ["$q", "userService"];
-   
-   
-   
-    
+
+
+
+
 }(angular));
 
 
@@ -1676,16 +1677,16 @@ var kapp = angular.module('kapp', [
     "use strict";
 
 
-    
+
     function InfoBoxUi($modal) {
         return {
             open: function(name, info, animation) {
                 var _temp = name ? 'info-dialog/'+name : 'info-dialog';
-                
-                if (typeof animation === "undefined" || animation === null) { 
+
+                if (typeof animation === "undefined" || animation === null) {
                     animation = true
                 }
-                
+
                 return $modal.open({
                     templateUrl:ksm_settings.ksm_url+"partials/"+ _temp+'.html',
                     backdrop: "static",
@@ -1706,10 +1707,10 @@ var kapp = angular.module('kapp', [
         var vm = this;
         $scope.info = info;
     }
-    
-    
-    
-    
+
+
+
+
     function ConfirmBoxUiService($modal) {
         return {
 
@@ -1748,21 +1749,21 @@ var kapp = angular.module('kapp', [
 
     }
 
-    
-    
-    
-    
-    
+
+
+
+
+
 
     angular.module("k.components.kui", ["ui.bootstrap"])
            .controller("InfoBoxCtrl", InfoBoxCtrl)
            .controller("ConfirmBoxCtrl", ConfirmBoxCtrl)
            .factory("ConfirmBoxUiService", ConfirmBoxUiService)
-           .factory("InfoBoxUi", InfoBoxUi), 
+           .factory("InfoBoxUi", InfoBoxUi),
            InfoBoxUi.$inject = ["$uibModal"],
            ConfirmBoxUiService.$inject = ["$uibModal", "$q"],
            InfoBoxCtrl.$inject = ["$scope", "$uibModalInstance", "info"];
            ConfirmBoxCtrl.$inject = ["$uibModalInstance", "confirm", "$q"];
-           
-           
+
+
 }(angular));
