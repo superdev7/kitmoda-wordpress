@@ -1322,6 +1322,9 @@ body {
   -webkit-transform: none;
   transform: none;
 }
+.v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation a:hover {
+  border-color: transparent;
+}
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul {
   margin-top: 0px !important;
   margin-right: 8px;
@@ -1358,7 +1361,6 @@ body {
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li a:hover {
   text-decoration: none;
-  border: none;
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li .icon {
   margin-top: 18px;

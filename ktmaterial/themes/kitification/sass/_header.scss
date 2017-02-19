@@ -52,6 +52,10 @@
 				top: 0;
 				@include transform(none);
 
+				a:hover {
+					border-color: transparent;
+				}
+
 				ul {
 					margin-top: 0px !important;
 					margin-right: 8px;
@@ -91,7 +95,6 @@
 
 							&:hover {
 								text-decoration: none;
-								border: none;
 							}
 						}
 
