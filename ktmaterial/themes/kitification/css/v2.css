@@ -2326,7 +2326,7 @@ body {
 }
 .v2 #top_banner_box_container_community .mosaic_banner_community_horizontal_dark_overlay {
   position: absolute;
-  top: 82px;
+  top: 0;
   height: 303px;
   width: 100%;
   display: block;
