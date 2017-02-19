@@ -281,9 +281,10 @@ var kuldr = Base.extend({
             //console.log(_this.max_files, $(_this.container+ ' .items .item').length)
         
             if(_this.max_files && $(_this.container+ ' .items .item').length >= _this.max_files) {
-                _this.files_limit_exceeded();
-                $(_this.container).trigger('files_limit_exceeded');
-                return false;
+               // _this.files_limit_exceeded();
+               // $(_this.container).trigger('files_limit_exceeded');
+               // return false;
+			   return;
             }
             
             
@@ -292,7 +293,7 @@ var kuldr = Base.extend({
         });
         
 		//Comment this out later
-        up.refresh();
+        //up.refresh();
         
         if(_this.PLU.state != plupload.UPLOADING) {
             _this.PLU.start();
