@@ -541,6 +541,7 @@ var ks3uplr = kuldr.extend({
             var d = this.sa;
             d.k = f.s3Key;
             $.ajax({type : 'POST',url:ksm_settings.ajax_url,data : this.sa,success: function (r) {
+				console.log(r);
                 o = $.parseJSON(r);    
                 if(o.success) {
                     $(item+ ' .uid').val(o.k);
