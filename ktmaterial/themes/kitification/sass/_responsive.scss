@@ -17,11 +17,11 @@
 }
 
 @include breakpoint($md) {
-	.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li {
+	.posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li {
 		margin-right: 30px;
 	}
 
-	.v2 .posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li {
+	.posts .post .post_content_container_highlight .post_content_container .post_content .footer ul.post_stats li {
 		margin-left: 62px;
 	}
 }
