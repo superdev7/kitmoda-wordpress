@@ -63,7 +63,7 @@ class KSM_S3 {
     
     static function compose_upload_success() {
         global $user_ID, $user_login, $wpdb;
-        $key = sanitize_key($_POST['k']);
+        $key = $_POST['k'];
         $starts_width = "ksm/attachments/{$user_login}/";
         
         if($key && $user_login && (preg_match("#^{$starts_width}#", $key) === 1)) {
@@ -152,8 +152,8 @@ class KSM_S3 {
         
         global $user_ID, $user_login, $wpdb;
         
-        $uploader_name = sanitize_text_field($_POST['up_name']);
-        $key = sanitize_key($_POST['k']);
+        $uploader_name = $_POST['up_name'];
+        $key = $_POST['k'];
         
         $result = array('success' => false);
         
