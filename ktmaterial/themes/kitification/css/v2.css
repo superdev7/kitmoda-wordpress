@@ -1888,6 +1888,7 @@ body {
   z-index: 2;
   top: auto;
   bottom: 0;
+  width: 100%;
 }
 .v2 .triangle_banner_svg {
   background: url(../../../plugins/kitmoda_social_media/images/bluTrianglebanner4.svg);
