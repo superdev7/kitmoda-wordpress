@@ -4,6 +4,8 @@
   padding-top: 21px;
   padding-bottom: 35px;
   height: 250px;
+  position: relative;
+  overflow: hidden;
   @include box-shadow(0 5px 5px rgba(0, 0, 0, 0.75) inset);
 
   #top_banner_box_v2 {
