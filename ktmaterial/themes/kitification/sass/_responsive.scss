@@ -24,6 +24,14 @@
 	.page_footer .kit_footer_container .footer_links .kit_footer_section, .v2 .page_push .kit_footer_container .footer_links .kit_footer_section {
 		margin-left: 62px;
 	}
+
+	.header-outer .ksm-menu-sub-menu_container .shrink-wrap-backdrop .shrink-wrap-findcenter .shrink-wrap-inner-highlight {
+		&.community { left: -15; }
+		&.studio { left: 0%; }
+		&.collaboration { left: 15%; }
+		&.store { left: 30%; }
+		&.account { left: 55%; }
+	}
 }
 
 @include breakpoint($lg) {
