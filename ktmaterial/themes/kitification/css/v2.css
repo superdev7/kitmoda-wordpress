@@ -1514,6 +1514,7 @@ body {
 }
 .v2 .header-outer .site-header-kitmoda .site_header_overlay_vert .main-navigation ul li.settings_nav .user_nav .menu_btn:hover ~ .menu_kitmoda {
   top: 50px;
+  display: block;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
@@ -1536,6 +1537,7 @@ body {
   top: -40px;
   right: -33px;
   left: -150px;
+  display: none;
   -moz-transition: all 0.2s ease-in-out 0.06s;
   -o-transition: all 0.2s ease-in-out 0.06s;
   -webkit-transition: all 0.2s ease-in-out;

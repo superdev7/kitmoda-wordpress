@@ -265,6 +265,7 @@
 
 										~ .menu_kitmoda {
 											top: 50px;
+											display: block;
 											@include opacity(1);
 										}
 									}
@@ -290,6 +291,7 @@
 									top: -40px;
 									right: -33px;
 									left: -150px;
+									display: none;
 									@include transition(all .2s ease-in-out .06s);
 									@include opacity(0);
 
