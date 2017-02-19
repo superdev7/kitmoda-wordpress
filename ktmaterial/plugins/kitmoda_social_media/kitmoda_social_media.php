@@ -459,8 +459,7 @@ class kitmoda_Social_Media {
 
         add_thickbox();
 
-        if (!is_front_page())
-            ksm_enqueue_style('ksm_style', trailingslashit(KSM_BASE_URL).'css/style.css');
+        // ksm_enqueue_style('ksm_style', trailingslashit(KSM_BASE_URL).'css/style.css');
 
 
         wp_enqueue_script('tinymce', includes_url().'js/tinymce/tinymce.min.js');
@@ -476,8 +475,7 @@ class kitmoda_Social_Media {
 
 
 
-        if (!is_front_page())
-            wp_enqueue_style('google-roboto','http://fonts.googleapis.com/css?family=Roboto|Montserrat');
+        // wp_enqueue_style('google-roboto','http://fonts.googleapis.com/css?family=Roboto|Montserrat');
 
 
         if(is_page(ksm_get_page_id('page-edit_profile')) ||
