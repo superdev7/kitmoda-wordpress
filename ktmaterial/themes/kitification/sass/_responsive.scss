@@ -14,6 +14,14 @@
 	.header-outer .ksm-menu-container .ksm-menu ul li a {
 		font-size: 11px;
 	}
+
+	.header-outer .ksm-menu-sub-menu_container .shrink-wrap-backdrop .shrink-wrap-findcenter .shrink-wrap-inner-highlight {
+		&.community { left: -20%; }
+		&.studio { left: -5%; }
+		&.collaboration { left: 10%; }
+		&.store { left: 25%; }
+		&.account { left: 50%; }
+	}
 }
 
 @include breakpoint($md) {
