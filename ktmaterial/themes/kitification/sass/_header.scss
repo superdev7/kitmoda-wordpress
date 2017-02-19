@@ -281,6 +281,7 @@
 
 									&:hover + .menu_kitmoda {
 										top: 50px;
+										display: block;
 										@include opacity(1);
 									}
 								}
