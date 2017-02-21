@@ -466,7 +466,8 @@ var kuldr = Base.extend({
             $(this.container+" li.poslock").each(function () {
                 $(this).attr("id", "poslock-" + $(this).index());
             });
-            _this.setSort();
+            //_this.setSort();
+			_this.setDragDrop();
         }
         
         this.PLU.init();
@@ -719,9 +720,151 @@ var kpiu = kimgupl.extend({
         $(item_ele).addClass('empty').removeAttr('id');
         $(this.container).trigger("onItemRemove");
     } ,
-    
-    
-    setSort : function() {
+     /******  Method to  handle drag-and-drop interaction  ******************/
+    setDragDrop: function(){
+		
+		var droppableParent;
+	
+		//Setting DIV element to be draggable
+		$('li .b2').draggable({
+			revert: 'invalid',
+			revertDuration: 200,
+			start: function () {
+			droppableParent = $(this).parent();
+		
+			$(this).addClass('being-dragged');
+			
+		},
+		stop: function () {
+			$(this).removeClass('being-dragged');
+		}
+	});
+	//Setting where item will be dropped
+	$('ul li.item').droppable({
+		hoverClass: 'drop-hover',
+		//Handling Drop Action
+		drop: function (event, ui) {
+			//Get Items Being Dragged and Target Container
+			var draggable = $(ui.draggable[0]),
+				draggableOffset = draggable.offset(),
+				container = $(event.target),
+				containerOffset = container.offset();
+			
+			
+			var target_idx = $('ul li.item').index(this); //Index for Target Container
+			var dragged_idx = $(ui.draggable[0]).parent().index() //Index of Drag Container
+			
+			//Create instances of both target and dragged elements
+			var ele_target = $("ul li.item").get(target_idx);
+			var ele_dragged = $("ul li.item").get(dragged_idx);
+			
+			//Get ID of each of the target and dragged elements to check if an image has been uploaded
+			var id_target = $(ele_target).attr('id');
+			var id_dragged = $(ele_dragged).attr('id');
+			
+			//Get class of the target and dragged elements
+			var cls_target = $(ele_target).attr('class');
+			var cls_dragged = $(ele_dragged).attr('class');
+			
+			//Check if Target Element is Empty
+			if(id_target == '')
+			{
+				//Check if Dragged Element is Empty
+				if(id_dragged == '')
+				{
+					//Set both element to Empty
+					
+					//Setting Dragged Element to Empty
+					$(ele_dragged).find('.pub_feature').attr('src','');
+					$(ele_dragged).find('.pub_thumb').attr('src','');
+					$(ele_dragged).find('.uid').attr('value','');
+					$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					$(ele_dragged+' .b3').html('');
+					$(ele_dragged).attr('id', 'poslock-1');
+					
+					//Setting Target Element to Empty
+					$(ele_target).find('.pub_feature').attr('src','');
+					$(ele_target).find('.pub_thumb').attr('src','');
+					$(ele_target).find('.uid').attr('value','');
+					$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					$(ele_target+' .b3').html('');
+					$(ele_target).attr('id', 'poslock-1');
+				}
+				else
+				{
+					//If only Target Element is Empty then replace Target Element with Dragged Element parameters
+					$(ele_target).attr('id',id_dragged);
+					$(ele_target).attr('class',cls_dragged);
+					
+					//Setting Dragged Element to Empty
+					$(ele_dragged).find('.pub_feature').attr('src','');
+					$(ele_dragged).find('.pub_thumb').attr('src','');
+					$(ele_dragged).find('.uid').attr('value','');
+					$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					$(ele_dragged+' .b3').html('');
+					$(ele_dragged).attr('id', 'poslock-1');
+				}
+			}
+			else
+			{
+				//Check to see if Dragged Element is Empty
+				if(id_dragged == '')
+				{
+					//Replace Dragged Element with Target Element parameters
+					$(ele_dragged).attr('id',id_target);
+					$(ele_dragged).attr('class',cls_target);
+					
+					//Setting Target Element to Empty
+					$(ele_target).find('.pub_feature').attr('src','');
+					$(ele_target).find('.pub_thumb').attr('src','');
+					$(ele_target).find('.uid').attr('value','');
+					$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					$(ele_target+' .b3').html('');
+					$(ele_target).attr('id', 'poslock-1');
+				}
+				else
+				{
+					//Swapping Element Parameters if Both Contain information
+					$(ele_target).attr('id',id_dragged);
+					$(ele_dragged).attr('id',id_target);
+				
+					$(ele_target).attr('class',cls_dragged);
+					$(ele_dragged).attr('class',cls_target);
+				}
+			}
+
+			
+			//Check to see if there is an interaction with the large featured item
+			if($('ul li.item').index(this) == 0)
+			{
+				//Drop the element and resize accordingly
+				$('.b2', event.target).appendTo(droppableParent).css({opacity: 0, width:125,height:90}).animate({opacity: 1}, 200);
+				draggable.appendTo(container).css({left: draggableOffset.left - containerOffset.left, top: draggableOffset.top - containerOffset.top,width:198,height:136}).animate({left: 0, top: 0}, 50);
+				
+			}
+			else
+			{
+				//Check if the dragged item is the large featured item
+				if($(ui.draggable[0]).parent().index() == 0)
+				{
+					//Drop the elements and resize accordingly to fit placeholder
+					$('.b2', event.target).appendTo(droppableParent).css({opacity: 0, width:198,height:136}).animate({opacity: 1}, 200);
+					draggable.appendTo(container).css({left: draggableOffset.left - containerOffset.left, top: draggableOffset.top - containerOffset.top,width:125,height:90}).animate({left: 0, top: 0}, 50);
+				}
+				else
+				{
+					//Drop elements, no re-sizing required
+					$('.b2', event.target).appendTo(droppableParent).css({opacity: 0}).animate({opacity: 1}, 200);
+					draggable.appendTo(container).css({left: draggableOffset.left - containerOffset.left, top: draggableOffset.top - containerOffset.top}).animate({left: 0, top: 0}, 50);
+
+				}
+			}
+		}
+	});
+	},
+    // Commenting out old setSort Function - Not Required
+	// *************************************************
+	/*setSort : function() {
                 this.is_dragging_first = true;
         
         var _this = this;
@@ -791,7 +934,7 @@ var kpiu = kimgupl.extend({
              
              
              
-         });
+         });*/
        /* var _this = this;
         
         $(_this.container+' ul li .inner').draggable({
@@ -851,7 +994,7 @@ var kpiu = kimgupl.extend({
               $(drop_container).removeClass('dragenter');
             }
         });*/
-    } , 
+    //} , 
     
     
     
