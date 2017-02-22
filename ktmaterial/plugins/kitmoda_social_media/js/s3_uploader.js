@@ -756,21 +756,37 @@ var kpiu = kimgupl.extend({
 			
 			//Create instances of both target and dragged elements
 			var ele_target = $("ul li.item").get(target_idx);
-			var ele_dragged = $("ul li.item").get(dragged_idx - 1);
+			if(dragged_idx > 0)//Check if element is the first element
+			{
+				 ele_dragged = $("ul li.item").get(dragged_idx - 1);
+			}
+			else
+			{
+				ele_dragged = $("ul li.item").get(dragged_idx);
+			}
 			
 			//Get ID of each of the target and dragged elements to check if an image has been uploaded
 			var id_target = $(ele_target).attr('id');
 			var id_dragged = $(ele_dragged).attr('id');
+
+			var pub_feature_target_src =  $(ele_target).find('.pub_feature').attr('src');
+			var pub_feature_dragged_src =  $(ele_dragged).find('.pub_feature').attr('src');	
+
+			var pub_thumb_target_src =  $(ele_target).find('.pub_thumb').attr('src');
+			var pub_thumb_dragged_src =  $(ele_dragged).find('.pub_thumb').attr('src');		
 			
+			var uid_target		= $(ele_target).find('.uid').attr('value');
+			var uid_dragged		= $(ele_dragged).find('.uid').attr('value');	
+						
 			//Get class of the target and dragged elements
 			var cls_target = $(ele_target).attr('class');
 			var cls_dragged = $(ele_dragged).attr('class');
 			
 			//Check if Target Element is Empty
-			if(id_target == '')
+			if(id_target == '' || id_target == null)
 			{
 				//Check if Dragged Element is Empty
-				if(id_target == '' || id_target == null)
+				if(id_dragged == '' || id_dragged == null)
 				{
 					//Set both element to Empty
 					
@@ -780,7 +796,7 @@ var kpiu = kimgupl.extend({
 					$(ele_dragged).find('.uid').attr('value','');
 					$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
 					//$(ele_dragged+' .b3').html('');
-					$(ele_dragged).attr('id', 'poslock-1');
+					//$(ele_dragged).attr('id', 'poslock-1');
 					
 					//Setting Target Element to Empty
 					$(ele_target).find('.pub_feature').attr('src','');
@@ -788,7 +804,7 @@ var kpiu = kimgupl.extend({
 					$(ele_target).find('.uid').attr('value','');
 					$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
 					//$(ele_target+' .b3').html('');
-					$(ele_target).attr('id', 'poslock-1');
+					//$(ele_target).attr('id', 'poslock-1');
 				}
 				else
 				{
@@ -826,8 +842,8 @@ var kpiu = kimgupl.extend({
 				{
 					//Swapping Element Parameters if Both Contain information
 					$(ele_target).attr('id',id_dragged);
-					$(ele_target).find('.pub_feature').attr('src',$(ele_dragged).find('.pub_feature').attr('src'));
-					$(ele_target).find('.pub_thumb').attr('src',$(ele_dragged).find('.pub_thumb').attr('src'));
+					//$(ele_target).find('.pub_feature').attr('src',$(ele_dragged).find('.pub_feature').attr('src'));
+					//$(ele_target).find('.pub_thumb').attr('src',$(ele_dragged).find('.pub_thumb').attr('src'));
 					$(ele_target).find('.uid').attr('value',$(ele_dragged).find('.uid').attr('src'));
 					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
 					//$(ele_target).find('.b3').html($(ele_dragged).find('.b3').html());
@@ -835,8 +851,8 @@ var kpiu = kimgupl.extend({
 					$(ele_target).attr('class',$(ele_dragged).attr('class'));
 					
 					$(ele_dragged).attr('id',id_target);
-					$(ele_dragged).find('.pub_feature').attr('src',$(ele_target).find('.pub_feature').attr('src'));
-					$(ele_dragged).find('.pub_thumb').attr('src',$(ele_target).find('.pub_thumb').attr('src'));
+					//$(ele_dragged).find('.pub_feature').attr('src',$(ele_target).find('.pub_feature').attr('src'));
+					//$(ele_dragged).find('.pub_thumb').attr('src',$(ele_target).find('.pub_thumb').attr('src'));
 					$(ele_dragged).find('.uid').attr('value',$(ele_target).find('.uid').attr('src'));
 					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
 					//$(ele_dragged).find('.b3').html($(ele_target).find('.b3').html());
