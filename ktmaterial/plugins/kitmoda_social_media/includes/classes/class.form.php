@@ -24,7 +24,7 @@ class KSM_Form extends KSM_Object {
     }
     
     
-    public function prepare_fields() {
+    /*public function prepare_fields() {
         
         
         
@@ -51,10 +51,10 @@ class KSM_Form extends KSM_Object {
             
         }
         
-    }
+    }*/
     
     
-    /*
+    
     public function prepare_fields() {
         
         foreach($this->config as $section_name => $section) {
@@ -94,7 +94,7 @@ class KSM_Form extends KSM_Object {
         }
         
     }
-    */
+    
     
     
     public function get_field($f) {
