@@ -467,7 +467,7 @@ var kuldr = Base.extend({
                 $(this).attr("id", "poslock-" + $(this).index());
             });
             //_this.setSort();
-			_this.setDragDrop();
+			this.setDragDrop();
         }
         
         this.PLU.init();
@@ -783,10 +783,10 @@ var kpiu = kimgupl.extend({
 			var cls_dragged = $(ele_dragged).attr('class');
 			
 			//Check if Target Element is Empty
-			if(id_target == '' || id_target == null)
+			if(id_target == '' || id_target == null || id_target == 'undefined' )
 			{
 				//Check if Dragged Element is Empty
-				if(id_dragged == '' || id_dragged == null)
+				if(id_dragged == '' || id_dragged == null || id_dragged == 'undefined')
 				{
 					//Set both element to Empty
 					
@@ -810,13 +810,25 @@ var kpiu = kimgupl.extend({
 				{
 					//If only Target Element is Empty then replace Target Element with Dragged Element parameters
 					$(ele_target).attr('id',id_dragged);
-					$(ele_target).attr('class',cls_dragged);
+					//$(ele_target).attr('class',cls_dragged);
+					$(ele_target).find('.uid').attr('value',uid_dragged);
+					//$(ele_target).attr('class',cls_dragged);
+					//$(ele_target).find('.pub_feature').attr('src',pub_feature_dragged_src);
+					//$(ele_target).find('.pub_thumb').attr('src',pub_thumb_dragged_src);
+					
+					if(target_idx == 0)
+					{
+						//Found Featured! Target is Zero
+						$(ele_dragged).find('.pub_feature').attr('style',"display:inline");
+						$(ele_dragged).find('.pub_thumb').attr('style',"display:none");
+					}
 					
 					//Setting Dragged Element to Empty
+					$(ele_dragged).attr('id', null);
 					//$(ele_dragged).find('.pub_feature').attr('src','');
 					//$(ele_dragged).find('.pub_thumb').attr('src','');
-					//$(ele_dragged).find('.uid').attr('value','');
-					//$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					$(ele_dragged).find('.uid').attr('value',null);
+					$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
 					//$(ele_dragged+' .b3').html('');
 					//$(ele_dragged).attr('id', 'poslock-1');
 				}
@@ -824,17 +836,30 @@ var kpiu = kimgupl.extend({
 			else
 			{
 				//Check to see if Dragged Element is Empty
-				if(id_dragged == '' || id_dragged == null)
+				if(id_dragged == '' || id_dragged == null || id_dragged == 'undefined')
 				{
 					//Replace Dragged Element with Target Element parameters
 					$(ele_dragged).attr('id',id_target);
 					$(ele_dragged).attr('class',cls_target);
 					
+					//$(ele_dragged).find('.pub_feature').attr('src',pub_feature_target_src);
+					//$(ele_dragged).find('.pub_thumb').attr('src',pub_thumb_target_src);
+					$(ele_dragged).find('.uid').attr('value',uid_target);
+					
+					if(dragged_idx == 0)
+					{
+						//Found Featured! Dragged is Zero
+						$(ele_target).find('.pub_feature').attr('style',"display:inline");
+						$(ele_target).find('.pub_thumb').attr('style',"display:none");
+					}
+						
+					
 					//Setting Target Element to Empty
+					$(ele_target).attr('id', null);
 					//$(ele_target).find('.pub_feature').attr('src','');
 					//$(ele_target).find('.pub_thumb').attr('src','');
-					//$(ele_target).find('.uid').attr('value','');
-					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					$(ele_target).find('.uid').attr('value',null);
+					$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
 					//$(ele_target+' .b3').html('');
 					//$(ele_target).attr('id', 'poslock-1');
 				}
@@ -849,6 +874,12 @@ var kpiu = kimgupl.extend({
 					//$(ele_target).find('.b3').html($(ele_dragged).find('.b3').html());
 					//$(ele_target).attr('id', 'poslock-1');
 					$(ele_target).attr('class',$(ele_dragged).attr('class'));
+					if(target_idx == 0)
+					{
+						alert("Found Featured! Target is Zero");
+						$(ele_dragged).find('.pub_feature').attr('style',"display:inline");
+						$(ele_dragged).find('.pub_thumb').attr('style',"display:none");
+					}
 					
 					$(ele_dragged).attr('id',id_target);
 					//$(ele_dragged).find('.pub_feature').attr('src',$(ele_target).find('.pub_feature').attr('src'));
@@ -858,6 +889,12 @@ var kpiu = kimgupl.extend({
 					//$(ele_dragged).find('.b3').html($(ele_target).find('.b3').html());
 					//$(ele_target).attr('id', 'poslock-1');
 					$(ele_dragged).attr('class',$(ele_target).attr('class'));
+					if(dragged_idx == 0)
+					{
+						alert("Found Featured! Dragged is Zero");
+						$(ele_target).find('.pub_feature').attr('style',"display:inline");
+						$(ele_target).find('.pub_thumb').attr('style',"display:none");
+					}					
 				}
 			}
 
@@ -887,6 +924,23 @@ var kpiu = kimgupl.extend({
 
 				}
 			}
+			
+			var ictr = 0;
+			
+			var ele_position_set = $("ul li.item").get(ictr);
+			while(ele_position_set != null)
+			{
+				var id_ele_position_set = $(ele_position_set).attr('id');
+				if(id_ele_position_set == null)
+				{
+					$(id_ele_position_set).attr('id', 'poslock-1');
+					return;
+				}
+				ictr++;
+				var ele_position_set = $("ul li.item").get(ictr);
+			}
+				
+			
 		}
 	});
 	},
