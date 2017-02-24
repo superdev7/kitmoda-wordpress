@@ -818,7 +818,6 @@ var kpiu = kimgupl.extend({
 					
 					if(target_idx == 0)
 					{
-						//Found Featured! Target is Zero
 						$(ele_dragged).find('.pub_feature').attr('style',"display:inline");
 						$(ele_dragged).find('.pub_thumb').attr('style',"display:none");
 					}
@@ -848,7 +847,6 @@ var kpiu = kimgupl.extend({
 					
 					if(dragged_idx == 0)
 					{
-						//Found Featured! Dragged is Zero
 						$(ele_target).find('.pub_feature').attr('style',"display:inline");
 						$(ele_target).find('.pub_thumb').attr('style',"display:none");
 					}
@@ -876,7 +874,6 @@ var kpiu = kimgupl.extend({
 					$(ele_target).attr('class',$(ele_dragged).attr('class'));
 					if(target_idx == 0)
 					{
-						alert("Found Featured! Target is Zero");
 						$(ele_dragged).find('.pub_feature').attr('style',"display:inline");
 						$(ele_dragged).find('.pub_thumb').attr('style',"display:none");
 					}
@@ -891,7 +888,6 @@ var kpiu = kimgupl.extend({
 					$(ele_dragged).attr('class',$(ele_target).attr('class'));
 					if(dragged_idx == 0)
 					{
-						alert("Found Featured! Dragged is Zero");
 						$(ele_target).find('.pub_feature').attr('style',"display:inline");
 						$(ele_target).find('.pub_thumb').attr('style',"display:none");
 					}					
