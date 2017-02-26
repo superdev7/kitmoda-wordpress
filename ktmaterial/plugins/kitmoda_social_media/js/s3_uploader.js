@@ -727,8 +727,9 @@ var kpiu = kimgupl.extend({
 	
 		//Setting DIV element to be draggable
 		$('li .b2').draggable({
-			revert: 'invalid',
-			revertDuration: 200,
+			revert: "invalid",
+			snap: "li.item",
+			stack: ".b2",
 			start: function () {
 			droppableParent = $(this).parent();
 		
