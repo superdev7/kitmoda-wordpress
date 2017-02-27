@@ -759,11 +759,21 @@ var kpiu = kimgupl.extend({
 			var ele_target = $("ul li.item").get(target_idx);
 			if(dragged_idx > 0)//Check if element is the first element
 			{
-				 ele_dragged = $("ul li.item").get(dragged_idx - 1);
+				if(dragged_idx > 12)
+				{
+					ele_dragged = $("ul li.item").get(dragged_idx-3);
+				}
+				else
+				{
+					if(dragged_idx > 6)
+						ele_dragged = $("ul li.item").get(dragged_idx-2);
+					else
+						ele_dragged = $("ul li.item").get(dragged_idx-1);
+				}
 			}
 			else
 			{
-				ele_dragged = $("ul li.item").get(dragged_idx);
+				ele_dragged = $("ul li.item").get(0);
 			}
 			
 			//Get ID of each of the target and dragged elements to check if an image has been uploaded
@@ -813,6 +823,7 @@ var kpiu = kimgupl.extend({
 					$(ele_target).attr('id',id_dragged);
 					//$(ele_target).attr('class',cls_dragged);
 					$(ele_target).find('.uid').attr('value',uid_dragged);
+					$(ele_target).removeClass('empty');
 					//$(ele_target).attr('class',cls_dragged);
 					//$(ele_target).find('.pub_feature').attr('src',pub_feature_dragged_src);
 					//$(ele_target).find('.pub_thumb').attr('src',pub_thumb_dragged_src);
@@ -828,7 +839,8 @@ var kpiu = kimgupl.extend({
 					//$(ele_dragged).find('.pub_feature').attr('src','');
 					//$(ele_dragged).find('.pub_thumb').attr('src','');
 					$(ele_dragged).find('.uid').attr('value',null);
-					$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					//$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ');
 					//$(ele_dragged+' .b3').html('');
 					//$(ele_dragged).attr('id', 'poslock-1');
 				}
@@ -841,10 +853,12 @@ var kpiu = kimgupl.extend({
 					//Replace Dragged Element with Target Element parameters
 					$(ele_dragged).attr('id',id_target);
 					$(ele_dragged).attr('class',cls_target);
+					$(ele_dragged).removeClass('empty');
 					
 					//$(ele_dragged).find('.pub_feature').attr('src',pub_feature_target_src);
 					//$(ele_dragged).find('.pub_thumb').attr('src',pub_thumb_target_src);
 					$(ele_dragged).find('.uid').attr('value',uid_target);
+					
 					
 					if(dragged_idx == 0)
 					{
@@ -858,7 +872,8 @@ var kpiu = kimgupl.extend({
 					//$(ele_target).find('.pub_feature').attr('src','');
 					//$(ele_target).find('.pub_thumb').attr('src','');
 					$(ele_target).find('.uid').attr('value',null);
-					$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					(ele_target).removeClass('ui-sortable-handle').addClass('empty ');
+					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
 					//$(ele_target+' .b3').html('');
 					//$(ele_target).attr('id', 'poslock-1');
 				}
@@ -920,21 +935,6 @@ var kpiu = kimgupl.extend({
 					draggable.appendTo(container).css({left: draggableOffset.left - containerOffset.left, top: draggableOffset.top - containerOffset.top}).animate({left: 0, top: 0}, 50);
 
 				}
-			}
-			
-			var ictr = 0;
-			
-			var ele_position_set = $("ul li.item").get(ictr);
-			while(ele_position_set != null)
-			{
-				var id_ele_position_set = $(ele_position_set).attr('id');
-				if(id_ele_position_set == null)
-				{
-					$(id_ele_position_set).attr('id', 'poslock-1');
-					return;
-				}
-				ictr++;
-				var ele_position_set = $("ul li.item").get(ictr);
 			}
 				
 			
