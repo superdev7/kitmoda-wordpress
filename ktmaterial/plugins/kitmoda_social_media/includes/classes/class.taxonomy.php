@@ -287,7 +287,9 @@ class KSM_Taxonomy {
         foreach($terms as $t) :
             $lbl = $t->label ? $t->label : $t->name;
             $vlu = $args['value'] ? $t->{$args['value']} : $t->term_id;
-            echo '<option class="level-0" value="'.$vlu.'">'.$lbl.'</option>';
+			if $lbl != 'Uncategorized':
+				echo '<option class="level-0" value="'.$vlu.'">'.$lbl.'</option>';
+			endif;
         endforeach;
         
         echo '</select><div class="clr"></div></div>';
