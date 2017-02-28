@@ -65,7 +65,7 @@
                 
 						<div class="kcat" style="margin-bottom: 25px;">
 						
-                    <?=KSM_Taxonomy::dropdown(array('label'=>'Main Category', 'orderby' => 'term_id', 'order' => 'ASC'));?>
+                    <?=KSM_Taxonomy::dropdown(array('label'=>'Main Category', 'orderby' => 'term_id', 'order' => 'ASC', 'exclude' => 'uncategorized'));?>
                 </div>
                 
                 
