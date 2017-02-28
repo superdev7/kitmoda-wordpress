@@ -52,7 +52,7 @@
             <div class="field_group">
                 
                 <div class="kcat">
-                    <?=KSM_Taxonomy::dropdown(array('label'=>'Main Category'));?>
+                    <?=KSM_Taxonomy::dropdown(array('label'=>'Main Category', 'orderby' => 'term_id', 'order' => 'DESC'));?>
                 </div>
                 
                 
