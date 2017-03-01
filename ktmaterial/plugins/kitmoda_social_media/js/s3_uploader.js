@@ -277,41 +277,42 @@ var kuldr = Base.extend({
 			}
 		
 		}
+		else
+		{
         
-        
-        
-        if(_this.max_files == 1) {
-            //console.log(_this.max_files);
-            $(_this.container+ ' .items .item').each(function() {
-                _this.cancelFile($(this).attr('id'));
-            });
-        }
-        
-        
-        
-        
-        plupload.each(files, function(file) {
-            
-            //console.log(_this.max_files, $(_this.container+ ' .items .item').length)
-        
-            if(_this.max_files && $(_this.container+ ' .items .item').length >= _this.max_files) {
-               // _this.files_limit_exceeded();
-               // $(_this.container).trigger('files_limit_exceeded');
-               // return false;
-			   return;
-            }
-            
-            
-            _this.files.push(file);
-            _this.queue_file(file);
-        });
-        
-		//Comment this out later
-        //up.refresh();
-        
-        if(_this.PLU.state != plupload.UPLOADING) {
-            _this.PLU.start();
-        }
+			if(_this.max_files == 1) {
+				//console.log(_this.max_files);
+				$(_this.container+ ' .items .item').each(function() {
+					_this.cancelFile($(this).attr('id'));
+				});
+			}
+			
+			
+			
+			
+			plupload.each(files, function(file) {
+				
+				//console.log(_this.max_files, $(_this.container+ ' .items .item').length)
+			
+				if(_this.max_files && $(_this.container+ ' .items .item').length >= _this.max_files) {
+				   // _this.files_limit_exceeded();
+				   // $(_this.container).trigger('files_limit_exceeded');
+				   // return false;
+				   return;
+				}
+				
+				
+				_this.files.push(file);
+				_this.queue_file(file);
+			});
+			
+			//Comment this out later
+			//up.refresh();
+			
+			if(_this.PLU.state != plupload.UPLOADING) {
+				_this.PLU.start();
+			}
+		}
         
     } ,
     
@@ -686,8 +687,9 @@ var kpiu = kimgupl.extend({
 		$(ele).find('.pub_thumb').attr('src',''); //remove images
 		$(ele).find('.uid').attr('value',''); //set uid value to nothing
 		$(ele).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')//make container empty to accept new image
+		$(item_ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
 		$(ele+' .b3').html('');//empty images
-		$(ele).attr('id', 'poslock-1');	//Lock position for new upload on current element so new image is loaded here
+		$(ele).attr('id', null);	//Lock position for new upload on current element so new image is loaded here
 
 	},
 	/*****************************************************************************************/
