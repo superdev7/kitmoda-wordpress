@@ -257,7 +257,8 @@ var kuldr = Base.extend({
     
     filesAdded : function(up, files) {
         
-        
+        var _this = this;
+		
     	var no_of_files = files.length;
         var no_of_empty_spaces = $(_this.container+ ' .items .item.empty').length;
 		var no_of_elements = $(_this.container+ ' .items .item').length;
@@ -279,10 +280,8 @@ var kuldr = Base.extend({
         
         
         
-        var _this = this;
-        
         if(_this.max_files == 1) {
-            console.log(_this.max_files);
+            //console.log(_this.max_files);
             $(_this.container+ ' .items .item').each(function() {
                 _this.cancelFile($(this).attr('id'));
             });
