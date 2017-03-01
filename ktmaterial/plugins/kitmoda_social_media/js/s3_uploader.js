@@ -258,9 +258,24 @@ var kuldr = Base.extend({
     filesAdded : function(up, files) {
         
         
-    
+    	var no_of_files = files.length;
+        var no_of_empty_spaces = $(_this.container+ ' .items .item.empty').length;
+		var no_of_elements = $(_this.container+ ' .items .item').length;
         
-        
+        if(no_of_files > no_of_empty_spaces)
+		{
+			if(no_of_empty_spaces == 0)
+			{
+				$(_this.browse_button).tooltipster({content: 'All spaces used up, you will need to remove an image(s) to make up space.',once : true});
+        		$(_this.browse_button).tooltipster('show');
+			}
+			else
+			{
+				$(_this.browse_button).tooltipster({content: 'No enough spaces. Space only available for  '+no_of_empty_spaces+' images.',once : true});
+        		$(_this.browse_button).tooltipster('show');
+			}
+		
+		}
         
         
         
@@ -559,23 +574,7 @@ var ks3uplr = kuldr.extend({
 });
 
 
-
-
-
-
-
-
-
-
 var kimgupl = kuldr.extend({
-    
-    //init : function(params) {
-//        this._super(params);
-//    } ,
-    
-    
-    
-    
     queue_error_file : function(err) {
         
     },
@@ -609,22 +608,6 @@ var kimgupl = kuldr.extend({
             size:file.size
         }
     },
-    
-   /* uploadSuccess : function(u, f, r) {
-        var o = $.parseJSON(r.response);
-        
-        if(o.success) {
-            
-            var item_ele = this.container+' .item#'+f.id;
-            
-            $(item_ele+' .progress').hide();
-            $(item_ele+' .percent').hide();
-            $(item_ele+' .b3').html('<img src="'+o.url+'" width="100%" height="100%" />');
-            $(item_ele+' .uid').val(o.id);
-            $(item_ele+' .cancel').removeClass('cancel').addClass('remove');
-            
-        }
-    },*/
      uploadSuccess : function(u, f, r) {
         var o = $.parseJSON(r.response);
         
@@ -632,12 +615,10 @@ var kimgupl = kuldr.extend({
             var item_ele = this.container+' .item#'+f.id;
             $(item_ele+' .progress').hide();
             $(item_ele+' .percent').hide();
-			//Commented code to display images after successful upload with new one that have remove button
-            //$(item_ele+' .img').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%" />');
-            
+
 			//New code with remove button
 			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
-			
+			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
 			$(item_ele+' .uid').val(o.id);
             $(item_ele+' .cancel').removeClass('cancel').addClass('remove');
 			
@@ -658,7 +639,7 @@ var kimgupl = kuldr.extend({
 		$(ele).find('.uid').attr('value',''); //set uid value to nothing
 		$(ele).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')//make container empty to accept new image
 		$(ele+' .b3').html('');//empty images
-		$(ele).attr('id', 'poslock-1');	//Lock position for new upload on current element so new image is loaded here
+		$(ele).attr('id', '');	//Clear ID field
 
 	},
 	/*****************************************************************************************/
@@ -683,12 +664,10 @@ var kpiu = kimgupl.extend({
             var item_ele = this.container+' .item#'+f.id;
             $(item_ele+' .progress').hide();
             $(item_ele+' .percent').hide();
-			//Commented code to display images after successful upload with new one that have remove button
-            //$(item_ele+' .img').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%" />');
             
 			//New code with remove button
 			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
-			
+			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
 			$(item_ele+' .uid').val(o.id);
             $(item_ele+' .cancel').removeClass('cancel').addClass('remove');
 			
@@ -728,6 +707,7 @@ var kpiu = kimgupl.extend({
 		//Setting DIV element to be draggable
 		$('li .b2').draggable({
 			revert: "invalid",
+			cancel: ".disable",
 			snap: "li.item",
 			stack: ".b2",
 			start: function () {
@@ -936,84 +916,15 @@ var kpiu = kimgupl.extend({
 
 				}
 			}
+			
+			
 				
 			
 		}
 	});
 	},
     // Commenting out old setSort Function - Not Required
-	// *************************************************
-	/*setSort : function() {
-                this.is_dragging_first = true;
-        
-        var _this = this;
-        
-        $(this.container+' .items').sortable({
-            cancel:"li.secsep, li.poslock",
-            cursor: "move",
-            opacity: 0.5,
-            scroll : false,
-            placeholder  : 'sortable-placeholder',
-            change:function(event,ui) {
-                
-                
-                
-                
-                $(_this.container+' .items .poslock').each(function() {
-                    var secsep_num = parseInt($(this).attr('id').split('-')[1]);
-                    
-                    var thisindex = $(ui.helper).index();
-                     var fixed = $("#poslock-"+secsep_num);           
-                     var index = fixed.index();
-                     var targetindex = secsep_num+1;
-                     
-                     if(index !== targetindex) {         
-                         if(index > targetindex ) {
-                             fixed.prev().insertAfter(fixed).trigger('domup'); //move it up by one position
-                         } else if(index==(targetindex-1) && thisindex>targetindex) {
-                             //don't move it at all
-                         } else {
-                             fixed.next().insertBefore(fixed).trigger('domdown'); //move it down by one position
-                         }
-                     } else if(index==targetindex && thisindex>targetindex) {
-                         fixed.prev().insertAfter(fixed).trigger('domup'); //move it up by one position
-                     }
-                    
-                });
-                
-                
-                
-                if(_this.is_dragging_first) {
-                    if($(ui.placeholder).index() > 1) {
-                        $(ui.placeholder).removeClass('first');
-                        $($('.items .item').not('.ui-sortable-helper').get(0)).addClass('first');
-                    }
- 
-                }
-                
-                
-             },
- 
-             start : function(event, ui) {
-                 if($(ui.helper).index() == 0) {
-                     _this.is_dragging_first =  true;
-                      $(ui.placeholder).addClass('first');
-                 } else {
-                     _this.is_dragging_first =  false;
- 
- 
-                 }
-             },
-             
-             stop : function(event, ui) {
-                 _this.setPreviewSize();
-                 _this.is_dragging_first =  false;
-                 $('.items .item').removeClass('first');
-             },
-             
-             
-             
-         });*/
+
        /* var _this = this;
         
         $(_this.container+' ul li .inner').draggable({
@@ -1104,528 +1015,9 @@ var kpiu = kimgupl.extend({
 
 
 
-
-
 var kpfu = ks3uplr.extend({
-    
-    
-    
-    
-    
-    
+   
 });
-
-
-
-
-/*
-var ks3imgupl = ks3uplr.extend({
-    
-    //init : function(params) {
-//        this._super(params);
-//    } ,
-    
-    setDropzone : function() {
-        
-        var _this = this;
-        
-        $(this.drop_element).each(function() {
-            var _ele = this;
-            var dropzone = new mOxie.FileDrop({
-                drop_zone: $(_ele).find('.b3').get(0)
-            });
-            dropzone.ondrop = function( event ) {
-                $(_ele).removeClass('dragenter');
-                
-                console.log(dropzone.files);
-                
-                _this.PLU.addFile( dropzone.files );
-            };
-            dropzone.ondragenter = function(event) {
-                $(_ele).addClass('dragenter');
-            };
-            dropzone.ondragleave = function(event) {
-                $(_ele).removeClass('dragenter');
-            };
-            dropzone.init();
-        });
-    } ,
-    
-    
-    queue_error_file : function(err) {
-        
-    },
-    
-    
-    queue_file : function(file) {
-        
-        _this = this;
-            $ele = $($(this.container+ ' .item.empty').get(0));
-        var preloader = new o.Image();
-        
-        preloader.onload = function() {
-            //preloader.downsize( 300, 300 );
-            
-            
-                        // embed the actual thumbnail
-                        console.log(this);
-                           
-            
-            //image.prop( "src", preloader.getAsDataURL() );
-        };
-        
-        preloader.onresize = function() {
-            console.log(preloader.getAsDataURL());
-            preloader.destroy();
-                        
- 
-        };
-        
-        preloader.load( file.getSource() );
-            
-        //console.log(file.getSource());
-            
-            
-            
-            
-            
-            //console.log($ele);
-            
-            //_this.params.error_ele = '.add_post .error';
-            //$(_this.params.error_ele).html('').hide();
-
-
-            $ele.attr('id', file.id)
-                    .removeClass('empty')
-                    .find('.progress').show();
-            $ele.find('.cancel').show();
-            $ele.find('.cancel').click(function() {
-                _this.PLU.removeFile(file);
-                $(this).closest('li.item').addClass('empty');
-                $(_this.container).trigger( "onItemRemove" );
-            });
-            
-            
-            
-            
-            //$($ele).insertBefore(_this.params.container+' .items li.clr');
-            //$(_this.params.container).trigger( "onItemAdded" )
-    } ,
-        
-        
-        
-        
-    })
-    
-    */
-
-
-
-/*
-ks3uplr.prototype = {
-    
-    queue_error_file : function(error) {
-        var file = error.file;
-        var $ele = $('<li id="'+file.id+'" class="file file_error">\
-                <div class="progress"></div>\
-                <div class="row">\
-                    <div class="filename-col">\
-                        <span class="filename">'+s3_trancateTitle(file.name)+'</span>\
-                        <span class="size">('+s3_format_time(file.size)+')</span>\
-                        <span class="error_msg">'+error.message+'</span>\
-                    </div>\
-                </div>\
-            </li>');
-        $($ele).insertBefore(_this.params.container+' .items li.clr');
-        setTimeout(function(){
-            this.remove(file.id);
-        }, 3000)
-    } ,
-    
-    queue_file : function(file) {
-        var $ele = $('<li id="'+file.id+'" class="file">\
-                <div class="progress"></div>\
-                <div class="row">\
-                    <div class="filename-col">\
-                        <span class="filename">'+s3_trancateTitle(file.name)+'</span>\
-                        <span class="size">('+s3_format_time(file.size)+')</span>\
-                        <a class="remove"></a>\
-                    </div>\
-                </div>\
-        </li>');
-        
-        $ele.find('.remove').click(function() {
-            this.PLU.removeFile(file);
-            this.remove(file.id);
-        })
-            
-            
-        $($ele).insertBefore(this.container+' .items li.clr');
-        $(this.container).trigger( "onItemAdded" )
-    },
-    
-    process_queue : function(up, file) {
-        this.current_file = file;
-        $('#'+file.id+' .progress').width(file.percent+'%');
-        $('#'+file.id+' .upload_progress').html(format_time((file.size - file.loaded)/up.total.bytesPerSec));
-    },
-        
-        
-    plu_before_upload : function(up, file) {
-        up.settings.multipart_params = jQuery.extend(true, {}, this.m_p);
-        var k = (this.m_p.key).replace('{id}', file.id);
-            
-        file.s3Key = k+file.name;
-            
-        up.settings.multipart_params.key = file.s3Key;
-        up.settings.multipart_params.Filename = file.s3Key;
-    },
-    setComplete : function() {
-        this.is_completed = true;
-    },
-        
-    remove : function(id) {
-        $(this.container+' .items li#'+id).remove();
-        $(this.container).trigger( "onItemRemove" )
-    },
-        
-        
-    isFileSizeChunkableOnS3 : function( fileSize ) {
-        var minSize = plupload.parseSize(this.chunk_size);
-        return( fileSize > minSize );
-    },
-
-    uploadSuccess : function(u, f, r) {
-        var item = this.container+' .items #'+f.id;
-        $(item+ ' .progress').remove();
-        $(item+ ' .processing').show();
-        $(item+ ' .remove').removeClass('remove').addClass('processing');
-            
-            
-        $.ajax({type : 'POST',url:ksm_settings.ajax_url,data : {action:this.sa, k:f.s3Key},success: function () {
-            $(item).append('<input type="hidden" class="s3_file_input" name="attach[]" value="'+f.s3Key+'">');
-            $(item+ ' .processing').removeClass('processing').addClass('remove');
-        }});
-    },
-    
-    
-    
-    init : function() {
-        
-        this.PLU = new plupload.Uploader({
-            url : this.url,
-            file_data_name : 'file',
-            runtimes : 'html5,flash',
-            multipart: true,
-            multipart_params : {},
-            max_file_size: this.max_size,
-            max_retries: 2,
-            browse_button : $(this.browse_button).get(0),
-            container: $(this.container).get(0),
-            flash_swf_url : ksm_settings.plu.flash_swf_url,
-            urlstream_upload: true,
-            multiple_queues : true,
-            chunk_size : 0,
-            filters : [
-                {title : "Files", extensions : this.file_types}
-            ],
-            
-            preinit : {
-                Error: function(up, err, a) {
-                   if(err.code == plupload.FILE_SIZE_ERROR || err.code == plupload.FILE_EXTENSION_ERROR) {
-                        this.queue_error_file(err);
-                   } else if(err.code == plupload.HTTP_ERROR) {
-                       $(this.container+ ' .items #'+err.file.id)
-                                .addClass('file_error')
-                                .find('.message-col').html('<span class="error_note">'+err.message+'</span>');
-                   }
-		}
-            },
-            
-            init: {
-                FilesAdded: function(up, files) {
-                    plupload.each(files, function(file) {
-                        this.queue_file(file);
-                    });
-                    if(this.PLU.state != plupload.UPLOADING) {
-                        this.PLU.start();
-                    }
-		},
-
-		UploadProgress : function(up, file) {this.process_queue(up, file);},
-                FileUploaded : function(up, file, res) { this.uploadSuccess(up, file, res);},
-                BeforeUpload : function(up, file) {this.plu_before_upload(up, file)},
-                ChunkUploaded : function(uploader, file, info) {this.chunkUploaded(uploader, file, info)},
-
-		StateChanged : function(up) {
-                    //if(up.state == plupload.STOPPED && _this.params.PLU.total.queued > 0){
-                    //    up.start()
-                    //}
-                },
-                
-                UploadComplete : function(up, s) {this.setComplete();}
-                
-            }
-        });
-        
-        this.PLU.init();
-    }
-    
-    
-}
-
-
-*/
-
-//////////////////////////////////////////////////////////
-
-
-/*
-var s3_uploader = function(params) {
-    
-    //'use strict';
-    
-    var _this = this;
-    
-    var defaults = {
-	files : new Array(),
-        PLU : null,
-        is_completed : true,
-        num_errors : 0,
-        current_file : null,
-        
-        inlineStatus : null,
-        m_p : {},
-        url : '',
-        max_size : '50mb',
-        file_types : '*',
-        max_files : 0,
-        chunk_size : '5mb'
-        };
-        
-        
-        
-        
-        params = params || {};
-        for (var prop in defaults) {
-            if (prop in params && typeof params[prop] === 'object') {
-                for (var subProp in defaults[prop]) {
-                    if (! (subProp in params[prop])) {
-                        params[prop][subProp] = defaults[prop][subProp];
-                    }
-                }
-            }
-            else if (! (prop in params)) {
-                params[prop] = defaults[prop];
-            }
-        }
-        _this.params = params;
-        
-        
-    
-    
-        _this.params.max_files = parseInt(_this.params.max_files);
-
-        _this.process_queue = function(up, file) {
-            
-
-            _this.params.current_file = file;
-            jQuery('#'+file.id+' .progress').width(file.percent+'%');
-            
-            jQuery('#'+file.id+' .upload_progress').html(format_time((file.size - file.loaded)/up.total.bytesPerSec));
-            
-            
-            
-            
-        }
-        
-        
-        
-        _this.queue_error_file = function(error) {
-            var file = error.file;
-            
-            var $ele = $('<li id="'+file.id+'" class="file file_error">\
-                <div class="progress"></div>\
-                <div class="row">\
-                    <div class="filename-col">\
-                        <span class="filename">'+s3_trancateTitle(file.name)+'</span>\
-                        <span class="size">('+s3_format_time(file.size)+')</span>\
-                        <span class="error_msg">'+error.message+'</span>\
-                    </div>\
-                </div>\
-            </li>');
-            
-            
-
-            $($ele).insertBefore(_this.params.container+' .items li.clr');
-            
-            setTimeout(function(){
-                _this.remove(file.id);
-            }, 3000)
-        }
-        
-        
-
-
-        _this.queue_file = function(file) {
-            
-            
-            var $ele = $('<li id="'+file.id+'" class="file">\
-                <div class="progress"></div>\
-                <div class="row">\
-                    <div class="filename-col">\
-                        <span class="filename">'+s3_trancateTitle(file.name)+'</span>\
-                        <span class="size">('+s3_format_time(file.size)+')</span>\
-                        <a class="remove"></a>\
-                    </div>\
-                </div>\
-            </li>');
-            
-            
-            
-            $ele.find('.remove').click(function() {
-                //console.log()
-                _this.params.PLU.removeFile(file);
-                _this.remove(file.id);
-            })
-            
-            
-            $($ele).insertBefore(_this.params.container+' .items li.clr');
-            $(_this.params.container).trigger( "onItemAdded" )
-            
-            
-        }
-        
-        _this.remove = function(id) {
-            $(_this.params.container+' .items li#'+id).remove();
-            $(_this.params.container).trigger( "onItemRemove" )
-        }
-        
-        
-        _this.isFileSizeChunkableOnS3 = function( fileSize ) {
-            var minSize = plupload.parseSize(_this.params.chunk_size);
-            return( fileSize > minSize );
-         }
-
-        _this.uploadSuccess = function(u, f, r) {
-            var item = _this.params.container+' .items #'+f.id;
-            $(item+ ' .progress').remove();
-            $(item+ ' .processing').show();
-            $(item+ ' .remove').removeClass('remove').addClass('processing');
-            
-            
-            $.ajax({type : 'POST',url:ksm_settings.ajax_url,data : {action:_this.params.sa, k:f.s3Key},success: function () {
-                $(item).append('<input type="hidden" class="s3_file_input" name="attach[]" value="'+f.s3Key+'">');
-                $(item+ ' .processing').removeClass('processing').addClass('remove');
-            }});
-            
-            
-        }
-        
-        
-        
-    
-        _this.plu_before_upload = function(up, file) {
-            up.settings.multipart_params = jQuery.extend(true, {}, _this.params.m_p);
-            var k = (_this.params.m_p.key).replace('{id}', file.id);
-            
-            
-            file.s3Key = k+file.name;
-            
-            up.settings.multipart_params.key = file.s3Key;
-            up.settings.multipart_params.Filename = file.s3Key;
-            
-        }
-    
-        
-        
-        
-        _this.setComplete = function() {
-            _this.params.is_completed = true;
-        }
-    
-    _this.init = function() {
-        
-        
-        
-        
-        _this.params.PLU = new plupload.Uploader({
-            url : _this.params.url,
-            file_data_name : 'file',
-            runtimes : 'html5,flash',
-            multipart: true,
-            multipart_params : {},
-            max_file_size: _this.params.max_size,
-            max_retries: 2,
-            browse_button : $(_this.params.browse_button).get(0),
-            container: $(_this.params.container).get(0),
-            flash_swf_url : ksm_settings.plu.flash_swf_url,
-            urlstream_upload: true,
-            multiple_queues : true,
-            chunk_size : 0,
-            filters : [
-                {title : "Files", extensions : _this.params.file_types}
-            ],
-            
-            preinit : {
-                
-                Error: function(up, err, a) {
-                    //console.log(err);
-                   if(err.code == plupload.FILE_SIZE_ERROR || err.code == plupload.FILE_EXTENSION_ERROR) {
-                        _this.queue_error_file(err);
-                   } else if(err.code == plupload.HTTP_ERROR) {
-                        $(_this.params.container+ ' .items #'+err.file.id)
-                                .addClass('file_error')
-                                .find('.message-col').html('<span class="error_note">'+err.message+'</span>');
-                        
-                        
-                   }
-		}
-                
-            },
-            
-            init: {
-                FilesAdded: function(up, files) {
-                        
-			plupload.each(files, function(file) {
-                            _this.queue_file(file)
-			});
-                        
-                        if(_this.params.PLU.state != plupload.UPLOADING) {
-                            _this.params.PLU.start();
-                        }
-		},
-
-		UploadProgress : function(up, file) {_this.process_queue(up, file);},
-                FileUploaded : function(up, file, res) { _this.uploadSuccess(up, file, res);},
-                BeforeUpload : function(up, file) {_this.plu_before_upload(up, file)},
-                ChunkUploaded : function(uploader, file, info) {_this.chunkUploaded(uploader, file, info)},
-
-		StateChanged : function(up) {
-                    //if(up.state == plupload.STOPPED && _this.params.PLU.total.queued > 0){
-                    //    up.start()
-                    //}
-                },
-                
-                UploadComplete : function(up, s) {_this.setComplete();}
-                
-            }
-        });
-        
-        
-    }
-    _this.init();
-    
-    
-    
-    
-    
-}
-
-
-
-*/
-
 
 $(function() {
     $('.browse_btn').click(function(e) {
