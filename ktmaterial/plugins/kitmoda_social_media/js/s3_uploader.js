@@ -635,7 +635,7 @@ var kimgupl = kuldr.extend({
 		
 		//Create an object of the current container
 		var ele = this.container+' .item#'+fid;
-		
+		$(ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
 		$(ele).find('.pub_feature').attr('src',''); //remove images
 		$(ele).find('.pub_thumb').attr('src',''); //remove images
 		$(ele).find('.uid').attr('value',''); //set uid value to nothing
@@ -686,7 +686,7 @@ var kpiu = kimgupl.extend({
 		
 		//Create an object of the current container
 		var ele = this.container+' .item#'+fid;
-		
+		$(ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
 		$(ele).find('.pub_feature').attr('src',''); //remove images
 		$(ele).find('.pub_thumb').attr('src',''); //remove images
 		$(ele).find('.uid').attr('value',''); //set uid value to nothing
