@@ -640,7 +640,7 @@ var kimgupl = kuldr.extend({
 		$(ele).find('.pub_thumb').attr('src',''); //remove images
 		$(ele).find('.uid').attr('value',''); //set uid value to nothing
 		$(ele+' .b3').html('');//empty images
-		$(ele).removeClass('ui-sortable-handle').addClass('empty ').removeAttr('id').addClass('disable').addClass('ui-draggable-disabled');//make container empty to accept new image
+		$(ele).removeClass('ui-sortable-handle').addClass('empty');//make container empty to accept new image
 		
 		$(ele).attr('id', '');	//Lock position for new upload on current element so new image is loaded here
 
