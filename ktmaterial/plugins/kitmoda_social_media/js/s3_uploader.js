@@ -269,12 +269,20 @@ var kuldr = Base.extend({
 			{
 				$(_this.browse_button).tooltipster({content: 'All spaces used up, you will need to remove an image(s) to make up space.',once : true});
         		$(_this.browse_button).tooltipster('show');
+				
+				_this.PLU.splice();
+				_this.PLU.refresh();
+			
 				return;
 			}
 			else
 			{
 				$(_this.browse_button).tooltipster({content: 'No enough spaces. Space only available for  '+no_of_empty_spaces+' images.',once : true});
         		$(_this.browse_button).tooltipster('show');
+				
+				_this.PLU.splice();
+				_this.PLU.refresh();
+			
 				return;
 			}
 		
