@@ -618,8 +618,10 @@ var kimgupl = kuldr.extend({
 
 			//New code with remove button
 			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
-			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
+
+
 			$(item_ele+' .uid').val(o.id);
+			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
             $(item_ele+' .cancel').removeClass('cancel').addClass('remove');
 			
 			//when remove button is clicked
@@ -668,9 +670,10 @@ var kpiu = kimgupl.extend({
             
 			//New code with remove button
 			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
-			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
 			$(item_ele+' .uid').val(o.id);
-            $(item_ele+' .cancel').removeClass('cancel').addClass('remove');
+			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
+			
+            $(item_ele+' .cancel').removeClass('cancel').addClass('remove').removeClass('empty');
 			
 			//when remove button is clicked
 			$(item_ele+' .remove').click(function(){_this.removeImage(f.id);});
@@ -688,7 +691,7 @@ var kpiu = kimgupl.extend({
 		$(ele).find('.pub_thumb').attr('src',''); //remove images
 		$(ele).find('.uid').attr('value',''); //set uid value to nothing
 		$(ele+' .b3').html('');//empty images
-		$(ele).removeClass('ui-sortable-handle').addClass('empty ').removeAttr('id').addClass('disable').addClass('ui-draggable-disabled');//make container empty to accept new image
+		$(ele).removeClass('ui-sortable-handle').addClass('empty ').removeAttr('id');//make container empty to accept new image
 		
 		$(ele).attr('id', '');	//Lock position for new upload on current element so new image is loaded here
 
@@ -787,7 +790,7 @@ var kpiu = kimgupl.extend({
 					$(ele_dragged).find('.pub_feature').attr('src','');
 					$(ele_dragged).find('.pub_thumb').attr('src','');
 					$(ele_dragged).find('.uid').attr('value','');
-					$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle');
 					//$(ele_dragged+' .b3').html('');
 					//$(ele_dragged).attr('id', 'poslock-1');
 					
@@ -795,7 +798,7 @@ var kpiu = kimgupl.extend({
 					$(ele_target).find('.pub_feature').attr('src','');
 					$(ele_target).find('.pub_thumb').attr('src','');
 					$(ele_target).find('.uid').attr('value','');
-					$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle');
 					//$(ele_target+' .b3').html('');
 					//$(ele_target).attr('id', 'poslock-1');
 				}
@@ -822,7 +825,8 @@ var kpiu = kimgupl.extend({
 					//$(ele_dragged).find('.pub_thumb').attr('src','');
 					$(ele_dragged).find('.uid').attr('value',null);
 					//$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
-					$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ');
+					//$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').removeClass('disable').removeClass('ui-draggable-disabled');
+					$(ele_dragged).addClass('empty').removeClass('ui-draggable-handle').removeClass('ur-draggable');
 					//$(ele_dragged+' .b3').html('');
 					//$(ele_dragged).attr('id', 'poslock-1');
 				}
@@ -835,7 +839,7 @@ var kpiu = kimgupl.extend({
 					//Replace Dragged Element with Target Element parameters
 					$(ele_dragged).attr('id',id_target);
 					$(ele_dragged).attr('class',cls_target);
-					$(ele_dragged).removeClass('empty');
+					$(ele_dragged).removeClass('empty').addClass('ui-draggable-handle').addClass('ur-draggable');
 					
 					//$(ele_dragged).find('.pub_feature').attr('src',pub_feature_target_src);
 					//$(ele_dragged).find('.pub_thumb').attr('src',pub_thumb_target_src);
@@ -854,7 +858,8 @@ var kpiu = kimgupl.extend({
 					//$(ele_target).find('.pub_feature').attr('src','');
 					//$(ele_target).find('.pub_thumb').attr('src','');
 					$(ele_target).find('.uid').attr('value',null);
-					(ele_target).removeClass('ui-sortable-handle').addClass('empty ');
+					$(ele_target).addClass('empty').removeClass('ui-draggable-handle').removeClass('ui-draggable').removeClass('ui-sortable-handle');
+					
 					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
 					//$(ele_target+' .b3').html('');
 					//$(ele_target).attr('id', 'poslock-1');
