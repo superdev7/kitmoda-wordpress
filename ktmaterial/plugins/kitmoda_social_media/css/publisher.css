@@ -953,6 +953,10 @@ textarea {
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 }
+.drop-hover
+{
+	opacity: 0.5;
+}
 .ubox ul li .progress {
 	display: none;
 	width: auto;
