@@ -15,28 +15,27 @@ $filter_optios = array(
         
         
         'style' => array(
-            'steam-punk',
-            'vampire', 
+            'realism',
+            'steam-punk', 
+            'gothic',
             'dragons-lore',
             'whimsical-fairytale',
             'horror',
-            'anime-toon',
+            'sci-fi',
+            'decay-dystopia',
+            'anime',
             'classic-toon',
-            'simple-toon',
-            'comedy',
-            'educational',
             'art-deco',
             'ornate',
             'tribal',
             'film-noir',
-            'gothic',
             'romantic',
-            'realism',
             'surreal',
-            'tech-robotic',
-            'retro',
-            'country-rural',
-            'urban'
+            'expressive',
+            'folksy-rural',
+            'stylish-hip',
+            'educational',
+            'comedy'           
         ),
         
         'era' => array(
