@@ -9,7 +9,8 @@ class KSM_StoreController extends KSM_BaseController {
         array('justifiedGallery', array('jquery')),
         array('store', array('jquery', 'ksm_scripts', 'angular' ,'jquery.selectBoxIt', 'justifiedGallery')),
         array('selectbox/jquery.selectbox-0.2.min', array('jquery', 'ksm_scripts')),
-        array('jquery.mCustomScrollbar.concat.min', array('jquery', 'ksm_scripts'))
+        array('jquery.mCustomScrollbar.concat.min', array('jquery', 'ksm_scripts')),
+        array('custom', array('jquery')),
     );
     
     
@@ -25,6 +26,7 @@ class KSM_StoreController extends KSM_BaseController {
         
         $this->scripts[] = array('jScrollPane', array('jquery'));
         $this->scripts[] = array('SelectBox', array('jquery'));
+        $this->scripts[] = array('custom', array('jquery'));
         
         
         $this->styles[] = 'jquery.jscrollpane';
@@ -464,6 +466,10 @@ class KSM_StoreController extends KSM_BaseController {
             KSM_Js::addCommunityComment($post_id, $comment_item_html);
         }
     }
+    
+//    public function ksm_ajax_get_subcats() {
+//        pr($_POST);
+//    }
     
 }
 ?>

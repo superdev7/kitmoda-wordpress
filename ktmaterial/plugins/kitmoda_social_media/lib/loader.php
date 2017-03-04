@@ -49,8 +49,8 @@ class KSM_MvcLoader {
     static function &get_instance() {
         static $instance = array();
         if (!$instance) {
-            //$instance[0] = new KSM_MvcLoader();
-			$instance[0] =& new KSM_MvcLoader();
+            $instance[0] = new KSM_MvcLoader();
+//			$instance[0] =& new KSM_MvcLoader();
         }
         return $instance[0];
     }
@@ -66,10 +66,6 @@ class KSM_MvcLoader {
     static function register_rest_routes() {
         
         $routes = KSM_DataStore::Option('route', 'rest');
-        
-        
-        
-        
         
         //pr($routes);
         //exit;
@@ -109,12 +105,6 @@ class KSM_MvcLoader {
             
             
         }
-        
-        
-        
-        
-        
-        
     }
     
     
