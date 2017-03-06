@@ -259,9 +259,18 @@ var kuldr = Base.extend({
         
         var _this = this;
 		
-    	var no_of_files = files.length;
-        var no_of_empty_spaces = $(_this.container+ ' .items .item.empty').length;
-		var no_of_elements = $(_this.container+ ' .items .item').length;
+		if($(_this.browse_button).attr("id") == "zip")
+		{
+			var no_of_files = files.length;
+			var no_of_empty_spaces = 1;
+			var no_of_elements = 1;
+		}
+		else
+		{
+			var no_of_files = files.length;
+			var no_of_empty_spaces = $(_this.container+ ' .items .item.empty').length;
+			var no_of_elements = $(_this.container+ ' .items .item').length;
+		}
         
         if(no_of_files > no_of_empty_spaces)
 		{
