@@ -20,7 +20,7 @@
             
         <div class="final_upl_box untextured_file_upl_container">
             <div class="browse_container">
-                <a href="" class="browse_btn" style="position: relative; z-index: 1;">Browse for Zip...</a>
+                <a href="" class="browse_btn" style="position: relative; z-index: 1;" id="zip">Browse for Zip...</a>
                 <div class="info">Or, Drag and Drop image into the box below.</div>
                 <div class="clr"></div>
             </div>
