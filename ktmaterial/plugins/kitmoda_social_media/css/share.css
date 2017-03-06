@@ -1,44 +1,144 @@
+/* SHARE.CSS */
 .window {
-  background: #FFF;
+	background: #FFF;
 }
-
 #tab_share_email .field, #tab_share_link .field, #tab_share_twitter .field, #tab_share_facebook .field {
-  margin: 10px 0;
+	margin: 10px 0;
 }
 #tab_share_email .field label, #tab_share_link .field label, #tab_share_twitter .field label, #tab_share_facebook .field label {
-  font-size: 13px;
-  font-family: "DejaVu Sans Condensed";
-  color: #2b2b2b;
-  letter-spacing: 0;
-  text-transform: none;
-  margin-bottom: 2px;
+	font-size: 13px;
+	font-family: "DejaVu Sans Condensed";
+	color: #2b2b2b;
+	letter-spacing: 0;
+	text-transform: none;
+	margin-bottom: 2px;
 }
 #tab_share_email .field .input, #tab_share_link .field .input, #tab_share_twitter .field .input, #tab_share_facebook .field .input {
-  padding: 0 10px !important;
+	padding: 0 10px !important;
 }
 #tab_share_email .field textarea, #tab_share_link .field textarea, #tab_share_twitter .field textarea, #tab_share_facebook .field textarea {
-  width: 100%;
-  height: 100px;
+	width: 100%;
+	height: 100px;
+	resize: none;
+	box-shadow: 0px 2px 10px #000;
+	-moz-box-shadow: 0px 2px 10px #000;
+	-webkit-box-shadow: 0px 2px 10px #000;
+	-o-box-shadow: 0px 2px 10px #000;
 }
 #tab_share_email #email_message, #tab_share_link #email_message, #tab_share_twitter #email_message, #tab_share_facebook #email_message {
-  padding: 5px;
-  line-height: 20px;
+	line-height: 20px;
+	background-color: #141414;
+	padding: 10px 12px;
+	color: #d0d0d0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 7px 3px 14px 4px #000 inset;
+	-webkit-box-shadow: 7px 3px 14px 4px #000 inset;
+	box-shadow: 7px 3px 14px 4px #000 inset;
+	word-break: break-all;
+	border: 1px solid #000 !important;
+	border-bottom: 1px solid #303030 !important;
+	resize: none;
 }
 #tab_share_email .btn, #tab_share_link .btn, #tab_share_twitter .btn, #tab_share_facebook .btn {
-  width: 127px;
-  text-align: center;
+	width: 127px;
+	text-align: center;
 }
-
 #tab_share_facebook .caption {
-  color: #2e6ed2;
-  font-size: 14px;
-  font-family: "DejaVu Sans Condensed";
-  font-weight: bold;
+	color: #2e6ed2;
+	font-size: 14px;
+	font-family: "DejaVu Sans Condensed";
+	font-weight: bold;
 }
 #tab_share_facebook .link {
-  font-size: 13px;
+	font-size: 13px;
 }
 #tab_share_facebook .description {
-  margin-top: 8px;
-  font-family: "Helvetica Neue";
+	margin-top: 8px;
+	font-family: "Helvetica Neue";
+}
+.window.share {
+	background: #38393f;
+	background: -moz-linear-gradient(top, #38393f 7%, #3d4044 31%, #393c42 55%, #28292d 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(7%,#38393f), color-stop(31%,#3d4044), color-stop(55%,#393c42), color-stop(100%,#28292d));
+	background: -webkit-linear-gradient(top, #38393f 7%,#3d4044 31%,#393c42 55%,#28292d 100%);
+	background: -o-linear-gradient(top, #38393f 7%,#3d4044 31%,#393c42 55%,#28292d 100%);
+	background: -ms-linear-gradient(top, #38393f 7%,#3d4044 31%,#393c42 55%,#28292d 100%);
+	background: linear-gradient(to bottom, #38393f 7%,#3d4044 31%,#393c42 55%,#28292d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#38393f', endColorstr='#28292d',GradientType=0 );
+	border: 1px solid #000;
+	border-top: 0px;
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	border-radius: 9px;
+}
+form .field input[type="text"] {
+	border: solid 0px #484b4e;
+	background-image: url("../images/srch-button.png");
+	-moz-border-radius-topleft: 4px;
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	height: 36px;
+	padding-right: 0px;
+	margin-top: 2px;
+	border-right: 0;
+	border-left: 2px solid #000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 2px 3px 7px #000 inset;
+	-webkit-box-shadow: 2px 3px 7px #000 inset;
+	box-shadow: 2px 3px 7px #000 inset;
+	color: #fff
+}
+#tab_share_link .field .input {
+	border: solid 0px #484b4e;
+	background-image: url("../images/srch-button.png");
+	-moz-border-radius-topleft: 4px;
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	height: 36px;
+	padding-right: 0px;
+	margin-top: 2px;
+	border-right: 0;
+	border-left: 2px solid #000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 2px 3px 7px #000 inset;
+	-webkit-box-shadow: 2px 3px 7px #000 inset;
+	box-shadow: 2px 3px 7px #000 inset;
+	color: #fff
+}
+body .share_tabs {
+	margin-bottom: 19px;
+	margin-left: 18px;
+}
+body .window .win_header {
+	-moz-border-top-left-radius: 9px;
+	-webkit-border-top-left-radius: 9px;
+	border-top-left-radius: 9px;
+	-moz-border-top-right-radius: 9px;
+	-webkit-border-top-right-radius: 9px;
+	border-top-right-radius: 9px;
+	box-shadow: 0px 1px 12px #000;
+	-moz-box-shadow: 0px 1px 12px #000;
+	-webkit-box-shadow: 0px 1px 12px #000;
+	padding: 0 30px 0 18px;
+}
+#tab_share_email {
+	padding: 0px 18px !important;
+}
+#tab_share_facebook textarea, #tab_share_twitter textarea {
+	box-shadow: 7px 3px 14px 4px #000 inset !important;
+	-moz-box-shadow: 7px 3px 14px 4px #000 inset !important;
+	-o-box-shadow: 7px 3px 14px 4px #000 inset !important;
+	-webkit-box-shadow: 7px 3px 14px 4px #000 inset !important;
 }
