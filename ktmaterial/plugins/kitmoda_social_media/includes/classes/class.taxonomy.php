@@ -299,6 +299,47 @@ class KSM_Taxonomy {
         return $select;
     }
     
+//    Get list of the terms without 'Uncategorized'
+    public static function custom_list($args = array()) {
+            $parent = !$args['parent'] || $args['parent'] < 0 || !is_numeric($args['parent']) ? 0 : $args['parent'] ;
+
+            $tax = $args['tax'] ? $args['tax'] : 'category';        
+
+            $self = new KSM_Taxonomy($tax);
+            $args['parent'] = $parent;
+            $args['tax'] = $tax;
+            return $self->get_list($args, $terms_label);
+    }
+    
+    public function get_list($args = array(), $terms_label = '') {
+            extract($args);
+
+            $label = $label ? $label : '';        
+
+            $name = $args['name'] ? $args['name'] : strtolower($this->params['name']);
+            $id = '__'.$name;
+
+            if($this->params['hierarchical']) {
+                    $name .= "[]";
+                    $id .= "_" . $args['parent'];
+            }
+
+            $class = $args['class'] ? $args['class'] : '';
+
+            $terms = $this->get_terms($args, $terms_label);
+            $arr = array();
+            if( !empty($terms) ){
+                    foreach($terms as $t) {
+                        $lbl = $t->label ? $t->label : $t->name;
+                            if ($lbl != 'Uncategorized'){
+                                    $vlu = $args['value'] ? $t->{$args['value']} : $t->term_id;
+                                    $arr[$vlu] = $lbl;
+                            }
+                    }
+            }
+            
+            return $arr;
+    }   
     
     
 }

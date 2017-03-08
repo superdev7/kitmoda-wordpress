@@ -397,6 +397,7 @@ class kitmoda_Social_Media {
         $parent_slug = 'ksm';
         $menus[] = array('Settings', 'settings');
         $menus[] = array('Artists', 'artists');
+        $menus[] = array('Store', 'store');
 
 
 
@@ -415,6 +416,11 @@ class kitmoda_Social_Media {
 	//Gets Settings Menu Page
     public function ksm_settings() {
         include 'admin/settings.php';
+    }
+    
+    //Gets Store Menu Page
+    public function ksm_store() {
+        include 'admin/store.php';
     }
 
     //Updates KSM user sales

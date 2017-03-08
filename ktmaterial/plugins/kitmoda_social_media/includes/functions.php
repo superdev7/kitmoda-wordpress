@@ -1703,4 +1703,93 @@ require_once "user_functions.php";
 require_once 'commission_changes.php';
 require_once 'checkout_changes.php';
 
+// ****** Upload image for category/taxonomy *****
+$ksm_taxonomies = array('category', 'ksm_tax_style');	
+foreach ($ksm_taxonomies as $ksm_taxonomy) {
+    add_action($ksm_taxonomy.'_add_form_fields','ksm_addcategoryimage');
+    add_action($ksm_taxonomy.'_edit_form_fields','ksm_editcategoryimage');
+}
+//Add-action
+function ksm_addcategoryimage($taxonomy){ ?>
+    <div class="form-field">
+	<label for="tag-image">Image</label>
+	<input type="text" name="tag-image" id="tag-image" value="" />	
+	<p class="description">Click on the text box to add taxonomy/category image.</p>
+    </div>
+    <?php ksm_upload_script_css();
+}
+//Edit-action
+function ksm_editcategoryimage($taxonomy){ ?>
+    <tr class="form-field">
+        <th scope="row" valign="top"><label for="tag-image">Image</label></th>
+        <td>
+                <?php 
+                if(get_option('_category_image'.$taxonomy->term_id) != ''){ ?>
+                        <img src="<?php echo get_option('_category_image'.$taxonomy->term_id); ?>" width="100"  height="100"/><br />                       
+                        <a href="" class="ksm_reset_image">Remove image</a>
+                <?php	
+                }
+                ?><br />
+                <input type="text" name="tag-image" id="tag-image" value="<?php echo get_option('_category_image'.$taxonomy->term_id); ?>" />
+                <p class="description">Click on the text box to add taxonomy/category image.</p>
+        </td>
+    </tr>              
+    <?php ksm_upload_script_css();
+}
+
+function ksm_upload_script_css(){ ?>
+                
+<script type="text/javascript" src="<?php echo home_url(); ?>/ktmaterial/plugins/kitmoda_social_media/js/thickbox.js"></script>
+<link rel='stylesheet' id='thickbox-css'  href='<?php echo includes_url(); ?>js/thickbox/thickbox.css' type='text/css' media='all' />
+<script type="text/javascript">    
+    jQuery(document).ready(function() {
+	var fileInput = ''; 
+	jQuery('#tag-image').live('click',
+	function() {
+		fileInput = jQuery('#tag-image');
+		tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
+		return false;
+	}); 
+        window.original_send_to_editor = window.send_to_editor;
+	window.send_to_editor = function(html) {
+		if (fileInput) {
+			fileurl = jQuery('img', html).attr('src');
+			if (!fileurl) {
+				fileurl = jQuery(html).attr('src');
+			}
+			jQuery(fileInput).val(fileurl);
+
+			tb_remove();
+		} else {
+			window.original_send_to_editor(html);
+		}
+	};
+    });   
+</script>
+<?php }
+
+//edit_$taxonomy
+add_action('edit_term','ksm_save_category_image');
+add_action('create_term','ksm_save_category_image');
+function ksm_save_category_image($term_id){
+    if(isset($_POST['tag-image'])){
+        if(isset($_POST['tag-image']))
+            update_option('_category_image'.$term_id,$_POST['tag-image'] );
+    }
+}
+
+//Get taxonomy/category image
+function ksm_get_term_image($term_id){	
+	return get_option('_category_image'.$term_id);	
+}
+//Default image
+function ksm_get_default_term_image(){	
+        return home_url(). '/ktmaterial/plugins/kitmoda_social_media/images/store_categories_icons/Castles.svg';
+}
+//Enable SVG
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
 ?>

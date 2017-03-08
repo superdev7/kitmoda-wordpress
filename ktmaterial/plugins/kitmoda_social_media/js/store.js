@@ -21,344 +21,468 @@ var kapp = angular.module('kapp', [
     $httpProvider.defaults.headers.common['KSM-Access-ID'] = ksm_settings.rest.access_key;
     $httpProvider.defaults.headers.common['X-WP-NONCE'] = ksm_settings.rest.nonce;
 
-}])
-    
-    
-.run(function($rootScope, JoinUiService) {
+}]);
+
+
+// kapp.config(function($locationProvider) {
+//     $locationProvider.html5Mode({
+//         enabled: true,
+//         requireBase: false
+//     });
+// });
+
+kapp.run(function($rootScope, JoinUiService) {
         $rootScope.join = function() {
             JoinUiService.open();
+        };
+    $rootScope.parent_id = [];
+    $rootScope.parent_name = [];
+});
+
+kapp.controller('page_content', ['$scope','$rootScope','$http','$location', function($scope, $rootScope, $http,$location) {
+    var location_search = $location.search();
+    $rootScope.show_page_part = (location_search.search == true)?'search':'content';
+    $scope.show_page_part = (location_search.search == true)?'search':'content';
+
+    $rootScope.$watch('show_page_part',function (new_v,old_v) {
+        // $rootScope.show_page_part = (location_search.search == true)?'search':'content';
+        $scope.show_page_part = $rootScope.show_page_part;
+    })
+
+}]);
+
+kapp.controller('searchBox', ['$scope','$rootScope','$http','$location', function($scope, $rootScope, $http,$location) {
+
+    /* categories menu  Start */
+    $scope.categories_list = null;
+    $scope.parent_id = [];
+    $scope.parent_name = [];
+    $scope.child_categories_list = null;
+
+    var config = {
+        headers : {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
         }
-})
-                            
+    };
 
-var kfacet = Base.extend({
-    
-    
-    constructor : function(params) {
-        this.element = params.element;
-        this.action = params.action;
-        this.overlay = params.overlay;
-        this.wp_id = '';
-        
-        var _this = this;
-        
-        var elements =  this.element+' input.opt_filter, '+this.element+' select'+', #ff_sort';
-        
-        $('body').delegate(elements , 'change', function() {
-            _this.reset_page();
-            _this.load();
+    $http.post(ksm_settings.rest.api_base+'categories', ctp({ id:'-'}), config).then(function(r){
+        $scope.categories_list = r.data;
+    });
+
+    $scope.get_child = function (id,name) {
+        $('.subCategory.secondList').removeClass('active');
+        $scope.selected_categorie_name = name;
+        $scope.selected_categorie_id = id;
+        if(!$scope.parent_id){
+            $scope.top_parent_id = id;
+        }
+        $scope.parent_id[$scope.parent_id.length] = id;
+        $scope.parent_name[$scope.parent_name.length] = name;
+        $rootScope.parent_id[$scope.parent_id.length] = id;
+        $rootScope.parent_name[$scope.parent_name.length] = name;
+        $scope.child_categories_list = '';
+        $http.post(ksm_settings.rest.api_base+'categories', ctp({ id:id}), config).then(function(r){
+            if(get_obj_lent(r.data) > 0) {
+                $scope.child_categories_list = r.data;
+            }else{
+                $location.search({
+                    'search':true,
+                    'cat':$scope.selected_categorie_id,
+                    'cid':btoa(angular.toJson($rootScope.parent_id)),
+                    'cname':btoa(angular.toJson($rootScope.parent_name))
+                });
+                $('.secondList').toggleClass('active');
+                $('.thirdStep .back').closest('.thirdStep').hide();
+                window.location.reload();
+            }
         });
-        
-        
-        
-        
-        
-        $(this.overlay).show();
-        
-        
-        
-        
-        _this.setParams(_this.getURLParams());
-        
-        _this.load();
+    };
 
-        
-    },
-    
-    reset_page : function() {
-        $('#ff_page').val('');
-    },
-    
-    
-    getURLParams : function() {
-        _params = new Array();
-        if(window.location.hash) {
-            var params = decodeURI(window.location.hash).substr(1).split('&');
-            $.each(params, function(k, v) {
-                var parts = v.split('=');
-                var pname = parts[0];
-                pvalue = parts[1];
-                _params.push({name : pname, value : pvalue});
+    $scope.go_to_parent = function(){
+        $scope.parent_id.pop();
+        $scope.parent_name.pop();
+        $rootScope.parent_id.pop();
+        $rootScope.parent_name.pop();
+        if($scope.parent_id.length == 0){
+            $('.thirdStep .back').closest('.thirdStep').hide();
+            $('.subCategory.secondList').addClass('active');
+        }else {
+            $http.post(ksm_settings.rest.api_base + 'categories', ctp({id: $scope.parent_id[$scope.parent_id.length - 1]}), config).then(function (r) {
+                $scope.selected_categorie_name = $scope.parent_name[$scope.parent_name.length - 1];
+                $scope.child_categories_list = r.data;
             });
         }
-        return _params;
-    },
-    
-    getField : function(v) {
-        var name = '#ff_' + v.name;
-        var value = v.value;
-        var fname = name;
-        
-        
-        if(fname.substr(-2) == '[]') {
-            fname = fname.replace('[]', '') + '_' + value;
-        }
-        
-        if($(fname).length > 0) {
-            return $(fname);
-        }
-        
-    },
-    
-    setParams : function(params) {
-        var _this = this;
-        
-        $.each(params, function(k, v){
-            
-            var field = _this.getField(v);
-            
-            if(v.name == 'wp_id') {
-                _this.wp_id = v.value;
-            }
-            
-            if(field) {
-                if(field.prop('tagName') == 'INPUT') {
-                    if(field.attr('type') == 'checkbox' || field.attr('type') == 'radio') {
-                        field.prop('checked', true);
-                    } else if(field.attr('type') == 'text' || field.attr('type') == 'hidden') {
-                        field.val(v.value);
-                    }
-                } else if(field.prop('tagName') == 'SELECT') {
-                    field.val(v.value);
-                }
-            }
-        })
-        
-    },
-    
-    getParams : function(type) {
-        
-        var params = new Array();
-        var params_query = new Array();
-        
-        var data_obj = $(this.element).find('input, select').serializeArray();
-        
-        $.each(data_obj, function(k, v){
-            if(v.value != "") {
-                params.push({name : v.name , value : v.value});
-                params_query.push(v.name+'='+ v.value);
-            }
+    };
+    /* categories menu  END */
+
+}]);
+kapp.controller('searchInput', ['$scope','$rootScope','$http','$location', function($scope, $rootScope, $http,$location) {
+
+    var location_search = $location.search();
+    $scope.search_by_text = function () {
+        $location.search({
+            'search':true,
+            'q':btoa($scope.search_text)
         });
-        
-        
-        if(type == 'array') {
-            params.push({name : 'action', value : this.action});
-        } else {
-            params = params_query.join('&');
+        window.location.reload();
+    };
+    if(location_search.q){
+        $scope.search_text = atob(location_search.q);
+    }
+
+}]);
+
+
+kapp.controller('search', ['$scope','$rootScope','$http','$location', function($scope, $rootScope, $http,$location) {
+    var location_search = $location.search();
+    $rootScope.show_page_part = (location_search.search == true)?'search':'content';
+    $scope.search_text = '';
+    if(location_search.cid && location_search.cname){
+        $rootScope.parent_id = JSON.parse(atob(location_search.cid));
+        $rootScope.parent_name = JSON.parse(atob(location_search.cname));
+        $rootScope.parent_id = $rootScope.parent_id.slice(1,$rootScope.parent_id.length);
+        $rootScope.parent_name = $rootScope.parent_name.slice(1,$rootScope.parent_name.length);
+        $scope.breadcrumbs = [];
+for(var i = 0; i<$rootScope.parent_id.length; i++){
+    $scope.breadcrumbs[i] = [];
+    $scope.breadcrumbs[i]['id'] = $rootScope.parent_id[i];
+    $scope.breadcrumbs[i]['name'] = $rootScope.parent_name[i];
+}
+    }
+    $scope.change_cat = function(cat_id){
+        $location.search({
+            'search':true,
+            'cat':cat_id,
+            'cid':btoa(angular.toJson($rootScope.parent_id)),
+            'cname':btoa(angular.toJson($rootScope.parent_name))
+        });
+        window.location.reload();
+    };
+    if(location_search.q){
+        $scope.search_text = atob(location_search.q);
+    }
+
+    $scope.style = [];
+    $scope.culture = [];
+    $scope.price = [];
+    $scope.file_format = [];
+    $scope.game_ready = [];
+    $scope.print_ready = [];
+    $scope.environment = [];
+    $scope.model_constr = [];
+    $scope.model_scale = [];
+    $scope.texturing_status = [];
+    $scope.mapping = [];
+    $scope.renderer = [];
+
+    $scope.filtering = function(){
+
+        $scope.posts = [];
+        $scope.price = $scope.clear_arr($scope.price);
+        $scope.style = $scope.clear_arr($scope.style);
+        $scope.culture = $scope.clear_arr($scope.culture);
+        $scope.file_format = $scope.clear_arr($scope.file_format);
+        $scope.game_ready = $scope.clear_arr($scope.game_ready);
+        $scope.print_ready = $scope.clear_arr($scope.print_ready);
+        $scope.environment = $scope.clear_arr($scope.environment);
+        $scope.model_constr = $scope.clear_arr($scope.model_constr);
+        $scope.model_scale = $scope.clear_arr($scope.model_scale);
+        $scope.texturing_status = $scope.clear_arr($scope.texturing_status);
+        $scope.mapping = $scope.clear_arr($scope.mapping);
+        $scope.renderer = $scope.clear_arr($scope.mapping);
+
+        var data = {};
+
+        if(get_obj_lent($scope.price) > 0){data.price = Object.keys($scope.price); }
+        if(get_obj_lent($scope.style) > 0){data.style = Object.keys($scope.style); }
+        if(get_obj_lent($scope.culture) > 0){data.culture = Object.keys($scope.culture); }
+        if(get_obj_lent($scope.file_format) > 0){data.file_format = Object.keys($scope.file_format); }
+        if(get_obj_lent($scope.game_ready) > 0){data.game_ready = Object.keys($scope.game_ready); }
+        if(get_obj_lent($scope.print_ready) > 0){data.print_ready = Object.keys($scope.print_ready); }
+        if(get_obj_lent($scope.environment) > 0){data.environment = Object.keys($scope.environment); }
+        if(get_obj_lent($scope.model_constr) > 0){data.model_constr = Object.keys($scope.model_constr); }
+        if(get_obj_lent($scope.texturing_status) > 0){data.texturing_status = Object.keys($scope.texturing_status); }
+        if(get_obj_lent($scope.mapping) > 0){data.mapping = Object.keys($scope.mapping); }
+        if(get_obj_lent($scope.renderer) > 0){data.renderer = Object.keys($scope.renderer); }
+        if(get_obj_lent($scope.era) > 0){data.era = $scope.era; }
+        if(get_obj_lent($scope.poly_count) > 0){data.poly_count = $scope.poly_count; }
+        if($scope.search_text != '') {
+            data.q = $scope.search_text;
         }
-        
-        return params;
-    },
-    
-    
-    load : function() {
-        var _this = this;
-        $(this.overlay).show();
-        
-        
-        
-        window.location.hash = this.getParams();
-        $('.posts').html('');
-        $.ajax({
+        if(location_search.cat) {
+            data.cat = location_search.cat;
+        }
+        data.action ='Store_filter_posts';
+        jQuery.ajax({
             type: "POST",
             url: ksm_settings.ajax_url,
-            data:this.getParams('array'),
+            data:data,
             success: function(res) {
-                $(_this.overlay).hide()
-                var o = $.parseJSON(res);
-                $('.posts').html(o.posts);
-                $('.breadcrumb').html(o.breadcrumb);
-                /*$(".breadcrumb select").selectBoxIt(
-            {autoWidth : false, showEffect : 'none', showFirstOption : false, copyClasses : 'container'}
-            );*/
-    
-			$(".breadcrumb select").selectbox();
-			$(".breadcrumb .sbOptions").mCustomScrollbar();
-    
-    
-    
-            if(o.found) {
-                $('.posts').justifiedGallery({
-                    rowHeight: 196, margins:12, captions: false, imagesAnimationDuration : 1000
-                });
-            }
-                
-                $('.wall_footer').html(o.pagination);
-                
-                if(_this.wp_id && $('#wp_'+_this.wp_id).length > 0) {
-                    var targetOffset = $('#wp_'+_this.wp_id).offset().top
-                    $('html,body').animate({scrollTop: targetOffset}, 300);
-                    _this.wp_id = '';
-                }
-            }
-        });
-    }
-});
+                res = $.parseJSON(res);
+                jQuery('.pictures').html(res.posts);
+                setTimeout(function () {
+                    jQuery('.pictures').gpGallery('img');
+                    $( window ).resize(function() {
+                        var imgs = {};
+                        jQuery('.pictures > a').each(function (i) {
+                            var obj = jQuery(this).find('img'),
+                                url = obj.attr('src'),
+                                width = obj.attr('width'),
+                                height = obj.attr('height');
 
+                            if (!jQuery(this).attr('class')) {
+                                imgs[i] = {
+                                    url: url,
+                                    width: width,
+                                    height: height
+                                }
+                            }
+                        });
+                        jQuery('.pictures').empty();
+                        jQuery.each(imgs, function (i, item) {
+                            jQuery('.pictures').append('<a href="#"><img src="'+ item.url +'" width="'+ item.width +'" height="'+ item.height +'"/></a>')
+                        });
+                        jQuery('.pictures').gpGallery('img');
 
-
-
-
-
-
-
-function search_form_sb() {
-        var args = new Array();
-        
-        if($('.search_form .sb_category').val()) {
-            args.push('cat='+$('.search_form .sb_category').val())
-        }
-        
-        if($('.search_form .sb_style').val()) {
-            args.push('style[]='+$('.search_form .sb_style').val())
-        }
-        
-        if($('.search_form #ff_q').val()) {
-            args.push('s='+$('.search_form #ff_q').val())
-        }
-        
-        var _args = args.join('&');
-        
-        var lnk = ksm_settings.home_url+'/store/search';
-        if(_args) {
-            _args = '#'+_args;
-        }
-        
-        window.location =  lnk+_args
-        
-    }
-
-
-
-
-_this_page = '';
-
-$(function() {
-    
-    /*
-    kmv = new kmvg({
-        container : '.multi_view_galleries',
-        switch_nav : '.gallery_tabs',
-        gallery_options : '.gallery_options',
-        grid_ec : '.grid_ec'
-    });
-    
-    */
-    
-    
-    
-    new slick_simple_gallery({ele : '#download_gallery'});
-    
-    if($('.ksm_store_search').length > 0) {
-        _this_page = 'search';
-    } else if($('.ksm_store_archive').length > 0) {
-        _this_page = 'archive';
-    }
-    
-    if(_this_page == 'search') {
-        store_facet = new kfacet({
-            element : '.sidebar',
-            action : 'Store_filter_posts',
-            overlay : '.main_overlay'
-        });
-        
-        $('body').delegate('.select_boxes .sb_category, .breadcrumb .more_nav select', 'change', function() {
-            $('.sidebar #ff_cat').val($(this).val());
-            store_facet.reset_page();
-            store_facet.load();
-        });
-
-
-        $('body').delegate('.sort_field select', 'change', function() {
-            $('.sidebar #ff_sort').val($(this).val());
-            store_facet.reset_page();
-            store_facet.load();
-        });
-
-
-        $('body').delegate('.ksm_pagination a', 'click', function(e) {
-            e.preventDefault();
-            $('#ff_page').val($(this).attr('rel'));
-            store_facet.load();
-        });
-        
-        $('.search_box .field.button').click(function(e) {
-            //$('.sidebar #ff_q').val($(this).val());
-            store_facet.reset_page();
-            store_facet.load();
-        });
-        
-        $('.sidebar .search #ff_q').keypress(function(e) {
-            var keycode = (e.keyCode ? e.keyCode : e.which);
-            if(keycode == 13) {
-                store_facet.reset_page();
-                store_facet.load();
+                    });
+                },100);
             }
         });
-        
-        $('.sidebar').delegate('.field_group .more_options .less, .field_group .more_options .more', 'click', function(e) {
-            $(this).closest('.more_options').find('.more_options_list').slideToggle();
-            $(this).closest('.more_options').toggleClass('maximized');
-        });
-        
-        
-        $('body').delegate('.more_nav', 'click', function(e) {
-            e.preventDefault();
-            $(this).find('ul:first-child').slideToggle();
-        });
-        
-    } else if(_this_page == 'archive') {
-        
-        
-        new jg_al_container('.section.newest', {action:'Store_getNewest'});
-        new jg_al_container('.section.trending', {action:'Store_getTrending'});
-        new jg_al_container('.section.top_selling', {action:'Store_getTopSelling'});
-        new jg_al_container('.section.top_rated', {action:'Store_getTopRated'});
-        
-        //$("select").selectbox();
-        //$(".sbOptions").mCustomScrollbar();
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    $('.search_form .field.button').click(function(e) {
-        search_form_sb();
-    });
-        
-    $('.search_form #ff_q').keypress(function(e) {
-        var keycode = (e.keyCode ? e.keyCode : e.which);
-        if(keycode == 13) {
-            search_form_sb();
-        }
-    });
-    
-    
-    /*$(".search_box select").selectBoxIt({
-        autoWidth : false, 
-        showEffect : 'slideDown', 
-        showFirstOption : false, 
-        copyClasses : 'container'
-    });
-    
-	
-    $(".sort_field select").selectBoxIt({
-        autoWidth : false, 
-        showEffect : 'none', 
-        copyClasses : 'container'
-    });*/
-    
-    
-    $('.rating_excoll').click(function(e) {
-        $('.group_ratings').slideToggle();
-        
-        $(this).toggleClass('collapsed');
-        $(this).toggleClass('expanded');
-    });
-    
-});
+    };
 
+    $scope.clear_arr = function(arr) {
+        for (var key in arr) {
+            if (arr[key] == false) {
+                delete arr[key];
+            }
+        }
+        return arr;
+    };
+
+    // ** Vars eras, erasLength are in search_form.php
+
+    var countRanges = ['0', '1 k', '5 k', '10 k', '25 k', '100 k', '500 k', '1 m', '2 m', '5 m', '15 m'], // 'poly_count' is other on Datestore (for example: 500-2k)
+        countRangesLength = countRanges.length - 1;
+
+    jQuery("#slider").slider({
+        min: 0,
+        max: 4,
+        values: [0,4],
+        range: true,
+        create: function( event, ui ) {
+            jQuery(".era-slider .first").text(eras[0]);
+            jQuery(".era-slider .second").text(eras[erasLength]);
+        }
+    }).slider("pips", {
+        first: false,
+        last: false
+    }).on("slidechange", function(e,ui) {
+        jQuery(".era-slider .first").text(eras[ui.values[0]]);
+        jQuery(".era-slider .second").text(eras[ui.values[1]]);
+
+        $scope.era = eras.slice(ui.values[0],ui.values[1]);
+        $scope.filtering();
+    });
+
+    jQuery("#polygonCount").slider({
+        min: 0,
+        max: 10,
+        values: [0,10],
+        range: true,
+        create: function( event, ui ) {
+            jQuery(".polygon-count-slider .first").text(countRanges[0]);
+            jQuery(".polygon-count-slider .second").text(countRanges[countRangesLength]);
+        }
+    }).slider("pips", {
+        first: false,
+        last: false
+    }).on("slidechange", function(e,ui) {
+        jQuery(".polygon-count-slider .first").text(countRanges[ui.values[0]]);
+        jQuery(".polygon-count-slider .second").text(countRanges[ui.values[1]]);
+
+        $scope.poly_count = countRanges.slice(ui.values[0],ui.values[1]);
+        $scope.filtering();
+    });
+
+
+    jQuery("#polygonEra").slider({
+        min: 0,
+        max: 5,
+        values: [0,5],
+        range: true,
+        create: function( event, ui ) {
+            jQuery(".era .first").text(eras[0]);
+            jQuery(".era .second").text(eras[erasLength]);
+        }
+    }).slider("pips", {
+        rest: "label",
+        labels: eras
+    }).on("slidechange", function(e,ui) {
+        jQuery(".era .first").text(eras[ui.values[0]]);
+        jQuery(".era .second").text(eras[ui.values[1]]);
+    });
+
+
+
+    if(location_search.search == true)
+    $scope.filtering();
+}]);
+
+kapp.controller('refineMenu', ['$scope','$rootScope','$http','$location', function($scope, $rootScope, $http,$location) {
+    var location_search = $location.search();
+    $scope.style = [];
+    $scope.culture = [];
+    $scope.era = [];
+    $scope.environment = [];
+    $scope.file_format = [];
+    $scope.poly_count = [];
+    $scope.pr_rating = 1;
+    $scope.price_min = '';
+    $scope.price_max = '';
+
+
+    $scope.filtering_refine = function(){
+            jQuery('.refine-menu').hide();
+        $rootScope.show_page_part = 'search';
+        $location.search({
+            'search':true
+        });
+        $scope.style = $scope.clear_arr($scope.style);
+        $scope.culture = $scope.clear_arr($scope.culture);
+        $scope.file_format = $scope.clear_arr($scope.file_format);
+
+
+        var data = {};
+
+        if($scope.price_min != '')data.price = [$scope.price_min+'-'+$scope.price_max];
+        data.pr_rating = $scope.pr_rating;
+        if(get_obj_lent($scope.style) > 0){data.style = Object.keys($scope.style); }
+        if(get_obj_lent($scope.culture) > 0){data.culture = Object.keys($scope.culture); }
+        if($scope.era.length > 0){data.era = $scope.era; }
+        if($scope.environment.length > 0){data.environment = $scope.environment; }
+        if($scope.poly_count.length > 0){data.poly_count = $scope.poly_count; }
+        if(get_obj_lent($scope.file_format) > 0){data.file_format = Object.keys($scope.file_format); }
+
+        if(location_search.cat)
+        data.cat = location_search.cat;
+        data.action ='Store_filter_posts';
+        jQuery.ajax({
+            type: "POST",
+            url: ksm_settings.ajax_url,
+            data:data,
+            success: function(res) {
+                res = $.parseJSON(res);
+                jQuery('.pictures').html(res.posts);
+                setTimeout(function () {
+                    jQuery('.pictures').gpGallery('img');
+                    $( window ).resize(function() {
+                        var imgs = {};
+                        jQuery('.pictures > a').each(function (i) {
+                            var obj = jQuery(this).find('img'),
+                                url = obj.attr('src'),
+                                width = obj.attr('width'),
+                                height = obj.attr('height');
+
+                            if (!jQuery(this).attr('class')) {
+                                imgs[i] = {
+                                    url: url,
+                                    width: width,
+                                    height: height
+                                }
+                            }
+                        });
+                        jQuery('.pictures').empty();
+                        jQuery.each(imgs, function (i, item) {
+                            jQuery('.pictures').append('<a href="#"><img src="'+ item.url +'" width="'+ item.width +'" height="'+ item.height +'"/></a>')
+                        });
+                        jQuery('.pictures').gpGallery('img');
+
+                    });
+                },100);
+            }
+        });
+    };
+
+    $scope.clear_arr = function(arr) {
+        for (var key in arr) {
+            if (arr[key] == false) {
+                delete arr[key];
+            }
+        }
+        return arr;
+    };
+
+    // ** Vars eras, erasLength are in search_form.php
+
+    var countRanges = ['0', '1 k', '5 k', '10 k', '25 k', '100 k', '500 k', '1 m', '2 m', '5 m', '15 m'], // 'poly_count' is other on Datestore (for example: 500-2k)
+        countRangesLength = countRanges.length - 1;
+
+
+
+
+
+    jQuery("#polygonEra").slider({
+        min: 0,
+        max: 5,
+        values: [0,5],
+        range: true,
+        create: function( event, ui ) {
+            jQuery(".era .first").text(eras[0]);
+            jQuery(".era .second").text(eras[erasLength]);
+        }
+    }).slider("pips", {
+        rest: "label",
+        labels: eras
+    }).on("slidechange", function(e,ui) {
+        jQuery(".era .first").text(eras[ui.values[0]]);
+        jQuery(".era .second").text(eras[ui.values[1]]);
+        $scope.era = eras.slice(ui.values[0],ui.values[1]);
+    });
+
+var environment = ['show both', 'single object', 'full environment'];
+    $scope.environment = ['show both'];
+    var polygonObjInv = ['show both', 'single object', 'full environment'];
+    jQuery("#polygonObjInv").slider({
+        min: 0,
+        max: 2,
+        range: true
+    }).slider("pips", {
+        rest: 'label',
+        labels: ['show both', 'single object', 'full environment']
+    }).on("slidechange", function(e,ui) {
+        $scope.environment = environment.slice(ui.values[0],ui.values[1]);
+    });
+
+    jQuery("#countRange").slider({
+        min: 0,
+        max: 10,
+        values: [0,10],
+        range: true,
+        create: function( event, ui ) {
+            jQuery(".polCount .first").text(countRanges[0]);
+            jQuery(".polCount .second").text(countRanges[countRangesLength]);
+        }
+    }).slider("pips", {
+        rest: 'label',
+        labels: countRanges
+    }).on("slidechange", function(e,ui) {
+        jQuery(".polCount .first").text(countRanges[ui.values[0]]);
+        jQuery(".polCount .second").text(countRanges[ui.values[1]]);
+        $scope.poly_count = countRanges.slice(ui.values[0],ui.values[1]);
+    });
+
+    $scope.pr_rating = 1;
+    jQuery("#productRating").slider({
+        min: 0,
+        max: 3,
+        value: 1,
+        range: true
+    }).slider("pips", {
+        rest: 'label',
+        labels: ['&#9733; >', '&#9733;&#9733; >', '&#9733;&#9733;&#9733; >', '&#9733;&#9733;&#9733;&#9733; >']
+    }).on("slidechange", function(e,ui) {
+        jQuery("#product-rating-number").text(parseInt([ui.value]) + 1);
+        $scope.pr_rating = parseInt([ui.value]);
+    });
+
+}]);

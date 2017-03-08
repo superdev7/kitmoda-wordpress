@@ -31,13 +31,15 @@ html {
 
 html, body {
     height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 #page {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -80px;
+    margin: 0 auto -80px auto;
 }
 
 .page_footer, .page_push {
@@ -302,25 +304,14 @@ html, body {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 .user_menu {
     float : left;
     
     .upload_launch_container {
         float:left;
         background: none;    
-        margin-top: 24px;
+        // margin-top: 24px;
         
         &:hover .upload_launch_hover {
             opacity: 1;

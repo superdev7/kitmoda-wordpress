@@ -45,7 +45,7 @@ $data = array(
                 )
             )
         ),
-        
+               
         'common' => array(
             
             array('like',
@@ -75,9 +75,15 @@ $data = array(
                     array('type' => 'recover', 'methods' => WP_REST_Server::CREATABLE)
                 )
             )
-        )
-        
-        
+        ),
+        // For Store
+        'store' => array(
+            array('categories',
+                array(
+                    array('type' => 'get_categories_for_menu', 'methods' => WP_REST_Server::CREATABLE)
+                )
+            ),
+        ),
         
         
     ),
@@ -361,6 +367,10 @@ $data = array(
         array('controller' => 'Store', 'action' => 'getTopSelling', 'no_private'=> true),
         array('controller' => 'Store', 'action' => 'getTrending', 'no_private'=> true),
         array('controller' => 'Store', 'action' => 'filter_posts', 'no_private'=> true),
+        //#Feb 06, 2017
+        array('controller' => 'Store', 'action' => 'get_cats_featured', 'no_private'=> true),
+        array('controller' => 'Store', 'action' => 'get_styles', 'no_private'=> true),
+        array('controller' => 'Store', 'action' => 'get_selected_downloads', 'no_private'=> true),
         
         // Studio
         

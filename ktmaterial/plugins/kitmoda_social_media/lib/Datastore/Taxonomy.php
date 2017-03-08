@@ -63,7 +63,7 @@ $data = array(
         'hierarchical' => false,
         'menu_name' => 'Styles',
         'slug' => 'style',
-        'show_in_menu' => false,
+//        'show_in_menu' => false,
         'objects' => array('download', 'ksm_collaboration'),
         'get_terms_method' => 'KSM_DataStore::Terms'
         ),

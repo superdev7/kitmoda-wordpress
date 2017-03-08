@@ -916,7 +916,7 @@ $(function() {
         $('.user_nav .menu').toggle();
     });
     
-    
+if(jQuery('.ksm_store_archive').length == 0) {
     $(function() {
         $('input:not([icheck])').iCheck({
             checkboxClass: 'icheckbox_futurico',
@@ -935,6 +935,7 @@ $(function() {
         });
         
     });
+}
     
     
     new slick_simple_gallery({
@@ -952,16 +953,16 @@ $(function() {
     
     
     $('.tooltip').tooltipster({
-                    minWidth: 300,
-                    maxWidth: 300,
-                    functionBefore: function(origin, continueTooltip) {
-                        if(origin.find('.description').length && origin.find('.description').html()) {
-                            origin.tooltipster('content', origin.find('.description').html());
-                            continueTooltip();
-                        }
-                    }
-                    
-                });
+        minWidth: 300,
+        maxWidth: 300,
+        functionBefore: function(origin, continueTooltip) {
+            if(origin.find('.description').length && origin.find('.description').html()) {
+                origin.tooltipster('content', origin.find('.description').html());
+                continueTooltip();
+            }
+        }
+        
+    });
 
     
     

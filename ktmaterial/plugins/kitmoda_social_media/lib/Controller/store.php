@@ -1,39 +1,39 @@
 <?php
 
 class KSM_StoreController extends KSM_BaseController {
-    
-    
-    
+
+
+
     public $scripts = array(
         array('jquery.selectBoxIt', array('jquery', 'jquery-ui-widget')),
         array('justifiedGallery', array('jquery')),
-        array('store', array('jquery', 'ksm_scripts', 'angular' ,'jquery.selectBoxIt', 'justifiedGallery')),
         array('selectbox/jquery.selectbox-0.2.min', array('jquery', 'ksm_scripts')),
         array('jquery.mCustomScrollbar.concat.min', array('jquery', 'ksm_scripts')),
-        array('custom', array('jquery')),
+        array('custom', array('jquery', 'angular',  'ksm_scripts')),
+        array('store', array('jquery', 'ksm_scripts','components-common' , 'angular' ,'jquery.selectBoxIt', 'justifiedGallery')),
     );
-    
-    
+
+
     public $styles = array('jquery.selectBoxIt', 'justifiedGallery.min', 'selectbox/jquery.selectbox');
-    
-    
-    
-            
-            
-            
-    
+
+
+
+
+
+
+
     public function ksm_index() {
-        
+
         $this->scripts[] = array('jScrollPane', array('jquery'));
         $this->scripts[] = array('SelectBox', array('jquery'));
         $this->scripts[] = array('custom', array('jquery'));
-        
-        
+
+
         $this->styles[] = 'jquery.jscrollpane';
         $this->styles[] = 'customSelectBox';
     }
-    
-    
+
+
     public function ksm_search() {
         
         
@@ -271,8 +271,7 @@ class KSM_StoreController extends KSM_BaseController {
     
     
     public function ksm_ajax_filter_posts() {
-        
-        
+
         $list_taxonomies = array(
             'price',
             'style',
@@ -310,18 +309,13 @@ class KSM_StoreController extends KSM_BaseController {
         
         
         
-        
         $cat = $_POST['cat'];
-        
-        $breadcrumb = store_search_breadcrumb($cat);
-         
-        
-        
+
         
         $tax_terms = array();
         $sort_args = array();
-        
-        
+
+
         
         
         $sorts = array('price', 'rating', 'trending', 'top_selling');
@@ -387,42 +381,29 @@ class KSM_StoreController extends KSM_BaseController {
         if($_POST['q']) {
             $args['s'] = $_POST['q'];
         }
-        
-        
-        
-        //pr($args);
-        //exit;
+
         
         $query = new WP_Query( $args );
-        
-        
-        
-        
+
         $containers = array();
+
+
+        $posts = '';
+        for($i=0; $i<sizeof($query->posts); ++$i){
+            $tmp_post = get_post_meta($query->posts[$i]->ID);
+            $grid_img = get_image_src($tmp_post['_thumbnail_id'][0], 'gallery_grid');
+            $permalink = ksm_get_permalink("store/download/{$query->posts[$i]->ID}");
+
+
+            $posts .= "<a href='{$permalink}'><img src='{$grid_img}'></a>";
+
+        }
         
-        
-        $containers['breadcrumb'] = $breadcrumb;
-        
-        
-        ob_start();
-        
-        
-        $found = false;
-        
-        while ( $query->have_posts() ) : $query->the_post();
-            $found = true;
-            $this->render_element('grid_item');
-        endwhile;
-        
-        //$this->render_element('grid');
-        
-        $containers['posts'] = ob_get_clean();
-        
+        $containers['posts'] = $posts;
+
         $containers['pagination'] = 
                 $this->Model->paginate_links(array('prev_text' => '', 'next_text' => ''), $query);
-                
-        
-        
+
         
         wp_reset_postdata();
         
@@ -432,9 +413,9 @@ class KSM_StoreController extends KSM_BaseController {
         }
         
         $containers['found'] = $found;
-        
-        
-        
+
+
+
         echo json_encode($containers);
     }
     
@@ -467,9 +448,109 @@ class KSM_StoreController extends KSM_BaseController {
         }
     }
     
-//    public function ksm_ajax_get_subcats() {
-//        pr($_POST);
-//    }
+    //Selected downloads
+    public function ksm_ajax_get_selected_downloads(){
+        $data = array('result' => false, 'html' => '');
+        
+        $def_count = 10;
+        $ksm_store_settings = get_option('ksm_store_settings') ? get_option('ksm_store_settings') : array();
+        $download_count = !empty($ksm_store_settings['download']['count']) ? $ksm_store_settings['download']['count'] : $def_count;
+        $download_list = !empty($ksm_store_settings['download']['list']) ? $ksm_store_settings['download']['list'] : $def_count;
+
+        if( count($download_list) > $download_count ){ 
+            array_splice($download_list, $download_count);            
+        }
+        
+        if( !empty($download_list) ){
+                $html = '';
+                foreach ($download_list as $key => $post_id) {
+
+                        $thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'medium' ); //url, width, height
+                        if($thumbnail_attributes){
+                            $width = $thumbnail_attributes[1] > $thumbnail_attributes[2] ? '400' : '267';
+                            $height = $thumbnail_attributes[1] > $thumbnail_attributes[2] ? '267' : '400';
+                            $html .= '<a href="'. get_permalink( $post_id ) .'"> <img src="'. $thumbnail_attributes[0] .'" width="'. $width .'" height="'. $height .'"/></a>';
+                        }
+                }
+                $data = array('result' => true, 'html' => $html);
+        }    
+        exit(json_encode($data));
+        
+    }
+    
+    //FEATURED CATEGORIES
+    public function ksm_ajax_get_cats_featured() {
+            $data = array('result' => false, 'html' => '');
+            
+            $def_count = 10;
+            $ksm_store_settings = get_option('ksm_store_settings') ? get_option('ksm_store_settings') : array();
+            $feat_cats_count = !empty($ksm_store_settings['feat_cats']['count']) ? $ksm_store_settings['feat_cats']['count'] : $def_count;
+            $feat_cats_list = !empty($ksm_store_settings['feat_cats']['list']) ? $ksm_store_settings['feat_cats']['list'] : array();
+
+            if( count($feat_cats_list) > $feat_cats_count ){ 
+                array_splice($feat_cats_list, $feat_cats_count);            
+            }
+
+            $html = '';
+            if( !empty($feat_cats_list) ){
+                
+                    $terms = get_terms( 'category', array(
+                                        'hide_empty' => false,
+                                        'fields'     => 'id=>slug',
+                                        'include'    => implode(",", $feat_cats_list)
+                    ) );               
+                    if( !empty($terms) ){
+                            $def_img = ksm_get_default_term_image();
+
+                            foreach ($terms as $key => $term) {
+
+                                    $res = ksm_get_term_image($key);
+                                    $res = ( $res != false ) ? $res : $def_img;
+                                    $html .= '<a href="'. home_url('category/'.$term) .'" class="single-category"><img src="'. $res .'" alt="pict"></a>';                    
+                            }
+                            $data = array('result' => true, 'html' => $html);
+                    }                    
+            }
+            
+            exit(json_encode($data));        
+    }
+    
+    //ART STYLES
+    public function ksm_ajax_get_styles() {
+            $data = array('result' => false, 'html' => '');
+            
+            $def_count = 10;
+            $ksm_store_settings = get_option('ksm_store_settings') ? get_option('ksm_store_settings') : array();
+            $art_styles_count = !empty($ksm_store_settings['art_styles']['count']) ? $ksm_store_settings['art_styles']['count'] : $def_count;
+            $art_styles_list = !empty($ksm_store_settings['art_styles']['list']) ? $ksm_store_settings['art_styles']['list'] : array();
+
+            if( count($art_styles_list) > $art_styles_count ){ 
+                array_splice($art_styles_list, $art_styles_count);            
+            } 
+
+            $html = '';
+            if( !empty($art_styles_list) ){
+                
+                    $terms = get_terms( 'ksm_tax_style', array(
+                                        'hide_empty' => false,
+                                        'fields'     => 'id=>slug',
+                                        'include'    => implode(",", $art_styles_list)
+                    ) );
+                    if( !empty($terms) ){
+                            $def_img = ksm_get_default_term_image();
+                    
+                            foreach ($terms as $key => $term) {
+
+                                    $res = ksm_get_term_image($key);
+                                    $res = ( $res != false ) ? $res : $def_img;
+                                    $html .= '<a href="'. home_url('ksm_tax_style/'.$term) .'" class="single-category"><img src="'. $res .'" alt="pict"></a>';                    
+                            }
+                            $data = array('result' => true, 'html' => $html);
+                    }
+            }
+            
+            exit(json_encode($data));        
+    }
     
 }
 ?>
