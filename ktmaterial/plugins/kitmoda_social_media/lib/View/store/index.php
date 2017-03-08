@@ -89,15 +89,15 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 
                             <section class="show-img-download" id="mosaic"> 
                                 <?php echo $this->render_element('loading') ?>
-<!--                                <a href="#"> <img src="<?php // echo $path_to_plugin; ?>images/galery/untitled-3-13.jpg" width="400" height="267"/></a>
-                                <a href="#"> <img src="<?php // echo $path_to_plugin; ?>images/galery/untitled-3-19.jpg" width="400" height="267"/></a>
-                                <a href="#"> <img src="<?php // echo $path_to_plugin; ?>images/galery/untitled-3-7.jpg" width="400" height="267"/></a>
-                                <a href="#"> <img src="<?php // echo $path_to_plugin; ?>images/galery/untitled-3-12.jpg" width="267" height="400"/></a>
-                                <a href="#"> <img src="<?php // echo $path_to_plugin; ?>images/galery/untitled-3-15.jpg" width="400" height="267"/></a>
-                                <a href="#"> <img src="<?php // echo $path_to_plugin; ?>images/galery/untitled-3-18.jpg" width="400" height="267"/></a>
-                                <a href="#"> <img src="<?php // echo $path_to_plugin; ?>images/galery/untitled-3-6.jpg" width="400" height="267"/></a>
-                                <a href="#"> <img src="<?php // echo $path_to_plugin; ?>images/galery/untitled-3-11.jpg" width="267" height="400"/></a>
-                                <a href="#"> <img src="<?php // echo $path_to_plugin; ?>images/galery/untitled-3-17.jpg" width="267" height="400"/></a>-->
+                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-13.jpg" width="400" height="267"/></a>
+                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-19.jpg" width="400" height="267"/></a>
+                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-7.jpg" width="400" height="267"/></a>
+                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-12.jpg" width="267" height="400"/></a>
+                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-15.jpg" width="400" height="267"/></a>
+                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-18.jpg" width="400" height="267"/></a>
+                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-6.jpg" width="400" height="267"/></a>
+                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-11.jpg" width="267" height="400"/></a>
+                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-17.jpg" width="267" height="400"/></a>
                                 <div class="clear"></div>                                                  
                             </section>
 
