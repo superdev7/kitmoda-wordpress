@@ -110,16 +110,16 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                 <div class="container-categ">
                                     <?php echo $this->render_element('loading') ?>
 
-<!--                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/dragons.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Dungeons-&-Labyrinths.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/ExtinctLifeDinosaurs.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Farm-Scenes.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/humans.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/jets.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Land-Mammals.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Sci-Fi-Vehicles.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Spacecraft-interiors.svg" alt="pict"></a>         -->
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/dragons.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Dungeons-&-Labyrinths.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/ExtinctLifeDinosaurs.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Farm-Scenes.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/humans.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/jets.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Land-Mammals.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Sci-Fi-Vehicles.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Spacecraft-interiors.svg" alt="pict"></a>         
 
                                 </div>
                             </section>
@@ -132,16 +132,16 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                 </div>
                                 <div class="container-categ">
                                     <?php echo $this->render_element('loading') ?>
-<!--                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php // echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>         -->
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/classic_toon.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/decay_dystopia.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/dragons_lore.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/expressive_emotional.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/gothic_vampire.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/realism.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/sci_fi.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/steampunk.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/surreal.svg" alt="pict"></a>
+                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/whimsical_fairytale.svg" alt="pict"></a>         
                                 </div>
                             </section>
 
