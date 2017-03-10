@@ -19,7 +19,35 @@ class KSM_StoreController extends KSM_BaseController {
 
 
 
+public function breadcrumbs($search_id,$taxonomy){
+    $parent  = get_term_by( 'id', $search_id, $taxonomy);
+    $arr = array();
+    $i=0;
+    $first_name = $parent->name;
+    $arr_id[$i] = $parent->term_id;
+    $arr[$i] =$parent->name;
+    $i += 1;
 
+    while ((int)$parent->parent != 0){
+        $id = $parent->parent;
+        $parent  = get_term_by( 'id', $id, $taxonomy);
+        $arr_id[$i] = $parent->term_id;
+        $arr[$i] =$parent->name;
+        $i += 1;
+    }
+
+    $arr_id[$i] = '';
+    $arr[$i] ='';
+// ksm_tax_style
+    if($taxonomy == 'ksm_tax_style'){
+        $res = "'no','no','no','{$first_name}'";
+    }else {
+        $ids = base64_encode(json_encode(array_reverse($arr_id)));
+        $names = base64_encode(json_encode(array_reverse($arr)));
+        $res = "'{$search_id}','{$ids}','{$names}'";
+    }
+    return $res;
+}
 
 
     public function ksm_index() {
@@ -288,10 +316,41 @@ class KSM_StoreController extends KSM_BaseController {
             'lighting',
             'renderer'
             );
-        
-        
-        
-        
+
+        if(sizeof($_POST['style']) > 0) {
+            $tmp_is_all = 0;
+            for ($i = 0; $i < sizeof($_POST['style']); $i++) {
+                if ($_POST['style'][$i] == 'all') {
+                    $tmp_is_all = 1;
+                }
+            }
+            if ($tmp_is_all == 1) {
+                $arr_tax_styles = KSM_Taxonomy::custom_list(array('tax' => 'style'));
+                $tmp_i = 0;
+                $_POST['style'] = array();
+                foreach ($arr_tax_styles as $key => $tax_style) {
+                    $_POST['style'][] = $tax_style;
+                    $tmp_i++;
+                }
+            }
+        }
+        if(sizeof($_POST['culture']) > 0) {
+            $tmp_is_all = 0;
+            for ($i = 0; $i < sizeof($_POST['culture']); $i++) {
+                if ($_POST['culture'][$i] == 'none/genera') {
+                    $tmp_is_all = 1;
+                }
+            }
+            if ($tmp_is_all == 1) {
+                $arr_tax_cultures = KSM_Taxonomy::custom_list(array('tax' => 'culture'));
+                $tmp_i = 0;
+                $_POST['culture'] = array();
+                foreach ($arr_tax_cultures as $key => $tax_culture) {
+                    $_POST['culture'][] = $tax_culture;
+                    $tmp_i++;
+                }
+            }
+        }
         
         $tax_filters = array();
         
@@ -304,19 +363,12 @@ class KSM_StoreController extends KSM_BaseController {
                     }
                 }
             }
-        }
-        
-        
-        
+        }        
         
         $cat = $_POST['cat'];
-
         
         $tax_terms = array();
-        $sort_args = array();
-
-
-        
+        $sort_args = array();        
         
         $sorts = array('price', 'rating', 'trending', 'top_selling');
         $sort = $_POST['sort'];
@@ -331,11 +383,9 @@ class KSM_StoreController extends KSM_BaseController {
             $sort_args = array('meta_key' => 'trending','orderby' => 'meta_value_num', 'order' => 'DESC');
         } else if($sort == 'top_selling') {
             $sort_args = array('meta_key' => '_edd_download_earnings','orderby' => 'meta_value_num', 'order' => 'DESC');
-        }
+        }        
         
-        
-        $tax_query = array();
-        
+        $tax_query = array();        
         
         if($tax_filters) {
             foreach($tax_filters as $k => $v) {
@@ -345,14 +395,27 @@ class KSM_StoreController extends KSM_BaseController {
                     'terms' => $v);
             }
         }
-        
-        if($cat) {
+
+        if($cat == 'all'){
+            $arr_cats_primary = KSM_Taxonomy::custom_list(array('orderby' => 'term_id', 'order' => 'ASC'));
+
+            $tmp_arr_tx = [];
+            foreach($arr_cats_primary as $k => $v) {
+                $tmp_arr_tx[] = $k;
+            }
             $tax_query[] = array(
                 'taxonomy' => 'category',
                 'field' => 'id',
-                'terms' => $cat);
+                'terms' => $tmp_arr_tx
+            );
+        }else {
+            if ($cat) {
+                $tax_query[] = array(
+                    'taxonomy' => 'category',
+                    'field' => 'id',
+                    'terms' => $cat);
+            }
         }
-        
         
         $page = $_POST['page'];
         $page = (!is_numeric($page) || $page < 1) ? 1 : $page;
@@ -361,28 +424,20 @@ class KSM_StoreController extends KSM_BaseController {
             'posts_per_page' => COMMUNITY_POSTS_PER_PAGE,
             'paged' => $page,
             'post_type' => $this->Model->post_type,
-            'post_status' => 'publish'
-            
-            
-            );
+            'post_status' => 'publish'            
+        );        
         
+        $args = array_merge($args , $sort_args);        
         
-        $args = array_merge($args , $sort_args);
-        
-        
-        
-        if(!empty($tax_query)) 
+        if(!empty($tax_query)){
             $args['tax_query'] = $tax_query;
-        
-        
-        
-        
+        }        
         
         if($_POST['q']) {
             $args['s'] = $_POST['q'];
         }
 
-        
+
         $query = new WP_Query( $args );
 
         $containers = array();
@@ -390,13 +445,14 @@ class KSM_StoreController extends KSM_BaseController {
 
         $posts = '';
         for($i=0; $i<sizeof($query->posts); ++$i){
-            $tmp_post = get_post_meta($query->posts[$i]->ID);
-            $grid_img = get_image_src($tmp_post['_thumbnail_id'][0], 'gallery_grid');
-            $permalink = ksm_get_permalink("store/download/{$query->posts[$i]->ID}");
+            $thumbnail_id = get_post_thumbnail_id($query->posts[$i]->ID);
+            if( $thumbnail_id != false){
+                $grid_img = get_image_src($thumbnail_id, 'gallery_grid');
+                $permalink = ksm_get_permalink("store/download/{$query->posts[$i]->ID}");
+                $imagesize = getimagesize($grid_img);
 
-
-            $posts .= "<a href='{$permalink}'><img src='{$grid_img}'></a>";
-
+                $posts .= "<a class='item' data-w='{$imagesize[0]}' data-h='{$imagesize[1]}' href='{$permalink}'><img src='{$grid_img}'></a>";
+            }
         }
         
         $containers['posts'] = $posts;
@@ -413,8 +469,6 @@ class KSM_StoreController extends KSM_BaseController {
         }
         
         $containers['found'] = $found;
-
-
 
         echo json_encode($containers);
     }
@@ -451,29 +505,52 @@ class KSM_StoreController extends KSM_BaseController {
     //Selected downloads
     public function ksm_ajax_get_selected_downloads(){
         $data = array('result' => false, 'html' => '');
-        
-        $def_count = 10;
-        $ksm_store_settings = get_option('ksm_store_settings') ? get_option('ksm_store_settings') : array();
-        $download_count = !empty($ksm_store_settings['download']['count']) ? $ksm_store_settings['download']['count'] : $def_count;
-        $download_list = !empty($ksm_store_settings['download']['list']) ? $ksm_store_settings['download']['list'] : $def_count;
+//        
+//        $def_count = 10;
+//        $ksm_store_settings = get_option('ksm_store_settings') ? get_option('ksm_store_settings') : array();
+//        $download_count = !empty($ksm_store_settings['download']['count']) ? $ksm_store_settings['download']['count'] : $def_count;
+//        $download_list = !empty($ksm_store_settings['download']['list']) ? $ksm_store_settings['download']['list'] : $def_count;
+//
+//        if( count($download_list) > $download_count ){ 
+//            array_splice($download_list, $download_count);            
+//        }
+//        
+//        if( !empty($download_list) ){
+//                $html = '';
+//                foreach ($download_list as $key => $post_id) {
+//
+//                        $thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'medium' ); //url, width, height
+//                        if($thumbnail_attributes){
+//                            $width = $thumbnail_attributes[1] > $thumbnail_attributes[2] ? '400' : '267';
+//                            $height = $thumbnail_attributes[1] > $thumbnail_attributes[2] ? '267' : '400';
+//                            $html .= '<a href="'. get_permalink( $post_id ) .'"> <img src="'. $thumbnail_attributes[0] .'" width="'. $width .'" height="'. $height .'"/></a>';
+//                        }
+//                }
+//                $data = array('result' => true, 'html' => $html);
+//        }    
 
-        if( count($download_list) > $download_count ){ 
-            array_splice($download_list, $download_count);            
+        $args = array(
+            'posts_per_page'=> 10,
+            'post_type'     => $this->Model->post_type,
+            'orderby'       => 'date', 
+            'order'         => 'DESC',
+            'post_status'   => 'publish'
+        );
+        $arr_posts = get_posts($args);
+        if( !empty($arr_posts) ){
+            foreach ($arr_posts as $key => $obj_post) {
+                $grid_img_attributes = wp_get_attachment_image_src( get_post_thumbnail_id($obj_post->ID), 'medium' ); //gallery_grid
+                if($grid_img_attributes){
+                        $width = $grid_img_attributes[1] > $grid_img_attributes[2] ? '400' : '267';
+                        $height = $grid_img_attributes[1] > $grid_img_attributes[2] ? '267' : '400';
+                        $html .= '<a href="'. ksm_get_permalink("store/download/{$obj_post->ID}") .'" class="item" data-w="'. $width .'" data-h="'. $height .'"><img src="'. $grid_img_attributes[0] .'" alt=""/></a>';
+                }
+            }
+            $data = array('result' => true, 'html' => $html);
+        }else{
+            $data['html'] = '<div class="empty_msg">No product found.</div>';
         }
         
-        if( !empty($download_list) ){
-                $html = '';
-                foreach ($download_list as $key => $post_id) {
-
-                        $thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'medium' ); //url, width, height
-                        if($thumbnail_attributes){
-                            $width = $thumbnail_attributes[1] > $thumbnail_attributes[2] ? '400' : '267';
-                            $height = $thumbnail_attributes[1] > $thumbnail_attributes[2] ? '267' : '400';
-                            $html .= '<a href="'. get_permalink( $post_id ) .'"> <img src="'. $thumbnail_attributes[0] .'" width="'. $width .'" height="'. $height .'"/></a>';
-                        }
-                }
-                $data = array('result' => true, 'html' => $html);
-        }    
         exit(json_encode($data));
         
     }

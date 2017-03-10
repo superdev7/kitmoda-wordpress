@@ -1,7 +1,10 @@
 jQuery(document).ready(function($) {
 
     // click on menu
-    jQuery(document).on('click','.firstList li.ng-scope',function(){
+    jQuery(document).on('click','.open_ctg',function(){
+        if($('.thirdStep').addClass('opened_ctg')){
+            $('.thirdStep').hide();
+        }
         jQuery('.secondList').toggleClass('active');
     });
     jQuery(document).on('click','.category .edit',function(){
@@ -28,106 +31,60 @@ jQuery(document).ready(function($) {
     $(document).on('click','.subCategory.secondList li',function(){
         $(this).closest('ul').removeClass('active');
         $('.thirdStep').show();
+        $('.thirdStep').addClass('opened_ctg');
     });
 
-    //Come back to Primary categories
-    $('.thirdStep .back').click(function(){
-        $(this).closest('.thirdStep').hide();
-        $('.subCategory.secondList').addClass('active');
-    });
 
     //gallery on page before search
-    jQuery('#mosaic').gpGallery('img');
-
-        $( window ).resize(function() {
-
-            var mosaicImg = {};
-
-            jQuery('#mosaic > a').each(function (i) {
-                var obj = jQuery(this).find('img'),
-                    url = obj.attr('src'),
-                    width = obj.attr('width'),
-                    height = obj.attr('height');
-
-                if (!jQuery(this).attr('class')) {
-                    mosaicImg[i] = {
-                        url: url,
-                        width: width,
-                        height: height
-                    }
-                }
-            });
-
-            jQuery('#mosaic').empty();
-
-            jQuery.each(mosaicImg, function (i, item) {
-                jQuery('#mosaic').append('<a href="#"><img src="'+ item.url +'" width="'+ item.width +'" height="'+ item.height +'"/></a>')
-            });
-
-            jQuery('#mosaic').gpGallery('img');
-
-        });
+//    jQuery('#mosaic').flexImages({maxRows: 3, rowHeight: 190});
+ 
  
         // ** Vars eras, erasLength are in search_form.php
 //        var eras = ['prehistoric','ancient','historic','retro','present','future'],
 //            erasLength = eras.length - 1;
 
 
-        jQuery("#productRating").slider({
-            min: 0,
-            max: 3,
-            value: 1,
-            range: true
-        }).slider("pips", {
-            rest: 'label',
-            labels: ['&#9733; >', '&#9733;&#9733; >', '&#9733;&#9733;&#9733; >', '&#9733;&#9733;&#9733;&#9733; >']
-        }).on("slidechange", function(e,ui) {
-            jQuery("#product-rating-number").text(parseInt([ui.value]) + 1);
-        });
         
         //Get selected download's thumbs
-        $.ajax({
-                method:   'POST',
-                dataType: 'json',
-                url:      ksm_settings.ajax_url,
-                data: { action: 'Store_get_selected_downloads'},
-                success: function( response ) {
-                    if( response.result ){
-                        $('.show-img-download#mosaic').html(response.html);                            
+        if( $('.v2 .ksm-store:visible').length == 0 ){
+            $.ajax({
+                    method:   'POST',
+                    dataType: 'json',
+                    url:      ksm_settings.ajax_url,
+                    data: { action: 'Store_get_selected_downloads'},
+                    success: function( response ) {
+                        if( response.result ){
+                            $('.show-img-download#mosaic').html(response.html);
+                            jQuery('#mosaic').flexImages({maxRows: 3, rowHeight: 190});
+                        }
                     }
-                }
-        });
-        //Get all featured category thumbs
-        $.ajax({
-                method:   'POST',
-                dataType: 'json',
-                url:      ksm_settings.ajax_url,
-                data: { action: 'Store_get_cats_featured'},
-                success: function( response ) {
-                    if( response.result ){
-                        $('.feat-categ .container-categ').html(response.html);                            
-                    }
-                }
-        });
-        //Get all styles thumbs
-        $.ajax({
-                method:   'POST',
-                dataType: 'json',
-                url:      ksm_settings.ajax_url,
-                data: { action: 'Store_get_styles'},
-                success: function( response ) {
-                    if( response.result ){
-                        $('.art-categ .container-categ').html(response.html);                            
-                    }
-                }
-        });
+            });
+        }
         
-        //Click by 'All'
-        $('.description .state').click(function(e){
-            e.preventDefault();
-            window.location = ksm_settings.home_url + '/store/#?search';
-        });
-
+//        //Get all featured category thumbs
+//        $.ajax({
+//                method:   'POST',
+//                dataType: 'json',
+//                url:      ksm_settings.ajax_url,
+//                data: { action: 'Store_get_cats_featured'},
+//                success: function( response ) {
+//                    if( response.result ){
+//                        $('.feat-categ .container-categ').html(response.html);                            
+//                    }
+//                }
+//        });
+//        //Get all styles thumbs
+//        $.ajax({
+//                method:   'POST',
+//                dataType: 'json',
+//                url:      ksm_settings.ajax_url,
+//                data: { action: 'Store_get_styles'},
+//                success: function( response ) {
+//                    if( response.result ){
+//                        $('.art-categ .container-categ').html(response.html);                            
+//                    }
+//                }
+//        });
 
 // var kfacet = Base.extend({
 //
@@ -146,9 +103,6 @@ jQuery(document).ready(function($) {
 //             _this.reset_page();
 //             _this.load();
 //         });
-//
-//
-//
 //
 //
 //         $(this.overlay).show();
@@ -422,11 +376,6 @@ jQuery(document).ready(function($) {
 //     }
 //
 //
-//
-//
-//
-//
-//
 //     $('.search_form .field.button').click(function(e) {
 //         search_form_sb();
 //     });
@@ -462,23 +411,6 @@ jQuery(document).ready(function($) {
 //     });
 //
 // });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 });
 
 function ctp(s){
@@ -495,21 +427,3 @@ function get_obj_lent(obj){
         return 0;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -44,11 +44,50 @@ kapp.controller('page_content', ['$scope','$rootScope','$http','$location', func
     $rootScope.show_page_part = (location_search.search == true)?'search':'content';
     $scope.show_page_part = (location_search.search == true)?'search':'content';
 
+    $scope.$watch(function(){ return $location.search() }, function(new_v,old_v){
+        if(old_v.search == true && !new_v.search){
+            window.location.reload();
+        }
+        var location_search = $location.search();
+        $rootScope.show_page_part = (location_search.search == true)?'search':'content';
+        $scope.show_page_part = (location_search.search == true)?'search':'content';
+    });
     $rootScope.$watch('show_page_part',function (new_v,old_v) {
         // $rootScope.show_page_part = (location_search.search == true)?'search':'content';
         $scope.show_page_part = $rootScope.show_page_part;
-    })
+    });
 
+    $scope.goto_cat = function (cat,cid,cname,style) {
+        if(style){
+            $location.search({
+            'search': true,
+            'style': style
+        });
+        }else {
+            $location.search({
+                'search': true,
+                'cat': cat,
+                'cid': cid,
+                'cname': cname
+            });
+        }
+        window.location.reload();
+    };
+    $scope.goto_all = function (is_all) {
+        if(is_all == 'all'){
+            $location.search({
+                'search': true,
+                'style': 'all'
+            });
+            window.location.reload();
+        }else {
+            $location.search({
+                'search': true,
+                'cat': 'all'
+            });
+            window.location.reload();
+        }
+    }
 }]);
 
 kapp.controller('searchBox', ['$scope','$rootScope','$http','$location', function($scope, $rootScope, $http,$location) {
@@ -91,11 +130,22 @@ kapp.controller('searchBox', ['$scope','$rootScope','$http','$location', functio
                     'cid':btoa(angular.toJson($rootScope.parent_id)),
                     'cname':btoa(angular.toJson($rootScope.parent_name))
                 });
-                $('.secondList').toggleClass('active');
-                $('.thirdStep .back').closest('.thirdStep').hide();
+                $('.secondList').removeClass('active');
+                $('.thirdStep').hide();
                 window.location.reload();
             }
         });
+    };
+    $scope.goto_category = function(){
+        $('.subCategory.secondList').removeClass('active');
+        $location.search({
+            'search':true,
+            'cat':$scope.selected_categorie_id,
+            'cid':btoa(angular.toJson($rootScope.parent_id)),
+            'cname':btoa(angular.toJson($rootScope.parent_name))
+        });
+        $('.thirdStep .back').closest('.thirdStep').hide();
+        window.location.reload();
     };
 
     $scope.go_to_parent = function(){
@@ -162,7 +212,12 @@ for(var i = 0; i<$rootScope.parent_id.length; i++){
         $scope.search_text = atob(location_search.q);
     }
 
-    $scope.style = [];
+    if(location_search.style){
+        $scope.style = [];
+        $scope.style[location_search.style] = true;
+    }else {
+        $scope.style = [];
+    }
     $scope.culture = [];
     $scope.price = [];
     $scope.file_format = [];
@@ -220,32 +275,12 @@ for(var i = 0; i<$rootScope.parent_id.length; i++){
             success: function(res) {
                 res = $.parseJSON(res);
                 jQuery('.pictures').html(res.posts);
-                setTimeout(function () {
-                    jQuery('.pictures').gpGallery('img');
-                    $( window ).resize(function() {
-                        var imgs = {};
-                        jQuery('.pictures > a').each(function (i) {
-                            var obj = jQuery(this).find('img'),
-                                url = obj.attr('src'),
-                                width = obj.attr('width'),
-                                height = obj.attr('height');
+                if( jQuery('.pictures .empty_msg').length == 0 ){
+                    setTimeout(function () {
+                        jQuery('.pictures').flexImages({rowHeight: 190});
 
-                            if (!jQuery(this).attr('class')) {
-                                imgs[i] = {
-                                    url: url,
-                                    width: width,
-                                    height: height
-                                }
-                            }
-                        });
-                        jQuery('.pictures').empty();
-                        jQuery.each(imgs, function (i, item) {
-                            jQuery('.pictures').append('<a href="#"><img src="'+ item.url +'" width="'+ item.width +'" height="'+ item.height +'"/></a>')
-                        });
-                        jQuery('.pictures').gpGallery('img');
-
-                    });
-                },100);
+                    },100);
+                }                
             }
         });
     };
@@ -330,8 +365,8 @@ for(var i = 0; i<$rootScope.parent_id.length; i++){
 
 kapp.controller('refineMenu', ['$scope','$rootScope','$http','$location', function($scope, $rootScope, $http,$location) {
     var location_search = $location.search();
-    $scope.style = [];
-    $scope.culture = [];
+    $scope.style = 'all';
+    $scope.culture = 'none/genera';
     $scope.era = [];
     $scope.environment = [];
     $scope.file_format = [];
@@ -347,17 +382,14 @@ kapp.controller('refineMenu', ['$scope','$rootScope','$http','$location', functi
         $location.search({
             'search':true
         });
-        $scope.style = $scope.clear_arr($scope.style);
-        $scope.culture = $scope.clear_arr($scope.culture);
         $scope.file_format = $scope.clear_arr($scope.file_format);
-
 
         var data = {};
 
         if($scope.price_min != '')data.price = [$scope.price_min+'-'+$scope.price_max];
         data.pr_rating = $scope.pr_rating;
-        if(get_obj_lent($scope.style) > 0){data.style = Object.keys($scope.style); }
-        if(get_obj_lent($scope.culture) > 0){data.culture = Object.keys($scope.culture); }
+        data.style = [$scope.style];
+        data.culture = [$scope.culture];
         if($scope.era.length > 0){data.era = $scope.era; }
         if($scope.environment.length > 0){data.environment = $scope.environment; }
         if($scope.poly_count.length > 0){data.poly_count = $scope.poly_count; }
@@ -374,30 +406,7 @@ kapp.controller('refineMenu', ['$scope','$rootScope','$http','$location', functi
                 res = $.parseJSON(res);
                 jQuery('.pictures').html(res.posts);
                 setTimeout(function () {
-                    jQuery('.pictures').gpGallery('img');
-                    $( window ).resize(function() {
-                        var imgs = {};
-                        jQuery('.pictures > a').each(function (i) {
-                            var obj = jQuery(this).find('img'),
-                                url = obj.attr('src'),
-                                width = obj.attr('width'),
-                                height = obj.attr('height');
-
-                            if (!jQuery(this).attr('class')) {
-                                imgs[i] = {
-                                    url: url,
-                                    width: width,
-                                    height: height
-                                }
-                            }
-                        });
-                        jQuery('.pictures').empty();
-                        jQuery.each(imgs, function (i, item) {
-                            jQuery('.pictures').append('<a href="#"><img src="'+ item.url +'" width="'+ item.width +'" height="'+ item.height +'"/></a>')
-                        });
-                        jQuery('.pictures').gpGallery('img');
-
-                    });
+                    jQuery('.pictures').flexImages({rowHeight: 190});                     
                 },100);
             }
         });
@@ -445,12 +454,12 @@ var environment = ['show both', 'single object', 'full environment'];
     jQuery("#polygonObjInv").slider({
         min: 0,
         max: 2,
-        range: true
+        range: false
     }).slider("pips", {
         rest: 'label',
         labels: ['show both', 'single object', 'full environment']
     }).on("slidechange", function(e,ui) {
-        $scope.environment = environment.slice(ui.values[0],ui.values[1]);
+        $scope.environment = environment[parseInt(ui.value)-1];
     });
 
     jQuery("#countRange").slider({
@@ -476,7 +485,7 @@ var environment = ['show both', 'single object', 'full environment'];
         min: 0,
         max: 3,
         value: 1,
-        range: true
+        range: false
     }).slider("pips", {
         rest: 'label',
         labels: ['&#9733; >', '&#9733;&#9733; >', '&#9733;&#9733;&#9733; >', '&#9733;&#9733;&#9733;&#9733; >']

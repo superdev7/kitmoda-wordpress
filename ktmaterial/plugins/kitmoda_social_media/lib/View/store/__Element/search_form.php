@@ -2,15 +2,15 @@
 
 	<div class="categories" ng-controller="searchBox">
 		<ul class="firstList">
-            <li ng-if="categories_list">categories <span class="down"></span>
+            <li class="firstItemList" ng-if="categories_list"><span class="open_ctg">categories <span class="down"></span></span>
                 <ul class="subCategory secondList">
                     <li ng-repeat="(key,value) in categories_list" ng-click="get_child(key,value)">{{value}}</li>
                 </ul>
             </li>
 		</ul>
 		<div class="thirdStep" style="box-shadow: black -7px 7px 17px 5px;">
-			<span class="back" ng-click="to_top_categories()">back</span>
-			<h6 class="title" ng-click="go_to_parent()">{{selected_categorie_name}}</h6>
+			<span class="back" ng-click="go_to_parent()">back</span>
+			<h6 class="title" ng-click="goto_category()">{{selected_categorie_name}}</h6>
 			<div class="single-item-category" ng-repeat="(key,value) in child_categories_list" ng-click="get_child(key,value)">{{value}}</div>
 		</div>
 	</div>
@@ -26,15 +26,16 @@
                                 $arr_tax_styles = KSM_Taxonomy::custom_list(array('tax'=>'style'));
                                 if( !empty($arr_tax_styles) ){ ?>
                                     <ul class="list-options scrollbar-inner" id="scrollbar-inner2">
-                                        <li><input type="checkbox" name="style-options" id="opt1" ng-model="style['all']" value="all" checked><label for="opt1" class="active">all</label></li>
+                                        <li><input type="radio" name="style-options" id="opt1" ng-model="style" ng-true-value="all" value="all" checked><label for="opt1" class="active">all</label></li>
                                         <?php
                                         foreach ($arr_tax_styles as $key => $tax_style) { ?>
                                                 <li>
-                                                    <input type="checkbox"
-                                                           name="style-options[]"
+                                                    <input type="radio"
+                                                           name="style-options"
                                                            id="opt<?php echo $key; ?>"
-                                                           ng-model="style['<?php echo $tax_style; ?>']"
-                                                           value="<?php echo $key; ?>">
+                                                           ng-model="style"
+                                                           ng-true-value="<?php echo $tax_style; ?>"
+                                                           value="<?php echo $tax_style; ?>">
                                                     <label for="opt<?php echo $key; ?>"><?php echo $tax_style; ?></label>
                                                 </li>
                                         <?php }
@@ -45,7 +46,7 @@
 			<div class="second-column">
 				<div class="title">culture</div>
 				<ul class="list-options scrollbar-inner" id="scrollbar-inner1">
-					<li><input type="checkbox" name="culture-options" id="cultr-opt1" ng-model="culture['none/genera']" checked><label for="cultr-opt1" class="active">none/general</label></li>
+					<li><input type="radio" name="culture-options" id="cultr-opt1" ng-model="culture" ng-true-value="all" checked><label for="cultr-opt1" class="active">none/general</label></li>
                                         <?php
                                         $terms = get_terms( 'ksm_tax_culture', array(
                                                             'orderby'    => 'name',
@@ -54,7 +55,7 @@
                                         ) );
                                         if( !empty($terms) ){
                                             foreach ($terms as $key => $value) {
-                                                echo '<li><input type="checkbox" name="culture-options" ng-model="culture[\''. $value .'\']" id="cultr-'. $key .'" value=""><label for="cultr-'. $key .'">'. $value .'</label></li>';
+                                                echo '<li><input type="radio" name="culture-options" ng-model="culture" ng-true-value="'. $value .'" id="cultr-'. $key .'" value="'. $value .'"><label for="cultr-'. $key .'">'. $value .'</label></li>';
                                             }
                                         }
                                         ?>				    
@@ -85,7 +86,7 @@
                                     </div>
                                     <div class="container-format">
                                             <div class="columns-all">
-                                                    <div class="ind-check"><input type="checkbox" id="format-all" value="all" ng-model="file_format['all']" name="check-format"><label for="format-all">all</label></div>
+                                                    <div class="ind-check"><input type="radio" id="format-all" value="all" ng-model="file_format['all']" name="check-format"><label for="format-all">all</label></div>
                                             </div>
                                             <div class="else">
                                                 <?php
@@ -97,7 +98,7 @@
                                                 ) );
                                                 if( !empty($terms) ){
                                                     foreach ($terms as $key => $value) {
-                                                        echo '<div class="ind-check"><input type="checkbox" id="format-'. $value .'" ng-model="file_format[\''. $value .'\']" value="'. $value .'" name="check-format"><label for="format-'. $value .'">'. $value .'</label></div>';
+                                                        echo '<div class="ind-check"><input type="radio" id="format-'. $value .'" ng-model="file_format[\''. $value .'\']" value="'. $value .'" name="check-format"><label for="format-'. $value .'">'. $value .'</label></div>';
                                                     }
                                                 }
                                                 ?>

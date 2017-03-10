@@ -67,3 +67,33 @@ $animation__delayOffset: 0.2s !default;
     @content;
   }
 }
+
+
+/*----------FLEXBOX MIXIN ------------*/
+
+@mixin justCont($value) {
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+
+@mixin alignItems($value) {
+  -webkit-align-items: $value;
+  align-items: $value;
+}
+
+@mixin alignBoth($value1, $value2) {
+  -webkit-justify-content: $value1;
+  justify-content: $value1;
+  -webkit-align-items: $value2;
+  align-items: $value2;
+}
+
+@mixin flexWrap($value) {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@mixin flexDir($value) {
+  -webkit-flex-direction: $value;
+  flex-direction: $value;
+} 

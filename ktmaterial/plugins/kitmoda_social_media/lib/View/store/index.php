@@ -3,13 +3,11 @@ $this->render_element('main_tabs');
 $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 ?>
    
-<link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery.scrollbar.css" />  
-<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery.scrollbar.css" />   
 
 <link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery-ui.css">
-<link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery-ui-pips.css">
-<link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/custom.css" /> 
+<link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery.flex-images.css">
+<link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery-ui-pips.css"> 
 
 <div class="ksm-menu-sub-menu_container">
 
@@ -40,7 +38,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 
 </div>
 
-<div class="ksm_profile_container">
+<div class="ksm_profile_container store-page">
 
     <div class="ksm_profile_container_overlay">
 
@@ -89,15 +87,25 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 
                             <section class="show-img-download" id="mosaic"> 
                                 <?php echo $this->render_element('loading') ?>
-                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-13.jpg" width="400" height="267"/></a>
-                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-19.jpg" width="400" height="267"/></a>
-                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-7.jpg" width="400" height="267"/></a>
-                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-12.jpg" width="267" height="400"/></a>
-                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-15.jpg" width="400" height="267"/></a>
-                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-18.jpg" width="400" height="267"/></a>
-                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-6.jpg" width="400" height="267"/></a>
-                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-11.jpg" width="267" height="400"/></a>
-                                <a href="#"> <img src="<?php  echo $path_to_plugin; ?>images/galery/untitled-3-17.jpg" width="267" height="400"/></a>
+<!--                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-13.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-13.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-19.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-7.jpg"/></a>-->
+<!--                                <a href="#"  class="item" data-w="267" data-h="400"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-12.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-15.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-19.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-7.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-19.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-7.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-19.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-7.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-19.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-7.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-19.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-7.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-19.jpg"/></a>
+                                <a href="#"  class="item" data-w="400" data-h="267"> <img src="<?php //  echo $path_to_plugin; ?>images/galery/untitled-3-7.jpg"/></a>-->
+                            
                                 <div class="clear"></div>                                                  
                             </section>
 
@@ -105,21 +113,21 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                 <h3>featured categories</h3>
                                 <div class="description">
                                     Most popular categories
-                                    <a href="#" class="state">all</a>
+                                    <a href="#" onclick="event.preventDefault();" class="state" ng-click="goto_all('cat')">all</a>
                                 </div>
                                 <div class="container-categ">
                                     <?php echo $this->render_element('loading') ?>
 
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/dragons.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Dungeons-&-Labyrinths.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/ExtinctLifeDinosaurs.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Farm-Scenes.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/humans.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/jets.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Land-Mammals.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Sci-Fi-Vehicles.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Spacecraft-interiors.svg" alt="pict"></a>         
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('7411','category'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Castles.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('8630','category'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/dragons.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('7521','category'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Dungeons-&-Labyrinths.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('8510','category'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/ExtinctLifeDinosaurs.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('7374','category'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Farm-Scenes.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('8508','category'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/humans.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('7855','category'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/jets.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('8575','category'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Land-Mammals.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('7829','category'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Sci-Fi-Vehicles.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('7531','category'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_categories_icons/Spacecraft-interiors.svg" alt="pict"></a>
 
                                 </div>
                             </section>
@@ -128,20 +136,20 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                 <h3>art styles</h3>
                                 <div class="description">
                                     isolate your projects artistic style
-                                    <a href="#" class="state">all</a>
+                                    <a href="#" onclick="event.preventDefault();" class="state" ng-click="goto_all('all')">all</a>
                                 </div>
                                 <div class="container-categ">
                                     <?php echo $this->render_element('loading') ?>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/classic_toon.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/decay_dystopia.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/dragons_lore.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/expressive_emotional.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/gothic_vampire.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/realism.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/sci_fi.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/steampunk.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/surreal.svg" alt="pict"></a>
-                                    <a href="#" class="single-category"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/whimsical_fairytale.svg" alt="pict"></a>         
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('7411','ksm_tax_style'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/classic_toon.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('8669','ksm_tax_style'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/decay_dystopia.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('8665','ksm_tax_style'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/dragons_lore.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('8678','ksm_tax_style'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/expressive_emotional.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('8664','ksm_tax_style'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/gothic_vampire.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('8662','ksm_tax_style'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/realism.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('8668','ksm_tax_style'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/sci_fi.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('8663','ksm_tax_style'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/steampunk.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('8677','ksm_tax_style'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/surreal.svg" alt="pict"></a>
+                                    <a href="#" onclick="event.preventDefault();" class="single-category" ng-click="goto_cat(<?php echo $this->breadcrumbs('8666','ksm_tax_style'); ?>)"><img src="<?php  echo $path_to_plugin; ?>images/store_styles_icons/whimsical_fairytale.svg" alt="pict"></a>
                                 </div>
                             </section>
 
@@ -694,7 +702,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 <script src='<?php echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/css/sunny/js/jquery.mCustomScrollbar.concat.min.js'></script> 
 <script src="<?php echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/js/jquery.scrollbar.min.js"></script>  
  
-<script src="<?php echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/js/jquery-gp-gallery.js"></script>
+<script src="<?php echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/js/jquery.flex-images.js"></script>
 <script src='<?php echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/js/jquery-ui-pips.js'></script>
 
 <!--<script src="<?php // echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/js/custom.js"></script>-->
