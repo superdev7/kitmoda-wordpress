@@ -24,12 +24,12 @@ var kapp = angular.module('kapp', [
 }]);
 
 
-// kapp.config(function($locationProvider) {
-//     $locationProvider.html5Mode({
-//         enabled: true,
-//         requireBase: false
-//     });
-// });
+kapp.config(function($locationProvider) {
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
+});
 
 kapp.run(function($rootScope, JoinUiService) {
         $rootScope.join = function() {
@@ -44,14 +44,14 @@ kapp.controller('page_content', ['$scope','$rootScope','$http','$location', func
     $rootScope.show_page_part = (location_search.search == true)?'search':'content';
     $scope.show_page_part = (location_search.search == true)?'search':'content';
 
-    // $scope.$watch(function(){ return $location.search() }, function(new_v,old_v){
-    //     if(old_v.search == true && !new_v.search){
-    //         window.location.reload();
-    //     }
+    $scope.$watch(function(){ return $location.search() }, function(new_v,old_v){
+        if(old_v.search == true && !new_v.search){
+            window.location.reload();
+        }
     //     var location_search = $location.search();
     //     $rootScope.show_page_part = (location_search.search == true)?'search':'content';
     //     $scope.show_page_part = (location_search.search == true)?'search':'content';
-    // });
+    });
     $rootScope.$watch('show_page_part',function (new_v,old_v) {
         // $rootScope.show_page_part = (location_search.search == true)?'search':'content';
         $scope.show_page_part = $rootScope.show_page_part;

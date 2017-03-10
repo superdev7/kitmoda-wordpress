@@ -74,10 +74,9 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                 <div class="add_post_form_highlight_studio_overlay_bottom"></div>
                             </div>
                         </div> -->
-                        
-                    </div>
 
-                    <div class="content" ng-show="show_page_part == 'content' ">
+                    </div>
+                    <div class="content <?php if(isset($_GET['search'])){ echo 'ng-hide'; }else{ echo 'ng-scope'; } ?>" ng-show="show_page_part == 'content' ">
                         <div class="sections">
                             <section class="top-image">
                                 <img src="<?php echo $path_to_plugin; ?>images/top-img.png"  alt="pic" class="bg-img">
@@ -294,7 +293,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 
                     </div>
 
-<div class="ksm-store"  ng-show="show_page_part == 'search' " ng-controller="search">
+<div class="ksm-store <?php if(isset($_GET['search'])){ echo 'ng-scope'; }else{ echo 'ng-hide'; } ?>"  ng-show="show_page_part == 'search' " ng-controller="search">
     <aside class="ksm-sidebar" id="sidebar-store">
         <div class="ksm_store_search ">
             <div class="content">
