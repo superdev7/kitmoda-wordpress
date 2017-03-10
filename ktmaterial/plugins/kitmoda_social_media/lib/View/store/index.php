@@ -306,14 +306,14 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 
                         <div class="coll_sidebar_shadow">
                             <div class="sb_content">
-                                 <div class="field_group"  ng-if="breadcrumbs">
+                                 <div class="field_group ng-hide"  ng-show="breadcrumbs">
                                     <div class="category">
                                         <div class="title">Category</div>
                                         <div class="edit">EDIT</div>
                                     </div>
                                      <div class="community_sidebar_linebreak_dark"></div>
                                     <div class="community_sidebar_linebreak"></div>
-                                    <div class="breadcrumbs">
+                                    <div class="breadcrumbs ng-hide" ng-show="breadcrumbs">
                                         <a ng-repeat="item in breadcrumbs" ng-click="change_cat(item['id'])">{{item['name']}}{{ ($last != true)? ' > ':'' }}</a>
                                     </div> 
                                 </div>
