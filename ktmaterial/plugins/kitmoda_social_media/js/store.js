@@ -44,14 +44,14 @@ kapp.controller('page_content', ['$scope','$rootScope','$http','$location', func
     $rootScope.show_page_part = (location_search.search == true)?'search':'content';
     $scope.show_page_part = (location_search.search == true)?'search':'content';
 
-    $scope.$watch(function(){ return $location.search() }, function(new_v,old_v){
-        if(old_v.search == true && !new_v.search){
-            window.location.reload();
-        }
-        var location_search = $location.search();
-        $rootScope.show_page_part = (location_search.search == true)?'search':'content';
-        $scope.show_page_part = (location_search.search == true)?'search':'content';
-    });
+    // $scope.$watch(function(){ return $location.search() }, function(new_v,old_v){
+    //     if(old_v.search == true && !new_v.search){
+    //         window.location.reload();
+    //     }
+    //     var location_search = $location.search();
+    //     $rootScope.show_page_part = (location_search.search == true)?'search':'content';
+    //     $scope.show_page_part = (location_search.search == true)?'search':'content';
+    // });
     $rootScope.$watch('show_page_part',function (new_v,old_v) {
         // $rootScope.show_page_part = (location_search.search == true)?'search':'content';
         $scope.show_page_part = $rootScope.show_page_part;
@@ -230,6 +230,24 @@ for(var i = 0; i<$rootScope.parent_id.length; i++){
     $scope.mapping = [];
     $scope.renderer = [];
 
+    $rootScope.$watch('culture',function (new_v,old_v) {
+        if(typeof new_v == 'object') {
+            if (typeof new_v[0] == 'string') {
+                $scope.culture = [];
+                $scope.culture[new_v] = true;
+            }
+        }
+    });
+    $rootScope.$watch('style',function (new_v,old_v) {
+        if(typeof new_v == 'object') {
+            if (typeof new_v[0] == 'string') {
+                $scope.style = [];
+                $scope.style[new_v] = true;
+            }
+        }
+    });
+
+
     $scope.filtering = function(){
 
         $scope.posts = [];
@@ -390,6 +408,8 @@ kapp.controller('refineMenu', ['$scope','$rootScope','$http','$location', functi
         data.pr_rating = $scope.pr_rating;
         data.style = [$scope.style];
         data.culture = [$scope.culture];
+        $rootScope.culture = data.culture;
+        $rootScope.style = data.style;
         if($scope.era.length > 0){data.era = $scope.era; }
         if($scope.environment.length > 0){data.environment = $scope.environment; }
         if($scope.poly_count.length > 0){data.poly_count = $scope.poly_count; }
@@ -405,9 +425,12 @@ kapp.controller('refineMenu', ['$scope','$rootScope','$http','$location', functi
             success: function(res) {
                 res = $.parseJSON(res);
                 jQuery('.pictures').html(res.posts);
-                setTimeout(function () {
-                    jQuery('.pictures').flexImages({rowHeight: 190});                     
-                },100);
+                if( jQuery('.pictures .empty_msg').length == 0 ){
+                    setTimeout(function () {
+                        jQuery('.pictures').flexImages({rowHeight: 190});
+
+                    },100);
+                }
             }
         });
     };

@@ -10,8 +10,8 @@
 		</ul>
 		<div class="thirdStep" style="box-shadow: black -7px 7px 17px 5px;">
 			<span class="back" ng-click="go_to_parent()">back</span>
-			<h6 class="title" ng-click="goto_category()">{{selected_categorie_name}}</h6>
-			<div class="single-item-category" ng-repeat="(key,value) in child_categories_list" ng-click="get_child(key,value)">{{value}}</div>
+			<h6 class="title" style="cursor: pointer;" ng-click="goto_category()">{{selected_categorie_name}}</h6>
+			<div class="single-item-category" style="cursor: pointer;" ng-repeat="(key,value) in child_categories_list" ng-click="get_child(key,value)">{{value}}</div>
 		</div>
 	</div>
 	<div class="refine">refine </div>
@@ -36,7 +36,7 @@
                                                            ng-model="style"
                                                            ng-true-value="<?php echo $tax_style; ?>"
                                                            value="<?php echo $tax_style; ?>">
-                                                    <label for="opt<?php echo $key; ?>"><?php echo $tax_style; ?></label>
+                                                    <label style="cursor: pointer;" for="opt<?php echo $key; ?>"><?php echo $tax_style; ?></label>
                                                 </li>
                                         <?php }
                                         ?>
