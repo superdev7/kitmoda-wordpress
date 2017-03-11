@@ -966,9 +966,14 @@ textarea {
 }
 .ubox ul li .progress {
 	display: none;
-	width: auto;
+	position:relative;
+	float: right;
+	alignment-adjust:middle;
+	text-align:justify;
+	margin-top:5px;
+	margin-right:5px;
+	width: 100%;
 	bottom: 3px;
-	left: 3px;
 	right: 3px;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
