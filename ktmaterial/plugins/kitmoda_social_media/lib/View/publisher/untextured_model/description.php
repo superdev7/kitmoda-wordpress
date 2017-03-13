@@ -202,12 +202,13 @@ Kitmoda pays the modeler 80% of this &ldquo;Price Share&rdquo; value per sale of
         </div>
 		       </div>
         
-        </div>
+        
         
         
         <div class="section section_pricing section_normal_pricing" style="display: none;">
+        <div class="sectionOverlay">
             <h2>Pricing</h2>
-            
+            <div class="line2"></div>
             <div class="field_group">
                 
                 <div class="field">
@@ -222,8 +223,8 @@ Kitmoda pays the modeler 80% of this &ldquo;Price Share&rdquo; value per sale of
             </div>
             
         </div>
-        
-        
+       </div> 
+        </div>
         
         
 </div>        
