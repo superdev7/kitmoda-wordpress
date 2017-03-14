@@ -155,13 +155,11 @@
         
         
         
-        
+       <div class="sectionBackgroundDark"> 
         <div class="section">
+        	<div class="sectionOverlay">
             <h2>UV Unwrap</h2>
-            
-            
-            
-            
+            <div class="line2"></div>
             <div class="field_group field_group_is_unwrapped">
                 <div class="field_title">Is the model Unwrapped?</div>
                 <?=KSM_Form::terms_radio('unwrapped'); ?>
@@ -184,9 +182,9 @@
             
             
         </div>
+        </div>
         
-        
-        
+       </div> 
     </div>
 
 
