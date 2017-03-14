@@ -2,7 +2,7 @@
 
 	<div class="categories" ng-controller="searchBox">
 		<ul class="firstList">
-            <li class="firstItemList" ng-if="categories_list"><span class="open_ctg">categories <span class="down"></span></span>
+            <li class="firstItemList" ng-if="categories_list"><span class="open_ctg" ng-click="switch_icon()">categories <span class="x_icon ng-hide" ng-show="categories_is_open == 'true'"><div class="left_x_icon"></div><div class="right_x_icon"></div></span><span class="down" ng-show="categories_is_open == 'false'"></span></span>
                 <ul class="subCategory secondList">
                     <li ng-repeat="(key,value) in categories_list" ng-click="get_child(key,value)">{{value}}</li>
                 </ul>
@@ -25,7 +25,7 @@
                                 <?php
                                 $arr_tax_styles = KSM_Taxonomy::custom_list(array('tax'=>'style'));
                                 if( !empty($arr_tax_styles) ){ ?>
-                                    <ul class="list-options scrollbar-inner" id="scrollbar-inner2">
+                                    <ul class="list-options scrollbar-inner mCustomScrollbar">
                                         <li><input type="radio" name="style-options" id="opt1" ng-model="style" ng-true-value="all" value="all" checked><label for="opt1" class="active">all</label></li>
                                         <?php
                                         foreach ($arr_tax_styles as $key => $tax_style) { ?>
@@ -45,7 +45,7 @@
 			</div>
 			<div class="second-column">
 				<div class="title">culture</div>
-				<ul class="list-options scrollbar-inner" id="scrollbar-inner1">
+				<ul class="list-options scrollbar-inner mCustomScrollbar">
 					<li><input type="radio" name="culture-options" id="cultr-opt1" ng-model="culture" ng-true-value="all" checked><label for="cultr-opt1" class="active">none/general</label></li>
                                         <?php
                                         $terms = get_terms( 'ksm_tax_culture', array(
@@ -140,10 +140,10 @@
 		</form>
 	</div>
 
-    <div class="field field_inp" ng-controller="searchInput">
+    <form ng-submit="search_by_text()" class="field field_inp" ng-controller="searchInput">
         <input type="text" name="s" id="ff_q" value="" ng-model="search_text" placeholder="Search 3D Models...">
         <div class="field button" ng-click="search_by_text()"><span></span></div>
-    </div>
+    </form>
  
     <div class="clr"></div>
 </div> 

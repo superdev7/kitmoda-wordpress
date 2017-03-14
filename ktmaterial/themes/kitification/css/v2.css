@@ -3353,6 +3353,7 @@ body {
   background-repeat: no-repeat;
   display: inline-block;
   margin-left: 5px;
+  margin-bottom: 2px;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories ul.firstList > li {
   cursor: pointer;
@@ -3379,9 +3380,15 @@ body {
   border-bottom: 1px solid #19191F;
   padding: 6px 0;
   cursor: pointer;
+  color: #4F9AFF;
+  text-shadow: none;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories ul.firstList > li ul.secondList > li:last-child {
   border-bottom: none;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories ul.firstList > li ul.secondList li:hover {
+  color: #b7dbff;
+  text-shadow: 2px 2px 5px #2c5889;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories ul.firstList > li ul.secondList.active {
   display: block;
@@ -3408,7 +3415,14 @@ body {
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories .thirdStep div.single-item-category {
   border-bottom: 1px solid #19191F;
+  color: #419AFF;
   padding: 5px 0;
+  text-shadow: none;
+  cursor: pointer;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories .thirdStep div.single-item-category:hover {
+  color: #b7dbff;
+  text-shadow: 2px 2px 5px #2c5889;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories .thirdStep div.single-item-category:last-child {
   border-bottom: none;
@@ -3418,6 +3432,7 @@ body {
   font-size: 15px;
   cursor: pointer;
   margin-bottom: 10px;
+  color: #419AFF;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories .thirdStep .back:before {
   content: url(../../../plugins/kitmoda_social_media/images/arrow_left.png);
@@ -3426,6 +3441,10 @@ body {
   position: relative;
   top: 3px;
   margin-right: 10px;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories .thirdStep .back:hover {
+  color: #b7dbff;
+  text-shadow: 2px 2px 5px #2c5889;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine {
   margin-right: 40px;
@@ -3442,6 +3461,9 @@ body {
   color: #b7dbff;
   text-shadow: 2px 2px 5px #2c5889;
 }
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine.active-refine {
+  display: block;
+}
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu {
   position: absolute;
   top: 82px;
@@ -3454,6 +3476,52 @@ body {
   box-shadow: -7px 7px 17px 5px black;
   transform: translateX(-50%);
   width: 80%;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu .mCSB_scrollTools .mCSB_draggerRail {
+  background-color: #202029;
+  box-shadow: inset 0px -2px 6px 0 black;
+  border-radius: 0;
+  width: 16px;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  border-radius: 0;
+  width: 9px;
+  background-color: #4A8ECD;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu .mCSB_scrollTools .mCSB_dragger .mCSB_scrollTools_onDrag {
+  background: #b7dbff !important;
+  box-shadow: 1px 1px 3px #2c5889;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:hover {
+  background: #b7dbff !important;
+  box-shadow: 1px 1px 3px #2c5889;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu .mCSB_scrollTools a + .mCSB_draggerContainer {
+  margin: 15px 0;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu .mCustomScrollBox > .mCSB_scrollTools {
+  position: absolute;
+  opacity: 1;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu .mCSB_scrollTools .mCSB_buttonDown,
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu .mCSB_scrollTools .mCSB_buttonUp {
+  box-shadow: inset 0px -2px 6px 0 black;
+  opacity: 1;
+  height: 16px;
+  width: 16px;
+  right: 0.05px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu .mCSB_scrollTools .mCSB_buttonDown {
+  box-shadow: none;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu .mCSB_scrollTools .mCSB_buttonUp {
+  background-image: url(../../../plugins/kitmoda_social_media/images/arrow-top-scroll.png);
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu .mCSB_scrollTools .mCSB_buttonDown {
+  background-image: url(../../../plugins/kitmoda_social_media/images/arrow-bottom-scroll.png);
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form {
   position: relative;
@@ -3748,7 +3816,8 @@ body {
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .list-options {
   max-height: 480px;
   width: 100% !important;
-  overflow: auto;
+  overflow: hidden;
+  position: relative;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .list-options li {
   padding: 10px 35px 7px 0;
@@ -4069,6 +4138,17 @@ body {
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .slider-desciption span:last-child {
   margin-right: 0;
 }
+.v2 .ksm-store .ksm-sidebar .ksm_store_search .ui-widget-content {
+  background: #545467;
+}
+.v2 .ksm-store .ksm-sidebar .ksm_store_search .ui-widget-header {
+  background: #5aa9e0;
+}
+.v2 .ksm-store .ksm-sidebar .ksm_store_search .ui-corner-all {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .ui-widget {
   margin-left: 7px;
 }
@@ -4083,7 +4163,10 @@ body {
   width: 2px;
   height: 9px;
   margin-left: -2px;
-  background: white;
+  background: #545467;
+}
+.v2 .ksm-store .ksm-sidebar .ksm_store_search .ui-slider-pips .ui-slider-pip .ui-slider-line {
+  display: none;
 }
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .ui-slider-pips .ui-slider-pip-inrange {
   background: #5aa9e0;
@@ -4127,17 +4210,6 @@ body {
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .ui-slider-horizontal .ui-slider-range-max {
   right: 0;
 }
-.v2 .ksm-store .ksm-sidebar .ksm_store_search .ui-widget-content {
-  background: #fff;
-}
-.v2 .ksm-store .ksm-sidebar .ksm_store_search .ui-widget-header {
-  background: #5aa9e0;
-}
-.v2 .ksm-store .ksm-sidebar .ksm_store_search .ui-corner-all {
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-}
 .v2 .ksm-store .ksm-content {
   width: calc(100% - 318px);
   padding: 24px 37px 26px 20px;
@@ -4174,6 +4246,31 @@ body {
     width: 33%;
     padding: 5px 5%;
   }
+}
+.v2 .x_icon {
+  height: 15px;
+  width: 15px;
+  position: relative;
+  background: black;
+  display: inline-block;
+  margin-left: 5px;
+  padding-top: 6px;
+}
+.v2 .left_x_icon {
+  width: 15px;
+  position: absolute;
+  transform: rotate(45deg);
+  background: #4f95e9;
+  height: 2px;
+  top: 4px;
+}
+.v2 .right_x_icon {
+  width: 15px;
+  position: absolute;
+  transform: rotate(-45deg);
+  background: #4f95e9;
+  height: 2px;
+  top: 4px;
 }
 .v2 .page_footer, .v2 .page_push {
   height: 80px;

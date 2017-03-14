@@ -3,7 +3,7 @@ $this->render_element('main_tabs');
 $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 ?>
    
-<link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery.scrollbar.css" />   
+<link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery.mCustomScrollbar.css" />
 
 <link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery-ui.css">
 <link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery.flex-images.css">
@@ -309,13 +309,16 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                  <div class="field_group ng-hide"  ng-show="breadcrumbs">
                                     <div class="category">
                                         <div class="title">Category</div>
-                                        <div class="edit">EDIT</div>
+                                        <div class="edit" ng-click="switch_icon()">EDIT</div>
                                     </div>
                                      <div class="community_sidebar_linebreak_dark"></div>
                                     <div class="community_sidebar_linebreak"></div>
-                                    <div class="breadcrumbs ng-hide" ng-show="breadcrumbs">
+                                    <div class="breadcrumbs ng-hide" ng-show="breadcrumbs.length > 0">
                                         <a ng-repeat="item in breadcrumbs" ng-click="change_cat(item['id'])">{{item['name']}}{{ ($last != true)? ' > ':'' }}</a>
-                                    </div> 
+                                    </div>
+                                    <div class="breadcrumbs ng-hide" ng-show="breadcrumbs.length == 0">
+                                        <a style="cursor: default;">Home</a>
+                                    </div>
                                 </div>
 <!-- Style -->
                                 <div class="field_group">
@@ -698,9 +701,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-<script src='<?php echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/css/sunny/js/jquery.mCustomScrollbar.concat.min.js'></script> 
-<script src="<?php echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/js/jquery.scrollbar.min.js"></script>  
- 
+<script src='<?php echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/css/sunny/js/jquery.mCustomScrollbar.concat.min.js'></script>
 <script src="<?php echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/js/jquery.flex-images.js"></script>
 <script src='<?php echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/js/jquery-ui-pips.js'></script>
 

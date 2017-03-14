@@ -4,10 +4,11 @@
  * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
  * may not operate correctly without them.
  */
+
 .jspContainer
 {
 	overflow: hidden;
-	position: relative; width: 370px !important;    height: 312px !important;
+	position: relative;
 }
 
 .jspPane
@@ -59,12 +60,12 @@
 }
 
 .jspDrag
-{    background: hsl(209, 57%, 55%) none repeat scroll 0 0;
-    position: relative;
-    top: 0;
-    left: 5px !important;
-    cursor: pointer;
-    width: 7px;
+{
+	background: #bbd;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
 }
 
 .jspHorizontalBar .jspTrack,

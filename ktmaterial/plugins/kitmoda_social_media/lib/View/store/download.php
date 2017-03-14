@@ -1,74 +1,19 @@
-<link rel="stylesheet" href="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/jquery.jscrollpane.css?ver=4.4" />
-		<link rel="stylesheet" href="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/customSelectBox.css?ver=4.4" />
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src='http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/sunny/js/jquery.mCustomScrollbar.concat.min.js'></script>
-<script src="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/jScrollPane.js?ver=4.4"></script>
-		<script src="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/SelectBox.js?ver=4.4"></script>
-        <script>
-		  jQuery.noConflict()(function($){
-			$(function() {
-
-				$("select").each(function() {
-					var sb = new SelectBox({
-						selectbox: $(this),
-						height: 150,
-						width: 200
-					});
-				});
-				});
-			});
-		</script>
-
-        <script>
-
-                                    $(document).ready(function(){
-
-
-
-                                            $(".select_boxes .sbOptions").mCustomScrollbar();
-
-											$(".sort_field select").mCustomScrollbar();
-
-
-
-
-
-
-
-                                    })(jQuery);
-
-
-
-                                </script>
 <?php
+$path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
+?>
+<link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery.mCustomScrollbar.css" />
+<link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery.jscrollpane.css?ver=4.4" />
+<link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/customSelectBox.css?ver=4.4" />
+<link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery-ui-pips.css">
 
-
-
-
-
+<?php
 $this->render_element('main_tabs');
-
-
 
 $posts->the_post();
 
 global $post;
 
-
-
-
-
-
-
-
-
 if($post && $post->post_status == 'publish' || $post && current_user_can('manage_options')) {
-
-
-
-
 
     $ksm_download = new KSM_Download($post->ID);
 
@@ -165,7 +110,7 @@ KSM_postView::add($post);
 
 
 
-<div class="ksm_profile_container">
+<div class="ksm_profile_container" ng-controller="page_content">
 
 
 
@@ -745,14 +690,33 @@ KSM_postView::add($post);
 
 
 </div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src='<?php echo $path_to_plugin; ?>css/sunny/js/jquery.mCustomScrollbar.concat.min.js'></script>
+<script src="<?php echo $path_to_plugin; ?>js/jScrollPane.js?ver=4.4"></script>
+<script src="<?php echo $path_to_plugin; ?>js/SelectBox.js?ver=4.4"></script>
+<script src='<?php echo $path_to_plugin; ?>js/jquery-ui-pips.js'></script>
 <script>
-$.noConflict()(function($){
-$( document ).ready(function() {
+jQuery.noConflict()(function($){
+			$(function() {
 
-$( ".gallery_container" ).before("<div class='pr-col_container_top alla'></div>");
+				$("select").each(function() {
+					var sb = new SelectBox({
+						selectbox: $(this),
+						height: 150,
+						width: 200
+					});
+				});
+				});
+            $(document).ready(function(){
 
+                $(".select_boxes .sbOptions").mCustomScrollbar();
 
-});
+				$(".sort_field select").mCustomScrollbar();
+
+                $( ".gallery_container" ).before("<div class='pr-col_container_top alla'></div>");
+
+            });
 });
 </script>

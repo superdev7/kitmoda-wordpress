@@ -46,11 +46,19 @@ kapp.controller('page_content', ['$scope','$rootScope','$http','$location', func
 
     $scope.$watch(function(){ return $location.search() }, function(new_v,old_v){
         if(old_v.search == true && !new_v.search){
-            window.location.reload();
+            document.location.href = $location.url();
         }
     //     var location_search = $location.search();
     //     $rootScope.show_page_part = (location_search.search == true)?'search':'content';
     //     $scope.show_page_part = (location_search.search == true)?'search':'content';
+    });
+    $scope.$watch(function(){ return $location.path() }, function(new_v,old_v){
+        if(old_v != new_v){
+            document.location.href = $location.url();
+        }
+        //     var location_search = $location.search();
+        //     $rootScope.show_page_part = (location_search.search == true)?'search':'content';
+        //     $scope.show_page_part = (location_search.search == true)?'search':'content';
     });
     $rootScope.$watch('show_page_part',function (new_v,old_v) {
         // $rootScope.show_page_part = (location_search.search == true)?'search':'content';
@@ -71,7 +79,7 @@ kapp.controller('page_content', ['$scope','$rootScope','$http','$location', func
                 'cname': cname
             });
         }
-        window.location.reload();
+        document.location.href = $location.url();
     };
     $scope.goto_all = function (is_all) {
         if(is_all == 'all'){
@@ -79,15 +87,34 @@ kapp.controller('page_content', ['$scope','$rootScope','$http','$location', func
                 'search': true,
                 'style': 'all'
             });
-            window.location.reload();
+            document.location.href = $location.url();
         }else {
             $location.search({
                 'search': true,
                 'cat': 'all'
             });
-            window.location.reload();
+            document.location.href = $location.url();
         }
-    }
+    };
+
+
+    $scope.categories_is_open = 'false';
+    $rootScope.categories_is_open = 'false';
+
+    $rootScope.$watch('categories_is_open',function (new_v,old_v) {
+        $scope.categories_is_open = $rootScope.categories_is_open;
+    });
+
+    $scope.switch_icon = function () {
+        if($scope.categories_is_open == 'false'){
+            $scope.categories_is_open = 'true';
+            $rootScope.categories_is_open = 'true';
+        }else{
+            $scope.categories_is_open = 'false';
+            $rootScope.categories_is_open = 'false';
+        }
+    };
+
 }]);
 
 kapp.controller('searchBox', ['$scope','$rootScope','$http','$location', function($scope, $rootScope, $http,$location) {
@@ -132,7 +159,7 @@ kapp.controller('searchBox', ['$scope','$rootScope','$http','$location', functio
                 });
                 $('.secondList').removeClass('active');
                 $('.thirdStep').hide();
-                window.location.reload();
+                document.location.href = $location.url();
             }
         });
     };
@@ -145,7 +172,7 @@ kapp.controller('searchBox', ['$scope','$rootScope','$http','$location', functio
             'cname':btoa(angular.toJson($rootScope.parent_name))
         });
         $('.thirdStep .back').closest('.thirdStep').hide();
-        window.location.reload();
+        document.location.href = $location.url();
     };
 
     $scope.go_to_parent = function(){
@@ -168,13 +195,14 @@ kapp.controller('searchBox', ['$scope','$rootScope','$http','$location', functio
 }]);
 kapp.controller('searchInput', ['$scope','$rootScope','$http','$location', function($scope, $rootScope, $http,$location) {
 
+    console.log(document.location.href);
     var location_search = $location.search();
     $scope.search_by_text = function () {
         $location.search({
             'search':true,
             'q':btoa($scope.search_text)
         });
-        window.location.reload();
+        document.location.href = $location.url();
     };
     if(location_search.q){
         $scope.search_text = atob(location_search.q);
@@ -187,18 +215,36 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
     var location_search = $location.search();
     $rootScope.show_page_part = (location_search.search == true)?'search':'content';
     $scope.search_text = '';
-    if(location_search.cid && location_search.cname){
+    if(location_search.cid &&location_search.cid != 'no' && location_search.cname){
         $rootScope.parent_id = JSON.parse(atob(location_search.cid));
         $rootScope.parent_name = JSON.parse(atob(location_search.cname));
         $rootScope.parent_id = $rootScope.parent_id.slice(1,$rootScope.parent_id.length);
         $rootScope.parent_name = $rootScope.parent_name.slice(1,$rootScope.parent_name.length);
         $scope.breadcrumbs = [];
-for(var i = 0; i<$rootScope.parent_id.length; i++){
-    $scope.breadcrumbs[i] = [];
-    $scope.breadcrumbs[i]['id'] = $rootScope.parent_id[i];
-    $scope.breadcrumbs[i]['name'] = $rootScope.parent_name[i];
-}
+        for(var i = 0; i<$rootScope.parent_id.length; i++){
+            $scope.breadcrumbs[i] = [];
+            $scope.breadcrumbs[i]['id'] = $rootScope.parent_id[i];
+            $scope.breadcrumbs[i]['name'] = $rootScope.parent_name[i];
+        }
+    }else{
+        $scope.breadcrumbs = [];
     }
+    $scope.categories_is_open = 'false';
+    $rootScope.categories_is_open = 'false';
+
+    $rootScope.$watch('categories_is_open',function (new_v,old_v) {
+        $scope.categories_is_open = $rootScope.categories_is_open;
+    });
+    $scope.switch_icon = function () {
+        if($scope.categories_is_open == 'false'){
+            $scope.categories_is_open = 'true';
+            $rootScope.categories_is_open = 'true';
+        }else{
+            $scope.categories_is_open = 'false';
+            $rootScope.categories_is_open = 'false';
+        }
+    };
+
     $scope.change_cat = function(cat_id){
         $location.search({
             'search':true,
@@ -206,7 +252,7 @@ for(var i = 0; i<$rootScope.parent_id.length; i++){
             'cid':btoa(angular.toJson($rootScope.parent_id)),
             'cname':btoa(angular.toJson($rootScope.parent_name))
         });
-        window.location.reload();
+        document.location.href = $location.url();
     };
     if(location_search.q){
         $scope.search_text = atob(location_search.q);

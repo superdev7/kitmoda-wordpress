@@ -2,43 +2,57 @@ jQuery(document).ready(function($) {
 
     // click on menu
     jQuery(document).on('click','.open_ctg',function(){
+        jQuery('.refine-menu').hide();
+
         if($('.thirdStep').addClass('opened_ctg')){
             $('.thirdStep').hide();
         }
         jQuery('.secondList').toggleClass('active');
     });
+
     jQuery(document).on('click','.category .edit',function(){
         jQuery('.secondList').toggleClass('active');
     });
 
-	//open refine-menu
-	jQuery(document).on('click','.refine',function(){
-		jQuery('.refine-menu').show();
-	});
+    //open refine-menu
+    jQuery(document).on('click','.refine',function(){
+        $('.secondList').removeClass('active');
+        $('.thirdStep').hide();
+        $('.refine-menu').show();
+    });
 
-	//close refine-menu
-	jQuery('.close-refine-button').click(function(){
-		jQuery('.refine-menu').hide();
-	});
+    //close refine-menu
+    jQuery('.close-refine-button').click(function(){
+        jQuery('.refine-menu').hide();
+    });
 
     //custom scroll
 
-    jQuery('.scrollbar-inner').scrollbar({
-        showArrows: true
+    // jQuery('.scrollbar-inner').scrollbar({
+    //     showArrows: true
+    // });
+
+    jQuery('.mCustomScrollbar').mCustomScrollbar({
+        theme:"refine-scroll",
+        scrollButtons: {
+           enable: true,
+           scrollAmount: 10
+       }
     });
 
     //Primary categories
     $(document).on('click','.subCategory.secondList li',function(){
         $(this).closest('ul').removeClass('active');
         $('.thirdStep').show();
+        $('.refine-menu').hide();
         $('.thirdStep').addClass('opened_ctg');
     });
-
+ 
 
     //gallery on page before search
 //    jQuery('#mosaic').flexImages({maxRows: 3, rowHeight: 190});
- 
- 
+
+
         // ** Vars eras, erasLength are in search_form.php
 //        var eras = ['prehistoric','ancient','historic','retro','present','future'],
 //            erasLength = eras.length - 1;
@@ -46,7 +60,7 @@ jQuery(document).ready(function($) {
 
         
         //Get selected download's thumbs
-        if( $('.v2 .ksm-store:visible').length == 0 ){
+        if( $('.v2 .ksm-store').length > 0 && $('.v2 .ksm-store:visible').length == 0 ){
             $.ajax({
                     method:   'POST',
                     dataType: 'json',

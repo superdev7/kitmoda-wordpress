@@ -133,7 +133,8 @@ public function breadcrumbs($search_id,$taxonomy){
         
         
         if($query->post_count == 0) {
-            $containers['content'] = '<div class="empty_msg">No product found.</div>';
+            $containers['content'] = "<div class='empty_msg'>Hmm... We currently don't have a 3D model matching that description.  
+Our community is growing fast so check back soon for that model!</div>";
         }
         
         $containers['found'] = $found;
@@ -187,7 +188,8 @@ public function breadcrumbs($search_id,$taxonomy){
         
         
         if($query->post_count == 0) {
-            $containers['content'] = '<div class="empty_msg">No product found.</div>';
+            $containers['content'] = "<div class='empty_msg'>Hmm... We currently don't have a 3D model matching that description.  
+Our community is growing fast so check back soon for that model!</div>";
         }
         
         $containers['found'] = $found;
@@ -241,7 +243,8 @@ public function breadcrumbs($search_id,$taxonomy){
         
         
         if($query->post_count == 0) {
-            $containers['content'] = '<div class="empty_msg">No product found.</div>';
+            $containers['content'] = "<div class='empty_msg'>Hmm... We currently don't have a 3D model matching that description.  
+Our community is growing fast so check back soon for that model!</div>";
         }
         
         $containers['found'] = $found;
@@ -289,7 +292,8 @@ public function breadcrumbs($search_id,$taxonomy){
         
         
         if($query->post_count == 0) {
-            $containers['content'] = '<div class="empty_msg">No product found.</div>';
+            $containers['content'] = "<div class='empty_msg'>Hmm... We currently don't have a 3D model matching that description.  
+Our community is growing fast so check back soon for that model!</div>";
         }
         
         $containers['found'] = $found;
@@ -465,7 +469,8 @@ public function breadcrumbs($search_id,$taxonomy){
         
         
         if($query->post_count == 0) {
-            $containers['posts'] = '<div class="empty_msg">No product found.</div>';
+            $containers['posts'] = "<div class='empty_msg'>Hmm... We currently don't have a 3D model matching that description.  
+Our community is growing fast so check back soon for that model!</div>";
         }
         
         $containers['found'] = $found;
@@ -548,7 +553,8 @@ public function breadcrumbs($search_id,$taxonomy){
             }
             $data = array('result' => true, 'html' => $html);
         }else{
-            $data['html'] = '<div class="empty_msg">No product found.</div>';
+            $data['html'] = "<div class='empty_msg'>Hmm... We currently don't have a 3D model matching that description.  
+Our community is growing fast so check back soon for that model!</div>";
         }
         
         exit(json_encode($data));
