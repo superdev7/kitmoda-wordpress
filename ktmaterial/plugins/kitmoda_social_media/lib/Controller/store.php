@@ -544,7 +544,7 @@ Our community is growing fast so check back soon for that model!</div>";
         $arr_posts = get_posts($args);
         if( !empty($arr_posts) ){
             foreach ($arr_posts as $key => $obj_post) {
-                $grid_img_attributes = wp_get_attachment_image_src( get_post_thumbnail_id($obj_post->ID), 'medium' ); //gallery_grid
+                $grid_img_attributes = wp_get_attachment_image_src( get_post_thumbnail_id($obj_post->ID), 'gallery_grid' );
                 if($grid_img_attributes){
                         $width = $grid_img_attributes[1] > $grid_img_attributes[2] ? '400' : '267';
                         $height = $grid_img_attributes[1] > $grid_img_attributes[2] ? '267' : '400';

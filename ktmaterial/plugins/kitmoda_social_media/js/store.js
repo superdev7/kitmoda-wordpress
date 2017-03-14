@@ -104,7 +104,12 @@ kapp.controller('page_content', ['$scope','$rootScope','$http','$location', func
     $rootScope.$watch('categories_is_open',function (new_v,old_v) {
         $scope.categories_is_open = $rootScope.categories_is_open;
     });
-
+    jQuery(document).on('click','.refine',function(){
+        if($scope.categories_is_open == 'true'){
+            $scope.switch_icon();
+            $scope.$apply();
+        }
+    });
     $scope.switch_icon = function () {
         if($scope.categories_is_open == 'false'){
             $scope.categories_is_open = 'true';
@@ -136,7 +141,7 @@ kapp.controller('searchBox', ['$scope','$rootScope','$http','$location', functio
     });
 
     $scope.get_child = function (id,name) {
-        $('.subCategory.secondList').removeClass('active');
+        $('.subCategory.secondList').slideUp();
         $scope.selected_categorie_name = name;
         $scope.selected_categorie_id = id;
         if(!$scope.parent_id){
@@ -157,21 +162,21 @@ kapp.controller('searchBox', ['$scope','$rootScope','$http','$location', functio
                     'cid':btoa(angular.toJson($rootScope.parent_id)),
                     'cname':btoa(angular.toJson($rootScope.parent_name))
                 });
-                $('.secondList').removeClass('active');
-                $('.thirdStep').hide();
+                $('.secondList').slideUp();
+                $('.thirdStep').slideUp();
                 document.location.href = $location.url();
             }
         });
     };
     $scope.goto_category = function(){
-        $('.subCategory.secondList').removeClass('active');
+        $('.subCategory.secondList').slideUp();
         $location.search({
             'search':true,
             'cat':$scope.selected_categorie_id,
             'cid':btoa(angular.toJson($rootScope.parent_id)),
             'cname':btoa(angular.toJson($rootScope.parent_name))
         });
-        $('.thirdStep .back').closest('.thirdStep').hide();
+        $('.thirdStep .back').closest('.thirdStep').slideUp();
         document.location.href = $location.url();
     };
 
@@ -181,8 +186,8 @@ kapp.controller('searchBox', ['$scope','$rootScope','$http','$location', functio
         $rootScope.parent_id.pop();
         $rootScope.parent_name.pop();
         if($scope.parent_id.length == 0){
-            $('.thirdStep .back').closest('.thirdStep').hide();
-            $('.subCategory.secondList').addClass('active');
+            $('.thirdStep .back').closest('.thirdStep').slideUp();
+            $('.subCategory.secondList').slideDown('active');
         }else {
             $http.post(ksm_settings.rest.api_base + 'categories', ctp({id: $scope.parent_id[$scope.parent_id.length - 1]}), config).then(function (r) {
                 $scope.selected_categorie_name = $scope.parent_name[$scope.parent_name.length - 1];

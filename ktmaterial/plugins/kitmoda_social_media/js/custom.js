@@ -1,13 +1,13 @@
 jQuery(document).ready(function($) {
 
-    // click on menu
+  // click on menu
     jQuery(document).on('click','.open_ctg',function(){
         jQuery('.refine-menu').hide();
 
         if($('.thirdStep').addClass('opened_ctg')){
-            $('.thirdStep').hide();
+            $('.thirdStep').slideUp();
         }
-        jQuery('.secondList').toggleClass('active');
+        jQuery('.secondList').slideToggle();
     });
 
     jQuery(document).on('click','.category .edit',function(){
@@ -16,8 +16,8 @@ jQuery(document).ready(function($) {
 
     //open refine-menu
     jQuery(document).on('click','.refine',function(){
-        $('.secondList').removeClass('active');
-        $('.thirdStep').hide();
+        $('.secondList').slideUp();
+        $('.thirdStep').slideUp();        
         $('.refine-menu').show();
     });
 
@@ -36,15 +36,16 @@ jQuery(document).ready(function($) {
         theme:"refine-scroll",
         scrollButtons: {
            enable: true,
-           scrollAmount: 10
+           scrollAmount: 10 
        }
     });
 
+
     //Primary categories
     $(document).on('click','.subCategory.secondList li',function(){
-        $(this).closest('ul').removeClass('active');
-        $('.thirdStep').show();
-        $('.refine-menu').hide();
+        $(this).closest('ul').slideUp();
+        $('.thirdStep').slideDown();
+        $('.refine-menu').hide();        
         $('.thirdStep').addClass('opened_ctg');
     });
  
