@@ -1,6 +1,11 @@
 <?php
 
-$data = array(
+$data = array(  
+    
+    'all-triangulated' => array(
+        'filter_label' => 'All Triangulated',
+        'form_label' => '100% triangulated'
+        ),
     'all-quads' => array(
         'filter_label' => 'ALL QUADS',
         'form_label' => '100% Quadrangular Polygons'
@@ -8,13 +13,6 @@ $data = array(
     'over-90-quads' => array(
         'filter_label' => 'OVER 90% QUADS',
         'form_label' => 'Mostly Quadrangular Polygons (Greater than 90% Quads)'
-        ),
-    
-    
-    
-    'all-triangulated' => array(
-        'filter_label' => 'All Triangulated',
-        'form_label' => '100% triangulated'
         ),
     
     'mostly-triangulated' => array(

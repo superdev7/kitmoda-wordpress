@@ -318,7 +318,8 @@ Our community is growing fast so check back soon for that model!</div>";
             'texturing_method',
             'mapping',
             'lighting',
-            'renderer'
+            'renderer',
+            'model_angular'
             );
 
         if(sizeof($_POST['style']) > 0) {

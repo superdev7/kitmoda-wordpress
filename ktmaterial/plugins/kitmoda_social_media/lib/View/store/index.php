@@ -314,7 +314,8 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                      <div class="community_sidebar_linebreak_dark"></div>
                                     <div class="community_sidebar_linebreak"></div>
                                     <div class="breadcrumbs ng-hide" ng-show="breadcrumbs.length > 0">
-                                        <a ng-repeat="item in breadcrumbs" ng-click="change_cat(item['id'])">{{item['name']}}{{ ($last != true)? ' > ':'' }}</a>
+                                        <a ng-repeat-start="item in breadcrumbs" ng-click="change_cat(item['id'])" ng-style="($last != true)? '':{color:'grey'} " style="cursor: pointer;">{{item['name']}}</a>
+                                        <span ng-repeat-end style="color: grey">{{ ($last != true)? ' > ':'' }}</span>
                                     </div>
                                     <div class="breadcrumbs ng-hide" ng-show="breadcrumbs.length == 0">
                                         <a style="cursor: default;">Home</a>
@@ -482,35 +483,48 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="title">Model Type</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
 
-                                    <?php
-                                    $arr_tax_game_readys = KSM_Taxonomy::custom_list(array('tax'=>'game_ready'));
-                                    if( !empty($arr_tax_game_readys) ){
-                                                foreach ($arr_tax_game_readys as $key => $tax_game_ready) {
-                                                    ?>
-                                                    <div class="field">
-                                                        <input type="checkbox"
-                                                               class="opt_filter"
-                                                               name="game_ready[]"
-                                                               ng-model="game_ready['<?php echo $tax_game_ready; ?>']"
-                                                               ng-click="filtering()" id="ff_game_ready_<?php echo $tax_game_ready; ?>"
-                                                               value="<?php echo $tax_game_ready; ?>">
-                                                        <label for="ff_game_ready_<?php echo $tax_game_ready; ?>"><?php echo $tax_game_ready; ?></label>
-                                                    </div>
-                                                    <?php
-                                                }
-                                        ?>
-                                    <?php } ?>
 
-
+                                    <div class="field">
+                                        <input type="checkbox" class="opt_filter" name="game_ready[]" ng-model="game_ready['all']" ng-click="filtering()" id="ff_game_ready_all" value="all">
+                                        <label for="ff_game_ready_all">all</label>
+                                    </div>
 
                                     <div class="field">
                                         <input type="checkbox" class="opt_filter" name="print_ready[]" ng-model="print_ready['yes']" ng-click="filtering()" id="ff_print_ready_yes" value="yes">
                                         <label for="ff_print_ready_yes">3D PRINT READY</label>
                                     </div>
-                                    <div class="field">
-                                        <input type="checkbox" class="opt_filter" name="environment[]" ng-model="environment['yes']" ng-click="filtering()" id="ff_environment_yes" value="yes">
-                                        <label for="ff_environment_yes">FULL ENVIRONMENT</label>
-                                    </div>
+                                    <?php
+                                    $options = KSM_DataStore::Terms('game_ready', null, null);
+                                    foreach ($options as $key => $value) {
+                                        if(isset($value['filterable']) && $value['filterable'] == false){
+                                            continue;
+                                        }else {
+                                            if($value['filter_label'] == 'GAME READY (MOBILE DEV)'){
+                                                $value['filter_label'] = 'game ready <span>(low poly - mobile dev)</span>';
+                                            }else if($value['filter_label'] == 'GAME READY (MID GEN)'){
+                                                $value['filter_label'] = 'game ready <span>(mid poly)</span>';
+                                            }else if($value['filter_label'] == 'GAME READY (NEXT GEN)'){
+                                                $value['filter_label'] = 'game ready <span>(high poly - next gen)</span>';
+                                            }else{
+                                                $value['filter_label'] = false;
+                                            }
+
+                                            if($value['filter_label'] != false) {
+                                                ?>
+                                                <div class="field">
+                                                    <input type="checkbox"
+                                                           class="opt_filter"
+                                                           name="game_ready[]"
+                                                           ng-model="game_ready['<?php echo $key; ?>']"
+                                                           ng-click="filtering()" id="ff_game_ready_<?php echo $key; ?>"
+                                                           value="<?php echo $key; ?>">
+                                                    <label for="ff_game_ready_<?php echo $key; ?>"><?php echo $value['filter_label']; ?></label>
+                                                </div>
+                                                <?php
+                                            }
+                                        }
+                                    }
+                                    ?>
                                 </div>
 
 
@@ -519,26 +533,93 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="title">model construction</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
                                     <div class="field">
-                                        <input type="checkbox" class="opt_filter" name="model_constr[]" ng-model="model_constr['all']" ng-click="filtering()" id="ff_model_const_all" value="all">
-                                        <label for="ff_model_const_all">all</label>
+                                        <input type="checkbox" class="opt_filter" name="model_angular[]" ng-model="model_angular['all']" ng-click="filtering()" id="ff_model_angular_all" value="all">
+                                        <label for="ff_model_angular_all">all</label>
                                     </div>
-                                    <div class="field">
+                                        <?php
+                                        $options = KSM_DataStore::Terms('model_angular', null, null);
+                                        foreach ($options as $key => $value) {
+                                            if(isset($value['filterable']) && $value['filterable'] == false){
+                                                continue;
+                                            }else {
+                                                if($value['filter_label'] == 'All Triangulated'){
+                                                    $value['filter_label'] = 'triangles';
+                                                }else if($value['filter_label'] == 'ALL QUADS'){
+                                                    $value['filter_label'] = 'all quads';
+                                                }else if($value['filter_label'] == 'OVER 90% QUADS'){
+                                                    $value['filter_label'] = 'over 90% quads';
+                                                }else{
+                                                    $value['filter_label'] = false;
+                                                }
+
+                                                if($value['filter_label'] != false) {
+                                                    ?>
+                                                    <div class="field">
+                                                        <input type="checkbox"
+                                                               class="opt_filter"
+                                                               name="model_angular[]"
+                                                               ng-model="model_angular['<?php echo $key; ?>']"
+                                                               ng-click="filtering()" id="ff_model_angular_<?php echo $key; ?>"
+                                                               value="<?php echo $key; ?>">
+                                                        <label for="ff_model_angular_<?php echo $key; ?>"><?php echo $value['filter_label']; ?></label>
+                                                    </div>
+                                                    <?php
+                                                }
+                                            }
+                                        }
+                                        ?>
+<!--                                    <div class="field">
                                         <input type="checkbox" class="opt_filter" name="model_constr[]" ng-model="model_constr['triagles']" ng-click="filtering()" id="ff_model_const_triagles" value="triagles">
                                         <label for="ff_model_const_triagles">triagles</label>
-                                    </div>
+                                    </div>-->
                                 </div>
 
                                 <div class="field_group">
                                     <div class="title">model scale</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
+
+
                                     <div class="field">
                                         <input type="checkbox" class="opt_filter" name="model_scale[]" ng-model="model_scale['all']" ng-click="filtering()" id="ff_model_scale_all" value="all">
                                         <label for="ff_model_scale_all">all</label>
                                     </div>
+
+                                    <?php
+                                    $options = KSM_DataStore::Terms('world_scale', null, null);
+                                    foreach ($options as $key => $value) {
+                                        if(isset($value['filterable']) && $value['filterable'] == false){
+                                            continue;
+                                        }else {
+                                            if($value['filter_label'] == 'REAL WORLD SCALE'){
+                                                $value['filter_label'] = 'accurate world scale';
+                                            }else{
+                                                $value['filter_label'] = false;
+                                            }
+
+                                            if($value['filter_label'] != false) {
+                                                ?>
+                                                <div class="field">
+                                                    <input type="checkbox"
+                                                           class="opt_filter"
+                                                           name="model_scale[]"
+                                                           ng-model="model_scale['<?php echo $key; ?>']"
+                                                           ng-click="filtering()" id="ff_model_scale_<?php echo $key; ?>"
+                                                           value="<?php echo $key; ?>">
+                                                    <label for="ff_model_scale_<?php echo $key; ?>"><?php echo $value['filter_label']; ?></label>
+                                                </div>
+                                                <?php
+                                            }
+                                        }
+                                    }
+                                    ?>
+
+
                                     <div class="field">
-                                        <input type="checkbox" class="opt_filter" name="model_scale[]" ng-model="model_scale['any scale']" ng-click="filtering()" id="ff_model_scale_any" value="any scale">
+                                        <input type="checkbox" class="opt_filter" name="model_scale[]" ng-model="model_scale['no']" ng-click="filtering()" id="ff_model_scale_any" value="no">
                                         <label for="ff_model_scale_any">any scale</label>
-                                    </div> 
+                                    </div>
+
+
                                 </div> 
 
                                 <div class="field_group">
@@ -548,17 +629,42 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="field">
                                         <input type="checkbox" class="opt_filter" name="texturing_status[]"  ng-model="texturing_status['all']" ng-click="filtering()" id="ff_texturing_status_all" value="all">
                                         <label for="ff_texturing_status_all">all</label>
-                                    </div> 
-                                    <div class="more_options">
-                                    <div class="more_options_list">
-                                        <div class="field">
+                                    </div>
+                                        <?php
+                                        // texturing_status -> texturing_method
+                                        $options = KSM_DataStore::Terms('texturing_method', null, null);
+                                        foreach ($options as $key => $value) {
+                                            if(isset($value['filterable']) && $value['filterable'] == false){
+                                                continue;
+                                            }else {
+                                                if($value['filter_label'] == 'HAND PAINTED TEXTURES'){
+                                                    $value['filter_label'] = 'textured <span>(hand painted)</span>';
+                                                }else if($value['filter_label'] == 'PHOTOGRAPHS'){
+                                                    $value['filter_label'] = 'textured <span>(photographs)</span>';
+                                                }else{
+                                                    $value['filter_label'] = false;
+                                                }
+                                                // + none and textuted
+                                                if($value['filter_label'] != false) {
+                                                    ?>
+                                                    <div class="field">
+                                                        <input type="checkbox"
+                                                               class="opt_filter"
+                                                               name="game_ready[]"
+                                                               ng-model="game_ready['<?php echo $key; ?>']"
+                                                               ng-click="filtering()" id="ff_game_ready_<?php echo $key; ?>"
+                                                               value="<?php echo $key; ?>">
+                                                        <label for="ff_game_ready_<?php echo $key; ?>"><?php echo $value['filter_label']; ?></label>
+                                                    </div>
+                                                    <?php
+                                                }
+                                            }
+                                        }
+                                        ?>
+<!--                                        <div class="field">
                                             <input type="checkbox" class="opt_filter" name="texturing_status[]"  ng-model="texturing_status['procedural']" ng-click="filtering()" id="ff_texturing_method_procedural" value="procedural">
                                             <label for="ff_texturing_status_none">none <span class="remark">(untextured)</span></label>
-                                        </div> 
-                                    </div>
-                                    <div class="more">Show More</div>
-                                    <div class="less">Less</div>
-                                 </div>
+                                        </div> -->
                                 </div>
 
                                 <div class="field_group">
@@ -566,24 +672,48 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="title">Detail Mapping</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
 
+
+                                    <div class="field">
+                                        <input type="checkbox"
+                                               class="opt_filter"
+                                               name="mapping[]"
+                                               ng-model="mapping['none']"
+                                               ng-click="filtering()"
+                                               id="ff_mapping_none"
+                                               value="all">
+                                        <label for="ff_mapping_none">none</label>
+                                    </div>
+
                                     <?php
-                                    $arr_tax_mappings = KSM_Taxonomy::custom_list(array('tax'=>'mapping'));
-                                    if( !empty($arr_tax_mappings) ){
-                                        foreach ($arr_tax_mappings as $key => $tax_mapping) {
-                                            ?>
-                                            <div class="field">
-                                                <input type="checkbox"
-                                                       class="opt_filter"
-                                                       name="mapping[]"
-                                                       ng-model="mapping['<?php echo $tax_mapping; ?>']"
-                                                       ng-click="filtering()" id="ff_mapping_<?php echo $tax_mapping; ?>"
-                                                       value="<?php echo $tax_mapping; ?>">
-                                                <label for="ff_mapping_<?php echo $tax_mapping; ?>"><?php echo $tax_mapping; ?></label>
-                                            </div>
-                                            <?php
+                                    $options = KSM_DataStore::Terms('mapping', null, null);
+                                    foreach ($options as $key => $value) {
+                                        if(isset($value['filterable']) && $value['filterable'] == false){
+                                            continue;
+                                        }else {
+                                            if($value['filter_label'] == 'NORMALS MAP'){
+                                                $value['filter_label'] = 'normal mapping';
+                                            }else if($value['filter_label'] == 'DISPLACEMENT MAP'){
+                                                $value['filter_label'] = 'displacement mapping';
+                                            }else{
+                                                $value['filter_label'] = false;
+                                            }
+
+                                            if($value['filter_label'] != false) {
+                                                ?>
+                                                <div class="field">
+                                                    <input type="checkbox"
+                                                           class="opt_filter"
+                                                           name="mapping[]"
+                                                           ng-model="mapping['<?php echo $key; ?>']"
+                                                           ng-click="filtering()" id="ff_mapping_<?php echo $key; ?>"
+                                                           value="<?php echo $key; ?>">
+                                                    <label for="ff_mapping_<?php echo $key; ?>"><?php echo $value['filter_label']; ?></label>
+                                                </div>
+                                                <?php
+                                            }
                                         }
-                                        ?>
-                                    <?php } ?>
+                                    }
+                                    ?>
                                 </div>
 
 
@@ -593,24 +723,47 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="title">Lighting Setup</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
 
+                                    <div class="field">
+                                        <input type="checkbox"
+                                               class="opt_filter"
+                                               name="lighting[]"
+                                               ng-model="lighting['none']"
+                                               ng-click="filtering()"
+                                               id="ff_lighting_all"
+                                               value="all">
+                                        <label for="ff_lighting_all">none</label>
+                                    </div>
+
                                     <?php
-                                    $arr_tax_lightings = KSM_Taxonomy::custom_list(array('tax'=>'lighting'));
-                                    if( !empty($arr_tax_lightings) ){
-                                        foreach ($arr_tax_lightings as $key => $tax_lighting) {
-                                            ?>
-                                            <div class="field">
-                                                <input type="checkbox"
-                                                       class="opt_filter"
-                                                       name="lighting[]"
-                                                       ng-model="lighting['<?php echo $tax_lighting; ?>']"
-                                                       ng-click="filtering()" id="ff_lighting_<?php echo $tax_lighting; ?>"
-                                                       value="<?php echo $tax_lighting; ?>">
-                                                <label for="ff_lighting_<?php echo $tax_lighting; ?>"><?php echo $tax_lighting; ?></label>
-                                            </div>
-                                            <?php
+                                    $options = KSM_DataStore::Terms('lighting', null, null);
+                                    foreach ($options as $key => $value) {
+                                        if(isset($value['filterable']) && $value['filterable'] == false){
+                                            continue;
+                                        }else {
+                                            if($value['filter_label'] == 'INCLUDED WITHIN FILE'){
+                                                $value['filter_label'] = 'included';
+                                            }else if($value['filter_label'] == 'NOT INCLUDED'){
+                                                $value['filter_label'] = 'not included';
+                                            }else{
+                                                $value['filter_label'] = false;
+                                            }
+
+                                            if($value['filter_label'] != false) {
+                                                ?>
+                                                <div class="field">
+                                                    <input type="checkbox"
+                                                           class="opt_filter"
+                                                           name="lighting[]"
+                                                           ng-model="lighting['<?php echo $key; ?>']"
+                                                           ng-click="filtering()" id="ff_lighting_<?php echo $key; ?>"
+                                                           value="<?php echo $key; ?>">
+                                                    <label for="ff_lighting_<?php echo $key; ?>"><?php echo $value['filter_label']; ?></label>
+                                                </div>
+                                                <?php
+                                            }
                                         }
-                                        ?>
-                                    <?php } ?>
+                                    }
+                                    ?>
                                 </div>
 
 
@@ -705,7 +858,6 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 <script src="<?php echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/js/jquery.flex-images.js"></script>
 <script src='<?php echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/js/jquery-ui-pips.js'></script>
 
-<!--<script src="<?php // echo $home_url; ?>/ktmaterial/plugins/kitmoda_social_media/js/custom.js"></script>-->
 <script>
         jQuery.noConflict()(function ($) { 
             $(document).ready(function () {

@@ -273,12 +273,19 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
     $scope.price = [];
     $scope.file_format = [];
     $scope.game_ready = [];
+    $scope.game_ready['all'] = true;
     $scope.print_ready = [];
     $scope.environment = [];
     $scope.model_constr = [];
+    $scope.model_angular = [];
+    $scope.model_angular ['all'] = true;
     $scope.model_scale = [];
+    $scope.model_scale['all'] = true;
     $scope.texturing_status = [];
     $scope.mapping = [];
+    $scope.mapping['none'] = true;
+    $scope.lighting = [];
+    $scope.lighting['none'] = true;
     $scope.renderer = [];
 
     $rootScope.$watch('culture',function (new_v,old_v) {
@@ -309,11 +316,13 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
         $scope.game_ready = $scope.clear_arr($scope.game_ready);
         $scope.print_ready = $scope.clear_arr($scope.print_ready);
         $scope.environment = $scope.clear_arr($scope.environment);
-        $scope.model_constr = $scope.clear_arr($scope.model_constr);
+//        $scope.model_constr = $scope.clear_arr($scope.model_constr);
+        $scope.model_angular = $scope.clear_arr($scope.model_angular);
         $scope.model_scale = $scope.clear_arr($scope.model_scale);
         $scope.texturing_status = $scope.clear_arr($scope.texturing_status);
         $scope.mapping = $scope.clear_arr($scope.mapping);
-        $scope.renderer = $scope.clear_arr($scope.mapping);
+        $scope.lighting = $scope.clear_arr($scope.lighting);
+        $scope.renderer = $scope.clear_arr($scope.renderer);
 
         var data = {};
 
@@ -324,10 +333,13 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
         if(get_obj_lent($scope.game_ready) > 0){data.game_ready = Object.keys($scope.game_ready); }
         if(get_obj_lent($scope.print_ready) > 0){data.print_ready = Object.keys($scope.print_ready); }
         if(get_obj_lent($scope.environment) > 0){data.environment = Object.keys($scope.environment); }
-        if(get_obj_lent($scope.model_constr) > 0){data.model_constr = Object.keys($scope.model_constr); }
+//        if(get_obj_lent($scope.model_constr) > 0){data.model_constr = Object.keys($scope.model_constr); }
+        if(get_obj_lent($scope.model_angular) > 0){data.model_angular = Object.keys($scope.model_angular); }
+        if(get_obj_lent($scope.model_scale) > 0){data.model_scale = Object.keys($scope.model_scale); }
         if(get_obj_lent($scope.texturing_status) > 0){data.texturing_status = Object.keys($scope.texturing_status); }
         if(get_obj_lent($scope.mapping) > 0){data.mapping = Object.keys($scope.mapping); }
         if(get_obj_lent($scope.renderer) > 0){data.renderer = Object.keys($scope.renderer); }
+        if(get_obj_lent($scope.lighting) > 0){data.lighting = Object.keys($scope.lighting); }
         if(get_obj_lent($scope.era) > 0){data.era = $scope.era; }
         if(get_obj_lent($scope.poly_count) > 0){data.poly_count = $scope.poly_count; }
         if($scope.search_text != '') {
