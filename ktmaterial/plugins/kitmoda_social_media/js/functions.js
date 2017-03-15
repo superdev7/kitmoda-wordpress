@@ -619,9 +619,8 @@ slick_simple_gallery = Base.extend({
         
         $('body').delegate(_this.params.nav_element+' .slider .slick-slide' , 'click', function() {
             if(!$(this).hasClass('current')) {
-                _this.setSlide($(this).attr('data-slick-index'));
+                _this.setSlide($(this).attr('data-slick-index'))
             }
-            $(_this).trigger('nav_change');
         });
         
         $(this.params.nav_element+' .slider').on('init', function(e) {
@@ -677,8 +676,12 @@ slick_simple_gallery = Base.extend({
     setSlide : function(index) {
         
         this.params.full_slick.slickGoTo(index);
+        
+        
         $(this.params.nav_element+' .slick-slide').removeClass('current');
         $(this.params.nav_element+' .slick-slide[data-slick-index='+index+']').addClass('current');
+        
+        
     },
     
     
@@ -916,7 +919,7 @@ $(function() {
         $('.user_nav .menu').toggle();
     });
     
-if(jQuery('.ksm_store_archive').length == 0) {
+    
     $(function() {
         $('input:not([icheck])').iCheck({
             checkboxClass: 'icheckbox_futurico',
@@ -935,7 +938,6 @@ if(jQuery('.ksm_store_archive').length == 0) {
         });
         
     });
-}
     
     
     new slick_simple_gallery({
@@ -953,16 +955,16 @@ if(jQuery('.ksm_store_archive').length == 0) {
     
     
     $('.tooltip').tooltipster({
-        minWidth: 300,
-        maxWidth: 300,
-        functionBefore: function(origin, continueTooltip) {
-            if(origin.find('.description').length && origin.find('.description').html()) {
-                origin.tooltipster('content', origin.find('.description').html());
-                continueTooltip();
-            }
-        }
-        
-    });
+                    minWidth: 300,
+                    maxWidth: 300,
+                    functionBefore: function(origin, continueTooltip) {
+                        if(origin.find('.description').length && origin.find('.description').html()) {
+                            origin.tooltipster('content', origin.find('.description').html());
+                            continueTooltip();
+                        }
+                    }
+                    
+                });
 
     
     
@@ -1066,7 +1068,7 @@ if(jQuery('.ksm_store_archive').length == 0) {
     })
     
     
-    $('body').delegate('.btn_form_smt', 'click' ,function(e) {
+    $('a.btn_form_smt').click(function(e) {
         e.preventDefault();
 
         if($(this).hasClass('uploadip')) {
@@ -1087,8 +1089,9 @@ if(jQuery('.ksm_store_archive').length == 0) {
             $(this).closest('form').submit();
             $(this).closest('form').find('.form_loading').show();
         }
-    })
-    
+        
+        
+    });
     
     $(document).on('click', function (e, b) {
         if ($(e.target).closest(".ddlist").length === 0) {
@@ -1124,17 +1127,17 @@ if(jQuery('.ksm_store_archive').length == 0) {
             data: {id:_id, action:'User_unfollow'},
             success: function(r) {
                 var o = $.parseJSON(r);
+                
                 if(o) {
                     
-                    
-                    $('.following.sidebar_box .header .count').html(o.followings);
-                    var _in = _this.closest('.slick-slide').attr('data-slick-index');
-                    _this.closest('.slider').slick('slickRemove', _in);
-                    
                     if(o.followings == 0) {
-                        $('.following.sidebar_box .follows_slider').hide();
-                        $('.following.sidebar_box .enc_message').show();
-                    } 
+                        $('.following.sidebar_box').next('hr').remove();
+                        $('.following.sidebar_box').remove();
+                    } else {
+                        $('.following.sidebar_box .header .count').html(o.followings);
+                        var _in = _this.closest('.slick-slide').attr('data-slick-index');
+                        _this.closest('.slider').slick('slickRemove', _in);
+                    }
                     
                     
                 }
