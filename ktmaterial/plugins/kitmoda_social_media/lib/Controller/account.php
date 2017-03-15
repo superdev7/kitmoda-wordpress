@@ -193,7 +193,7 @@ class KSM_AccountController extends KSM_BaseController {
     public function ksm_ajax_submit_model_rate() {
         
         
-         $form_id = $_POST['form_id'];
+        $form_id = sanitize_text_field($_POST['form_id']);
         
         $_params = KSM_Action::get($form_id);
         
