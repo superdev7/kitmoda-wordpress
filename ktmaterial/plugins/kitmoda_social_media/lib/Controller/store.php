@@ -2,8 +2,6 @@
 
 class KSM_StoreController extends KSM_BaseController {
 
-
-
     public $scripts = array(
         array('jquery.selectBoxIt', array('jquery', 'jquery-ui-widget')),
         array('justifiedGallery', array('jquery')),
@@ -13,41 +11,41 @@ class KSM_StoreController extends KSM_BaseController {
         array('store', array('jquery', 'ksm_scripts','components-common' , 'angular' ,'jquery.selectBoxIt', 'justifiedGallery')),
     );
 
-
     public $styles = array('jquery.selectBoxIt', 'justifiedGallery.min', 'selectbox/jquery.selectbox');
+    
+    protected $default_text = "<div class='empty_msg'>Hmm... We currently don't have a 3D model matching that description. Our community is growing fast so check back soon for that model!</div>";
 
 
-
-
-public function breadcrumbs($search_id,$taxonomy){
-    $parent  = get_term_by( 'id', $search_id, $taxonomy);
-    $arr = array();
-    $i=0;
-    $first_name = $parent->name;
-    $arr_id[$i] = $parent->term_id;
-    $arr[$i] =$parent->name;
-    $i += 1;
-
-    while ((int)$parent->parent != 0){
-        $id = $parent->parent;
-        $parent  = get_term_by( 'id', $id, $taxonomy);
+    public function breadcrumbs($search_id,$taxonomy){
+        $parent  = get_term_by( 'id', $search_id, $taxonomy);
+        $arr = array();
+        $i=0;
+        $first_name = $parent->name;
         $arr_id[$i] = $parent->term_id;
         $arr[$i] =$parent->name;
         $i += 1;
-    }
 
-    $arr_id[$i] = '';
-    $arr[$i] ='';
-// ksm_tax_style
-    if($taxonomy == 'ksm_tax_style'){
-        $res = "'no','no','no','{$first_name}'";
-    }else {
-        $ids = base64_encode(json_encode(array_reverse($arr_id)));
-        $names = base64_encode(json_encode(array_reverse($arr)));
-        $res = "'{$search_id}','{$ids}','{$names}'";
+        while ((int)$parent->parent != 0){
+            $id = $parent->parent;
+            $parent  = get_term_by( 'id', $id, $taxonomy);
+            $arr_id[$i] = $parent->term_id;
+            $parent->name = str_replace('&amp;', '&', $parent->name);
+            $arr[$i] =$parent->name;
+            $i += 1;
+        }
+
+        $arr_id[$i] = '';
+        $arr[$i] ='';
+
+        if($taxonomy == 'ksm_tax_style'){
+            $res = "'no','no','no','{$first_name}'";
+        }else {
+            $ids = base64_encode(json_encode(array_reverse($arr_id)));
+            $names = base64_encode(json_encode(array_reverse($arr)));
+            $res = "'{$search_id}','{$ids}','{$names}'";
+        }
+        return $res;
     }
-    return $res;
-}
 
 
     public function ksm_index() {
@@ -133,8 +131,7 @@ public function breadcrumbs($search_id,$taxonomy){
         
         
         if($query->post_count == 0) {
-            $containers['content'] = "<div class='empty_msg'>Hmm... We currently don't have a 3D model matching that description.  
-Our community is growing fast so check back soon for that model!</div>";
+            $containers['content'] = $this->default_text;
         }
         
         $containers['found'] = $found;
@@ -188,8 +185,7 @@ Our community is growing fast so check back soon for that model!</div>";
         
         
         if($query->post_count == 0) {
-            $containers['content'] = "<div class='empty_msg'>Hmm... We currently don't have a 3D model matching that description.  
-Our community is growing fast so check back soon for that model!</div>";
+            $containers['content'] = $this->default_text;
         }
         
         $containers['found'] = $found;
@@ -223,9 +219,7 @@ Our community is growing fast so check back soon for that model!</div>";
         $query = new WP_Query( $args );
         
         $containers = array();
-        $found = false;
-        
-        
+        $found = false;        
         
         ob_start();
         while ( $query->have_posts() ) : $query->the_post();
@@ -236,15 +230,12 @@ Our community is growing fast so check back soon for that model!</div>";
         $containers['content'] = ob_get_clean();
         
         $containers['pagination'] = 
-                $this->Model->paginate_links(array('prev_text' => '', 'next_text' => ''), $query);
+                $this->Model->paginate_links(array('prev_text' => '', 'next_text' => ''), $query);        
         
-        
-        wp_reset_postdata();
-        
+        wp_reset_postdata();        
         
         if($query->post_count == 0) {
-            $containers['content'] = "<div class='empty_msg'>Hmm... We currently don't have a 3D model matching that description.  
-Our community is growing fast so check back soon for that model!</div>";
+            $containers['content'] = $this->default_text;
         }
         
         $containers['found'] = $found;
@@ -257,8 +248,6 @@ Our community is growing fast so check back soon for that model!</div>";
         $page = $_POST['p'];
         $page = (!is_numeric($page) || $page < 1) ? 1 : $page;
         
-        
-        
         $args = array(
             'posts_per_page' => 10,
             'paged' => $page,
@@ -267,8 +256,6 @@ Our community is growing fast so check back soon for that model!</div>";
             'order' => 'DESC',
             'post_status' => 'publish'
         );
-        
-        
         
         $query = new WP_Query( $args );
         
@@ -292,8 +279,7 @@ Our community is growing fast so check back soon for that model!</div>";
         
         
         if($query->post_count == 0) {
-            $containers['content'] = "<div class='empty_msg'>Hmm... We currently don't have a 3D model matching that description.  
-Our community is growing fast so check back soon for that model!</div>";
+            $containers['content'] = $this->default_text;
         }
         
         $containers['found'] = $found;
@@ -301,12 +287,13 @@ Our community is growing fast so check back soon for that model!</div>";
         echo json_encode($containers);
     }
     
-    
+    //Filter posts
     public function ksm_ajax_filter_posts() {
 
         $list_taxonomies = array(
             'price',
             'style',
+            'culture',
             'era',
             'file_format',
             'game_ready',
@@ -342,7 +329,7 @@ Our community is growing fast so check back soon for that model!</div>";
         if(sizeof($_POST['culture']) > 0) {
             $tmp_is_all = 0;
             for ($i = 0; $i < sizeof($_POST['culture']); $i++) {
-                if ($_POST['culture'][$i] == 'none/genera') {
+                if ($_POST['culture'][$i] == 'none/genera' || $_POST['culture'][$i] == 'all') {
                     $tmp_is_all = 1;
                 }
             }
@@ -354,6 +341,160 @@ Our community is growing fast so check back soon for that model!</div>";
                     $_POST['culture'][] = $tax_culture;
                     $tmp_i++;
                 }
+            }
+        }
+        if(sizeof($_POST['file_format']) > 0) {
+            $tmp_is_all = 0;
+            for ($i = 0; $i < sizeof($_POST['culture']); $i++) {
+                if ($_POST['file_format'][$i] == 'all') {
+                    $tmp_is_all = 1;
+                }
+            }
+            if ($tmp_is_all == 1) {
+                $arr_tax_cultures = KSM_Taxonomy::custom_list(array('tax' => 'file_format'));
+                $tmp_i = 0;
+                $_POST['file_format'] = array();
+                foreach ($arr_tax_cultures as $key => $tax_culture) {
+                    $_POST['file_format'][] = $tax_culture;
+                    $tmp_i++;
+                }
+            }
+        }
+        if(sizeof($_POST['game_ready']) > 0) {
+            $tmp_is_all = 0;
+            for ($i = 0; $i < sizeof($_POST['game_ready']); $i++) {
+                if ($_POST['game_ready'][$i] == 'all') {
+                    $tmp_is_all = 1;
+                }
+            }
+            if ($tmp_is_all == 1) {
+                $_POST['game_ready'] = array();
+                $_POST['print_ready'] = array('yes');
+                $options = KSM_DataStore::Terms('game_ready', null, null);
+                foreach ($options as $key => $value) {
+                    if(isset($value['filterable']) && $value['filterable'] == false){
+                        continue;
+                    }else {
+                        if($value['filter_label'] == 'GAME READY (MOBILE DEV)' ||
+                            $value['filter_label'] == 'GAME READY (MID GEN)' ||
+                            $value['filter_label'] == 'GAME READY (NEXT GEN)'){
+                            $_POST['game_ready'][] = $key;
+                        }
+                    }
+                }
+            }
+        }
+        if(sizeof($_POST['model_angular']) > 0) {
+            $tmp_is_all = 0;
+            for ($i = 0; $i < sizeof($_POST['model_angular']); $i++) {
+                if ($_POST['model_angular'][$i] == 'all') {
+                    $tmp_is_all = 1;
+                }
+            }
+            if ($tmp_is_all == 1) {
+                $_POST['model_angular'] = array();
+                $options = KSM_DataStore::Terms('model_angular', null, null);
+                foreach ($options as $key => $value) {
+                    if(isset($value['filterable']) && $value['filterable'] == false){
+                        continue;
+                    }else {
+                        if($value['filter_label'] == 'All Triangulated' ||
+                            $value['filter_label'] == 'ALL QUADS' ||
+                            $value['filter_label'] == 'OVER 90% QUADS'){
+                            $_POST['model_angular'][] = $key;
+                        }
+                    }
+                }
+            }
+        }
+        if(sizeof($_POST['model_scale']) > 0) {
+            $tmp_is_all = 0;
+            $tmp_is_no = 0;
+            for ($i = 0; $i < sizeof($_POST['model_scale']); $i++) {
+                if ($_POST['model_scale'][$i] == 'yes') {
+                    $tmp_is_all = 1;
+                }
+                if ($_POST['model_scale'][$i] == 'no') {
+                    $tmp_is_no = 1;
+                }
+            }
+            if ($tmp_is_all == 1) {
+                $_POST['world_scale'] = array('yes');
+            }
+            else if ($tmp_is_no == 1) {
+                $_POST['world_scale'] = array('no');
+                }
+        }
+
+/*
+All --> all textured + none
+None --> not related to any of presented in code 4 categories: Hand-painted; Photographs; Procedural; Hybrid.
+Textured --> all of Hand-painted; Photographs; Procedural; Hybrid.
+Textured(hand-painted) --> that have hand painted option
+textured (photographs) --> that have photographs option
+*/
+$tmp_is_all = 0;
+$tmp_is_none = 0;
+        if(sizeof($_POST['texturing_status']) > 0) {
+            $tmp_is_textured = 0;
+            $tmp_is_all = 0;
+            $tmp_is_none = 0;
+            for ($i = 0; $i < sizeof($_POST['texturing_status']); $i++) {
+                if ($_POST['texturing_status'][$i] == 'textured') {
+                    $tmp_is_textured = 1;
+                }
+                if ($_POST['texturing_status'][$i] == 'all') {
+                    $tmp_is_all = 1;
+                }
+                if ($_POST['texturing_status'][$i] == 'none') {
+                    $tmp_is_none = 1;
+                }
+            }
+            if ($tmp_is_textured == 1) {
+                $_POST['texturing_method'] = array();
+                $options = KSM_DataStore::Terms('texturing_method', null, null);
+                foreach ($options as $key => $value) {
+                    $_POST['texturing_method'][] = $key;
+                }
+            }else if ($tmp_is_all == 1) {
+                $_POST['texturing_method'] = array();
+                $options = KSM_DataStore::Terms('texturing_method', null, null);
+                foreach ($options as $key => $value) {
+                    $_POST['texturing_method'][] = $key;
+                }
+            }else if ($tmp_is_none == 1) {
+                $_POST['texturing_method'] = array();
+                $options = KSM_DataStore::Terms('texturing_method', null, null);
+                foreach ($options as $key => $value) {
+                    $_POST['texturing_method'][] = $key;
+                }
+            }else{
+                $_POST['texturing_method'] = $_POST['texturing_status'];
+            }
+            unset($_POST['texturing_status']);
+        }
+
+
+        if(sizeof($_POST['mapping']) > 0) {
+            $tmp_is_none = 0;
+            for ($i = 0; $i < sizeof($_POST['mapping']); $i++) {
+                if ($_POST['mapping'][$i] == 'none') {
+                    $tmp_is_none = 1;
+                }
+            }
+            if ($tmp_is_none == 1) {
+                unset($_POST['mapping']);
+            }
+        }
+        if(sizeof($_POST['lighting']) > 0) {
+            $tmp_is_none = 0;
+            for ($i = 0; $i < sizeof($_POST['lighting']); $i++) {
+                if ($_POST['lighting'][$i] == 'none') {
+                    $tmp_is_none = 1;
+                }
+            }
+            if ($tmp_is_none == 1) {
+                unset($_POST['lighting']);
             }
         }
         
@@ -368,8 +509,8 @@ Our community is growing fast so check back soon for that model!</div>";
                     }
                 }
             }
-        }        
-        
+        }
+
         $cat = $_POST['cat'];
         
         $tax_terms = array();
@@ -390,14 +531,41 @@ Our community is growing fast so check back soon for that model!</div>";
             $sort_args = array('meta_key' => '_edd_download_earnings','orderby' => 'meta_value_num', 'order' => 'DESC');
         }        
         
-        $tax_query = array();        
-        
+        $tax_query = array();
+
         if($tax_filters) {
             foreach($tax_filters as $k => $v) {
-                $tax_query[] = array(
-                    'taxonomy' => $k,
-                    'field' => 'name',
-                    'terms' => $v);
+                if($k == 'ksm_tax_texturing_method' && $tmp_is_all == 1){
+                    $tax_query[] = array(
+                            'taxonomy' => $k,
+                            'field' => 'name',
+                            'operator' => 'EXISTS',
+                    );
+                }
+                else if($k == 'ksm_tax_texturing_method' && $tmp_is_none == 1){
+                    $tax_query[] = array(
+                        array(
+                            'taxonomy' => $k,
+                            'field' => 'name',
+                            'operator' => 'EXISTS',
+                        ),
+                        array(
+                            'taxonomy' => $k,
+                            'field' => 'name',
+                            'terms' => $v,
+                            'operator' => 'NOT IN',
+                        ),
+                        'relation' => 'AND'
+                    );
+                }else{
+                    $tax_query[] = array(
+                        'taxonomy' => $k,
+                        'field' => 'name',
+                        'terms' => $v
+                    );
+                }
+
+
             }
         }
 
@@ -408,6 +576,7 @@ Our community is growing fast so check back soon for that model!</div>";
             foreach($arr_cats_primary as $k => $v) {
                 $tmp_arr_tx[] = $k;
             }
+
             $tax_query[] = array(
                 'taxonomy' => 'category',
                 'field' => 'id',
@@ -421,7 +590,7 @@ Our community is growing fast so check back soon for that model!</div>";
                     'terms' => $cat);
             }
         }
-        
+
         $page = $_POST['page'];
         $page = (!is_numeric($page) || $page < 1) ? 1 : $page;
         
@@ -442,11 +611,9 @@ Our community is growing fast so check back soon for that model!</div>";
             $args['s'] = $_POST['q'];
         }
 
-
+        $args['tax_query']['relation'] = 'AND';
         $query = new WP_Query( $args );
-
         $containers = array();
-
 
         $posts = '';
         for($i=0; $i<sizeof($query->posts); ++$i){
@@ -470,8 +637,7 @@ Our community is growing fast so check back soon for that model!</div>";
         
         
         if($query->post_count == 0) {
-            $containers['posts'] = "<div class='empty_msg'>Hmm... We currently don't have a 3D model matching that description.  
-Our community is growing fast so check back soon for that model!</div>";
+            $containers['posts'] = $this->default_text;
         }
         
         $containers['found'] = $found;
@@ -554,8 +720,7 @@ Our community is growing fast so check back soon for that model!</div>";
             }
             $data = array('result' => true, 'html' => $html);
         }else{
-            $data['html'] = "<div class='empty_msg'>Hmm... We currently don't have a 3D model matching that description.  
-Our community is growing fast so check back soon for that model!</div>";
+            $data['html'] = $this->default_text;
         }
         
         exit(json_encode($data));

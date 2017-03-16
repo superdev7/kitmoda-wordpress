@@ -8,7 +8,12 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 <link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery-ui.css">
 <link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery.flex-images.css">
 <link rel="stylesheet" href="<?php echo $path_to_plugin; ?>css/jquery-ui-pips.css"> 
+<style>
+    .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .more_options .more, .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .more_options .less {
 
+        height: auto;
+    }
+</style>
 <div class="ksm-menu-sub-menu_container">
 
 
@@ -76,6 +81,8 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                         </div> -->
 
                     </div>
+                    <div id="fadingCover"></div>
+                    
                     <div class="content <?php if(isset($_GET['search'])){ echo 'ng-hide'; }else{ echo 'ng-scope'; } ?>" ng-show="show_page_part == 'content' ">
                         <div class="sections">
                             <section class="top-image">
@@ -314,8 +321,9 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                      <div class="community_sidebar_linebreak_dark"></div>
                                     <div class="community_sidebar_linebreak"></div>
                                     <div class="breadcrumbs ng-hide" ng-show="breadcrumbs.length > 0">
-                                        <a ng-repeat-start="item in breadcrumbs" ng-click="change_cat(item['id'])" ng-style="($last != true)? '':{color:'grey'} " style="cursor: pointer;">{{item['name']}}</a>
-                                        <span ng-repeat-end style="color: grey">{{ ($last != true)? ' > ':'' }}</span>
+                                        <a ng-repeat-start="item in breadcrumbs" ng-if="$last != true" ng-click="change_cat(item['id'])" style="cursor: pointer;">{{item['name']}}</a>
+                                        <span ng-if="$last == true" style="color: grey; cursor: default;">{{item['name']}}</span>
+                                        <span ng-repeat-end style="color: grey; cursor: default;">{{ ($last != true)? ' > ':'' }}</span>
                                     </div>
                                     <div class="breadcrumbs ng-hide" ng-show="breadcrumbs.length == 0">
                                         <a style="cursor: default;">Home</a>
@@ -335,7 +343,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                             <?php
                                                 $i = 0;
                                                 foreach ($arr_tax_styles as $key => $tax_style) {
-                                                    if($i == (int)(sizeof($arr_tax_styles)/2)) {
+                                                    if($i == 6) {
                                                         ?>
                                                                 <div class="more_options">
                                                                     <div class="more_options_list">
@@ -380,7 +388,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                         <?php
                                         $i = 0;
                                         foreach ($arr_tax_cultures as $key => $tax_culture) {
-                                            if($i == (int)(sizeof($arr_tax_cultures)/2)) {
+                                            if($i == 6) {
                                                 ?>
                                                 <div class="more_options">
                                                 <div class="more_options_list">
@@ -441,12 +449,17 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="title">File Format</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
 
+                                    <div class="field">
+                                        <input type="checkbox" class="opt_filter" name="file_format[]" ng-model="file_format['all']" ng-click="filtering()" id="ff_file_format_all" value="all">
+                                        <label for="ff_file_format_all">all</label>
+                                    </div>
+
                                     <?php
                                     $arr_tax_file_formats = KSM_Taxonomy::custom_list(array('tax'=>'file_format'));
                                     if( !empty($arr_tax_file_formats) ){
                                         $i = 0;
                                         foreach ($arr_tax_file_formats as $key => $tax_file_format) {
-                                            if($i == (int)(sizeof($arr_tax_file_formats)/2)) {
+                                            if($i == 6) {
                                                 ?>
                                                 <div class="more_options">
                                                 <div class="more_options_list">
@@ -476,8 +489,6 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                         ?>
                                     <?php } ?>
                                 </div>
-
-
 <!-- Model Type -->
                                 <div class="field_group">
                                     <div class="title">Model Type</div>
@@ -526,9 +537,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     }
                                     ?>
                                 </div>
-
-
-
+<!--model construction-->
                                 <div class="field_group">
                                     <div class="title">model construction</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
@@ -568,21 +577,17 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                             }
                                         }
                                         ?>
-<!--                                    <div class="field">
-                                        <input type="checkbox" class="opt_filter" name="model_constr[]" ng-model="model_constr['triagles']" ng-click="filtering()" id="ff_model_const_triagles" value="triagles">
-                                        <label for="ff_model_const_triagles">triagles</label>
-                                    </div>-->
                                 </div>
-
+<!--model scale-->
                                 <div class="field_group">
                                     <div class="title">model scale</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
 
 
-                                    <div class="field">
-                                        <input type="checkbox" class="opt_filter" name="model_scale[]" ng-model="model_scale['all']" ng-click="filtering()" id="ff_model_scale_all" value="all">
-                                        <label for="ff_model_scale_all">all</label>
-                                    </div>
+<!--                                    <div class="field">-->
+<!--                                        <input type="checkbox" class="opt_filter" name="model_scale[]" ng-model="model_scale['all']" ng-click="filtering()" id="ff_model_scale_all" value="all">-->
+<!--                                        <label for="ff_model_scale_all">all</label>-->
+<!--                                    </div>-->
 
                                     <?php
                                     $options = KSM_DataStore::Terms('world_scale', null, null);
@@ -621,7 +626,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 
 
                                 </div> 
-
+<!--texture status-->
                                 <div class="field_group">
                                     <div class="title">texture status</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
@@ -629,6 +634,14 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="field">
                                         <input type="checkbox" class="opt_filter" name="texturing_status[]"  ng-model="texturing_status['all']" ng-click="filtering()" id="ff_texturing_status_all" value="all">
                                         <label for="ff_texturing_status_all">all</label>
+                                    </div>
+                                    <div class="field">
+                                        <input type="checkbox" class="opt_filter" name="texturing_status[]"  ng-model="texturing_status['none']" ng-click="filtering()" id="ff_texturing_status_none" value="none">
+                                        <label for="ff_texturing_status_none">none <span>(untextured)</span></label>
+                                    </div>
+                                    <div class="field">
+                                        <input type="checkbox" class="opt_filter" name="texturing_status[]"  ng-model="texturing_status['textured']" ng-click="filtering()" id="ff_texturing_status_textured" value="textured">
+                                        <label for="ff_texturing_status_textured">textured</label>
                                     </div>
                                         <?php
                                         // texturing_status -> texturing_method
@@ -641,32 +654,30 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                                     $value['filter_label'] = 'textured <span>(hand painted)</span>';
                                                 }else if($value['filter_label'] == 'PHOTOGRAPHS'){
                                                     $value['filter_label'] = 'textured <span>(photographs)</span>';
+                                                }else if($value['filter_label'] == 'PROCEDURAL'){
+                                                    $value['filter_label'] = 'textured <span>(procedural)</span>';
                                                 }else{
                                                     $value['filter_label'] = false;
                                                 }
-                                                // + none and textuted
                                                 if($value['filter_label'] != false) {
                                                     ?>
                                                     <div class="field">
                                                         <input type="checkbox"
                                                                class="opt_filter"
-                                                               name="game_ready[]"
-                                                               ng-model="game_ready['<?php echo $key; ?>']"
-                                                               ng-click="filtering()" id="ff_game_ready_<?php echo $key; ?>"
+                                                               name="texturing_status[]"
+                                                               ng-model="texturing_status['<?php echo $key; ?>']"
+                                                               ng-click="filtering()" id="ff_texturing_status_<?php echo $key; ?>"
                                                                value="<?php echo $key; ?>">
-                                                        <label for="ff_game_ready_<?php echo $key; ?>"><?php echo $value['filter_label']; ?></label>
+                                                        <label for="ff_texturing_status_<?php echo $key; ?>"><?php echo $value['filter_label']; ?></label>
                                                     </div>
                                                     <?php
                                                 }
                                             }
                                         }
                                         ?>
-<!--                                        <div class="field">
-                                            <input type="checkbox" class="opt_filter" name="texturing_status[]"  ng-model="texturing_status['procedural']" ng-click="filtering()" id="ff_texturing_method_procedural" value="procedural">
-                                            <label for="ff_texturing_status_none">none <span class="remark">(untextured)</span></label>
-                                        </div> -->
-                                </div>
 
+                                </div>
+<!--Detail Mapping-->
                                 <div class="field_group">
 
                                     <div class="title">Detail Mapping</div>
@@ -715,9 +726,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     }
                                     ?>
                                 </div>
-
-
-
+<!--Lighting Setup-->
                                 <div class="field_group">
 
                                     <div class="title">Lighting Setup</div>
@@ -765,53 +774,44 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     }
                                     ?>
                                 </div>
-
-
-
+<!--Renderer-->
                                 <div class="field_group">
 
                                     <div class="title">Renderer</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
+
                                     <?php
-                                    $arr_tax_renderers = KSM_Taxonomy::custom_list(array('tax'=>'renderer'));
-                                    if( !empty($arr_tax_renderers) ){ ?>
-                                        <div class="field">
-                                            <input type="checkbox" class="opt_filter" name="renderer[]" ng-model="renderer['all']" ng-click="filtering()" id="ff_renderer_all" value="all">
-                                            <label for="ff_renderer_all">All</label>
-                                        </div>
-                                        <?php
-                                        $i = 0;
-                                        foreach ($arr_tax_renderers as $key => $tax_renderer) {
-                                            if($i == (int)(sizeof($arr_tax_renderers)/2)) {
-                                                ?>
-                                                <div class="more_options">
-                                                <div class="more_options_list">
+                                    $options = KSM_DataStore::Terms('renderer', null, null);
+                                    $i = 1;
+                                    foreach ($options as $key => $value) {
+                                        if($i == 8) {
+                                        ?>
+                                        <div class="more_options">
+                                            <div class="more_options_list">
                                                 <?php
-                                            }
+                                                }
+                                                ?>
+                                                <div class="field">
+                                                    <input type="checkbox"
+                                                           class="opt_filter"
+                                                           name="renderer[]"
+                                                           ng-model="renderer['<?php echo $key; ?>']"
+                                                           ng-click="filtering()" id="ff_renderer_<?php echo $key; ?>"
+                                                           value="<?php echo $key; ?>">
+                                                    <label for="ff_renderer_<?php echo $key; ?>"><?php echo $value['label']; ?></label>
+                                                </div>
+                                                <?php
+                                        if($i == (int)(sizeof($options))) {
                                             ?>
-                                            <div class="field">
-                                                <input type="checkbox"
-                                                       class="opt_filter"
-                                                       name="renderer[]"
-                                                       ng-model="renderer['<?php echo $tax_renderer; ?>']"
-                                                       ng-click="filtering()" id="ff_renderer_<?php echo $tax_renderer; ?>"
-                                                       value="<?php echo $tax_renderer; ?>">
-                                                <label for="ff_renderer_<?php echo $tax_renderer; ?>"><?php echo $tax_renderer; ?></label>
+                                            </div>
+                                            <div class="more">Show More</div>
+                                            <div class="less">Less</div>
                                             </div>
                                             <?php
-                                            $i++;
-                                            if($i == (int)(sizeof($arr_tax_renderers))) {
-                                                ?>
-                                                </div>
-                                                <div class="more">Show More</div>
-                                                <div class="less">Less</div>
-                                                </div>
-                                                <?php
-                                            }
                                         }
-                                        ?>
-                                    <?php } ?>
-
+                                        $i += 1;
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>

@@ -8,11 +8,13 @@
                 </ul>
             </li>
 		</ul>
-		<div class="thirdStep" style="box-shadow: black -7px 7px 17px 5px;">
-			<span class="back" ng-click="go_to_parent()">back</span>
-			<h6 class="title" style="cursor: pointer;" ng-click="goto_category()">{{selected_categorie_name}}</h6>
-			<div class="single-item-category" style="cursor: pointer;" ng-repeat="(key,value) in child_categories_list" ng-click="get_child(key,value)">{{value}}</div>
-		</div>
+		<div class="thirdStep">
+            <div class="transformThirdStep">
+    			<span class="back" ng-click="go_to_parent()">back</span>
+    			<h6 class="title" style="cursor: pointer;" ng-click="goto_category()">{{selected_categorie_name}}</h6>
+    			<div class="single-item-category" style="cursor: pointer;" ng-repeat="(key,value) in child_categories_list" ng-click="get_child(key,value)">{{value}}</div>
+		    </div>
+        </div>
 	</div>
 	<div class="refine">refine </div>
 

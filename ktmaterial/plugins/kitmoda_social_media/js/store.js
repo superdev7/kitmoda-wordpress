@@ -141,7 +141,7 @@ kapp.controller('searchBox', ['$scope','$rootScope','$http','$location', functio
     });
 
     $scope.get_child = function (id,name) {
-        $('.subCategory.secondList').slideUp();
+        // $('.subCategory.secondList').slideUp();
         $scope.selected_categorie_name = name;
         $scope.selected_categorie_id = id;
         if(!$scope.parent_id){
@@ -162,21 +162,24 @@ kapp.controller('searchBox', ['$scope','$rootScope','$http','$location', functio
                     'cid':btoa(angular.toJson($rootScope.parent_id)),
                     'cname':btoa(angular.toJson($rootScope.parent_name))
                 });
-                $('.secondList').slideUp();
-                $('.thirdStep').slideUp();
+                // $('.secondList').slideUp();
+                // $('.thirdStep').slideUp();
                 document.location.href = $location.url();
             }
         });
     };
     $scope.goto_category = function(){
-        $('.subCategory.secondList').slideUp();
+        // $('.subCategory.secondList').slideUp();
         $location.search({
             'search':true,
             'cat':$scope.selected_categorie_id,
             'cid':btoa(angular.toJson($rootScope.parent_id)),
             'cname':btoa(angular.toJson($rootScope.parent_name))
         });
-        $('.thirdStep .back').closest('.thirdStep').slideUp();
+        $('.thirdStep .back').closest('.thirdStep').removeClass('transformInsideBlock');
+        setTimeout(function(){
+            $('.thirdStep .back').closest('.thirdStep').removeClass('opened_ctg');
+        }, 200); 
         document.location.href = $location.url();
     };
 
@@ -184,10 +187,14 @@ kapp.controller('searchBox', ['$scope','$rootScope','$http','$location', functio
         $scope.parent_id.pop();
         $scope.parent_name.pop();
         $rootScope.parent_id.pop();
-        $rootScope.parent_name.pop();
+        $rootScope.parent_name.pop(); 
         if($scope.parent_id.length == 0){
-            $('.thirdStep .back').closest('.thirdStep').slideUp();
-            $('.subCategory.secondList').slideDown('active');
+            $('.thirdStep .back').closest('.thirdStep').removeClass('transformInsideBlock');
+            setTimeout(function(){
+                $('.thirdStep .back').closest('.thirdStep').removeClass('opened_ctg');
+            }, 200); 
+
+            // $('.subCategory.secondList').slideDown('active');
         }else {
             $http.post(ksm_settings.rest.api_base + 'categories', ctp({id: $scope.parent_id[$scope.parent_id.length - 1]}), config).then(function (r) {
                 $scope.selected_categorie_name = $scope.parent_name[$scope.parent_name.length - 1];
@@ -268,25 +275,29 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
         $scope.style[location_search.style] = true;
     }else {
         $scope.style = [];
+        $scope.style['all'] = true;
     }
     $scope.culture = [];
+    $scope.culture['all'] = true;
     $scope.price = [];
     $scope.file_format = [];
+    $scope.file_format['all'] = true;
     $scope.game_ready = [];
     $scope.game_ready['all'] = true;
     $scope.print_ready = [];
     $scope.environment = [];
     $scope.model_constr = [];
     $scope.model_angular = [];
-    $scope.model_angular ['all'] = true;
+    $scope.model_angular['all'] = true;
     $scope.model_scale = [];
-    $scope.model_scale['all'] = true;
     $scope.texturing_status = [];
+    $scope.texturing_status['all'] = true;
     $scope.mapping = [];
     $scope.mapping['none'] = true;
     $scope.lighting = [];
     $scope.lighting['none'] = true;
     $scope.renderer = [];
+    $scope.renderer['vray'] = true;
 
     $rootScope.$watch('culture',function (new_v,old_v) {
         if(typeof new_v == 'object') {

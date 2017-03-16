@@ -3297,9 +3297,21 @@ body {
 .v2 .main-navigation ul .upload_launch_container {
   margin-top: 0;
 }
+.v2 .store-page .coll_sidebar_shadow {
+  border-left: none;
+  border-top: none;
+}
 .v2 .store-page .ksm_profile {
   width: auto;
   max-width: none;
+}
+.v2 .store-page .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box {
+  padding: 12px 5% 7px !important;
+}
+.v2 .header-outer .ksm-menu-sub-menu_container {
+  box-shadow: 0px 3px 5px 0px black;
+  position: relative;
+  z-index: 300;
 }
 .v2 .ksm_profile_container_overlay {
   padding: 0 !important;
@@ -3312,12 +3324,25 @@ body {
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark {
   border-radius: 0 !important;
+  position: relative;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .section {
   border-radius: 0 !important;
 }
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark #fadingCover {
+  position: absolute;
+  top: 102px;
+  width: 100%;
+  min-height: 350vh;
+  left: 0;
+  display: none;
+  -webkit-transition: 0.3s opacity;
+  transition: opacity;
+  z-index: 199;
+  background: linear-gradient(to right, #0a0a14, rgba(10, 10, 20, 0.6));
+}
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .section-inside {
-  background: linear-gradient(to right, #17181e 15%, #3a3a4a 70%, #17181e 100%) !important;
+  background: linear-gradient(to right, #17181e 10%, #33333f 80%, #17181e 100%) !important;
   height: 100px;
   box-shadow: -8px 4px 18px 4px black;
   position: relative;
@@ -3363,28 +3388,38 @@ body {
   margin-left: 0;
   font-size: 18px;
   position: absolute;
-  width: 260px;
+  width: 266px;
   top: 65px;
   color: #4F9AFF;
-  display: none;
+  font: 400 18px "Roboto", sans-serif, sans-serif;
+  text-transform: lowercase;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: .5s all;
   z-index: 150;
   text-shadow: none;
   box-sizing: border-box;
-  padding: 0 20px 30px;
+  padding: 0 17px 0px 17px;
   background: #292932;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
   box-shadow: -7px 7px 17px 5px black;
 }
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories ul.firstList > li ul.secondList.active {
+  opacity: 1;
+  height: auto;
+}
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories ul.firstList > li ul.secondList > li {
-  border-bottom: 1px solid #19191F;
-  padding: 6px 0;
+  border-bottom: 1px solid #191A1F;
+  padding: 8px 0 10px;
   cursor: pointer;
   color: #4F9AFF;
   text-shadow: none;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories ul.firstList > li ul.secondList > li:last-child {
   border-bottom: none;
+  padding-bottom: 20px;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories ul.firstList > li ul.secondList li:hover {
   color: #b7dbff;
@@ -3396,29 +3431,52 @@ body {
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories .thirdStep {
   position: absolute;
   top: 65px;
-  width: 260px;
+  width: 286px;
+  z-index: -1;
+  left: -20px;
+  overflow: hidden;
   display: none;
+  padding: 0 0 20px 20px;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories .thirdStep.opened_ctg {
   z-index: 191;
+  display: block;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories .thirdStep.transformInsideBlock .transformThirdStep {
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+  opacity: 1;
+}
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories .thirdStep .transformThirdStep {
+  opacity: 0;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  box-shadow: -7px 7px 17px 5px black;
   padding: 10px 20px;
   box-sizing: border-box;
   color: #4f9aff;
   font-size: 18px;
   background: #292932;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  -webkit-transform: translateX(120%);
+  transform: translateX(120%);
+  -webkit-transition: 0.5s transform, 0.5s opacity;
+  transition: 0.5s transform, 0.5s opacity;
+  min-height: 340px;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories .thirdStep h6 {
   text-transform: uppercase;
   border-bottom: 1px solid #19191F;
-  padding: 5px 0;
-  font-weight: 600;
+  padding: 6px 0 8px;
+  font: 600 19px "Roboto", sans-serif, sans-serif;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories .thirdStep div.single-item-category {
   border-bottom: 1px solid #19191F;
   color: #419AFF;
-  padding: 5px 0;
+  padding: 8px 0 9px;
+  font: 400 18px "Roboto", sans-serif, sans-serif;
   text-shadow: none;
   cursor: pointer;
+  text-transform: lowercase;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .categories .thirdStep div.single-item-category:hover {
   color: #b7dbff;
@@ -3469,6 +3527,7 @@ body {
   top: 82px;
   left: 50%;
   display: none;
+  z-index: 900;
   padding: 15px 15px 0 15px;
   background: #292932;
   border-bottom-right-radius: 10px;
@@ -3779,6 +3838,9 @@ body {
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .third-column .container-format .ind-check input:checked + label:after {
   background-image: url(../../../plugins/kitmoda_social_media/images/radio-on.png) !important;
 }
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .third-column .container-format .ind-check label:hover:after {
+  background-image: url(../../../plugins/kitmoda_social_media/images/radio-on.png) !important;
+}
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .third-column .container-format .ind-check label {
   text-transform: lowercase;
   color: #8EB9E1;
@@ -3833,6 +3895,9 @@ body {
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .list-options li input:checked + label:after {
   opacity: 1;
 }
+.v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .list-options li input label:hover:after {
+  opacity: 1;
+}
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .list-options li label {
   font-weight: 400;
   font-size: 16px;
@@ -3864,16 +3929,25 @@ body {
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .field.field_inp {
   width: 70%;
   position: relative;
+  box-shadow: inset 0 4px 11px 1px black !important;
   height: 44px;
+  background-color: #17161B !important;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .field.field_inp input#ff_q {
   height: 100%;
+  position: relative;
+  top: -2px;
   width: 100%;
-  font-size: 18px;
-  color: white;
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: -0.2px 0.5px 0px 0.6px #6A6D80 !important;
+  font: 100 18px "Roboto", sans-serif, sans-serif;
+  color: #7faffe !important;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .field.field_inp input#ff_q::-webkit-input-placeholder {
-  color: #75A0E9;
+  font: 100 18px "Roboto", sans-serif, sans-serif;
+  font-weight: 100;
+  color: #7faffe;
 }
 .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .field.field_inp .field.button {
   position: absolute;
@@ -4011,19 +4085,27 @@ body {
 .v2 .ksm-store #sidebar-store .field input:checked + label:after {
   background-image: url(../../../plugins/kitmoda_social_media/images/store-checkbox-cheked.png) !important;
 }
+.v2 .ksm-store #sidebar-store .field label:hover:after {
+  background-image: url(../../../plugins/kitmoda_social_media/images/store-checkbox-cheked.png) !important;
+}
 .v2 .ksm-store #sidebar-store .field label {
   position: relative;
   padding-left: 25px;
+  font: 400 12px "Roboto", sans-serif, sans-serif;
+  color: #bdcfe8;
+}
+.v2 .ksm-store #sidebar-store .field label span {
+  color: #6c7b92;
 }
 .v2 .ksm-store #sidebar-store .field label:after {
   content: '';
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   background-image: url(../../../plugins/kitmoda_social_media/images/store-checkbox.png) !important;
   background-position: center;
   background-repeat: no-repeat;
   left: 0;
-  top: 0;
+  top: 1px;
   position: absolute;
 }
 .v2 .ksm-store #sidebar-store .more_options .more {
@@ -4040,6 +4122,7 @@ body {
 .v2 .ksm-store #sidebar-store .more_options .less {
   background: transparent;
   text-align: right;
+  height: auto;
 }
 .v2 .ksm-store #sidebar-store .more_options .less:after {
   content: url(../../../plugins/kitmoda_social_media/images/arrow-uper.png);
@@ -4063,21 +4146,36 @@ body {
 .v2 .ksm-store .ksm-sidebar .community_sidebar_linebreak_dark {
   margin-top: 3px !important;
 }
+.v2 .ksm-store .ksm-sidebar .community_sidebar_linebreak {
+  margin-bottom: -1px;
+}
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar {
   width: 100% !important;
 }
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .header {
+  border-top: none;
   text-align: center;
-  font-size: 20px;
+  font: 400 20px "Roboto", sans-serif, sans-serif;
   text-transform: lowercase;
   border-radius: 0 !important;
 }
+.v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .header span {
+  padding: 9px 20px;
+}
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group {
-  padding-top: 19px;
+  position: relative;
+  padding-top: 10px;
+}
+.v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .ui-slider-horizontal.ui-slider-pips {
+  margin-bottom: 12px;
+}
+.v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .field {
+  line-height: 1.2;
 }
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .title {
   left: 10px;
-  font-size: 14px;
+  font: 400 14px "Montserrat", sans-serif, sans-serif;
+  color: #ccdff8;
   position: relative;
   text-transform: lowercase;
 }
@@ -4091,24 +4189,35 @@ body {
   font-size: 11px;
 }
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .breadcrumbs {
-  font: 12px "Roboto", sans-serif, sans-serif;
-  font-weight: 400;
-  color: white;
+  font: 400 12px "Roboto", sans-serif, sans-serif;
   margin-left: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  color: #b0bfcd;
+  margin-top: 5px;
+  cursor: pointer;
 }
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .breadcrumbs a {
   color: #5BABE2;
 }
+.v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .breadcrumbs a:last-child {
+  color: #b0bfcd;
+}
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .more_options {
+  width: 100%;
   position: relative;
 }
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .more_options .more {
   margin: 0;
   padding: 0;
-  font-size: 11px;
   padding-right: 23px;
   background-position: 86px 5px;
+}
+.v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .more_options .more, .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .more_options .less {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font: 400 11px "Roboto", sans-serif, sans-serif;
+  width: 50%;
 }
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .field {
   background: transparent !important;
@@ -4124,6 +4233,7 @@ body {
   -webkit-align-items: center;
   align-items: center;
   margin-bottom: 9px;
+  margin-top: 5px;
 }
 .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .slider-desciption span {
   margin-right: 20px;
@@ -4255,6 +4365,7 @@ body {
   display: inline-block;
   margin-left: 5px;
   padding-top: 6px;
+  top: 3px;
 }
 .v2 .left_x_icon {
   width: 15px;
@@ -4262,7 +4373,6 @@ body {
   transform: rotate(45deg);
   background: #4f95e9;
   height: 2px;
-  top: 4px;
 }
 .v2 .right_x_icon {
   width: 15px;
@@ -4270,7 +4380,6 @@ body {
   transform: rotate(-45deg);
   background: #4f95e9;
   height: 2px;
-  top: 4px;
 }
 .v2 .page_footer, .v2 .page_push {
   height: 80px;

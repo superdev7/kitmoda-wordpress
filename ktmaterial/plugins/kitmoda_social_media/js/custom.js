@@ -1,36 +1,61 @@
 jQuery(document).ready(function($) {
 
-  // click on menu
-    jQuery(document).on('click','.open_ctg',function(){
-        jQuery('.refine-menu').hide();
+    // click on menu
+    // jQuery(document).on('click','.open_ctg',function(){
+    //     $('.refine-menu').hide(); 
+    //     console.log('func 2');    
 
-        if($('.thirdStep').addClass('opened_ctg')){
-            $('.thirdStep').slideUp();
+    //     $('.thirdStep').addClass('opened_ctg');  
+    //     $('.secondList').toggleClass('active'); 
+    //     if($('.secondList').hasClass('active')) {
+    //         $('#fadingCover').fadeIn();  
+    //     }
+    //     else { 
+    //         $('#fadingCover').fadeOut();
+    //     }  
+    // });
+
+    $('.categories').on('click','.firstItemList>span', function(){
+        $('.secondList').toggleClass('active'); 
+        if($('.secondList').hasClass('active')) {
+            $('#fadingCover').fadeIn();  
         }
-        jQuery('.secondList').slideToggle();
+        else { 
+            $('#fadingCover').fadeOut();
+        }  
+        $('.refine-menu').hide();   
+        $('.thirdStep').removeClass('transformInsideBlock opened_ctg');   
+
+    });
+
+
+    //Primary categories
+    $(document).on('click','.subCategory.secondList li',function(){
+        $('.refine-menu').hide();     
+        $('.thirdStep .back').closest('.thirdStep').addClass('opened_ctg');
+       setTimeout(function(){
+            $('.thirdStep .back').closest('.thirdStep').addClass('transformInsideBlock');
+        }, 200); 
     });
 
     jQuery(document).on('click','.category .edit',function(){
-        jQuery('.secondList').toggleClass('active');
+        jQuery('.secondList').addClass('active');
+            $('#fadingCover').fadeIn(); 
     });
 
-    //open refine-menu
-    jQuery(document).on('click','.refine',function(){
-        $('.secondList').slideUp();
-        $('.thirdStep').slideUp();        
+	//open refine-menu
+	jQuery(document).on('click','.refine',function(){
+        $('.secondList').removeClass('active');
+        $('#fadingCover').fadeIn();
+        $('.thirdStep').removeClass('transformInsideBlock opened_ctg'); 
         $('.refine-menu').show();
-    });
+	});
 
-    //close refine-menu
-    jQuery('.close-refine-button').click(function(){
-        jQuery('.refine-menu').hide();
-    });
-
-    //custom scroll
-
-    // jQuery('.scrollbar-inner').scrollbar({
-    //     showArrows: true
-    // });
+	//close refine-menu
+	jQuery('.close-refine-button').click(function(){
+		jQuery('.refine-menu').hide();
+        $('#fadingCover').fadeOut();
+	}); 
 
     jQuery('.mCustomScrollbar').mCustomScrollbar({
         theme:"refine-scroll",
@@ -41,19 +66,8 @@ jQuery(document).ready(function($) {
     });
 
 
-    //Primary categories
-    $(document).on('click','.subCategory.secondList li',function(){
-        $(this).closest('ul').slideUp();
-        $('.thirdStep').slideDown();
-        $('.refine-menu').hide();        
-        $('.thirdStep').addClass('opened_ctg');
-    });
  
-
-    //gallery on page before search
-//    jQuery('#mosaic').flexImages({maxRows: 3, rowHeight: 190});
-
-
+ 
         // ** Vars eras, erasLength are in search_form.php
 //        var eras = ['prehistoric','ancient','historic','retro','present','future'],
 //            erasLength = eras.length - 1;
