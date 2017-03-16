@@ -1046,6 +1046,13 @@ var kpfu = ks3uplr.extend({
 });
 
 $(function() {
+    $('.add_image').click(function(e) {
+        e.preventDefault();
+		$('.browse_btn').get(0).click();
+    })
+})
+
+$(function() {
     $('.browse_btn').click(function(e) {
         e.preventDefault();
     })

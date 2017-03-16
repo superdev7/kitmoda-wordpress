@@ -539,8 +539,10 @@ class KSM_Form extends KSM_Object {
                     </li>';
                     
                 } else {
-                    $ph .='<li class="item empty"><div class="b2 disable"><div class="b3"></div></div>
-					
+                    $ph .='<li class="item empty">
+					<a href="#" class="add_image" style="position:relative;z-index:1">
+					<div class="b2 disable"><div class="b3"></div></div>
+					</a>
                     <input type="hidden" class="uid" name="'.$n.'" value="" />
                        <div class="progress"><div class="bar"></div></div> 
                     </li>';
