@@ -298,9 +298,57 @@ class KSM_Taxonomy {
         
         return $select;
     }
+
+	public static function convertOne($text){
+		$data = array(
+			"steam-punk" => "steam punk",
+			"dragons-lore" => "dragons lore",
+			"whimsical-fairytale" => "whimsical fairytale",
+			"decay-dystopia" => "decay dystopia",
+			"sci-fi" => "steam punk",
+			"classic-toon" => "classic toon",
+			"art-deco" => "art deco",
+			"film-noir" => "film noir",
+			"folksy-rural" => "folksy rural",
+			"stylish-hip" => "stylish hip",
+			"latin-america" => "latin america",
+			"sub-saharan-africa" => "sub saharan africa",
+			"northern-africa" => "northern africa",
+			"north-america" => "north america",
+			"slavic-eurasia" => "slavic eurasia",
+			"southeast-asia" => "southeast asia",
+			"middle-east" => "middle east",
+			"south-asia" => "south asia",
+			"oceanic-samoa" => "oceanic samoa",
+			"british-isles" => "british isles",
+			"native-american" => "native american",
+			"roman-greek-mediterranean" => "roman greek mediterranean",
+			"fantasy-lore" => "fantasy lore",
+			"fantasy-sci-fi" => "fantasy sci fi",
+			"fantasy-other" => "fantasy other",
+		);
+		foreach($data as $key => $val){
+			if($key == $text){
+				return $val;
+			}
+		}
+		return $text;
+	}
+
+	public static function convertTexts($params){
+		if(!is_array($params)){
+			return KSM_Taxonomy::convertOne($params);
+		}else{
+			foreach($params as &$param){
+				$param = KSM_Taxonomy::convertOne($param);
+			}
+		}
+
+		return $params;
+	}
     
 //    Get list of the terms without 'Uncategorized'
-    public static function custom_list($args = array()) {
+    public static function custom_list($args = array(), $convert=false) {
             $parent = !$args['parent'] || $args['parent'] < 0 || !is_numeric($args['parent']) ? 0 : $args['parent'] ;
 
             $tax = $args['tax'] ? $args['tax'] : 'category';        
@@ -308,7 +356,15 @@ class KSM_Taxonomy {
             $self = new KSM_Taxonomy($tax);
             $args['parent'] = $parent;
             $args['tax'] = $tax;
-            return $self->get_list($args, $terms_label);
+
+			if($convert){
+				$value = KSM_Taxonomy::convertTexts($self->get_list($args, $terms_label));
+
+			}else{
+				$value = $self->get_list($args, $terms_label);
+			}
+
+			return $value;
     }
     
     public function get_list($args = array(), $terms_label = '') {

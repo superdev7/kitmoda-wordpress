@@ -334,7 +334,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="title">Style</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
                                     <?php
-                                    $arr_tax_styles = KSM_Taxonomy::custom_list(array('tax'=>'style'));
+                                    $arr_tax_styles = KSM_Taxonomy::custom_list(array('tax'=>'style'), true);
                                     if( !empty($arr_tax_styles) ){ ?>
                                         <div class="field">
                                             <input type="checkbox" class="opt_filter" name="style[]" ng-model="style['all']" ng-click="filtering()" id="ff_style_all" value="all">
@@ -379,7 +379,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
 
                                     <?php
-                                    $arr_tax_cultures = KSM_Taxonomy::custom_list(array('tax'=>'culture'));
+                                    $arr_tax_cultures = KSM_Taxonomy::custom_list(array('tax'=>'culture'), true);
                                     if( !empty($arr_tax_cultures) ){ ?>
                                         <div class="field">
                                             <input type="checkbox" class="opt_filter" name="culture[]" ng-model="culture['all']" ng-click="filtering()" id="ff_culture_all" value="all">
@@ -455,7 +455,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     </div>
 
                                     <?php
-                                    $arr_tax_file_formats = KSM_Taxonomy::custom_list(array('tax'=>'file_format'));
+                                    $arr_tax_file_formats = KSM_Taxonomy::custom_list(array('tax'=>'file_format'), true);
                                     if( !empty($arr_tax_file_formats) ){
                                         $i = 0;
                                         foreach ($arr_tax_file_formats as $key => $tax_file_format) {
