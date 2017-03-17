@@ -4296,11 +4296,11 @@ a.community_sidebar_remove_all:hover {
 	border-bottom: #ffffff solid 1px;
 }
 .ubox {
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	border: none;
-	background-color: none;
+	-moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.53);
+	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.53);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.53);
+	border: solid 1px #3b3b3b;
+	background-color: #585c65;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
