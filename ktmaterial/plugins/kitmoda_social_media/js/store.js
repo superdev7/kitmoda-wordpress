@@ -210,10 +210,16 @@ kapp.controller('searchInput', ['$scope','$rootScope','$http','$location', funct
     console.log(document.location.href);
     var location_search = $location.search();
     $scope.search_by_text = function () {
-        $location.search({
-            'search':true,
-            'q':btoa($scope.search_text)
-        });
+        if($scope.search_text == undefined){
+            $location.search({
+                'search':true
+            });
+        }else {
+            $location.search({
+                'search': true,
+                'q': btoa($scope.search_text)
+            });
+        }
         document.location.href = $location.url();
     };
     if(location_search.q){
@@ -271,47 +277,38 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
     }
 
     if(location_search.style){
-        $scope.style = [];
-        $scope.style[location_search.style] = true;
+        $scope.style = location_search.style;
     }else {
-        $scope.style = [];
-        $scope.style['all'] = true;
+        $scope.style = 'all';
     }
-    $scope.culture = [];
-    $scope.culture['all'] = true;
-    $scope.price = [];
-    $scope.file_format = [];
-    $scope.file_format['all'] = true;
+    $scope.culture = 'all';
+    $scope.file_format = 'all';
     $scope.game_ready = [];
     $scope.game_ready['all'] = true;
     $scope.print_ready = [];
     $scope.environment = [];
     $scope.model_constr = [];
-    $scope.model_angular = [];
-    $scope.model_angular['all'] = true;
-    $scope.model_scale = [];
-    $scope.texturing_status = [];
-    $scope.texturing_status['all'] = true;
-    $scope.mapping = [];
-    $scope.mapping['none'] = true;
+    $scope.model_angular = 'all'; //model_constr
+    $scope.model_scale = '';
+    $scope.texturing_status = 'all';
+    $scope.mapping = 'none';
     $scope.lighting = [];
     $scope.lighting['none'] = true;
-    $scope.renderer = [];
-    $scope.renderer['vray'] = true;
+    $scope.renderer = 'vray';
+    $scope.price_min = '';
+    $scope.price_max = '';
 
     $rootScope.$watch('culture',function (new_v,old_v) {
         if(typeof new_v == 'object') {
             if (typeof new_v[0] == 'string') {
-                $scope.culture = [];
-                $scope.culture[new_v] = true;
+                $scope.culture = new_v;
             }
         }
     });
     $rootScope.$watch('style',function (new_v,old_v) {
         if(typeof new_v == 'object') {
             if (typeof new_v[0] == 'string') {
-                $scope.style = [];
-                $scope.style[new_v] = true;
+                $scope.style = new_v;
             }
         }
     });
@@ -320,36 +317,72 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
     $scope.filtering = function(){
 
         $scope.posts = [];
-        $scope.price = $scope.clear_arr($scope.price);
-        $scope.style = $scope.clear_arr($scope.style);
-        $scope.culture = $scope.clear_arr($scope.culture);
-        $scope.file_format = $scope.clear_arr($scope.file_format);
         $scope.game_ready = $scope.clear_arr($scope.game_ready);
         $scope.print_ready = $scope.clear_arr($scope.print_ready);
         $scope.environment = $scope.clear_arr($scope.environment);
 //        $scope.model_constr = $scope.clear_arr($scope.model_constr);
-        $scope.model_angular = $scope.clear_arr($scope.model_angular);
-        $scope.model_scale = $scope.clear_arr($scope.model_scale);
-        $scope.texturing_status = $scope.clear_arr($scope.texturing_status);
-        $scope.mapping = $scope.clear_arr($scope.mapping);
+//         $scope.texturing_status = $scope.clear_arr($scope.texturing_status);
         $scope.lighting = $scope.clear_arr($scope.lighting);
-        $scope.renderer = $scope.clear_arr($scope.renderer);
+        // $scope.renderer = $scope.clear_arr($scope.renderer);
 
         var data = {};
 
-        if(get_obj_lent($scope.price) > 0){data.price = Object.keys($scope.price); }
-        if(get_obj_lent($scope.style) > 0){data.style = Object.keys($scope.style); }
-        if(get_obj_lent($scope.culture) > 0){data.culture = Object.keys($scope.culture); }
-        if(get_obj_lent($scope.file_format) > 0){data.file_format = Object.keys($scope.file_format); }
+        if($scope.price_min != '' && $scope.price_max != '' &&
+            typeof $scope.price_min == 'number' && typeof $scope.price_max == 'number'){
+
+            var price_arr = [
+                '5-10',
+                '10-25',
+                '25-50',
+                '50-75',
+                '75-100',
+                '100-150',
+                '150-200',
+                '200-300',
+                '300-more'
+            ];
+            var price_arr_calc = [
+                [5,10],
+                [10,25],
+                [25,50],
+                [50,75],
+                [75,100],
+                [100,150],
+                [150,200],
+                [200,300],
+                [300,'more']
+            ];
+
+            if($scope.price_min < 300){
+                var min_p = 0;
+                var max_p = 0;
+                for(var i=0; i<price_arr_calc.length; i++){
+                    if(price_arr_calc[i][0] <= $scope.price_min && $scope.price_min <= price_arr_calc[i][1]){
+                        min_p = i;
+                    }
+                    if(price_arr_calc[i][0] <= $scope.price_max && $scope.price_max <= price_arr_calc[i][1]){
+                        max_p = i;
+                    }
+                }
+                data.price = price_arr.slice(min_p,max_p+1);
+            }else{
+                data.price = ['300-more'];
+            }
+        }
+
+
+        if(get_obj_lent($scope.style) > 0){ data.style = [$scope.style]; }
+        if(get_obj_lent($scope.culture) > 0){data.culture = [$scope.culture]; }
+        if(get_obj_lent($scope.file_format) > 0){data.file_format = [$scope.file_format]; }
         if(get_obj_lent($scope.game_ready) > 0){data.game_ready = Object.keys($scope.game_ready); }
         if(get_obj_lent($scope.print_ready) > 0){data.print_ready = Object.keys($scope.print_ready); }
         if(get_obj_lent($scope.environment) > 0){data.environment = Object.keys($scope.environment); }
 //        if(get_obj_lent($scope.model_constr) > 0){data.model_constr = Object.keys($scope.model_constr); }
-        if(get_obj_lent($scope.model_angular) > 0){data.model_angular = Object.keys($scope.model_angular); }
-        if(get_obj_lent($scope.model_scale) > 0){data.model_scale = Object.keys($scope.model_scale); }
-        if(get_obj_lent($scope.texturing_status) > 0){data.texturing_status = Object.keys($scope.texturing_status); }
-        if(get_obj_lent($scope.mapping) > 0){data.mapping = Object.keys($scope.mapping); }
-        if(get_obj_lent($scope.renderer) > 0){data.renderer = Object.keys($scope.renderer); }
+        if(get_obj_lent($scope.model_angular) > 0){data.model_angular = [$scope.model_angular] }
+        if(get_obj_lent($scope.model_scale) > 0){data.model_scale = [$scope.model_scale]; }
+        if(get_obj_lent($scope.texturing_status) > 0){data.texturing_status = [$scope.texturing_status]; }
+        if(get_obj_lent($scope.mapping) > 0){data.mapping = [$scope.mapping]; }
+        if(get_obj_lent($scope.renderer) > 0){data.renderer = [$scope.renderer]; }
         if(get_obj_lent($scope.lighting) > 0){data.lighting = Object.keys($scope.lighting); }
         if(get_obj_lent($scope.era) > 0){data.era = $scope.era; }
         if(get_obj_lent($scope.poly_count) > 0){data.poly_count = $scope.poly_count; }
@@ -388,9 +421,21 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
 
     // ** Vars eras, erasLength are in search_form.php
 
-    var countRanges = ['0', '1 k', '5 k', '10 k', '25 k', '100 k', '500 k', '1 m', '2 m', '5 m', '15 m'], // 'poly_count' is other on Datestore (for example: 500-2k)
+    var countRanges = ['0', '500', '2 k', '10 k', '25 k', '100 k', '500 k', '1 m', '5 m', '10 m', '15 m'], // 'poly_count' is other on Datestore (for example: 500-2k)
         countRangesLength = countRanges.length - 1;
 
+    var polygon_tax_back = [
+        '10-500',
+        '500-2k',
+        '2k-10k',
+        '10k-25k',
+        '25k-100k',
+        '100k-500k',
+        '500k-1m',
+        '1m-5m',
+        '5m-10m',
+        '10m-15m'
+    ];
     jQuery("#slider").slider({
         min: 0,
         max: 4,
@@ -427,7 +472,7 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
         jQuery(".polygon-count-slider .first").text(countRanges[ui.values[0]]);
         jQuery(".polygon-count-slider .second").text(countRanges[ui.values[1]]);
 
-        $scope.poly_count = countRanges.slice(ui.values[0],ui.values[1]);
+        $scope.poly_count = polygon_tax_back.slice(ui.values[0],ui.values[1]);
         $scope.filtering();
     });
 
@@ -458,18 +503,30 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
 kapp.controller('refineMenu', ['$scope','$rootScope','$http','$location', function($scope, $rootScope, $http,$location) {
     var location_search = $location.search();
     $scope.style = 'all';
-    $scope.culture = 'none/genera';
+    $scope.culture = 'none/general';
     $scope.era = [];
     $scope.environment = [];
     $scope.file_format = [];
-    $scope.poly_count = [];
+    $scope.poly_count = [
+        '10-500',
+        '500-2k',
+        '2k-10k',
+        '10k-25k',
+        '25k-100k',
+        '100k-500k',
+        '500k-1m',
+        '1m-5m',
+        '5m-10m',
+        '10m-15m'
+    ];
     $scope.pr_rating = 1;
     $scope.price_min = '';
     $scope.price_max = '';
 
 
     $scope.filtering_refine = function(){
-            jQuery('.refine-menu').hide();
+        jQuery('.refine-menu').hide();
+        $('#fadingCover').fadeOut();
         $rootScope.show_page_part = 'search';
         $location.search({
             'search':true
@@ -478,7 +535,48 @@ kapp.controller('refineMenu', ['$scope','$rootScope','$http','$location', functi
 
         var data = {};
 
-        if($scope.price_min != '')data.price = [$scope.price_min+'-'+$scope.price_max];
+        if($scope.price_min != '' && $scope.price_max != '' &&
+            typeof $scope.price_min == 'number' && typeof $scope.price_max == 'number'){
+
+            var price_arr = [
+                '5-10',
+                '10-25',
+                '25-50',
+                '50-75',
+                '75-100',
+                '100-150',
+                '150-200',
+                '200-300',
+                '300-more'
+            ];
+            var price_arr_calc = [
+                [5,10],
+                [10,25],
+                [25,50],
+                [50,75],
+                [75,100],
+                [100,150],
+                [150,200],
+                [200,300],
+                [300,'more']
+            ];
+
+            if($scope.price_min < 300){
+                var min_p = 0;
+                var max_p = 0;
+                for(var i=0; i<price_arr_calc.length; i++){
+                    if(price_arr_calc[i][0] <= $scope.price_min && $scope.price_min <= price_arr_calc[i][1]){
+                        min_p = i;
+                    }
+                    if(price_arr_calc[i][0] <= $scope.price_max && $scope.price_max <= price_arr_calc[i][1]){
+                        max_p = i;
+                    }
+                }
+                data.price = price_arr.slice(min_p,max_p+1);
+            }else{
+                data.price = ['300-more'];
+            }
+        }
         data.pr_rating = $scope.pr_rating;
         data.style = [$scope.style];
         data.culture = [$scope.culture];
@@ -520,10 +618,22 @@ kapp.controller('refineMenu', ['$scope','$rootScope','$http','$location', functi
 
     // ** Vars eras, erasLength are in search_form.php
 
-    var countRanges = ['0', '1 k', '5 k', '10 k', '25 k', '100 k', '500 k', '1 m', '2 m', '5 m', '15 m'], // 'poly_count' is other on Datestore (for example: 500-2k)
+    var countRanges = ['0', '500', '2 k', '10 k', '25 k', '100 k', '500 k', '1 m', '5 m', '10 m', '15 m'], // 'poly_count' is other on Datestore (for example: 500-2k)
         countRangesLength = countRanges.length - 1;
 
 
+    var polygon_tax_back = [
+        '10-500',
+        '500-2k',
+        '2k-10k',
+        '10k-25k',
+        '25k-100k',
+        '100k-500k',
+        '500k-1m',
+        '1m-5m',
+        '5m-10m',
+        '10m-15m'
+    ];
 
 
 
@@ -556,7 +666,7 @@ var environment = ['show both', 'single object', 'full environment'];
         rest: 'label',
         labels: ['show both', 'single object', 'full environment']
     }).on("slidechange", function(e,ui) {
-        $scope.environment = environment[parseInt(ui.value)-1];
+        $scope.environment = environment[parseInt(ui.value)];
     });
 
     jQuery("#countRange").slider({
@@ -574,7 +684,7 @@ var environment = ['show both', 'single object', 'full environment'];
     }).on("slidechange", function(e,ui) {
         jQuery(".polCount .first").text(countRanges[ui.values[0]]);
         jQuery(".polCount .second").text(countRanges[ui.values[1]]);
-        $scope.poly_count = countRanges.slice(ui.values[0],ui.values[1]);
+        $scope.poly_count = polygon_tax_back.slice(ui.values[0],ui.values[1]);
     });
 
     $scope.pr_rating = 1;
@@ -589,6 +699,16 @@ var environment = ['show both', 'single object', 'full environment'];
     }).on("slidechange", function(e,ui) {
         jQuery("#product-rating-number").text(parseInt([ui.value]) + 1);
         $scope.pr_rating = parseInt([ui.value]);
+    });
+
+    jQuery("#productRating-sidebar").slider({
+        min: 0,
+        max: 4,
+        value: 1,
+        range: true
+    }).slider("pips", {
+        rest: 'label',
+        labels: ['all','&#9733; <span>></span>', '&#9733;&#9733; <span>></span>', '&#9733;&#9733;&#9733; <span>></span>', '&#9733;&#9733;&#9733;&#9733; <span>></span>']
     });
 
 }]);

@@ -48,7 +48,13 @@
 			<div class="second-column">
 				<div class="title">culture</div>
 				<ul class="list-options scrollbar-inner mCustomScrollbar">
-					<li><input type="radio" name="culture-options" id="cultr-opt1" ng-model="culture" ng-true-value="all" checked><label for="cultr-opt1" class="active">none/general</label></li>
+					<li><input type="radio"
+                               name="culture-options"
+                               id="cultr-opt1"
+                               ng-model="culture"
+                               ng-true-value="none/general"
+                               value="none/general"
+                               checked><label for="cultr-opt1" class="active">none/general</label></li>
                                         <?php
                                         $terms = get_terms( 'ksm_tax_culture', array(
                                                             'orderby'    => 'name',

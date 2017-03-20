@@ -337,7 +337,14 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     $arr_tax_styles = KSM_Taxonomy::custom_list(array('tax'=>'style'), true);
                                     if( !empty($arr_tax_styles) ){ ?>
                                         <div class="field">
-                                            <input type="checkbox" class="opt_filter" name="style[]" ng-model="style['all']" ng-click="filtering()" id="ff_style_all" value="all">
+                                            <input type="radio"
+                                                   class="opt_filter"
+                                                   name="style"
+                                                   ng-model="style"
+                                                   ng-click="filtering()"
+                                                   id="ff_style_all"
+                                                   ng-true-value="all"
+                                                   value="all">
                                             <label for="ff_style_all">All</label>
                                         </div>
                                             <?php
@@ -351,11 +358,13 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                                     }
                                                     ?>
                                                     <div class="field">
-                                                        <input type="checkbox"
+                                                        <input type="radio"
                                                                class="opt_filter"
-                                                               name="style[]"
-                                                               ng-model="style['<?php echo $tax_style; ?>']"
-                                                               ng-click="filtering()" id="ff_style_<?php echo $tax_style; ?>"
+                                                               name="style"
+                                                               ng-model="style"
+                                                               ng-click="filtering()"
+                                                               id="ff_style_<?php echo $tax_style; ?>"
+                                                               ng-true-value="<?php echo $tax_style; ?>"
                                                                value="<?php echo $tax_style; ?>">
                                                         <label for="ff_style_<?php echo $tax_style; ?>"><?php echo $tax_style; ?></label>
                                                     </div>
@@ -382,7 +391,14 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     $arr_tax_cultures = KSM_Taxonomy::custom_list(array('tax'=>'culture'), true);
                                     if( !empty($arr_tax_cultures) ){ ?>
                                         <div class="field">
-                                            <input type="checkbox" class="opt_filter" name="culture[]" ng-model="culture['all']" ng-click="filtering()" id="ff_culture_all" value="all">
+                                            <input type="radio"
+                                                   class="opt_filter"
+                                                   name="culture"
+                                                   ng-model="culture"
+                                                   ng-click="filtering()"
+                                                   id="ff_culture_all"
+                                                   ng-true-value="all"
+                                                   value="all">
                                             <label for="ff_culture_all">All</label>
                                         </div>
                                         <?php
@@ -396,11 +412,12 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                             }
                                             ?>
                                             <div class="field">
-                                                <input type="checkbox"
+                                                <input type="radio"
                                                        class="opt_filter"
-                                                       name="culture[]"
-                                                       ng-model="culture['<?php echo $tax_culture; ?>']"
+                                                       name="culture"
+                                                       ng-model="culture"
                                                        ng-click="filtering()" id="ff_culture_<?php echo $tax_culture; ?>"
+                                                       ng-true-value="<?php echo $tax_culture; ?>"
                                                        value="<?php echo $tax_culture; ?>">
                                                 <label for="ff_culture_<?php echo $tax_culture; ?>"><?php echo $tax_culture; ?></label>
                                             </div>
@@ -444,13 +461,37 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     </div>
                                     <div id="polygonCount"></div>
                                 </div>  
+
+<!-- Price Range -->
+                            <div class="field_group"> 
+                                <div class="title">price range</div>
+                                <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
+                                <div class="container-price-range">
+                                    <span>$ <input type="text" name="firstPrice" value="" ng-model="price_min"></span>
+                                    <span class="to">to</span>   
+                                    <span> $ <input value="" name="secondPrice" type="text" ng-model="price_max"></span>
+                                </div>
+                            </div>
+<!-- Product Rating -->
+                            <div class="field_group">  
+                                <div class="title">rating</div>
+                                <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>  
+                                <div id="productRating-sidebar"></div>
+                            </div>
 <!-- File Format -->
                                 <div class="field_group">
                                     <div class="title">File Format</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
 
                                     <div class="field">
-                                        <input type="checkbox" class="opt_filter" name="file_format[]" ng-model="file_format['all']" ng-click="filtering()" id="ff_file_format_all" value="all">
+                                        <input type="radio"
+                                               class="opt_filter"
+                                               name="file_format"
+                                               ng-model="file_format"
+                                               ng-click="filtering()"
+                                               id="ff_file_format_all"
+                                               ng-true-value="all"
+                                               value="all">
                                         <label for="ff_file_format_all">all</label>
                                     </div>
 
@@ -467,11 +508,13 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                             }
                                             ?>
                                             <div class="field">
-                                                <input type="checkbox"
+                                                <input type="radio"
                                                        class="opt_filter"
-                                                       name="file_format[]"
-                                                       ng-model="file_format['<?php echo $tax_file_format; ?>']"
-                                                       ng-click="filtering()" id="ff_file_format_<?php echo $tax_file_format; ?>"
+                                                       name="file_format"
+                                                       ng-model="file_format"
+                                                       ng-click="filtering()"
+                                                       id="ff_file_format_<?php echo $tax_file_format; ?>"
+                                                       ng-true-value="<?php echo $tax_file_format; ?>"
                                                        value="<?php echo $tax_file_format; ?>">
                                                 <label for="ff_file_format_<?php echo $tax_file_format; ?>"><?php echo $tax_file_format; ?></label>
                                             </div>
@@ -542,7 +585,14 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="title">model construction</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
                                     <div class="field">
-                                        <input type="checkbox" class="opt_filter" name="model_angular[]" ng-model="model_angular['all']" ng-click="filtering()" id="ff_model_angular_all" value="all">
+                                        <input type="radio"
+                                               class="opt_filter"
+                                               name="model_angular"
+                                               ng-model="model_angular"
+                                               ng-click="filtering()"
+                                               id="ff_model_angular_all"
+                                               ng-true-value="all"
+                                               value="all">
                                         <label for="ff_model_angular_all">all</label>
                                     </div>
                                         <?php
@@ -564,11 +614,13 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                                 if($value['filter_label'] != false) {
                                                     ?>
                                                     <div class="field">
-                                                        <input type="checkbox"
+                                                        <input type="radio"
                                                                class="opt_filter"
-                                                               name="model_angular[]"
-                                                               ng-model="model_angular['<?php echo $key; ?>']"
-                                                               ng-click="filtering()" id="ff_model_angular_<?php echo $key; ?>"
+                                                               name="model_angular"
+                                                               ng-model="model_angular"
+                                                               ng-click="filtering()"
+                                                               id="ff_model_angular_<?php echo $key; ?>"
+                                                               ng-true-value="<?php echo $key; ?>"
                                                                value="<?php echo $key; ?>">
                                                         <label for="ff_model_angular_<?php echo $key; ?>"><?php echo $value['filter_label']; ?></label>
                                                     </div>
@@ -604,11 +656,13 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                             if($value['filter_label'] != false) {
                                                 ?>
                                                 <div class="field">
-                                                    <input type="checkbox"
+                                                    <input type="radio"
                                                            class="opt_filter"
-                                                           name="model_scale[]"
-                                                           ng-model="model_scale['<?php echo $key; ?>']"
-                                                           ng-click="filtering()" id="ff_model_scale_<?php echo $key; ?>"
+                                                           name="model_scale"
+                                                           ng-model="model_scale"
+                                                           ng-click="filtering()"
+                                                           id="ff_model_scale_<?php echo $key; ?>"
+                                                           ng-true-value="<?php echo $key; ?>"
                                                            value="<?php echo $key; ?>">
                                                     <label for="ff_model_scale_<?php echo $key; ?>"><?php echo $value['filter_label']; ?></label>
                                                 </div>
@@ -620,7 +674,14 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 
 
                                     <div class="field">
-                                        <input type="checkbox" class="opt_filter" name="model_scale[]" ng-model="model_scale['no']" ng-click="filtering()" id="ff_model_scale_any" value="no">
+                                        <input type="radio"
+                                               class="opt_filter"
+                                               name="model_scale"
+                                               ng-model="model_scale"
+                                               ng-click="filtering()"
+                                               id="ff_model_scale_any"
+                                               ng-true-value="no"
+                                               value="no">
                                         <label for="ff_model_scale_any">any scale</label>
                                     </div>
 
@@ -632,15 +693,36 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
                                     
                                     <div class="field">
-                                        <input type="checkbox" class="opt_filter" name="texturing_status[]"  ng-model="texturing_status['all']" ng-click="filtering()" id="ff_texturing_status_all" value="all">
+                                        <input type="radio"
+                                               class="opt_filter"
+                                               name="texturing_status"
+                                               ng-model="texturing_status"
+                                               ng-click="filtering()"
+                                               id="ff_texturing_status_all"
+                                               ng-true-value="all"
+                                               value="all">
                                         <label for="ff_texturing_status_all">all</label>
                                     </div>
                                     <div class="field">
-                                        <input type="checkbox" class="opt_filter" name="texturing_status[]"  ng-model="texturing_status['none']" ng-click="filtering()" id="ff_texturing_status_none" value="none">
+                                        <input type="radio"
+                                               class="opt_filter"
+                                               name="texturing_status"
+                                               ng-model="texturing_status"
+                                               ng-click="filtering()"
+                                               id="ff_texturing_status_none"
+                                               ng-true-value="none"
+                                               value="none">
                                         <label for="ff_texturing_status_none">none <span>(untextured)</span></label>
                                     </div>
                                     <div class="field">
-                                        <input type="checkbox" class="opt_filter" name="texturing_status[]"  ng-model="texturing_status['textured']" ng-click="filtering()" id="ff_texturing_status_textured" value="textured">
+                                        <input type="radio"
+                                               class="opt_filter"
+                                               name="texturing_status"
+                                               ng-model="texturing_status"
+                                               ng-click="filtering()"
+                                               id="ff_texturing_status_textured"
+                                               ng-true-value="textured"
+                                               value="textured">
                                         <label for="ff_texturing_status_textured">textured</label>
                                     </div>
                                         <?php
@@ -662,11 +744,12 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                                 if($value['filter_label'] != false) {
                                                     ?>
                                                     <div class="field">
-                                                        <input type="checkbox"
+                                                        <input type="radio"
                                                                class="opt_filter"
-                                                               name="texturing_status[]"
-                                                               ng-model="texturing_status['<?php echo $key; ?>']"
+                                                               name="texturing_status"
+                                                               ng-model="texturing_status"
                                                                ng-click="filtering()" id="ff_texturing_status_<?php echo $key; ?>"
+                                                               ng-true-value="<?php echo $key; ?>"
                                                                value="<?php echo $key; ?>">
                                                         <label for="ff_texturing_status_<?php echo $key; ?>"><?php echo $value['filter_label']; ?></label>
                                                     </div>
@@ -685,13 +768,14 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
 
 
                                     <div class="field">
-                                        <input type="checkbox"
+                                        <input type="radio"
                                                class="opt_filter"
-                                               name="mapping[]"
-                                               ng-model="mapping['none']"
+                                               name="mapping"
+                                               ng-model="mapping"
                                                ng-click="filtering()"
                                                id="ff_mapping_none"
-                                               value="all">
+                                               ng-true-value="none"
+                                               value="none">
                                         <label for="ff_mapping_none">none</label>
                                     </div>
 
@@ -712,11 +796,13 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                             if($value['filter_label'] != false) {
                                                 ?>
                                                 <div class="field">
-                                                    <input type="checkbox"
+                                                    <input type="radio"
                                                            class="opt_filter"
-                                                           name="mapping[]"
-                                                           ng-model="mapping['<?php echo $key; ?>']"
-                                                           ng-click="filtering()" id="ff_mapping_<?php echo $key; ?>"
+                                                           name="mapping"
+                                                           ng-model="mapping"
+                                                           ng-click="filtering()"
+                                                           id="ff_mapping_<?php echo $key; ?>"
+                                                           ng-true-value="<?php echo $key; ?>"
                                                            value="<?php echo $key; ?>">
                                                     <label for="ff_mapping_<?php echo $key; ?>"><?php echo $value['filter_label']; ?></label>
                                                 </div>
@@ -792,11 +878,12 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                                 }
                                                 ?>
                                                 <div class="field">
-                                                    <input type="checkbox"
+                                                    <input type="radio"
                                                            class="opt_filter"
-                                                           name="renderer[]"
-                                                           ng-model="renderer['<?php echo $key; ?>']"
+                                                           name="renderer"
+                                                           ng-model="renderer"
                                                            ng-click="filtering()" id="ff_renderer_<?php echo $key; ?>"
+                                                           ng-true-value="<?php echo $key; ?>"
                                                            value="<?php echo $key; ?>">
                                                     <label for="ff_renderer_<?php echo $key; ?>"><?php echo $value['label']; ?></label>
                                                 </div>

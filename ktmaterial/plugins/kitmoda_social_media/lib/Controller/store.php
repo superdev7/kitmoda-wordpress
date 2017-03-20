@@ -329,7 +329,7 @@ class KSM_StoreController extends KSM_BaseController {
         if(sizeof($_POST['culture']) > 0) {
             $tmp_is_all = 0;
             for ($i = 0; $i < sizeof($_POST['culture']); $i++) {
-                if ($_POST['culture'][$i] == 'none/genera' || $_POST['culture'][$i] == 'all') {
+                if ($_POST['culture'][$i] == 'none/general' || $_POST['culture'][$i] == 'all') {
                     $tmp_is_all = 1;
                 }
             }
@@ -497,7 +497,20 @@ $tmp_is_none = 0;
                 unset($_POST['lighting']);
             }
         }
-        
+
+
+        if(isset($_POST['environment'])){
+            if($_POST['environment'] == 'show both'){
+                $_POST['environment'] = array('yes','no');
+            }
+            if($_POST['environment'] == 'full environment'){
+                $_POST['environment'] = array('yes');
+            }
+            if($_POST['environment'] == 'single object'){
+                $_POST['environment'] = array('no');
+            }
+        }
+
         $tax_filters = array();
         
         foreach($list_taxonomies as $t) {
@@ -510,6 +523,21 @@ $tmp_is_none = 0;
                 }
             }
         }
+
+//        $args = array(
+//            'posts_per_page' => 10,
+//            'paged' => $page,
+//            'post_type' => $this->Model->post_type,
+//            'post_status' => 'publish',
+//            'meta_query' => array(
+//                'relation' => 'AND',
+//                array(
+//                    'key' => 'rating_coefficient',
+//                    'value' => '0',
+//                    'compare' => '>',
+//                ),
+//            )
+//        );
 
         $cat = $_POST['cat'];
         

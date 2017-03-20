@@ -1,20 +1,5 @@
 jQuery(document).ready(function($) {
 
-    // click on menu
-    // jQuery(document).on('click','.open_ctg',function(){
-    //     $('.refine-menu').hide(); 
-    //     console.log('func 2');    
-
-    //     $('.thirdStep').addClass('opened_ctg');  
-    //     $('.secondList').toggleClass('active'); 
-    //     if($('.secondList').hasClass('active')) {
-    //         $('#fadingCover').fadeIn();  
-    //     }
-    //     else { 
-    //         $('#fadingCover').fadeOut();
-    //     }  
-    // });
-
     $('.categories').on('click','.firstItemList>span', function(){
         $('.secondList').toggleClass('active'); 
         if($('.secondList').hasClass('active')) {
