@@ -38,7 +38,7 @@
                                                            ng-model="style"
                                                            ng-true-value="<?php echo $tax_style; ?>"
                                                            value="<?php echo $tax_style; ?>">
-                                                    <label style="cursor: pointer;" for="opt<?php echo $key; ?>"><?php echo $tax_style; ?></label>
+                                                    <label style="cursor: pointer;" for="opt<?php echo $key; ?>"><?php echo str_replace('-',' ',$tax_style); ?></label>
                                                 </li>
                                         <?php }
                                         ?>
@@ -63,7 +63,7 @@
                                         ) );
                                         if( !empty($terms) ){
                                             foreach ($terms as $key => $value) {
-                                                echo '<li><input type="radio" name="culture-options" ng-model="culture" ng-true-value="'. $value .'" id="cultr-'. $key .'" value="'. $value .'"><label for="cultr-'. $key .'">'. $value .'</label></li>';
+                                                echo '<li><input type="radio" name="culture-options" ng-model="culture" ng-true-value="'. $value .'" id="cultr-'. $key .'" value="'. $value .'"><label for="cultr-'. $key .'">'. str_replace('-',' ',$value) .'</label></li>';
                                             }
                                         }
                                         ?>				    
@@ -94,7 +94,13 @@
                                     </div>
                                     <div class="container-format">
                                             <div class="columns-all">
-                                                    <div class="ind-check"><input type="radio" id="format-all" value="all" ng-model="file_format['all']" name="check-format"><label for="format-all">all</label></div>
+                                                    <div class="ind-check">
+                                                        <input type="radio"
+                                                               id="format-all"
+                                                               value="all"
+                                                               ng-model="file_format"
+                                                               ng-true-value="all"
+                                                               name="check-format"><label for="format-all">all</label></div>
                                             </div>
                                             <div class="else">
                                                 <?php
@@ -106,7 +112,12 @@
                                                 ) );
                                                 if( !empty($terms) ){
                                                     foreach ($terms as $key => $value) {
-                                                        echo '<div class="ind-check"><input type="radio" id="format-'. $value .'" ng-model="file_format[\''. $value .'\']" value="'. $value .'" name="check-format"><label for="format-'. $value .'">'. $value .'</label></div>';
+                                                        echo '<div class="ind-check"><input type="radio" 
+                                                                                            id="format-'. $value .'" 
+                                                                                            ng-model="file_format" 
+                                                                                            value="'. $value .'" 
+                                                                                            ng-true-value="'. $value .'"
+                                                                                            name="check-format"><label for="format-'. $value .'">'. $value .'</label></div>';
                                                     }
                                                 }
                                                 ?>

@@ -524,21 +524,6 @@ $tmp_is_none = 0;
             }
         }
 
-//        $args = array(
-//            'posts_per_page' => 10,
-//            'paged' => $page,
-//            'post_type' => $this->Model->post_type,
-//            'post_status' => 'publish',
-//            'meta_query' => array(
-//                'relation' => 'AND',
-//                array(
-//                    'key' => 'rating_coefficient',
-//                    'value' => '0',
-//                    'compare' => '>',
-//                ),
-//            )
-//        );
-
         $cat = $_POST['cat'];
         
         $tax_terms = array();
@@ -626,21 +611,68 @@ $tmp_is_none = 0;
             'posts_per_page' => COMMUNITY_POSTS_PER_PAGE,
             'paged' => $page,
             'post_type' => $this->Model->post_type,
-            'post_status' => 'publish'            
-        );        
-        
-        $args = array_merge($args , $sort_args);        
-        
-        if(!empty($tax_query)){
-            $args['tax_query'] = $tax_query;
-        }        
-        
-        if($_POST['q']) {
-            $args['s'] = $_POST['q'];
+            'post_status' => 'publish'
+        );
+
+        if(isset($_POST['pr_rating'])){
+            $args['meta_query'] = array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'rating_coefficient',
+                    'value' => $_POST['pr_rating'],
+                    'compare' => '>=',
+                ),
+            );
+
         }
 
-        $args['tax_query']['relation'] = 'AND';
-        $query = new WP_Query( $args );
+        
+//        If action is SEARCH. For example, keywords are car sports red big v8 auto
+        if( !empty($_POST['q']) ) {
+//            $args['s'] = $_POST['q'];
+            $search_terms = preg_split("/[^\w]*([\s]+[^\w]*|$)/", $_POST['q'], -1, PREG_SPLIT_NO_EMPTY);
+
+            global $wpdb;
+            if( !empty($search_terms) ){
+                $where = "t.slug = '{$search_terms[0]}'";
+                $like = "AND ($wpdb->posts.post_title LIKE '%{$search_terms[0]}%' OR $wpdb->posts.post_content LIKE '%{$search_terms[0]}%'";
+                if( count($search_terms) > 1 ){
+                    foreach ($search_terms as $k => $v) {
+                        $where .= " OR t.slug = '{$v}'";
+                        $like .= " OR $wpdb->posts.post_title LIKE '%{$v}%' OR $wpdb->posts.post_content LIKE '%{$v}%'";
+                    }
+                }
+                $like .= ')';
+            }
+
+            $sql = "SELECT t.term_id AS termID FROM $wpdb->terms AS t INNER JOIN $wpdb->term_taxonomy AS tt ON t.term_id = tt.term_id WHERE ({$where}) AND tt.taxonomy = 'ksm_tax_keyword'";
+            $res = $wpdb->get_results($sql);
+
+            $str_ids = '';
+            $where = '';
+            if( !empty($res) ){
+                for($i=0; $i < count($res); $i++){
+                    $str_ids .= $i == 0 ? '' : ',';
+                    $str_ids .= $res[$i]->termID;
+                }
+                $where .= "AND ($wpdb->term_relationships.term_taxonomy_id IN ({$str_ids}) AND $wpdb->posts.post_type = '{$this->Model->post_type}')";
+            }
+            $sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts INNER JOIN $wpdb->term_relationships ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) WHERE 1=1 "
+                    . "{$where} {$like}"
+                    . "AND ($wpdb->posts.post_password = '')  AND $wpdb->posts.post_type = '{$this->Model->post_type}' AND (($wpdb->posts.post_status = 'publish')) GROUP BY $wpdb->posts.ID ORDER BY $wpdb->posts.post_date DESC LIMIT 0, ". COMMUNITY_POSTS_PER_PAGE;
+
+            $query->posts = $wpdb->get_results($sql);
+            $query->post_count = count($query->posts);
+       // OR other actions
+        }else{
+            if(!empty($tax_query)){
+                $args['tax_query'] = $tax_query;
+            }
+            $args = array_merge($args , $sort_args);
+            $args['tax_query']['relation'] = 'AND';
+            $query = new WP_Query( $args );
+        }
+
         $containers = array();
 
         $posts = '';

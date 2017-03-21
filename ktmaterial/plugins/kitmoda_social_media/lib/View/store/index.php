@@ -334,7 +334,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="title">Style</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
                                     <?php
-                                    $arr_tax_styles = KSM_Taxonomy::custom_list(array('tax'=>'style'), true);
+                                    $arr_tax_styles = KSM_Taxonomy::custom_list(array('tax'=>'style'));
                                     if( !empty($arr_tax_styles) ){ ?>
                                         <div class="field">
                                             <input type="radio"
@@ -366,7 +366,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                                                id="ff_style_<?php echo $tax_style; ?>"
                                                                ng-true-value="<?php echo $tax_style; ?>"
                                                                value="<?php echo $tax_style; ?>">
-                                                        <label for="ff_style_<?php echo $tax_style; ?>"><?php echo $tax_style; ?></label>
+                                                        <label for="ff_style_<?php echo $tax_style; ?>"><?php echo str_replace('-',' ',$tax_style); ?></label>
                                                     </div>
                                                     <?php
                                                     $i++;
@@ -388,7 +388,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
 
                                     <?php
-                                    $arr_tax_cultures = KSM_Taxonomy::custom_list(array('tax'=>'culture'), true);
+                                    $arr_tax_cultures = KSM_Taxonomy::custom_list(array('tax'=>'culture'));
                                     if( !empty($arr_tax_cultures) ){ ?>
                                         <div class="field">
                                             <input type="radio"
@@ -419,7 +419,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                                        ng-click="filtering()" id="ff_culture_<?php echo $tax_culture; ?>"
                                                        ng-true-value="<?php echo $tax_culture; ?>"
                                                        value="<?php echo $tax_culture; ?>">
-                                                <label for="ff_culture_<?php echo $tax_culture; ?>"><?php echo $tax_culture; ?></label>
+                                                <label for="ff_culture_<?php echo $tax_culture; ?>"><?php echo str_replace('-',' ',$tax_culture); ?></label>
                                             </div>
                                             <?php
                                             $i++;
@@ -467,9 +467,9 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                 <div class="title">price range</div>
                                 <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
                                 <div class="container-price-range">
-                                    <span>$ <input type="text" name="firstPrice" value="" ng-model="price_min"></span>
+                                    <span>$ <input type="text" name="firstPrice" value="" ng-model="price_min" ng-change="filtering()"></span>
                                     <span class="to">to</span>   
-                                    <span> $ <input value="" name="secondPrice" type="text" ng-model="price_max"></span>
+                                    <span> $ <input value="" name="secondPrice" type="text" ng-model="price_max" ng-change="filtering()"></span>
                                 </div>
                             </div>
 <!-- Product Rating -->

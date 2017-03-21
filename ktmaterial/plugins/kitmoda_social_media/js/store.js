@@ -297,22 +297,27 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
     $scope.renderer = 'vray';
     $scope.price_min = '';
     $scope.price_max = '';
+    $scope.pr_rating = 0;
 
     $rootScope.$watch('culture',function (new_v,old_v) {
         if(typeof new_v == 'object') {
             if (typeof new_v[0] == 'string') {
-                $scope.culture = new_v;
+                if(new_v == 'none/general') {
+                    $scope.culture = 'all';
+                }else {
+                    $scope.culture = new_v[0];
+                }
             }
+
         }
     });
     $rootScope.$watch('style',function (new_v,old_v) {
         if(typeof new_v == 'object') {
             if (typeof new_v[0] == 'string') {
-                $scope.style = new_v;
+                $scope.style = new_v[0];
             }
         }
     });
-
 
     $scope.filtering = function(){
 
@@ -327,9 +332,14 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
 
         var data = {};
 
-        if($scope.price_min != '' && $scope.price_max != '' &&
+        $scope.price_min = parseInt($scope.price_min);
+        $scope.price_max = parseInt($scope.price_max);
+
+        if(!isNaN($scope.price_min) && !isNaN($scope.price_max) &&
             typeof $scope.price_min == 'number' && typeof $scope.price_max == 'number'){
 
+            console.log($scope.price_min);
+            console.log($scope.price_max);
             var price_arr = [
                 '5-10',
                 '10-25',
@@ -371,6 +381,7 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
         }
 
 
+        data.pr_rating = $scope.pr_rating;
         if(get_obj_lent($scope.style) > 0){ data.style = [$scope.style]; }
         if(get_obj_lent($scope.culture) > 0){data.culture = [$scope.culture]; }
         if(get_obj_lent($scope.file_format) > 0){data.file_format = [$scope.file_format]; }
@@ -494,7 +505,19 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
         jQuery(".era .second").text(eras[ui.values[1]]);
     });
 
-
+    jQuery("#productRating-sidebar").slider({
+        min: 0,
+        max: 4,
+        value: 0,
+        range: false
+    }).slider("pips", {
+        rest: 'label',
+        labels: ['all','&#9733; <span>></span>', '&#9733;&#9733; <span>></span>', '&#9733;&#9733;&#9733; <span>></span>', '&#9733;&#9733;&#9733;&#9733; <span>></span>']
+    }).on("slidechange", function(e,ui) {
+        jQuery("#product-rating-number").text(parseInt([ui.value]) + 1);
+        $scope.pr_rating = parseInt([ui.value]);
+        $scope.filtering();
+    });
 
     if(location_search.search == true)
     $scope.filtering();
@@ -506,7 +529,7 @@ kapp.controller('refineMenu', ['$scope','$rootScope','$http','$location', functi
     $scope.culture = 'none/general';
     $scope.era = [];
     $scope.environment = [];
-    $scope.file_format = [];
+    $scope.file_format = '';
     $scope.poly_count = [
         '10-500',
         '500-2k',
@@ -531,11 +554,14 @@ kapp.controller('refineMenu', ['$scope','$rootScope','$http','$location', functi
         $location.search({
             'search':true
         });
-        $scope.file_format = $scope.clear_arr($scope.file_format);
+        // $scope.file_format = $scope.clear_arr($scope.file_format);
 
         var data = {};
 
-        if($scope.price_min != '' && $scope.price_max != '' &&
+        $scope.price_min = parseInt($scope.price_min);
+        $scope.price_max = parseInt($scope.price_max);
+
+        if(!isNaN($scope.price_min) && !isNaN($scope.price_max) &&
             typeof $scope.price_min == 'number' && typeof $scope.price_max == 'number'){
 
             var price_arr = [
@@ -585,7 +611,7 @@ kapp.controller('refineMenu', ['$scope','$rootScope','$http','$location', functi
         if($scope.era.length > 0){data.era = $scope.era; }
         if($scope.environment.length > 0){data.environment = $scope.environment; }
         if($scope.poly_count.length > 0){data.poly_count = $scope.poly_count; }
-        if(get_obj_lent($scope.file_format) > 0){data.file_format = Object.keys($scope.file_format); }
+        if(get_obj_lent($scope.file_format) > 0){data.file_format = [$scope.file_format]; }
 
         if(location_search.cat)
         data.cat = location_search.cat;
@@ -652,7 +678,7 @@ kapp.controller('refineMenu', ['$scope','$rootScope','$http','$location', functi
     }).on("slidechange", function(e,ui) {
         jQuery(".era .first").text(eras[ui.values[0]]);
         jQuery(".era .second").text(eras[ui.values[1]]);
-        $scope.era = eras.slice(ui.values[0],ui.values[1]);
+        $scope.era = eras.slice(ui.values[0],ui.values[1]+1);
     });
 
 var environment = ['show both', 'single object', 'full environment'];
@@ -691,24 +717,14 @@ var environment = ['show both', 'single object', 'full environment'];
     jQuery("#productRating").slider({
         min: 0,
         max: 3,
-        value: 1,
+        value: 0,
         range: false
     }).slider("pips", {
         rest: 'label',
         labels: ['&#9733; >', '&#9733;&#9733; >', '&#9733;&#9733;&#9733; >', '&#9733;&#9733;&#9733;&#9733; >']
     }).on("slidechange", function(e,ui) {
         jQuery("#product-rating-number").text(parseInt([ui.value]) + 1);
-        $scope.pr_rating = parseInt([ui.value]);
-    });
-
-    jQuery("#productRating-sidebar").slider({
-        min: 0,
-        max: 4,
-        value: 1,
-        range: true
-    }).slider("pips", {
-        rest: 'label',
-        labels: ['all','&#9733; <span>></span>', '&#9733;&#9733; <span>></span>', '&#9733;&#9733;&#9733; <span>></span>', '&#9733;&#9733;&#9733;&#9733; <span>></span>']
+        $scope.pr_rating = parseInt([ui.value]+1);
     });
 
 }]);
