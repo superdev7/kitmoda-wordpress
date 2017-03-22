@@ -661,8 +661,8 @@ $tmp_is_none = 0;
                     . "{$where} {$like}"
                     . "AND ($wpdb->posts.post_password = '')  AND $wpdb->posts.post_type = '{$this->Model->post_type}' AND (($wpdb->posts.post_status = 'publish')) GROUP BY $wpdb->posts.ID ORDER BY $wpdb->posts.post_date DESC LIMIT 0, ". COMMUNITY_POSTS_PER_PAGE;
 
-            $query->posts = $wpdb->get_results($sql);
-            $query->post_count = count($query->posts);
+            $arr_posts = (array)$wpdb->get_results($sql);
+            $post_count = count($arr_posts);
        // OR other actions
         }else{
             if(!empty($tax_query)){
@@ -671,16 +671,18 @@ $tmp_is_none = 0;
             $args = array_merge($args , $sort_args);
             $args['tax_query']['relation'] = 'AND';
             $query = new WP_Query( $args );
+            $arr_posts = $query->posts;
+            $post_count = count($query->post_count);
         }
 
         $containers = array();
 
         $posts = '';
-        for($i=0; $i<sizeof($query->posts); ++$i){
-            $thumbnail_id = get_post_thumbnail_id($query->posts[$i]->ID);
+        for($i=0; $i < $post_count; ++$i){
+            $thumbnail_id = get_post_thumbnail_id($arr_posts[$i]->ID);
             if( $thumbnail_id != false){
                 $grid_img = get_image_src($thumbnail_id, 'gallery_grid');
-                $permalink = ksm_get_permalink("store/download/{$query->posts[$i]->ID}");
+                $permalink = ksm_get_permalink("store/download/{$arr_posts[$i]->ID}");
                 $imagesize = getimagesize($grid_img);
 
                 $posts .= "<a class='item' data-w='{$imagesize[0]}' data-h='{$imagesize[1]}' href='{$permalink}'><img src='{$grid_img}'></a>";
@@ -696,7 +698,7 @@ $tmp_is_none = 0;
         wp_reset_postdata();
         
         
-        if($query->post_count == 0) {
+        if($post_count == 0) {
             $containers['posts'] = $this->default_text;
         }
         
