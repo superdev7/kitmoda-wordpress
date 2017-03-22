@@ -110,7 +110,7 @@ KSM_postView::add($post);
 
 
 
-<div class="ksm_profile_container" ng-controller="page_content">
+<div class="ksm_profile_container download-page" ng-controller="page_content">
 
 
 
@@ -134,12 +134,12 @@ KSM_postView::add($post);
 
   <div class="section">
 
-  <div class="add_post_form_highlight_top">
+  <!-- <div class="add_post_form_highlight_top">
                 <div class="add_post_form_radius_top">
                     <div class="add_post_form_highlight_studio_overlay_top">
                     </div>
                 </div>
-        </div>
+        </div> -->
 
   <div class="section-inside">
 
@@ -151,12 +151,12 @@ KSM_postView::add($post);
 
 </div>
 
-<div class="add_post_form_highlight_bottom">
+<!-- <div class="add_post_form_highlight_bottom">
                 <div class="add_post_form_radius_bottom">
                     <div class="add_post_form_highlight_studio_overlay_bottom">
                     </div>
                 </div>
-        </div>
+        </div> -->
 
 </div>
 

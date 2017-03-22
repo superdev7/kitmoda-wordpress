@@ -723,8 +723,8 @@ var environment = ['show both', 'single object', 'full environment'];
         rest: 'label',
         labels: ['&#9733; >', '&#9733;&#9733; >', '&#9733;&#9733;&#9733; >', '&#9733;&#9733;&#9733;&#9733; >']
     }).on("slidechange", function(e,ui) {
-        jQuery("#product-rating-number").text(parseInt([ui.value]) + 1);
-        $scope.pr_rating = parseInt([ui.value]+1);
+        jQuery("#product-rating-number").text(parseInt(parseInt([ui.value]) + 1));
+        $scope.pr_rating = parseInt(parseInt([ui.value])+1);
     });
 
 }]);

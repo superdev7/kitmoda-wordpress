@@ -633,9 +633,11 @@ $tmp_is_none = 0;
             $search_terms = preg_split("/[^\w]*([\s]+[^\w]*|$)/", $_POST['q'], -1, PREG_SPLIT_NO_EMPTY);
 
             global $wpdb;
+            $like = '';
+            
             if( !empty($search_terms) ){
                 $where = "t.slug = '{$search_terms[0]}'";
-                $like = "AND ($wpdb->posts.post_title LIKE '%{$search_terms[0]}%' OR $wpdb->posts.post_content LIKE '%{$search_terms[0]}%'";
+                $like = "($wpdb->posts.post_title LIKE '%{$search_terms[0]}%' OR $wpdb->posts.post_content LIKE '%{$search_terms[0]}%'";
                 if( count($search_terms) > 1 ){
                     foreach ($search_terms as $k => $v) {
                         $where .= " OR t.slug = '{$v}'";
@@ -655,10 +657,21 @@ $tmp_is_none = 0;
                     $str_ids .= $i == 0 ? '' : ',';
                     $str_ids .= $res[$i]->termID;
                 }
-                $where .= "AND ($wpdb->term_relationships.term_taxonomy_id IN ({$str_ids}) AND $wpdb->posts.post_type = '{$this->Model->post_type}')";
+                $where .= "AND ($wpdb->term_relationships.term_taxonomy_id IN ({$str_ids})";
+            }
+            if( $where != false ){
+                if( $like != false ){
+                    $where .= " OR {$like})";
+                }else{
+                    $where .= ")";
+                }
+            }else{
+                if( $like != false ){
+                    $where .= "AND {$like}";
+                }
             }
             $sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts INNER JOIN $wpdb->term_relationships ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) WHERE 1=1 "
-                    . "{$where} {$like}"
+                    . "{$where}"
                     . "AND ($wpdb->posts.post_password = '')  AND $wpdb->posts.post_type = '{$this->Model->post_type}' AND (($wpdb->posts.post_status = 'publish')) GROUP BY $wpdb->posts.ID ORDER BY $wpdb->posts.post_date DESC LIMIT 0, ". COMMUNITY_POSTS_PER_PAGE;
 
             $arr_posts = (array)$wpdb->get_results($sql);
@@ -672,7 +685,11 @@ $tmp_is_none = 0;
             $args['tax_query']['relation'] = 'AND';
             $query = new WP_Query( $args );
             $arr_posts = $query->posts;
-            $post_count = count($query->post_count);
+            if(isset($query->post_count)) {
+                $post_count = $query->post_count;
+            }else{
+                $post_count = 0;
+            }
         }
 
         $containers = array();

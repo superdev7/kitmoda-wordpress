@@ -3290,7 +3290,7 @@ body {
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 2, 0.45) 0%, rgba(0, 0, 2, 0.28) 18%, rgba(0, 0, 2, 0.28) 74%, rgba(0, 0, 2, 0.45) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 2, 0.45) 0%, rgba(0, 0, 2, 0.28) 18%, rgba(0, 0, 2, 0.28) 74%, rgba(0, 0, 2, 0.45) 100%);
 }
-.v2 .flex, .v2 .store-page .container-price-range, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .section-inside, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .third-column .sub-container, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .third-column .container-format, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .third-column .container-format .else, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .third-column .container-format .ind-check, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .sections section.categ .container-categ, .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .category {
+.v2 .flex, .v2 .download-page .container-price-range, .v2 .store-page .container-price-range, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .section-inside, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .third-column .sub-container, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .third-column .container-format, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .third-column .container-format .else, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form .third-column .container-format .ind-check, .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .sections section.categ .container-categ, .v2 .ksm-store .ksm-sidebar .ksm_store_search .sidebar .field_group .category {
   display: -webkit-flex;
   display: flex;
 }
@@ -3299,6 +3299,48 @@ body {
 }
 .v2 .pr-col_container_top.alla {
   z-index: 9 !important;
+}
+.v2 .download-page .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box {
+  max-width: none;
+}
+.v2 .download-page .ksm_profile {
+  width: auto !important;
+}
+.v2 .download-page .ksm_profile .ksm_store_archive .content {
+  max-width: 1228px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.v2 .download-page .container-price-range {
+  text-transform: lowercase;
+  color: #8EB9E1;
+  font: 400 13px "Roboto", sans-serif, sans-serif;
+  margin: 10px 0 40px;
+}
+.v2 .download-page .container-price-range .to {
+  position: relative;
+  top: 3px;
+}
+.v2 .download-page .container-price-range input {
+  width: 85px;
+  border-radius: 5px;
+  padding: 3px 5px;
+  background: linear-gradient(to bottom, #1a1a22, #202029);
+  color: white;
+  margin-left: 2px;
+  display: inline-block;
+  border: none;
+  outline: none;
+  line-height: 20px;
+}
+.v2 .download-page .container-price-range span {
+  position: relative;
+  top: -1px;
+  margin: 0 10px;
+}
+.v2 .download-page .container-price-range span:first-child {
+  margin-left: 0;
 }
 .v2 .store-page .container-price-range {
   text-transform: lowercase;
@@ -4381,6 +4423,15 @@ body {
 }
 .v2 .ksm-store .ksm-content img {
   max-width: none;
+}
+@media (max-width: 1360px) {
+  .v2 .download-page .ksm_profile.ksm_page_store_product .gallery {
+    width: calc(100% - 450px);
+    max-width: none;
+  }
+  .v2 .download-page .pr-col_container_top.alla {
+    display: none;
+  }
 }
 @media (max-width: 960px) {
   .v2 .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box .refine-menu form {
