@@ -637,10 +637,15 @@ var kimgupl = kuldr.extend({
 
 			//New code with remove button
 			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
+
+
 			$(item_ele+' .uid').val(o.id);
 			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
-			$(item_ele+' .b2').html('<div class="b3"><a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a></div>');
+			
+			
+			
             $(item_ele+' .cancel').removeClass('cancel').addClass('remove');
+			$(item_ele+' .add_image').addClass('not-active');
 			
 			//when remove button is clicked
 			$(item_ele+' .remove').click(function(){_this.removeImage(f.id);});
@@ -650,17 +655,15 @@ var kimgupl = kuldr.extend({
     /******  Method to remove uploaded images from untextured model upload   ******************/
     removeImage: function(fid)
 	{
+		
 		//Create an object of the current container
 		var ele = this.container+' .item#'+fid;
 		$(ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
-		
-		$(ele+' .b2').html('<a href="#" class="add_image" style="position:relative;z-index:1" onclick="$(\'.browse_btn\').get(0).click();"><div class="b3"></div></a>');
-		
 		$(ele).find('.pub_feature').attr('src',''); //remove images
 		$(ele).find('.pub_thumb').attr('src',''); //remove images
 		$(ele).find('.uid').attr('value',''); //set uid value to nothing
 		$(ele+' .b3').html('');//empty images
-		$(ele).removeClass('ui-sortable-handle').addClass('empty ').removeAttr('id');//make container empty to accept new image
+		$(ele).removeClass('ui-sortable-handle').addClass('empty');//make container empty to accept new image
 		
 		$(ele).attr('id', '');	//Lock position for new upload on current element so new image is loaded here
 
@@ -692,7 +695,8 @@ var kpiu = kimgupl.extend({
 			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
 			$(item_ele+' .uid').val(o.id);
 			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
-			
+			$(item_ele+' .b2').html('<div class="b3"><a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a></div>');
+			//$(item_ele+' .add_image').addClass('not-active').removeClass('add_image');
             $(item_ele+' .cancel').removeClass('cancel').addClass('remove').removeClass('empty');
 			
 			//when remove button is clicked
@@ -707,6 +711,9 @@ var kpiu = kimgupl.extend({
 		//Create an object of the current container
 		var ele = this.container+' .item#'+fid;
 		$(ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
+		
+		$(ele+' .b2').html('<a href="#" class="add_image" style="position:relative;z-index:1" onclick="$(\'.browse_btn\').get(0).click();"><div class="b3"></div></a>');
+		
 		$(ele).find('.pub_feature').attr('src',''); //remove images
 		$(ele).find('.pub_thumb').attr('src',''); //remove images
 		$(ele).find('.uid').attr('value',''); //set uid value to nothing
@@ -760,10 +767,13 @@ var kpiu = kimgupl.extend({
 			var target_idx = $('ul li.item').index(this); //Index for Target Container
 			//var dragged_idx = $(ui.draggable[0]).parent().index() //Index of Drag Container
 			var id = $(ui.draggable).attr('no');
+			//alert("PAUSE:" + (id-1));
 			
 			ele_dragged_dp = $("ul li.item").get($(ui.draggable).attr('no')-1);
-			var dragged_idx =  $(ele_dragged_dp).index();
+			//alert("PARENT" + $(ele_dragged_dp).attr('no'));
+			//alert("INDEX" + $(ele_dragged_dp).index());
 			
+			var dragged_idx =  $(ele_dragged_dp).index();
 			//Create instances of both target and dragged elements
 			var ele_target = $("ul li.item").get(target_idx);
 			if(dragged_idx > 0)//Check if element is the first element
@@ -788,6 +798,10 @@ var kpiu = kimgupl.extend({
 			//Get ID of each of the target and dragged elements to check if an image has been uploaded
 			var id_target = $(ele_target).attr('id');
 			var id_dragged = $(ele_dragged).attr('id');
+
+
+			var b2_target_no =  $(ele_target).find('.b2').attr('no');
+			var b2_dragged_no =  $(ele_dragged).find('.b2').attr('no');
 
 			var pub_feature_target_src =  $(ele_target).find('.pub_feature').attr('src');
 			var pub_feature_dragged_src =  $(ele_dragged).find('.pub_feature').attr('src');	
@@ -815,6 +829,7 @@ var kpiu = kimgupl.extend({
 					$(ele_dragged).find('.pub_thumb').attr('src','');
 					$(ele_dragged).find('.uid').attr('value','');
 					$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle');
+					$(ele_dragged).find('.b2').attr('no',b2_target_no);
 					//$(ele_dragged+' .b3').html('');
 					//$(ele_dragged).attr('id', 'poslock-1');
 					
@@ -825,6 +840,7 @@ var kpiu = kimgupl.extend({
 					$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle');
 					//$(ele_target+' .b3').html('');
 					//$(ele_target).attr('id', 'poslock-1');
+					$(ele_target).find('.b2').attr('no',b2_dragged_no);
 				}
 				else
 				{
@@ -836,7 +852,7 @@ var kpiu = kimgupl.extend({
 					//$(ele_target).attr('class',cls_dragged);
 					//$(ele_target).find('.pub_feature').attr('src',pub_feature_dragged_src);
 					//$(ele_target).find('.pub_thumb').attr('src',pub_thumb_dragged_src);
-					
+					$(ele_target).find('.b2').attr('no',b2_dragged_no);
 					if(target_idx == 0)
 					{
 						$(ele_dragged).find('.pub_feature').attr('style',"display:inline");
@@ -845,6 +861,7 @@ var kpiu = kimgupl.extend({
 					
 					//Setting Dragged Element to Empty
 					$(ele_dragged).attr('id', null);
+					$(ele_dragged).find('.b2').attr('no',b2_target_no);
 					//$(ele_dragged).find('.pub_feature').attr('src','');
 					//$(ele_dragged).find('.pub_thumb').attr('src','');
 					$(ele_dragged).find('.uid').attr('value',null);
@@ -863,6 +880,7 @@ var kpiu = kimgupl.extend({
 					//Replace Dragged Element with Target Element parameters
 					$(ele_dragged).attr('id',id_target);
 					$(ele_dragged).attr('class',cls_target);
+					$(ele_dragged).find('.b2').attr('no',b2_target_no);
 					$(ele_dragged).removeClass('empty').addClass('ui-draggable-handle').addClass('ur-draggable');
 					
 					//$(ele_dragged).find('.pub_feature').attr('src',pub_feature_target_src);
@@ -883,7 +901,7 @@ var kpiu = kimgupl.extend({
 					//$(ele_target).find('.pub_thumb').attr('src','');
 					$(ele_target).find('.uid').attr('value',null);
 					$(ele_target).addClass('empty').removeClass('ui-draggable-handle').removeClass('ui-draggable').removeClass('ui-sortable-handle');
-					
+					$(ele_target).find('.b2').attr('no',b2_dragged_no);
 					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
 					//$(ele_target+' .b3').html('');
 					//$(ele_target).attr('id', 'poslock-1');
@@ -895,6 +913,9 @@ var kpiu = kimgupl.extend({
 					//$(ele_target).find('.pub_feature').attr('src',$(ele_dragged).find('.pub_feature').attr('src'));
 					//$(ele_target).find('.pub_thumb').attr('src',$(ele_dragged).find('.pub_thumb').attr('src'));
 					$(ele_target).find('.uid').attr('value',$(ele_dragged).find('.uid').attr('src'));
+					
+					$(ele_target).find('.b2').attr('no',b2_dragged_no);
+					
 					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
 					//$(ele_target).find('.b3').html($(ele_dragged).find('.b3').html());
 					//$(ele_target).attr('id', 'poslock-1');
@@ -909,6 +930,8 @@ var kpiu = kimgupl.extend({
 					//$(ele_dragged).find('.pub_feature').attr('src',$(ele_target).find('.pub_feature').attr('src'));
 					//$(ele_dragged).find('.pub_thumb').attr('src',$(ele_target).find('.pub_thumb').attr('src'));
 					$(ele_dragged).find('.uid').attr('value',$(ele_target).find('.uid').attr('src'));
+					
+					$(ele_dragged).find('.b2').attr('no',b2_target_no);
 					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
 					//$(ele_dragged).find('.b3').html($(ele_target).find('.b3').html());
 					//$(ele_target).attr('id', 'poslock-1');
@@ -1056,6 +1079,7 @@ $(function() {
 		$('.browse_btn').get(0).click();
     })
 })
+
 
 $(function() {
     $('.browse_btn').click(function(e) {
