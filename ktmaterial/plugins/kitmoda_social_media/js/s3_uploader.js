@@ -637,10 +637,9 @@ var kimgupl = kuldr.extend({
 
 			//New code with remove button
 			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
-
-
 			$(item_ele+' .uid').val(o.id);
 			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
+			$(item_ele+' .b2').html('<div class="b3"><a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a></div>');
             $(item_ele+' .cancel').removeClass('cancel').addClass('remove');
 			
 			//when remove button is clicked
@@ -651,15 +650,17 @@ var kimgupl = kuldr.extend({
     /******  Method to remove uploaded images from untextured model upload   ******************/
     removeImage: function(fid)
 	{
-		
 		//Create an object of the current container
 		var ele = this.container+' .item#'+fid;
 		$(ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
+		
+		$(ele+' .b2').html('<a href="#" class="add_image" style="position:relative;z-index:1" onclick="$(\'.browse_btn\').get(0).click();"><div class="b3"></div></a>');
+		
 		$(ele).find('.pub_feature').attr('src',''); //remove images
 		$(ele).find('.pub_thumb').attr('src',''); //remove images
 		$(ele).find('.uid').attr('value',''); //set uid value to nothing
 		$(ele+' .b3').html('');//empty images
-		$(ele).removeClass('ui-sortable-handle').addClass('empty');//make container empty to accept new image
+		$(ele).removeClass('ui-sortable-handle').addClass('empty ').removeAttr('id');//make container empty to accept new image
 		
 		$(ele).attr('id', '');	//Lock position for new upload on current element so new image is loaded here
 
@@ -757,7 +758,11 @@ var kpiu = kimgupl.extend({
 			
 			
 			var target_idx = $('ul li.item').index(this); //Index for Target Container
-			var dragged_idx = $(ui.draggable[0]).parent().index() //Index of Drag Container
+			//var dragged_idx = $(ui.draggable[0]).parent().index() //Index of Drag Container
+			var id = $(ui.draggable).attr('no');
+			
+			ele_dragged_dp = $("ul li.item").get($(ui.draggable).attr('no')-1);
+			var dragged_idx =  $(ele_dragged_dp).index();
 			
 			//Create instances of both target and dragged elements
 			var ele_target = $("ul li.item").get(target_idx);
@@ -918,7 +923,7 @@ var kpiu = kimgupl.extend({
 
 			
 			//Check to see if there is an interaction with the large featured item
-			if($('ul li.item').index(this) == 0)
+			if(target_idx == 0)
 			{
 				//Drop the element and resize accordingly
 				$('.b2', event.target).appendTo(droppableParent).css({opacity: 0, width:125,height:90}).animate({opacity: 1}, 200);
@@ -928,7 +933,7 @@ var kpiu = kimgupl.extend({
 			else
 			{
 				//Check if the dragged item is the large featured item
-				if($(ui.draggable[0]).parent().index() == 0)
+				if(dragged_idx == 0)
 				{
 					//Drop the elements and resize accordingly to fit placeholder
 					$('.b2', event.target).appendTo(droppableParent).css({opacity: 0, width:198,height:136}).animate({opacity: 1}, 200);
