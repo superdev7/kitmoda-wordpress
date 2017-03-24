@@ -667,7 +667,7 @@ $tmp_is_none = 0;
 //                                $like .= " OR $wpdb->posts.post_title LIKE '%{$search_terms[$i]}%' OR $wpdb->posts.post_content LIKE '%{$search_terms[$i]}%' \n";
                             }
                     }
-                    $like .= ')';
+//                    $like .= ')';
             }
             $sql.= $join.$where.$like.$group_by.$order_by.$limit;
 
