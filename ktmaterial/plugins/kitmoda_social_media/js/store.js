@@ -438,7 +438,7 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
                     if(price_arr_calc[i][0] <= $scope.price_min && $scope.price_min <= price_arr_calc[i][1]){
                         min_p = i;
                     }
-                    if(price_arr_calc[i][0] <= $scope.price_max && $scope.price_max <= price_arr_calc[i][1]){
+                    if(price_arr_calc[i][0] < $scope.price_max && $scope.price_max <= price_arr_calc[i][1]){
                         max_p = i;
                     }
                 }
