@@ -660,16 +660,18 @@ $tmp_is_none = 0;
             }      
             // For post's title and content
             if( !empty($search_terms) ){
-                    $like = " AND ($wpdb->posts.post_title LIKE '%{$search_terms[0]}%' OR $wpdb->posts.post_content LIKE '%{$search_terms[0]}%' \n";
+//                    $like = " AND ( $wpdb->posts.post_title LIKE '%{$search_terms[0]}%' OR $wpdb->posts.post_content LIKE '%{$search_terms[0]}%' \n";
                     
                     if( count($search_terms) > 1 ){
                             for($i=1; $i < count($search_terms); $i++){
-                                $like .= " OR $wpdb->posts.post_title LIKE '%{$search_terms[$i]}%' OR $wpdb->posts.post_content LIKE '%{$search_terms[$i]}%' \n";
+//                                $like .= " OR $wpdb->posts.post_title LIKE '%{$search_terms[$i]}%' OR $wpdb->posts.post_content LIKE '%{$search_terms[$i]}%' \n";
                             }
                     }
                     $like .= ')';
             }
             $sql.= $join.$where.$like.$group_by.$order_by.$limit;
+
+//            print_r($sql);exit;
 
             $arr_posts = (array)$wpdb->get_results($sql);
             $post_count = count($arr_posts);
