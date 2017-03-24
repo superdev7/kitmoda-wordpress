@@ -431,7 +431,7 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
                 [300,'more']
             ];
 
-            if($scope.price_min < 300){
+            if($scope.price_min < 300 && $scope.price_max){
                 var min_p = 0;
                 var max_p = 0;
                 for(var i=0; i<price_arr_calc.length; i++){
@@ -442,7 +442,13 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
                         max_p = i;
                     }
                 }
-                data.price = price_arr.slice(min_p,max_p+1);
+                console.log(min_p);
+                console.log(max_p);
+                if(max_p == 0 && parseInt($scope.price_max) > 300){
+                    data.price = price_arr.slice(min_p, price_arr_calc.length);
+                }else {
+                    data.price = price_arr.slice(min_p, max_p + 1);
+                }
             }else{
                 data.price = ['300-more'];
             }
