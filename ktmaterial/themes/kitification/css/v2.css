@@ -3300,9 +3300,6 @@ body {
 .v2 .pr-col_container_top.alla {
   z-index: 9 !important;
 }
-.v2 .download-page .ksm_profile_container_overlay .ksm_page_collaboration .ksm_store_archive .sectionBackgroundDark .search_box {
-  max-width: none;
-}
 .v2 .download-page .ksm_profile {
   width: auto !important;
 }

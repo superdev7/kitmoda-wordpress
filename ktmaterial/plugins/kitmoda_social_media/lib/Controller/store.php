@@ -551,7 +551,7 @@ $tmp_is_none = 0;
                 if($k == 'ksm_tax_texturing_method' && $tmp_is_all == 1){
                     $tax_query[] = array(
                             'taxonomy' => $k,
-                            'field' => 'name',
+                            'field' => 'slug',
                             'operator' => 'EXISTS',
                     );
                 }
@@ -559,12 +559,12 @@ $tmp_is_none = 0;
                     $tax_query[] = array(
                         array(
                             'taxonomy' => $k,
-                            'field' => 'name',
+                            'field' => 'slug',
                             'operator' => 'EXISTS',
                         ),
                         array(
                             'taxonomy' => $k,
-                            'field' => 'name',
+                            'field' => 'slug',
                             'terms' => $v,
                             'operator' => 'NOT IN',
                         ),
@@ -573,7 +573,7 @@ $tmp_is_none = 0;
                 }else{
                     $tax_query[] = array(
                         'taxonomy' => $k,
-                        'field' => 'name',
+                        'field' => 'slug',
                         'terms' => $v
                     );
                 }
@@ -626,57 +626,55 @@ $tmp_is_none = 0;
 
         }
 
-        
 //        If action is SEARCH. For example, keywords are car sports red big v8 auto
         if( !empty($_POST['q']) ) {
 //            $args['s'] = $_POST['q'];
-            $search_terms = preg_split("/[^\w]*([\s]+[^\w]*|$)/", $_POST['q'], -1, PREG_SPLIT_NO_EMPTY);
-
-            global $wpdb;
-            $like = '';
+            $search_terms = preg_split("/[^\w]*([\s]+[^\w]*|$)/", $_POST['q'], -1, PREG_SPLIT_NO_EMPTY);   
             
+            global $wpdb;
+            
+            $sql = "SELECT SQL_CALC_FOUND_ROWS  $wpdb->posts.ID FROM $wpdb->posts";
+            $where = "WHERE 1=1 AND ($wpdb->posts.post_password = '')  AND $wpdb->posts.post_type = '{$this->Model->post_type}' AND (($wpdb->posts.post_status = 'publish'))";
+            $join = '';
+            $like = '';
+            $group_by = " GROUP BY $wpdb->posts.ID";
+            $order_by = " ORDER BY $wpdb->posts.post_date DESC";
+            $limit = " LIMIT 0, ". COMMUNITY_POSTS_PER_PAGE;
+            
+            // For tax_query                
+            $tax_query[] = array(
+                    'taxonomy' => 'ksm_tax_keyword',
+                    'field' => 'slug',
+                    'terms' => $search_terms
+            );
+
+            $new_tax_query = new WP_Tax_Query( $tax_query );
+            $clauses = $new_tax_query->get_sql( $wpdb->posts, 'ID' );
+            $join .= $clauses['join'];
+            $where .= $clauses['where'];
+            
+            // For meta_query
+            if(isset($_POST['pr_rating'])){
+                    $join .= " INNER JOIN $wpdb->postmeta ON ( $wpdb->posts.ID = $wpdb->postmeta.post_id ) \n ";
+                    $where .= " AND ( $wpdb->postmeta.meta_key = 'rating_coefficient' AND CAST($wpdb->postmeta.meta_value AS CHAR) >= '{$_POST['pr_rating']}' ) \n ";
+            }      
+            // For post's title and content
             if( !empty($search_terms) ){
-                $where = "t.slug = '{$search_terms[0]}'";
-                $like = "($wpdb->posts.post_title LIKE '%{$search_terms[0]}%' OR $wpdb->posts.post_content LIKE '%{$search_terms[0]}%'";
-                if( count($search_terms) > 1 ){
-                    foreach ($search_terms as $k => $v) {
-                        $where .= " OR t.slug = '{$v}'";
-                        $like .= " OR $wpdb->posts.post_title LIKE '%{$v}%' OR $wpdb->posts.post_content LIKE '%{$v}%'";
+                    $like = " AND ($wpdb->posts.post_title LIKE '%{$search_terms[0]}%' OR $wpdb->posts.post_content LIKE '%{$search_terms[0]}%' \n";
+                    
+                    if( count($search_terms) > 1 ){
+                            for($i=1; $i < count($search_terms); $i++){
+                                $like .= " OR $wpdb->posts.post_title LIKE '%{$search_terms[$i]}%' OR $wpdb->posts.post_content LIKE '%{$search_terms[$i]}%' \n";
+                            }
                     }
-                }
-                $like .= ')';
+                    $like .= ')';
             }
-
-            $sql = "SELECT t.term_id AS termID FROM $wpdb->terms AS t INNER JOIN $wpdb->term_taxonomy AS tt ON t.term_id = tt.term_id WHERE ({$where}) AND tt.taxonomy = 'ksm_tax_keyword'";
-            $res = $wpdb->get_results($sql);
-
-            $str_ids = '';
-            $where = '';
-            if( !empty($res) ){
-                for($i=0; $i < count($res); $i++){
-                    $str_ids .= $i == 0 ? '' : ',';
-                    $str_ids .= $res[$i]->termID;
-                }
-                $where .= "AND ($wpdb->term_relationships.term_taxonomy_id IN ({$str_ids})";
-            }
-            if( $where != false ){
-                if( $like != false ){
-                    $where .= " OR {$like})";
-                }else{
-                    $where .= ")";
-                }
-            }else{
-                if( $like != false ){
-                    $where .= "AND {$like}";
-                }
-            }
-            $sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts INNER JOIN $wpdb->term_relationships ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) WHERE 1=1 "
-                    . "{$where}"
-                    . "AND ($wpdb->posts.post_password = '')  AND $wpdb->posts.post_type = '{$this->Model->post_type}' AND (($wpdb->posts.post_status = 'publish')) GROUP BY $wpdb->posts.ID ORDER BY $wpdb->posts.post_date DESC LIMIT 0, ". COMMUNITY_POSTS_PER_PAGE;
+            $sql.= $join.$where.$like.$group_by.$order_by.$limit;
 
             $arr_posts = (array)$wpdb->get_results($sql);
             $post_count = count($arr_posts);
-       // OR other actions
+            
+        // OR other actions
         }else{
             if(!empty($tax_query)){
                 $args['tax_query'] = $tax_query;
@@ -691,7 +689,7 @@ $tmp_is_none = 0;
                 $post_count = 0;
             }
         }
-
+                
         $containers = array();
 
         $posts = '';
@@ -702,7 +700,7 @@ $tmp_is_none = 0;
                 $permalink = ksm_get_permalink("store/download/{$arr_posts[$i]->ID}");
                 $imagesize = getimagesize($grid_img);
 
-                $posts .= "<a class='item' data-w='{$imagesize[0]}' data-h='{$imagesize[1]}' href='{$permalink}'><img src='{$grid_img}'></a>";
+                $posts .= "<a class='item' data-w='{$imagesize[0]}' data-h='{$imagesize[1]}' href='{$permalink}/'><img src='{$grid_img}'></a>";
             }
         }
         
@@ -794,7 +792,7 @@ $tmp_is_none = 0;
                 if($grid_img_attributes){
                         $width = $grid_img_attributes[1] > $grid_img_attributes[2] ? '400' : '267';
                         $height = $grid_img_attributes[1] > $grid_img_attributes[2] ? '267' : '400';
-                        $html .= '<a href="'. ksm_get_permalink("store/download/{$obj_post->ID}") .'" class="item" data-w="'. $width .'" data-h="'. $height .'"><img src="'. $grid_img_attributes[0] .'" alt=""/></a>';
+                        $html .= '<a href="'. ksm_get_permalink("store/download/{$obj_post->ID}") .'/" class="item" data-w="'. $width .'" data-h="'. $height .'"><img src="'. $grid_img_attributes[0] .'" alt=""/></a>';
                 }
             }
             $data = array('result' => true, 'html' => $html);

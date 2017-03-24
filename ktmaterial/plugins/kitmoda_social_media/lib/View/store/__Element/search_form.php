@@ -2,9 +2,21 @@
 
 	<div class="categories" ng-controller="searchBox">
 		<ul class="firstList">
-            <li class="firstItemList" ng-if="categories_list"><span class="open_ctg" ng-click="switch_icon()">categories <span class="x_icon ng-hide" ng-show="categories_is_open == 'true'"><div class="left_x_icon"></div><div class="right_x_icon"></div></span><span class="down" ng-show="categories_is_open == 'false'"></span></span>
+            <li class="firstItemList"><span class="open_ctg" ng-click="switch_icon()">categories <span class="x_icon ng-hide" ng-show="categories_is_open == 'true'"><div class="left_x_icon"></div><div class="right_x_icon"></div></span><span class="down" ng-show="categories_is_open == 'false'"></span></span>
                 <ul class="subCategory secondList">
-                    <li ng-repeat="(key,value) in categories_list" ng-click="get_child(key,value)">{{value}}</li>
+                    <?php
+                    $arr_tax_styles = KSM_Taxonomy::custom_list(array('orderby' => 'term_id', 'order' => 'ASC'));
+
+                    foreach ($arr_tax_styles as $key => $value){
+                        $arr_tax_styles[$key] = str_replace('&amp;', '&', $arr_tax_styles[$key]);
+                    }
+                    if( !empty($arr_tax_styles) ){
+                            foreach ($arr_tax_styles as $key => $tax_style) {
+                                ?>
+                                <li ng-click="get_child('<?php echo $key; ?>','<?php echo $tax_style; ?>')"><?php echo $tax_style; ?></li>
+                    <?php
+                            }
+                    } ?>
                 </ul>
             </li>
 		</ul>
@@ -167,7 +179,7 @@
     <div class="clr"></div>
 </div> 
 <?php
-//Data for js-slider
+//Era's data for js-slider
 $terms = get_terms( 'ksm_tax_era', array(
                     'orderby'    => 'id',
                     'hide_empty' => false,
@@ -178,4 +190,29 @@ $json = !empty($terms) ? json_encode($terms) : '';
 <script>
 var eras = <?php echo $json; ?>;
 var erasLength = eras.length - 1;
+</script>
+<?php
+//Polygon's data for js-slider
+$terms = get_terms( 'ksm_tax_poly_count', array(
+                    'orderby'    => 'id',
+                    'hide_empty' => false,
+                    'fields'     => 'names',
+) );
+$json = !empty($terms) ? json_encode($terms) : '';
+?>
+<script>
+var polygon_tax_back = <?php echo $json; ?>;
+polygon_tax_back.pop(); // Without last value
+</script>
+<?php
+//Price's data for js-slider
+$terms = get_terms( 'ksm_tax_price', array(
+                    'orderby'    => 'id',
+                    'hide_empty' => false,
+                    'fields'     => 'names',
+) );
+$json = !empty($terms) ? json_encode($terms) : '';
+?>
+<script>
+var price_arr = <?php echo $json; ?>;
 </script>
