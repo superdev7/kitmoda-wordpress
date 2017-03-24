@@ -614,17 +614,36 @@ $tmp_is_none = 0;
             'post_status' => 'publish'
         );
 
-        if(isset($_POST['pr_rating'])){
+        if($_POST['price_min'] == "NaN"){
+            $price_min = 0;
+        }else{
+            $price_min = $_POST['price_min'];
+        }
+        if($_POST['price_max'] == "NaN"){
+            $price_max = 999999;
+        }else{
+            $price_max = $_POST['price_max'];
+        }
+        
             $args['meta_query'] = array(
                 'relation' => 'AND',
+            
                 array(
+                'key' => 'edd_price',
+                'value' => array($price_min, $price_max),
+                'type' => 'numeric',
+                'compare' => 'BETWEEN',
+            ),
+        ); 
+
+        if(isset($_POST['pr_rating'])){
+            $args['meta_query'][] = array(
                     'key' => 'rating_coefficient',
                     'value' => $_POST['pr_rating'],
                     'compare' => '>=',
-                ),
             );
-
         }
+//        print_r($args);exit;
 
 //        If action is SEARCH. For example, keywords are car sports red big v8 auto
         if( !empty($_POST['q']) ) {
@@ -653,6 +672,9 @@ $tmp_is_none = 0;
             $join .= $clauses['join'];
             $where .= $clauses['where'];
             
+            // Add meta data query
+            $join .= " INNER JOIN mqucz_postmeta AS mt1 ON ( $wpdb->posts.ID = mt1.post_id ) ";
+            
             // For meta_query
             if(isset($_POST['pr_rating'])){
                     $join .= " INNER JOIN $wpdb->postmeta ON ( $wpdb->posts.ID = $wpdb->postmeta.post_id ) \n ";
@@ -669,10 +691,11 @@ $tmp_is_none = 0;
                     }
 //                    $like .= ')';
             }
+
+            $where .= " AND ( mt1.meta_key = 'edd_price' AND CAST(mt1.meta_value AS SIGNED) BETWEEN {$price_min} AND {$price_max} ) ";
+
             $sql.= $join.$where.$like.$group_by.$order_by.$limit;
-
-//            print_r($sql);exit;
-
+//echo $sql;exit;
             $arr_posts = (array)$wpdb->get_results($sql);
             $post_count = count($arr_posts);
             
@@ -685,6 +708,7 @@ $tmp_is_none = 0;
             $args['tax_query']['relation'] = 'AND';
             $query = new WP_Query( $args );
             $arr_posts = $query->posts;
+            
             if(isset($query->post_count)) {
                 $post_count = $query->post_count;
             }else{

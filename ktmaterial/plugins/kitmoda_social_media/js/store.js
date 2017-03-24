@@ -402,7 +402,8 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
 
         $scope.price_min = parseInt($scope.price_min);
         $scope.price_max = parseInt($scope.price_max);
-
+        data.price_min = $scope.price_min;
+        data.price_max = $scope.price_max;
         if(!isNaN($scope.price_min) && !isNaN($scope.price_max) && typeof $scope.price_min == 'number' && typeof $scope.price_max == 'number'){
 
             console.log($scope.price_min);
@@ -457,6 +458,7 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
                 data.price = ['300-more'];
             }
         }
+//        console.log(data);return
 
 
         data.pr_rating = $scope.pr_rating;
@@ -488,6 +490,7 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
 
         console.log(tmp_click_go);
         console.log(data);
+//        return;
         if(get_obj_lent($scope.poly_count) > 0){data.poly_count = $scope.poly_count; }
         if($scope.search_text != '') {
             data.q = $scope.search_text;
