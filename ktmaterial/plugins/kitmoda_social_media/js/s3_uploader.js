@@ -1,4 +1,5 @@
-
+var clicker = "";
+var isclick = 0;
 
 var kuldr = Base.extend({
     
@@ -602,7 +603,10 @@ var kimgupl = kuldr.extend({
     queue_file : function(file) {
         
         _this = this;
-        $ele = $($(this.container+ ' .item.empty').get(0));
+        if(isclick == 1)
+        	$ele = $($(this.container+ ' .item').get(clicker));
+        else
+			$ele = $($(this.container+ ' .item.empty').get(0));
         
         $ele.attr('id', file.id).removeClass('empty').find('.progress, .percent').show();
         $ele.find('.cancel').show();
@@ -712,7 +716,7 @@ var kpiu = kimgupl.extend({
 		var ele = this.container+' .item#'+fid;
 		$(ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
 		
-		$(ele+' .b2').html('<a href="#" class="add_image" style="position:relative;z-index:1" onclick="$(\'.browse_btn\').get(0).click();"><div class="b3"></div></a>');
+		$(ele+' .b2').html('<a href="#" class="add_image" style="position:relative;z-index:1" onclick="$(\'.browse_btn\').get(0).click();"><div class="b3"></div></a><div class="progress"><div class="bar"></div></div>');
 		
 		$(ele).find('.pub_feature').attr('src',''); //remove images
 		$(ele).find('.pub_thumb').attr('src',''); //remove images
@@ -752,6 +756,35 @@ var kpiu = kimgupl.extend({
 			$(this).removeClass('being-dragged');
 		}
 	});
+	$('ul li.item').click(function(e) {
+		var click_idx = 0;
+		isclick = 1;
+		click_idx = $(this).attr('no');
+		
+		//clicker = $('ul li.item').index(this) - 1;
+      //  alert("Shower" +$(this).attr('no'));
+		
+		
+			if(click_idx > 0)//Check if element is the first element
+			{
+				if(click_idx > 12)
+				{
+					clicker = click_idx-1;
+				}
+				else
+				{
+					if(click_idx > 6)
+						clicker = click_idx-1;
+					else
+						clicker = click_idx-1;
+				}
+			}
+			else
+			{
+				clicker = 0;
+			}
+			
+    });
 	//Setting where item will be dropped
 	$('ul li.item').droppable({
 		hoverClass: 'drop-hover',
@@ -1083,6 +1116,7 @@ $(function() {
 
 $(function() {
     $('.browse_btn').click(function(e) {
+		isclick = 0;
         e.preventDefault();
     })
 })

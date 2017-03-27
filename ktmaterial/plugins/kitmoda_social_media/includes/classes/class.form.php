@@ -543,12 +543,12 @@ class KSM_Form extends KSM_Object {
 					
 					<div class="b2 disable" no="'.$total_c.'"><a href="#" class="add_image" style="position:relative;z-index:1"><div class="b3"></div></a>
 					
-					
+					<div class="progress"><div class="bar"></div></div> 
 					                   
 					</div>
 					
 					 <input type="hidden" class="uid" name="'.$n.'" value="" />
-                       <div class="progress"><div class="bar"></div></div> 
+                       
 					   
                     </li>';
                 }
