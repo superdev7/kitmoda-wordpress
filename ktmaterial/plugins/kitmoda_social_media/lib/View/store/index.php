@@ -834,7 +834,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                     <div class="title">Lighting Setup</div>
                                     <div class="community_sidebar_linebreak_dark"></div>     <div class="community_sidebar_linebreak"></div>
 
-                                    <div class="field">
+                                    <!-- div class="field">
                                         <input type="radio"
                                                class="opt_filter"
                                                name="lighting"
@@ -844,7 +844,7 @@ $path_to_plugin = home_url(). '/ktmaterial/plugins/kitmoda_social_media/';
                                                ng-true-value="none"
                                                value="all">
                                         <label for="ff_lighting_all">none</label>
-                                    </div>
+                                    </div -->
 
                                     <?php
                                     $options = KSM_DataStore::Terms('lighting', null, null);
