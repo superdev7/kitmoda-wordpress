@@ -613,7 +613,7 @@ $tmp_is_none = 0;
             'post_type' => $this->Model->post_type,
             'post_status' => 'publish'
         );
-
+        $price_min = $price_max = '';
         if($_POST['price_min'] == "NaN"){
             $price_min = 0;
         }else{
@@ -625,15 +625,20 @@ $tmp_is_none = 0;
             $price_max = $_POST['price_max'];
         }
         
-            $args['meta_query'] = array(
-                'relation' => 'AND',
-            
+        $args['meta_query'] = array(
+                'relation' => 'AND',            
                 array(
-                'key' => 'edd_price',
-                'value' => array($price_min, $price_max),
-                'type' => 'numeric',
-                'compare' => 'BETWEEN',
-            ),
+                    'key' => 'edd_price',
+                    'value' => $price_max,
+                    'type' => 'numeric',
+                    'compare' => '<=',
+                ),
+                array(
+                    'key' => 'edd_price',
+                    'value' => $price_min,
+                    'type' => 'numeric',
+                    'compare' => '>=',
+                ),
         ); 
 
         if(isset($_POST['pr_rating'])){
@@ -643,22 +648,11 @@ $tmp_is_none = 0;
                     'compare' => '>=',
             );
         }
-//        print_r($args);exit;
 
 //        If action is SEARCH. For example, keywords are car sports red big v8 auto
         if( !empty($_POST['q']) ) {
 //            $args['s'] = $_POST['q'];
-            $search_terms = preg_split("/[^\w]*([\s]+[^\w]*|$)/", $_POST['q'], -1, PREG_SPLIT_NO_EMPTY);   
-            
-            global $wpdb;
-            
-            $sql = "SELECT SQL_CALC_FOUND_ROWS  $wpdb->posts.ID FROM $wpdb->posts";
-            $where = "WHERE 1=1 AND ($wpdb->posts.post_password = '')  AND $wpdb->posts.post_type = '{$this->Model->post_type}' AND (($wpdb->posts.post_status = 'publish'))";
-            $join = '';
-            $like = '';
-            $group_by = " GROUP BY $wpdb->posts.ID";
-            $order_by = " ORDER BY $wpdb->posts.post_date DESC";
-            $limit = " LIMIT 0, ". COMMUNITY_POSTS_PER_PAGE;
+            $search_terms = preg_split("/[^\w]*([\s]+[^\w]*|$)/", $_POST['q'], -1, PREG_SPLIT_NO_EMPTY);
             
             // For tax_query                
             $tax_query[] = array(
@@ -666,54 +660,20 @@ $tmp_is_none = 0;
                     'field' => 'slug',
                     'terms' => $search_terms
             );
+        }
+        
+        if(!empty($tax_query)){
+            $args['tax_query'] = $tax_query;
+        }
+        $args = array_merge($args , $sort_args);
+        $args['tax_query']['relation'] = 'AND';
+        $query = new WP_Query( $args );
+        $arr_posts = $query->posts;
 
-            $new_tax_query = new WP_Tax_Query( $tax_query );
-            $clauses = $new_tax_query->get_sql( $wpdb->posts, 'ID' );
-            $join .= $clauses['join'];
-            $where .= $clauses['where'];
-            
-            // Add meta data query
-            $join .= " INNER JOIN mqucz_postmeta AS mt1 ON ( $wpdb->posts.ID = mt1.post_id ) ";
-            
-            // For meta_query
-            if(isset($_POST['pr_rating'])){
-                    $join .= " INNER JOIN $wpdb->postmeta ON ( $wpdb->posts.ID = $wpdb->postmeta.post_id ) \n ";
-                    $where .= " AND ( $wpdb->postmeta.meta_key = 'rating_coefficient' AND CAST($wpdb->postmeta.meta_value AS CHAR) >= '{$_POST['pr_rating']}' ) \n ";
-            }      
-            // For post's title and content
-            if( !empty($search_terms) ){
-//                    $like = " AND ( $wpdb->posts.post_title LIKE '%{$search_terms[0]}%' OR $wpdb->posts.post_content LIKE '%{$search_terms[0]}%' \n";
-                    
-                    if( count($search_terms) > 1 ){
-                            for($i=1; $i < count($search_terms); $i++){
-//                                $like .= " OR $wpdb->posts.post_title LIKE '%{$search_terms[$i]}%' OR $wpdb->posts.post_content LIKE '%{$search_terms[$i]}%' \n";
-                            }
-                    }
-//                    $like .= ')';
-            }
-
-            $where .= " AND ( mt1.meta_key = 'edd_price' AND CAST(mt1.meta_value AS SIGNED) BETWEEN {$price_min} AND {$price_max} ) ";
-
-            $sql.= $join.$where.$like.$group_by.$order_by.$limit;
-//echo $sql;exit;
-            $arr_posts = (array)$wpdb->get_results($sql);
-            $post_count = count($arr_posts);
-            
-        // OR other actions
+        if(isset($query->post_count)) {
+            $post_count = $query->post_count;
         }else{
-            if(!empty($tax_query)){
-                $args['tax_query'] = $tax_query;
-            }
-            $args = array_merge($args , $sort_args);
-            $args['tax_query']['relation'] = 'AND';
-            $query = new WP_Query( $args );
-            $arr_posts = $query->posts;
-            
-            if(isset($query->post_count)) {
-                $post_count = $query->post_count;
-            }else{
-                $post_count = 0;
-            }
+            $post_count = 0;
         }
                 
         $containers = array();

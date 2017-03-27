@@ -336,9 +336,16 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
 
 
 
-    $scope.game_ready = [];
+    $scope.game_ready = '';
+    $scope.$watch('game_ready',function(nv,ov){
+        if(nv == 'print_ready'){
+            $scope.print_ready = 'yes';
+        }else{
+            $scope.print_ready = '';
+        }
+    });
     // $scope.game_ready['all'] = true;
-    $scope.print_ready = [];
+    $scope.print_ready = '';
     $scope.environment = [];
     $scope.model_constr = [];
     $scope.model_angular = 'all'; //model_constr
@@ -346,7 +353,7 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
     // $scope.texturing_status = 'all';
     $scope.texturing_status = false;
     // $scope.mapping = 'none';
-    $scope.lighting = [];
+    $scope.lighting = '';
     // $scope.lighting['none'] = true;
     // $scope.renderer = 'vray';
     $scope.renderer = false;
@@ -390,12 +397,12 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
     $scope.filtering = function(){
 
         $scope.posts = [];
-        $scope.game_ready = $scope.clear_arr($scope.game_ready);
-        $scope.print_ready = $scope.clear_arr($scope.print_ready);
+        // $scope.game_ready = $scope.clear_arr($scope.game_ready);
+        // $scope.print_ready = $scope.clear_arr($scope.print_ready);
         $scope.environment = $scope.clear_arr($scope.environment);
 //        $scope.model_constr = $scope.clear_arr($scope.model_constr);
 //         $scope.texturing_status = $scope.clear_arr($scope.texturing_status);
-        $scope.lighting = $scope.clear_arr($scope.lighting);
+//         $scope.lighting = $scope.clear_arr($scope.lighting);
         // $scope.renderer = $scope.clear_arr($scope.renderer);
 
         var data = {};
@@ -404,69 +411,18 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
         $scope.price_max = parseInt($scope.price_max);
         data.price_min = $scope.price_min;
         data.price_max = $scope.price_max;
-        if(!isNaN($scope.price_min) && !isNaN($scope.price_max) && typeof $scope.price_min == 'number' && typeof $scope.price_max == 'number'){
-
-            console.log($scope.price_min);
-            console.log($scope.price_max);
-
-//            var price_arr = [
-//                '5-10',
-//                '10-25',
-//                '25-50',
-//                '50-75',
-//                '75-100',
-//                '100-150',
-//                '150-200',
-//                '200-300',
-//                '300-more'
-//            ];
-            var price_arr_calc = [
-                [5,10],
-                [10,25],
-                [25,50],
-                [50,75],
-                [75,100],
-                [100,150],
-                [150,200],
-                [200,300],
-                [300,'more']
-            ];
-
-            if($scope.price_min < 300 && $scope.price_max){
-                var min_p = 0;
-                var max_p = 0;
-                for(var i=0; i<price_arr_calc.length; i++){
-                    if(price_arr_calc[i][0] <= $scope.price_min && $scope.price_min <= price_arr_calc[i][1]){
-                        min_p = i;
-                    }
-                    if(price_arr_calc[i][0] < $scope.price_max && $scope.price_max <= price_arr_calc[i][1]){
-                        max_p = i;
-                    }
-                }
-                console.log(min_p);
-                console.log(max_p);
-                if(max_p == 0 && parseInt($scope.price_max) > 300){
-                    data.price = price_arr.slice(min_p, price_arr_calc.length);
-                }else {
-                    data.price = price_arr.slice(min_p, max_p + 1);
-                }
-            }else{
-                data.price = ['300-more'];
-            }
-        }else{
-            if($scope.price_min >= 300 && !isNaN($scope.price_min) && typeof $scope.price_min == 'number'){
-                data.price = ['300-more'];
-            }
-        }
-//        console.log(data);return
 
 
         data.pr_rating = $scope.pr_rating;
         if(get_obj_lent($scope.style) > 0){ data.style = [$scope.style]; }
         if(get_obj_lent($scope.culture) > 0){data.culture = [$scope.culture]; }
         if(get_obj_lent($scope.file_format) > 0){data.file_format = [$scope.file_format]; }
-        if(get_obj_lent($scope.game_ready) > 0){data.game_ready = Object.keys($scope.game_ready); }
-        if(get_obj_lent($scope.print_ready) > 0){data.print_ready = Object.keys($scope.print_ready); }
+
+        if(get_obj_lent($scope.game_ready) > 0 && $scope.game_ready != 'print_ready'){
+            data.game_ready = [$scope.game_ready];
+        }
+
+        if(get_obj_lent($scope.print_ready) > 0){data.print_ready = [$scope.print_ready]; }
         if(get_obj_lent($scope.environment) > 0){data.environment = Object.keys($scope.environment); }
 //        if(get_obj_lent($scope.model_constr) > 0){data.model_constr = Object.keys($scope.model_constr); }
         if(get_obj_lent($scope.model_angular) > 0){data.model_angular = [$scope.model_angular] }
@@ -474,7 +430,7 @@ kapp.controller('search', ['$scope','$rootScope','$http','$location', function($
         if(get_obj_lent($scope.texturing_status) > 0){data.texturing_status = [$scope.texturing_status]; }
         if(get_obj_lent($scope.mapping) > 0){data.mapping = [$scope.mapping]; }
         if(get_obj_lent($scope.renderer) > 0){data.renderer = [$scope.renderer]; }
-        if(get_obj_lent($scope.lighting) > 0){data.lighting = Object.keys($scope.lighting); }
+        if(get_obj_lent($scope.lighting) > 0){data.lighting = [$scope.lighting]; }
 
 
         var tmp_click_go = localStorage.getItem('click_go');
