@@ -506,7 +506,7 @@ var kuldr = Base.extend({
         }
         
         this.PLU.init();
-        
+        this.setDragDrop();
         
     }
     
