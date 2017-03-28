@@ -1,4 +1,5 @@
-
+var clicker = "";
+var isclick = 0;
 
 var kuldr = Base.extend({
     
@@ -241,49 +242,96 @@ var kuldr = Base.extend({
         //this.PLU.settings.drop_element = $(this.drop_element);
     },
     
-    
-    filesAdded : function(up, files) {
+    files_limit_exceeded : function () {
+        var _this = this;
+        $(_this.browse_button).tooltipster({content: 'The upload limit for images of 12 has been exceeded.',once : true});
+        $(_this.browse_button).tooltipster('show');
         
-        
-    
-        
-        
-        
-        
+        setTimeout(function() {
+            if($(_this.browse_button).hasClass('tooltipstered')) {
+                $(_this.browse_button).tooltipster('destroy');
+            }
+        }, 4000);
+    },
+     filesAdded : function(up, files) {
         
         var _this = this;
+		
+		if($(_this.browse_button).attr("id") == "zip")
+		{
+			var no_of_files = files.length;
+			var no_of_empty_spaces = 1;
+			var no_of_elements = 1;
+		}
+		else
+		{
+			var no_of_files = files.length;
+			var no_of_empty_spaces = $(_this.container+ ' .items .item.empty').length;
+			var no_of_elements = $(_this.container+ ' .items .item').length;
+		}
         
-        if(_this.max_files == 1) {
-            console.log(_this.max_files);
-            $(_this.container+ ' .items .item').each(function() {
-                _this.cancelFile($(this).attr('id'));
-            });
-        }
+        if(no_of_files > no_of_empty_spaces)
+		{
+			if(no_of_empty_spaces == 0)
+			{
+				$(_this.browse_button).tooltipster({content: 'All spaces used up, you will need to remove an image(s) to make up space.',once : true});
+        		$(_this.browse_button).tooltipster('show');
+				
+				_this.PLU.splice();
+				_this.PLU.refresh();
+			
+				return;
+			}
+			else
+			{
+				$(_this.browse_button).tooltipster({content: 'No enough spaces. Space only available for  '+no_of_empty_spaces+' images.',once : true});
+        		$(_this.browse_button).tooltipster('show');
+				
+				_this.PLU.splice();
+				_this.PLU.refresh();
+			
+				return;
+			}
+		
+		}
+		else
+		{
         
-        
-        
-        
-        plupload.each(files, function(file) {
-            
-            //console.log(_this.max_files, $(_this.container+ ' .items .item').length)
-        
-        if(_this.max_files && $(_this.container+ ' .items .item').length >= _this.max_files) {
-            return;
-        }
-            
-            
-            _this.files.push(file);
-            _this.queue_file(file);
-        });
-        
-        //up.refresh();
-        
-        if(_this.PLU.state != plupload.UPLOADING) {
-            _this.PLU.start();
-        }
+			if(_this.max_files == 1) {
+				//console.log(_this.max_files);
+				$(_this.container+ ' .items .item').each(function() {
+					_this.cancelFile($(this).attr('id'));
+				});
+			}
+			
+			
+			
+			
+			plupload.each(files, function(file) {
+				
+				//console.log(_this.max_files, $(_this.container+ ' .items .item').length)
+			
+				if(_this.max_files && $(_this.container+ ' .items .item').length >= _this.max_files) {
+				   // _this.files_limit_exceeded();
+				   // $(_this.container).trigger('files_limit_exceeded');
+				   // return false;
+				   return;
+				}
+				
+				
+				_this.files.push(file);
+				_this.queue_file(file);
+			});
+			
+			//Comment this out later
+			//up.refresh();
+			
+			if(_this.PLU.state != plupload.UPLOADING) {
+				_this.PLU.start();
+			}
+		}
         
     } ,
-    
     
     cancelFile : function(fid) {
         this.PLU.removeFile(fid);
