@@ -1,5 +1,4 @@
-var clicker = "";
-var isclick = 0;
+
 
 var kuldr = Base.extend({
     
@@ -243,96 +242,45 @@ var kuldr = Base.extend({
     },
     
     
-    files_limit_exceeded : function () {
-        var _this = this;
-        $(_this.browse_button).tooltipster({content: 'The upload limit for images of 12 has been exceeded.',once : true});
-        $(_this.browse_button).tooltipster('show');
-        
-        setTimeout(function() {
-            if($(_this.browse_button).hasClass('tooltipstered')) {
-                $(_this.browse_button).tooltipster('destroy');
-            }
-        }, 4000);
-    },
-    
-    
     filesAdded : function(up, files) {
         
+        
+    
+        
+        
+        
+        
+        
         var _this = this;
-		
-		if($(_this.browse_button).attr("id") == "zip")
-		{
-			var no_of_files = files.length;
-			var no_of_empty_spaces = 1;
-			var no_of_elements = 1;
-		}
-		else
-		{
-			var no_of_files = files.length;
-			var no_of_empty_spaces = $(_this.container+ ' .items .item.empty').length;
-			var no_of_elements = $(_this.container+ ' .items .item').length;
-		}
         
-        if(no_of_files > no_of_empty_spaces)
-		{
-			if(no_of_empty_spaces == 0)
-			{
-				$(_this.browse_button).tooltipster({content: 'All spaces used up, you will need to remove an image(s) to make up space.',once : true});
-        		$(_this.browse_button).tooltipster('show');
-				
-				_this.PLU.splice();
-				_this.PLU.refresh();
-			
-				return;
-			}
-			else
-			{
-				$(_this.browse_button).tooltipster({content: 'No enough spaces. Space only available for  '+no_of_empty_spaces+' images.',once : true});
-        		$(_this.browse_button).tooltipster('show');
-				
-				_this.PLU.splice();
-				_this.PLU.refresh();
-			
-				return;
-			}
-		
-		}
-		else
-		{
+        if(_this.max_files == 1) {
+            console.log(_this.max_files);
+            $(_this.container+ ' .items .item').each(function() {
+                _this.cancelFile($(this).attr('id'));
+            });
+        }
         
-			if(_this.max_files == 1) {
-				//console.log(_this.max_files);
-				$(_this.container+ ' .items .item').each(function() {
-					_this.cancelFile($(this).attr('id'));
-				});
-			}
-			
-			
-			
-			
-			plupload.each(files, function(file) {
-				
-				//console.log(_this.max_files, $(_this.container+ ' .items .item').length)
-			
-				if(_this.max_files && $(_this.container+ ' .items .item').length >= _this.max_files) {
-				   // _this.files_limit_exceeded();
-				   // $(_this.container).trigger('files_limit_exceeded');
-				   // return false;
-				   return;
-				}
-				
-				
-				_this.files.push(file);
-				_this.queue_file(file);
-			});
-			
-			//Comment this out later
-			//up.refresh();
-			
-			if(_this.PLU.state != plupload.UPLOADING) {
-				_this.PLU.start();
-			}
-		}
+        
+        
+        
+        plupload.each(files, function(file) {
+            
+            //console.log(_this.max_files, $(_this.container+ ' .items .item').length)
+        
+        if(_this.max_files && $(_this.container+ ' .items .item').length >= _this.max_files) {
+            return;
+        }
+            
+            
+            _this.files.push(file);
+            _this.queue_file(file);
+        });
+        
+        //up.refresh();
+        
+        if(_this.PLU.state != plupload.UPLOADING) {
+            _this.PLU.start();
+        }
         
     } ,
     
@@ -501,8 +449,7 @@ var kuldr = Base.extend({
             $(this.container+" li.poslock").each(function () {
                 $(this).attr("id", "poslock-" + $(this).index());
             });
-            //_this.setSort();
-			this.setDragDrop();
+            _this.setSort();
         }
         
         this.PLU.init();
@@ -577,7 +524,6 @@ var ks3uplr = kuldr.extend({
             var d = this.sa;
             d.k = f.s3Key;
             $.ajax({type : 'POST',url:ksm_settings.ajax_url,data : this.sa,success: function (r) {
-				console.log(r);
                 o = $.parseJSON(r);    
                 if(o.success) {
                     $(item+ ' .uid').val(o.k);
@@ -594,7 +540,23 @@ var ks3uplr = kuldr.extend({
 });
 
 
+
+
+
+
+
+
+
+
 var kimgupl = kuldr.extend({
+    
+    //init : function(params) {
+//        this._super(params);
+//    } ,
+    
+    
+    
+    
     queue_error_file : function(err) {
         
     },
@@ -603,10 +565,7 @@ var kimgupl = kuldr.extend({
     queue_file : function(file) {
         
         _this = this;
-        if(isclick == 1)
-        	$ele = $($(this.container+ ' .item').get(clicker));
-        else
-			$ele = $($(this.container+ ' .item.empty').get(0));
+        $ele = $($(this.container+ ' .item.empty').get(0));
         
         $ele.attr('id', file.id).removeClass('empty').find('.progress, .percent').show();
         $ele.find('.cancel').show();
@@ -631,48 +590,23 @@ var kimgupl = kuldr.extend({
             size:file.size
         }
     },
-     uploadSuccess : function(u, f, r) {
+    
+    uploadSuccess : function(u, f, r) {
         var o = $.parseJSON(r.response);
         
         if(o.success) {
+            
             var item_ele = this.container+' .item#'+f.id;
+            
             $(item_ele+' .progress').hide();
             $(item_ele+' .percent').hide();
-
-			//New code with remove button
-			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
-
-
-			$(item_ele+' .uid').val(o.id);
-			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
-			
-			
-			
+            $(item_ele+' .b3').html('<img src="'+o.url+'" width="100%" height="100%" />');
+            $(item_ele+' .uid').val(o.id);
             $(item_ele+' .cancel').removeClass('cancel').addClass('remove');
-			$(item_ele+' .add_image').addClass('not-active');
-			
-			//when remove button is clicked
-			$(item_ele+' .remove').click(function(){_this.removeImage(f.id);});
+            
         }
-        
     },
-    /******  Method to remove uploaded images from untextured model upload   ******************/
-    removeImage: function(fid)
-	{
-		
-		//Create an object of the current container
-		var ele = this.container+' .item#'+fid;
-		$(ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
-		$(ele).find('.pub_feature').attr('src',''); //remove images
-		$(ele).find('.pub_thumb').attr('src',''); //remove images
-		$(ele).find('.uid').attr('value',''); //set uid value to nothing
-		$(ele+' .b3').html('');//empty images
-		$(ele).removeClass('ui-sortable-handle').addClass('empty');//make container empty to accept new image
-		
-		$(ele).attr('id', '');	//Lock position for new upload on current element so new image is loaded here
-
-	},
-	/*****************************************************************************************/
+    
     
     
 });
@@ -694,385 +628,97 @@ var kpiu = kimgupl.extend({
             var item_ele = this.container+' .item#'+f.id;
             $(item_ele+' .progress').hide();
             $(item_ele+' .percent').hide();
-            
-			//New code with remove button
-			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
-			$(item_ele+' .uid').val(o.id);
-			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
-			$(item_ele+' .b2').html('<div class="b3"><a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a></div>');
-			//$(item_ele+' .add_image').addClass('not-active').removeClass('add_image');
-            $(item_ele+' .cancel').removeClass('cancel').addClass('remove').removeClass('empty');
-			
-			//when remove button is clicked
-			$(item_ele+' .remove').click(function(){_this.removeImage(f.id);});
+            $(item_ele+' .b3').html('<img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"  style="opacity:0.5;"/><a href="">delete</a>');
+            $(item_ele+' .uid').val(o.id);
+            $(item_ele+' .cancel').removeClass('cancel').addClass('remove');
         }
         
+        this.setPreviewSize();
     },
-    /******  Method to remove uploaded images from untextured model upload   ******************/
-    removeImage: function(fid)
-	{
-		
-		//Create an object of the current container
-		var ele = this.container+' .item#'+fid;
-		$(ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
-		
-		$(ele+' .b2').html('<a href="#" class="add_image" style="position:relative;z-index:1" onclick="$(\'.browse_btn\').get(0).click();"><div class="b3"></div></a><div class="progress"><div class="bar"></div></div>');
-		
-		$(ele).find('.pub_feature').attr('src',''); //remove images
-		$(ele).find('.pub_thumb').attr('src',''); //remove images
-		$(ele).find('.uid').attr('value',''); //set uid value to nothing
-		$(ele+' .b3').html('');//empty images
-		$(ele).removeClass('ui-sortable-handle').addClass('empty ').removeAttr('id');//make container empty to accept new image
-		
-		$(ele).attr('id', '');	//Lock position for new upload on current element so new image is loaded here
-
-	},
-	/*****************************************************************************************/
-    removeFile : function(fid) {
-        var item_ele = this.container+' .item#'+fid;
-        $(item_ele+' .img').html('');
-        $(item_ele+' .uid').val('');
-        $(item_ele).addClass('empty').removeAttr('id');
-        $(this.container).trigger("onItemRemove");
-    } ,
-     /******  Method to  handle drag-and-drop interaction  ******************/
-    setDragDrop: function(){
-		
-		var droppableParent;
-	
-		//Setting DIV element to be draggable
-		$('li .b2').draggable({
-			revert: "invalid",
-			cancel: ".disable",
-			snap: "li.item",
-			stack: ".b2",
-			start: function () {
-			droppableParent = $(this).parent();
-		
-			$(this).addClass('being-dragged');
-			
-		},
-		stop: function () {
-			$(this).removeClass('being-dragged');
-		}
-	});
-	$('ul li.item').click(function(e) {
-		var click_idx = 0;
-		isclick = 1;
-		click_idx = $(this).attr('no');
-		
-		//clicker = $('ul li.item').index(this) - 1;
-      //  alert("Shower" +$(this).attr('no'));
-		
-		
-			if(click_idx > 0)//Check if element is the first element
-			{
-				if(click_idx > 12)
-				{
-					clicker = click_idx-1;
-				}
-				else
-				{
-					if(click_idx > 6)
-						clicker = click_idx-1;
-					else
-						clicker = click_idx-1;
-				}
-			}
-			else
-			{
-				clicker = 0;
-			}
-			
-    });
-	//Setting where item will be dropped
-	$('ul li.item').droppable({
-		hoverClass: 'drop-hover',
-		//Handling Drop Action
-		drop: function (event, ui) {
-			//Get Items Being Dragged and Target Container
-			var draggable = $(ui.draggable[0]),
-				draggableOffset = draggable.offset(),
-				container = $(event.target),
-				containerOffset = container.offset();
-			
-			
-			var target_idx = $('ul li.item').index(this); //Index for Target Container
-			//var dragged_idx = $(ui.draggable[0]).parent().index() //Index of Drag Container
-			var id = $(ui.draggable).attr('no');
-			//alert("PAUSE:" + (id-1));
-			
-			ele_dragged_dp = $("ul li.item").get($(ui.draggable).attr('no')-1);
-			//alert("PARENT" + $(ele_dragged_dp).attr('no'));
-			//alert("INDEX" + $(ele_dragged_dp).index());
-			
-			var dragged_idx =  $(ele_dragged_dp).index();
-			//Create instances of both target and dragged elements
-			var ele_target = $("ul li.item").get(target_idx);
-			if(dragged_idx > 0)//Check if element is the first element
-			{
-				if(dragged_idx > 12)
-				{
-					ele_dragged = $("ul li.item").get(dragged_idx-3);
-				}
-				else
-				{
-					if(dragged_idx > 6)
-						ele_dragged = $("ul li.item").get(dragged_idx-2);
-					else
-						ele_dragged = $("ul li.item").get(dragged_idx-1);
-				}
-			}
-			else
-			{
-				ele_dragged = $("ul li.item").get(0);
-			}
-			
-			//Get ID of each of the target and dragged elements to check if an image has been uploaded
-			var id_target = $(ele_target).attr('id');
-			var id_dragged = $(ele_dragged).attr('id');
-
-
-			var b2_target_no =  $(ele_target).find('.b2').attr('no');
-			var b2_dragged_no =  $(ele_dragged).find('.b2').attr('no');
-
-			var pub_feature_target_src =  $(ele_target).find('.pub_feature').attr('src');
-			var pub_feature_dragged_src =  $(ele_dragged).find('.pub_feature').attr('src');	
-
-			var pub_thumb_target_src =  $(ele_target).find('.pub_thumb').attr('src');
-			var pub_thumb_dragged_src =  $(ele_dragged).find('.pub_thumb').attr('src');		
-			
-			var uid_target		= $(ele_target).find('.uid').attr('value');
-			var uid_dragged		= $(ele_dragged).find('.uid').attr('value');	
-						
-			//Get class of the target and dragged elements
-			var cls_target = $(ele_target).attr('class');
-			var cls_dragged = $(ele_dragged).attr('class');
-			
-			//Check if Target Element is Empty
-			if(id_target == '' || id_target == null || id_target == 'undefined' )
-			{
-				//Check if Dragged Element is Empty
-				if(id_dragged == '' || id_dragged == null || id_dragged == 'undefined')
-				{
-					//Set both element to Empty
-					
-					//Setting Dragged Element to Empty
-					$(ele_dragged).find('.pub_feature').attr('src','');
-					$(ele_dragged).find('.pub_thumb').attr('src','');
-					$(ele_dragged).find('.uid').attr('value','');
-					$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle');
-					$(ele_dragged).find('.b2').attr('no',b2_target_no);
-					//$(ele_dragged+' .b3').html('');
-					//$(ele_dragged).attr('id', 'poslock-1');
-					
-					//Setting Target Element to Empty
-					$(ele_target).find('.pub_feature').attr('src','');
-					$(ele_target).find('.pub_thumb').attr('src','');
-					$(ele_target).find('.uid').attr('value','');
-					$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle');
-					//$(ele_target+' .b3').html('');
-					//$(ele_target).attr('id', 'poslock-1');
-					$(ele_target).find('.b2').attr('no',b2_dragged_no);
-				}
-				else
-				{
-					//If only Target Element is Empty then replace Target Element with Dragged Element parameters
-					$(ele_target).attr('id',id_dragged);
-					//$(ele_target).attr('class',cls_dragged);
-					$(ele_target).find('.uid').attr('value',uid_dragged);
-					$(ele_target).removeClass('empty');
-					//$(ele_target).attr('class',cls_dragged);
-					//$(ele_target).find('.pub_feature').attr('src',pub_feature_dragged_src);
-					//$(ele_target).find('.pub_thumb').attr('src',pub_thumb_dragged_src);
-					$(ele_target).find('.b2').attr('no',b2_dragged_no);
-					if(target_idx == 0)
-					{
-						$(ele_dragged).find('.pub_feature').attr('style',"display:inline");
-						$(ele_dragged).find('.pub_thumb').attr('style',"display:none");
-					}
-					
-					//Setting Dragged Element to Empty
-					$(ele_dragged).attr('id', null);
-					$(ele_dragged).find('.b2').attr('no',b2_target_no);
-					//$(ele_dragged).find('.pub_feature').attr('src','');
-					//$(ele_dragged).find('.pub_thumb').attr('src','');
-					$(ele_dragged).find('.uid').attr('value',null);
-					//$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
-					//$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').removeClass('disable').removeClass('ui-draggable-disabled');
-					$(ele_dragged).addClass('empty').removeClass('ui-draggable-handle').removeClass('ur-draggable');
-					//$(ele_dragged+' .b3').html('');
-					//$(ele_dragged).attr('id', 'poslock-1');
-				}
-			}
-			else
-			{
-				//Check to see if Dragged Element is Empty
-				if(id_dragged == '' || id_dragged == null || id_dragged == 'undefined')
-				{
-					//Replace Dragged Element with Target Element parameters
-					$(ele_dragged).attr('id',id_target);
-					$(ele_dragged).attr('class',cls_target);
-					$(ele_dragged).find('.b2').attr('no',b2_target_no);
-					$(ele_dragged).removeClass('empty').addClass('ui-draggable-handle').addClass('ur-draggable');
-					
-					//$(ele_dragged).find('.pub_feature').attr('src',pub_feature_target_src);
-					//$(ele_dragged).find('.pub_thumb').attr('src',pub_thumb_target_src);
-					$(ele_dragged).find('.uid').attr('value',uid_target);
-					
-					
-					if(dragged_idx == 0)
-					{
-						$(ele_target).find('.pub_feature').attr('style',"display:inline");
-						$(ele_target).find('.pub_thumb').attr('style',"display:none");
-					}
-						
-					
-					//Setting Target Element to Empty
-					$(ele_target).attr('id', null);
-					//$(ele_target).find('.pub_feature').attr('src','');
-					//$(ele_target).find('.pub_thumb').attr('src','');
-					$(ele_target).find('.uid').attr('value',null);
-					$(ele_target).addClass('empty').removeClass('ui-draggable-handle').removeClass('ui-draggable').removeClass('ui-sortable-handle');
-					$(ele_target).find('.b2').attr('no',b2_dragged_no);
-					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
-					//$(ele_target+' .b3').html('');
-					//$(ele_target).attr('id', 'poslock-1');
-				}
-				else
-				{
-					//Swapping Element Parameters if Both Contain information
-					$(ele_target).attr('id',id_dragged);
-					//$(ele_target).find('.pub_feature').attr('src',$(ele_dragged).find('.pub_feature').attr('src'));
-					//$(ele_target).find('.pub_thumb').attr('src',$(ele_dragged).find('.pub_thumb').attr('src'));
-					$(ele_target).find('.uid').attr('value',$(ele_dragged).find('.uid').attr('src'));
-					
-					$(ele_target).find('.b2').attr('no',b2_dragged_no);
-					
-					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
-					//$(ele_target).find('.b3').html($(ele_dragged).find('.b3').html());
-					//$(ele_target).attr('id', 'poslock-1');
-					$(ele_target).attr('class',$(ele_dragged).attr('class'));
-					if(target_idx == 0)
-					{
-						$(ele_dragged).find('.pub_feature').attr('style',"display:inline");
-						$(ele_dragged).find('.pub_thumb').attr('style',"display:none");
-					}
-					
-					$(ele_dragged).attr('id',id_target);
-					//$(ele_dragged).find('.pub_feature').attr('src',$(ele_target).find('.pub_feature').attr('src'));
-					//$(ele_dragged).find('.pub_thumb').attr('src',$(ele_target).find('.pub_thumb').attr('src'));
-					$(ele_dragged).find('.uid').attr('value',$(ele_target).find('.uid').attr('src'));
-					
-					$(ele_dragged).find('.b2').attr('no',b2_target_no);
-					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
-					//$(ele_dragged).find('.b3').html($(ele_target).find('.b3').html());
-					//$(ele_target).attr('id', 'poslock-1');
-					$(ele_dragged).attr('class',$(ele_target).attr('class'));
-					if(dragged_idx == 0)
-					{
-						$(ele_target).find('.pub_feature').attr('style',"display:inline");
-						$(ele_target).find('.pub_thumb').attr('style',"display:none");
-					}					
-				}
-			}
-
-			
-			//Check to see if there is an interaction with the large featured item
-			if(target_idx == 0)
-			{
-				//Drop the element and resize accordingly
-				$('.b2', event.target).appendTo(droppableParent).css({opacity: 0, width:125,height:90}).animate({opacity: 1}, 200);
-				draggable.appendTo(container).css({left: draggableOffset.left - containerOffset.left, top: draggableOffset.top - containerOffset.top,width:198,height:136}).animate({left: 0, top: 0}, 50);
-				
-			}
-			else
-			{
-				//Check if the dragged item is the large featured item
-				if(dragged_idx == 0)
-				{
-					//Drop the elements and resize accordingly to fit placeholder
-					$('.b2', event.target).appendTo(droppableParent).css({opacity: 0, width:198,height:136}).animate({opacity: 1}, 200);
-					draggable.appendTo(container).css({left: draggableOffset.left - containerOffset.left, top: draggableOffset.top - containerOffset.top,width:125,height:90}).animate({left: 0, top: 0}, 50);
-				}
-				else
-				{
-					//Drop elements, no re-sizing required
-					$('.b2', event.target).appendTo(droppableParent).css({opacity: 0}).animate({opacity: 1}, 200);
-					draggable.appendTo(container).css({left: draggableOffset.left - containerOffset.left, top: draggableOffset.top - containerOffset.top}).animate({left: 0, top: 0}, 50);
-
-				}
-			}
-			
-			
-				
-			
-		}
-	});
-	},
-    // Commenting out old setSort Function - Not Required
-
-       /* var _this = this;
+    
+    
+    setPreviewSize : function()  {
+        $('.items .item').first().find('.pub_feature').show();
+        $('.items .item').first().find('.pub_thumb').hide();
         
-        $(_this.container+' ul li .inner').draggable({
-            scroll: false,
+        $('.items .item').not(':first-child').find('.pub_feature').hide();
+        $('.items .item').not(':first-child').find('.pub_thumb').show();
+        
+    },
+    
+    setSort : function() {
+        
+        
+        this.is_dragging_first = true;
+        
+        var _this = this;
+        
+        $(this.container+' .items').sortable({
+            cancel:"li.secsep, li.poslock",
+            cursor: "move",
             opacity: 0.5,
-            stop : function(event, ui) {
+            scroll : false,
+            placeholder  : 'sortable-placeholder',
+            change:function(event,ui) {
                 
-                $(_this.container+' ul li .inner')
-                .removeClass('dswitch')
-                .removeClass('moved_inner').css({left : 0, top : 0});
-            }
-        });
-        
-        $( _this.container+' ul li' ).droppable({
-            
-            drop: function( event, ui ) {
                 
-                var drop_container = $(event.target);
-                var drop_container_element = drop_container.find('.inner');
-                var drop_list_section = drop_container.closest('.section');
                 
-                var drag_element = $(ui.draggable);
-                var drag_element_container = drag_element.closest('li');
-                var drag_list_section = drag_element_container.closest('.section');
                 
-                $(drop_container).removeClass('dragenter');
-                if(drop_list_section.index() === drag_list_section.index() && drop_container.index() === drag_element_container.index()) {
+                $(_this.container+' .items .poslock').each(function() {
+                    var secsep_num = parseInt($(this).attr('id').split('-')[1]);
                     
+                    var thisindex = $(ui.helper).index();
+                     var fixed = $("#poslock-"+secsep_num);           
+                     var index = fixed.index();
+                     var targetindex = secsep_num+1;
+                     
+                     if(index !== targetindex) {         
+                         if(index > targetindex ) {
+                             fixed.prev().insertAfter(fixed).trigger('domup'); //move it up by one position
+                         } else if(index==(targetindex-1) && thisindex>targetindex) {
+                             //don't move it at all
+                         } else {
+                             fixed.next().insertBefore(fixed).trigger('domdown'); //move it down by one position
+                         }
+                     } else if(index==targetindex && thisindex>targetindex) {
+                         fixed.prev().insertAfter(fixed).trigger('domup'); //move it up by one position
+                     }
                     
-                } else {
-                    drop_container.removeClass('dragenter').removeClass('empty');
-                    
-                    //is drag container empty
-                    
-                    drag_element.addClass('moved_inner');
-                    drop_container_element.addClass('dswitch');
-
-                    $(drop_container).append(drag_element);
-                    drag_element_container.append($(drop_container).find('.inner.dswitch'));
-                    
-                    if(drag_element_container.find('.uid').val() == "") {
-                        drag_element_container.addClass('empty')
+                });
+                
+                
+                
+                if(_this.is_dragging_first) {
+                    if($(ui.placeholder).index() > 1) {
+                        $(ui.placeholder).removeClass('first');
+                        $($('.items .item').not('.ui-sortable-helper').get(0)).addClass('first');
                     }
-                    
                 }
                 
                 
-            },
-            
-            over : function (event, ui) {
-              var drop_container = $(event.target);
-              $(drop_container).addClass('dragenter');
-            },
-
-            out : function(event, ui) {
-              var drop_container = $(event.target);
-              $(drop_container).removeClass('dragenter');
-            }
-        });*/
-    //} , 
-    
+             },
+             start : function(event, ui) {
+                 if($(ui.helper).index() == 0) {
+                     _this.is_dragging_first =  true;
+                      $(ui.placeholder).addClass('first');
+                 } else {
+                     _this.is_dragging_first =  false;
+                 }
+             },
+             
+             stop : function(event, ui) {
+                 _this.setPreviewSize();
+                 _this.is_dragging_first =  false;
+                 $('.items .item').removeClass('first');
+             },
+             
+             
+             
+         });
+        
+        
+        
+    } , 
     
     
     setDropzone : function() {
@@ -1086,6 +732,9 @@ var kpiu = kimgupl.extend({
             });
             dropzone.ondrop = function( event ) {
                 $(_ele).removeClass('dragenter');
+                
+                console.log(dropzone.files);
+                
                 _this.PLU.addFile( dropzone.files );
             };
             dropzone.ondragenter = function(event) {
@@ -1102,21 +751,531 @@ var kpiu = kimgupl.extend({
 
 
 
+
+
 var kpfu = ks3uplr.extend({
-   
+    
+    
+    
+    
+    
+    
 });
 
-$(function() {
-    $('.add_image').click(function(e) {
-        e.preventDefault();
-		$('.browse_btn').get(0).click();
+
+
+
+/*
+var ks3imgupl = ks3uplr.extend({
+    
+    //init : function(params) {
+//        this._super(params);
+//    } ,
+    
+    setDropzone : function() {
+        
+        var _this = this;
+        
+        $(this.drop_element).each(function() {
+            var _ele = this;
+            var dropzone = new mOxie.FileDrop({
+                drop_zone: $(_ele).find('.b3').get(0)
+            });
+            dropzone.ondrop = function( event ) {
+                $(_ele).removeClass('dragenter');
+                
+                console.log(dropzone.files);
+                
+                _this.PLU.addFile( dropzone.files );
+            };
+            dropzone.ondragenter = function(event) {
+                $(_ele).addClass('dragenter');
+            };
+            dropzone.ondragleave = function(event) {
+                $(_ele).removeClass('dragenter');
+            };
+            dropzone.init();
+        });
+    } ,
+    
+    
+    queue_error_file : function(err) {
+        
+    },
+    
+    
+    queue_file : function(file) {
+        
+        _this = this;
+            $ele = $($(this.container+ ' .item.empty').get(0));
+        var preloader = new o.Image();
+        
+        preloader.onload = function() {
+            //preloader.downsize( 300, 300 );
+            
+            
+                        // embed the actual thumbnail
+                        console.log(this);
+                           
+            
+            //image.prop( "src", preloader.getAsDataURL() );
+        };
+        
+        preloader.onresize = function() {
+            console.log(preloader.getAsDataURL());
+            preloader.destroy();
+                        
+ 
+        };
+        
+        preloader.load( file.getSource() );
+            
+        //console.log(file.getSource());
+            
+            
+            
+            
+            
+            //console.log($ele);
+            
+            //_this.params.error_ele = '.add_post .error';
+            //$(_this.params.error_ele).html('').hide();
+
+
+            $ele.attr('id', file.id)
+                    .removeClass('empty')
+                    .find('.progress').show();
+            $ele.find('.cancel').show();
+            $ele.find('.cancel').click(function() {
+                _this.PLU.removeFile(file);
+                $(this).closest('li.item').addClass('empty');
+                $(_this.container).trigger( "onItemRemove" );
+            });
+            
+            
+            
+            
+            //$($ele).insertBefore(_this.params.container+' .items li.clr');
+            //$(_this.params.container).trigger( "onItemAdded" )
+    } ,
+        
+        
+        
+        
     })
-})
+    
+    */
+
+
+
+/*
+ks3uplr.prototype = {
+    
+    queue_error_file : function(error) {
+        var file = error.file;
+        var $ele = $('<li id="'+file.id+'" class="file file_error">\
+                <div class="progress"></div>\
+                <div class="row">\
+                    <div class="filename-col">\
+                        <span class="filename">'+s3_trancateTitle(file.name)+'</span>\
+                        <span class="size">('+s3_format_time(file.size)+')</span>\
+                        <span class="error_msg">'+error.message+'</span>\
+                    </div>\
+                </div>\
+            </li>');
+        $($ele).insertBefore(_this.params.container+' .items li.clr');
+        setTimeout(function(){
+            this.remove(file.id);
+        }, 3000)
+    } ,
+    
+    queue_file : function(file) {
+        var $ele = $('<li id="'+file.id+'" class="file">\
+                <div class="progress"></div>\
+                <div class="row">\
+                    <div class="filename-col">\
+                        <span class="filename">'+s3_trancateTitle(file.name)+'</span>\
+                        <span class="size">('+s3_format_time(file.size)+')</span>\
+                        <a class="remove"></a>\
+                    </div>\
+                </div>\
+        </li>');
+        
+        $ele.find('.remove').click(function() {
+            this.PLU.removeFile(file);
+            this.remove(file.id);
+        })
+            
+            
+        $($ele).insertBefore(this.container+' .items li.clr');
+        $(this.container).trigger( "onItemAdded" )
+    },
+    
+    process_queue : function(up, file) {
+        this.current_file = file;
+        $('#'+file.id+' .progress').width(file.percent+'%');
+        $('#'+file.id+' .upload_progress').html(format_time((file.size - file.loaded)/up.total.bytesPerSec));
+    },
+        
+        
+    plu_before_upload : function(up, file) {
+        up.settings.multipart_params = jQuery.extend(true, {}, this.m_p);
+        var k = (this.m_p.key).replace('{id}', file.id);
+            
+        file.s3Key = k+file.name;
+            
+        up.settings.multipart_params.key = file.s3Key;
+        up.settings.multipart_params.Filename = file.s3Key;
+    },
+    setComplete : function() {
+        this.is_completed = true;
+    },
+        
+    remove : function(id) {
+        $(this.container+' .items li#'+id).remove();
+        $(this.container).trigger( "onItemRemove" )
+    },
+        
+        
+    isFileSizeChunkableOnS3 : function( fileSize ) {
+        var minSize = plupload.parseSize(this.chunk_size);
+        return( fileSize > minSize );
+    },
+
+    uploadSuccess : function(u, f, r) {
+        var item = this.container+' .items #'+f.id;
+        $(item+ ' .progress').remove();
+        $(item+ ' .processing').show();
+        $(item+ ' .remove').removeClass('remove').addClass('processing');
+            
+            
+        $.ajax({type : 'POST',url:ksm_settings.ajax_url,data : {action:this.sa, k:f.s3Key},success: function () {
+            $(item).append('<input type="hidden" class="s3_file_input" name="attach[]" value="'+f.s3Key+'">');
+            $(item+ ' .processing').removeClass('processing').addClass('remove');
+        }});
+    },
+    
+    
+    
+    init : function() {
+        
+        this.PLU = new plupload.Uploader({
+            url : this.url,
+            file_data_name : 'file',
+            runtimes : 'html5,flash',
+            multipart: true,
+            multipart_params : {},
+            max_file_size: this.max_size,
+            max_retries: 2,
+            browse_button : $(this.browse_button).get(0),
+            container: $(this.container).get(0),
+            flash_swf_url : ksm_settings.plu.flash_swf_url,
+            urlstream_upload: true,
+            multiple_queues : true,
+            chunk_size : 0,
+            filters : [
+                {title : "Files", extensions : this.file_types}
+            ],
+            
+            preinit : {
+                Error: function(up, err, a) {
+                   if(err.code == plupload.FILE_SIZE_ERROR || err.code == plupload.FILE_EXTENSION_ERROR) {
+                        this.queue_error_file(err);
+                   } else if(err.code == plupload.HTTP_ERROR) {
+                       $(this.container+ ' .items #'+err.file.id)
+                                .addClass('file_error')
+                                .find('.message-col').html('<span class="error_note">'+err.message+'</span>');
+                   }
+		}
+            },
+            
+            init: {
+                FilesAdded: function(up, files) {
+                    plupload.each(files, function(file) {
+                        this.queue_file(file);
+                    });
+                    if(this.PLU.state != plupload.UPLOADING) {
+                        this.PLU.start();
+                    }
+		},
+
+		UploadProgress : function(up, file) {this.process_queue(up, file);},
+                FileUploaded : function(up, file, res) { this.uploadSuccess(up, file, res);},
+                BeforeUpload : function(up, file) {this.plu_before_upload(up, file)},
+                ChunkUploaded : function(uploader, file, info) {this.chunkUploaded(uploader, file, info)},
+
+		StateChanged : function(up) {
+                    //if(up.state == plupload.STOPPED && _this.params.PLU.total.queued > 0){
+                    //    up.start()
+                    //}
+                },
+                
+                UploadComplete : function(up, s) {this.setComplete();}
+                
+            }
+        });
+        
+        this.PLU.init();
+    }
+    
+    
+}
+
+
+*/
+
+//////////////////////////////////////////////////////////
+
+
+/*
+var s3_uploader = function(params) {
+    
+    //'use strict';
+    
+    var _this = this;
+    
+    var defaults = {
+	files : new Array(),
+        PLU : null,
+        is_completed : true,
+        num_errors : 0,
+        current_file : null,
+        
+        inlineStatus : null,
+        m_p : {},
+        url : '',
+        max_size : '50mb',
+        file_types : '*',
+        max_files : 0,
+        chunk_size : '5mb'
+        };
+        
+        
+        
+        
+        params = params || {};
+        for (var prop in defaults) {
+            if (prop in params && typeof params[prop] === 'object') {
+                for (var subProp in defaults[prop]) {
+                    if (! (subProp in params[prop])) {
+                        params[prop][subProp] = defaults[prop][subProp];
+                    }
+                }
+            }
+            else if (! (prop in params)) {
+                params[prop] = defaults[prop];
+            }
+        }
+        _this.params = params;
+        
+        
+    
+    
+        _this.params.max_files = parseInt(_this.params.max_files);
+
+        _this.process_queue = function(up, file) {
+            
+
+            _this.params.current_file = file;
+            jQuery('#'+file.id+' .progress').width(file.percent+'%');
+            
+            jQuery('#'+file.id+' .upload_progress').html(format_time((file.size - file.loaded)/up.total.bytesPerSec));
+            
+            
+            
+            
+        }
+        
+        
+        
+        _this.queue_error_file = function(error) {
+            var file = error.file;
+            
+            var $ele = $('<li id="'+file.id+'" class="file file_error">\
+                <div class="progress"></div>\
+                <div class="row">\
+                    <div class="filename-col">\
+                        <span class="filename">'+s3_trancateTitle(file.name)+'</span>\
+                        <span class="size">('+s3_format_time(file.size)+')</span>\
+                        <span class="error_msg">'+error.message+'</span>\
+                    </div>\
+                </div>\
+            </li>');
+            
+            
+
+            $($ele).insertBefore(_this.params.container+' .items li.clr');
+            
+            setTimeout(function(){
+                _this.remove(file.id);
+            }, 3000)
+        }
+        
+        
+
+
+        _this.queue_file = function(file) {
+            
+            
+            var $ele = $('<li id="'+file.id+'" class="file">\
+                <div class="progress"></div>\
+                <div class="row">\
+                    <div class="filename-col">\
+                        <span class="filename">'+s3_trancateTitle(file.name)+'</span>\
+                        <span class="size">('+s3_format_time(file.size)+')</span>\
+                        <a class="remove"></a>\
+                    </div>\
+                </div>\
+            </li>');
+            
+            
+            
+            $ele.find('.remove').click(function() {
+                //console.log()
+                _this.params.PLU.removeFile(file);
+                _this.remove(file.id);
+            })
+            
+            
+            $($ele).insertBefore(_this.params.container+' .items li.clr');
+            $(_this.params.container).trigger( "onItemAdded" )
+            
+            
+        }
+        
+        _this.remove = function(id) {
+            $(_this.params.container+' .items li#'+id).remove();
+            $(_this.params.container).trigger( "onItemRemove" )
+        }
+        
+        
+        _this.isFileSizeChunkableOnS3 = function( fileSize ) {
+            var minSize = plupload.parseSize(_this.params.chunk_size);
+            return( fileSize > minSize );
+         }
+
+        _this.uploadSuccess = function(u, f, r) {
+            var item = _this.params.container+' .items #'+f.id;
+            $(item+ ' .progress').remove();
+            $(item+ ' .processing').show();
+            $(item+ ' .remove').removeClass('remove').addClass('processing');
+            
+            
+            $.ajax({type : 'POST',url:ksm_settings.ajax_url,data : {action:_this.params.sa, k:f.s3Key},success: function () {
+                $(item).append('<input type="hidden" class="s3_file_input" name="attach[]" value="'+f.s3Key+'">');
+                $(item+ ' .processing').removeClass('processing').addClass('remove');
+            }});
+            
+            
+        }
+        
+        
+        
+    
+        _this.plu_before_upload = function(up, file) {
+            up.settings.multipart_params = jQuery.extend(true, {}, _this.params.m_p);
+            var k = (_this.params.m_p.key).replace('{id}', file.id);
+            
+            
+            file.s3Key = k+file.name;
+            
+            up.settings.multipart_params.key = file.s3Key;
+            up.settings.multipart_params.Filename = file.s3Key;
+            
+        }
+    
+        
+        
+        
+        _this.setComplete = function() {
+            _this.params.is_completed = true;
+        }
+    
+    _this.init = function() {
+        
+        
+        
+        
+        _this.params.PLU = new plupload.Uploader({
+            url : _this.params.url,
+            file_data_name : 'file',
+            runtimes : 'html5,flash',
+            multipart: true,
+            multipart_params : {},
+            max_file_size: _this.params.max_size,
+            max_retries: 2,
+            browse_button : $(_this.params.browse_button).get(0),
+            container: $(_this.params.container).get(0),
+            flash_swf_url : ksm_settings.plu.flash_swf_url,
+            urlstream_upload: true,
+            multiple_queues : true,
+            chunk_size : 0,
+            filters : [
+                {title : "Files", extensions : _this.params.file_types}
+            ],
+            
+            preinit : {
+                
+                Error: function(up, err, a) {
+                    //console.log(err);
+                   if(err.code == plupload.FILE_SIZE_ERROR || err.code == plupload.FILE_EXTENSION_ERROR) {
+                        _this.queue_error_file(err);
+                   } else if(err.code == plupload.HTTP_ERROR) {
+                        $(_this.params.container+ ' .items #'+err.file.id)
+                                .addClass('file_error')
+                                .find('.message-col').html('<span class="error_note">'+err.message+'</span>');
+                        
+                        
+                   }
+		}
+                
+            },
+            
+            init: {
+                FilesAdded: function(up, files) {
+                        
+			plupload.each(files, function(file) {
+                            _this.queue_file(file)
+			});
+                        
+                        if(_this.params.PLU.state != plupload.UPLOADING) {
+                            _this.params.PLU.start();
+                        }
+		},
+
+		UploadProgress : function(up, file) {_this.process_queue(up, file);},
+                FileUploaded : function(up, file, res) { _this.uploadSuccess(up, file, res);},
+                BeforeUpload : function(up, file) {_this.plu_before_upload(up, file)},
+                ChunkUploaded : function(uploader, file, info) {_this.chunkUploaded(uploader, file, info)},
+
+		StateChanged : function(up) {
+                    //if(up.state == plupload.STOPPED && _this.params.PLU.total.queued > 0){
+                    //    up.start()
+                    //}
+                },
+                
+                UploadComplete : function(up, s) {_this.setComplete();}
+                
+            }
+        });
+        
+        
+    }
+    _this.init();
+    
+    
+    
+    
+    
+}
+
+
+
+*/
 
 
 $(function() {
     $('.browse_btn').click(function(e) {
-		isclick = 0;
         e.preventDefault();
     })
 })
