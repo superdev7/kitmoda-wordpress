@@ -501,12 +501,11 @@ var kuldr = Base.extend({
             $(this.container+" li.poslock").each(function () {
                 $(this).attr("id", "poslock-" + $(this).index());
             });
-            //_this.setSort();
+            _this.setSort();
 			//this.setDragDrop();
         }
         
         this.PLU.init();
-        this.setDragDrop();
         
     }
     
