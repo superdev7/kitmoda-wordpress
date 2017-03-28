@@ -360,381 +360,7 @@ var kuldr = Base.extend({
             placeholder  : 'sortable-placeholder'
         });
     },
-    
-    constructor : function(params) {
-        
-        
-        var defaults = {
-            files : new Array(),
-            PLU : null,
-            is_completed : true,
-            num_errors : 0,
-            current_file : null,
-
-            inlineStatus : null,
-            m_p : {},
-            url : '',
-            max_size : '50mb',
-            file_types : '*',
-            max_files : 0,
-            chunk_size : '5mb',
-            browse_button : '',
-            container : '',
-            drop_element : '',
-            iss3 : false,
-            file_data_name : 'async-upload',
-            sa : '',
-            setCT : false,
-            sortable : false,
-            queue_item : '',
-            queue_element : '',
-            empty_div : ''
-        };
-        
-        
-        
-        params = params || {};
-        for (var prop in defaults) {
-            if (prop in params && typeof params[prop] === 'object') {
-                for (var subProp in defaults[prop]) {
-                    if (! (subProp in params[prop])) {
-                        params[prop][subProp] = defaults[prop][subProp];
-                    }
-                }
-            } else if (! (prop in params)) {
-                params[prop] = defaults[prop];
-            }
-        }
-        
-        
-        
-        this.files = new Array();
-        this.is_completed = true;
-        this.current_file = null;
-        this.m_p = params.m_p;
-        this.url = params.url;
-        this.max_size = params.max_size;
-        this.file_types = params.file_types;
-        this.max_files = params.max_files;
-        this.min_files = params.min_files;
-        this.chunk_size = params.chunk_size;
-        this.browse_button = params.browse_button;
-        this.container = params.container;
-        this.drop_element = params.drop_element;
-        this.iss3 = params.iss3;
-        this.file_data_name = params.file_data_name;
-        this.sa = params.sa;
-        this.setCT = params.setCT;
-        this.sortable = params.sortable;
-        this.sort_start_index = -1;
-        this.queue_item = params.queue_item;
-        this.queue_element = params.queue_element;
-        this.empty_div = params.empty_div;
-        
-        var _this = this;
-        
-        
-        var ms = _this.max_files == 1 ? false : true;
-        
-        
-        this.PLU = new plupload.Uploader({
-            url : _this.url,
-            file_data_name : _this.file_data_name,
-            runtimes : 'html5,flash,silverlight,html4',
-            multipart: true,
-            max_file_size: _this.max_size,
-            max_retries: 1,
-            browse_button : $(_this.browse_button).get(0),
-            container: $(_this.container).get(0),
-            flash_swf_url : ksm_settings.plu.flash_swf_url,
-            filters : [
-                {title : "Images", extensions : _this.file_types}
-            ],
-            multi_selection: ms,
-            preinit : {
-                Error: function(up, err, a) {
-                    
-                   if(err.code == plupload.FILE_SIZE_ERROR || err.code == plupload.FILE_EXTENSION_ERROR) {
-                       
-                       _this.queue_error_file(err);
-                   }
-		}
-                
-            },
-            
-            init: {
-                FilesAdded: function(up, files) {_this.filesAdded(up, files);},
-		UploadProgress : function(up, file) {_this.process_queue(up, file);},
-                FileUploaded : function(up, file, res) {_this.uploadSuccess(up, file, res);},
-                BeforeUpload : function(up, file) {_this.plu_before_upload(up, file)},
-                UploadComplete : function(up, s) {_this.setComplete();},
-                StateChanged : function(up) {
-                    //console.log(up.state);
-                    //if(up.state == plupload.STOPPED && _this.params.PLU.total.queued > 0){
-                    //    up.start()
-                    //}
-                }
-                
-                
-            }
-        });
-        
-        
-        if(this.drop_element && $(this.drop_element).length > 0) {
-            this.setDropzone();
-        }
-        
-        
-        $(this.container).delegate('.items .item .remove', 'click', function(e) {
-            e.preventDefault();
-            _this.removeFile($(this).closest('li.item').attr('id'));
-        });
-        
-        
-        $(this.container).delegate('.items .item .cancel', 'click', function(e) {
-            _this.cancelFile($(this).closest('li.item').attr('id'));
-        });
-        
-        
-        if(this.sortable) {
-            
-            $(this.container+" li.poslock").each(function () {
-                $(this).attr("id", "poslock-" + $(this).index());
-            });
-            _this.setSort();
-			//this.setDragDrop();
-        }
-        
-        this.PLU.init();
-        
-    }
-    
-    
-    
-});
-
-
-
-
-
-kniu = kuldr.extend({
-    
-});
-
-
-kuaiu = kniu.extend({
-    
-    
-    queue_file : function(file) {
-        console.log(this);
-        this.base(file);
-        var _tis = $('.current_avatar').val();
-        $('.avatar_container .items .item:first .thumbnail img').attr('src', _tis);
-    },
-    
-    uploadSuccess : function(u, f, r) {
-        this.base(u, f, r);
-        var o = $.parseJSON(r.response);
-        $('.current_avatar').val(o.url);
-    }
-});
-
-
-
-
-
-////////////////////////////////////////////////////////////
-
-
-
-var ks3uplr = kuldr.extend({
-    constructor : function(params) {
-        params.file_data_name = 'file';
-        this.base(params);
-    },
-    
-    
-    
-    
-    
-    
-    
-    uploadSuccess : function(u, f, r) {
-        var item = this.container+' #'+f.id;
-        
-        
-        $(item+' .progress').remove();
-        $(item+' .percent').remove();
-        $(item+' .upload_progress').html('').addClass('processing');
-        $(item+' .small-x-button').hide();
-        
-        
-        //$(item+ ' .processing').show();
-        //$(item+ ' .remove').removeClass('remove').addClass('processing');
-        
-        if(this.sa) {
-            var d = this.sa;
-            d.k = f.s3Key;
-            $.ajax({type : 'POST',url:ksm_settings.ajax_url,data : this.sa,success: function (r) {
-				console.log(r);
-                o = $.parseJSON(r);    
-                if(o.success) {
-                    $(item+ ' .uid').val(o.k);
-                    $(item+ ' .small-x-button').show();
-                    $(item+ ' .upload_progress').html('');
-                    $(item+ ' .upload_progress').removeClass('processing').addClass('uploaded');
-                }
-                
-                
-            }});
-        }
-    },
-    
-});
-
-
-var kimgupl = kuldr.extend({
-    queue_error_file : function(err) {
-        
-    },
-    
-    
-    queue_file : function(file) {
-        
-        _this = this;
-        if(isclick == 1)
-        	$ele = $($(this.container+ ' .item').get(clicker));
-        else
-			$ele = $($(this.container+ ' .item.empty').get(0));
-        
-        $ele.attr('id', file.id).removeClass('empty').find('.progress, .percent').show();
-        $ele.find('.cancel').show();
-            
-            
-    } ,
-    removeFile : function(fid) {
-        $(this).closest('li.item#'+fid).remove();
-        $(this.container).trigger("onItemRemove");
-    } ,
-    
-    
-    plu_before_upload : function(up, file) {
-        
-        
-        
-        up.settings.multipart_params = {
-            action : this.m_p.action,
-            at:this.m_p.at,
-            _ajax_nonce : this.m_p._ajax_nonce,
-            fileid: file.id, 
-            size:file.size
-        }
-    },
-     uploadSuccess : function(u, f, r) {
-        var o = $.parseJSON(r.response);
-        
-        if(o.success) {
-            var item_ele = this.container+' .item#'+f.id;
-            $(item_ele+' .progress').hide();
-            $(item_ele+' .percent').hide();
-
-			//New code with remove button
-			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
-
-
-			$(item_ele+' .uid').val(o.id);
-			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
-			
-			
-			
-            $(item_ele+' .cancel').removeClass('cancel').addClass('remove');
-			$(item_ele+' .add_image').addClass('not-active');
-			
-			//when remove button is clicked
-			$(item_ele+' .remove').click(function(){_this.removeImage(f.id);});
-        }
-        
-    },
-    /******  Method to remove uploaded images from untextured model upload   ******************/
-    removeImage: function(fid)
-	{
-		
-		//Create an object of the current container
-		var ele = this.container+' .item#'+fid;
-		$(ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
-		$(ele).find('.pub_feature').attr('src',''); //remove images
-		$(ele).find('.pub_thumb').attr('src',''); //remove images
-		$(ele).find('.uid').attr('value',''); //set uid value to nothing
-		$(ele+' .b3').html('');//empty images
-		$(ele).removeClass('ui-sortable-handle').addClass('empty');//make container empty to accept new image
-		
-		$(ele).attr('id', '');	//Lock position for new upload on current element so new image is loaded here
-
-	},
-	/*****************************************************************************************/
-    
-    
-});
-
-
-
-
-
-
-        
-
-var kpiu = kimgupl.extend({
-    
-    
-    uploadSuccess : function(u, f, r) {
-        var o = $.parseJSON(r.response);
-        
-        if(o.success) {
-            var item_ele = this.container+' .item#'+f.id;
-            $(item_ele+' .progress').hide();
-            $(item_ele+' .percent').hide();
-            
-			//New code with remove button
-			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
-			$(item_ele+' .uid').val(o.id);
-			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
-			$(item_ele+' .b2').html('<div class="b3"><a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a></div>');
-			//$(item_ele+' .add_image').addClass('not-active').removeClass('add_image');
-            $(item_ele+' .cancel').removeClass('cancel').addClass('remove').removeClass('empty');
-			
-			//when remove button is clicked
-			$(item_ele+' .remove').click(function(){_this.removeImage(f.id);});
-        }
-        
-    },
-    /******  Method to remove uploaded images from untextured model upload   ******************/
-    removeImage: function(fid)
-	{
-		
-		//Create an object of the current container
-		var ele = this.container+' .item#'+fid;
-		$(ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
-		
-		$(ele+' .b2').html('<a href="#" class="add_image" style="position:relative;z-index:1" onclick="$(\'.browse_btn\').get(0).click();"><div class="b3"></div></a><div class="progress"><div class="bar"></div></div>');
-		
-		$(ele).find('.pub_feature').attr('src',''); //remove images
-		$(ele).find('.pub_thumb').attr('src',''); //remove images
-		$(ele).find('.uid').attr('value',''); //set uid value to nothing
-		$(ele+' .b3').html('');//empty images
-		$(ele).removeClass('ui-sortable-handle').addClass('empty ').removeAttr('id');//make container empty to accept new image
-		
-		$(ele).attr('id', '');	//Lock position for new upload on current element so new image is loaded here
-
-	},
-	/*****************************************************************************************/
-    removeFile : function(fid) {
-        var item_ele = this.container+' .item#'+fid;
-        $(item_ele+' .img').html('');
-        $(item_ele+' .uid').val('');
-        $(item_ele).addClass('empty').removeAttr('id');
-        $(this.container).trigger("onItemRemove");
-    } ,
-     /******  Method to  handle drag-and-drop interaction  ******************/
+	/******  Method to  handle drag-and-drop interaction  ******************/
     setDragDrop: function(){
 		
 		var droppableParent;
@@ -1009,6 +635,381 @@ var kpiu = kimgupl.extend({
 		}
 	});
 	},
+    
+    constructor : function(params) {
+        
+        
+        var defaults = {
+            files : new Array(),
+            PLU : null,
+            is_completed : true,
+            num_errors : 0,
+            current_file : null,
+
+            inlineStatus : null,
+            m_p : {},
+            url : '',
+            max_size : '50mb',
+            file_types : '*',
+            max_files : 0,
+            chunk_size : '5mb',
+            browse_button : '',
+            container : '',
+            drop_element : '',
+            iss3 : false,
+            file_data_name : 'async-upload',
+            sa : '',
+            setCT : false,
+            sortable : false,
+            queue_item : '',
+            queue_element : '',
+            empty_div : ''
+        };
+        
+        
+        
+        params = params || {};
+        for (var prop in defaults) {
+            if (prop in params && typeof params[prop] === 'object') {
+                for (var subProp in defaults[prop]) {
+                    if (! (subProp in params[prop])) {
+                        params[prop][subProp] = defaults[prop][subProp];
+                    }
+                }
+            } else if (! (prop in params)) {
+                params[prop] = defaults[prop];
+            }
+        }
+        
+        
+        
+        this.files = new Array();
+        this.is_completed = true;
+        this.current_file = null;
+        this.m_p = params.m_p;
+        this.url = params.url;
+        this.max_size = params.max_size;
+        this.file_types = params.file_types;
+        this.max_files = params.max_files;
+        this.min_files = params.min_files;
+        this.chunk_size = params.chunk_size;
+        this.browse_button = params.browse_button;
+        this.container = params.container;
+        this.drop_element = params.drop_element;
+        this.iss3 = params.iss3;
+        this.file_data_name = params.file_data_name;
+        this.sa = params.sa;
+        this.setCT = params.setCT;
+        this.sortable = params.sortable;
+        this.sort_start_index = -1;
+        this.queue_item = params.queue_item;
+        this.queue_element = params.queue_element;
+        this.empty_div = params.empty_div;
+        
+        var _this = this;
+        
+        
+        var ms = _this.max_files == 1 ? false : true;
+        
+        
+        this.PLU = new plupload.Uploader({
+            url : _this.url,
+            file_data_name : _this.file_data_name,
+            runtimes : 'html5,flash,silverlight,html4',
+            multipart: true,
+            max_file_size: _this.max_size,
+            max_retries: 1,
+            browse_button : $(_this.browse_button).get(0),
+            container: $(_this.container).get(0),
+            flash_swf_url : ksm_settings.plu.flash_swf_url,
+            filters : [
+                {title : "Images", extensions : _this.file_types}
+            ],
+            multi_selection: ms,
+            preinit : {
+                Error: function(up, err, a) {
+                    
+                   if(err.code == plupload.FILE_SIZE_ERROR || err.code == plupload.FILE_EXTENSION_ERROR) {
+                       
+                       _this.queue_error_file(err);
+                   }
+		}
+                
+            },
+            
+            init: {
+                FilesAdded: function(up, files) {_this.filesAdded(up, files);},
+		UploadProgress : function(up, file) {_this.process_queue(up, file);},
+                FileUploaded : function(up, file, res) {_this.uploadSuccess(up, file, res);},
+                BeforeUpload : function(up, file) {_this.plu_before_upload(up, file)},
+                UploadComplete : function(up, s) {_this.setComplete();},
+                StateChanged : function(up) {
+                    //console.log(up.state);
+                    //if(up.state == plupload.STOPPED && _this.params.PLU.total.queued > 0){
+                    //    up.start()
+                    //}
+                }
+                
+                
+            }
+        });
+        
+        
+        if(this.drop_element && $(this.drop_element).length > 0) {
+            this.setDropzone();
+        }
+        
+        
+        $(this.container).delegate('.items .item .remove', 'click', function(e) {
+            e.preventDefault();
+            _this.removeFile($(this).closest('li.item').attr('id'));
+        });
+        
+        
+        $(this.container).delegate('.items .item .cancel', 'click', function(e) {
+            _this.cancelFile($(this).closest('li.item').attr('id'));
+        });
+        
+        
+        if(this.sortable) {
+            
+            $(this.container+" li.poslock").each(function () {
+                $(this).attr("id", "poslock-" + $(this).index());
+            });
+            //_this.setSort();
+			_this.setDragDrop();
+        }
+        
+        this.PLU.init();
+        
+    }
+    
+    
+    
+});
+
+
+
+
+
+kniu = kuldr.extend({
+    
+});
+
+
+kuaiu = kniu.extend({
+    
+    
+    queue_file : function(file) {
+        console.log(this);
+        this.base(file);
+        var _tis = $('.current_avatar').val();
+        $('.avatar_container .items .item:first .thumbnail img').attr('src', _tis);
+    },
+    
+    uploadSuccess : function(u, f, r) {
+        this.base(u, f, r);
+        var o = $.parseJSON(r.response);
+        $('.current_avatar').val(o.url);
+    }
+});
+
+
+
+
+
+////////////////////////////////////////////////////////////
+
+
+
+var ks3uplr = kuldr.extend({
+    constructor : function(params) {
+        params.file_data_name = 'file';
+        this.base(params);
+    },
+    
+    
+    
+    
+    
+    
+    
+    uploadSuccess : function(u, f, r) {
+        var item = this.container+' #'+f.id;
+        
+        
+        $(item+' .progress').remove();
+        $(item+' .percent').remove();
+        $(item+' .upload_progress').html('').addClass('processing');
+        $(item+' .small-x-button').hide();
+        
+        
+        //$(item+ ' .processing').show();
+        //$(item+ ' .remove').removeClass('remove').addClass('processing');
+        
+        if(this.sa) {
+            var d = this.sa;
+            d.k = f.s3Key;
+            $.ajax({type : 'POST',url:ksm_settings.ajax_url,data : this.sa,success: function (r) {
+				console.log(r);
+                o = $.parseJSON(r);    
+                if(o.success) {
+                    $(item+ ' .uid').val(o.k);
+                    $(item+ ' .small-x-button').show();
+                    $(item+ ' .upload_progress').html('');
+                    $(item+ ' .upload_progress').removeClass('processing').addClass('uploaded');
+                }
+                
+                
+            }});
+        }
+    },
+    
+});
+
+
+var kimgupl = kuldr.extend({
+    queue_error_file : function(err) {
+        
+    },
+    
+    
+    queue_file : function(file) {
+        
+        _this = this;
+        if(isclick == 1)
+        	$ele = $($(this.container+ ' .item').get(clicker));
+        else
+			$ele = $($(this.container+ ' .item.empty').get(0));
+        
+        $ele.attr('id', file.id).removeClass('empty').find('.progress, .percent').show();
+        $ele.find('.cancel').show();
+            
+            
+    } ,
+    removeFile : function(fid) {
+        $(this).closest('li.item#'+fid).remove();
+        $(this.container).trigger("onItemRemove");
+    } ,
+    
+    
+    plu_before_upload : function(up, file) {
+        
+        
+        
+        up.settings.multipart_params = {
+            action : this.m_p.action,
+            at:this.m_p.at,
+            _ajax_nonce : this.m_p._ajax_nonce,
+            fileid: file.id, 
+            size:file.size
+        }
+    },
+     uploadSuccess : function(u, f, r) {
+        var o = $.parseJSON(r.response);
+        
+        if(o.success) {
+            var item_ele = this.container+' .item#'+f.id;
+            $(item_ele+' .progress').hide();
+            $(item_ele+' .percent').hide();
+
+			//New code with remove button
+			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
+
+
+			$(item_ele+' .uid').val(o.id);
+			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
+			
+			
+			
+            $(item_ele+' .cancel').removeClass('cancel').addClass('remove');
+			$(item_ele+' .add_image').addClass('not-active');
+			
+			//when remove button is clicked
+			$(item_ele+' .remove').click(function(){_this.removeImage(f.id);});
+        }
+        
+    },
+    /******  Method to remove uploaded images from untextured model upload   ******************/
+    removeImage: function(fid)
+	{
+		
+		//Create an object of the current container
+		var ele = this.container+' .item#'+fid;
+		$(ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
+		$(ele).find('.pub_feature').attr('src',''); //remove images
+		$(ele).find('.pub_thumb').attr('src',''); //remove images
+		$(ele).find('.uid').attr('value',''); //set uid value to nothing
+		$(ele+' .b3').html('');//empty images
+		$(ele).removeClass('ui-sortable-handle').addClass('empty');//make container empty to accept new image
+		
+		$(ele).attr('id', '');	//Lock position for new upload on current element so new image is loaded here
+
+	},
+	/*****************************************************************************************/
+    
+    
+});
+
+
+
+
+
+
+        
+
+var kpiu = kimgupl.extend({
+    
+    
+    uploadSuccess : function(u, f, r) {
+        var o = $.parseJSON(r.response);
+        
+        if(o.success) {
+            var item_ele = this.container+' .item#'+f.id;
+            $(item_ele+' .progress').hide();
+            $(item_ele+' .percent').hide();
+            
+			//New code with remove button
+			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
+			$(item_ele+' .uid').val(o.id);
+			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
+			$(item_ele+' .b2').html('<div class="b3"><a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a></div>');
+			//$(item_ele+' .add_image').addClass('not-active').removeClass('add_image');
+            $(item_ele+' .cancel').removeClass('cancel').addClass('remove').removeClass('empty');
+			
+			//when remove button is clicked
+			$(item_ele+' .remove').click(function(){_this.removeImage(f.id);});
+        }
+        
+    },
+    /******  Method to remove uploaded images from untextured model upload   ******************/
+    removeImage: function(fid)
+	{
+		
+		//Create an object of the current container
+		var ele = this.container+' .item#'+fid;
+		$(ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
+		
+		$(ele+' .b2').html('<a href="#" class="add_image" style="position:relative;z-index:1" onclick="$(\'.browse_btn\').get(0).click();"><div class="b3"></div></a><div class="progress"><div class="bar"></div></div>');
+		
+		$(ele).find('.pub_feature').attr('src',''); //remove images
+		$(ele).find('.pub_thumb').attr('src',''); //remove images
+		$(ele).find('.uid').attr('value',''); //set uid value to nothing
+		$(ele+' .b3').html('');//empty images
+		$(ele).removeClass('ui-sortable-handle').addClass('empty ').removeAttr('id');//make container empty to accept new image
+		
+		$(ele).attr('id', '');	//Lock position for new upload on current element so new image is loaded here
+
+	},
+	/*****************************************************************************************/
+    removeFile : function(fid) {
+        var item_ele = this.container+' .item#'+fid;
+        $(item_ele+' .img').html('');
+        $(item_ele+' .uid').val('');
+        $(item_ele).addClass('empty').removeAttr('id');
+        $(this.container).trigger("onItemRemove");
+    } ,
+     
     // Commenting out old setSort Function - Not Required
 
        /* var _this = this;
