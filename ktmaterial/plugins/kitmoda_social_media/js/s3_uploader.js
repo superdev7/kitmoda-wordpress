@@ -497,7 +497,8 @@ var kuldr = Base.extend({
             $(this.container+" li.poslock").each(function () {
                 $(this).attr("id", "poslock-" + $(this).index());
             });
-            _this.setSort();
+            //_this.setSort();
+			_this.setDragDrop();
         }
         
         this.PLU.init();
@@ -613,7 +614,10 @@ var kimgupl = kuldr.extend({
     queue_file : function(file) {
         
         _this = this;
-        $ele = $($(this.container+ ' .item.empty').get(0));
+        if(isclick == 1)
+        	$ele = $($(this.container+ ' .item').get(clicker));
+        else
+			$ele = $($(this.container+ ' .item.empty').get(0));
         
         $ele.attr('id', file.id).removeClass('empty').find('.progress, .percent').show();
         $ele.find('.cancel').show();
@@ -676,9 +680,17 @@ var kpiu = kimgupl.extend({
             var item_ele = this.container+' .item#'+f.id;
             $(item_ele+' .progress').hide();
             $(item_ele+' .percent').hide();
-            $(item_ele+' .b3').html('<img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"  style="opacity:0.5;"/><a href="">delete</a>');
-            $(item_ele+' .uid').val(o.id);
-            $(item_ele+' .cancel').removeClass('cancel').addClass('remove');
+
+			//New code with remove button
+			$(item_ele+' .b3').html('<a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a>');
+			$(item_ele+' .uid').val(o.id);
+			$(item_ele+' .b2').removeClass('disable').removeClass('ui-draggable-disabled');
+			$(item_ele+' .b2').html('<div class="b3"><a class="cancel"></a><img class="pub_feature" src="'+o.sizes.pub_feature+'" width="100%" height="100%" /><img class="pub_thumb" src="'+o.sizes.pub_thumb+'" width="100%" height="100%"/><a href="#" class="remove"></a></div>');
+			//$(item_ele+' .add_image').addClass('not-active').removeClass('add_image');
+            $(item_ele+' .cancel').removeClass('cancel').addClass('remove').removeClass('empty');
+			
+			//when remove button is clicked
+			$(item_ele+' .remove').click(function(){_this.removeImage(f.id);});
         }
         
         this.setPreviewSize();
@@ -693,80 +705,308 @@ var kpiu = kimgupl.extend({
         $('.items .item').not(':first-child').find('.pub_thumb').show();
         
     },
-    
-    setSort : function() {
-        
-        
-        this.is_dragging_first = true;
-        
-        var _this = this;
-        
-        $(this.container+' .items').sortable({
-            cancel:"li.secsep, li.poslock",
-            cursor: "move",
-            opacity: 0.5,
-            scroll : false,
-            placeholder  : 'sortable-placeholder',
-            change:function(event,ui) {
-                
-                
-                
-                
-                $(_this.container+' .items .poslock').each(function() {
-                    var secsep_num = parseInt($(this).attr('id').split('-')[1]);
-                    
-                    var thisindex = $(ui.helper).index();
-                     var fixed = $("#poslock-"+secsep_num);           
-                     var index = fixed.index();
-                     var targetindex = secsep_num+1;
-                     
-                     if(index !== targetindex) {         
-                         if(index > targetindex ) {
-                             fixed.prev().insertAfter(fixed).trigger('domup'); //move it up by one position
-                         } else if(index==(targetindex-1) && thisindex>targetindex) {
-                             //don't move it at all
-                         } else {
-                             fixed.next().insertBefore(fixed).trigger('domdown'); //move it down by one position
-                         }
-                     } else if(index==targetindex && thisindex>targetindex) {
-                         fixed.prev().insertAfter(fixed).trigger('domup'); //move it up by one position
-                     }
-                    
-                });
-                
-                
-                
-                if(_this.is_dragging_first) {
-                    if($(ui.placeholder).index() > 1) {
-                        $(ui.placeholder).removeClass('first');
-                        $($('.items .item').not('.ui-sortable-helper').get(0)).addClass('first');
-                    }
-                }
-                
-                
-             },
-             start : function(event, ui) {
-                 if($(ui.helper).index() == 0) {
-                     _this.is_dragging_first =  true;
-                      $(ui.placeholder).addClass('first');
-                 } else {
-                     _this.is_dragging_first =  false;
-                 }
-             },
-             
-             stop : function(event, ui) {
-                 _this.setPreviewSize();
-                 _this.is_dragging_first =  false;
-                 $('.items .item').removeClass('first');
-             },
-             
-             
-             
-         });
-        
-        
-        
-    } , 
+     /******  Method to remove uploaded images from untextured model upload   ******************/
+    removeImage: function(fid)
+	{
+		
+		//Create an object of the current container
+		var ele = this.container+' .item#'+fid;
+		$(ele+' .b2').addClass('disable').addClass('ui-draggable-disabled');
+		
+		$(ele+' .b2').html('<a href="#" class="add_image" style="position:relative;z-index:1" onclick="$(\'.browse_btn\').get(0).click();"><div class="b3"></div></a><div class="progress"><div class="bar"></div></div>');
+		
+		$(ele).find('.pub_feature').attr('src',''); //remove images
+		$(ele).find('.pub_thumb').attr('src',''); //remove images
+		$(ele).find('.uid').attr('value',''); //set uid value to nothing
+		$(ele+' .b3').html('');//empty images
+		$(ele).removeClass('ui-sortable-handle').addClass('empty ').removeAttr('id');//make container empty to accept new image
+		
+		$(ele).attr('id', '');	//Lock position for new upload on current element so new image is loaded here
+
+	},
+	/*****************************************************************************************/
+    removeFile : function(fid) {
+        var item_ele = this.container+' .item#'+fid;
+        $(item_ele+' .img').html('');
+        $(item_ele+' .uid').val('');
+        $(item_ele).addClass('empty').removeAttr('id');
+        $(this.container).trigger("onItemRemove");
+    } ,
+     /******  Method to  handle drag-and-drop interaction  ******************/
+    setDragDrop: function(){
+		
+		var droppableParent;
+	
+		//Setting DIV element to be draggable
+		$('li .b2').draggable({
+			revert: "invalid",
+			cancel: ".disable",
+			snap: "li.item",
+			stack: ".b2",
+			start: function () {
+			droppableParent = $(this).parent();
+		
+			$(this).addClass('being-dragged');
+			
+		},
+		stop: function () {
+			$(this).removeClass('being-dragged');
+		}
+	});
+	$('ul li.item').click(function(e) {
+		var click_idx = 0;
+		isclick = 1;
+		click_idx = $(this).attr('no');
+		
+		//clicker = $('ul li.item').index(this) - 1;
+      //  alert("Shower" +$(this).attr('no'));
+		
+		
+			if(click_idx > 0)//Check if element is the first element
+			{
+				if(click_idx > 12)
+				{
+					clicker = click_idx-1;
+				}
+				else
+				{
+					if(click_idx > 6)
+						clicker = click_idx-1;
+					else
+						clicker = click_idx-1;
+				}
+			}
+			else
+			{
+				clicker = 0;
+			}
+			
+    });
+	//Setting where item will be dropped
+	$('ul li.item').droppable({
+		hoverClass: 'drop-hover',
+		//Handling Drop Action
+		drop: function (event, ui) {
+			//Get Items Being Dragged and Target Container
+			var draggable = $(ui.draggable[0]),
+				draggableOffset = draggable.offset(),
+				container = $(event.target),
+				containerOffset = container.offset();
+			
+			
+			var target_idx = $('ul li.item').index(this); //Index for Target Container
+			//var dragged_idx = $(ui.draggable[0]).parent().index() //Index of Drag Container
+			var id = $(ui.draggable).attr('no');
+			//alert("PAUSE:" + (id-1));
+			
+			ele_dragged_dp = $("ul li.item").get($(ui.draggable).attr('no')-1);
+			//alert("PARENT" + $(ele_dragged_dp).attr('no'));
+			//alert("INDEX" + $(ele_dragged_dp).index());
+			
+			var dragged_idx =  $(ele_dragged_dp).index();
+			//Create instances of both target and dragged elements
+			var ele_target = $("ul li.item").get(target_idx);
+			if(dragged_idx > 0)//Check if element is the first element
+			{
+				if(dragged_idx > 12)
+				{
+					ele_dragged = $("ul li.item").get(dragged_idx-3);
+				}
+				else
+				{
+					if(dragged_idx > 6)
+						ele_dragged = $("ul li.item").get(dragged_idx-2);
+					else
+						ele_dragged = $("ul li.item").get(dragged_idx-1);
+				}
+			}
+			else
+			{
+				ele_dragged = $("ul li.item").get(0);
+			}
+			
+			//Get ID of each of the target and dragged elements to check if an image has been uploaded
+			var id_target = $(ele_target).attr('id');
+			var id_dragged = $(ele_dragged).attr('id');
+
+
+			var b2_target_no =  $(ele_target).find('.b2').attr('no');
+			var b2_dragged_no =  $(ele_dragged).find('.b2').attr('no');
+
+			var pub_feature_target_src =  $(ele_target).find('.pub_feature').attr('src');
+			var pub_feature_dragged_src =  $(ele_dragged).find('.pub_feature').attr('src');	
+
+			var pub_thumb_target_src =  $(ele_target).find('.pub_thumb').attr('src');
+			var pub_thumb_dragged_src =  $(ele_dragged).find('.pub_thumb').attr('src');		
+			
+			var uid_target		= $(ele_target).find('.uid').attr('value');
+			var uid_dragged		= $(ele_dragged).find('.uid').attr('value');	
+						
+			//Get class of the target and dragged elements
+			var cls_target = $(ele_target).attr('class');
+			var cls_dragged = $(ele_dragged).attr('class');
+			
+			//Check if Target Element is Empty
+			if(id_target == '' || id_target == null || id_target == 'undefined' )
+			{
+				//Check if Dragged Element is Empty
+				if(id_dragged == '' || id_dragged == null || id_dragged == 'undefined')
+				{
+					//Set both element to Empty
+					
+					//Setting Dragged Element to Empty
+					$(ele_dragged).find('.pub_feature').attr('src','');
+					$(ele_dragged).find('.pub_thumb').attr('src','');
+					$(ele_dragged).find('.uid').attr('value','');
+					$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle');
+					$(ele_dragged).find('.b2').attr('no',b2_target_no);
+					//$(ele_dragged+' .b3').html('');
+					//$(ele_dragged).attr('id', 'poslock-1');
+					
+					//Setting Target Element to Empty
+					$(ele_target).find('.pub_feature').attr('src','');
+					$(ele_target).find('.pub_thumb').attr('src','');
+					$(ele_target).find('.uid').attr('value','');
+					$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle');
+					//$(ele_target+' .b3').html('');
+					//$(ele_target).attr('id', 'poslock-1');
+					$(ele_target).find('.b2').attr('no',b2_dragged_no);
+				}
+				else
+				{
+					//If only Target Element is Empty then replace Target Element with Dragged Element parameters
+					$(ele_target).attr('id',id_dragged);
+					//$(ele_target).attr('class',cls_dragged);
+					$(ele_target).find('.uid').attr('value',uid_dragged);
+					$(ele_target).removeClass('empty');
+					//$(ele_target).attr('class',cls_dragged);
+					//$(ele_target).find('.pub_feature').attr('src',pub_feature_dragged_src);
+					//$(ele_target).find('.pub_thumb').attr('src',pub_thumb_dragged_src);
+					$(ele_target).find('.b2').attr('no',b2_dragged_no);
+					if(target_idx == 0)
+					{
+						$(ele_dragged).find('.pub_feature').attr('style',"display:inline");
+						$(ele_dragged).find('.pub_thumb').attr('style',"display:none");
+					}
+					
+					//Setting Dragged Element to Empty
+					$(ele_dragged).attr('id', null);
+					$(ele_dragged).find('.b2').attr('no',b2_target_no);
+					//$(ele_dragged).find('.pub_feature').attr('src','');
+					//$(ele_dragged).find('.pub_thumb').attr('src','');
+					$(ele_dragged).find('.uid').attr('value',null);
+					//$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					//$(ele_dragged).removeClass('ui-sortable-handle').addClass('empty ').removeClass('disable').removeClass('ui-draggable-disabled');
+					$(ele_dragged).addClass('empty').removeClass('ui-draggable-handle').removeClass('ur-draggable');
+					//$(ele_dragged+' .b3').html('');
+					//$(ele_dragged).attr('id', 'poslock-1');
+				}
+			}
+			else
+			{
+				//Check to see if Dragged Element is Empty
+				if(id_dragged == '' || id_dragged == null || id_dragged == 'undefined')
+				{
+					//Replace Dragged Element with Target Element parameters
+					$(ele_dragged).attr('id',id_target);
+					$(ele_dragged).attr('class',cls_target);
+					$(ele_dragged).find('.b2').attr('no',b2_target_no);
+					$(ele_dragged).removeClass('empty').addClass('ui-draggable-handle').addClass('ur-draggable');
+					
+					//$(ele_dragged).find('.pub_feature').attr('src',pub_feature_target_src);
+					//$(ele_dragged).find('.pub_thumb').attr('src',pub_thumb_target_src);
+					$(ele_dragged).find('.uid').attr('value',uid_target);
+					
+					
+					if(dragged_idx == 0)
+					{
+						$(ele_target).find('.pub_feature').attr('style',"display:inline");
+						$(ele_target).find('.pub_thumb').attr('style',"display:none");
+					}
+						
+					
+					//Setting Target Element to Empty
+					$(ele_target).attr('id', null);
+					//$(ele_target).find('.pub_feature').attr('src','');
+					//$(ele_target).find('.pub_thumb').attr('src','');
+					$(ele_target).find('.uid').attr('value',null);
+					$(ele_target).addClass('empty').removeClass('ui-draggable-handle').removeClass('ui-draggable').removeClass('ui-sortable-handle');
+					$(ele_target).find('.b2').attr('no',b2_dragged_no);
+					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					//$(ele_target+' .b3').html('');
+					//$(ele_target).attr('id', 'poslock-1');
+				}
+				else
+				{
+					//Swapping Element Parameters if Both Contain information
+					$(ele_target).attr('id',id_dragged);
+					//$(ele_target).find('.pub_feature').attr('src',$(ele_dragged).find('.pub_feature').attr('src'));
+					//$(ele_target).find('.pub_thumb').attr('src',$(ele_dragged).find('.pub_thumb').attr('src'));
+					$(ele_target).find('.uid').attr('value',$(ele_dragged).find('.uid').attr('src'));
+					
+					$(ele_target).find('.b2').attr('no',b2_dragged_no);
+					
+					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					//$(ele_target).find('.b3').html($(ele_dragged).find('.b3').html());
+					//$(ele_target).attr('id', 'poslock-1');
+					$(ele_target).attr('class',$(ele_dragged).attr('class'));
+					if(target_idx == 0)
+					{
+						$(ele_dragged).find('.pub_feature').attr('style',"display:inline");
+						$(ele_dragged).find('.pub_thumb').attr('style',"display:none");
+					}
+					
+					$(ele_dragged).attr('id',id_target);
+					//$(ele_dragged).find('.pub_feature').attr('src',$(ele_target).find('.pub_feature').attr('src'));
+					//$(ele_dragged).find('.pub_thumb').attr('src',$(ele_target).find('.pub_thumb').attr('src'));
+					$(ele_dragged).find('.uid').attr('value',$(ele_target).find('.uid').attr('src'));
+					
+					$(ele_dragged).find('.b2').attr('no',b2_target_no);
+					//$(ele_target).removeClass('ui-sortable-handle').addClass('empty ').addClass('ui-sortable-handle')
+					//$(ele_dragged).find('.b3').html($(ele_target).find('.b3').html());
+					//$(ele_target).attr('id', 'poslock-1');
+					$(ele_dragged).attr('class',$(ele_target).attr('class'));
+					if(dragged_idx == 0)
+					{
+						$(ele_target).find('.pub_feature').attr('style',"display:inline");
+						$(ele_target).find('.pub_thumb').attr('style',"display:none");
+					}					
+				}
+			}
+
+			
+			//Check to see if there is an interaction with the large featured item
+			if(target_idx == 0)
+			{
+				//Drop the element and resize accordingly
+				$('.b2', event.target).appendTo(droppableParent).css({opacity: 0, width:125,height:90}).animate({opacity: 1}, 200);
+				draggable.appendTo(container).css({left: draggableOffset.left - containerOffset.left, top: draggableOffset.top - containerOffset.top,width:198,height:136}).animate({left: 0, top: 0}, 50);
+				
+			}
+			else
+			{
+				//Check if the dragged item is the large featured item
+				if(dragged_idx == 0)
+				{
+					//Drop the elements and resize accordingly to fit placeholder
+					$('.b2', event.target).appendTo(droppableParent).css({opacity: 0, width:198,height:136}).animate({opacity: 1}, 200);
+					draggable.appendTo(container).css({left: draggableOffset.left - containerOffset.left, top: draggableOffset.top - containerOffset.top,width:125,height:90}).animate({left: 0, top: 0}, 50);
+				}
+				else
+				{
+					//Drop elements, no re-sizing required
+					$('.b2', event.target).appendTo(droppableParent).css({opacity: 0}).animate({opacity: 1}, 200);
+					draggable.appendTo(container).css({left: draggableOffset.left - containerOffset.left, top: draggableOffset.top - containerOffset.top}).animate({left: 0, top: 0}, 50);
+
+				}
+			}
+			
+			
+				
+			
+		}
+	});
+	},
     
     
     setDropzone : function() {
