@@ -498,7 +498,7 @@ var kuldr = Base.extend({
                 $(this).attr("id", "poslock-" + $(this).index());
             });
             //_this.setSort();
-			_this.setDragDrop();
+			//_this.setDragDrop();
         }
         
         this.PLU.init();
