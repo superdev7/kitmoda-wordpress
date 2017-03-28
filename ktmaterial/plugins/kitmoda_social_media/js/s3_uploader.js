@@ -257,7 +257,37 @@ var kuldr = Base.extend({
     
     
     filesAdded : function(up, files) {
+ 		var _this = this;
         
+        if(_this.max_files == 1) {
+            console.log(_this.max_files);
+            $(_this.container+ ' .items .item').each(function() {
+                _this.cancelFile($(this).attr('id'));
+            });
+        }
+        
+        
+        
+        
+        plupload.each(files, function(file) {
+            
+            //console.log(_this.max_files, $(_this.container+ ' .items .item').length)
+        
+        if(_this.max_files && $(_this.container+ ' .items .item').length >= _this.max_files) {
+            return;
+        }
+            
+            
+            _this.files.push(file);
+            _this.queue_file(file);
+        });
+        
+        //up.refresh();
+        
+        if(_this.PLU.state != plupload.UPLOADING) {
+            _this.PLU.start();
+        }
+        /*
         var _this = this;
 		
 		if($(_this.browse_button).attr("id") == "zip")
@@ -332,7 +362,7 @@ var kuldr = Base.extend({
 			if(_this.PLU.state != plupload.UPLOADING) {
 				_this.PLU.start();
 			}
-		}
+		}*/
         
     } ,
     
