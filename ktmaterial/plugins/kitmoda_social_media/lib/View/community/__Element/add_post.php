@@ -37,11 +37,12 @@ $auth_required = get_current_user_id() ? false : true;
                         </div>
                         <span class="add_post_text">Post</span>
 
-                       <? /*
+                       <?php /*
                         <div class="add_post_text_container <?=($auth_required ? '' : 'btn_form_smt')?>">
                             <span class="add_post_text">POST</span>
                         </div>
-                        */ ?>
+                        */ 
+                        ?>
 
 
 

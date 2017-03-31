@@ -1229,7 +1229,7 @@ background-position: 50% 50%;-webkit-transition: all .28s ease-out;
 
 
 .ksm_profile.ksm_page_store_product .details .counts ul li.likes .button {
-    background: url('/ktmaterial/plugins/kitmoda_social_media/images/icons/thumbs_up-blue.png') no-repeat 4px 0px;
+    background: url('http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/images/icons/thumbs_up-blue.png') no-repeat 4px 0px;
 background-position: 50% 50% !important;  -webkit-transition: all .28s ease-out;
     -moz-transition: all .28s ease-out;
     -ms-transition: all .28s ease-out;
@@ -1315,7 +1315,7 @@ background-position: 50% 50% !important;  -webkit-transition: all .28s ease-out;
 .rateit button.rateit-reset:after{content:url('../images/thumbs_up-blue-hover.png');  
 display: none;}
 .grid_view .grid .content_box .box_inner .i_stats li.likes .button {
-    background: url('/ktmaterial/plugins/kitmoda_social_media/images/icons/thumbs_up-blue.png');
+    background: url('http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/images/icons/thumbs_up-blue.png');
     background-position: 50% 50%;
     background-repeat: no-repeat;
 	-webkit-transition: all .28s ease-out;
@@ -1336,7 +1336,7 @@ display: none;}
 }
 .coll_sidebar .filter_nav .rating_field .rateit {
     margin-left: 0px;
-    background: url('/ktmaterial/plugins/kitmoda_social_media/css/sunny/images/delete-hover.png');
+    background: url('http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/sunny/images/delete-hover.png');
     background-repeat: no-repeat;
     background-position: 1% 41%;
 }

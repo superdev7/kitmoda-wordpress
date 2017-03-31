@@ -1,7 +1,7 @@
 <?php $this->render_element('main_tabs'); ?>
 
-<link rel="stylesheet" href="/ktmaterial/plugins/kitmoda_social_media/css/jquery.jscrollpane.css?ver=4.4" />
-		<link rel="stylesheet" href="/ktmaterial/plugins/kitmoda_social_media/css/customSelectBox.css?ver=4.4" />
+<link rel="stylesheet" href="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/jquery.jscrollpane.css?ver=4.4" />
+		<link rel="stylesheet" href="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/customSelectBox.css?ver=4.4" />
 
 
 
@@ -307,8 +307,8 @@ echo paginate_links(
 
 
 
-		<script src='/ktmaterial/plugins/kitmoda_social_media/css/sunny/js/store.js'></script>
-		<script src="/ktmaterial/plugins/kitmoda_social_media/js/SelectBox.js?ver=4.4"></script>
+		<script src='http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/sunny/js/store.js'></script>
+		<script src="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/SelectBox.js?ver=4.4"></script>
 
 
 

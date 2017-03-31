@@ -2620,7 +2620,7 @@ body .btn_blue {
 	opacity: 0.2;
 }
 .ksm_profile.ksm_page_store_product .details .counts ul li.likes .button {
-	background: url('../images/icons/thumbs_up-blue.png') no-repeat 4px 0px;
+	background: url('http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/images/icons/thumbs_up-blue.png') no-repeat 4px 0px;
 	background-position: 50% 50% !important;
 	-webkit-transition: all .28s ease-out;
 	-moz-transition: all .28s ease-out;
@@ -2708,7 +2708,7 @@ body .btn_blue {
 	display: none;
 }
 .grid_view .grid .content_box .box_inner .i_stats li.likes .button {
-	background: url('../images/icons/thumbs_up-blue.png');
+	background: url('http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/images/icons/thumbs_up-blue.png');
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	-webkit-transition: all .28s ease-out;

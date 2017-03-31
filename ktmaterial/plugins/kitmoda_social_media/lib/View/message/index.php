@@ -82,7 +82,7 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="/ktmaterial/plugins/kitmoda_social_media/css/sunny/account.css" />
+<link rel="stylesheet" type="text/css" href="http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/sunny/account.css" />
 <div class="ksm_profile_container_overlay">
 
     <div class="ksm_profile ksm_page_collaboration">

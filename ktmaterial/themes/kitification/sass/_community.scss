@@ -78,7 +78,7 @@
 			width: 100%;
 
 			.magazine_container_icon {
-				background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/kitmoda_focus.png) no-repeat scroll 0px center;
+				background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/kitmoda_focus.png) no-repeat scroll 0px center;
 				margin-left: -2px;
 				width: 63px;
 				height: 63px;
@@ -86,7 +86,7 @@
 				margin: 0 8px 0 -2px;
 
 				&.feed_icon {
-					background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/kitmoda_feed.png) no-repeat scroll 0px center;
+					background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/kitmoda_feed.png) no-repeat scroll 0px center;
 					margin-left: -3px;
 				}
 			}
@@ -129,11 +129,11 @@
 					background-repeat: no-repeat;
 					background-position: center center;
 
-					&:nth-child(1) { background-image: url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/article_thumb_1.jpg); }
-					&:nth-child(2) { background-image: url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/article_thumb_2.jpg); }
-					&:nth-child(3) { background-image: url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/article_thumb_3.jpg); }
-					&:nth-child(4) { background-image: url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/article_thumb_4.jpg); }
-					&:nth-child(5) { background-image: url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/article_thumb_5.jpg); }
+					&:nth-child(1) { background-image: url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/article_thumb_1.jpg); }
+					&:nth-child(2) { background-image: url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/article_thumb_2.jpg); }
+					&:nth-child(3) { background-image: url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/article_thumb_3.jpg); }
+					&:nth-child(4) { background-image: url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/article_thumb_4.jpg); }
+					&:nth-child(5) { background-image: url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/article_thumb_5.jpg); }
 				}
 			}
 
@@ -186,11 +186,11 @@
 								@include transition(all .3s ease-out);
 
 								&.prev_arrow_glow {
-									background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/prev_hover.png) no-repeat scroll 0 0px;
+									background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/prev_hover.png) no-repeat scroll 0 0px;
 								}
 
 								&.next_arrow_glow {
-									background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/next_hover.png) no-repeat scroll 0 0px;
+									background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/next_hover.png) no-repeat scroll 0 0px;
 								}
 							}
 
@@ -208,11 +208,11 @@
 							}
 
 							&.prev {
-								background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/prev.png) no-repeat scroll 0 0px;
+								background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/prev.png) no-repeat scroll 0 0px;
 							}
 
 							&.next {
-								background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/next.png) no-repeat scroll 0 0px;
+								background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/next.png) no-repeat scroll 0 0px;
 								margin-right: 0;
 							}
 						}
@@ -302,7 +302,7 @@
 									.ksm_community_search_magnify {
 										display: block;
 										height: 36px;
-										background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/search_icon.png) no-repeat scroll 0 0;
+										background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/search_icon.png) no-repeat scroll 0 0;
 										margin-right: 0px;
 										width: 40px;
 										margin-top: 2px;
@@ -313,7 +313,7 @@
 										.ksm_community_search_magnify_glow {
 											display: block;
 											height: 36px;
-											background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/search_icon_glow.png) no-repeat scroll 0 0;
+											background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/search_icon_glow.png) no-repeat scroll 0 0;
 											position: relative;
 											width: 40px;
 											@include transition(all 0.28s ease-out 0s);

@@ -26,8 +26,8 @@ define('POST_BLOCK_REPORTS_THRESHOLD', '30 minutes'); // 30 minutes
 define('POST_BLOCK_REPORTS_COUNT', 2);
 
 
-define('POST_CONTENT_MAX_LENGTH', '800');
-define('POST_TITLE_MAX_LENGTH', '32');
+define('POST_CONTENT_MAX_LENGTH', '50');
+define('POST_TITLE_MAX_LENGTH', '20');
 define('POST_COMMUNITY_MAX_LENGTH', '800');
 
 

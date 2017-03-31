@@ -333,7 +333,7 @@ select {
     width: 33px;
     height: 24px;
     /* right: -150px !important; */
-    background: url('../sunny/images/arrow_down.png') 16px 13px no-repeat;
+    background: url("http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/sunny/images/arrow_down.png") 16px 13px no-repeat;
     left: 70%;
     border: 0;
 }

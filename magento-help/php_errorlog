@@ -541,3 +541,112 @@
             wp_posts.post_type = 'ksm_message' AND ((wp_posts.post_status = 'publish')) AND 
             ( (wp_postmeta.meta_key = 'sent_to' AND CAST(wp_postmeta.meta_value AS CHAR) = '2') 
             AND (mt1.meta_key = 'viewed' AND CAST(mt1.meta_value AS CHAR) != '1') ) GROUP BY wp_posts.ID made by do_action('wp_ajax_Message_dd'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Message_dd, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_MessageController->ksm_ajax_dd, KSM_MessageModel->messages, KSM_MessageModel->dd_list_messages, KSM_MessageModel->count_news
+[19-Feb-2017 04:26:20 UTC] WordPress database error Table 'kitmoda3_illumination_st1.wp_posts' doesn't exist for query SELECT count(wp_posts.ID) FROM wp_posts 
+            INNER JOIN wp_postmeta ON (wp_posts.ID = wp_postmeta.post_id)
+            INNER JOIN wp_postmeta AS mt1 ON (wp_posts.ID = mt1.post_id) WHERE 1=1  AND 
+            wp_posts.post_type = 'ksm_message' AND ((wp_posts.post_status = 'publish')) AND 
+            ( (wp_postmeta.meta_key = 'sent_to' AND CAST(wp_postmeta.meta_value AS CHAR) = '1') 
+            AND (mt1.meta_key = 'viewed' AND CAST(mt1.meta_value AS CHAR) != '1') ) GROUP BY wp_posts.ID made by do_action('wp_ajax_Message_dd'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Message_dd, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_MessageController->ksm_ajax_dd, KSM_MessageModel->messages, KSM_MessageModel->dd_list_messages, KSM_MessageModel->count_news
+[19-Feb-2017 20:09:47 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 39996 bytes) in /home/kitmoda3/staging/1/kt-encased/media.php on line 2715
+[19-Feb-2017 21:59:20 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 39996 bytes) in /home/kitmoda3/staging/1/kt-encased/media.php on line 2715
+[22-Feb-2017 23:33:34 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 39996 bytes) in /home/kitmoda3/staging/1/kt-encased/media.php on line 2715
+[22-Feb-2017 23:40:31 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 39996 bytes) in /home/kitmoda3/staging/1/kt-encased/media.php on line 2715
+[23-Feb-2017 21:46:11 UTC] PHP Warning:  Creating default object from empty value in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.form.php on line 44
+[23-Feb-2017 21:46:11 UTC] PHP Fatal error:  Call to undefined method stdClass::is_field_visible() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.form.php on line 46
+[23-Feb-2017 22:14:02 UTC] PHP Warning:  Creating default object from empty value in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.form.php on line 44
+[23-Feb-2017 22:14:02 UTC] PHP Fatal error:  Call to undefined method stdClass::is_field_visible() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.form.php on line 46
+[23-Feb-2017 22:37:32 UTC] PHP Warning:  Creating default object from empty value in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.form.php on line 44
+[23-Feb-2017 22:37:32 UTC] PHP Fatal error:  Call to undefined method stdClass::is_field_visible() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.form.php on line 46
+[23-Feb-2017 23:52:46 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 39996 bytes) in /home/kitmoda3/staging/1/kt-encased/media.php on line 2715
+[23-Feb-2017 23:53:57 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 39996 bytes) in /home/kitmoda3/staging/1/kt-encased/media.php on line 2715
+[24-Feb-2017 16:47:50 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 39996 bytes) in /home/kitmoda3/staging/1/kt-encased/media.php on line 2715
+[24-Feb-2017 16:51:38 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 9999 bytes) in /home/kitmoda3/staging/1/kt-encased/media.php on line 2715
+[27-Feb-2017 10:21:02 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 39996 bytes) in /home/kitmoda3/staging/1/kt-encased/media.php on line 2715
+[02-Mar-2017 21:52:08 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 39996 bytes) in /home/kitmoda3/staging/1/kt-encased/media.php on line 2715
+[08-Mar-2017 20:25:29 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[08-Mar-2017 20:25:42 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[08-Mar-2017 20:26:37 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[08-Mar-2017 21:13:25 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[08-Mar-2017 21:13:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[08-Mar-2017 21:15:40 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[08-Mar-2017 21:47:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[08-Mar-2017 22:14:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[08-Mar-2017 22:14:16 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[08-Mar-2017 22:56:05 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[08-Mar-2017 22:56:24 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[09-Mar-2017 03:19:46 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[09-Mar-2017 14:48:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[10-Mar-2017 08:19:58 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 466
+[20-Mar-2017 21:54:10 UTC] PHP Warning:  trim() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/kt-encased/taxonomy.php on line 1726
+[20-Mar-2017 21:54:13 UTC] PHP Warning:  trim() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/kt-encased/taxonomy.php on line 1726
+[20-Mar-2017 21:54:22 UTC] PHP Warning:  trim() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/kt-encased/taxonomy.php on line 1726
+[20-Mar-2017 21:54:24 UTC] PHP Warning:  trim() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/kt-encased/taxonomy.php on line 1726
+[20-Mar-2017 21:54:33 UTC] PHP Warning:  trim() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/kt-encased/taxonomy.php on line 1726
+[20-Mar-2017 21:54:35 UTC] PHP Warning:  trim() expects parameter 1 to be string, array given in /home/kitmoda3/staging/1/kt-encased/taxonomy.php on line 1726
+[22-Mar-2017 09:35:44 UTC] PHP Warning:  Creating default object from empty value in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 664
+[22-Mar-2017 09:36:00 UTC] PHP Warning:  Creating default object from empty value in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 664
+[22-Mar-2017 09:57:26 UTC] PHP Warning:  Creating default object from empty value in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 664
+[22-Mar-2017 10:00:36 UTC] PHP Warning:  Creating default object from empty value in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/lib/Controller/store.php on line 664
+[23-Mar-2017 15:30:28 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.form.php on line 1528
+[23-Mar-2017 15:30:32 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.form.php on line 1528
+[23-Mar-2017 15:32:18 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kitmoda3/staging/1/ktmaterial/plugins/kitmoda_social_media/includes/classes/class.form.php on line 1528
+[24-Mar-2017 18:32:11 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') GROUP BY mqucz_posts.ID ORDER BY mqucz_posts.post_date DESC LIMIT 0, 20' at line 13 for query SELECT SQL_CALC_FOUND_ROWS  mqucz_posts.ID FROM mqucz_posts INNER JOIN mqucz_term_relationships ON (mqucz_posts.ID = mqucz_term_relationships.object_id)  INNER JOIN mqucz_term_relationships AS tt1 ON (mqucz_posts.ID = tt1.object_id)  INNER JOIN mqucz_term_relationships AS tt2 ON (mqucz_posts.ID = tt2.object_id)  INNER JOIN mqucz_term_relationships AS tt3 ON (mqucz_posts.ID = tt3.object_id)  INNER JOIN mqucz_term_relationships AS tt4 ON (mqucz_posts.ID = tt4.object_id) INNER JOIN mqucz_postmeta ON ( mqucz_posts.ID = mqucz_postmeta.post_id ) 
+ WHERE 1=1 AND (mqucz_posts.post_password = '')  AND mqucz_posts.post_type = 'download' AND ((mqucz_posts.post_status = 'publish')) AND ( 
+  mqucz_term_relationships.term_taxonomy_id IN (8670,8672,8671,8682,8669,8665,8681,8678,8675,8679,8664,8667,8673,8662,8676,8668,8663,8680,8677,8674,8666) 
+  AND 
+  tt1.term_taxonomy_id IN (49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72) 
+  AND 
+  tt2.term_taxonomy_id IN (73,74,75,76,77,78,79,80,81,82,83) 
+  AND 
+  tt3.term_taxonomy_id IN (137,138,139) 
+  AND 
+  tt4.term_taxonomy_id IN (8699)
+) AND ( mqucz_postmeta.meta_key = 'rating_coefficient' AND CAST(mqucz_postmeta.meta_value AS CHAR) >= '0' ) 
+ ) GROUP BY mqucz_posts.ID ORDER BY mqucz_posts.post_date DESC LIMIT 0, 20 made by do_action('wp_ajax_nopriv_Store_filter_posts'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Store_filter_posts, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_StoreController->ksm_ajax_filter_posts
+[24-Mar-2017 18:32:30 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') GROUP BY mqucz_posts.ID ORDER BY mqucz_posts.post_date DESC LIMIT 0, 20' at line 13 for query SELECT SQL_CALC_FOUND_ROWS  mqucz_posts.ID FROM mqucz_posts INNER JOIN mqucz_term_relationships ON (mqucz_posts.ID = mqucz_term_relationships.object_id)  INNER JOIN mqucz_term_relationships AS tt1 ON (mqucz_posts.ID = tt1.object_id)  INNER JOIN mqucz_term_relationships AS tt2 ON (mqucz_posts.ID = tt2.object_id)  INNER JOIN mqucz_term_relationships AS tt3 ON (mqucz_posts.ID = tt3.object_id)  INNER JOIN mqucz_term_relationships AS tt4 ON (mqucz_posts.ID = tt4.object_id) INNER JOIN mqucz_postmeta ON ( mqucz_posts.ID = mqucz_postmeta.post_id ) 
+ WHERE 1=1 AND (mqucz_posts.post_password = '')  AND mqucz_posts.post_type = 'download' AND ((mqucz_posts.post_status = 'publish')) AND ( 
+  mqucz_term_relationships.term_taxonomy_id IN (8670,8672,8671,8682,8669,8665,8681,8678,8675,8679,8664,8667,8673,8662,8676,8668,8663,8680,8677,8674,8666) 
+  AND 
+  tt1.term_taxonomy_id IN (49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72) 
+  AND 
+  tt2.term_taxonomy_id IN (73,74,75,76,77,78,79,80,81,82,83) 
+  AND 
+  tt3.term_taxonomy_id IN (137,138,139) 
+  AND 
+  tt4.term_taxonomy_id IN (8699)
+) AND ( mqucz_postmeta.meta_key = 'rating_coefficient' AND CAST(mqucz_postmeta.meta_value AS CHAR) >= '0' ) 
+ ) GROUP BY mqucz_posts.ID ORDER BY mqucz_posts.post_date DESC LIMIT 0, 20 made by do_action('wp_ajax_nopriv_Store_filter_posts'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Store_filter_posts, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_StoreController->ksm_ajax_filter_posts
+[24-Mar-2017 18:33:04 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') GROUP BY mqucz_posts.ID ORDER BY mqucz_posts.post_date DESC LIMIT 0, 20' at line 13 for query SELECT SQL_CALC_FOUND_ROWS  mqucz_posts.ID FROM mqucz_posts INNER JOIN mqucz_term_relationships ON (mqucz_posts.ID = mqucz_term_relationships.object_id)  INNER JOIN mqucz_term_relationships AS tt1 ON (mqucz_posts.ID = tt1.object_id)  INNER JOIN mqucz_term_relationships AS tt2 ON (mqucz_posts.ID = tt2.object_id)  INNER JOIN mqucz_term_relationships AS tt3 ON (mqucz_posts.ID = tt3.object_id)  INNER JOIN mqucz_term_relationships AS tt4 ON (mqucz_posts.ID = tt4.object_id) INNER JOIN mqucz_postmeta ON ( mqucz_posts.ID = mqucz_postmeta.post_id ) 
+ WHERE 1=1 AND (mqucz_posts.post_password = '')  AND mqucz_posts.post_type = 'download' AND ((mqucz_posts.post_status = 'publish')) AND ( 
+  mqucz_term_relationships.term_taxonomy_id IN (8670,8672,8671,8682,8669,8665,8681,8678,8675,8679,8664,8667,8673,8662,8676,8668,8663,8680,8677,8674,8666) 
+  AND 
+  tt1.term_taxonomy_id IN (49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72) 
+  AND 
+  tt2.term_taxonomy_id IN (73,74,75,76,77,78,79,80,81,82,83) 
+  AND 
+  tt3.term_taxonomy_id IN (137,138,139) 
+  AND 
+  tt4.term_taxonomy_id IN (8699)
+) AND ( mqucz_postmeta.meta_key = 'rating_coefficient' AND CAST(mqucz_postmeta.meta_value AS CHAR) >= '0' ) 
+ ) GROUP BY mqucz_posts.ID ORDER BY mqucz_posts.post_date DESC LIMIT 0, 20 made by do_action('wp_ajax_nopriv_Store_filter_posts'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Store_filter_posts, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_StoreController->ksm_ajax_filter_posts
+[24-Mar-2017 18:36:12 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') GROUP BY mqucz_posts.ID ORDER BY mqucz_posts.post_date DESC LIMIT 0, 20' at line 13 for query SELECT SQL_CALC_FOUND_ROWS  mqucz_posts.ID FROM mqucz_posts INNER JOIN mqucz_term_relationships ON (mqucz_posts.ID = mqucz_term_relationships.object_id)  INNER JOIN mqucz_term_relationships AS tt1 ON (mqucz_posts.ID = tt1.object_id)  INNER JOIN mqucz_term_relationships AS tt2 ON (mqucz_posts.ID = tt2.object_id)  INNER JOIN mqucz_term_relationships AS tt3 ON (mqucz_posts.ID = tt3.object_id)  INNER JOIN mqucz_term_relationships AS tt4 ON (mqucz_posts.ID = tt4.object_id) INNER JOIN mqucz_postmeta ON ( mqucz_posts.ID = mqucz_postmeta.post_id ) 
+ WHERE 1=1 AND (mqucz_posts.post_password = '')  AND mqucz_posts.post_type = 'download' AND ((mqucz_posts.post_status = 'publish')) AND ( 
+  mqucz_term_relationships.term_taxonomy_id IN (8670,8672,8671,8682,8669,8665,8681,8678,8675,8679,8664,8667,8673,8662,8676,8668,8663,8680,8677,8674,8666) 
+  AND 
+  tt1.term_taxonomy_id IN (49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72) 
+  AND 
+  tt2.term_taxonomy_id IN (73,74,75,76,77,78,79,80,81,82,83) 
+  AND 
+  tt3.term_taxonomy_id IN (137,138,139) 
+  AND 
+  tt4.term_taxonomy_id IN (8699)
+) AND ( mqucz_postmeta.meta_key = 'rating_coefficient' AND CAST(mqucz_postmeta.meta_value AS CHAR) >= '0' ) 
+ ) GROUP BY mqucz_posts.ID ORDER BY mqucz_posts.post_date DESC LIMIT 0, 20 made by do_action('wp_ajax_nopriv_Store_filter_posts'), call_user_func_array, KSM_MvcDispatcher->public_ajax_Store_filter_posts, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_StoreController->ksm_ajax_filter_posts
+[27-Mar-2017 03:04:18 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 9999 bytes) in /home/kitmoda3/staging/1/kt-encased/media.php on line 2715
+[28-Mar-2017 09:00:23 UTC] WordPress database error Table 'kitmoda3_illumination_st1.wp_posts' doesn't exist for query SELECT count(wp_posts.ID) FROM wp_posts 
+            INNER JOIN wp_postmeta ON (wp_posts.ID = wp_postmeta.post_id)
+            INNER JOIN wp_postmeta AS mt1 ON (wp_posts.ID = mt1.post_id) WHERE 1=1  AND 
+            wp_posts.post_type = 'ksm_message' AND ((wp_posts.post_status = 'publish')) AND 
+            ( (wp_postmeta.meta_key = 'sent_to' AND CAST(wp_postmeta.meta_value AS CHAR) = '1') 
+            AND (mt1.meta_key = 'viewed' AND CAST(mt1.meta_value AS CHAR) != '1') ) GROUP BY wp_posts.ID made by do_action('wp_ajax_Message_dd'), call_user_func_array, KSM_MvcDispatcher->admin_ajax_Message_dd, KSM_MvcDispatcher->__call, __lambda_func, KSM_MvcDispatcher::dispatch_ajax, KSM_MvcDispatcher->dispatch, call_user_func, KSM_MessageController->ksm_ajax_dd, KSM_MessageModel->messages, KSM_MessageModel->dd_list_messages, KSM_MessageModel->count_news
+[28-Mar-2017 15:06:16 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 6600 bytes) in /home/kitmoda3/staging/1/kt-encased/media.php on line 2715
