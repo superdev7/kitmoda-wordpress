@@ -24,7 +24,11 @@ $(".opt_remove_all").click(function () {
 </script>
 
 
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/ktmaterial/plugins/kitmoda_social_media/css/sunny/account.css">
+=======
+<link rel="stylesheet" type="text/css" href="http://staging9.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/sunny/account.css" />
+>>>>>>> 983ee4d... Changing paths to relative
 <?php $this->render_element('main_tabs'); ?>
 
 <div class="ksm-menu-sub-menu_container">
