@@ -1,32 +1,32 @@
 
-<link rel='stylesheet' id='jquery.jscrollpane-css'  href='http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/jquery.jscrollpane.css?ver=4.4' type='text/css' media='all' />
-<link rel='stylesheet' id='customSelectBox-css'  href='http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/customSelectBox.css?ver=4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery.jscrollpane-css'  href='/ktmaterial/plugins/kitmoda_social_media/css/jquery.jscrollpane.css?ver=4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='customSelectBox-css'  href='/ktmaterial/plugins/kitmoda_social_media/css/customSelectBox.css?ver=4.4' type='text/css' media='all' />
 
 
-<script type='text/javascript' src='http://staging2.kitmoda.com/kt-encased/js/jquery/jquery.js?ver=1.11.3'></script>
-<script type='text/javascript' src='http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/jquery.selectBoxIt.js?ver=4.4'></script>
+<script type='text/javascript' src='/kt-encased/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='/ktmaterial/plugins/kitmoda_social_media/js/jquery.selectBoxIt.js?ver=4.4'></script>
 
-<script type='text/javascript' src='http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/slick/slick.js?ver=4.4'></script>
+<script type='text/javascript' src='/ktmaterial/plugins/kitmoda_social_media/js/slick/slick.js?ver=4.4'></script>
 
-<script type='text/javascript' src='http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/functions.js?ver=4.4'></script>
+<script type='text/javascript' src='/ktmaterial/plugins/kitmoda_social_media/js/functions.js?ver=4.4'></script>
 
-<script type='text/javascript' src='http://staging2.kitmoda.com/kt-encased/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='http://staging2.kitmoda.com/kt-encased/js/jquery/ui/sortable.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/publisher.js?ver=4.4'></script>
-<script type='text/javascript' src='http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/jquery.caret.min.js?ver=4.4'></script>
-<script type='text/javascript' src='http://staging2.kitmoda.com/kt-encased/js/jquery/ui/position.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='http://staging2.kitmoda.com/kt-encased/js/jquery/ui/menu.min.js?ver=1.11.4'></script>
-
-
-
-
-<script type='text/javascript' src='http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/jScrollPane.js?ver=4.4'></script>
-
-<script type='text/javascript' src='http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/SelectBox.js?ver=4.4'></script>
+<script type='text/javascript' src='/kt-encased/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='/kt-encased/js/jquery/ui/sortable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='/ktmaterial/plugins/kitmoda_social_media/js/publisher.js?ver=4.4'></script>
+<script type='text/javascript' src='/ktmaterial/plugins/kitmoda_social_media/js/jquery.caret.min.js?ver=4.4'></script>
+<script type='text/javascript' src='/kt-encased/js/jquery/ui/position.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='/kt-encased/js/jquery/ui/menu.min.js?ver=1.11.4'></script>
 
 
 
-<script type='text/javascript' src='http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/js/jquery.tooltipster.js?ver=4.4'></script>
+
+<script type='text/javascript' src='/ktmaterial/plugins/kitmoda_social_media/js/jScrollPane.js?ver=4.4'></script>
+
+<script type='text/javascript' src='/ktmaterial/plugins/kitmoda_social_media/js/SelectBox.js?ver=4.4'></script>
+
+
+
+<script type='text/javascript' src='/ktmaterial/plugins/kitmoda_social_media/js/jquery.tooltipster.js?ver=4.4'></script>
 
 
 <?php
