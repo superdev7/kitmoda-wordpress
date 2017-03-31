@@ -494,7 +494,7 @@ iframe.formframe {
           position: relative;
 
           .post_img_btn {
-            background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/add_image.png) no-repeat scroll 0 0;
+            background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/add_image.png) no-repeat scroll 0 0;
             cursor: pointer;
             float: left;
             height: 34px;
@@ -502,7 +502,7 @@ iframe.formframe {
             width: 61px;
 
             .post_img_btn_hover {
-              background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/add_image_hover.png) no-repeat scroll 0 0;
+              background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/add_image_hover.png) no-repeat scroll 0 0;
               height: 34px;
               width: 61px;
               @include opacity(0);
@@ -534,7 +534,7 @@ iframe.formframe {
             }
 
             .add_post {
-              background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_button_b.png) no-repeat scroll 0 0px;
+              background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_button_b.png) no-repeat scroll 0 0px;
               width: 42px;
               height: 36px;
               cursor: pointer;
@@ -542,7 +542,7 @@ iframe.formframe {
               @include transition(all .28s ease-out);
 
               &.add_post_hover {
-                background: rgba(0, 0, 0, 0) url(http://staging2.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_button_b_hover.png) no-repeat scroll 0 0px;
+                background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_button_b_hover.png) no-repeat scroll 0 0px;
                 margin-top: -36px;
                 @include opacity(0);
               }
@@ -748,11 +748,11 @@ iframe.formframe {
                 }
 
                 &.views .button {
-                  background-image: url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/eyetest.png);
+                  background-image: url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/eyetest.png);
                 }
 
                 &.comments .button {
-                  background-image: url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/comments_shad.png);
+                  background-image: url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/comments_shad.png);
                 }
 
                 &.likes .likes_container {
@@ -761,7 +761,7 @@ iframe.formframe {
                   float: left;
 
                   .likes_backdrop_no_hover {
-                    background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/thumbs_up-blue.png) no-repeat scroll 0 0;
+                    background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/thumbs_up-blue.png) no-repeat scroll 0 0;
                     height: 26px;
                     margin-top: -4px;
                     width: 26px;
@@ -770,14 +770,14 @@ iframe.formframe {
 
                 &.share .share_container {
                   .share_backdrop_no_hover {
-                    background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/share-blue.png) no-repeat scroll 0 0;
+                    background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/share-blue.png) no-repeat scroll 0 0;
                     height: 29px;
                     margin-top: -1px;
                     width: 29px;
                   }
 
                   .button {
-                    background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/share-blue_hover.png) no-repeat scroll 0 0;
+                    background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/share-blue_hover.png) no-repeat scroll 0 0;
                     height: 29px;
                     margin-top: -29px;
                     width: 29px;
@@ -866,7 +866,7 @@ iframe.formframe {
 
               .add_comment_container {
                 .add_comment {
-                  background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_post.png) no-repeat scroll 0 0;
+                  background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_post.png) no-repeat scroll 0 0;
                   height: 32px;
                   width: 32px;
                   margin: 0;
@@ -876,7 +876,7 @@ iframe.formframe {
                 }
 
                 .add_comment_hover {
-                  background: rgba(0, 0, 0, 0) url(http://staging1.kitmoda.com/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_post_hover.png) no-repeat scroll 0 0px;
+                  background: rgba(0, 0, 0, 0) url(/ktmaterial/plugins/kitmoda_social_media/css/kane/images/icons/post_post_hover.png) no-repeat scroll 0 0px;
                   width: 32px;
                   height: 32px;
                   margin-top: -32px;
