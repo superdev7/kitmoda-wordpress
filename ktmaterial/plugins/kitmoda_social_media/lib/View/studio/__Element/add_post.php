@@ -22,39 +22,24 @@
                             <div class="post_img_btn_hover">
                             </div>
                         </div>
+                
 
-
-                        <? /*
                         <div class="add_post_container">
-                        <a href="" class="btn_add_post btn btn_form_smt"></a>
+                <a href="" class="btn_add_post btn <?=($auth_required ? '' : 'btn_form_smt')?>"></a>
                                         <div class="add_post">
                                         </div>
                                         <div class="add_post_hover">
-                                        </div>
-
+                                        </div>                            
+                                    
                         </div>
                         <span class="add_post_text">POST</span>
-                        */ ?>
-
-                        <!-- <div class="add_post_text_container btn_form_smt">
-                            <span class="add_post_text">POST</span>
-                        </div> -->
-
-                        <div class="add_post_container">
-                            <a href="" class="btn_add_post btn <?=($auth_required ? '' : 'btn_form_smt')?>"></a>
-                            <div class="add_post"></div>
-                            <div class="add_post add_post_hover"></div>
-                        </div>
-                        <span class="add_post_text">Post</span>
+                
 
 
 
 
-
-
-
-                        <?php $this->render_element('the_post_image_uploader') ?>
-                    </div><div class="clr"></div>
+                <?php $this->render_element('the_post_image_uploader') ?>
+            </div><div class="clr"></div>
                     <div class="error"></div>
                 </form>
             </div>
