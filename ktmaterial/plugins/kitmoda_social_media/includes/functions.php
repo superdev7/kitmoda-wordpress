@@ -1119,8 +1119,7 @@ function ksm_enqueue_style($handle, $src = false, $deps = array(), $ver = false,
         // if (!is_front_page()) {
             $designers = array(
                  'sunny',
-                'jaswinder',
-                'kane'
+                 'kane'
             );
         // }
 
