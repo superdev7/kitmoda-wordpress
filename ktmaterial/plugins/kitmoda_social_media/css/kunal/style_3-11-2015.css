@@ -1,0 +1,15 @@
+.ksm_gallery_multi_views .full_view_container .gallery_back_btn{
+    text-align: right;
+}
+
+.ksm_gallery_multi_views .full_view_container .gallery_back_btn a{
+    font-size: 38px;
+}
+
+
+.ksm_gallery_multi_views .full_view_container .nav_container .nav .nav_controls .slick-next {
+    right: -110px;
+}
+.ksm_gallery_multi_views .full_view_container .nav_container .nav .nav_controls .slick-prev {
+    left: -110px;
+}
